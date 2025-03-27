@@ -105,6 +105,7 @@ elif tab == "Betting Props":
     selected_player = st.sidebar.selectbox("Select Player", players, key="prop_player")
 
     # Filter data (no direct team column, so we'll approximate using player names)
+    props_df = props_df[props_df['BetValue']>=.05]
     filtered_props = props_df.copy()
     if selected_team != "All Teams":
         # Cross-reference with pitchers and hitters to approximate team filtering
