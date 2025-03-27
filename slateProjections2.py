@@ -18,6 +18,10 @@ def load_data():
 
 pitchers_df, hitters_df, props_df = load_data()
 
+def reload_data():
+    st.cache_data.clear()  # Clear the cache
+    return load_data()     # Reload the data
+
 # Sidebar navigation
 st.sidebar.title("MLB Projections")
 tab = st.sidebar.radio("Select View", ["Pitchers", "Hitters", "Betting Props"])
@@ -34,6 +38,10 @@ def filter_df(df, team_col, player_col, selected_team, selected_player):
 # Main content based on selected tab
 if tab == "Pitchers":
     st.title("Pitcher Projections - March 27, 2025")
+
+    # Refresh button
+    if st.button("Refresh Data", key="refresh_pitchers"):
+        pitchers_df, hitters_df, props_df = reload_data()
 
     # Team and Player Filters
     teams = ["All Teams"] + sorted(pitchers_df["Team"].unique().tolist())
@@ -70,6 +78,10 @@ if tab == "Pitchers":
 
 elif tab == "Hitters":
     st.title("Hitter Projections - March 27, 2025")
+    
+    # Refresh button
+    if st.button("Refresh Data", key="refresh_pitchers"):
+        pitchers_df, hitters_df, props_df = reload_data()
 
     # Team and Player Filters
     teams = ["All Teams"] + sorted(hitters_df["Team"].unique().tolist())
@@ -95,6 +107,9 @@ elif tab == "Hitters":
 
 elif tab == "Betting Props":
     st.title("Betting Props - March 27, 2025")
+    # Refresh button
+    if st.button("Refresh Data", key="refresh_pitchers"):
+        pitchers_df, hitters_df, props_df = reload_data()
 
     # Team Filter (based on pitchers or hitters involved)
     all_teams = ["All Teams"] + sorted(
