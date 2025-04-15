@@ -1,9 +1,9 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Nationals  @  Pirates,Breezy and Mostly Cloudy,47°,18.8 mph,"Out, Strong",WSH,PIT,10,2025-4-15,0,0
-1,Mariners  @  Reds,Mostly Cloudy,53°,14.3 mph,"Out, Strong",SEA,CIN,0,2025-4-15,0,0
+0,Nationals  @  Pirates,Cloudy,47°,18.8 mph,"Out, Strong",WSH,PIT,10,2025-4-15,0,0
+1,Mariners  @  Reds,Cloudy,53°,14.3 mph,"Out, Strong",SEA,CIN,0,2025-4-15,0,0
 2,Diamondbacks  @  Marlins,Clear,79°,7.2 mph,"In, Weak",ARI,MIA,0,2025-4-15,1,0
-3,Giants  @  Phillies,Breezy and Partly Cloudy,59°,15.2 mph,"L to R, Strong",SF,PHI,0,2025-4-15,0,0
-4,Royals  @  Yankees,Breezy and Mostly Clear,58°,17.0 mph,"Out, Strong",KC,NYY,8,2025-4-15,0,0
+3,Giants  @  Phillies,Partly Cloudy,59°,15.2 mph,"L to R, Strong",SF,PHI,0,2025-4-15,0,0
+4,Royals  @  Yankees,Clear,58°,17.0 mph,"Out, Strong",KC,NYY,8,2025-4-15,0,0
 5,Guardians  @  Orioles,Breezy,61°,17.0 mph,"L to R, Strong",CLE,BAL,0,2025-4-15,0,0
 6,Red Sox  @  Rays,Mostly Clear,76°,8.0 mph,"Out, Weak",BOS,TB,0,2025-4-15,0,0
 7,Braves  @  Blue Jays,Breezy and Mostly Cloudy,41°,17.9 mph,"L to R, Strong",ATL,TOR,12,2025-4-15,1,1
