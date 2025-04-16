@@ -534,11 +534,16 @@ if tab == "Game Previews":
     these_pitcherproj = pitcherproj[pitcherproj['GameString'] == selected_game]
     this_weather = weather_data[weather_data['HomeTeam'] == selected_home_team]
     game_name = this_weather['Game'].iloc[0]
-    this_gameinfo = gameinfo[gameinfo['Park']==selected_home_team]
-    this_gameinfo['Favorite'] = np.where(this_gameinfo['moneyline']<-100,1,0)
-    this_favorite = this_gameinfo[this_gameinfo['Favorite']==1]['team'].iloc[0]
-    this_favorite_odds = this_gameinfo[this_gameinfo['Favorite']==1]['moneyline'].iloc[0]
-    this_over_under = this_gameinfo['overunder'].iloc[0]
+    try:
+        this_gameinfo = gameinfo[gameinfo['Park']==selected_home_team]
+        this_gameinfo['Favorite'] = np.where(this_gameinfo['moneyline']<-100,1,0)
+        this_favorite = this_gameinfo[this_gameinfo['Favorite']==1]['team'].iloc[0]
+        this_favorite_odds = this_gameinfo[this_gameinfo['Favorite']==1]['moneyline'].iloc[0]
+        this_over_under = this_gameinfo['overunder'].iloc[0]
+    except:
+        this_favorite=''
+        this_favorite_odds=''
+        this_over_under=''
     #st.write(this_gameinfo)
 
     # Get pitcher matchups
