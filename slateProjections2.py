@@ -224,7 +224,6 @@ def applyColor_HitStat(val, column):
             return f'background-color: {color2}'
         elif val < .2:
             return f'background-color: {color1}'      
-
 def applyColor_PitchStat(val, column):
     if column == 'K%':
         if val >= .3:
@@ -281,7 +280,6 @@ def applyColor_PitchStat(val, column):
             return f'background-color: {color4}'
         elif val < .31:
             return f'background-color: {color5}'
-    
 def applyColor_PitchProj(val, column):
     if column == 'Sal':
         if val >= 10000:
@@ -415,8 +413,6 @@ def applyColor_PitchProj(val, column):
             return f'background-color: {color2}'
         elif val < 25:
             return f'background-color: {color1}'
-
-
 def applyColor_HitProj(val, column):
     if column == 'Sal':
         if val >= 5500:
@@ -492,6 +488,9 @@ def color_cells_HitMatchups(df_subset):
 # Load data
 logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim = load_data()
 
+logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim = load_data()
+
+
 # Compile game list (unchanged)
 games_df = pitcherproj[['Team', 'Opponent', 'HomeTeam']].drop_duplicates()
 games_df['RoadTeam'] = np.where(games_df['Team'] == games_df['HomeTeam'], games_df['Opponent'], games_df['Team'])
@@ -509,6 +508,12 @@ def get_player_image(player_id):
 st.sidebar.image(logo, width=150)  # Added logo to sidebar
 st.sidebar.title("MLB Projections")
 tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections"], help="Choose a view to analyze games or player projections.")
+if "reload" not in st.session_state:
+    st.session_state.reload = False
+
+if st.sidebar.button("Reload Data"):
+    st.session_state.reload = True
+    st.cache_data.clear()  # Clear cache to force reload
 
 # Main content
 st.markdown(f"<center><h1>⚾ MLB DW Slate Analysis Tool ⚾</h1></center>", unsafe_allow_html=True)
@@ -519,6 +524,7 @@ if tab == "Game Previews":
 
     selected_home_team = selected_game.split('@')[1]
     selected_road_team = selected_game.split('@')[0]
+
 
     these_sim = h_vs_sim[h_vs_sim['Team'].isin([selected_home_team,selected_road_team])]
 
