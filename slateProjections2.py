@@ -540,7 +540,9 @@ if tab == "Game Previews":
         this_favorite = this_gameinfo[this_gameinfo['Favorite']==1]['team'].iloc[0]
         this_favorite_odds = this_gameinfo[this_gameinfo['Favorite']==1]['moneyline'].iloc[0]
         this_over_under = this_gameinfo['overunder'].iloc[0]
+        game_info_fail = 'N'
     except:
+        game_info_fail = 'Y'
         this_favorite=''
         this_favorite_odds=''
         this_over_under=''
@@ -574,7 +576,8 @@ if tab == "Game Previews":
     with col2:
         st.markdown(f"<center><h2>{game_name}</h2></center>", unsafe_allow_html=True)
         st.markdown(f"<center><h4>{road_sp_name} vs. {home_sp_name}</h4></center>", unsafe_allow_html=True)
-        st.markdown(f"<center><h5>{this_favorite} ({this_favorite_odds}), O/U: {this_over_under}</h5></center>",unsafe_allow_html=True)
+        if game_info_fail == 'N':
+            st.markdown(f"<center><h5>{this_favorite} ({this_favorite_odds}), O/U: {this_over_under}</h5></center>",unsafe_allow_html=True)
         
         weather_cond = this_weather['Conditions'].iloc[0]
         weather_temp = this_weather['Temp'].iloc[0]
