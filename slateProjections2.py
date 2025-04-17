@@ -700,10 +700,8 @@ if tab == "Game Previews":
         col1, col2 = st.columns([1,1])
         with col1:
             road_bp_unavail = road_bullpen_team['Unavailable'].iloc[0]
-            if math.isnan(road_bp_unavail):
-                st.markdown(f"<h4>{selected_road_team} Bullpen</h4>", unsafe_allow_html=True)
-            else:
-                st.markdown(f"<h4>{selected_road_team} Bullpen {road_bp_unavail}</h4>", unsafe_allow_html=True)
+            st.markdown(f"<h4>{selected_road_team} Bullpen</h4>", unsafe_allow_html=True)
+                
             show_road_bullpen = road_bullpen_team[['Rank','K%','BB%','K-BB%','SwStr%','xwOBA','xERA']]
             st.dataframe(show_road_bullpen, hide_index=True)
             try:
