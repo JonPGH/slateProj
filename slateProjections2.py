@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas as pd
+import pandas as pd, math
 import os
 import requests
 import numpy as np
@@ -14,7 +14,7 @@ st.markdown(
     <style>
     /* Base styling */
     .stApp {
-        background-color: #F5F6F5; /* Light gray background for a clean look */
+        background-color: white; /* #F5F6F5; Light gray background for a clean look */
         font-family: 'Roboto', sans-serif; /* Modern font */
     }
     h1, h2, h3, h4 {
@@ -90,7 +90,9 @@ def load_data():
     h_vs_sim = pd.read_csv(f'{file_path}/hitters_vs_sim_data.csv')
     logo = "{}/Logo.jpeg".format(file_path)
     gameinfo = pd.read_csv(f'{file_path}/gameinfo.csv')
-    return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim
+    bpreport = pd.read_csv(f'{file_path}/BullpenReport.csv')
+    rpstats = pd.read_csv(f'{file_path}/relieverstats.csv')
+    return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats
 
 color1='#FFBABA'
 color2='#FFCC99'
@@ -469,28 +471,43 @@ def applyColor_HitProj(val, column):
             return f'background-color: {color2}'
         elif val < .05:
             return f'background-color: {color1}'
+def applyColor_Props(val, column):
+    if column == 'BetValue':
+        if val >= .2:
+            return f'background-color: {color1}'
+        elif val >= .15:
+            return f'background-color: {color2}'
+        elif val >= .1:
+            return f'background-color: {color3}'
+        elif val < .1:
+            return f'background-color: {color5}'
 
+    if column == 'Price':
+        if val >= 150:
+            return f'background-color: {color5}'
+        elif val >= 100:
+            return f'background-color: {color4}'
+        elif val >= -150:
+            return f'background-color: {color3}'
+        elif val >= -200:
+            return f'background-color: {color2}'
+        elif val < -200:
+            return f'background-color: {color1}'
 def color_cells_PitchProj(df_subset):
     return [applyColor_PitchProj(val, col) for val, col in zip(df_subset, df_subset.index)]
-
 def color_cells_HitProj(df_subset):
     return [applyColor_HitProj(val, col) for val, col in zip(df_subset, df_subset.index)]
-
 def color_cells_PitchStat(df_subset):
     return [applyColor_PitchStat(val, col) for val, col in zip(df_subset, df_subset.index)]
-
 def color_cells_HitStat(df_subset):
     return [applyColor_HitStat(val, col) for val, col in zip(df_subset, df_subset.index)]
-
 def color_cells_HitMatchups(df_subset):
     return [applyColor_HitMatchups(val, col) for val, col in zip(df_subset, df_subset.index)]
+def color_cells_Props(df_subset):
+    return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
 # Load data
-logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim = load_data()
-
-logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim = load_data()
-
-
+logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats = load_data()
 # Compile game list (unchanged)
 games_df = pitcherproj[['Team', 'Opponent', 'HomeTeam']].drop_duplicates()
 games_df['RoadTeam'] = np.where(games_df['Team'] == games_df['HomeTeam'], games_df['Opponent'], games_df['Team'])
@@ -500,6 +517,11 @@ hitterproj['RoadTeam'] = np.where(hitterproj['Team'] == 'HomeTeam', 'Opp', hitte
 hitterproj['GameString'] = hitterproj['RoadTeam'] + '@' + hitterproj['Park']
 pitcherproj['RoadTeam'] = np.where(pitcherproj['Team'] == pitcherproj['HomeTeam'], pitcherproj['Opponent'], pitcherproj['Team'])
 pitcherproj['GameString'] = pitcherproj['RoadTeam'] + '@' + pitcherproj['HomeTeam']
+bpreport['BP Rank'] = bpreport['xERA'].rank()
+bpreport = bpreport.sort_values(by='BP Rank')
+bpreport['BP Rank'] = range(1,len(bpreport)+1)
+bpcount = len(bpreport)
+bpreport['Rank'] = bpreport['BP Rank'].astype(str) + ' / ' + str(bpcount)
 
 def get_player_image(player_id):
     return f'https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_426,q_auto:best/v1/people/{player_id}/headshot/67/current'
@@ -514,6 +536,7 @@ if "reload" not in st.session_state:
 if st.sidebar.button("Reload Data"):
     st.session_state.reload = True
     st.cache_data.clear()  # Clear cache to force reload
+    #logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim = load_data()
 
 # Main content
 st.markdown(f"<center><h1>⚾ MLB DW Slate Analysis Tool ⚾</h1></center>", unsafe_allow_html=True)
@@ -525,6 +548,14 @@ if tab == "Game Previews":
     selected_home_team = selected_game.split('@')[1]
     selected_road_team = selected_game.split('@')[0]
 
+    road_bullpen_team = bpreport[bpreport['Team']==selected_road_team]
+    road_bullpen_rp = rpstats[rpstats['Team']==selected_road_team]
+
+    home_bullpen_team = bpreport[bpreport['Team']==selected_home_team]
+    home_bullpen_rp = rpstats[rpstats['Team']==selected_home_team]
+
+    #st.write(road_bullpen_team)
+    #st.write(road_bullpen_rp)
 
     these_sim = h_vs_sim[h_vs_sim['Team'].isin([selected_home_team,selected_road_team])]
 
@@ -559,8 +590,13 @@ if tab == "Game Previews":
     home_sp_projection = these_pitcherproj[these_pitcherproj['Pitcher'] == home_sp_name]
     p_stats_cols = ['IP', 'K%', 'BB%', 'SwStr%', 'Ball%', 'xwOBA']
     road_sp_stats = pitcher_stats[pitcher_stats['Pitcher'] == road_sp_name]
+    road_sp_hand = road_sp_stats['Hand'].iloc[0]
     home_sp_stats = pitcher_stats[pitcher_stats['Pitcher'] == home_sp_name]
+    home_sp_hand = home_sp_stats['Hand'].iloc[0]
 
+    pitcher_props = props_df[props_df['Player'].isin([road_sp_name,home_sp_name])]
+    pitcher_props = pitcher_props[pitcher_props['Type']!='pitcher_outs']
+    #st.write(pitcher_props)
     # Player profiles in cards
     col1, col2, col3 = st.columns([2, 4, 2])
     with col1:
@@ -655,13 +691,46 @@ if tab == "Game Previews":
             'K%': '{:.1%}', 'BB%': '{:.1%}', 'SwStr%': '{:.1%}', 'Ball%': '{:.1%}', 'xwOBA': '{:.3f}', 'IP': '{:.1f}'
         })
         st.dataframe(styled_df, hide_index=True, use_container_width=True)
+    
+    # Bullpens
+    checked = st.checkbox("Show Bullpens", value=False, key=None, help=None, on_change=None)
+    if checked:
+        #st.write("Checkbox is checked!")
+
+        col1, col2 = st.columns([1,1])
+        with col1:
+            road_bp_unavail = road_bullpen_team['Unavailable'].iloc[0]
+            if math.isnan(road_bp_unavail):
+                st.markdown(f"<h4>{selected_road_team} Bullpen</h4>", unsafe_allow_html=True)
+            else:
+                st.markdown(f"<h4>{selected_road_team} Bullpen {road_bp_unavail}</h4>", unsafe_allow_html=True)
+            show_road_bullpen = road_bullpen_team[['Rank','K%','BB%','K-BB%','SwStr%','xwOBA','xERA']]
+            st.dataframe(show_road_bullpen, hide_index=True)
+            try:
+                if len(road_bp_unavail)>1:
+                    st.write(f'Unavailable: {road_bp_unavail}')
+            except:
+                pass
+        with col2:
+            home_bp_unavail = home_bullpen_team['Unavailable'].iloc[0]
+            #st.write(home_bp_unavail)
+            st.markdown(f"<h4>{selected_home_team} Bullpen </h4>", unsafe_allow_html=True)
+
+            show_home_bullpen = home_bullpen_team[['Rank','K%','BB%','K-BB%','SwStr%','xwOBA','xERA']]
+            st.dataframe(show_home_bullpen, hide_index=True)
+            try:
+                if len(home_bp_unavail)>1:
+                    st.write(f'Unavailable: {home_bp_unavail}')
+            except:
+                pass
+
 
     # Hitter projections/stats
-    col1, col2 = st.columns([1, 5])
+    col1, col2 = st.columns([1, 3])
     with col1:
         option = st.selectbox(
             label="View Options",
-            options=["Projections", "Stats", "Splits", "Matchups", "Best Matchups"],
+            options=["Best Matchups", "Projections", "Stats", "Splits", "Matchups", "Props"],
             index=0,
             help="Choose to view hitter projections, stats, or splits."
         )
@@ -714,7 +783,7 @@ if tab == "Game Previews":
         elif option == 'Splits':
             col1, col2 = st.columns(2)
             with col1:
-                st.markdown(f"<h4>{selected_road_team} Splits</h4>", unsafe_allow_html=True)
+                st.markdown(f"<h4>{selected_road_team} vs. {home_sp_hand}HB</h4>", unsafe_allow_html=True)
                 road_hitter_splits = road_hitter_stats[['Hitter', 'Split PA', 'Split K%', 'Split BB%', 'Split Brl%', 'Split xwOBA', 'Split FB%']]
                 road_hitter_splits.columns = ['Hitter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']
                 styled_df = road_hitter_splits.style.apply(
@@ -724,7 +793,7 @@ if tab == "Game Previews":
                 })
                 st.dataframe(styled_df, hide_index=True, use_container_width=True)
             with col2:
-                st.markdown(f"<h4>{selected_home_team} Splits</h4>", unsafe_allow_html=True)
+                st.markdown(f"<h4>{selected_home_team} vs. {road_sp_hand}HB</h4>", unsafe_allow_html=True)
                 home_hitter_splits = home_hitter_stats[['Hitter', 'Split PA', 'Split K%', 'Split BB%', 'Split Brl%', 'Split xwOBA', 'Split FB%']]
                 home_hitter_splits.columns = ['Hitter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']
                 styled_df = home_hitter_splits.style.apply(
@@ -792,6 +861,22 @@ if tab == "Game Previews":
                                                                                                         'FB%': '{:.1%}',
                                                                                                         'Hard%': '{:.1%}',})
             st.dataframe(styled_df, hide_index=True, use_container_width=True)
+    elif option == "Props":
+        game_hitter_list = list(hitterproj[hitterproj['Team'].isin([selected_road_team,selected_home_team])]['Hitter'])
+        hitter_props = props_df[props_df['Player'].isin(game_hitter_list)]
+        pitcher_props = pitcher_props[pitcher_props['Type']!='pitcher_outs']
+        game_props = pd.concat([hitter_props,pitcher_props])
+        game_props = game_props[['Player','Book','Type','OU','Line','Price','BetValue']].sort_values(by='BetValue',ascending=False)
+        game_props = game_props[game_props['BetValue']>=.1]
+        if len(game_props)>0:
+            styled_df = game_props.style.apply(color_cells_Props, subset=['BetValue','Price'], axis=1).format({'BetValue': '{:.1%}',
+                                                                                                                'Price': '{:.0f}',
+                                                                                                                'Line': '{:.1f}'})
+            st.dataframe(styled_df, hide_index=True, width=750)
+        else:
+            st.write('No recommended props for this game')
+
+        #pitcher_props
 
 st.markdown("""
     <style>
@@ -839,10 +924,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
-
-
-
 
 # Custom CSS for DataFrame and widget styling
 st.markdown("""
@@ -893,9 +974,54 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 if tab == "Pitcher Projections":
-    st.markdown("<h3>Pitcher Projections</h3>", unsafe_allow_html=True)
+    st.markdown("<h1>Pitcher Projections</h1>", unsafe_allow_html=True)
     st.markdown("Explore projected pitcher performance for MLB games. Filter by slate, team, or opponent to customize your view.", unsafe_allow_html=True)
+    pitcher_matchups = dict(zip(pitcherproj.Team,pitcherproj.Opponent))
+    p_vs_avg['Opp'] = p_vs_avg['Team'].map(pitcher_matchups)
+    top_five_proj = pitcherproj.sort_values(by='DKPts',ascending=False).head(5)
     
+    checked = st.checkbox("Show Projection Highlights", value=False, key=None, help=None, on_change=None)
+    if checked:
+        #st.write("Checkbox is checked!")
+        st.markdown("<h4>Top Projections</h4>", unsafe_allow_html=True)
+        col1,col2,col3,col4,col5 = st.columns([1,1,1,1,1])
+        with col1:
+            st.image(get_player_image(top_five_proj['ID'].iloc[0]),width=120)
+            pname = top_five_proj['Pitcher'].iloc[0]
+            dk = str(top_five_proj['DKPts'].iloc[0])
+            st.write(f'{pname}: {dk}Pts')
+        with col2:
+            st.image(get_player_image(top_five_proj['ID'].iloc[1]),width=120)
+            pname = top_five_proj['Pitcher'].iloc[1]
+            dk = str(top_five_proj['DKPts'].iloc[1])
+            st.write(f'{pname}: {dk}Pts')
+        with col3:
+            st.image(get_player_image(top_five_proj['ID'].iloc[2]),width=120)
+            pname = top_five_proj['Pitcher'].iloc[2]
+            dk = str(top_five_proj['DKPts'].iloc[2])
+            st.write(f'{pname}: {dk}Pts')
+        with col4:
+            st.image(get_player_image(top_five_proj['ID'].iloc[3]),width=120)
+            pname = top_five_proj['Pitcher'].iloc[3]
+            dk = str(top_five_proj['DKPts'].iloc[3])
+            st.write(f'{pname}: {dk}Pts')
+        with col5:
+            st.image(get_player_image(top_five_proj['ID'].iloc[4]),width=120)
+            pname = top_five_proj['Pitcher'].iloc[4]
+            dk = str(top_five_proj['DKPts'].iloc[4])
+            st.write(f'{pname}: {dk}Pts')
+        
+        col1, col2 = st.columns([1,1])
+        with col1:
+            st.markdown("<h4>Highest Projection Over Season Average</h4>", unsafe_allow_html=True)
+            show_p_vs_avg = p_vs_avg[['Pitcher','Team','Opp','DKPts','Avg DK Proj','DKPts Diff']].sort_values(by='DKPts Diff',ascending=False)
+            show_p_vs_avg = show_p_vs_avg.head(5)
+            st.dataframe(show_p_vs_avg,hide_index=True)
+        with col2:
+            st.markdown("<h4>Lowest Projection Over Season Average</h4>", unsafe_allow_html=True)
+            show_p_vs_avg = p_vs_avg[['Pitcher','Team','Opp','DKPts','Avg DK Proj','DKPts Diff']].sort_values(by='DKPts Diff',ascending=True)
+            show_p_vs_avg = show_p_vs_avg.head(5)
+            st.dataframe(show_p_vs_avg,hide_index=True)
     # Create three columns for filters
     col1, col2, col3 = st.columns([1, 1, 1])
     
