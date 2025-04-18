@@ -1196,6 +1196,9 @@ if tab == "Hitter Projections":
     hitter_matchups_pp_dict = dict(zip(hitterproj.Team,hitterproj.OppSP))
     hitter_park_dict = dict(zip(hitterproj.Team,hitterproj.Park))
     hitterproj['Value'] = round(hitterproj['DKPts']/(hitterproj['Sal']/1000),2)
+    h_vs_avg['Opp'] = h_vs_avg['Team'].map(hitter_matchups_dict)
+    h_vs_avg['OppSP'] = h_vs_avg['Team'].map(hitter_matchups_pp_dict)
+    
     st.markdown("<h3>Hitter Projections</h3>", unsafe_allow_html=True)
     st.markdown("Explore projected hitter performance for MLB games. Filter by slate, team, or position to customize your view.", unsafe_allow_html=True)
     col1,col2,col3,col4 = st.columns([1,1,1,1])
@@ -1282,20 +1285,20 @@ if tab == "Hitter Projections":
         col1, col2 = st.columns([1,2])
         with col1:
             if main_slate_check:
-                teamproj = hitterproj[hitterproj['MainSlate']=='Main'].groupby('Team',as_index=False)[['DKPts','R','HR','SB']].sum()
+                teamproj = hitterproj[hitterproj['MainSlate']=='Main'].groupby(['Team','Opp','OppSP'],as_index=False)[['DKPts','R','HR','SB']].sum()
                 teamproj = teamproj.sort_values(by='DKPts',ascending=False)
                 styled_df = teamproj.style.format({'DKPts': '{:.2f}', 'R': '{:.2f}', 'HR': '{:.2f}', 'SB': '{:.2f}'})                         
                 st.dataframe(styled_df,hide_index=True)
             else:
-                teamproj = hitterproj.groupby('Team',as_index=False)[['DKPts','R','HR','SB']].sum()
+                teamproj = hitterproj.groupby(['Team','Opp','OppSP'],as_index=False)[['DKPts','R','HR','SB']].sum()
                 teamproj = teamproj.sort_values(by='DKPts',ascending=False)
                 styled_df = teamproj.style.format({'DKPts': '{:.2f}', 'R': '{:.2f}', 'HR': '{:.2f}', 'SB': '{:.2f}'})                         
                 st.dataframe(styled_df,hide_index=True)
         with col2:
             if main_slate_check:
                 mainslateteams = list(hitterproj[hitterproj['MainSlate']=='Main']['Team'])
-                team_v_avg = h_vs_avg[h_vs_avg['Team'].isin(mainslateteams)].groupby('Team',as_index=False)[['HR','Avg HR Proj','DKPts','Avg DK Proj']].sum()
-                team_v_avg.columns=['Team','Today HR','Season HR','Today DK','Season DK']
+                team_v_avg = h_vs_avg[h_vs_avg['Team'].isin(mainslateteams)].groupby(['Team','Opp','OppSP'],as_index=False)[['HR','Avg HR Proj','DKPts','Avg DK Proj']].sum()
+                team_v_avg.columns=['Team','Opp','OppSP','Today HR','Season HR','Today DK','Season DK']
                 team_v_avg['Today HR Boost'] = round(team_v_avg['Today HR']/team_v_avg['Season HR'],3)
                 team_v_avg['Today DK Boost'] = round(team_v_avg['Today DK']/team_v_avg['Season DK'],3)
                 team_v_avg = team_v_avg.sort_values(by='Today DK Boost',ascending=False)
@@ -1306,8 +1309,8 @@ if tab == "Hitter Projections":
                                                     'Season DK': '{:.2f}'})                         
                 st.dataframe(styled_df,hide_index=True)
             else:
-                team_v_avg = h_vs_avg.groupby('Team',as_index=False)[['HR','Avg HR Proj','DKPts','Avg DK Proj']].sum()
-                team_v_avg.columns=['Team','Today HR','Season HR','Today DK','Season DK']
+                team_v_avg = h_vs_avg.groupby(['Team','Opp','OppSP'],as_index=False)[['HR','Avg HR Proj','DKPts','Avg DK Proj']].sum()
+                team_v_avg.columns=['Team','Opp','OppSP','Today HR','Season HR','Today DK','Season DK']
                 team_v_avg['Today HR Boost'] = round(team_v_avg['Today HR']/team_v_avg['Season HR'],3)
                 team_v_avg['Today DK Boost'] = round(team_v_avg['Today DK']/team_v_avg['Season DK'],3)
                 team_v_avg = team_v_avg.sort_values(by='Today DK Boost',ascending=False)
