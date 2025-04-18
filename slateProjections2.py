@@ -477,15 +477,37 @@ if check_password():
             elif val < 2500:
                 return f'background-color: {color5}'
         if column == 'DKPts':
-            if val >= 12:
+            if val >= 11:
                 return f'background-color: {color5}'
-            elif val >= 10:
+            elif val >= 9.5:
                 return f'background-color: {color4}'
             elif val >= 7.5:
                 return f'background-color: {color3}'
             elif val >= 6:
                 return f'background-color: {color2}'
             elif val < 6:
+                return f'background-color: {color1}'
+        if column == 'Avg DK Proj':
+            if val >= 11:
+                return f'background-color: {color5}'
+            elif val >= 9.5:
+                return f'background-color: {color4}'
+            elif val >= 7.5:
+                return f'background-color: {color3}'
+            elif val >= 6:
+                return f'background-color: {color2}'
+            elif val < 6:
+                return f'background-color: {color1}'
+        if column == 'DKPts Diff':
+            if val >= 1.5:
+                return f'background-color: {color5}'
+            elif val >= 1:
+                return f'background-color: {color4}'
+            elif val >= .5:
+                return f'background-color: {color3}'
+            elif val >= 0:
+                return f'background-color: {color2}'
+            elif val < 0:
                 return f'background-color: {color1}'
         if column == 'Value':
             if val >= 3.2:
@@ -1347,76 +1369,127 @@ if check_password():
                     st.dataframe(styled_df,hide_index=True)
 
         st.markdown("<hr><h1>Full Projections</h1>",unsafe_allow_html=True)
-        # Create three columns for filters
-        col1, col2, col3 = st.columns([1, 1, 1])
         
+        col1, col2 = st.columns([1,3])
         with col1:
-            # Radio button for slate selection
-            option = st.selectbox(
-                label="Slate",
-                options=["Show All", "Main Slate Only"],
+            hproj_option = st.selectbox(
+                label="What Type To Show",
+                options=["Todays Projections", "Today vs. Season Avg"],
                 index=0,
                 help="Choose to view all games or only the main slate.",
-                key="slate_filter"
-            )
+                key="projtype")
+                    
+        if hproj_option == 'Todays Projections':
+            # Create three columns for filters
+            col1, col2, col3 = st.columns([1, 1, 1])
+
+            
+            with col1:
+                # Radio button for slate selection
+                option = st.selectbox(
+                    label="Slate",
+                    options=["Show All", "Main Slate Only"],
+                    index=0,
+                    help="Choose to view all games or only the main slate.",
+                    key="slate_filter"
+                )
+            
+            with col2:
+                # Dropdown for team selection
+                teams = ['All Teams'] + sorted(hitterproj['Team'].dropna().unique().tolist())
+                team_filter = st.selectbox(
+                    label="Filter by Team",
+                    options=teams,
+                    index=0,
+                    help="Select a team to filter players.",
+                    key="team_filter"
+                )
+            
+            with col3:
+                # Text input for filtering by position
+                pos_filter = st.text_input(
+                    label="Filter by Position",
+                    placeholder="Enter position (e.g., OF, SS)",
+                    help="Type a position to filter players (case-insensitive).",
+                    key="pos_filter"
+                )
+            
+            # Filter DataFrame based on slate selection
+            if option == "Main Slate Only":
+                show_hproj = hitterproj[hitterproj['MainSlate'] == 'Main']
+            else:
+                show_hproj = hitterproj.copy()
+            
+            # Apply team filter if not 'All Teams'
+            if team_filter != 'All Teams':
+                show_hproj = show_hproj[show_hproj['Team'] == team_filter]
+            
+            # Apply position filter if input is provided
+            if pos_filter:
+                show_hproj = show_hproj[show_hproj['Pos'].str.contains(pos_filter, case=False, na=False)]
+            
+            # Rename and select columns
+            show_hproj = show_hproj.rename({'Ownership': 'Own%'}, axis=1)
+            show_hproj = show_hproj[['Hitter', 'Pos', 'Team', 'Sal', 'Opp', 'Park', 'OppSP', 'LU', 'DKPts', 'Value', 'HR', 'SB', 'Floor', 'Ceil', 'Own%']]
+            
+            # Apply styling and formatting
+            styled_df = show_hproj.style.apply(
+                color_cells_HitProj, subset=['DKPts', 'Value', 'Sal', 'HR', 'SB'], axis=1
+            ).format({
+                'DKPts': '{:.2f}', 
+                'Value': '{:.2f}', 
+                'Sal': '${:,.0f}', 
+                'Floor': '{:.2f}', 
+                'Ceil': '{:.2f}', 
+                'PA': '{:.1f}', 
+                'R': '{:.2f}', 
+                'HR': '{:.2f}', 
+                'RBI': '{:.2f}', 
+                'SB': '{:.2f}', 
+                'Own%': '{:.0f}'
+            }).set_table_styles([
+                {'selector': 'th', 'props': [('text-align', 'left'), ('font-weight', 'bold')]},
+                {'selector': 'td', 'props': [('text-align', 'left')]}
+            ])
+            
+            # Display the styled DataFrame
+            st.dataframe(styled_df, use_container_width=True, hide_index=True, height=600)
         
-        with col2:
-            # Dropdown for team selection
-            teams = ['All Teams'] + sorted(hitterproj['Team'].dropna().unique().tolist())
-            team_filter = st.selectbox(
-                label="Filter by Team",
-                options=teams,
-                index=0,
-                help="Select a team to filter players.",
-                key="team_filter"
-            )
-        
-        with col3:
-            # Text input for filtering by position
-            pos_filter = st.text_input(
-                label="Filter by Position",
-                placeholder="Enter position (e.g., OF, SS)",
-                help="Type a position to filter players (case-insensitive).",
-                key="pos_filter"
-            )
-        
-        # Filter DataFrame based on slate selection
-        if option == "Main Slate Only":
-            show_hproj = hitterproj[hitterproj['MainSlate'] == 'Main']
-        else:
-            show_hproj = hitterproj.copy()
-        
-        # Apply team filter if not 'All Teams'
-        if team_filter != 'All Teams':
-            show_hproj = show_hproj[show_hproj['Team'] == team_filter]
-        
-        # Apply position filter if input is provided
-        if pos_filter:
-            show_hproj = show_hproj[show_hproj['Pos'].str.contains(pos_filter, case=False, na=False)]
-        
-        # Rename and select columns
-        show_hproj = show_hproj.rename({'Ownership': 'Own%'}, axis=1)
-        show_hproj = show_hproj[['Hitter', 'Pos', 'Team', 'Sal', 'Opp', 'Park', 'OppSP', 'LU', 'DKPts', 'Value', 'HR', 'SB', 'Floor', 'Ceil', 'Own%']]
-        
-        # Apply styling and formatting
-        styled_df = show_hproj.style.apply(
-            color_cells_HitProj, subset=['DKPts', 'Value', 'Sal', 'HR', 'SB'], axis=1
-        ).format({
-            'DKPts': '{:.2f}', 
-            'Value': '{:.2f}', 
-            'Sal': '${:,.0f}', 
-            'Floor': '{:.2f}', 
-            'Ceil': '{:.2f}', 
-            'PA': '{:.1f}', 
-            'R': '{:.2f}', 
-            'HR': '{:.2f}', 
-            'RBI': '{:.2f}', 
-            'SB': '{:.2f}', 
-            'Own%': '{:.0f}'
-        }).set_table_styles([
-            {'selector': 'th', 'props': [('text-align', 'left'), ('font-weight', 'bold')]},
-            {'selector': 'td', 'props': [('text-align', 'left')]}
-        ])
-        
-        # Display the styled DataFrame
-        st.dataframe(styled_df, use_container_width=True, hide_index=True, height=600)
+        elif hproj_option == "Today vs. Season Avg":
+            needed_proj_data = hitterproj[['Hitter','Sal','Pos']]
+            h_vs_avg = pd.merge(h_vs_avg,needed_proj_data,on=['Hitter'])
+            if main_slate_check:
+                h_vs_avg = h_vs_avg[h_vs_avg['Team'].isin(mainslateteams)]
+            else:
+                pass
+
+            team_options = ['All'] + list(h_vs_avg['Team'].unique())
+            col1, col2, col3= st.columns([1,1,2])
+            with col1:
+                selected_team = st.selectbox('Select a Team', team_options)
+            with col2:
+                pos_filter = st.text_input(
+                    label="Filter by Position",
+                    placeholder="Enter position (e.g., OF, SS)",
+                    help="Type a position to filter players (case-insensitive).",
+                    key="pos_filter"
+                )
+            
+            if selected_team == 'All':
+                filtered_havg = h_vs_avg.copy()
+            else:
+                filtered_havg = h_vs_avg[h_vs_avg['Team']==selected_team]
+            
+            if pos_filter:
+                filtered_havg = filtered_havg[filtered_havg['Pos'].str.contains(pos_filter, case=False, na=False)]
+
+            show_proj_df = filtered_havg[['Hitter','Team','Sal','Pos','Opp','OppSP','DKPts','Avg DK Proj','DKPts Diff']]
+            styled_df = show_proj_df.style.apply(
+                color_cells_HitProj, subset=['DKPts', 'Sal', 'Avg DK Proj','DKPts Diff'], axis=1).format({
+                    'DKPts': '{:.2f}', 'Sal': '${:,.0f}',
+                    'Avg DK Proj': '{:.2f}', 'DKPts Diff': '{:.2f}', })
+            
+            if len(show_proj_df)>20:
+                st.dataframe(styled_df,hide_index=True,width=850,height=600)
+            else:
+                st.dataframe(styled_df,hide_index=True,width=850)
