@@ -691,7 +691,6 @@ if check_password():
         is_home_p_cold = home_sp_stats['IsCold'].iloc[0]
         if is_home_p_hot == 1:
             home_p_emoji = '🔥'
-            st.write('home hot')
         elif is_home_p_cold == 1:
             home_p_emoji = '🥶'
         else:
