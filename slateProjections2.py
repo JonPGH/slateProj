@@ -8,7 +8,9 @@ import matplotlib.pyplot as plt
 # Initialize session state for authentication
 if 'authenticated' not in st.session_state:
     st.session_state.authenticated = False
+
 # Define the correct password (replace with your desired password)
+#st.markdown("<h1>Enter Password to Access Slate Analysis Tool",unsafe_allow_html=True)
 CORRECT_PASSWORD = "chonefiggins"
 
 # Function to check password
@@ -1340,7 +1342,7 @@ if check_password():
 
                     styled_df = team_v_avg.style.format({'DKPts': '{:.2f}', 'R': '{:.2f}', 'HR': '{:.2f}', 'SB': '{:.2f}',
                                                         'Season HR': '{:.2f}', 'Today DK': '{:.2f}', 'Season DK': '{:.2f}',
-                                                        'Today HR': '{:.2f}','Today HR Boost': '{:.1%}', 'Today DK Boost': '{:.2f}',
+                                                        'Today HR': '{:.2f}','Today HR Boost': '{:.1%}', 'Today DK Boost': '{:.1%}',
                                                         'Season DK': '{:.2f}'})                         
                     st.dataframe(styled_df,hide_index=True)
 
