@@ -10,7 +10,7 @@ if 'authenticated' not in st.session_state:
     st.session_state.authenticated = False
 
 # Define the correct password (replace with your desired password)
-CORRECT_PASSWORD = "my_secure_password"
+CORRECT_PASSWORD = "chonefiggins"
 
 # Function to check password
 def check_password():
