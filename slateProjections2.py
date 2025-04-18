@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 # Initialize session state for authentication
 if 'authenticated' not in st.session_state:
     st.session_state.authenticated = False
-st.markdown("<h1>Enter Password to Access Slate Analysis Tool",unsafe_allow_html=True)
 # Define the correct password (replace with your desired password)
 CORRECT_PASSWORD = "chonefiggins"
 
