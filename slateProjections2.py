@@ -78,6 +78,7 @@ def load_data():
     file_path = os.path.join(base_dir, 'Data')
     hitterproj = pd.read_csv(f'{file_path}/hitter_proj_withids.csv')
     pitcherproj = pd.read_csv(f'{file_path}/Tableau_DailyPitcherProj.csv')
+    hitterproj2 = pd.read_csv(f'{file_path}/Tableau_DailyHitterProj.csv')
     propsdf = pd.read_csv(f'{file_path}/betValues.csv')
     hitter_stats = pd.read_csv(f'{file_path}/hitterData.csv')
     hitter_stats = hitter_stats.drop_duplicates(subset=['ID'])
@@ -92,7 +93,7 @@ def load_data():
     gameinfo = pd.read_csv(f'{file_path}/gameinfo.csv')
     bpreport = pd.read_csv(f'{file_path}/BullpenReport.csv')
     rpstats = pd.read_csv(f'{file_path}/relieverstats.csv')
-    return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats
+    return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2
 
 color1='#FFBABA'
 color2='#FFCC99'
@@ -229,15 +230,26 @@ def applyColor_HitStat(val, column):
 def applyColor_PitchStat(val, column):
     if column == 'K%':
         if val >= .3:
-            return 'background-color: #FFBABA'
+            return f'background-color:{color5}'
         elif val >= .26:
-            return 'background-color: #FFCC99'
+            return f'background-color:{color4}'
         elif val >= .23:
-            return 'background-color: #FFFF99'
+            return f'background-color:{color3}'
         elif val >= .2:
-            return 'background-color: #CCFF99'
+            return f'background-color:{color2}'
         elif val < .2:
-            return 'background-color: #99FF99'
+            return f'background-color:{color1}'
+    if column == 'K-BB%':
+        if val >= .2:
+            return f'background-color:{color5}'
+        elif val >= .18:
+            return f'background-color:{color4}'
+        elif val >= .16:
+            return f'background-color:{color3}'
+        elif val >= .13:
+            return f'background-color:{color2}'
+        elif val < .13:
+            return f'background-color:{color1}'
     if column == 'BB%':
         if val >= .11:
             return f'background-color: {color1}'
@@ -282,6 +294,18 @@ def applyColor_PitchStat(val, column):
             return f'background-color: {color4}'
         elif val < .31:
             return f'background-color: {color5}'
+    if column == 'xERA':
+        if val >= .37*13.4:
+            return f'background-color: {color1}'
+        elif val >= .35*13.4:
+            return f'background-color: {color2}'
+        elif val >= .33*13.4:
+            return f'background-color: {color3}'
+        elif val >= .31*13.4:
+            return f'background-color: {color4}'
+        elif val < .31*13.4:
+            return f'background-color: {color5}'
+
 def applyColor_PitchProj(val, column):
     if column == 'Sal':
         if val >= 10000:
@@ -507,8 +531,7 @@ def color_cells_Props(df_subset):
     return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
 # Load data
-logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats = load_data()
-# Compile game list (unchanged)
+logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2 = load_data()
 games_df = pitcherproj[['Team', 'Opponent', 'HomeTeam']].drop_duplicates()
 games_df['RoadTeam'] = np.where(games_df['Team'] == games_df['HomeTeam'], games_df['Opponent'], games_df['Team'])
 games_df['GameString'] = games_df['RoadTeam'] + '@' + games_df['HomeTeam']
@@ -522,6 +545,19 @@ bpreport = bpreport.sort_values(by='BP Rank')
 bpreport['BP Rank'] = range(1,len(bpreport)+1)
 bpcount = len(bpreport)
 bpreport['Rank'] = bpreport['BP Rank'].astype(str) + ' / ' + str(bpcount)
+bpreport['K%'] = bpreport['K%']/100
+bpreport['BB%'] = bpreport['BB%']/100
+bpreport['K-BB%'] = bpreport['K-BB%']/100
+bpreport['SwStr%'] = bpreport['SwStr%']/100
+# add hitter emojis
+hot_hitters = list(hitter_stats[hitter_stats['IsHot']=='Y']['ID'])
+cold_hitters = list(hitter_stats[hitter_stats['IsCold']=='Y']['ID'])
+hitterproj['Hitter'] = np.where(hitterproj['ID'].isin(hot_hitters), hitterproj['Hitter'] + ' 🔥' ,hitterproj['Hitter'])
+hitterproj['Hitter'] = np.where(hitterproj['ID'].isin(cold_hitters), hitterproj['Hitter'] + ' 🥶' ,hitterproj['Hitter'])
+
+hitter_stats['Hitter'] = np.where(hitter_stats['ID'].isin(hot_hitters), hitter_stats['Hitter'] + ' 🔥' ,hitter_stats['Hitter'])
+hitter_stats['Hitter'] = np.where(hitter_stats['ID'].isin(cold_hitters), hitter_stats['Hitter'] + ' 🥶' ,hitter_stats['Hitter'])
+
 
 def get_player_image(player_id):
     return f'https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_426,q_auto:best/v1/people/{player_id}/headshot/67/current'
@@ -591,12 +627,32 @@ if tab == "Game Previews":
     p_stats_cols = ['IP', 'K%', 'BB%', 'SwStr%', 'Ball%', 'xwOBA']
     road_sp_stats = pitcher_stats[pitcher_stats['Pitcher'] == road_sp_name]
     road_sp_hand = road_sp_stats['Hand'].iloc[0]
+    is_road_p_hot = road_sp_stats['IsHot'].iloc[0]
+    is_road_p_cold = road_sp_stats['IsCold'].iloc[0]
+
+    if is_road_p_hot == 1:
+        road_p_emoji = '🔥'
+    elif is_road_p_cold == 1:
+        road_p_emoji = '🥶'
+    else:
+        road_p_emoji = ''
+    
     home_sp_stats = pitcher_stats[pitcher_stats['Pitcher'] == home_sp_name]
     home_sp_hand = home_sp_stats['Hand'].iloc[0]
-
+    is_home_p_hot = home_sp_stats['IsHot'].iloc[0]
+    is_home_p_cold = home_sp_stats['IsCold'].iloc[0]
+    if is_home_p_hot == 1:
+        home_p_emoji = '🔥'
+        st.write('home hot')
+    elif is_home_p_cold == 1:
+        home_p_emoji = '🥶'
+    else:
+        home_p_emoji = ''
+    
+    road_sp_show_name = road_sp_name + ' ' + road_p_emoji
+    home_sp_show_name = home_sp_name + ' ' + home_p_emoji
     pitcher_props = props_df[props_df['Player'].isin([road_sp_name,home_sp_name])]
     pitcher_props = pitcher_props[pitcher_props['Type']!='pitcher_outs']
-    #st.write(pitcher_props)
     # Player profiles in cards
     col1, col2, col3 = st.columns([2, 4, 2])
     with col1:
@@ -604,14 +660,14 @@ if tab == "Game Previews":
             f"""
             <div class="player-card">
                 <img src="{get_player_image(road_sp_pid)}" width="150" style="border-radius: 10px;">
-                <h4>{road_sp_name}</h4>
+                <h4>{road_sp_show_name}</h4>
             </div>
             """,
             unsafe_allow_html=True
         )
     with col2:
         st.markdown(f"<center><h2>{game_name}</h2></center>", unsafe_allow_html=True)
-        st.markdown(f"<center><h4>{road_sp_name} vs. {home_sp_name}</h4></center>", unsafe_allow_html=True)
+        st.markdown(f"<center><h5>{road_sp_show_name} vs. {home_sp_show_name}</h5></center>", unsafe_allow_html=True)
         if game_info_fail == 'N':
             st.markdown(f"<center><h5>{this_favorite} ({this_favorite_odds}), O/U: {this_over_under}</h5></center>",unsafe_allow_html=True)
         
@@ -629,12 +685,15 @@ if tab == "Game Previews":
             bb_boost = (this_game_ump['BB Boost'].iloc[0] - 1) * 100
             bb_symbol = '+' if bb_boost > 0 else '' if bb_boost == 0 else ''
             st.markdown(f"<center><b>Umpire: {umpname}<br>{k_symbol}{int(k_boost)}% K, {bb_symbol}{int(bb_boost)}% BB</b></center>", unsafe_allow_html=True)
+        
+        st.markdown("<br><center><font size=3>🔥 <i>= hot player</i>, 🥶 <i>= cold player</i></center></i></font>", unsafe_allow_html=True)
+    
     with col3:
         st.markdown(
             f"""
             <div class="player-card">
                 <img src="{get_player_image(home_sp_pid)}" width="150" style="border-radius: 10px;">
-                <h4>{home_sp_name}</h4>
+                <h4>{home_sp_show_name}</h4>
             </div>
             """,
             unsafe_allow_html=True
@@ -699,28 +758,67 @@ if tab == "Game Previews":
 
         col1, col2 = st.columns([1,1])
         with col1:
+            team_rp_list = rpstats[rpstats['Team']==selected_road_team]
+            team_rp_rhp = len(team_rp_list[team_rp_list['Hand']=='R'])
+            team_rp_lhp = len(team_rp_list[team_rp_list['Hand']=='L'])
             road_bp_unavail = road_bullpen_team['Unavailable'].iloc[0]
             st.markdown(f"<h4>{selected_road_team} Bullpen</h4>", unsafe_allow_html=True)
                 
             show_road_bullpen = road_bullpen_team[['Rank','K%','BB%','K-BB%','SwStr%','xwOBA','xERA']]
-            st.dataframe(show_road_bullpen, hide_index=True)
+            show_road_bullpen = road_bullpen_team[['Rank','K%','BB%','K-BB%','SwStr%','xwOBA','xERA']]
+            show_road_bullpen['RHP'] = team_rp_rhp
+            show_road_bullpen['LHP'] = team_rp_lhp
+
+            styled_df = show_road_bullpen.style.apply(
+                color_cells_PitchStat, subset=['K%','BB%','K-BB%','SwStr%','xwOBA','xERA'], axis=1).format({
+                    'K%': '{:.1%}','BB%': '{:.1%}', 'K-BB%': '{:.1%}','SwStr%': '{:.1%}','xwOBA': '{:.3f}','xERA': '{:.2f}'})
+            st.dataframe(styled_df, hide_index=True)
             try:
                 if len(road_bp_unavail)>1:
                     st.write(f'Unavailable: {road_bp_unavail}')
             except:
                 pass
+        
+            team_rp_list = team_rp_list[['Player','Hand','K%','BB%','SwStr%','estimated_woba_using_speedangle']]
+            team_rp_list = team_rp_list.rename({'estimated_woba_using_speedangle': 'xwOBA'},axis=1)
+            styled_df = team_rp_list.style.apply(
+                color_cells_PitchStat, subset=['K%','BB%','SwStr%','xwOBA'], axis=1).format({
+                    'K%': '{:.1%}','BB%': '{:.1%}', 'K-BB%': '{:.1%}','SwStr%': '{:.1%}','xwOBA': '{:.3f}','xERA': '{:.2f}'})
+            st.dataframe(styled_df, hide_index=True,width=500)
+
+        
+        
         with col2:
+            team_rp_list = rpstats[rpstats['Team']==selected_home_team]
+            team_rp_rhp = len(team_rp_list[team_rp_list['Hand']=='R'])
+            team_rp_lhp = len(team_rp_list[team_rp_list['Hand']=='L'])
+
             home_bp_unavail = home_bullpen_team['Unavailable'].iloc[0]
             #st.write(home_bp_unavail)
             st.markdown(f"<h4>{selected_home_team} Bullpen </h4>", unsafe_allow_html=True)
 
             show_home_bullpen = home_bullpen_team[['Rank','K%','BB%','K-BB%','SwStr%','xwOBA','xERA']]
-            st.dataframe(show_home_bullpen, hide_index=True)
+            show_home_bullpen['RHP'] = team_rp_rhp
+            show_home_bullpen['LHP'] = team_rp_lhp
+            
+            styled_df = show_home_bullpen.style.apply(
+                color_cells_PitchStat, subset=['K%','BB%','K-BB%','SwStr%','xwOBA','xERA'], axis=1).format({
+                    'K%': '{:.1%}','BB%': '{:.1%}', 'K-BB%': '{:.1%}','SwStr%': '{:.1%}','xwOBA': '{:.3f}','xERA': '{:.2f}'})
+            st.dataframe(styled_df, hide_index=True)
+
             try:
                 if len(home_bp_unavail)>1:
                     st.write(f'Unavailable: {home_bp_unavail}')
             except:
                 pass
+                
+            team_rp_list = team_rp_list[['Player','Hand','K%','BB%','SwStr%','estimated_woba_using_speedangle']]
+            team_rp_list = team_rp_list.rename({'estimated_woba_using_speedangle': 'xwOBA'},axis=1)
+            styled_df = team_rp_list.style.apply(
+                color_cells_PitchStat, subset=['K%','BB%','SwStr%','xwOBA'], axis=1).format({
+                    'K%': '{:.1%}','BB%': '{:.1%}', 'K-BB%': '{:.1%}','SwStr%': '{:.1%}','xwOBA': '{:.3f}','xERA': '{:.2f}'})
+            st.dataframe(styled_df, hide_index=True,width=500)
+
 
 
     # Hitter projections/stats
@@ -1090,12 +1188,137 @@ if tab == "Pitcher Projections":
     st.dataframe(styled_df, use_container_width=True, height=800, hide_index=True)
 
 
-
 if tab == "Hitter Projections":
+    hitterproj['Hitter'] = hitterproj['Hitter'].str.replace('🔥','').str.strip()
+    hitterproj['Hitter'] = hitterproj['Hitter'].str.replace('🥶','').str.strip()
+    hitter_name_id_dict = dict(zip(hitterproj.Hitter,hitterproj.ID))
+    hitter_matchups_dict = dict(zip(hitterproj.Team,hitterproj.Opp))
+    hitter_matchups_pp_dict = dict(zip(hitterproj.Team,hitterproj.OppSP))
+    hitter_park_dict = dict(zip(hitterproj.Team,hitterproj.Park))
     hitterproj['Value'] = round(hitterproj['DKPts']/(hitterproj['Sal']/1000),2)
     st.markdown("<h3>Hitter Projections</h3>", unsafe_allow_html=True)
     st.markdown("Explore projected hitter performance for MLB games. Filter by slate, team, or position to customize your view.", unsafe_allow_html=True)
+    col1,col2,col3,col4 = st.columns([1,1,1,1])
+    with col1:
+        checked = st.checkbox("Show Projection Highlights", value=False, key=None, help=None, on_change=None)
+    with col2:
+        checked2 = st.checkbox("Show Team Projections", value=False, key=None, help=None, on_change=None)
+    with col3:
+        main_slate_check = st.checkbox("Show Main Slate Only")
     
+    if checked:
+        st.markdown("<hr><h3>Top HR Projections</h3>",unsafe_allow_html=True)
+        top_hr = h_vs_avg.sort_values(by='HR',ascending=False).head(5)
+        
+        top_hr['Opp'] = top_hr['Team'].map(hitter_matchups_dict)
+        top_hr['OppSP'] = top_hr['Team'].map(hitter_matchups_pp_dict)
+        top_hr['Park'] = top_hr['Team'].map(hitter_park_dict)
+        top_hr = top_hr[['Hitter','Team','Opp','OppSP','Park','HR']]
+        top_hr['ID'] = top_hr['Hitter'].map(hitter_name_id_dict)
+
+        id_list = list(top_hr['ID'])
+        name_list = list(top_hr['Hitter'])
+        hr_list = list(top_hr['HR'])
+        col1,col2,col3,col4,col5 = st.columns([1,1,1,1,1])
+        imgwidth=100
+        with col1:
+            st.image(get_player_image(id_list[0]),width=imgwidth)
+            st.markdown(f'{name_list[0]}: {hr_list[0]} HR')
+
+        with col2:
+            st.image(get_player_image(id_list[1]),width=imgwidth)
+            st.markdown(f'{name_list[1]}: {hr_list[1]} HR')
+        with col3:
+            st.image(get_player_image(id_list[2]),width=imgwidth)
+            st.markdown(f'{name_list[2]}: {hr_list[2]} HR')
+        with col4:
+            st.image(get_player_image(id_list[3]),width=imgwidth)
+            st.markdown(f'{name_list[3]}: {hr_list[3]} HR')
+        with col5:
+            st.image(get_player_image(id_list[4]),width=imgwidth)
+            st.markdown(f'{name_list[4]}: {hr_list[4]} HR')
+        
+        st.markdown("<hr><h3>Top HR Projections Over Average</h3>",unsafe_allow_html=True)
+        top_hr = h_vs_avg.sort_values(by='HR Diff',ascending=False).head(5)
+        
+        top_hr['Opp'] = top_hr['Team'].map(hitter_matchups_dict)
+        top_hr['OppSP'] = top_hr['Team'].map(hitter_matchups_pp_dict)
+        top_hr['Park'] = top_hr['Team'].map(hitter_park_dict)
+        top_hr = top_hr[['Hitter','Team','Opp','OppSP','Park','HR Diff']]
+        top_hr['ID'] = top_hr['Hitter'].map(hitter_name_id_dict)
+
+        id_list = list(top_hr['ID'])
+        name_list = list(top_hr['Hitter'])
+        hr_list = list(top_hr['HR Diff'])
+        col1,col2,col3,col4,col5 = st.columns([1,1,1,1,1])
+        with col1:
+            st.image(get_player_image(id_list[0]),width=imgwidth)
+            st.markdown(f'{name_list[0]}: +{hr_list[0]} HR')
+
+        with col2:
+            st.image(get_player_image(id_list[1]),width=imgwidth)
+            st.markdown(f'{name_list[1]}: +{hr_list[1]} HR')
+        with col3:
+            st.image(get_player_image(id_list[2]),width=imgwidth)
+            st.markdown(f'{name_list[2]}: +{hr_list[2]} HR')
+        with col4:
+            st.image(get_player_image(id_list[3]),width=imgwidth)
+            st.markdown(f'{name_list[3]}: +{hr_list[3]} HR')
+        with col5:
+            st.image(get_player_image(id_list[4]),width=imgwidth)
+            st.markdown(f'{name_list[4]}: +{hr_list[4]} HR')
+
+        st.markdown("<h3>Biggest Fantasy Points Projected Boost", unsafe_allow_html=True)
+        
+        show_leaders = h_vs_avg.sort_values(by='DKPts Diff',ascending=False)
+        show_leaders['Opp'] = show_leaders['Team'].map(hitter_matchups_dict)
+        show_leaders['OppSP'] = show_leaders['Team'].map(hitter_matchups_pp_dict)
+        show_leaders = show_leaders[['Hitter','Team','Opp','OppSP','DKPts','Avg DK Proj','DKPts Diff']].head(10)
+        st.dataframe(show_leaders,hide_index=True)
+
+    if checked2:
+        st.markdown("<hr><h3>Team Projection Data</h3>",unsafe_allow_html=True)
+
+        col1, col2 = st.columns([1,2])
+        with col1:
+            if main_slate_check:
+                teamproj = hitterproj[hitterproj['MainSlate']=='Main'].groupby('Team',as_index=False)[['DKPts','R','HR','SB']].sum()
+                teamproj = teamproj.sort_values(by='DKPts',ascending=False)
+                styled_df = teamproj.style.format({'DKPts': '{:.2f}', 'R': '{:.2f}', 'HR': '{:.2f}', 'SB': '{:.2f}'})                         
+                st.dataframe(styled_df,hide_index=True)
+            else:
+                teamproj = hitterproj.groupby('Team',as_index=False)[['DKPts','R','HR','SB']].sum()
+                teamproj = teamproj.sort_values(by='DKPts',ascending=False)
+                styled_df = teamproj.style.format({'DKPts': '{:.2f}', 'R': '{:.2f}', 'HR': '{:.2f}', 'SB': '{:.2f}'})                         
+                st.dataframe(styled_df,hide_index=True)
+        with col2:
+            if main_slate_check:
+                mainslateteams = list(hitterproj[hitterproj['MainSlate']=='Main']['Team'])
+                team_v_avg = h_vs_avg[h_vs_avg['Team'].isin(mainslateteams)].groupby('Team',as_index=False)[['HR','Avg HR Proj','DKPts','Avg DK Proj']].sum()
+                team_v_avg.columns=['Team','Today HR','Season HR','Today DK','Season DK']
+                team_v_avg['Today HR Boost'] = round(team_v_avg['Today HR']/team_v_avg['Season HR'],3)
+                team_v_avg['Today DK Boost'] = round(team_v_avg['Today DK']/team_v_avg['Season DK'],3)
+                team_v_avg = team_v_avg.sort_values(by='Today DK Boost',ascending=False)
+
+                styled_df = team_v_avg.style.format({'DKPts': '{:.2f}', 'R': '{:.2f}', 'HR': '{:.2f}', 'SB': '{:.2f}',
+                                                    'Season HR': '{:.2f}', 'Today DK': '{:.2f}', 'Season DK': '{:.2f}',
+                                                    'Today HR': '{:.2f}','Today HR Boost': '{:.1%}', 'Today DK Boost': '{:.2f}',
+                                                    'Season DK': '{:.2f}'})                         
+                st.dataframe(styled_df,hide_index=True)
+            else:
+                team_v_avg = h_vs_avg.groupby('Team',as_index=False)[['HR','Avg HR Proj','DKPts','Avg DK Proj']].sum()
+                team_v_avg.columns=['Team','Today HR','Season HR','Today DK','Season DK']
+                team_v_avg['Today HR Boost'] = round(team_v_avg['Today HR']/team_v_avg['Season HR'],3)
+                team_v_avg['Today DK Boost'] = round(team_v_avg['Today DK']/team_v_avg['Season DK'],3)
+                team_v_avg = team_v_avg.sort_values(by='Today DK Boost',ascending=False)
+
+                styled_df = team_v_avg.style.format({'DKPts': '{:.2f}', 'R': '{:.2f}', 'HR': '{:.2f}', 'SB': '{:.2f}',
+                                                    'Season HR': '{:.2f}', 'Today DK': '{:.2f}', 'Season DK': '{:.2f}',
+                                                    'Today HR': '{:.2f}','Today HR Boost': '{:.1%}', 'Today DK Boost': '{:.2f}',
+                                                    'Season DK': '{:.2f}'})                         
+                st.dataframe(styled_df,hide_index=True)
+
+    st.markdown("<hr><h1>Full Projections</h1>",unsafe_allow_html=True)
     # Create three columns for filters
     col1, col2, col3 = st.columns([1, 1, 1])
     
