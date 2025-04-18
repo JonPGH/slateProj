@@ -433,15 +433,15 @@ if check_password():
                 return f'background-color: {color5}'
         if column == 'W':
             if val >= .35:
-                return f'background-color: {color1}'
+                return f'background-color: {color5}'
             elif val >= .3:
-                return f'background-color: {color2}'
+                return f'background-color: {color4}'
             elif val >= .25:
                 return f'background-color: {color3}'
             elif val >= .2:
-                return f'background-color: {color4}'
+                return f'background-color: {color2}'
             elif val < .2:
-                return f'background-color: {color5}'
+                return f'background-color: {color1}'
         if column == 'Own%':
             if val >= 40:
                 return f'background-color: {color1}'
@@ -646,7 +646,7 @@ if check_password():
         home_sp_pid = str(these_pitcherproj[these_pitcherproj['Team'] == these_pitcherproj['HomeTeam']]['ID'].iloc[0]).replace('.0', '')
         home_sp_name = these_pitcherproj[these_pitcherproj['Team'] == these_pitcherproj['HomeTeam']]['Pitcher'].iloc[0]
 
-        p_proj_cols = ['Sal', 'DKPts', 'Val', 'IP', 'H', 'ER', 'SO', 'BB', 'W', 'Ownership']
+        p_proj_cols = ['Sal', 'DKPts', 'Val', 'PC','IP', 'H', 'ER', 'SO', 'BB', 'W', 'Ownership']
         road_sp_projection = these_pitcherproj[these_pitcherproj['Pitcher'] == road_sp_name]
         home_sp_projection = these_pitcherproj[these_pitcherproj['Pitcher'] == home_sp_name]
         p_stats_cols = ['IP', 'K%', 'BB%', 'SwStr%', 'Ball%', 'xwOBA']
@@ -730,9 +730,9 @@ if check_password():
             st.markdown(f"<h4>{road_sp_name} Projection</h4>", unsafe_allow_html=True)
             filtered_pproj = road_sp_projection[p_proj_cols].rename({'Ownership': 'Own%'}, axis=1)
             styled_df = filtered_pproj.style.apply(
-                color_cells_PitchProj, subset=['DKPts', 'Sal', 'Val','IP','H','ER','SO','BB','W','Own%'], axis=1
+                color_cells_PitchProj, subset=['DKPts', 'Sal', 'Val','IP','H','ER','PC','SO','BB','W','Own%'], axis=1
             ).format({
-                'Own%': '{:.0f}', 'Sal': '${:,.0f}', 'W': '{:.2f}', 'BB': '{:.2f}',
+                'Own%': '{:.0f}', 'Sal': '${:,.0f}', 'W': '{:.2f}', 'BB': '{:.2f}', 'PC': '{:.1f}',
                 'SO': '{:.2f}', 'ER': '{:.2f}', 'H': '{:.2f}', 'IP': '{:.1f}',
                 'DKPts': '{:.2f}', 'Val': '{:.2f}'
             })
@@ -755,9 +755,9 @@ if check_password():
             st.markdown(f"<h4>{home_sp_name} Projection</h4>", unsafe_allow_html=True)
             filtered_pproj = home_sp_projection[p_proj_cols].rename({'Ownership': 'Own%'}, axis=1)
             styled_df = filtered_pproj.style.apply(
-                color_cells_PitchProj, subset=['DKPts', 'Sal', 'Val','IP','H','ER','SO','BB','W','Own%'], axis=1
+                color_cells_PitchProj, subset=['DKPts', 'Sal','PC', 'Val','IP','H','ER','SO','BB','W','Own%'], axis=1
             ).format({
-                'Own%': '{:.0f}', 'Sal': '${:,.0f}', 'W': '{:.2f}', 'BB': '{:.2f}',
+                'Own%': '{:.0f}', 'Sal': '${:,.0f}', 'W': '{:.2f}', 'BB': '{:.2f}', 'PC': '{:.0f}',
                 'SO': '{:.2f}', 'ER': '{:.2f}', 'H': '{:.2f}', 'IP': '{:.1f}',
                 'DKPts': '{:.2f}', 'Val': '{:.2f}'
             })
@@ -957,7 +957,7 @@ if check_password():
             col1, col2 = st.columns([1,1])
             with col1:
                 road_sim = these_sim[these_sim['Team']==selected_road_team]
-                road_sim = road_sim[(road_sim['xwOBA Con']>=.375)&(road_sim['SwStr%']<.11)]
+                road_sim = road_sim[(road_sim['xwOBA Con']>=.375)&(road_sim['SwStr%']<.11)&(road_sim['PC']>=50)]
                 road_sim = road_sim[['Hitter','PC','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
                 styled_df = road_sim.style.apply(color_cells_HitMatchups, subset=['xwOBA','xwOBA Con',
                                                                                 'SwStr%','Brl%','FB%',
@@ -971,7 +971,7 @@ if check_password():
                 #st.dataframe(road_sim)
             with col2:
                 home_sim = these_sim[these_sim['Team']==selected_home_team]
-                home_sim = home_sim[(home_sim['xwOBA Con']>=.375)&(home_sim['SwStr%']<.11)]
+                home_sim = home_sim[(home_sim['xwOBA Con']>=.375)&(home_sim['SwStr%']<.11)&(home_sim['PC']>=50)]
                 home_sim = home_sim[['Hitter','PC','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
                 styled_df = home_sim.style.apply(color_cells_HitMatchups, subset=['xwOBA','xwOBA Con',
                                                                                 'SwStr%','Brl%','FB%',
