@@ -580,6 +580,9 @@ if check_password():
 
     # Load data
     logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2 = load_data()
+
+    last_update = pitcherproj['LastUpdate'].iloc[0]
+
     games_df = pitcherproj[['Team', 'Opponent', 'HomeTeam']].drop_duplicates()
     games_df['RoadTeam'] = np.where(games_df['Team'] == games_df['HomeTeam'], games_df['Opponent'], games_df['Team'])
     games_df['GameString'] = games_df['RoadTeam'] + '@' + games_df['HomeTeam']
@@ -624,6 +627,7 @@ if check_password():
 
     # Main content
     st.markdown(f"<center><h1>⚾ MLB DW Slate Analysis Tool ⚾</h1></center>", unsafe_allow_html=True)
+    st.markdown(f"<center><i>Last projection update time: {last_update}est</center></i>",unsafe_allow_html=True)
 
     if tab == "Game Previews":
         game_selection = list(games_df['GameString'])
@@ -1117,8 +1121,9 @@ if check_password():
     """, unsafe_allow_html=True)
 
     if tab == "Pitcher Projections":
-        st.markdown("<h1>Pitcher Projections</h1>", unsafe_allow_html=True)
-        st.markdown("Explore projected pitcher performance for MLB games. Filter by slate, team, or opponent to customize your view.", unsafe_allow_html=True)
+        st.markdown("<h1><center>Pitcher Projections</center></h1>", unsafe_allow_html=True)
+        #st.markdown(f"<center><i>Last projection update time: {last_update}est</center></i>",unsafe_allow_html=True)
+
         pitcher_matchups = dict(zip(pitcherproj.Team,pitcherproj.Opponent))
         p_vs_avg['Opp'] = p_vs_avg['Team'].map(pitcher_matchups)
         top_five_proj = pitcherproj.sort_values(by='DKPts',ascending=False).head(5)
