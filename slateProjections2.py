@@ -591,6 +591,7 @@ if check_password():
     hitterproj['GameString'] = hitterproj['RoadTeam'] + '@' + hitterproj['Park']
     pitcherproj['RoadTeam'] = np.where(pitcherproj['Team'] == pitcherproj['HomeTeam'], pitcherproj['Opponent'], pitcherproj['Team'])
     pitcherproj['GameString'] = pitcherproj['RoadTeam'] + '@' + pitcherproj['HomeTeam']
+    main_slate_gamelist = list(pitcherproj[pitcherproj['MainSlate']=='Main']['GameString'])
     bpreport['BP Rank'] = bpreport['xERA'].rank()
     bpreport = bpreport.sort_values(by='BP Rank')
     bpreport['BP Rank'] = range(1,len(bpreport)+1)
@@ -655,6 +656,7 @@ if check_password():
         game_name = this_weather['Game'].iloc[0]
         try:
             this_gameinfo = gameinfo[gameinfo['Park']==selected_home_team]
+            this_gametime = this_gameinfo['game_time'].iloc[0]
             this_gameinfo['Favorite'] = np.where(this_gameinfo['moneyline']<-100,1,0)
             this_favorite = this_gameinfo[this_gameinfo['Favorite']==1]['team'].iloc[0]
             this_favorite_odds = this_gameinfo[this_gameinfo['Favorite']==1]['moneyline'].iloc[0]
@@ -719,6 +721,8 @@ if check_password():
         with col2:
             st.markdown(f"<center><h2>{game_name}</h2></center>", unsafe_allow_html=True)
             st.markdown(f"<center><h5>{road_sp_show_name} vs. {home_sp_show_name}</h5></center>", unsafe_allow_html=True)
+            st.markdown(f"<center><h6><i>{this_gametime}</i></h6></center>", unsafe_allow_html=True)
+
             if game_info_fail == 'N':
                 st.markdown(f"<center><h5>{this_favorite} ({this_favorite_odds}), O/U: {this_over_under}</h5></center>",unsafe_allow_html=True)
             
