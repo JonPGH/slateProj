@@ -253,6 +253,41 @@ if check_password():
                 return f'background-color: {color2}'
             elif val < .2:
                 return f'background-color: {color1}'      
+    def applyColor_weatherumps(val, column):
+        if column == 'Rain%':
+            if val >= 75:
+                return f'background-color:{color1}'
+            elif val >= 50:
+                return f'background-color:{color2}'
+            elif val >= 30:
+                return f'background-color:{color3}'
+            elif val >= 10:
+                return f'background-color:{color4}'
+            elif val < 10:
+                return f'background-color:{color5}'
+        if column == 'K Boost':
+            if val >= 1.05:
+                return f'background-color:{color5}'
+            elif val >= 1.02:
+                return f'background-color:{color4}'
+            elif val >= .98:
+                return f'background-color:{color3}'
+            elif val >= .96:
+                return f'background-color:{color2}'
+            elif val < .96:
+                return f'background-color:{color1}'
+        if column == 'BB Boost':
+            if val >= 1.05:
+                return f'background-color:{color5}'
+            elif val >= 1.02:
+                return f'background-color:{color4}'
+            elif val >= .98:
+                return f'background-color:{color3}'
+            elif val >= .96:
+                return f'background-color:{color2}'
+            elif val < .96:
+                return f'background-color:{color1}'
+
     def applyColor_PitchStat(val, column):
         if column == 'K%':
             if val >= .3:
@@ -565,6 +600,8 @@ if check_password():
                 return f'background-color: {color2}'
             elif val < -200:
                 return f'background-color: {color1}'
+    def color_cells_weatherumps(df_subset):
+        return [applyColor_weatherumps(val, col) for val, col in zip(df_subset, df_subset.index)]
     def color_cells_PitchProj(df_subset):
         return [applyColor_PitchProj(val, col) for val, col in zip(df_subset, df_subset.index)]
     def color_cells_HitProj(df_subset):
@@ -617,7 +654,7 @@ if check_password():
     # Sidebar navigation
     st.sidebar.image(logo, width=150)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Weather & Umps"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -653,6 +690,19 @@ if check_password():
 
         these_pitcherproj = pitcherproj[pitcherproj['GameString'] == selected_game]
         this_weather = weather_data[weather_data['HomeTeam'] == selected_home_team]
+        this_winds = this_weather['Winds'].iloc[0]
+        this_winds = this_winds.replace(' mph','')
+        this_winds = float(this_winds)
+        if this_weather['Rain%'].iloc[0]>25:
+            rain_emoji = '🌧️'
+        else:
+            rain_emoji = ''
+        if this_winds > 10:
+            winds_emoji = '💨'
+        else:
+            winds_emoji = ''
+        
+        weather_emoji = rain_emoji + ' ' + winds_emoji
         game_name = this_weather['Game'].iloc[0]
         try:
             this_gameinfo = gameinfo[gameinfo['Park']==selected_home_team]
@@ -719,7 +769,7 @@ if check_password():
                 unsafe_allow_html=True
             )
         with col2:
-            st.markdown(f"<center><h2>{game_name}</h2></center>", unsafe_allow_html=True)
+            st.markdown(f"<center><h2>{game_name} {rain_emoji} </h2></center>", unsafe_allow_html=True)
             st.markdown(f"<center><h5>{road_sp_show_name} vs. {home_sp_show_name}</h5></center>", unsafe_allow_html=True)
             st.markdown(f"<center><h6><i>{this_gametime}</i></h6></center>", unsafe_allow_html=True)
 
@@ -732,7 +782,7 @@ if check_password():
                 weather_winds = this_weather['Winds'].iloc[0] + ' ' + this_weather['Wind Dir'].iloc[0]
             except:
                 weather_winds = this_weather.get('Winds', ['No Weather Data Found']).iloc[0]
-            st.markdown(f"<center><b>Weather: {weather_cond}, {weather_temp}F<br>Winds: {weather_winds}</b></center>", unsafe_allow_html=True)
+            st.markdown(f"<center><b>{weather_emoji} Weather: {weather_cond}, {weather_temp}F<br>Winds: {weather_winds}</b></center>", unsafe_allow_html=True)
             if known_ump == 'Y':
                 umpname = this_game_ump['Umpire'].iloc[0]
                 k_boost = (this_game_ump['K Boost'].iloc[0] - 1) * 100
@@ -1243,7 +1293,6 @@ if check_password():
         # Display the styled DataFrame
         st.dataframe(styled_df, use_container_width=True, height=800, hide_index=True)
 
-
     if tab == "Hitter Projections":
         hitterproj['Hitter'] = hitterproj['Hitter'].str.replace('🔥','').str.strip()
         hitterproj['Hitter'] = hitterproj['Hitter'].str.replace('🥶','').str.strip()
@@ -1502,3 +1551,10 @@ if check_password():
                 st.dataframe(styled_df,hide_index=True,width=850,height=600)
             else:
                 st.dataframe(styled_df,hide_index=True,width=850)
+    if tab == "Weather & Umps":
+        weather_show = weather_data[['HomeTeam','Game','Conditions','Temp','Winds','Wind Dir','Rain%']].sort_values(by='Rain%',ascending=False)
+        weather_show = pd.merge(weather_show,umpire_data, how='left', on='HomeTeam')
+        weather_show = weather_show[['Game','Conditions','Temp','Winds','Wind Dir','Rain%','Umpire','K Boost','BB Boost']]
+        styled_df = weather_show.style.apply(
+                color_cells_weatherumps, subset=['Rain%','K Boost','BB Boost'], axis=1).format({'K Boost': '{:.2f}','BB Boost': '{:.2f}'}) 
+        st.dataframe(styled_df,hide_index=True,width=900,height=700)
