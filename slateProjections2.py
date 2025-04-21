@@ -622,6 +622,9 @@ if check_password():
     logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf = load_data()
 
     last_update = pitcherproj['LastUpdate'].iloc[0]
+    gameinfo['RoadTeam'] = np.where(gameinfo['team'] == gameinfo['Park'], gameinfo['opponent'], gameinfo['team'])
+    gameinfo['GameString'] = gameinfo['RoadTeam']+'@'+gameinfo['Park']
+
 
     games_df = pitcherproj[['Team', 'Opponent', 'HomeTeam']].drop_duplicates()
     games_df['RoadTeam'] = np.where(games_df['Team'] == games_df['HomeTeam'], games_df['Opponent'], games_df['Team'])
@@ -671,7 +674,8 @@ if check_password():
     st.markdown(f"<center><i>Last projection update time: {last_update}est</center></i>",unsafe_allow_html=True)
 
     if tab == "Game Previews":
-        game_selection = list(games_df['GameString'])
+        #game_selection = list(games_df['GameString'])
+        game_selection = list(gameinfo['GameString'].unique())
         selected_game = st.selectbox('Select a Game', game_selection, help="Select a game to view detailed projections and stats.")
 
         selected_home_team = selected_game.split('@')[1]
