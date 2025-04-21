@@ -1,9 +1,9 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,White Sox  @  Red Sox,Mostly Clear,54°,4.5 mph,None,CWS,BOS,0,2025-4-21,0,0
 1,Yankees  @  Guardians,Breezy and Mostly Clear,68°,15.2 mph,"L to R, Strong",NYY,CLE,0,2025-4-21,0,0
-2,Padres  @  Tigers,Breezy and Partly Cloudy,65°,19.7 mph,"R to L, Strong",SD,DET,0,2025-4-21,0,0
-3,Reds  @  Marlins,Partly Cloudy,78°,9.8 mph,"L to R, Weak",CIN,MIA,0,2025-4-21,1,0
-4,Phillies  @  Mets,Mostly Cloudy,54°,10.7 mph,"R to L, Strong",PHI,NYM,0,2025-4-21,0,0
+2,Padres  @  Tigers,Breezy and Mostly Clear,65°,19.7 mph,"R to L, Strong",SD,DET,0,2025-4-21,0,0
+3,Reds  @  Marlins,Partly Cloudy,78°,9.8 mph,"In, Weak",CIN,MIA,0,2025-4-21,1,0
+4,Phillies  @  Mets,Mostly Cloudy,54°,10.7 mph,"Out, Strong",PHI,NYM,0,2025-4-21,0,0
 5,Cardinals  @  Braves,Mostly Clear,82°,7.2 mph,"R to L, Weak",STL,ATL,0,2025-4-21,0,0
-6,Blue Jays  @  Astros,Light Rain,78°,6.3 mph,"Out, Weak",TOR,HOU,0,2025-4-21,1,0
-7,Brewers  @  Giants,Clear,63°,8.0 mph,"Out, Weak",MIL,SF,0,2025-4-21,0,0
+6,Blue Jays  @  Astros,Possible Light Rain,77°,6.3 mph,"Out, Weak",TOR,HOU,0,2025-4-21,1,0
+7,Brewers  @  Giants,Clear,63°,7.2 mph,"Out, Weak",MIL,SF,0,2025-4-21,0,0
