@@ -1562,62 +1562,106 @@ if check_password():
                 color_cells_weatherumps, subset=['Rain%','K Boost','BB Boost'], axis=1).format({'K Boost': '{:.2f}','BB Boost': '{:.2f}'}) 
         st.dataframe(styled_df,hide_index=True,width=900,height=700)
     
-if tab == "Streamers":
-    ownershipdict = dict(zip(ownershipdf.Player, ownershipdf.Yahoo))
+    if tab == "Streamers":
+        ownershipdict = dict(zip(ownershipdf.Player, ownershipdf.Yahoo))
 
-    # hitters or pitchers select
-    h_or_p = st.selectbox(options=['Pitchers','Hitters'],label='Select Hitters or Pitchers')
-    pitcherproj['Ownership'] = pitcherproj['Pitcher'].map(ownershipdict)
+        # hitters or pitchers select
+        h_or_p = st.selectbox(options=['Pitchers','Hitters'],label='Select Hitters or Pitchers')
+        pitcherproj['Ownership'] = pitcherproj['Pitcher'].map(ownershipdict)
 
-    hitterproj['Hitter'] = hitterproj['Hitter'].str.replace('🔥','').str.strip()
-    hitterproj['Hitter'] = hitterproj['Hitter'].str.replace('🥶','').str.strip()
-    hitterproj['Ownership'] = hitterproj['Hitter'].map(ownershipdict)
+        hitterproj['Hitter'] = hitterproj['Hitter'].str.replace('🔥','').str.strip()
+        hitterproj['Hitter'] = hitterproj['Hitter'].str.replace('🥶','').str.strip()
+        hitterproj['Ownership'] = hitterproj['Hitter'].map(ownershipdict)
 
-    if h_or_p == 'Hitters':
-        st.write(hitterproj)
-    elif h_or_p == 'Pitchers':
-        show_pitchers = pitcherproj.copy()
-        show_pitchers = show_pitchers[['Pitcher','Team','Opponent','HomeTeam','Ownership','DKPts','PC','IP','H','ER','SO','BB','W']]
-        
-        # Add a slider for Ownership percentage
-        col1, col2 = st.columns([1,6])
-        with col1:
-            ownership_filter = st.slider("Filter by Ownership %", min_value=0, max_value=100, value=(0, 100))
-        
-        with col2:
-            # Filter DataFrame based on slider values
-            show_pitchers = show_pitchers[
-                (show_pitchers['Ownership'] >= ownership_filter[0]) & 
-                (show_pitchers['Ownership'] <= ownership_filter[1])
-            ]
+        if h_or_p == 'Hitters':
+            show_hitters = hitterproj.copy()
+            show_hitters['H'] = show_hitters['1B']+show_hitters['2B']+show_hitters['3B']+show_hitters['HR']
+            show_hitters = show_hitters[['Hitter','Pos','Team','Opp','OppSP','Park','Ownership','LU','DKPts','PA','H','R','HR','RBI','SB','1B','2B','3B']]
             
-            show_pitchers = show_pitchers.sort_values(by='DKPts', ascending=False)
-            #st.dataframe(show_pitchers, hide_index=True, width=850, height=600)
+            # Add a slider for Ownership percentage
+            col1, col2 = st.columns([1,7])
+            with col1:
+                ownership_filter = st.slider("Filter by Ownership %", min_value=0, max_value=100, value=(0, 100))
+            
+            with col2:
+                # Filter DataFrame based on slider values
+                show_hitters = show_hitters[
+                    (show_hitters['Ownership'] >= ownership_filter[0]) & 
+                    (show_hitters['Ownership'] <= ownership_filter[1])
+                ]
+                
+                show_hitters = show_hitters.sort_values(by='DKPts', ascending=False)
+                #st.dataframe(show_pitchers, hide_index=True, width=850, height=600)
 
-            styled_df = show_pitchers.style.apply(
-                    color_cells_PitchProj, subset=['DKPts','SO','W','Ownership','BB','PC','IP'], axis=1
-                ).format({
-                    'DKPts': '{:.2f}','FDPts': '{:.2f}', 
-                    'Val': '{:.2f}', 'Sal': '${:,.0f}', 
-                    'PC': '{:.0f}', 'IP': '{:.2f}', 
-                    'H': '{:.2f}', 'ER': '{:.2f}', 
-                    'Ownership': '{:.0f}',
-                    'SO': '{:.2f}', 'BB': '{:.2f}', 
-                    'W': '{:.2f}', 'Floor': '{:.2f}', 
-                    'Ceil': '{:.2f}', 'Own%': '{:.0f}'
-                }).set_table_styles([
-                    {'selector': 'th', 'props': [('text-align', 'left'), ('font-weight', 'bold')]},
-                    {'selector': 'td', 'props': [('text-align', 'left')]}
-                ])
-            st.dataframe(styled_df, hide_index=True, width=950, height=600)
+                styled_df = show_hitters.style.apply(
+                        color_cells_HitProj, subset=['DKPts','HR','SB'], axis=1
+                    ).format({
+                        'DKPts': '{:.2f}','PA': '{:.2f}', 
+                        'R': '{:.2f}', 'Sal': '${:,.0f}', 
+                        'PC': '{:.0f}', 'HR': '{:.2f}', 
+                        'H': '{:.2f}', 'RBI': '{:.2f}', 
+                        'Ownership': '{:.0f}',
+                        'SB': '{:.2f}', 'BB': '{:.2f}', 
+                        '1B': '{:.2f}', '2B': '{:.2f}', 
+                        '3B': '{:.2f}'
+                    }).set_table_styles([
+                        {'selector': 'th', 'props': [('text-align', 'left'), ('font-weight', 'bold')]},
+                        {'selector': 'td', 'props': [('text-align', 'left')]}
+                    ])
+                st.dataframe(styled_df, hide_index=True, height=600)
+        elif h_or_p == 'Pitchers':
+            show_pitchers = pitcherproj.copy()
+            show_pitchers = show_pitchers[['Pitcher','Team','Opponent','HomeTeam','Ownership','DKPts','PC','IP','H','ER','SO','BB','W']]
+            
+            # Add a slider for Ownership percentage
+            col1, col2 = st.columns([1,6])
+            with col1:
+                ownership_filter = st.slider("Filter by Ownership %", min_value=0, max_value=100, value=(0, 100))
+            
+            with col2:
+                # Filter DataFrame based on slider values
+                show_pitchers = show_pitchers[
+                    (show_pitchers['Ownership'] >= ownership_filter[0]) & 
+                    (show_pitchers['Ownership'] <= ownership_filter[1])
+                ]
+                
+                show_pitchers = show_pitchers.sort_values(by='DKPts', ascending=False)
+                #st.dataframe(show_pitchers, hide_index=True, width=850, height=600)
+
+                styled_df = show_pitchers.style.apply(
+                        color_cells_PitchProj, subset=['DKPts','SO','W','Ownership','BB','PC','IP'], axis=1
+                    ).format({
+                        'DKPts': '{:.2f}','FDPts': '{:.2f}', 
+                        'Val': '{:.2f}', 'Sal': '${:,.0f}', 
+                        'PC': '{:.0f}', 'IP': '{:.2f}', 
+                        'H': '{:.2f}', 'ER': '{:.2f}', 
+                        'Ownership': '{:.0f}',
+                        'SO': '{:.2f}', 'BB': '{:.2f}', 
+                        'W': '{:.2f}', 'Floor': '{:.2f}', 
+                        'Ceil': '{:.2f}', 'Own%': '{:.0f}'
+                    }).set_table_styles([
+                        {'selector': 'th', 'props': [('text-align', 'left'), ('font-weight', 'bold')]},
+                        {'selector': 'td', 'props': [('text-align', 'left')]}
+                    ])
+                st.dataframe(styled_df, hide_index=True, width=950, height=600)
     
-if tab == 'Tableau':
-    st.markdown("<h2><center>Main MLB Dashboard</center></h2>", unsafe_allow_html=True)
-    st.markdown("<i><center><a href='https://public.tableau.com/app/profile/jon.anderson4212/viz/JonPGHMLB2025Dashboard/Hitters'>Click here to visit full thing</i></a></center>", unsafe_allow_html=True)
-    tableau_code_pitchers = """
-    <div class='tableauPlaceholder' id='viz1745234354780' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Jo&#47;JonPGHMLB2025Dashboard&#47;Pitchers&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JonPGHMLB2025Dashboard&#47;Pitchers' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Jo&#47;JonPGHMLB2025Dashboard&#47;Pitchers&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1745234354780');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1400px';vizElement.style.height='1250px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1400px';vizElement.style.height='1250px';} else { vizElement.style.width='100%';vizElement.style.height='2350px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>    
-    """ 
-    components.html(tableau_code_pitchers, height=750, scrolling=True)
+    if tab == 'Tableau':
+        tableau_choice = st.selectbox(options=['Main','MLB & MiLB Stats'],label='Choose dashboard to display')
+        if tableau_choice == 'Main':
+            #st.markdown("<h2><center>Main MLB Dashboard</center></h2>", unsafe_allow_html=True)
+            st.markdown("<i><center><a href='https://public.tableau.com/app/profile/jon.anderson4212/viz/JonPGHMLB2025Dashboard/Hitters'>Click here to visit full thing</i></a></center>", unsafe_allow_html=True)
+            tableau_code_pitchers = """
+            <div class='tableauPlaceholder' id='viz1745234354780' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Jo&#47;JonPGHMLB2025Dashboard&#47;Pitchers&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JonPGHMLB2025Dashboard&#47;Pitchers' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Jo&#47;JonPGHMLB2025Dashboard&#47;Pitchers&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1745234354780');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1400px';vizElement.style.height='1250px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1400px';vizElement.style.height='1250px';} else { vizElement.style.width='100%';vizElement.style.height='2350px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>    
+            """ 
+            components.html(tableau_code_pitchers, height=750, scrolling=True)
+        elif tableau_choice == 'MLB & MiLB Stats':
+            #st.markdown("<h2><center>Main MLB Dashboard</center></h2>", unsafe_allow_html=True)
+            st.markdown("<i><center><a href='https://public.tableau.com/app/profile/jon.anderson4212/viz/MLBMiLBStatsDashboardv3/Hitters-Main#1'>Click here to visit full thing</i></a></center>", unsafe_allow_html=True)
+            tableau_code_pitchers = """
+            <div class='tableauPlaceholder' id='viz1745237361320' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ML&#47;MLBMiLBStatsDashboardv3&#47;Hitters-Main&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='MLBMiLBStatsDashboardv3&#47;Hitters-Main' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ML&#47;MLBMiLBStatsDashboardv3&#47;Hitters-Main&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1745237361320');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1400px';vizElement.style.height='850px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1400px';vizElement.style.height='850px';} else { vizElement.style.width='100%';vizElement.style.height='1800px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            """ 
+            components.html(tableau_code_pitchers, height=750, scrolling=True)
+
 
 
 
