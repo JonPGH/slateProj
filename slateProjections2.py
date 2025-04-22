@@ -1617,7 +1617,7 @@ if check_password():
     
     if tab == "Matchups":
         #st.dataframe(h_vs_sim)
-        team_options = ['All'] + list(h_vs_sim['Te  am'].unique())
+        team_options = ['All'] + list(h_vs_sim['Team'].unique())
         col1,col2=st.columns([1,3])
         with col1:
             selected_team = st.selectbox('Filter by Team', team_options)
