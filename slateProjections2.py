@@ -675,15 +675,27 @@ if check_password():
     bpreport['BB%'] = bpreport['BB%']/100
     bpreport['K-BB%'] = bpreport['K-BB%']/100
     bpreport['SwStr%'] = bpreport['SwStr%']/100
+    
     # add hitter emojis
     hot_hitters = list(hitter_stats[hitter_stats['IsHot']=='Y']['ID'])
     cold_hitters = list(hitter_stats[hitter_stats['IsCold']=='Y']['ID'])
-    hitterproj['Hitter'] = np.where(hitterproj['ID'].isin(hot_hitters), hitterproj['Hitter'] + ' 🔥' ,hitterproj['Hitter'])
-    hitterproj['Hitter'] = np.where(hitterproj['ID'].isin(cold_hitters), hitterproj['Hitter'] + ' 🥶' ,hitterproj['Hitter'])
+    homer_boosts = list(h_vs_avg[(h_vs_avg['HR Diff']>=.03)&(h_vs_avg['HR']>=.1)]['Hitter'])
 
-    hitter_stats['Hitter'] = np.where(hitter_stats['ID'].isin(hot_hitters), hitter_stats['Hitter'] + ' 🔥' ,hitter_stats['Hitter'])
-    hitter_stats['Hitter'] = np.where(hitter_stats['ID'].isin(cold_hitters), hitter_stats['Hitter'] + ' 🥶' ,hitter_stats['Hitter'])
+    #hitterproj['Hitter'] = np.where(hitterproj['ID'].isin(hot_hitters), hitterproj['Hitter'] + ' 🔥' ,hitterproj['Hitter'])
+    #hitterproj['Hitter'] = np.where(hitterproj['ID'].isin(cold_hitters), hitterproj['Hitter'] + ' 🥶' ,hitterproj['Hitter'])
+    hitterproj['Hot'] = np.where(hitterproj['ID'].isin(hot_hitters),'🔥','')
+    hitterproj['Cold'] = np.where(hitterproj['ID'].isin(cold_hitters),'🥶','')
+    hitterproj['HR Boost'] = np.where(hitterproj['Hitter'].isin(homer_boosts),'🚀','')
+    hitterproj['Batter'] = hitterproj['Hitter'] + ' ' + hitterproj['Hot'] +' ' +  hitterproj['Cold'] + ' ' + hitterproj['HR Boost']
+    #st.dataframe(hitterproj)
 
+    #hitter_stats['Hitter'] = np.where(hitter_stats['ID'].isin(hot_hitters), hitter_stats['Hitter'] + ' 🔥' ,hitter_stats['Hitter'])
+    #hitter_stats['Hitter'] = np.where(hitter_stats['ID'].isin(cold_hitters), hitter_stats['Hitter'] + ' 🥶' ,hitter_stats['Hitter'])
+    hitter_stats['Hot'] = np.where(hitter_stats['ID'].isin(hot_hitters),'🔥','')
+    hitter_stats['Cold'] = np.where(hitter_stats['ID'].isin(cold_hitters),'🥶','')
+    hitter_stats['HR Boost'] = np.where(hitter_stats['Hitter'].isin(homer_boosts),'🚀','')
+    hitter_stats['Batter'] = hitter_stats['Hitter'] + ' ' + hitter_stats['Hot'] +' ' +  hitter_stats['Cold'] + ' ' + hitter_stats['HR Boost']
+    
 
     def get_player_image(player_id):
         return f'https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_426,q_auto:best/v1/people/{player_id}/headshot/67/current'
@@ -1002,7 +1014,7 @@ if check_password():
             )
         if option == 'Projections':
             col1, col2 = st.columns(2)
-            hitter_proj_cols = ['Hitter', 'Pos', 'LU', 'Sal', 'DKPts', 'Value', 'HR', 'SB']
+            hitter_proj_cols = ['Batter', 'Pos', 'LU', 'Sal', 'DKPts', 'Value', 'HR', 'SB']
             with col1:
                 if selected_road_team in confirmed_lus:
                     lu_confirmation_string = 'Confirmed'
@@ -1038,7 +1050,7 @@ if check_password():
                 col1, col2 = st.columns(2)
                 with col1:
                     st.markdown(f"<h4>{selected_road_team} Stats</h4>", unsafe_allow_html=True)
-                    road_hitter_stats = road_hitter_stats[['Hitter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']]
+                    road_hitter_stats = road_hitter_stats[['Batter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']]
                     styled_df = road_hitter_stats.style.apply(
                         color_cells_HitStat, subset=['Brl%', 'FB%', 'K%', 'BB%', 'xwOBA'], axis=1
                     ).format({
@@ -1047,7 +1059,7 @@ if check_password():
                     st.dataframe(styled_df, hide_index=True, use_container_width=True)
                 with col2:
                     st.markdown(f"<h4>{selected_home_team} Stats</h4>", unsafe_allow_html=True)
-                    home_hitter_stats = home_hitter_stats[['Hitter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']]
+                    home_hitter_stats = home_hitter_stats[['Batter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']]
                     styled_df = home_hitter_stats.style.apply(
                         color_cells_HitStat, subset=['Brl%', 'FB%', 'K%', 'BB%', 'xwOBA'], axis=1
                     ).format({
@@ -1058,7 +1070,7 @@ if check_password():
                 col1, col2 = st.columns(2)
                 with col1:
                     st.markdown(f"<h4>{selected_road_team} vs. {home_sp_hand}HB</h4>", unsafe_allow_html=True)
-                    road_hitter_splits = road_hitter_stats[['Hitter', 'Split PA', 'Split K%', 'Split BB%', 'Split Brl%', 'Split xwOBA', 'Split FB%']]
+                    road_hitter_splits = road_hitter_stats[['Batter', 'Split PA', 'Split K%', 'Split BB%', 'Split Brl%', 'Split xwOBA', 'Split FB%']]
                     road_hitter_splits.columns = ['Hitter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']
                     styled_df = road_hitter_splits.style.apply(
                         color_cells_HitStat, subset=['Brl%', 'FB%', 'K%', 'BB%', 'xwOBA'], axis=1
@@ -1068,7 +1080,7 @@ if check_password():
                     st.dataframe(styled_df, hide_index=True, use_container_width=True)
                 with col2:
                     st.markdown(f"<h4>{selected_home_team} vs. {road_sp_hand}HB</h4>", unsafe_allow_html=True)
-                    home_hitter_splits = home_hitter_stats[['Hitter', 'Split PA', 'Split K%', 'Split BB%', 'Split Brl%', 'Split xwOBA', 'Split FB%']]
+                    home_hitter_splits = home_hitter_stats[['Batter', 'Split PA', 'Split K%', 'Split BB%', 'Split Brl%', 'Split xwOBA', 'Split FB%']]
                     home_hitter_splits.columns = ['Hitter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']
                     styled_df = home_hitter_splits.style.apply(
                         color_cells_HitStat, subset=['Brl%', 'FB%', 'K%', 'BB%', 'xwOBA'], axis=1
@@ -1095,7 +1107,7 @@ if check_password():
             with col2:
                 home_sim = these_sim[these_sim['Team']==selected_home_team]
                 #home_sim = home_sim[(home_sim['xwOBA Con']>=.375)&(home_sim['SwStr%']<.11)]
-                home_sim = home_sim[['Hitter','PC','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
+                home_sim = home_sim[['Batter','PC','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
                 styled_df = home_sim.style.apply(color_cells_HitMatchups, subset=['xwOBA','xwOBA Con',
                                                                                 'SwStr%','Brl%','FB%',
                                                                                 'Hard%'], axis=1).format({'xwOBA': '{:.3f}',
@@ -1454,7 +1466,7 @@ if check_password():
             show_leaders = h_vs_avg.sort_values(by='DKPts Diff',ascending=False)
             show_leaders['Opp'] = show_leaders['Team'].map(hitter_matchups_dict)
             show_leaders['OppSP'] = show_leaders['Team'].map(hitter_matchups_pp_dict)
-            show_leaders = show_leaders[['Hitter','Team','Opp','OppSP','DKPts','Avg DK Proj','DKPts Diff']].head(10)
+            show_leaders = show_leaders[['Batter','Team','Opp','OppSP','DKPts','Avg DK Proj','DKPts Diff']].head(10)
             st.dataframe(show_leaders,hide_index=True)
 
         if checked2:
@@ -1561,7 +1573,7 @@ if check_password():
             
             # Rename and select columns
             show_hproj = show_hproj.rename({'Ownership': 'Own%'}, axis=1)
-            show_hproj = show_hproj[['Hitter', 'Pos', 'Team', 'Sal', 'Opp', 'Park', 'OppSP', 'LU', 'DKPts', 'Value', 'HR', 'SB', 'Floor', 'Ceil', 'Own%']]
+            show_hproj = show_hproj[['Batter', 'Pos', 'Team', 'Sal', 'Opp', 'Park', 'OppSP', 'LU', 'DKPts', 'Value', 'HR', 'SB', 'Floor', 'Ceil', 'Own%']]
             
             # Apply styling and formatting
             styled_df = show_hproj.style.apply(
