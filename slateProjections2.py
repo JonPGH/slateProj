@@ -841,7 +841,7 @@ if check_password():
                 bb_symbol = '+' if bb_boost > 0 else '' if bb_boost == 0 else ''
                 st.markdown(f"<center><b>Umpire: {umpname}<br>{k_symbol}{int(k_boost)}% K, {bb_symbol}{int(bb_boost)}% BB</b></center>", unsafe_allow_html=True)
             
-            st.markdown("<br><center><font size=3>🔥 <i>= hot player</i>, 🥶 <i>= cold player</i></center></i></font>", unsafe_allow_html=True)
+            st.markdown("<br><center><font size=3>🔥 <i>= hot player</i>, 🥶 <i>= cold player</i>, 🚀 elevated HR proj</center></i></font>", unsafe_allow_html=True)
         
         with col3:
             st.markdown(
@@ -1605,7 +1605,6 @@ if check_password():
                 h_vs_avg = h_vs_avg[h_vs_avg['Team'].isin(mainslateteams)]
             else:
                 pass
-
             team_options = ['All'] + list(h_vs_avg['Team'].unique())
             col1, col2, col3= st.columns([1,1,2])
             with col1:
