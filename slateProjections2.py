@@ -1617,7 +1617,7 @@ if check_password():
     
     if tab == "Matchups":
         #st.dataframe(h_vs_sim)
-        team_options = ['All'] + list(h_vs_sim['Team'].unique())
+        team_options = ['All'] + list(h_vs_sim['Te  am'].unique())
         col1,col2=st.columns([1,3])
         with col1:
             selected_team = st.selectbox('Filter by Team', team_options)
@@ -1630,7 +1630,7 @@ if check_password():
                                                                           'SwStr%','Brl%','FB%',
                                                                           'Hard%'], axis=1).format({'xwOBA': '{:.3f}','xwOBA Con': '{:.3f}',
                                                                                                     'SwStr%': '{:.1%}','Brl%': '{:.1%}',
-                                                                                                    'FB%': '{:.1%}'})
+                                                                                                    'FB%': '{:.1%}','Hard%': '{:.1%}'})
         if len(show_hsim)>9:
             st.dataframe(styled_df, hide_index=True, use_container_width=True, height=900)
         else:
