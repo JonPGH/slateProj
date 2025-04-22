@@ -650,6 +650,8 @@ if check_password():
     # -- IF HITTERS IS IN A BOOM MATCHUP 
     # -- IF HITTER HAS MADE IMPROVEMENTS LAST 30 DAYS COMPARED TO CAREER
 
+    confirmed_lus = list(hitterproj2[hitterproj2['Confirmed LU']=='Y']['Team'].unique())
+
     last_update = pitcherproj['LastUpdate'].iloc[0]
     gameinfo['RoadTeam'] = np.where(gameinfo['team'] == gameinfo['Park'], gameinfo['opponent'], gameinfo['team'])
     gameinfo['GameString'] = gameinfo['RoadTeam']+'@'+gameinfo['Park']
@@ -1002,7 +1004,11 @@ if check_password():
             col1, col2 = st.columns(2)
             hitter_proj_cols = ['Hitter', 'Pos', 'LU', 'Sal', 'DKPts', 'Value', 'HR', 'SB']
             with col1:
-                st.markdown(f"<h4>{selected_road_team} Lineup</h4>", unsafe_allow_html=True)
+                if selected_road_team in confirmed_lus:
+                    lu_confirmation_string = 'Confirmed'
+                else:
+                    lu_confirmation_string = 'Not Confirmed'
+                st.markdown(f"<h4>{selected_road_team} Lineup ({lu_confirmation_string})</h4>", unsafe_allow_html=True)
                 road_projection_data = hitterproj[hitterproj['Team'] == selected_road_team][hitter_proj_cols]
                 styled_df = road_projection_data.style.apply(
                     color_cells_HitProj, subset=['DKPts', 'Value', 'Sal', 'HR', 'SB'], axis=1
@@ -1012,7 +1018,11 @@ if check_password():
                 })
                 st.dataframe(styled_df, hide_index=True, use_container_width=True)
             with col2:
-                st.markdown(f"<h4>{selected_home_team} Lineup</h4>", unsafe_allow_html=True)
+                if selected_road_team in confirmed_lus:
+                    lu_confirmation_string = 'Confirmed'
+                else:
+                    lu_confirmation_string = 'Not Confirmed'
+                st.markdown(f"<h4>{selected_home_team} Lineup ({lu_confirmation_string})</h4>", unsafe_allow_html=True)
                 home_projection_data = hitterproj[hitterproj['Team'] == selected_home_team][hitter_proj_cols]
                 styled_df = home_projection_data.style.apply(
                     color_cells_HitProj, subset=['DKPts', 'Value', 'Sal', 'HR', 'SB'], axis=1
