@@ -198,6 +198,30 @@ if check_password():
             elif val < .3:
                 return f'background-color: {color1}'  
     def applyColor_HitStat(val, column):
+        if column == 'PPA':
+            if val >= 4:
+                return f'background-color: {color1}'
+            elif val >= 3.9:
+                return f'background-color: {color2}'
+            elif val >= 3.85:
+                return f'background-color: {color3}'
+            elif val >= 3.75:
+                return f'background-color: {color4}'
+            elif val < 3.75:
+                return f'background-color: {color5}'
+        
+        if column == 'GB%':
+            if val >= .55:
+                return f'background-color: {color5}'
+            elif val >= .5:
+                return f'background-color: {color5}'
+            elif val >= .45:
+                return f'background-color: {color3}'
+            elif val >= .4:
+                return f'background-color: {color2}'
+            elif val < .4:
+                return f'background-color: {color1}'
+        
         if column == 'K%':
             if val >= .3:
                 return f'background-color: {color1}'
@@ -584,13 +608,13 @@ if check_password():
     def applyColor_Props(val, column):
         if column == 'BetValue':
             if val >= .2:
-                return f'background-color: {color1}'
+                return f'background-color: {color5}'
             elif val >= .15:
-                return f'background-color: {color2}'
+                return f'background-color: {color4}'
             elif val >= .1:
                 return f'background-color: {color3}'
             elif val < .1:
-                return f'background-color: {color5}'
+                return f'background-color: {color2}'
 
         if column == 'Price':
             if val >= 150:
@@ -620,6 +644,11 @@ if check_password():
 
     # Load data
     logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf = load_data()
+
+    ### ADD EMOJIS BASED ON 
+    # -- IF HITTER IS PROJECTED WELL ABOVE NORMAL TODAY
+    # -- IF HITTERS IS IN A BOOM MATCHUP 
+    # -- IF HITTER HAS MADE IMPROVEMENTS LAST 30 DAYS COMPARED TO CAREER
 
     last_update = pitcherproj['LastUpdate'].iloc[0]
     gameinfo['RoadTeam'] = np.where(gameinfo['team'] == gameinfo['Park'], gameinfo['opponent'], gameinfo['team'])
@@ -660,7 +689,7 @@ if check_password():
     # Sidebar navigation
     st.sidebar.image(logo, width=150)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Weather & Umps", "Streamers","Tableau"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Weather & Umps", "Streamers","Tableau"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -687,8 +716,8 @@ if check_password():
         home_bullpen_team = bpreport[bpreport['Team']==selected_home_team]
         home_bullpen_rp = rpstats[rpstats['Team']==selected_home_team]
 
-        #st.write(road_bullpen_team)
-        #st.write(road_bullpen_rp)
+        home_lineup_stats = lineup_stats[lineup_stats['Opp']==selected_home_team]
+        road_lineup_stats = lineup_stats[lineup_stats['Opp']==selected_road_team]
 
         these_sim = h_vs_sim[h_vs_sim['Team'].isin([selected_home_team,selected_road_team])]
 
@@ -812,6 +841,12 @@ if check_password():
             )
 
         # Pitcher projections
+        col1, col2, col3 = st.columns([1,1,5])
+        with col1:
+            bp_checked = st.checkbox("Show Bullpens", value=False, key=None, help=None, on_change=None)
+        with col2:
+            lu_checked = st.checkbox("Show Lineup Stats", value=False, key=None, help=None, on_change=None)
+        
         col1, col2 = st.columns(2)
         with col1:
             st.markdown(f"<h4>{road_sp_name} Projection</h4>", unsafe_allow_html=True)
@@ -838,6 +873,18 @@ if check_password():
             })
             st.dataframe(styled_df, hide_index=True, use_container_width=True)
 
+            #lu_checked = st.checkbox("Show Lineup Stats", value=False, key=None, help=None, on_change=None)
+            if lu_checked:
+                ### lineup stuff
+                home_lineup_stats = home_lineup_stats[['K%','BB%','Brl%','GB%','FB%','xwOBA','PPA']]
+                st.markdown(f"<h4>{selected_home_team} Lineup Stats</h4>", unsafe_allow_html=True)
+                styled_df = home_lineup_stats.style.apply(
+                    color_cells_HitStat, subset=['K%', 'BB%', 'Brl%', 'GB%', 'FB%','PPA','xwOBA'], axis=1
+                ).format({
+                    'K%': '{:.1%}', 'BB%': '{:.1%}', 'GB%': '{:.1%}', 'FB%': '{:.1%}', 'Brl%': '{:.1%}', 'xwOBA': '{:.3f}', 'PPA': '{:.3f}', 'IP': '{:.1f}'
+                })
+                st.dataframe(styled_df,hide_index=True,width=450)
+
         with col2:
             st.markdown(f"<h4>{home_sp_name} Projection</h4>", unsafe_allow_html=True)
             filtered_pproj = home_sp_projection[p_proj_cols].rename({'Ownership': 'Own%'}, axis=1)
@@ -862,10 +909,21 @@ if check_password():
                 'K%': '{:.1%}', 'BB%': '{:.1%}', 'SwStr%': '{:.1%}', 'Ball%': '{:.1%}', 'xwOBA': '{:.3f}', 'IP': '{:.1f}'
             })
             st.dataframe(styled_df, hide_index=True, use_container_width=True)
+
+            if lu_checked:
+                road_lineup_stats = road_lineup_stats[['K%','BB%','Brl%','GB%','FB%','xwOBA','PPA']]
+                st.markdown(f"<h4>{selected_road_team} Lineup Stats</h4>", unsafe_allow_html=True)
+                styled_df = road_lineup_stats.style.apply(
+                    color_cells_HitStat, subset=['K%', 'BB%', 'Brl%', 'GB%', 'FB%','PPA','xwOBA'], axis=1
+                ).format({
+                    'K%': '{:.1%}', 'BB%': '{:.1%}', 'GB%': '{:.1%}', 'FB%': '{:.1%}', 'Brl%': '{:.1%}', 'xwOBA': '{:.3f}', 'PPA': '{:.3f}', 'IP': '{:.1f}'
+                })
+                st.dataframe(styled_df,hide_index=True,width=450)
+
         
         # Bullpens
-        checked = st.checkbox("Show Bullpens", value=False, key=None, help=None, on_change=None)
-        if checked:
+        #checked = st.checkbox("Show Bullpens", value=False, key=None, help=None, on_change=None)
+        if bp_checked:
             #st.write("Checkbox is checked!")
 
             col1, col2 = st.columns([1,1])
@@ -930,8 +988,6 @@ if check_password():
                     color_cells_PitchStat, subset=['K%','BB%','SwStr%','xwOBA'], axis=1).format({
                         'K%': '{:.1%}','BB%': '{:.1%}', 'K-BB%': '{:.1%}','SwStr%': '{:.1%}','xwOBA': '{:.3f}','xERA': '{:.2f}'})
                 st.dataframe(styled_df, hide_index=True,width=500)
-
-
 
         # Hitter projections/stats
         col1, col2 = st.columns([1, 3])
@@ -1075,7 +1131,7 @@ if check_password():
             pitcher_props = pitcher_props[pitcher_props['Type']!='pitcher_outs']
             game_props = pd.concat([hitter_props,pitcher_props])
             game_props = game_props[['Player','Book','Type','OU','Line','Price','BetValue']].sort_values(by='BetValue',ascending=False)
-            game_props = game_props[game_props['BetValue']>=.1]
+            game_props = game_props[(game_props['BetValue']>=.1)|((game_props['Type']=='batter_home_runs')&(game_props['BetValue']>=.05))]
             if len(game_props)>0:
                 styled_df = game_props.style.apply(color_cells_Props, subset=['BetValue','Price'], axis=1).format({'BetValue': '{:.1%}',
                                                                                                                     'Price': '{:.0f}',
@@ -1558,6 +1614,28 @@ if check_password():
                 st.dataframe(styled_df,hide_index=True,width=850,height=600)
             else:
                 st.dataframe(styled_df,hide_index=True,width=850)
+    
+    if tab == "Matchups":
+        #st.dataframe(h_vs_sim)
+        team_options = ['All'] + list(h_vs_sim['Team'].unique())
+        col1,col2=st.columns([1,3])
+        with col1:
+            selected_team = st.selectbox('Filter by Team', team_options)
+        if selected_team == 'All':
+            show_hsim = h_vs_sim[['Hitter','Team','OppSP','PC','BIP','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
+        else:
+            show_hsim = h_vs_sim[h_vs_sim['Team']==selected_team][['Hitter','Team','OppSP','PC','BIP','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
+        
+        styled_df = show_hsim.style.apply(color_cells_HitMatchups, subset=['xwOBA','xwOBA Con',
+                                                                          'SwStr%','Brl%','FB%',
+                                                                          'Hard%'], axis=1).format({'xwOBA': '{:.3f}','xwOBA Con': '{:.3f}',
+                                                                                                    'SwStr%': '{:.1%}','Brl%': '{:.1%}',
+                                                                                                    'FB%': '{:.1%}'})
+        if len(show_hsim)>9:
+            st.dataframe(styled_df, hide_index=True, use_container_width=True, height=900)
+        else:
+            st.dataframe(styled_df, hide_index=True, use_container_width=True)
+        
     if tab == "Weather & Umps":
         weather_show = weather_data[['HomeTeam','Game','Conditions','Temp','Winds','Wind Dir','Rain%']].sort_values(by='Rain%',ascending=False)
         weather_show = pd.merge(weather_show,umpire_data, how='left', on='HomeTeam')
