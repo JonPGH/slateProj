@@ -1107,7 +1107,7 @@ if check_password():
             with col2:
                 home_sim = these_sim[these_sim['Team']==selected_home_team]
                 #home_sim = home_sim[(home_sim['xwOBA Con']>=.375)&(home_sim['SwStr%']<.11)]
-                home_sim = home_sim[['Batter','PC','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
+                home_sim = home_sim[['Hitter','PC','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
                 styled_df = home_sim.style.apply(color_cells_HitMatchups, subset=['xwOBA','xwOBA Con',
                                                                                 'SwStr%','Brl%','FB%',
                                                                                 'Hard%'], axis=1).format({'xwOBA': '{:.3f}',
