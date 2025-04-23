@@ -1787,8 +1787,10 @@ if check_password():
             st.error("CSV files not found. Please ensure 'Tableau_DailyHitterProj.csv' and 'Tableau_DailyPitcherProj.csv' are in the same directory as the script.")
             st.stop()
 
-        # Data preprocessing
-        # Data preprocessing
+        # main slate filter
+        hitters = hitters[hitters['MainSlate']=='Main']
+        pitchers = pitchers[pitchers['MainSlate']=='Main']
+        
         # Handle multi-position eligibility for hitters
         hitters['Pos'] = hitters['Pos'].str.split('/')
         hitters = hitters.explode('Pos')
