@@ -1446,27 +1446,27 @@ if check_password():
             col1,col2,col3,col4,col5 = st.columns([1,1,1,1,1])
             with col1:
                 st.image(get_player_image(id_list[0]),width=imgwidth)
-                st.markdown(f'{name_list[0]}: +{hr_list[0]} HR')
+                st.markdown(f'{name_list[0]}: +{round(hr_list[0],2)} HR')
 
             with col2:
                 st.image(get_player_image(id_list[1]),width=imgwidth)
-                st.markdown(f'{name_list[1]}: +{hr_list[1]} HR')
+                st.markdown(f'{name_list[1]}: +{round(hr_list[1],2)} HR')
             with col3:
                 st.image(get_player_image(id_list[2]),width=imgwidth)
-                st.markdown(f'{name_list[2]}: +{hr_list[2]} HR')
+                st.markdown(f'{name_list[2]}: +{round(hr_list[2],2)} HR')
             with col4:
                 st.image(get_player_image(id_list[3]),width=imgwidth)
-                st.markdown(f'{name_list[3]}: +{hr_list[3]} HR')
+                st.markdown(f'{name_list[3]}: +{round(hr_list[3],2)} HR')
             with col5:
                 st.image(get_player_image(id_list[4]),width=imgwidth)
-                st.markdown(f'{name_list[4]}: +{hr_list[4]} HR')
+                st.markdown(f'{name_list[4]}: +{round(hr_list[4],2)} HR')
 
             st.markdown("<h3>Biggest Fantasy Points Projected Boost", unsafe_allow_html=True)
             
             show_leaders = h_vs_avg.sort_values(by='DKPts Diff',ascending=False)
             show_leaders['Opp'] = show_leaders['Team'].map(hitter_matchups_dict)
             show_leaders['OppSP'] = show_leaders['Team'].map(hitter_matchups_pp_dict)
-            show_leaders = show_leaders[['Batter','Team','Opp','OppSP','DKPts','Avg DK Proj','DKPts Diff']].head(10)
+            show_leaders = show_leaders[['Hitter','Team','Opp','OppSP','DKPts','Avg DK Proj','DKPts Diff']].head(10)
             st.dataframe(show_leaders,hide_index=True)
 
         if checked2:
