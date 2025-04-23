@@ -1089,6 +1089,7 @@ if check_password():
                     })
                     st.dataframe(styled_df, hide_index=True, use_container_width=True)
         elif option == "Matchups":
+            st.markdown(f"<b><i>Matchups is an algorithm that finds hitter stats against similar pitch movements as the ones they will see in this matchup</b></i>", unsafe_allow_html=True)
             col1, col2 = st.columns([1,1])
             with col1:
                 road_sim = these_sim[these_sim['Team']==selected_road_team]
