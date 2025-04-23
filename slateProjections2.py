@@ -703,7 +703,7 @@ if check_password():
     # Sidebar navigation
     st.sidebar.image(logo, width=150)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Weather & Umps", "Streamers","Tableau"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -1749,7 +1749,7 @@ if check_password():
                     ])
                 st.dataframe(styled_df, hide_index=True, width=950, height=600)
     
-    if tab == 'Tableau':
+    if tab == "Tableau":
         tableau_choice = st.selectbox(options=['Main','MLB & MiLB Stats'],label='Choose dashboard to display')
         if tableau_choice == 'Main':
             #st.markdown("<h2><center>Main MLB Dashboard</center></h2>", unsafe_allow_html=True)
@@ -1766,7 +1766,215 @@ if check_password():
             """ 
             components.html(tableau_code_pitchers, height=750, scrolling=True)
 
+    if tab == "DFS Optimizer":
+        import pulp
+        import warnings
+        warnings.filterwarnings("ignore")
 
+        # Streamlit app
+        st.title("DraftKings MLB DFS Optimizer")
+        st.markdown("""
+                    There is nothing special about this optimizer, and it doesn't
+                    let you export the lineups so they can be used, but it will at 
+                    least give you a feel for what kind of lineup the model likes.<hr>
+                    """, unsafe_allow_html=True)
 
+        # Read data
+        try:
+            hitters = hitterproj.copy()
+            pitchers = pitcherproj.copy()
+        except FileNotFoundError:
+            st.error("CSV files not found. Please ensure 'Tableau_DailyHitterProj.csv' and 'Tableau_DailyPitcherProj.csv' are in the same directory as the script.")
+            st.stop()
 
+        # Data preprocessing
+        # Data preprocessing
+        # Handle multi-position eligibility for hitters
+        hitters['Pos'] = hitters['Pos'].str.split('/')
+        hitters = hitters.explode('Pos')
 
+        # Combine hitters and pitchers
+        hitters['Type'] = 'Hitter'
+        pitchers['Type'] = 'Pitcher'
+
+        # Rename columns for consistency
+        hitters = hitters.rename(columns={'Hitter': 'Name', 'Sal': 'Salary', 'DKPts': 'Points', 'Team': 'Team'})
+        pitchers = pitchers.rename(columns={'Pitcher': 'Name', 'Sal': 'Salary', 'DKPts': 'Points', 'Team': 'Team'})
+
+        # Select relevant columns
+        hitters = hitters[['Name', 'Pos', 'Team', 'Salary', 'Points', 'Type']]
+        pitchers = pitchers[['Name', 'Team', 'Salary', 'Points', 'Type']]
+
+        # Assign pitcher position
+        pitchers['Pos'] = 'P'
+
+        # Combine data
+        players = pd.concat([hitters, pitchers], ignore_index=True)
+
+        # Clean data
+        players = players.dropna(subset=['Name', 'Pos', 'Team', 'Salary', 'Points'])
+        players['Salary'] = players['Salary'].astype(float)
+        players['Points'] = players['Points'].astype(float)
+
+        # DraftKings MLB DFS rules
+        SALARY_CAP = 50000
+        ROSTER_SIZE = 10
+        POSITIONS = {
+            'P': 2,
+            'C': 1,
+            '1B': 1,
+            '2B': 1,
+            '3B': 1,
+            'SS': 1,
+            'OF': 3
+        }
+
+        # Define display order for positions
+        POSITION_ORDER = ['P', 'P', 'C', '1B', '2B', 'SS', '3B', 'OF', 'OF', 'OF']
+        POSITION_INDEX = {pos: i for i, pos in enumerate(['P', 'C', '1B', '2B', 'SS', '3B', 'OF'])}
+
+        # Streamlit inputs
+        col1,col2,col3 = st.columns([1,1,1])
+        with col1:
+            projection_variance = st.slider("Projection Variance (%)", min_value=0, max_value=50, value=10, step=5) / 100
+        with col2:
+            num_lineups = st.number_input("Number of Lineups to Generate", min_value=1, max_value=20, value=5, step=1)
+        with col3:
+            max_exposure = st.slider("Maximum Player Exposure (%)", min_value=10, max_value=100, value=50, step=10) / 100
+
+        # Optimizer function
+        def optimize_lineup(players, player_usage, max_usage, used_lineups):
+            # Initialize PuLP problem
+            prob = pulp.LpProblem("DFS_Optimizer", pulp.LpMaximize)
+
+            # Decision variables
+            player_vars = pulp.LpVariable.dicts("Player", players.index, cat='Binary')
+
+            # Objective: Maximize projected points
+            prob += pulp.lpSum([players.loc[i, 'Points'] * player_vars[i] for i in players.index])
+
+            # Constraints
+            # 1. Salary cap
+            prob += pulp.lpSum([players.loc[i, 'Salary'] * player_vars[i] for i in players.index]) <= SALARY_CAP
+
+            # 2. Roster size
+            prob += pulp.lpSum([player_vars[i] for i in players.index]) == ROSTER_SIZE
+
+            # 3. Positional constraints
+            for pos, count in POSITIONS.items():
+                prob += pulp.lpSum([player_vars[i] for i in players.index if players.loc[i, 'Pos'] == pos]) == count
+
+            # 4. Max exposure constraint
+            for idx in players.index:
+                player_name = players.loc[idx, 'Name']
+                if player_name in player_usage and player_usage[player_name] >= max_usage:
+                    prob += player_vars[idx] == 0
+
+            # 5. Exclude previously used lineups
+            for lineup_indices in used_lineups:
+                # Prevent the exact same combination of players
+                prob += pulp.lpSum([player_vars[i] for i in lineup_indices]) <= ROSTER_SIZE - 1
+
+            # Solve
+            prob.solve()
+
+            # Extract results
+            lineup = []
+            if pulp.LpStatus[prob.status] == 'Optimal':
+                for i in players.index:
+                    if player_vars[i].varValue == 1:
+                        lineup.append(players.loc[i])
+                lineup_df = pd.DataFrame(lineup)
+                total_points = sum(players.loc[i, 'Points'] for i in players.index if player_vars[i].varValue == 1)
+                total_salary = sum(players.loc[i, 'Salary'] for i in players.index if player_vars[i].varValue == 1)
+                selected_indices = [i for i in players.index if player_vars[i].varValue == 1]
+                return lineup_df, total_points, total_salary, selected_indices
+            else:
+                return None, 0, 0, []
+
+        # Function to sort lineup by position order
+        def sort_lineup(lineup_df):
+            # Create a sorting key based on POSITION_ORDER
+            def get_sort_key(row):
+                pos = row['Pos']
+                if pos == 'P':
+                    # Assign first or second P based on order
+                    p_count = sum(1 for r in lineup_df['Pos'][:row.name] if r == 'P')
+                    return POSITION_ORDER.index('P') + p_count / 10
+                elif pos == 'OF':
+                    # Assign OF positions based on order
+                    of_count = sum(1 for r in lineup_df['Pos'][:row.name] if r == 'OF')
+                    return POSITION_ORDER.index('OF') + of_count / 10
+                else:
+                    return POSITION_ORDER.index(pos)
+            
+            lineup_df = lineup_df.copy()
+            lineup_df['SortKey'] = lineup_df.apply(get_sort_key, axis=1)
+            sorted_lineup = lineup_df.sort_values('SortKey').drop(columns=['SortKey'])
+            return sorted_lineup
+
+        # Generate multiple lineups
+        if st.button("Generate Lineups"):
+            all_lineups = []
+            player_usage = {}  # Track how many times each player has been used
+            used_lineups = []  # Track indices of players in each lineup
+            max_usage = max_exposure * num_lineups  # Convert percentage to number of lineups
+
+            for lineup_num in range(int(num_lineups)):
+                # Apply random variance to projections
+                players['Points'] = players['Points'] * np.random.uniform(1 - projection_variance, 1 + projection_variance, size=len(players))
+
+                # Optimize lineup with max exposure and unique lineup constraints
+                lineup_df, total_points, total_salary, selected_indices = optimize_lineup(players, player_usage, max_usage, used_lineups)
+
+                if lineup_df is not None:
+                    # Sort lineup by position order
+                    lineup_df = sort_lineup(lineup_df)
+                    all_lineups.append({
+                        'Lineup Number': lineup_num + 1,
+                        'Lineup': lineup_df[['Name', 'Pos', 'Team', 'Salary', 'Points']],
+                        'Total Points': total_points,
+                        'Total Salary': total_salary,
+                        'Teams': lineup_df['Team'].nunique()
+                    })
+                    # Update player usage and used lineups
+                    for idx in selected_indices:
+                        player_name = players.loc[idx, 'Name']
+                        player_usage[player_name] = player_usage.get(player_name, 0) + 1
+                    used_lineups.append(selected_indices)
+                else:
+                    st.warning(f"Could not generate lineup {lineup_num + 1}. Check constraints or data.")
+                    break
+
+            # Display lineups side-by-side
+            if all_lineups:
+                st.subheader("Generated Lineups")
+                # Create columns for lineups (up to num_lineups)
+                cols = st.columns(len(all_lineups))
+                for idx, lineup_info in enumerate(all_lineups):
+                    with cols[idx]:
+                        st.write(f"**Lineup {lineup_info['Lineup Number']}**")
+                        st.dataframe(lineup_info['Lineup'], hide_index=True)
+                        st.write(f"**Total Projected Points**: {lineup_info['Total Points']:.2f}")
+                        st.write(f"**Total Salary**: ${lineup_info['Total Salary']:,.2f}")
+                        st.write(f"**Teams Represented**: {lineup_info['Teams']}")
+
+                # Player ownership report
+                st.subheader("Player Ownership Report")
+                ownership_data = []
+                for player_name, count in player_usage.items():
+                    ownership_pct = (count / len(all_lineups)) * 100
+                    player_info = players[players['Name'] == player_name].iloc[0]
+                    ownership_data.append({
+                        'Name': player_name,
+                        'Position': player_info['Pos'],
+                        'Team': player_info['Team'],
+                        'Ownership (%)': ownership_pct
+                    })
+                ownership_df = pd.DataFrame(ownership_data).sort_values(by='Ownership (%)', ascending=False)
+                st.dataframe(ownership_df, hide_index=True)
+
+        # Display raw data (optional)
+        if st.checkbox("Show Raw Player Data"):
+            st.subheader("Player Projections")
+            st.dataframe(players, hide_index=True)
