@@ -1,5 +1,5 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,White Sox  @  Twins,Mostly Cloudy,52°,5.4 mph,"In, Weak",CWS,MIN,11,2025-4-24,0,0
+0,White Sox  @  Twins,Mostly Cloudy,51°,5.4 mph,"In, Weak",CWS,MIN,10,2025-4-24,0,0
 1,Mariners  @  Red Sox,Mostly Clear,64°,5.4 mph,"R to L, Weak",SEA,BOS,0,2025-4-24,0,0
 2,Rockies  @  Royals,Mostly Cloudy,76°,8.9 mph,"R to L, Weak",COL,KC,0,2025-4-24,0,0
 3,Rockies  @  Royals,Mostly Cloudy,76°,8.9 mph,"R to L, Weak",COL,KC,0,2025-4-24,0,0
@@ -7,6 +7,6 @@
 5,Rockies  @  Royals,Mostly Cloudy,79°,9.8 mph,"R to L, Weak",COL,KC,0,2025-4-24,0,0
 6,Rockies  @  Royals,Mostly Cloudy,79°,9.8 mph,"R to L, Weak",COL,KC,0,2025-4-24,0,0
 7,Orioles  @  Nationals,Partly Cloudy,77°,7.2 mph,"Out, Weak",BAL,WSH,0,2025-4-24,0,0
-8,Pirates  @  Angels,Mostly Clear,64°,7.2 mph,"Out, Weak",PIT,LAA,0,2025-4-24,0,0
+8,Pirates  @  Angels,Mostly Clear,63°,7.2 mph,"Out, Weak",PIT,LAA,0,2025-4-24,0,0
 9,Rays  @  Diamondbacks,Dry and Clear,87°,2.7 mph,None,TB,ARI,0,2025-4-24,1,0
-10,Rangers  @  Athletics,Mostly Cloudy,63°,9.8 mph,"Out, Weak",TEX,OAK,0,2025-4-24,0,0
+10,Rangers  @  Athletics,Mostly Cloudy,64°,9.8 mph,"Out, Weak",TEX,OAK,0,2025-4-24,0,0
