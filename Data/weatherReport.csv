@@ -1,16 +1,12 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Cardinals  @  Braves,Mostly Cloudy,73°,4.5 mph,None,STL,ATL,5,2025-4-23,0,0
-1,Phillies  @  Mets,Mostly Clear,68°,4.5 mph,None,PHI,NYM,0,2025-4-23,0,0
-2,Yankees  @  Guardians,Partly Cloudy,70°,5.4 mph,"L to R, Weak",NYY,CLE,0,2025-4-23,0,0
-3,Reds  @  Marlins,Partly Cloudy,81°,9.8 mph,"In, Weak",CIN,MIA,0,2025-4-23,1,0
-4,Padres  @  Tigers,Mostly Clear,72°,5.4 mph,"R to L, Weak",SD,DET,0,2025-4-23,0,0
-5,Orioles  @  Nationals,Mostly Clear,76°,3.6 mph,None,BAL,WSH,0,2025-4-23,0,0
-6,Mariners  @  Red Sox,Clear,69°,5.4 mph,"L to R, Weak",SEA,BOS,0,2025-4-23,0,0
-7,Dodgers  @  Cubs,Mostly Clear,64°,5.4 mph,"R to L, Weak",LAD,CHC,0,2025-4-23,0,0
-8,Rockies  @  Royals,Partly Cloudy,78°,7.2 mph,"R to L, Weak",COL,KC,8,2025-4-23,0,0
-9,Blue Jays  @  Astros,Light Rain,77°,9.8 mph,"Out, Weak",TOR,HOU,25,2025-4-23,1,1
-10,White Sox  @  Twins,Mostly Clear,66°,8.0 mph,"Out, Weak",CWS,MIN,0,2025-4-23,0,0
-11,Pirates  @  Angels,Mostly Clear,63°,8.0 mph,"Out, Weak",PIT,LAA,0,2025-4-23,0,0
-12,Rays  @  Diamondbacks,Dry and Clear,87°,6.3 mph,"L to R, Weak",TB,ARI,0,2025-4-23,1,0
-13,Brewers  @  Giants,Mostly Clear,55°,11.6 mph,"Out, Strong",MIL,SF,0,2025-4-23,0,0
-14,Rangers  @  Athletics,Clear,68°,7.2 mph,"Out, Weak",TEX,OAK,0,2025-4-23,0,0
+0,White Sox  @  Twins,Mostly Cloudy,52°,5.4 mph,"In, Weak",CWS,MIN,11,2025-4-24,0,0
+1,Mariners  @  Red Sox,Mostly Clear,64°,5.4 mph,"R to L, Weak",SEA,BOS,0,2025-4-24,0,0
+2,Rockies  @  Royals,Mostly Cloudy,76°,8.9 mph,"R to L, Weak",COL,KC,0,2025-4-24,0,0
+3,Rockies  @  Royals,Mostly Cloudy,76°,8.9 mph,"R to L, Weak",COL,KC,0,2025-4-24,0,0
+4,Brewers  @  Giants,Mostly Cloudy,54°,8.0 mph,"Out, Weak",MIL,SF,0,2025-4-24,0,0
+5,Rockies  @  Royals,Mostly Cloudy,79°,9.8 mph,"R to L, Weak",COL,KC,0,2025-4-24,0,0
+6,Rockies  @  Royals,Mostly Cloudy,79°,9.8 mph,"R to L, Weak",COL,KC,0,2025-4-24,0,0
+7,Orioles  @  Nationals,Partly Cloudy,77°,7.2 mph,"Out, Weak",BAL,WSH,0,2025-4-24,0,0
+8,Pirates  @  Angels,Mostly Clear,64°,7.2 mph,"Out, Weak",PIT,LAA,0,2025-4-24,0,0
+9,Rays  @  Diamondbacks,Dry and Clear,87°,2.7 mph,None,TB,ARI,0,2025-4-24,1,0
+10,Rangers  @  Athletics,Mostly Cloudy,63°,9.8 mph,"Out, Weak",TEX,OAK,0,2025-4-24,0,0
