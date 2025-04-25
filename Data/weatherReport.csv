@@ -1,12 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,White Sox  @  Twins,Drizzle,51°,5.4 mph,"L to R, Weak",CWS,MIN,28,2025-4-25,0,0
-1,Mariners  @  Red Sox,Mostly Clear,65°,5.4 mph,"R to L, Weak",SEA,BOS,0,2025-4-25,0,0
-2,Rockies  @  Royals,Mostly Cloudy,76°,8.0 mph,"R to L, Weak",COL,KC,0,2025-4-25,0,0
-3,Rockies  @  Royals,Mostly Cloudy,76°,8.0 mph,"R to L, Weak",COL,KC,0,2025-4-25,0,0
-4,Brewers  @  Giants,Mostly Cloudy,54°,8.0 mph,"Out, Weak",MIL,SF,0,2025-4-25,0,0
-5,Rockies  @  Royals,Mostly Cloudy,78°,8.9 mph,"R to L, Weak",COL,KC,0,2025-4-25,0,0
-6,Rockies  @  Royals,Mostly Cloudy,78°,8.9 mph,"R to L, Weak",COL,KC,0,2025-4-25,0,0
-7,Orioles  @  Nationals,Mostly Clear,77°,7.2 mph,"Out, Weak",BAL,WSH,0,2025-4-25,0,0
-8,Pirates  @  Angels,Partly Cloudy,64°,8.0 mph,"Out, Weak",PIT,LAA,0,2025-4-25,0,0
-9,Rays  @  Diamondbacks,Dry and Clear,88°,2.7 mph,None,TB,ARI,0,2025-4-25,1,0
-10,Rangers  @  Athletics,Mostly Cloudy,63°,8.9 mph,"Out, Weak",TEX,OAK,0,2025-4-25,0,0
+0,Phillies  @  Cubs,Mostly Cloudy,52°,11.6 mph,"In, Strong",PHI,CHC,5,2025-4-25,0,0
+1,Orioles  @  Tigers,Light Rain,70°,5.4 mph,"In, Weak",BAL,DET,29,2025-4-25,0,0
+2,Mets  @  Nationals,Mostly Cloudy,76°,8.9 mph,"Out, Weak",NYM,WSH,16,2025-4-25,0,0
+3,Blue Jays  @  Yankees,Mostly Cloudy,66°,12.5 mph,"R to L, Strong",TOR,NYY,0,2025-4-25,0,0
+4,Red Sox  @  Guardians,Light Rain,66°,4.5 mph,None,BOS,CLE,54,2025-4-25,0,0
+5,Angels  @  Twins,Clear,57°,8.9 mph,"L to R, Weak",LAA,MIN,0,2025-4-25,0,0
+6,Astros  @  Royals,Mostly Cloudy,67°,9.8 mph,"In, Weak",HOU,KC,0,2025-4-25,0,0
+7,Brewers  @  Cardinals,Partly Cloudy,75°,6.3 mph,"L to R, Weak",MIL,STL,0,2025-4-25,0,0
+8,Reds  @  Rockies,Mostly Cloudy,51°,9.8 mph,"In, Weak",CIN,COL,0,2025-4-25,0,0
+9,Rays  @  Padres,Mostly Clear,60°,8.0 mph,"L to R, Weak",TB,SD,0,2025-4-25,0,0
+10,Marlins  @  Mariners,Mostly Clear,67°,8.9 mph,"L to R, Weak",MIA,SEA,0,2025-4-25,1,0
+11,Braves  @  Diamondbacks,Dry and Clear,86°,9.8 mph,"L to R, Weak",ATL,ARI,0,2025-4-25,1,0
+12,White Sox  @  Athletics,Partly Cloudy,61°,8.9 mph,"Out, Weak",CWS,OAK,0,2025-4-25,0,0
+13,Pirates  @  Dodgers,Mostly Clear,55°,8.9 mph,"Out, Weak",PIT,LAD,0,2025-4-25,0,0
+14,Rangers  @  Giants,Partly Cloudy,55°,8.9 mph,"Out, Weak",TEX,SF,0,2025-4-25,0,0
