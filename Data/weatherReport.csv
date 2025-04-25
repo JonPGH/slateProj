@@ -1,11 +1,11 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Phillies  @  Cubs,Mostly Cloudy,52°,11.6 mph,"In, Strong",PHI,CHC,5,2025-4-25,0,0
-1,Orioles  @  Tigers,Light Rain,70°,5.4 mph,"In, Weak",BAL,DET,29,2025-4-25,0,0
-2,Mets  @  Nationals,Mostly Cloudy,76°,8.9 mph,"Out, Weak",NYM,WSH,16,2025-4-25,0,0
+1,Orioles  @  Tigers,Light Rain,70°,5.4 mph,"In, Weak",BAL,DET,28,2025-4-25,0,0
+2,Mets  @  Nationals,Mostly Cloudy,76°,8.9 mph,"Out, Weak",NYM,WSH,13,2025-4-25,0,0
 3,Blue Jays  @  Yankees,Mostly Cloudy,66°,12.5 mph,"R to L, Strong",TOR,NYY,0,2025-4-25,0,0
-4,Red Sox  @  Guardians,Light Rain,66°,4.5 mph,None,BOS,CLE,54,2025-4-25,0,0
+4,Red Sox  @  Guardians,Light Rain,66°,4.5 mph,None,BOS,CLE,53,2025-4-25,0,0
 5,Angels  @  Twins,Clear,57°,8.9 mph,"L to R, Weak",LAA,MIN,0,2025-4-25,0,0
-6,Astros  @  Royals,Mostly Cloudy,67°,9.8 mph,"In, Weak",HOU,KC,0,2025-4-25,0,0
+6,Astros  @  Royals,Partly Cloudy,68°,9.8 mph,"L to R, Weak",HOU,KC,0,2025-4-25,0,0
 7,Brewers  @  Cardinals,Partly Cloudy,75°,6.3 mph,"L to R, Weak",MIL,STL,0,2025-4-25,0,0
 8,Reds  @  Rockies,Mostly Cloudy,51°,9.8 mph,"In, Weak",CIN,COL,0,2025-4-25,0,0
 9,Rays  @  Padres,Mostly Clear,60°,8.0 mph,"L to R, Weak",TB,SD,0,2025-4-25,0,0
