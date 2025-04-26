@@ -1,22 +1,21 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Blue Jays  @  Yankees,Drizzle,69°,14.3 mph,"R to L, Strong",TOR,NYY,44,2025-4-26,0,0
-1,Red Sox  @  Guardians,Mostly Cloudy,48°,14.3 mph,"In, Strong",BOS,CLE,0,2025-4-26,0,0
+0,Orioles  @  Tigers,Breezy and Mostly Cloudy,51°,15.2 mph,"Out, Strong",BAL,DET,0,2025-4-26,0,0
+1,Orioles  @  Tigers,Breezy and Mostly Cloudy,51°,15.2 mph,"Out, Strong",BAL,DET,0,2025-4-26,0,0
 2,Red Sox  @  Guardians,Mostly Cloudy,48°,14.3 mph,"In, Strong",BOS,CLE,0,2025-4-26,0,0
-3,Orioles  @  Tigers,Breezy and Mostly Cloudy,51°,15.2 mph,"Out, Strong",BAL,DET,0,2025-4-26,0,0
-4,Orioles  @  Tigers,Breezy and Mostly Cloudy,51°,15.2 mph,"Out, Strong",BAL,DET,0,2025-4-26,0,0
-5,Angels  @  Twins,Clear,59°,5.4 mph,"In, Weak",LAA,MIN,0,2025-4-26,0,0
-6,Brewers  @  Cardinals,Partly Cloudy,64°,7.2 mph,"In, Weak",MIL,STL,0,2025-4-26,0,0
-7,Reds  @  Rockies,Mostly Clear,69°,9.8 mph,"Out, Weak",CIN,COL,0,2025-4-26,0,0
-8,Rangers  @  Giants,Mostly Cloudy,56°,7.4 mph,"Out, Weak",TEX,SF,0,2025-4-26,0,0
-9,Phillies  @  Cubs,Clear,48°,12.7 mph,"In, Strong",PHI,CHC,0,2025-4-26,0,0
-10,Mets  @  Nationals,Light Rain,73°,11.8 mph,"L to R, Strong",NYM,WSH,41,2025-4-26,0,0
-11,White Sox  @  Athletics,Mostly Cloudy,59°,4.7 mph,None,CWS,OAK,13,2025-4-26,0,0
-12,Red Sox  @  Guardians,Mostly Cloudy,49°,13.4 mph,"In, Strong",BOS,CLE,0,2025-4-26,0,0
-13,Red Sox  @  Guardians,Mostly Cloudy,49°,13.4 mph,"In, Strong",BOS,CLE,0,2025-4-26,0,0
+3,Red Sox  @  Guardians,Mostly Cloudy,48°,14.3 mph,"In, Strong",BOS,CLE,0,2025-4-26,0,0
+4,Angels  @  Twins,Clear,59°,5.4 mph,"In, Weak",LAA,MIN,0,2025-4-26,0,0
+5,Brewers  @  Cardinals,Partly Cloudy,64°,7.2 mph,"In, Weak",MIL,STL,0,2025-4-26,0,0
+6,Reds  @  Rockies,Mostly Clear,70°,9.8 mph,"Out, Weak",CIN,COL,0,2025-4-26,0,0
+7,Rangers  @  Giants,Mostly Cloudy,55°,7.4 mph,"Out, Weak",TEX,SF,0,2025-4-26,0,0
+8,White Sox  @  Athletics,Mostly Cloudy,59°,4.7 mph,None,CWS,OAK,15,2025-4-26,0,0
+9,Mets  @  Nationals,Light Rain,73°,11.8 mph,"L to R, Strong",NYM,WSH,41,2025-4-26,0,0
+10,Phillies  @  Cubs,Clear,48°,12.7 mph,"In, Strong",PHI,CHC,0,2025-4-26,0,0
+11,Red Sox  @  Guardians,Mostly Cloudy,48°,13.4 mph,"In, Strong",BOS,CLE,0,2025-4-26,0,0
+12,Red Sox  @  Guardians,Mostly Cloudy,48°,13.4 mph,"In, Strong",BOS,CLE,0,2025-4-26,0,0
+13,Orioles  @  Tigers,Partly Cloudy,54°,13.4 mph,"Out, Strong",BAL,DET,0,2025-4-26,0,0
 14,Orioles  @  Tigers,Partly Cloudy,54°,13.4 mph,"Out, Strong",BAL,DET,0,2025-4-26,0,0
-15,Orioles  @  Tigers,Partly Cloudy,54°,13.4 mph,"Out, Strong",BAL,DET,0,2025-4-26,0,0
-16,Astros  @  Royals,Mostly Cloudy,65°,8.9 mph,"R to L, Weak",HOU,KC,0,2025-4-26,0,0
-17,Braves  @  Diamondbacks,Clear,81°,9.8 mph,"L to R, Weak",ATL,ARI,0,2025-4-26,1,0
-18,Rays  @  Padres,Possible Light Rain,60°,9.8 mph,"L to R, Weak",TB,SD,0,2025-4-26,0,0
-19,Pirates  @  Dodgers,Partly Cloudy,55°,8.9 mph,"Out, Weak",PIT,LAD,0,2025-4-26,0,0
-20,Marlins  @  Mariners,Mostly Clear,65°,6.3 mph,"L to R, Weak",MIA,SEA,0,2025-4-26,1,0
+15,Astros  @  Royals,Mostly Cloudy,65°,8.9 mph,"R to L, Weak",HOU,KC,0,2025-4-26,0,0
+16,Braves  @  Diamondbacks,Clear,80°,9.8 mph,"L to R, Weak",ATL,ARI,0,2025-4-26,1,0
+17,Rays  @  Padres,Light Rain,60°,9.8 mph,"L to R, Weak",TB,SD,0,2025-4-26,0,0
+18,Pirates  @  Dodgers,Partly Cloudy,54°,8.9 mph,"Out, Weak",PIT,LAD,0,2025-4-26,0,0
+19,Marlins  @  Mariners,Mostly Clear,65°,6.3 mph,"L to R, Weak",MIA,SEA,0,2025-4-26,1,0
