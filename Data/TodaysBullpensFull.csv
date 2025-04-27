@@ -3,7 +3,6 @@
 3,BAL,Cionel Perez,672335,L
 5,BAL,Felix Bautista,642585,R
 6,BAL,Gregory Soto,642397,L
-7,BAL,Keegan Akin,669211,L
 8,BAL,Matt Bowman,621199,R
 9,BAL,Scott Blewett,656240,R
 10,BAL,Seranthony Dominguez,622554,R
@@ -27,7 +26,6 @@
 39,MIA,Anthony Bender,669622,R
 40,MIA,Anthony Veneziano,685107,L
 42,MIA,Calvin Faucher,676534,R
-45,MIA,George Soriano,666277,R
 46,MIA,Jesus Tinoco,622786,R
 47,MIA,Lake Bachar,669199,R
 49,MIA,Ronny Henriquez,678692,R
@@ -36,29 +34,26 @@
 55,STL,John King,667463,L
 56,STL,Kyle Leahy,681517,R
 57,STL,Matt Svanson,694335,R
-60,STL,Phil Maton,664208,R
 61,STL,Ryan Fernandez,681676,R
 62,STL,Ryan Helsley,664854,R
 64,STL,Steven Matz,571927,L
 66,WSH,Cole Henry,669371,R
 67,WSH,Colin Poche,621363,L
-68,WSH,Eduardo Salazar,674285,R
 69,WSH,Jackson Rutledge,671131,R
 71,WSH,Jorge Lopez,605347,R
 72,WSH,Jose A. Ferrer,678606,L
 73,WSH,Kyle Finnegan,640448,R
 74,WSH,Lucas Sims,608371,R
-79,PHI,Carlos Hernandez,672578,R
 82,PHI,Joe Ross,605452,R
 83,PHI,Jordan Romano,605447,R
 84,PHI,Jose Alvarado,621237,L
+85,PHI,Jose Ruiz,614179,R
 86,PHI,Matt Strahm,621381,L
 87,PHI,Orion Kerkering,689147,R
 89,PHI,Tanner Banks,621383,L
 93,PIT,Caleb Ferguson,657571,L
 95,PIT,Chase Shugart,663767,R
 96,PIT,Dennis Santana,642701,R
-97,PIT,Joey Wentz,666214,L
 98,PIT,Justin Lawrence,664875,R
 99,PIT,Kyle Nicolas,693312,R
 102,PIT,Ryan Borucki,621366,L
@@ -80,12 +75,10 @@
 127,NYY,Tim Hill,657612,L
 129,NYY,Yoendrys Gomez,672782,R
 130,DET,Beau Brieske,689225,R
-131,DET,Brant Hurter,676428,L
 135,DET,John Brebbia,605154,R
 137,DET,Kenta Maeda,628317,R
 140,DET,Tommy Kahnle,592454,R
 141,DET,Tyler Holton,663947,L
-142,DET,Will Vest,676684,R
 144,TOR,Brendon Little,663893,L
 145,TOR,Chad Green,643338,R
 148,TOR,Jacob Barnes,606930,R
@@ -106,6 +99,7 @@
 171,TB,Eric Orze,679358,R
 172,TB,Garrett Cleavinger,664076,L
 173,TB,Hunter Bigge,685801,R
+174,TB,Manuel Rodriguez,655889,R
 175,TB,Mason Englert,669438,R
 176,TB,Mason Montgomery,682254,L
 177,TB,Pete Fairbanks,664126,R
@@ -116,6 +110,7 @@
 188,MIL,Joel Payamps,606303,R
 191,MIL,Nick Mears,683232,R
 193,MIL,Trevor Megill,656730,R
+194,MIL,Tyler Alexander,641302,L
 195,BOS,Aroldis Chapman,547973,L
 196,BOS,Brennan Bernardino,657514,L
 198,BOS,Garrett Whitlock,676477,R
@@ -162,7 +157,6 @@
 265,OAK,Justin Sterner,686993,R
 267,OAK,Mason Miller,695243,R
 268,OAK,Mitch Spence,687765,R
-269,OAK,Noah Murdock,668716,R
 271,OAK,T.J. McFarland,519008,L
 272,OAK,Tyler Ferguson,621053,R
 273,CWS,Brandon Eisert,685126,L
@@ -182,14 +176,14 @@
 293,LAD,Kirby Yates,489446,R
 294,LAD,Luis Garcia,472610,R
 296,LAD,Tanner Scott,656945,L
-303,COL,Jake Bird,656234,R
+299,COL,Angel Chivilli,683409,R
 304,COL,Jimmy Herget,623474,R
 306,COL,Luis Peralta,678821,L
 308,COL,Scott Alexander,518397,L
 309,COL,Seth Halvorsen,678020,R
-310,COL,Tyler Kinley,641755,R
 311,COL,Victor Vodnik,680767,R
 312,TEX,Caleb Boushley,676961,R
+313,TEX,Chris Martin,455119,R
 314,TEX,Hoby Milner,571948,L
 315,TEX,Jacob Latz,656641,L
 316,TEX,Jacob Webb,657097,R
@@ -202,7 +196,6 @@
 330,LAA,Kenley Jansen,445276,R
 332,LAA,Michael Darrell-Hicks,690382,R
 333,LAA,Reid Detmers,672282,L
-334,LAA,Ryan Johnson,696270,R
 335,LAA,Ryan Zeferjahn,666171,R
 340,MIN,Cole Sands,663485,R
 341,MIN,Danny Coulombe,543056,L
@@ -211,7 +204,6 @@
 346,MIN,Jorge Alcala,660896,R
 347,MIN,Justin Topa,623437,R
 348,MIN,Kody Funderburk,681892,L
-349,MIN,Louis Varland,686973,R
 351,SD,Adrian Morejon,670970,L
 352,SD,Alek Jacob,689690,R
 354,SD,Jason Adam,592094,R
@@ -223,7 +215,6 @@
 365,CHC,Brad Keller,641745,R
 366,CHC,Caleb Thielbar,573204,L
 368,CHC,Daniel Palencia,694037,R
-369,CHC,Ethan Roberts,681799,R
 371,CHC,Julian Merryweather,657240,R
 372,CHC,Luke Little,681432,L
 374,CHC,Porter Hodge,687863,R
