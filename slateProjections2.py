@@ -645,10 +645,8 @@ if check_password():
     # Load data
     logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf = load_data()
 
-    ### ADD EMOJIS BASED ON 
-    # -- IF HITTER IS PROJECTED WELL ABOVE NORMAL TODAY
-    # -- IF HITTERS IS IN A BOOM MATCHUP 
-    # -- IF HITTER HAS MADE IMPROVEMENTS LAST 30 DAYS COMPARED TO CAREER
+    if len(weather_data)<1:
+        weather_data = pd.DataFrame()
 
     confirmed_lus = list(hitterproj2[hitterproj2['Confirmed LU']=='Y']['Team'].unique())
 
@@ -739,21 +737,32 @@ if check_password():
         known_ump = 'Y' if len(this_game_ump) > 0 else 'N'
 
         these_pitcherproj = pitcherproj[pitcherproj['GameString'] == selected_game]
-        this_weather = weather_data[weather_data['HomeTeam'] == selected_home_team]
-        this_winds = this_weather['Winds'].iloc[0]
-        this_winds = this_winds.replace(' mph','')
-        this_winds = float(this_winds)
-        if this_weather['Rain%'].iloc[0]>25:
-            rain_emoji = '🌧️'
-        else:
-            rain_emoji = ''
-        if this_winds > 10:
-            winds_emoji = '💨'
-        else:
+        try:
+            this_weather = weather_data[weather_data['HomeTeam'] == selected_home_team]
+            this_winds = this_weather['Winds'].iloc[0]
+            this_winds = this_winds.replace(' mph','')
+            this_winds = float(this_winds)
+        except:
+            this_winds = ''
+        
+        try:
+            if this_weather['Rain%'].iloc[0]>25:
+                rain_emoji = '🌧️'
+            else:
+                rain_emoji = ''
+            if this_winds > 10:
+                winds_emoji = '💨'
+            else:
+                winds_emoji = ''
+        except:
             winds_emoji = ''
+            rain_emoji = ''
         
         weather_emoji = rain_emoji + ' ' + winds_emoji
-        game_name = this_weather['Game'].iloc[0]
+        try:
+            game_name = this_weather['Game'].iloc[0]
+        except:
+            game_name = selected_game
         try:
             this_gameinfo = gameinfo[gameinfo['Park']==selected_home_team]
             this_gametime = this_gameinfo['game_time'].iloc[0]
@@ -826,12 +835,20 @@ if check_password():
             if game_info_fail == 'N':
                 st.markdown(f"<center><h5>{this_favorite} ({this_favorite_odds}), O/U: {this_over_under}</h5></center>",unsafe_allow_html=True)
             
-            weather_cond = this_weather['Conditions'].iloc[0]
-            weather_temp = this_weather['Temp'].iloc[0]
             try:
-                weather_winds = this_weather['Winds'].iloc[0] + ' ' + this_weather['Wind Dir'].iloc[0]
+                weather_cond = this_weather['Conditions'].iloc[0]
+                weather_temp = this_weather['Temp'].iloc[0]
             except:
-                weather_winds = this_weather.get('Winds', ['No Weather Data Found']).iloc[0]
+                weather_cond = ''
+                weather_temp = ''
+            
+            try:
+                try:
+                    weather_winds = this_weather['Winds'].iloc[0] + ' ' + this_weather['Wind Dir'].iloc[0]
+                except:
+                    weather_winds = this_weather.get('Winds', ['No Weather Data Found']).iloc[0]
+            except:
+                weather_winds = ''
             st.markdown(f"<center><b>{weather_emoji} Weather: {weather_cond}, {weather_temp}F<br>Winds: {weather_winds}</b></center>", unsafe_allow_html=True)
             if known_ump == 'Y':
                 umpname = this_game_ump['Umpire'].iloc[0]
@@ -1093,6 +1110,8 @@ if check_password():
             col1, col2 = st.columns([1,1])
             with col1:
                 road_sim = these_sim[these_sim['Team']==selected_road_team]
+                #avg_matchup = road_sim[road_sim['PC']>99][['xwOBA','xwOBA Con','Brl%','FB%']].mean()
+                #st.write(avg_matchup)
                 #road_sim = road_sim[(road_sim['xwOBA Con']>=.375)&(road_sim['SwStr%']<.11)]
                 road_sim = road_sim[['Hitter','PC','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
                 styled_df = road_sim.style.apply(color_cells_HitMatchups, subset=['xwOBA','xwOBA Con',
