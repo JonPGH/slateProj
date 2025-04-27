@@ -1,7 +1,6 @@
 ,Pitcher,Opp,K%,BB%,Brl%,GB%,FB%,xwOBA,PPA,LU
 0,Mitchell Parker,NYM,0.217,0.087,0.1,0.446,0.245,0.33544444444444443,3.8744444444444444,"Francisco Lindor, Juan Soto, Pete Alonso, Mark Vientos, Starling Marte, Francisco Alvarez, Tyrone Taylor, Luisangel Acuna, Jose Azocar"
 0,Tylor Megill,WSH,0.206,0.073,0.073,0.49,0.229,0.31777777777777777,3.8244444444444445,"C.J. Abrams, James Wood, Nathaniel Lowe, Keibert Ruiz, Luis Garcia, Josh Bell, Dylan Crews, Jose Tena, Jacob Young"
-0,Kevin Gausman,NYY,0.234,0.095,0.121,0.406,0.303,0.3406666666666667,4.025555555555555,"Trent Grisham, Aaron Judge, Ben Rice, Paul Goldschmidt, Cody Bellinger, Jazz Chisholm, Anthony Volpe, Austin Wells, Oswaldo Cabrera"
 0,Chris Bassitt,NYY2,0.234,0.095,0.121,0.406,0.303,0.3406666666666667,4.025555555555555,"Trent Grisham, Aaron Judge, Ben Rice, Paul Goldschmidt, Cody Bellinger, Jazz Chisholm, Anthony Volpe, Austin Wells, Oswaldo Cabrera"
 0,Logan Allen,BOS,0.246,0.08,0.095,0.436,0.244,0.3232222222222222,3.9166666666666665,"Jarren Duran, Rafael Devers, Alex Bregman, Trevor Story, Rob Refsnyder, Romy Gonzalez, Kristian Campbell, Carlos Narvaez, Ceddanne Rafaela"
 0,Brayan Bello,CLE,0.213,0.084,0.068,0.417,0.273,0.3015555555555556,4.002222222222223,"Steven Kwan, Nolan Jones, Jose Ramirez, Kyle Manzardo, Carlos Santana, Gabriel Arias, Angel Martinez, Bo Naylor, Brayan Rocchio"
@@ -30,4 +29,5 @@
 0,Jameson Taillon,PHI,0.207,0.081,0.08,0.434,0.265,0.32822222222222225,3.841111111111111,"Bryson Stott, Trea Turner, Bryce Harper, Kyle Schwarber, Nick Castellanos, J.T. Realmuto, Max Kepler, Alec Bohm, Johan Rojas"
 0,Aaron Nola,CHC,0.214,0.098,0.09,0.399,0.293,0.3368888888888889,3.9055555555555554,"Ian Happ, Kyle Tucker, Seiya Suzuki, Michael Busch, Dansby Swanson, Nico Hoerner, Pete Crow-Armstrong, Carson Kelly, Jon Berti"
 0,Max Fried,TOR1,0.169,0.071,0.071,0.439,0.231,0.3192222222222222,3.7155555555555555,"Bo Bichette, Vladimir Guerrero Jr., Anthony Santander, George Springer, Andres Gimenez, Alejandro Kirk, Ernie Clement, Myles Straw, Tyler Heineman"
-0,Clarke Schmidt,TOR1,0.169,0.071,0.071,0.439,0.231,0.3192222222222222,3.7155555555555555,"Bo Bichette, Vladimir Guerrero Jr., Anthony Santander, George Springer, Andres Gimenez, Alejandro Kirk, Ernie Clement, Myles Straw, Tyler Heineman"
+0,Kevin Gausman,NYY1,0.234,0.095,0.121,0.406,0.303,0.3406666666666667,4.025555555555555,"Trent Grisham, Aaron Judge, Ben Rice, Paul Goldschmidt, Cody Bellinger, Jazz Chisholm, Anthony Volpe, Austin Wells, Oswaldo Cabrera"
+0,Clarke Schmidt,TOR2,0.169,0.071,0.071,0.439,0.231,0.3192222222222222,3.7155555555555555,"Bo Bichette, Vladimir Guerrero Jr., Anthony Santander, George Springer, Andres Gimenez, Alejandro Kirk, Ernie Clement, Myles Straw, Tyler Heineman"
