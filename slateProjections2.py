@@ -1655,28 +1655,63 @@ if check_password():
                 st.dataframe(styled_df,hide_index=True,width=850,height=600)
             else:
                 st.dataframe(styled_df,hide_index=True,width=850)
-    
+
     if tab == "Matchups":
-        #st.dataframe(h_vs_sim)
         team_options = ['All'] + list(h_vs_sim['Team'].unique())
-        col1,col2=st.columns([1,3])
+        col1, col2 = st.columns([1, 3])
         with col1:
             selected_team = st.selectbox('Filter by Team', team_options)
+
+        # Create a single row for sliders
+        col_pc, col_xwoba, col_swstr, col_brl = st.columns(4)
+        with col_pc:
+            pc_min = int(h_vs_sim['PC'].min())
+            pc_max = int(h_vs_sim['PC'].max())
+            pc_range = st.slider('PC Range', pc_min, pc_max, (pc_min, pc_max))
+        with col_xwoba:
+            xwoba_min = float(h_vs_sim['xwOBA'].min())
+            xwoba_max = float(h_vs_sim['xwOBA'].max())
+            xwoba_range = st.slider('xwOBA Range', xwoba_min, xwoba_max, (xwoba_min, xwoba_max), step=0.001)
+        with col_swstr:
+            swstr_min = float(h_vs_sim['SwStr%'].min())
+            swstr_max = float(h_vs_sim['SwStr%'].max())
+            swstr_range = st.slider('SwStr% Range', swstr_min, swstr_max, (swstr_min, swstr_max), step=0.001)
+        with col_brl:
+            brl_min = float(h_vs_sim['Brl%'].min())
+            brl_max = float(h_vs_sim['Brl%'].max())
+            brl_range = st.slider('Brl% Range', brl_min, brl_max, (brl_min, brl_max), step=0.001)
+
+        # Filter data based on team and slider values
         if selected_team == 'All':
-            show_hsim = h_vs_sim[['Hitter','Team','OppSP','PC','BIP','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
+            show_hsim = h_vs_sim[
+                (h_vs_sim['PC'].between(pc_range[0], pc_range[1])) &
+                (h_vs_sim['xwOBA'].between(xwoba_range[0], xwoba_range[1])) &
+                (h_vs_sim['SwStr%'].between(swstr_range[0], swstr_range[1])) &
+                (h_vs_sim['Brl%'].between(brl_range[0], brl_range[1]))
+            ][['Hitter','Team','OppSP','PC','BIP','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
         else:
-            show_hsim = h_vs_sim[h_vs_sim['Team']==selected_team][['Hitter','Team','OppSP','PC','BIP','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
-        
+            show_hsim = h_vs_sim[
+                (h_vs_sim['Team'] == selected_team) &
+                (h_vs_sim['PC'].between(pc_range[0], pc_range[1])) &
+                (h_vs_sim['xwOBA'].between(xwoba_range[0], xwoba_range[1])) &
+                (h_vs_sim['SwStr%'].between(swstr_range[0], swstr_range[1])) &
+                (h_vs_sim['Brl%'].between(brl_range[0], brl_range[1]))
+            ][['Hitter','Team','OppSP','PC','BIP','xwOBA','xwOBA Con','SwStr%','Brl%','FB%','Hard%']]
+
         styled_df = show_hsim.style.apply(color_cells_HitMatchups, subset=['xwOBA','xwOBA Con',
-                                                                          'SwStr%','Brl%','FB%',
-                                                                          'Hard%'], axis=1).format({'xwOBA': '{:.3f}','xwOBA Con': '{:.3f}',
-                                                                                                    'SwStr%': '{:.1%}','Brl%': '{:.1%}',
-                                                                                                    'FB%': '{:.1%}','Hard%': '{:.1%}'})
-        if len(show_hsim)>9:
+                                                                        'SwStr%','Brl%','FB%',
+                                                                        'Hard%'], axis=1).format({
+            'xwOBA': '{:.3f}', 'xwOBA Con': '{:.3f}',
+            'SwStr%': '{:.1%}', 'Brl%': '{:.1%}',
+            'FB%': '{:.1%}', 'Hard%': '{:.1%}'
+        })
+
+        if len(show_hsim) > 9:
             st.dataframe(styled_df, hide_index=True, use_container_width=True, height=900)
         else:
             st.dataframe(styled_df, hide_index=True, use_container_width=True)
-        
+
+       
     if tab == "Weather & Umps":
         weather_show = weather_data[['HomeTeam','Game','Conditions','Temp','Winds','Wind Dir','Rain%']].sort_values(by='Rain%',ascending=False)
         weather_show = pd.merge(weather_show,umpire_data, how='left', on='HomeTeam')
