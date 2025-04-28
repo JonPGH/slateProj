@@ -142,6 +142,28 @@ if check_password():
                 return f'background-color: {color2}'
             elif val < .275:
                 return f'background-color: {color1}'
+        if column == 'AVG':
+            if val >= .3:
+                return f'background-color: {color5}'
+            elif val >= .28:
+                return f'background-color: {color4}'
+            elif val >= .26:
+                return f'background-color: {color3}'
+            elif val >= .24:
+                return f'background-color: {color2}'
+            elif val < .24:
+                return f'background-color: {color1}'
+        if column == 'SLG':
+            if val >= .525:
+                return f'background-color: {color5}'
+            elif val >= .475:
+                return f'background-color: {color4}'
+            elif val >= .425:
+                return f'background-color: {color3}'
+            elif val >= .4:
+                return f'background-color: {color2}'
+            elif val < .4:
+                return f'background-color: {color1}'
         if column == 'xwOBA Con':
             if val >= .5:
                 return f'background-color: {color5}'
@@ -645,6 +667,7 @@ if check_password():
     # Load data
     logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf = load_data()
 
+  
     if len(weather_data)<1:
         weather_data = pd.DataFrame()
 
@@ -654,6 +677,10 @@ if check_password():
     gameinfo['RoadTeam'] = np.where(gameinfo['team'] == gameinfo['Park'], gameinfo['opponent'], gameinfo['team'])
     gameinfo['GameString'] = gameinfo['RoadTeam']+'@'+gameinfo['Park']
 
+    team_vs_sim = h_vs_sim[h_vs_sim['PC']>149].groupby('Team',as_index=False)[['xwOBA','SwStr%','AVG','SLG','Brl%','FB%']].mean()
+    team_vs_sim['RawRank'] = len(team_vs_sim)-team_vs_sim['xwOBA'].rank()+1
+
+    team_vs_sim['Rank'] = team_vs_sim['RawRank'].astype(int).astype(str) + '/' + str(len(team_vs_sim))
 
     games_df = pitcherproj[['Team', 'Opponent', 'HomeTeam']].drop_duplicates()
     games_df['RoadTeam'] = np.where(games_df['Team'] == games_df['HomeTeam'], games_df['Opponent'], games_df['Team'])
@@ -1025,10 +1052,36 @@ if check_password():
         with col1:
             option = st.selectbox(
                 label="View Options",
-                options=["Best Matchups", "Projections", "Stats", "Splits", "Matchups", "Props"],
+                options=["Team Matchup", "Best Matchups", "Projections", "Stats", "Splits", "Matchups", "Props"],
                 index=0,
                 help="Choose to view hitter projections, stats, or splits."
             )
+        if option == "Team Matchup":
+            col1, col2 = st.columns(2)
+            with col1:
+                road_team_matchups = team_vs_sim[team_vs_sim['Team']==selected_home_team]
+                road_team_matchups = road_team_matchups[['Team','Rank','xwOBA','SwStr%','AVG','SLG','Brl%','FB%']]
+                styled_df = road_team_matchups.style.apply(color_cells_HitMatchups, subset=['AVG','SLG','xwOBA','SwStr%','Brl%','FB%'], axis=1).format({'xwOBA': '{:.3f}',
+                                                                                                            'xwOBA Con': '{:.3f}',
+                                                                                                            'SwStr%': '{:.1%}', 'AVG':  '{:.3f}',
+                                                                                                            'Brl%': '{:.1%}','SLG':  '{:.3f}',
+                                                                                                            'FB%': '{:.1%}',
+                                                                                                            'Hard%': '{:.1%}',})
+                st.dataframe(styled_df, hide_index=True, use_container_width=True)
+            
+            with col2:
+                home_team_matchups = team_vs_sim[team_vs_sim['Team']==selected_road_team]
+                home_team_matchups = home_team_matchups[['Team','Rank','xwOBA','SwStr%','AVG','SLG','Brl%','FB%']]
+                styled_df = home_team_matchups.style.apply(color_cells_HitMatchups, subset=['AVG','SLG','xwOBA','SwStr%','Brl%','FB%'], axis=1).format({'xwOBA': '{:.3f}',
+                                                                                                            'xwOBA Con': '{:.3f}',
+                                                                                                            'SwStr%': '{:.1%}', 'AVG':  '{:.3f}',
+                                                                                                            'Brl%': '{:.1%}','SLG':  '{:.3f}',
+                                                                                                            'FB%': '{:.1%}',
+                                                                                                            'Hard%': '{:.1%}',})
+                st.dataframe(styled_df, hide_index=True, use_container_width=True)
+
+        
+        
         if option == 'Projections':
             col1, col2 = st.columns(2)
             hitter_proj_cols = ['Batter', 'Pos', 'LU', 'Sal', 'DKPts', 'Value', 'HR', 'SB']
