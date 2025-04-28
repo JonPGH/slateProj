@@ -1,17 +1,9 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Mets  @  Nationals,Breezy,64°,15.2 mph,"L to R, Strong",NYM,WSH,0,2025-4-27,0,0
-1,Blue Jays  @  Yankees,Windy and Mostly Cloudy,55°,22.3 mph,"L to R, Strong",TOR,NYY,0,2025-4-27,0,0
-2,Blue Jays  @  Yankees,Windy and Mostly Cloudy,55°,22.3 mph,"L to R, Strong",TOR,NYY,0,2025-4-27,0,0
-3,Angels  @  Twins,Partly Cloudy,59°,13.4 mph,"R to L, Strong",LAA,MIN,0,2025-4-27,0,0
-4,Orioles  @  Tigers,Clear,61°,4.5 mph,None,BAL,DET,0,2025-4-27,0,0
-5,Red Sox  @  Guardians,Clear,54°,7.2 mph,"In, Weak",BOS,CLE,0,2025-4-27,0,0
-6,Astros  @  Royals,Mostly Cloudy,62°,11.0 mph,"R to L, Strong",HOU,KC,0,2025-4-27,0,0
-7,Brewers  @  Cardinals,Mostly Cloudy,61°,8.3 mph,"R to L, Weak",MIL,STL,16,2025-4-27,0,0
-8,Reds  @  Rockies,Dry and Clear,77°,12.7 mph,"Out, Strong",CIN,COL,0,2025-4-27,0,0
-9,White Sox  @  Athletics,Partly Cloudy,58°,5.6 mph,"R to L, Weak",CWS,OAK,0,2025-4-27,0,0
-10,Rangers  @  Giants,Mostly Cloudy,55°,8.3 mph,"Out, Weak",TEX,SF,0,2025-4-27,0,0
-11,Marlins  @  Mariners,Partly Cloudy,56°,5.6 mph,"Out, Weak",MIA,SEA,0,2025-4-27,1,0
-12,Pirates  @  Dodgers,Partly Cloudy,60°,8.3 mph,"Out, Weak",PIT,LAD,0,2025-4-27,0,0
-13,Rays  @  Padres,Mostly Clear,63°,9.2 mph,"L to R, Weak",TB,SD,0,2025-4-27,0,0
-14,Braves  @  Diamondbacks,Clear,74°,7.4 mph,"L to R, Weak",ATL,ARI,0,2025-4-27,1,0
-15,Phillies  @  Cubs,Clear,57°,7.2 mph,"R to L, Weak",PHI,CHC,0,2025-4-27,0,0
+0,Mets  @  Nationals,Clear,74°,4.5 mph,None,NYM,WSH,0,2025-4-28,0,0
+1,Twins  @  Guardians,Clear,74°,8.0 mph,"Out, Weak",MIN,CLE,0,2025-4-28,0,0
+2,Yankees  @  Orioles,Clear,75°,4.5 mph,None,NYY,BAL,0,2025-4-28,0,0
+3,Cardinals  @  Reds,Clear,80°,6.3 mph,"R to L, Weak",STL,CIN,0,2025-4-28,0,0
+4,Athletics  @  Rangers,Partly Cloudy,83°,13.4 mph,"R to L, Strong",OAK,TEX,0,2025-4-28,1,0
+5,Tigers  @  Astros,Partly Cloudy,80°,13.4 mph,"Out, Strong",DET,HOU,0,2025-4-28,1,0
+6,Braves  @  Rockies,Partly Cloudy,61°,12.5 mph,"In, Strong",ATL,COL,0,2025-4-28,0,0
+7,Marlins  @  Dodgers,Clear,61°,6.3 mph,"Out, Weak",MIA,LAD,0,2025-4-28,0,0
