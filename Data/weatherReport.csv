@@ -1,13 +1,13 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Twins  @  Guardians,Rain and Breezy,74°,17.0 mph,"L to R, Strong",MIN,CLE,26,2025-4-29,0,0
+0,Twins  @  Guardians,Possible Rain and Breezy,75°,17.0 mph,"L to R, Strong",MIN,CLE,22,2025-4-29,0,0
 1,Yankees  @  Orioles,Mostly Clear,84°,12.5 mph,"Out, Strong",NYY,BAL,0,2025-4-29,0,0
-2,Cardinals  @  Reds,Possible Drizzle,77°,10.7 mph,"R to L, Strong",STL,CIN,21,2025-4-29,0,0
-3,Cubs  @  Pirates,Possible Light Rain and Breezy,77°,15.2 mph,"R to L, Strong",CHC,PIT,18,2025-4-29,0,0
-4,Nationals  @  Phillies,Partly Cloudy,80°,13.4 mph,"Out, Strong",WSH,PHI,0,2025-4-29,0,0
-5,Royals  @  Rays,Possible Light Rain,82°,7.2 mph,"L to R, Weak",KC,TB,13,2025-4-29,0,0
-6,Red Sox  @  Blue Jays,Light Rain and Breezy,65°,17.9 mph,"L to R, Strong",BOS,TOR,26,2025-4-29,1,1
-7,Diamondbacks  @  Mets,Breezy and Partly Cloudy,70°,16.1 mph,"Out, Strong",ARI,NYM,0,2025-4-29,0,0
-8,Brewers  @  White Sox,Mostly Clear,57°,9.8 mph,"L to R, Weak",MIL,CWS,0,2025-4-29,0,0
+2,Cardinals  @  Reds,Rain,75°,11.6 mph,"R to L, Strong",STL,CIN,43,2025-4-29,0,0
+3,Cubs  @  Pirates,Light Rain and Breezy,76°,15.2 mph,"R to L, Strong",CHC,PIT,43,2025-4-29,0,0
+4,Nationals  @  Phillies,Partly Cloudy,79°,13.4 mph,"Out, Strong",WSH,PHI,0,2025-4-29,0,0
+5,Royals  @  Rays,Possible Drizzle,83°,7.2 mph,"L to R, Weak",KC,TB,10,2025-4-29,0,0
+6,Red Sox  @  Blue Jays,Light Rain and Breezy,65°,17.9 mph,"L to R, Strong",BOS,TOR,27,2025-4-29,1,1
+7,Diamondbacks  @  Mets,Breezy and Partly Cloudy,71°,16.1 mph,"Out, Strong",ARI,NYM,0,2025-4-29,0,0
+8,Brewers  @  White Sox,Mostly Clear,57°,8.9 mph,"L to R, Weak",MIL,CWS,0,2025-4-29,0,0
 9,Athletics  @  Rangers,Mostly Clear,83°,12.5 mph,"R to L, Strong",OAK,TEX,0,2025-4-29,1,0
 10,Tigers  @  Astros,Partly Cloudy,80°,13.4 mph,"Out, Strong",DET,HOU,0,2025-4-29,1,0
 11,Braves  @  Rockies,Possible Drizzle,60°,10.7 mph,"L to R, Strong",ATL,COL,7,2025-4-29,0,0
