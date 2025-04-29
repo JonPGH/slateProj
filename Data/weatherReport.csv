@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Twins  @  Guardians,Rain and Breezy,74°,17.0 mph,"L to R, Strong",MIN,CLE,28,2025-4-29,0,0
-1,Yankees  @  Orioles,Mostly Clear,85°,12.5 mph,"Out, Strong",NYY,BAL,0,2025-4-29,0,0
-2,Cardinals  @  Reds,Light Rain,74°,10.7 mph,"R to L, Strong",STL,CIN,47,2025-4-29,0,0
-3,Cubs  @  Pirates,Drizzle,77°,14.3 mph,"R to L, Strong",CHC,PIT,26,2025-4-29,0,0
+0,Twins  @  Guardians,Rain and Breezy,74°,17.0 mph,"L to R, Strong",MIN,CLE,26,2025-4-29,0,0
+1,Yankees  @  Orioles,Mostly Clear,84°,12.5 mph,"Out, Strong",NYY,BAL,0,2025-4-29,0,0
+2,Cardinals  @  Reds,Possible Drizzle,77°,10.7 mph,"R to L, Strong",STL,CIN,21,2025-4-29,0,0
+3,Cubs  @  Pirates,Possible Light Rain and Breezy,77°,15.2 mph,"R to L, Strong",CHC,PIT,18,2025-4-29,0,0
 4,Nationals  @  Phillies,Partly Cloudy,80°,13.4 mph,"Out, Strong",WSH,PHI,0,2025-4-29,0,0
-5,Royals  @  Rays,Light Rain,81°,6.3 mph,"L to R, Weak",KC,TB,26,2025-4-29,0,0
-6,Red Sox  @  Blue Jays,Light Rain and Breezy,65°,17.9 mph,"L to R, Strong",BOS,TOR,34,2025-4-29,1,1
-7,Diamondbacks  @  Mets,Breezy and Partly Cloudy,71°,16.1 mph,"Out, Strong",ARI,NYM,0,2025-4-29,0,0
+5,Royals  @  Rays,Possible Light Rain,82°,7.2 mph,"L to R, Weak",KC,TB,13,2025-4-29,0,0
+6,Red Sox  @  Blue Jays,Light Rain and Breezy,65°,17.9 mph,"L to R, Strong",BOS,TOR,26,2025-4-29,1,1
+7,Diamondbacks  @  Mets,Breezy and Partly Cloudy,70°,16.1 mph,"Out, Strong",ARI,NYM,0,2025-4-29,0,0
 8,Brewers  @  White Sox,Mostly Clear,57°,9.8 mph,"L to R, Weak",MIL,CWS,0,2025-4-29,0,0
 9,Athletics  @  Rangers,Mostly Clear,83°,12.5 mph,"R to L, Strong",OAK,TEX,0,2025-4-29,1,0
-10,Tigers  @  Astros,Mostly Cloudy,80°,13.4 mph,"Out, Strong",DET,HOU,0,2025-4-29,1,0
-11,Braves  @  Rockies,Possible Light Rain,59°,10.7 mph,"L to R, Strong",ATL,COL,7,2025-4-29,0,0
-12,Angels  @  Mariners,Mostly Cloudy,56°,5.4 mph,"In, Weak",LAA,SEA,0,2025-4-29,1,0
+10,Tigers  @  Astros,Partly Cloudy,80°,13.4 mph,"Out, Strong",DET,HOU,0,2025-4-29,1,0
+11,Braves  @  Rockies,Possible Drizzle,60°,10.7 mph,"L to R, Strong",ATL,COL,7,2025-4-29,0,0
+12,Angels  @  Mariners,Partly Cloudy,56°,5.4 mph,"In, Weak",LAA,SEA,0,2025-4-29,1,0
 13,Giants  @  Padres,Mostly Clear,64°,5.4 mph,"L to R, Weak",SF,SD,0,2025-4-29,0,0
-14,Marlins  @  Dodgers,Mostly Clear,64°,6.3 mph,"Out, Weak",MIA,LAD,0,2025-4-29,0,0
+14,Marlins  @  Dodgers,Clear,64°,6.3 mph,"Out, Weak",MIA,LAD,0,2025-4-29,0,0
