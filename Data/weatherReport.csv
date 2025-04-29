@@ -1,9 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Mets  @  Nationals,Clear,75°,4.5 mph,None,NYM,WSH,0,2025-4-28,0,0
-1,Twins  @  Guardians,Clear,74°,7.2 mph,"Out, Weak",MIN,CLE,0,2025-4-28,0,0
-2,Yankees  @  Orioles,Clear,74°,5.4 mph,"R to L, Weak",NYY,BAL,0,2025-4-28,0,0
-3,Cardinals  @  Reds,Clear,80°,6.3 mph,"R to L, Weak",STL,CIN,0,2025-4-28,0,0
-4,Athletics  @  Rangers,Partly Cloudy,82°,13.4 mph,"R to L, Strong",OAK,TEX,0,2025-4-28,1,0
-5,Tigers  @  Astros,Partly Cloudy,80°,13.4 mph,"Out, Strong",DET,HOU,0,2025-4-28,1,0
-6,Braves  @  Rockies,Mostly Cloudy,61°,11.6 mph,"In, Strong",ATL,COL,0,2025-4-28,0,0
-7,Marlins  @  Dodgers,Clear,61°,5.4 mph,"Out, Weak",MIA,LAD,0,2025-4-28,0,0
+0,Twins  @  Guardians,Rain and Breezy,74°,17.0 mph,"L to R, Strong",MIN,CLE,28,2025-4-29,0,0
+1,Yankees  @  Orioles,Mostly Clear,85°,12.5 mph,"Out, Strong",NYY,BAL,0,2025-4-29,0,0
+2,Cardinals  @  Reds,Light Rain,74°,10.7 mph,"R to L, Strong",STL,CIN,47,2025-4-29,0,0
+3,Cubs  @  Pirates,Drizzle,77°,14.3 mph,"R to L, Strong",CHC,PIT,26,2025-4-29,0,0
+4,Nationals  @  Phillies,Partly Cloudy,80°,13.4 mph,"Out, Strong",WSH,PHI,0,2025-4-29,0,0
+5,Royals  @  Rays,Light Rain,81°,6.3 mph,"L to R, Weak",KC,TB,26,2025-4-29,0,0
+6,Red Sox  @  Blue Jays,Light Rain and Breezy,65°,17.9 mph,"L to R, Strong",BOS,TOR,34,2025-4-29,1,1
+7,Diamondbacks  @  Mets,Breezy and Partly Cloudy,71°,16.1 mph,"Out, Strong",ARI,NYM,0,2025-4-29,0,0
+8,Brewers  @  White Sox,Mostly Clear,57°,9.8 mph,"L to R, Weak",MIL,CWS,0,2025-4-29,0,0
+9,Athletics  @  Rangers,Mostly Clear,83°,12.5 mph,"R to L, Strong",OAK,TEX,0,2025-4-29,1,0
+10,Tigers  @  Astros,Mostly Cloudy,80°,13.4 mph,"Out, Strong",DET,HOU,0,2025-4-29,1,0
+11,Braves  @  Rockies,Possible Light Rain,59°,10.7 mph,"L to R, Strong",ATL,COL,7,2025-4-29,0,0
+12,Angels  @  Mariners,Mostly Cloudy,56°,5.4 mph,"In, Weak",LAA,SEA,0,2025-4-29,1,0
+13,Giants  @  Padres,Mostly Clear,64°,5.4 mph,"L to R, Weak",SF,SD,0,2025-4-29,0,0
+14,Marlins  @  Dodgers,Mostly Clear,64°,6.3 mph,"Out, Weak",MIA,LAD,0,2025-4-29,0,0
