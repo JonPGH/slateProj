@@ -30,6 +30,7 @@
 45,MIA,George Soriano,666277,R
 46,MIA,Jesus Tinoco,622786,R
 47,MIA,Lake Bachar,669199,R
+49,MIA,Ronny Henriquez,678692,R
 51,MIA,Tyler Phillips,663969,R
 54,STL,JoJo Romero,668941,L
 55,STL,John King,667463,L
@@ -76,6 +77,7 @@
 122,NYY,Ian Hamilton,641656,R
 123,NYY,Luke Weaver,596133,R
 124,NYY,Mark Leiter Jr.,643410,R
+126,NYY,Ryan Yarbrough,642232,L
 127,NYY,Tim Hill,657612,L
 129,NYY,Yoendrys Gomez,672782,R
 130,DET,Beau Brieske,689225,R
@@ -96,6 +98,7 @@
 157,CLE,Cade Smith,671922,R
 158,CLE,Emmanuel Clase,661403,R
 160,CLE,Hunter Gaddis,683769,R
+161,CLE,Jakob Junis,596001,R
 162,CLE,Joey Cantillo,676282,L
 165,CLE,Paul Sewald,623149,R
 167,CLE,Tim Herrin,682120,L
@@ -181,6 +184,7 @@
 293,LAD,Kirby Yates,489446,R
 294,LAD,Luis Garcia,472610,R
 296,LAD,Tanner Scott,656945,L
+299,COL,Angel Chivilli,683409,R
 303,COL,Jake Bird,656234,R
 304,COL,Jimmy Herget,623474,R
 306,COL,Luis Peralta,678821,L
@@ -195,6 +199,7 @@
 316,TEX,Jacob Webb,657097,R
 319,TEX,Luke Jackson,592426,R
 322,TEX,Robert Garcia,676395,L
+323,TEX,Shawn Armstrong,542888,R
 325,LAA,Brock Burke,656271,L
 326,LAA,Garrett McDaniels,680729,L
 327,LAA,Ian Anderson,666120,R
