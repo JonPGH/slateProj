@@ -1,10 +1,15 @@
 import streamlit as st
 import pandas as pd, math
 import os
-import requests
+import warnings
+warnings.filterwarnings("ignore")
+
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
+import plotly.express as px
+import plotly.graph_objects as go
+
 
 # Initialize session state for authentication
 if 'authenticated' not in st.session_state:
@@ -35,7 +40,6 @@ if check_password():
     # Set page configuration
     st.set_page_config(page_title="MLB DW Slate Analysis Tool", layout="wide")
 
-    # Custom CSS for styling
     st.markdown(
         """
         <style>
@@ -97,8 +101,98 @@ if check_password():
         """,
         unsafe_allow_html=True
     )
-
-    # Load data (unchanged)
+    st.markdown("""
+        <style>
+        .stDataFrame {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .dataframe {
+            width: 100%;
+            font-size: 14px;
+        }
+        .dataframe th {
+            background-color: #f4f4f4;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+        }
+        .dataframe td {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .dataframe tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .dataframe tr:hover {
+            background-color: #f1f1f1;
+        }
+        .stSelectbox, .stTextInput, .stRadio > div {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        h3 {
+            color: #1f77b4;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stMarkdown p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    st.markdown("""
+        <style>
+        .stDataFrame {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .dataframe {
+            width: 100%;
+            font-size: 14px;
+        }
+        .dataframe th {
+            background-color: #f4f4f4;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+        }
+        .dataframe td {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .dataframe tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .dataframe tr:hover {
+            background-color: #f1f1f1;
+        }
+        .stSelectbox, .stTextInput, .stRadio > div {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        h3 {
+            color: #1f77b4;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stMarkdown p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        </style>
+    """, unsafe_allow_html=True)
     @st.cache_data
     def load_data():
         base_dir = os.path.dirname(__file__)
@@ -121,8 +215,12 @@ if check_password():
         bpreport = pd.read_csv(f'{file_path}/BullpenReport.csv')
         rpstats = pd.read_csv(f'{file_path}/relieverstats.csv')
         ownershipdf = pd.read_csv(f'{file_path}/PlayerOwnershipReport.csv')
+        allbets = pd.read_csv(f'{file_path}/AllBetValues.csv')
+        alllines = pd.read_csv(f'{file_path}/AllBooksLines.csv')
+        hitdb = pd.read_csv(f'{file_path}/hitdb2025.csv')
+        pitdb = pd.read_csv(f'{file_path}/pitdb2025.csv')
 
-        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf
+        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -336,7 +434,6 @@ if check_password():
                 return f'background-color:{color2}'
             elif val < .96:
                 return f'background-color:{color1}'
-
     def applyColor_PitchStat(val, column):
         if column == 'K%':
             if val >= .3:
@@ -415,7 +512,6 @@ if check_password():
                 return f'background-color: {color4}'
             elif val < .31*13.4:
                 return f'background-color: {color5}'
-
     def applyColor_PitchProj(val, column):
         if column == 'Sal':
             if val >= 10000:
@@ -665,9 +761,10 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf = load_data()
+    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb = load_data()
 
-  
+    hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
+    pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
     if len(weather_data)<1:
         weather_data = pd.DataFrame()
 
@@ -728,7 +825,7 @@ if check_password():
     # Sidebar navigation
     st.sidebar.image(logo, width=150)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -740,7 +837,6 @@ if check_password():
     # Main content
     st.markdown(f"<center><h1>⚾ MLB DW Slate Analysis Tool ⚾</h1></center>", unsafe_allow_html=True)
     st.markdown(f"<center><i>Last projection update time: {last_update}est</center></i>",unsafe_allow_html=True)
-
     if tab == "Game Previews":
         #game_selection = list(games_df['GameString'])
         game_selection = list(gameinfo['GameString'].unique())
@@ -816,9 +912,15 @@ if check_password():
         home_sp_projection = these_pitcherproj[these_pitcherproj['Pitcher'] == home_sp_name]
         p_stats_cols = ['IP', 'K%', 'BB%', 'SwStr%', 'Ball%', 'xwOBA']
         road_sp_stats = pitcher_stats[pitcher_stats['Pitcher'] == road_sp_name]
-        road_sp_hand = road_sp_stats['Hand'].iloc[0]
-        is_road_p_hot = road_sp_stats['IsHot'].iloc[0]
-        is_road_p_cold = road_sp_stats['IsCold'].iloc[0]
+        
+        if len(road_sp_stats)>1:
+            road_sp_hand = road_sp_stats['Hand'].iloc[0]
+            is_road_p_hot = road_sp_stats['IsHot'].iloc[0]
+            is_road_p_cold = road_sp_stats['IsCold'].iloc[0]
+        else:
+            road_sp_hand = 'R'
+            is_road_p_hot = 0
+            is_road_p_cold = 0
 
         if is_road_p_hot == 1:
             road_p_emoji = '🔥'
@@ -828,9 +930,16 @@ if check_password():
             road_p_emoji = ''
         
         home_sp_stats = pitcher_stats[pitcher_stats['Pitcher'] == home_sp_name]
-        home_sp_hand = home_sp_stats['Hand'].iloc[0]
-        is_home_p_hot = home_sp_stats['IsHot'].iloc[0]
-        is_home_p_cold = home_sp_stats['IsCold'].iloc[0]
+        
+        if len(home_sp_stats)>0:
+            home_sp_hand = home_sp_stats['Hand'].iloc[0]
+            is_home_p_hot = home_sp_stats['IsHot'].iloc[0]
+            is_home_p_cold = home_sp_stats['IsCold'].iloc[0]
+        else:
+            home_sp_hand = 'R'
+            is_home_p_hot = 0
+            is_home_p_cold = 0
+        
         if is_home_p_hot == 1:
             home_p_emoji = '🔥'
         elif is_home_p_cold == 1:
@@ -1236,101 +1345,6 @@ if check_password():
                 st.write('No recommended props for this game')
 
             #pitcher_props
-
-    st.markdown("""
-        <style>
-        .stDataFrame {
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .dataframe {
-            width: 100%;
-            font-size: 14px;
-        }
-        .dataframe th {
-            background-color: #f4f4f4;
-            color: #333;
-            font-weight: bold;
-            padding: 10px;
-            text-align: left;
-            border-bottom: 2px solid #ddd;
-        }
-        .dataframe td {
-            padding: 8px;
-            border-bottom: 1px solid #eee;
-        }
-        .dataframe tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .dataframe tr:hover {
-            background-color: #f1f1f1;
-        }
-        .stSelectbox, .stTextInput, .stRadio > div {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            padding: 5px;
-        }
-        h3 {
-            color: #1f77b4;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .stMarkdown p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-    # Custom CSS for DataFrame and widget styling
-    st.markdown("""
-        <style>
-        .stDataFrame {
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .dataframe {
-            width: 100%;
-            font-size: 14px;
-        }
-        .dataframe th {
-            background-color: #f4f4f4;
-            color: #333;
-            font-weight: bold;
-            padding: 10px;
-            text-align: left;
-            border-bottom: 2px solid #ddd;
-        }
-        .dataframe td {
-            padding: 8px;
-            border-bottom: 1px solid #eee;
-        }
-        .dataframe tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .dataframe tr:hover {
-            background-color: #f1f1f1;
-        }
-        .stSelectbox, .stTextInput, .stRadio > div {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            padding: 5px;
-        }
-        h3 {
-            color: #1f77b4;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .stMarkdown p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        </style>
-    """, unsafe_allow_html=True)
 
     if tab == "Pitcher Projections":
         st.markdown("<h1><center>Pitcher Projections</center></h1>", unsafe_allow_html=True)
@@ -1763,8 +1777,7 @@ if check_password():
             st.dataframe(styled_df, hide_index=True, use_container_width=True, height=900)
         else:
             st.dataframe(styled_df, hide_index=True, use_container_width=True)
-
-       
+  
     if tab == "Weather & Umps":
         weather_show = weather_data[['HomeTeam','Game','Conditions','Temp','Winds','Wind Dir','Rain%']].sort_values(by='Rain%',ascending=False)
         weather_show = pd.merge(weather_show,umpire_data, how='left', on='HomeTeam')
@@ -1874,6 +1887,7 @@ if check_password():
             components.html(tableau_code_pitchers, height=750, scrolling=True)
 
     if tab == "DFS Optimizer":
+
         import pulp
         import warnings
         warnings.filterwarnings("ignore")
@@ -2087,3 +2101,246 @@ if check_password():
         if st.checkbox("Show Raw Player Data"):
             st.subheader("Player Projections")
             st.dataframe(players, hide_index=True)
+
+    ## move this later
+    def plotWalks(df,line):
+        playername = df['Player'].iloc[0]
+        df["Date"] = pd.to_datetime(df["Date"])
+
+        # Create a line graph using Plotly
+        fig = px.line(
+            df,
+            x="Date",
+            y="BB",
+            title=f"Walks by Start for {playername}",
+            markers=True,  # Add markers for each data point
+            text="BB",  # Show opponent labels on the points
+        )
+        
+            # Add horizontal line using the 'line' variable
+        fig.add_hline(
+            y=line,
+            line_dash="solid",
+            line_color="red",
+            line_width=2,
+            annotation_text=f"{line}",
+            annotation_position="top right"
+            )
+        
+        # Customize the layout for a nicer look
+        fig.update_traces(
+            line=dict(color="#1f77b4", width=2.5),  # Blue line with a decent thickness
+            marker=dict(size=10),  # Larger markers
+            textposition="top center",  # Position opponent labels above the points
+        )
+
+        fig.update_layout(
+            xaxis_title="Date",
+            yaxis_title="Walks",
+            xaxis=dict(
+                tickformat="%b %d",  # Format dates as "Mar 31", "Apr 06", etc.
+                tickangle=45,  # Rotate x-axis labels for better readability
+            ),
+            yaxis=dict(
+                range=[-0.5, 5],  # Set y-axis range with a little padding
+                dtick=1,  # Step of 1 for y-axis ticks
+            ),
+            title=dict(
+                x=0.5,  # Center the title
+                font=dict(size=20),
+            ),
+            showlegend=False,  # No legend needed for a single line
+            plot_bgcolor="white",  # White background for the plot
+            paper_bgcolor="white",  # White background for the entire figure
+            font=dict(size=12),
+        )
+
+        return(fig)
+
+
+    if tab == "Prop Bets":
+
+        #st.dataframe(allbets)
+        rec_bets = allbets.head(10)#[allbets['Recommended']=='Y']
+
+        #st.dataframe(rec_bets)
+        rec_bets['BetFullName'] = rec_bets['Player'] + ' :: ' + rec_bets['Type'] + ' :: ' + rec_bets['OU'].astype(str) + ' ' + rec_bets['Line'].astype(str)
+
+        bet_select = list(rec_bets['BetFullName'].unique())
+        selected_bet = st.selectbox('Select a Bet', bet_select, help="Select a bet to view details.")
+
+        show_bet_details = rec_bets[rec_bets['BetFullName']==selected_bet]
+        #st.dataframe(show_bet_details)
+
+        bet_player = show_bet_details['Player'].iloc[0]
+        bet_market = show_bet_details['Type'].iloc[0]
+        bet_line = show_bet_details['Line'].iloc[0]
+        bet_book = show_bet_details['Book'].iloc[0]
+        bet_proj = show_bet_details['Projection'].iloc[0]
+        bet_ou = show_bet_details['OU'].iloc[0]
+        bet_lineodds = show_bet_details['LineOdds'].iloc[0]
+        bet_projodds = show_bet_details['ProjOdds'].iloc[0]
+        bet_value = show_bet_details['BetValue'].iloc[0]
+        bet_value_show = show_bet_details['BetValue'].iloc[0]*100
+
+        if bet_market == 'pitcher_walks': 
+            show_db = pitdb[pitdb['Player']==bet_player][['Player','team_abbrev','game_date','opp_abbrev','IP','BFP','BB']]
+            show_db['BB%'] = round(show_db['BB']/show_db['BFP'],3)
+            show_db.columns=['Player','Team','Date','Opp','IP','TBF','BB','BB%']
+            show_db = show_db.sort_values(by='Date',ascending=False)
+
+            last_three_dates = show_db['Date'].unique()[0:3]
+            last3db = show_db[show_db['Date'].isin(last_three_dates)]
+
+        fig = plotWalks(show_db,bet_line)
+
+        # Display the plot in Streamlit
+        col1, col2, col3 = st.columns([1,1,1])
+        get_pid = pitcherproj[pitcherproj['Pitcher']==bet_player]['ID'].iloc[0]
+        
+        #with col1:
+            #pass
+            #with st.container():
+            #    st.image(
+            #        get_player_image(get_pid),
+            #        width=250,
+            #        caption="Player Image",
+            #        use_container_width=False,
+            #        clamp=True,
+            #        output_format="auto"
+            #    )
+
+        # Col2: Bet Information
+        with col1:
+            with st.container():
+                st.markdown(
+                    """
+                    <style>
+                    .bet-card {
+                        background-color: #f8f9fa;
+                        padding: 20px;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                        margin-bottom: 10px;
+                    }
+                    .bet-title {
+                        margin: 0;
+                        font-size: 20px;
+                        color: #333;
+                        font-weight: bold;
+                    }
+                    .bet-detail {
+                        margin: 8px 0;
+                        font-size: 16px;
+                        color: #555;
+                    }
+                    .bet-highlight {
+                        margin: 8px 0;
+                        font-size: 16px;
+                        color: #007bff;
+                        font-weight: bold;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
+                st.markdown(
+                    f"""
+                    <div class="bet-card">
+                        <h3 class="bet-title">{bet_player}</h3>
+                        <p class="bet-detail">{bet_ou} {bet_line} Walks</p>
+                        <p class="bet-highlight">Projection: {bet_proj} walks</p>
+                        <p class="bet-highlight">Projected Odds of Hitting: {bet_projodds}</p>
+                        <p class="bet-highlight">{bet_book} Implied Odds of Hitting: {bet_lineodds}</p>
+                        <p class="bet-highlight">Resulting Bet Value: {bet_value}</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+        # Col3: Player BB% vs. League BB% Chart
+        with col2:
+            with st.container():
+                # Calculate BB rates
+                season_bb_rate = round(np.sum(show_db['BB']) / np.sum(show_db['TBF']), 3)
+                last3_bb_rate = round(np.sum(last3db['BB']) / np.sum(last3db['TBF']), 3)
+                league_bb_rate = round(np.sum(pitdb['BB']) / np.sum(pitdb['BFP']), 3)
+
+                # Data for bar chart
+                labels = ['Player Season BB%', 'Player Last 3 BB%', 'League BB%']
+                values = [season_bb_rate, last3_bb_rate, league_bb_rate]
+
+                # Create horizontal bar chart
+                barfig = go.Figure(
+                    data=[
+                        go.Bar(
+                            y=labels,
+                            x=values,
+                            orientation='h',
+                            marker=dict(color=['#1f77b4', '#1f77b4', '#ff7f0e']),
+                            text=[f"{v:.3f}" for v in values],
+                            textposition='auto',
+                        )
+                    ]
+                )
+
+                # Customize layout
+                barfig.update_layout(
+                    title=dict(text='Player BB% vs. League BB%', font=dict(size=16), x=0.5, xanchor='center'),
+                    xaxis_title='BB Rate',
+                    yaxis_title='',
+                    height=300,
+                    margin=dict(l=10, r=10, t=50, b=10),
+                    showlegend=False,
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(size=12),
+                    yaxis=dict(automargin=True),
+                )
+
+                # Display chart
+                st.plotly_chart(barfig, use_container_width=True)
+
+        # Col4: Line Odds vs. Projected Odds Chart
+        with col3:
+            with st.container():
+                # Data for bar chart
+                labels = ['Line Odds', 'Projected Odds']
+                values = [bet_lineodds, bet_projodds]
+
+                # Create horizontal bar chart
+                barfig = go.Figure(
+                    data=[
+                        go.Bar(
+                            y=labels,
+                            x=values,
+                            orientation='h',
+                            marker=dict(color=['#1f77b4', '#ff7f0e']),
+                            text=[f"{v:.3f}" for v in values],
+                            textposition='auto',
+                        )
+                    ]
+                )
+
+                # Customize layout
+                barfig.update_layout(
+                    title=dict(text='Line Odds vs. Projected Odds', font=dict(size=16), x=0.5, xanchor='center'),
+                    xaxis_title='Odds Value',
+                    yaxis_title='',
+                    height=300,
+                    margin=dict(l=10, r=10, t=50, b=10),
+                    showlegend=False,
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(size=12),
+                    yaxis=dict(automargin=True),
+                )
+
+                # Display chart
+                st.plotly_chart(barfig, use_container_width=True)
+        
+        
+        col1, col2 = st.columns([1,1])
+        with col1:
+            st.plotly_chart(fig, use_container_width=False,width=50)
+
