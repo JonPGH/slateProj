@@ -219,8 +219,10 @@ if check_password():
         alllines = pd.read_csv(f'{file_path}/AllBooksLines.csv')
         hitdb = pd.read_csv(f'{file_path}/hitdb2025.csv')
         pitdb = pd.read_csv(f'{file_path}/pitdb2025.csv')
+        bat_hitters = pd.read_csv(f'{file_path}/bat_hitters.csv')
+        bat_pitchers = pd.read_csv(f'{file_path}/bat_pitchers.csv')
 
-        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb
+        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -761,7 +763,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb = load_data()
+    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -2103,6 +2105,129 @@ if check_password():
             st.dataframe(players, hide_index=True)
 
     ## move this later
+    def create_speed_gauge(value, min_value=0.05, max_value=0.30):
+        fig, ax = plt.subplots(figsize=(6, 3), subplot_kw={'projection': 'polar'})
+
+        # Normalize value to angle (0 to 180 degrees for gauge)
+        range_value = max_value - min_value
+        normalized_value = (value - min_value) / range_value
+        angle = normalized_value * 180
+        angle_rad = np.deg2rad(180 - angle)  # Convert to radians, adjust for gauge orientation
+
+        # Create background arc
+        theta = np.linspace(np.pi, 0, 100)  # 180-degree arc
+        ax.fill_between(theta, 0, range_value, color='lightgray', alpha=0.3)
+
+        # Create colored gauge arc based on value
+        gauge_theta = np.linspace(np.pi, np.pi - angle_rad, 50)
+        ax.fill_between(gauge_theta, 0, range_value, color='limegreen', alpha=0.7)
+
+        # Plot needle
+        needle_length = range_value * 0.9
+        ax.plot([np.pi - angle_rad, np.pi - angle_rad], [0, needle_length], color='red', lw=3)
+
+        # Customize gauge
+        ax.set_ylim(0, range_value * 1.1)  # Extend slightly beyond max for aesthetics
+        ax.set_xticks([])  # Hide angular ticks
+        ax.set_yticks([])  # Hide radial ticks
+        ax.spines['polar'].set_visible(False)  # Hide polar spine
+        ax.grid(False)  # Hide grid
+
+        # Add value label at the bottom
+        ax.text(np.pi / 2, -range_value * 0.2, f'{value:.2f}', fontsize=20, ha='center', va='center', color='black')
+
+        # Style
+        fig.patch.set_facecolor('white')
+        ax.set_facecolor('white')
+
+        return fig
+
+
+    def plot_bet_value_compare(bet_projodds, bet_lineodds, title="Implied Odds Comparison"):
+        labels = ['JA Model', 'Betting Line']
+        values = [bet_projodds, bet_lineodds]
+
+        # Create horizontal bar chart
+        fig = go.Figure(
+            data=[
+                go.Bar(
+                    y=labels,
+                    x=values,
+                    orientation='h',
+                    marker=dict(color=['#e74c3c', '#3498db']),  # Red, Blue, Green
+                    text=[f"{v:.2f}" for v in values],  # Display values on bars
+                    textposition='auto',
+                )
+            ]
+        )
+
+        # Customize layout
+        fig.update_layout(
+            title=dict(
+                text=title,
+                font=dict(size=18, family="Arial", color="#2c3e50"),
+                x=0.5,
+                xanchor='center'
+            ),
+            xaxis_title="Value",
+            yaxis_title="",
+            height=300,
+            margin=dict(l=10, r=10, t=50, b=10),
+            showlegend=False,
+            plot_bgcolor="#ffffff",
+            paper_bgcolor="#ffffff",
+            font=dict(family="Arial", size=12, color="#2c3e50"),
+            yaxis=dict(automargin=True),
+            xaxis=dict(gridcolor="#ecf0f1"),
+        )
+
+        # Display the chart in Streamlit
+        #st.plotly_chart(fig, use_container_width=True)
+        return(fig)
+
+    def plot_bet_projections(bet_line, bet_proj, bat_proj, title="Bet and Projection Comparison"):
+        # Data for the bar chart
+        labels = ['Bet Line', 'JA Model Projection', 'The Bat X Projection']
+        values = [bet_line, bet_proj, bat_proj]
+
+        # Create horizontal bar chart
+        fig = go.Figure(
+            data=[
+                go.Bar(
+                    y=labels,
+                    x=values,
+                    orientation='h',
+                    marker=dict(color=['#e74c3c', '#3498db', '#2ecc71']),  # Red, Blue, Green
+                    text=[f"{v:.2f}" for v in values],  # Display values on bars
+                    textposition='auto',
+                )
+            ]
+        )
+
+        # Customize layout
+        fig.update_layout(
+            title=dict(
+                text=title,
+                font=dict(size=18, family="Arial", color="#2c3e50"),
+                x=0.5,
+                xanchor='center'
+            ),
+            xaxis_title="Value",
+            yaxis_title="",
+            height=300,
+            margin=dict(l=10, r=10, t=50, b=10),
+            showlegend=False,
+            plot_bgcolor="#ffffff",
+            paper_bgcolor="#ffffff",
+            font=dict(family="Arial", size=12, color="#2c3e50"),
+            yaxis=dict(automargin=True),
+            xaxis=dict(gridcolor="#ecf0f1"),
+        )
+
+        # Display the chart in Streamlit
+        #st.plotly_chart(fig, use_container_width=True)
+        return(fig)
+    
     def plotWalks(df,line):
         playername = df['Player'].iloc[0]
         df["Date"] = pd.to_datetime(df["Date"])
@@ -2157,10 +2282,10 @@ if check_password():
 
         return(fig)
 
-
     if tab == "Prop Bets":
 
         #st.dataframe(allbets)
+        st.markdown("<h4><b><i>Work in progress...</i></b></h4>",unsafe_allow_html=True)
         rec_bets = allbets.head(10)#[allbets['Recommended']=='Y']
 
         #st.dataframe(rec_bets)
@@ -2170,177 +2295,77 @@ if check_password():
         selected_bet = st.selectbox('Select a Bet', bet_select, help="Select a bet to view details.")
 
         show_bet_details = rec_bets[rec_bets['BetFullName']==selected_bet]
-        #st.dataframe(show_bet_details)
 
         bet_player = show_bet_details['Player'].iloc[0]
         bet_market = show_bet_details['Type'].iloc[0]
         bet_line = show_bet_details['Line'].iloc[0]
         bet_book = show_bet_details['Book'].iloc[0]
+        bet_price = show_bet_details['Price'].iloc[0]
         bet_proj = show_bet_details['Projection'].iloc[0]
         bet_ou = show_bet_details['OU'].iloc[0]
         bet_lineodds = show_bet_details['LineOdds'].iloc[0]
         bet_projodds = show_bet_details['ProjOdds'].iloc[0]
         bet_value = show_bet_details['BetValue'].iloc[0]
-        bet_value_show = show_bet_details['BetValue'].iloc[0]*100
+        bet_value = round(bet_value,3)
+        bet_value_show = round(show_bet_details['BetValue'].iloc[0]*100,3)
 
         if bet_market == 'pitcher_walks': 
-            show_db = pitdb[pitdb['Player']==bet_player][['Player','team_abbrev','game_date','opp_abbrev','IP','BFP','BB']]
+            show_db = pitdb[pitdb['Player']==bet_player][['Player','team_abbrev','game_date','opp_abbrev','GS','IP','BFP','BB']]
             show_db['BB%'] = round(show_db['BB']/show_db['BFP'],3)
-            show_db.columns=['Player','Team','Date','Opp','IP','TBF','BB','BB%']
+            show_db.columns=['Player','Team','Date','Opp','GS','IP','TBF','BB','BB%']
             show_db = show_db.sort_values(by='Date',ascending=False)
+
+            bat_proj = bat_pitchers[bat_pitchers['PLAYER']==bet_player]['BB'].iloc[0]
 
             last_three_dates = show_db['Date'].unique()[0:3]
             last3db = show_db[show_db['Date'].isin(last_three_dates)]
 
-        fig = plotWalks(show_db,bet_line)
+            st.markdown(f"<h2><center>{bet_player} {bet_ou} {bet_line} Walks ({bet_price} on {bet_book})</center>", unsafe_allow_html=True)
+            #st.markdown("<br><br>",unsafe_allow_html=True)
 
-        # Display the plot in Streamlit
-        col1, col2, col3 = st.columns([1,1,1])
-        get_pid = pitcherproj[pitcherproj['Pitcher']==bet_player]['ID'].iloc[0]
-        
-        #with col1:
-            #pass
-            #with st.container():
-            #    st.image(
-            #        get_player_image(get_pid),
-            #        width=250,
-            #        caption="Player Image",
-            #        use_container_width=False,
-            #        clamp=True,
-            #        output_format="auto"
-            #    )
-
-        # Col2: Bet Information
-        with col1:
-            with st.container():
-                st.markdown(
-                    """
-                    <style>
-                    .bet-card {
-                        background-color: #f8f9fa;
-                        padding: 20px;
-                        border-radius: 10px;
-                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                        margin-bottom: 10px;
-                    }
-                    .bet-title {
-                        margin: 0;
-                        font-size: 20px;
-                        color: #333;
-                        font-weight: bold;
-                    }
-                    .bet-detail {
-                        margin: 8px 0;
-                        font-size: 16px;
-                        color: #555;
-                    }
-                    .bet-highlight {
-                        margin: 8px 0;
-                        font-size: 16px;
-                        color: #007bff;
-                        font-weight: bold;
-                    }
-                    </style>
-                    """,
-                    unsafe_allow_html=True
-                )
-                st.markdown(
-                    f"""
-                    <div class="bet-card">
-                        <h3 class="bet-title">{bet_player}</h3>
-                        <p class="bet-detail">{bet_ou} {bet_line} Walks</p>
-                        <p class="bet-highlight">Projection: {bet_proj} walks</p>
-                        <p class="bet-highlight">Projected Odds of Hitting: {bet_projodds}</p>
-                        <p class="bet-highlight">{bet_book} Implied Odds of Hitting: {bet_lineodds}</p>
-                        <p class="bet-highlight">Resulting Bet Value: {bet_value}</p>
+            col1, col2, col3 = st.columns([1,3,3])
+            
+            with col1:
+                st.markdown(f"""
+                <div style="text-align: center; font-family: 'Impact', sans-serif; font-size: 40px; color: #e74c3c; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">
+                Bet Value
+                </div>
+                <div style="text-align: center; font-family: 'Impact', sans-serif; font-size: 90px; color: #e74c3c; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">
+                         {bet_value_show}%
                     </div>
-                    """,
-                    unsafe_allow_html=True
-                )
+                    """, unsafe_allow_html=True)
 
-        # Col3: Player BB% vs. League BB% Chart
-        with col2:
-            with st.container():
-                # Calculate BB rates
-                season_bb_rate = round(np.sum(show_db['BB']) / np.sum(show_db['TBF']), 3)
-                last3_bb_rate = round(np.sum(last3db['BB']) / np.sum(last3db['TBF']), 3)
-                league_bb_rate = round(np.sum(pitdb['BB']) / np.sum(pitdb['BFP']), 3)
+            with col2:
+                fig1 = plot_bet_projections(bet_line, bet_proj, bat_proj, title="Bet and Projection Comparison")
+                st.plotly_chart(fig1, use_container_width=True)
 
-                # Data for bar chart
-                labels = ['Player Season BB%', 'Player Last 3 BB%', 'League BB%']
-                values = [season_bb_rate, last3_bb_rate, league_bb_rate]
+            with col3:
+                fig2 = plot_bet_value_compare(bet_projodds, bet_lineodds, title="Implied Odds Comparison")
+                st.plotly_chart(fig2, use_container_width=True)
+            st.markdown(f"<br><br>",unsafe_allow_html=True)
 
-                # Create horizontal bar chart
-                barfig = go.Figure(
-                    data=[
-                        go.Bar(
-                            y=labels,
-                            x=values,
-                            orientation='h',
-                            marker=dict(color=['#1f77b4', '#1f77b4', '#ff7f0e']),
-                            text=[f"{v:.3f}" for v in values],
-                            textposition='auto',
-                        )
-                    ]
-                )
 
-                # Customize layout
-                barfig.update_layout(
-                    title=dict(text='Player BB% vs. League BB%', font=dict(size=16), x=0.5, xanchor='center'),
-                    xaxis_title='BB Rate',
-                    yaxis_title='',
-                    height=300,
-                    margin=dict(l=10, r=10, t=50, b=10),
-                    showlegend=False,
-                    plot_bgcolor='white',
-                    paper_bgcolor='white',
-                    font=dict(size=12),
-                    yaxis=dict(automargin=True),
-                )
+            line_plot = plotWalks(show_db,bet_line)        
+            col1, col2 = st.columns([1,5])
+            with col1:
+                start_count = np.sum(show_db['GS'])
+                if bet_ou == 'Over':
+                    bet_hit_count = (len(show_db[(show_db['BB']>bet_line)&(show_db['GS']==1)]))
+                    print_ou = 'over'
+                if bet_ou == 'Under':
+                    bet_hit_count = (len(show_db[(show_db['BB']<bet_line)&(show_db['GS']==1)]))
+                    print_ou = 'under'
+                bet_hit_rate = round(bet_hit_count/start_count,3)*100
+                st.markdown(f"""
+                            <div style="text-align: center; font-family: 'Arial', sans-serif; font-size: 25px; color:rgb(0, 0, 0); text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">
+                            {bet_player} has gone {print_ou} {bet_line} walks in {bet_hit_count} of {start_count} starts ({bet_hit_rate}%)
+                            </div>
+                            """, unsafe_allow_html=True)
+                
+            with col2:
+                st.plotly_chart(line_plot, use_container_width=False,width=50)
 
-                # Display chart
-                st.plotly_chart(barfig, use_container_width=True)
 
-        # Col4: Line Odds vs. Projected Odds Chart
-        with col3:
-            with st.container():
-                # Data for bar chart
-                labels = ['Line Odds', 'Projected Odds']
-                values = [bet_lineodds, bet_projodds]
 
-                # Create horizontal bar chart
-                barfig = go.Figure(
-                    data=[
-                        go.Bar(
-                            y=labels,
-                            x=values,
-                            orientation='h',
-                            marker=dict(color=['#1f77b4', '#ff7f0e']),
-                            text=[f"{v:.3f}" for v in values],
-                            textposition='auto',
-                        )
-                    ]
-                )
 
-                # Customize layout
-                barfig.update_layout(
-                    title=dict(text='Line Odds vs. Projected Odds', font=dict(size=16), x=0.5, xanchor='center'),
-                    xaxis_title='Odds Value',
-                    yaxis_title='',
-                    height=300,
-                    margin=dict(l=10, r=10, t=50, b=10),
-                    showlegend=False,
-                    plot_bgcolor='white',
-                    paper_bgcolor='white',
-                    font=dict(size=12),
-                    yaxis=dict(automargin=True),
-                )
-
-                # Display chart
-                st.plotly_chart(barfig, use_container_width=True)
-        
-        
-        col1, col2 = st.columns([1,1])
-        with col1:
-            st.plotly_chart(fig, use_container_width=False,width=50)
 
