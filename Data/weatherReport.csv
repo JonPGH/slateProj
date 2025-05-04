@@ -1,19 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Mets  @  Cardinals,Mostly Cloudy,59°,9.8 mph,"L to R, Weak",NYM,STL,0,2025-5-4,0,0
 1,Mets  @  Cardinals,Mostly Cloudy,59°,9.8 mph,"L to R, Weak",NYM,STL,0,2025-5-4,0,0
-2,Padres  @  Pirates,Mostly Cloudy,67°,5.4 mph,"R to L, Weak",SD,PIT,21,2025-5-4,0,0
-3,Rays  @  Yankees,Drizzle,68°,11.6 mph,"R to L, Strong",TB,NYY,33,2025-5-4,0,0
-4,Royals  @  Orioles,Light Rain,72°,8.9 mph,"Out, Weak",KC,BAL,50,2025-5-4,0,0
-5,Twins  @  Red Sox,Mostly Cloudy,72°,8.0 mph,"Out, Weak",MIN,BOS,9,2025-5-4,0,0
+2,Padres  @  Pirates,Mostly Cloudy,66°,3.6 mph,None,SD,PIT,22,2025-5-4,0,0
+3,Rays  @  Yankees,Drizzle,70°,11.6 mph,"R to L, Strong",TB,NYY,33,2025-5-4,0,0
+4,Royals  @  Orioles,Light Rain,72°,8.9 mph,"Out, Weak",KC,BAL,39,2025-5-4,0,0
+5,Twins  @  Red Sox,Mostly Cloudy,74°,8.0 mph,"Out, Weak",MIN,BOS,7,2025-5-4,0,0
 6,Guardians  @  Blue Jays,Mostly Cloudy,58°,11.6 mph,"R to L, Strong",CLE,TOR,0,2025-5-4,1,0
-7,Athletics  @  Marlins,Mostly Cloudy,82°,8.9 mph,"In, Weak",OAK,MIA,11,2025-5-4,1,1
-8,Diamondbacks  @  Phillies,Drizzle,69°,8.9 mph,"Out, Weak",ARI,PHI,50,2025-5-4,0,0
-9,Cubs  @  Brewers,Partly Cloudy,56°,11.6 mph,"L to R, Strong",CHC,MIL,0,2025-5-4,0,0
-10,Astros  @  White Sox,Breezy and Overcast,50°,15.2 mph,"L to R, Strong",HOU,CWS,6,2025-5-4,0,0
+7,Athletics  @  Marlins,Possible Drizzle,83°,8.9 mph,"In, Weak",OAK,MIA,16,2025-5-4,1,1
+8,Diamondbacks  @  Phillies,Drizzle,70°,8.9 mph,"Out, Weak",ARI,PHI,54,2025-5-4,0,0
+9,Cubs  @  Brewers,Partly Cloudy,57°,12.5 mph,"L to R, Strong",CHC,MIL,0,2025-5-4,0,0
+10,Astros  @  White Sox,Breezy and Mostly Cloudy,50°,15.2 mph,"L to R, Strong",HOU,CWS,7,2025-5-4,0,0
 11,Mariners  @  Rangers,Clear,72°,5.4 mph,"R to L, Weak",SEA,TEX,0,2025-5-4,1,0
-12,Rockies  @  Giants,Clear,61°,10.7 mph,"Out, Strong",COL,SF,0,2025-5-4,0,0
+12,Rockies  @  Giants,Clear,61°,9.8 mph,"Out, Weak",COL,SF,0,2025-5-4,0,0
 13,Tigers  @  Angels,Mostly Cloudy,64°,7.2 mph,"Out, Weak",DET,LAA,0,2025-5-4,0,0
-14,Nationals  @  Reds,Mostly Cloudy,59°,4.5 mph,None,WSH,CIN,24,2025-5-4,0,0
+14,Nationals  @  Reds,Possible Drizzle,59°,4.5 mph,None,WSH,CIN,21,2025-5-4,0,0
 15,Mets  @  Cardinals,Overcast,60°,8.9 mph,"L to R, Weak",NYM,STL,0,2025-5-4,0,0
 16,Mets  @  Cardinals,Overcast,60°,8.9 mph,"L to R, Weak",NYM,STL,0,2025-5-4,0,0
-17,Dodgers  @  Braves,Clear,67°,8.9 mph,"R to L, Weak",LAD,ATL,0,2025-5-4,0,0
+17,Dodgers  @  Braves,Mostly Clear,67°,8.9 mph,"R to L, Weak",LAD,ATL,0,2025-5-4,0,0
