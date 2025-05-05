@@ -693,6 +693,17 @@ if check_password():
                 return f'background-color: {color2}'
             elif val < 0:
                 return f'background-color: {color1}'
+        if column == 'Boost':
+            if val >= 1.5:
+                return f'background-color: {color5}'
+            elif val >= 1:
+                return f'background-color: {color4}'
+            elif val >= .5:
+                return f'background-color: {color3}'
+            elif val >= 0:
+                return f'background-color: {color2}'
+            elif val < 0:
+                return f'background-color: {color1}'
         if column == 'Value':
             if val >= 3.2:
                 return f'background-color: {color5}'
@@ -1125,8 +1136,6 @@ if check_password():
                     color_cells_PitchStat, subset=['K%','BB%','SwStr%','xwOBA'], axis=1).format({
                         'K%': '{:.1%}','BB%': '{:.1%}', 'K-BB%': '{:.1%}','SwStr%': '{:.1%}','xwOBA': '{:.3f}','xERA': '{:.2f}'})
                 st.dataframe(styled_df, hide_index=True,width=500)
-
-            
             
             with col2:
                 team_rp_list = rpstats[rpstats['Team']==selected_home_team]
@@ -1164,7 +1173,7 @@ if check_password():
         with col1:
             option = st.selectbox(
                 label="View Options",
-                options=["Team Matchup", "Best Matchups", "Projections", "Stats", "Splits", "Matchups", "Props"],
+                options=["Team Matchup", "Best Matchups", "Projections","Projection vs. Avg", "Stats", "Splits", "Matchups", "Props"],
                 index=0,
                 help="Choose to view hitter projections, stats, or splits."
             )
@@ -1192,11 +1201,45 @@ if check_password():
                                                                                                             'Hard%': '{:.1%}',})
                 st.dataframe(styled_df, hide_index=True, use_container_width=True)
 
-        
-        
-        if option == 'Projections':
+        if option == "Projection vs. Avg":
+            luspotdict = dict(zip(hitterproj.Hitter,hitterproj.LU))
+            h_vs_avg = h_vs_avg.drop(['Unnamed: 0'],axis=1)
             col1, col2 = st.columns(2)
-            hitter_proj_cols = ['Batter', 'Pos', 'LU', 'Sal', 'DKPts', 'Value', 'HR', 'SB']
+            with col1:
+                if selected_road_team in confirmed_lus:
+                    lu_confirmation_string = 'Confirmed'
+                else:
+                    lu_confirmation_string = 'Not Confirmed'
+                st.markdown(f"<h4>{selected_road_team} Lineup ({lu_confirmation_string})</h4>", unsafe_allow_html=True)
+                road_projection_oa = h_vs_avg[h_vs_avg['Team'] == selected_road_team]
+                road_projection_oa['Spot'] = road_projection_oa['Hitter'].map(luspotdict)
+                road_projection_oa['Boost'] = road_projection_oa['DKPts']/road_projection_oa['Avg DK Proj']
+                road_projection_oa = road_projection_oa[['Hitter','Spot','DKPts','Avg DK Proj','DKPts Diff','Boost']].sort_values(by='Spot')
+                road_projection_oa = road_projection_oa.round(2)
+                styled_df = road_projection_oa.style.apply(color_cells_HitProj, subset=['DKPts','Avg DK Proj','Boost'], axis=1).format({'DKPts': '{:.2f}', 'Avg DK Proj': '{:.2f}', 'DKPts Diff': '{:.2f}', 'Boost': '{:.2f}'})                         
+                st.dataframe(styled_df,hide_index=True)
+            with col2:
+                if selected_home_team in confirmed_lus:
+                    lu_confirmation_string = 'Confirmed'
+                else:
+                    lu_confirmation_string = 'Not Confirmed'
+                st.markdown(f"<h4>{selected_home_team} Lineup ({lu_confirmation_string})</h4>", unsafe_allow_html=True)
+                home_projection_oa = h_vs_avg[h_vs_avg['Team'] == selected_home_team]
+                home_projection_oa['Spot'] = home_projection_oa['Hitter'].map(luspotdict)
+                home_projection_oa['Boost'] = home_projection_oa['DKPts']/home_projection_oa['Avg DK Proj']
+                home_projection_oa = home_projection_oa[['Hitter','Spot','DKPts','Avg DK Proj','DKPts Diff','Boost']].sort_values(by='Spot')
+                home_projection_oa = home_projection_oa.round(2)
+                styled_df = home_projection_oa.style.apply(color_cells_HitProj, subset=['DKPts','Avg DK Proj','Boost'], axis=1).format({'DKPts': '{:.2f}', 'Avg DK Proj': '{:.2f}', 'DKPts Diff': '{:.2f}', 'Boost': '{:.2f}'})                         
+                st.dataframe(styled_df,hide_index=True)
+                
+
+
+        if option == 'Projections':
+            avg_merge = h_vs_avg[['Hitter','DKPts Diff']]
+            avg_merge.columns=['Batter','ProjOA']
+            oa_look = dict(zip(avg_merge.Batter,avg_merge.ProjOA))
+            col1, col2 = st.columns(2)
+            hitter_proj_cols = ['Batter', 'Pos', 'LU', 'Sal', 'DKPts', 'HR', 'SB']
             with col1:
                 if selected_road_team in confirmed_lus:
                     lu_confirmation_string = 'Confirmed'
@@ -1205,7 +1248,7 @@ if check_password():
                 st.markdown(f"<h4>{selected_road_team} Lineup ({lu_confirmation_string})</h4>", unsafe_allow_html=True)
                 road_projection_data = hitterproj[hitterproj['Team'] == selected_road_team][hitter_proj_cols]
                 styled_df = road_projection_data.style.apply(
-                    color_cells_HitProj, subset=['DKPts', 'Value', 'Sal', 'HR', 'SB'], axis=1
+                    color_cells_HitProj, subset=['DKPts', 'Sal', 'HR', 'SB'], axis=1
                 ).format({
                     'DKPts': '{:.2f}', 'Value': '{:.2f}', 'Sal': '${:,.0f}',
                     'PA': '{:.1f}', 'R': '{:.2f}', 'HR': '{:.2f}', 'RBI': '{:.2f}', 'SB': '{:.2f}'
@@ -1219,7 +1262,7 @@ if check_password():
                 st.markdown(f"<h4>{selected_home_team} Lineup ({lu_confirmation_string})</h4>", unsafe_allow_html=True)
                 home_projection_data = hitterproj[hitterproj['Team'] == selected_home_team][hitter_proj_cols]
                 styled_df = home_projection_data.style.apply(
-                    color_cells_HitProj, subset=['DKPts', 'Value', 'Sal', 'HR', 'SB'], axis=1
+                    color_cells_HitProj, subset=['DKPts',  'Sal', 'HR', 'SB'], axis=1
                 ).format({
                     'DKPts': '{:.2f}', 'Value': '{:.2f}', 'Sal': '${:,.0f}',
                     'PA': '{:.1f}', 'R': '{:.2f}', 'HR': '{:.2f}', 'RBI': '{:.2f}', 'SB': '{:.2f}'
