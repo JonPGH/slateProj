@@ -221,8 +221,9 @@ if check_password():
         pitdb = pd.read_csv(f'{file_path}/pitdb2025.csv')
         bat_hitters = pd.read_csv(f'{file_path}/bat_hitters.csv')
         bat_pitchers = pd.read_csv(f'{file_path}/bat_pitchers.csv')
+        bet_tracker = pd.read_csv(f'{file_path}/bet_tracker.csv')
 
-        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers
+        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -763,7 +764,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers = load_data()
+    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -2281,23 +2282,92 @@ if check_password():
         )
 
         return(fig)
+    
+    def plotStrikeouts(df,line):
+        playername = df['Player'].iloc[0]
+        df["Date"] = pd.to_datetime(df["Date"])
+
+        df_max = np.max(df['SO']) + 2
+
+        # Create a line graph using Plotly
+        fig = px.line(
+            df,
+            x="Date",
+            y="SO",
+            title=f"Strikeouts by Start for {playername}",
+            markers=True,  # Add markers for each data point
+            text="SO",  # Show opponent labels on the points
+        )
+        
+            # Add horizontal line using the 'line' variable
+        fig.add_hline(
+            y=line,
+            line_dash="solid",
+            line_color="red",
+            line_width=2,
+            annotation_text=f"{line}",
+            annotation_position="top right"
+            )
+        
+        # Customize the layout for a nicer look
+        fig.update_traces(
+            line=dict(color="#1f77b4", width=2.5),  # Blue line with a decent thickness
+            marker=dict(size=10),  # Larger markers
+            textposition="top center",  # Position opponent labels above the points
+        )
+
+        fig.update_layout(
+            xaxis_title="Date",
+            yaxis_title="Strikeouts",
+            xaxis=dict(
+                tickformat="%b %d",  # Format dates as "Mar 31", "Apr 06", etc.
+                tickangle=45,  # Rotate x-axis labels for better readability
+            ),
+            yaxis=dict(
+                range=[-0.5, df_max],  # Set y-axis range with a little padding
+                dtick=1,  # Step of 1 for y-axis ticks
+            ),
+            title=dict(
+                x=0.5,  # Center the title
+                font=dict(size=20),
+            ),
+            showlegend=False,  # No legend needed for a single line
+            plot_bgcolor="white",  # White background for the plot
+            paper_bgcolor="white",  # White background for the entire figure
+            font=dict(size=12),
+        )
+
+        return(fig)
 
     if tab == "Prop Bets":
+        st.markdown("<hr><h4>This page is still a work in progress</h4><hr>",unsafe_allow_html=True)
 
-        #st.dataframe(allbets)
-        st.markdown("<h4><b><i>Work in progress...</i></b></h4>",unsafe_allow_html=True)
+
         rec_bets = allbets.head(10)#[allbets['Recommended']=='Y']
 
         #st.dataframe(rec_bets)
         rec_bets['BetFullName'] = rec_bets['Player'] + ' :: ' + rec_bets['Type'] + ' :: ' + rec_bets['OU'].astype(str) + ' ' + rec_bets['Line'].astype(str)
 
-        bet_select = list(rec_bets['BetFullName'].unique())
-        selected_bet = st.selectbox('Select a Bet', bet_select, help="Select a bet to view details.")
-
+        col1, col2 = st.columns([1,4])
+        with col1:
+            bet_select = list(rec_bets['BetFullName'].unique())
+        
+            selected_bet = st.selectbox('Select a Bet', bet_select, help="Select a bet to view details.")
+        
         show_bet_details = rec_bets[rec_bets['BetFullName']==selected_bet]
 
         bet_player = show_bet_details['Player'].iloc[0]
         bet_market = show_bet_details['Type'].iloc[0]
+        if bet_market == 'pitcher_strikeouts':
+            bet_market_show = 'Strikeouts'
+        elif bet_market == 'pitcher_walks':
+            bet_market_show = 'Walks'
+        elif bet_market == 'batter_walks':
+            bet_market_show = 'Walks'
+        elif bet_market == 'pitcher_outs':
+            bet_market_show = 'Outs Recorded'
+        elif bet_market == 'batter_hits':
+            bet_market_show = 'Hits'
         bet_line = show_bet_details['Line'].iloc[0]
         bet_book = show_bet_details['Book'].iloc[0]
         bet_price = show_bet_details['Price'].iloc[0]
@@ -2309,33 +2379,49 @@ if check_password():
         bet_value = round(bet_value,3)
         bet_value_show = round(show_bet_details['BetValue'].iloc[0]*100,3)
 
-        if bet_market == 'pitcher_walks': 
+        with col2:
+            st.markdown(f"<h2><center>{bet_player} {bet_ou} {bet_line} {bet_market_show} ({bet_price} on {bet_book})</center>", unsafe_allow_html=True)
+        
+        if bet_market == 'pitcher_walks':
             show_db = pitdb[pitdb['Player']==bet_player][['Player','team_abbrev','game_date','opp_abbrev','GS','IP','BFP','BB']]
             show_db['BB%'] = round(show_db['BB']/show_db['BFP'],3)
             show_db.columns=['Player','Team','Date','Opp','GS','IP','TBF','BB','BB%']
             show_db = show_db.sort_values(by='Date',ascending=False)
+
+            ## hit rate ##
+            start_count = np.sum(show_db['GS'])
+            if bet_ou == 'Over':
+                bet_hit_count = (len(show_db[(show_db['BB']>bet_line)&(show_db['GS']==1)]))
+                print_ou = 'over'
+            if bet_ou == 'Under':
+                bet_hit_count = (len(show_db[(show_db['BB']<bet_line)&(show_db['GS']==1)]))
+                print_ou = 'under'
+            bet_hit_rate = round(bet_hit_count/start_count,3)*100
+
 
             bat_proj = bat_pitchers[bat_pitchers['PLAYER']==bet_player]['BB'].iloc[0]
 
             last_three_dates = show_db['Date'].unique()[0:3]
             last3db = show_db[show_db['Date'].isin(last_three_dates)]
 
-            st.markdown(f"<h2><center>{bet_player} {bet_ou} {bet_line} Walks ({bet_price} on {bet_book})</center>", unsafe_allow_html=True)
-            #st.markdown("<br><br>",unsafe_allow_html=True)
-
             col1, col2, col3 = st.columns([1,3,3])
             
             with col1:
-                st.markdown(f"""
-                <div style="text-align: center; font-family: 'Impact', sans-serif; font-size: 40px; color: #e74c3c; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">
-                Bet Value
-                </div>
-                <div style="text-align: center; font-family: 'Impact', sans-serif; font-size: 90px; color: #e74c3c; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">
-                         {bet_value_show}%
+                st.markdown(f"""<div style="text-align: center; font-family: 'Impact', sans-serif;">
+                        <span style="font-size: 25px; color: black; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">Bet Value</span>
+                        <span style="font-size: 25px; color: black;">&nbsp;</span>
+                        <span style="font-size: 75px; color: #e74c3c; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">{bet_value_show}%</span>
                     </div>
-                    """, unsafe_allow_html=True)
-
+                    <div style="text-align: center; font-family: 'Impact', sans-serif;">
+                        <span style="font-size: 25px; color: black; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">Bet Hit Rate</span>
+                        <span style="font-size: 25px; color: black;">&nbsp;</span>
+                        <span style="font-size: 75px; color: #e74c3c; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">{round(bet_hit_rate,3)}%</span>
+                    </div>
+                """, unsafe_allow_html=True)
+                
+            
             with col2:
+                
                 fig1 = plot_bet_projections(bet_line, bet_proj, bat_proj, title="Bet and Projection Comparison")
                 st.plotly_chart(fig1, use_container_width=True)
 
@@ -2344,28 +2430,140 @@ if check_password():
                 st.plotly_chart(fig2, use_container_width=True)
             st.markdown(f"<br><br>",unsafe_allow_html=True)
 
-
             line_plot = plotWalks(show_db,bet_line)        
-            col1, col2 = st.columns([1,5])
-            with col1:
-                start_count = np.sum(show_db['GS'])
-                if bet_ou == 'Over':
-                    bet_hit_count = (len(show_db[(show_db['BB']>bet_line)&(show_db['GS']==1)]))
-                    print_ou = 'over'
-                if bet_ou == 'Under':
-                    bet_hit_count = (len(show_db[(show_db['BB']<bet_line)&(show_db['GS']==1)]))
-                    print_ou = 'under'
-                bet_hit_rate = round(bet_hit_count/start_count,3)*100
-                st.markdown(f"""
-                            <div style="text-align: center; font-family: 'Arial', sans-serif; font-size: 25px; color:rgb(0, 0, 0); text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">
-                            {bet_player} has gone {print_ou} {bet_line} walks in {bet_hit_count} of {start_count} starts ({bet_hit_rate}%)
-                            </div>
-                            """, unsafe_allow_html=True)
+            col1, col2 = st.columns([1,4])
                 
+            with col1:
+                similar_bets = bet_tracker[(bet_tracker['Bet Type']=='Walks')&(bet_tracker['Bet']==bet_ou)&(bet_tracker['Bet Value']>bet_value-.035)&(bet_tracker['Bet Value']<bet_value+.035)]
+                similar_bet_count = len(similar_bets)
+                similar_bet_winners = np.sum(similar_bets['Winner?'])
+                similar_bet_profit = round(np.sum(similar_bets['Profit']),2)
+                similar_bet_roi = round(similar_bet_profit/similar_bet_count,3)*100
+                similar_bet_roi = round(similar_bet_roi,1) - 100
+                st.markdown(f"""
+                    <div style="text-align: center; font-family: 'Impact', sans-serif; padding: 20px;">
+                        <div style="margin-bottom: 5px;">
+                            <span style="font-size: 30px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Similar Bets Analysis</span>
+                            <span style="font-size: 20px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Bets Recommended</span>
+                            <span style="font-size: 20px; color: black;">&nbsp;</span>
+                            <span style="font-size: 40px; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">{similar_bet_count}</span>
+                        </div>
+                        <div style="margin-bottom: 5px;">
+                            <span style="font-size: 20px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Winners</span>
+                            <span style="font-size: 2px; color: black;">&nbsp;</span>
+                            <span style="font-size: 40px; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">{similar_bet_winners}</span>
+                        </div>
+                        <div style="margin-bottom: 5px;">
+                            <span style="font-size: 20px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Unit Profit</span>
+                            <span style="font-size: 20px; color: black;">&nbsp;</span>
+                            <span style="font-size: 40px; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">{similar_bet_profit}</span>
+                        </div>
+                        <div>
+                            <span style="font-size: 25px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">ROI</span>
+                            <span style="font-size: 25px; color: black;">&nbsp;</span>
+                            <span style="font-size: 50px; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">{similar_bet_roi}%</span>
+                        </div>
+                    </div>
+                """, unsafe_allow_html=True)
+                #st.dataframe(similar_bets, hide_index=True) 
             with col2:
+                st.markdown(f"""
+                    <div style="text-align: center; font-family: 'Arial', sans-serif; font-size: 25px; color:rgb(0, 0, 0); text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">
+                    {bet_player} has gone {print_ou} {bet_line} walks in {bet_hit_count} of {start_count} starts
+                    </div>
+                    """, unsafe_allow_html=True)
                 st.plotly_chart(line_plot, use_container_width=False,width=50)
+        
+        if bet_market == 'pitcher_strikeouts':
+            show_db = pitdb[pitdb['Player']==bet_player][['Player','team_abbrev','game_date','opp_abbrev','GS','IP','BFP','SO']]
+            show_db['K%'] = round(show_db['SO']/show_db['BFP'],3)
+            show_db.columns=['Player','Team','Date','Opp','GS','IP','TBF','SO','K%']
+            show_db = show_db.sort_values(by='Date',ascending=False)
 
+            ## hit rate ##
+            start_count = np.sum(show_db['GS'])
+            if bet_ou == 'Over':
+                bet_hit_count = (len(show_db[(show_db['SO']>bet_line)&(show_db['GS']==1)]))
+                print_ou = 'over'
+            if bet_ou == 'Under':
+                bet_hit_count = (len(show_db[(show_db['SO']<bet_line)&(show_db['GS']==1)]))
+                print_ou = 'under'
+            bet_hit_rate = round(bet_hit_count/start_count,3)*100
 
+            bat_proj = bat_pitchers[bat_pitchers['PLAYER']==bet_player]['K'].iloc[0]
+
+            last_three_dates = show_db['Date'].unique()[0:3]
+            last3db = show_db[show_db['Date'].isin(last_three_dates)]
+
+            col1, col2, col3 = st.columns([1,3,3])
+            
+            with col1:
+                st.markdown(f"""<div style="text-align: center; font-family: 'Impact', sans-serif;">
+                        <span style="font-size: 25px; color: black; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">Bet Value</span>
+                        <span style="font-size: 25px; color: black;">&nbsp;</span>
+                        <span style="font-size: 75px; color: #e74c3c; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">{bet_value_show}%</span>
+                    </div>
+                    <div style="text-align: center; font-family: 'Impact', sans-serif;">
+                        <span style="font-size: 25px; color: black; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">Bet Hit Rate</span>
+                        <span style="font-size: 25px; color: black;">&nbsp;</span>
+                        <span style="font-size: 75px; color: #e74c3c; text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">{round(bet_hit_rate,3)}%</span>
+                    </div>
+                """, unsafe_allow_html=True)
+                
+            
+            with col2:
+                
+                fig1 = plot_bet_projections(bet_line, bet_proj, bat_proj, title="Bet and Projection Comparison")
+                st.plotly_chart(fig1, use_container_width=True)
+
+            with col3:
+                fig2 = plot_bet_value_compare(bet_projodds, bet_lineodds, title="Implied Odds Comparison")
+                st.plotly_chart(fig2, use_container_width=True)
+            st.markdown(f"<br><br>",unsafe_allow_html=True)
+
+            line_plot = plotStrikeouts(show_db,bet_line)       
+            col1, col2 = st.columns([1,4])
+                
+            with col1:
+                similar_bets = bet_tracker[(bet_tracker['Bet Type']=='Strikeouts')&(bet_tracker['Bet']==bet_ou)&(bet_tracker['Bet Value']>bet_value-.035)&(bet_tracker['Bet Value']<bet_value+.035)]
+                similar_bet_count = len(similar_bets)
+                similar_bet_winners = np.sum(similar_bets['Winner?'])
+                similar_bet_profit = round(np.sum(similar_bets['Profit']),2)
+                similar_bet_roi = round(similar_bet_profit/similar_bet_count,3)*100
+                similar_bet_roi = round(similar_bet_roi,1) - 100
+                st.markdown(f"""
+                    <div style="text-align: center; font-family: 'Impact', sans-serif; padding: 20px;">
+                        <div style="margin-bottom: 5px;">
+                            <span style="font-size: 30px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Similar Bets Analysis</span>
+                            <span style="font-size: 20px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Bets Recommended</span>
+                            <span style="font-size: 20px; color: black;">&nbsp;</span>
+                            <span style="font-size: 40px; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">{similar_bet_count}</span>
+                        </div>
+                        <div style="margin-bottom: 5px;">
+                            <span style="font-size: 20px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Winners</span>
+                            <span style="font-size: 2px; color: black;">&nbsp;</span>
+                            <span style="font-size: 40px; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">{similar_bet_winners}</span>
+                        </div>
+                        <div style="margin-bottom: 5px;">
+                            <span style="font-size: 20px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Unit Profit</span>
+                            <span style="font-size: 20px; color: black;">&nbsp;</span>
+                            <span style="font-size: 40px; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">{similar_bet_profit}</span>
+                        </div>
+                        <div>
+                            <span style="font-size: 25px; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">ROI</span>
+                            <span style="font-size: 25px; color: black;">&nbsp;</span>
+                            <span style="font-size: 50px; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">{round(similar_bet_roi,1)}%</span>
+                        </div>
+                    </div>
+                """, unsafe_allow_html=True)
+                #st.dataframe(similar_bets, hide_index=True) 
+            with col2:
+                st.markdown(f"""
+                    <div style="text-align: center; font-family: 'Arial', sans-serif; font-size: 25px; color:rgb(0, 0, 0); text-shadow: 3px 3px 5px rgba(0,0,0,0.3);">
+                    {bet_player} has gone {print_ou} {bet_line} strikeouts in {bet_hit_count} of {start_count} starts
+                    </div>
+                    """, unsafe_allow_html=True)
+                st.plotly_chart(line_plot, use_container_width=False,width=50)
 
 
 
