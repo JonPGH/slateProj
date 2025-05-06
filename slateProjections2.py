@@ -788,7 +788,7 @@ if check_password():
     gameinfo['RoadTeam'] = np.where(gameinfo['team'] == gameinfo['Park'], gameinfo['opponent'], gameinfo['team'])
     gameinfo['GameString'] = gameinfo['RoadTeam']+'@'+gameinfo['Park']
 
-    team_vs_sim = h_vs_sim[h_vs_sim['PC']>149].groupby('Team',as_index=False)[['xwOBA','SwStr%','AVG','SLG','Brl%','FB%']].mean()
+    team_vs_sim = h_vs_sim[h_vs_sim['PC']>49].groupby('Team',as_index=False)[['xwOBA','SwStr%','AVG','SLG','Brl%','FB%']].mean()
     team_vs_sim['RawRank'] = len(team_vs_sim)-team_vs_sim['xwOBA'].rank()+1
 
     team_vs_sim['Rank'] = team_vs_sim['RawRank'].astype(int).astype(str) + '/' + str(len(team_vs_sim))
