@@ -1,19 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Guardians  @  Nationals,Mostly Clear,73°,8.9 mph,"Out, Weak",CLE,WSH,7,2025-5-6,0,0
-1,Guardians  @  Nationals,Mostly Clear,73°,8.9 mph,"Out, Weak",CLE,WSH,7,2025-5-6,0,0
+0,Guardians  @  Nationals,Possible Drizzle,72°,9.8 mph,"Out, Weak",CLE,WSH,9,2025-5-6,0,0
+1,Guardians  @  Nationals,Possible Drizzle,72°,9.8 mph,"Out, Weak",CLE,WSH,9,2025-5-6,0,0
 2,Dodgers  @  Marlins,Mostly Clear,82°,8.9 mph,"In, Weak",LAD,MIA,0,2025-5-6,1,0
-3,Rangers  @  Red Sox,Light Rain,64°,8.9 mph,"R to L, Weak",TEX,BOS,43,2025-5-6,0,0
-4,Phillies  @  Rays,Mostly Clear,86°,5.4 mph,"Out, Weak",PHI,TB,9,2025-5-6,0,0
-5,Padres  @  Yankees,Possible Drizzle,62°,8.9 mph,"R to L, Weak",SD,NYY,17,2025-5-6,0,0
-6,Guardians  @  Nationals,Mostly Clear,71°,5.4 mph,"L to R, Weak",CLE,WSH,7,2025-5-6,0,0
-7,Guardians  @  Nationals,Mostly Clear,71°,5.4 mph,"L to R, Weak",CLE,WSH,7,2025-5-6,0,0
+3,Rangers  @  Red Sox,Light Rain,63°,8.0 mph,"R to L, Weak",TEX,BOS,41,2025-5-6,0,0
+4,Phillies  @  Rays,Partly Cloudy,86°,4.5 mph,None,PHI,TB,8,2025-5-6,0,0
+5,Padres  @  Yankees,Possible Light Rain,63°,8.9 mph,"R to L, Weak",SD,NYY,20,2025-5-6,0,0
+6,Guardians  @  Nationals,Mostly Clear,71°,5.4 mph,"L to R, Weak",CLE,WSH,9,2025-5-6,0,0
+7,Guardians  @  Nationals,Mostly Clear,71°,5.4 mph,"L to R, Weak",CLE,WSH,9,2025-5-6,0,0
 8,Reds  @  Braves,Mostly Clear,77°,3.6 mph,None,CIN,ATL,0,2025-5-6,0,0
-9,Giants  @  Cubs,Mostly Clear,65°,4.5 mph,None,SF,CHC,0,2025-5-6,0,0
-10,Orioles  @  Twins,Clear,81°,3.6 mph,None,BAL,MIN,0,2025-5-6,0,0
+9,Giants  @  Cubs,Mostly Clear,64°,3.6 mph,None,SF,CHC,0,2025-5-6,0,0
+10,Orioles  @  Twins,Clear,82°,4.5 mph,None,BAL,MIN,0,2025-5-6,0,0
 11,Astros  @  Brewers,Clear,67°,4.5 mph,None,HOU,MIL,0,2025-5-6,0,0
-12,White Sox  @  Royals,Mostly Cloudy,73°,7.2 mph,"R to L, Weak",CWS,KC,0,2025-5-6,0,0
+12,White Sox  @  Royals,Mostly Cloudy,74°,8.0 mph,"R to L, Weak",CWS,KC,0,2025-5-6,0,0
 13,Pirates  @  Cardinals,Mostly Clear,71°,2.7 mph,None,PIT,STL,0,2025-5-6,0,0
-14,Tigers  @  Rockies,Light Rain,49°,7.2 mph,"R to L, Weak",DET,COL,0,2025-5-6,0,0
+14,Tigers  @  Rockies,Light Rain,48°,7.2 mph,"Out, Weak",DET,COL,0,2025-5-6,0,0
 15,Blue Jays  @  Angels,Partly Cloudy,65°,6.3 mph,"Out, Weak",TOR,LAA,0,2025-5-6,0,0
 16,Mets  @  Diamondbacks,Mostly Clear,73°,4.5 mph,None,NYM,ARI,0,2025-5-6,1,0
 17,Mariners  @  Athletics,Clear,81°,7.2 mph,"Out, Weak",SEA,OAK,0,2025-5-6,0,0
