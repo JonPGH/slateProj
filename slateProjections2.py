@@ -801,6 +801,7 @@ if check_password():
     hitterproj['GameString'] = hitterproj['RoadTeam'] + '@' + hitterproj['Park']
     pitcherproj['RoadTeam'] = np.where(pitcherproj['Team'] == pitcherproj['HomeTeam'], pitcherproj['Opponent'], pitcherproj['Team'])
     pitcherproj['GameString'] = pitcherproj['RoadTeam'] + '@' + pitcherproj['HomeTeam']
+    mainslateteams = list(hitterproj[hitterproj['MainSlate']=='Main']['Team'])
     main_slate_gamelist = list(pitcherproj[pitcherproj['MainSlate']=='Main']['GameString'])
     bpreport['BP Rank'] = bpreport['xERA'].rank()
     bpreport = bpreport.sort_values(by='BP Rank')
@@ -1770,6 +1771,38 @@ if check_password():
                 st.dataframe(styled_df,hide_index=True,width=850)
 
     if tab == "Matchups":
+        if st.checkbox("Show Team Ranks"):
+            
+            st.markdown("<h2>Team Matchups</h2>", unsafe_allow_html=True)
+
+            if st.checkbox("Main Slate Only"):
+                show_team_vs_sim = team_vs_sim[team_vs_sim['Team'].isin(mainslateteams)].sort_values(by='RawRank')
+                show_team_vs_sim = show_team_vs_sim.drop(['Rank'],axis=1)
+
+                show_team_vs_sim = show_team_vs_sim.rename({'RawRank': 'Rank'},axis=1)
+
+                team_styled_df = show_team_vs_sim.style.apply(color_cells_HitMatchups, subset=['xwOBA', 'AVG', 'SLG',
+                                                                                'SwStr%','Brl%','FB%'], axis=1).format({
+                    'xwOBA': '{:.3f}', 'xwOBA Con': '{:.3f}','AVG': '{:.3f}',
+                    'SwStr%': '{:.1%}', 'Brl%': '{:.1%}', 'SLG': '{:.3f}',
+                    'FB%': '{:.1%}', 'Hard%': '{:.1%}', 'Rank': '{:.0f}'
+                })
+                st.dataframe(team_styled_df, hide_index=True, width=600, height=560)
+            else:       
+                show_team_vs_sim = team_vs_sim.sort_values(by='RawRank')
+                show_team_vs_sim = show_team_vs_sim.drop(['Rank'],axis=1)
+
+                show_team_vs_sim = show_team_vs_sim.rename({'RawRank': 'Rank'},axis=1)
+
+                team_styled_df = show_team_vs_sim.style.apply(color_cells_HitMatchups, subset=['xwOBA', 'AVG', 'SLG',
+                                                                                'SwStr%','Brl%','FB%'], axis=1).format({
+                    'xwOBA': '{:.3f}', 'xwOBA Con': '{:.3f}','AVG': '{:.3f}',
+                    'SwStr%': '{:.1%}', 'Brl%': '{:.1%}', 'SLG': '{:.3f}',
+                    'FB%': '{:.1%}', 'Hard%': '{:.1%}', 'Rank': '{:.0f}'
+                })
+                st.dataframe(team_styled_df, hide_index=True, width=600, height=560)
+            
+        
         team_options = ['All'] + list(h_vs_sim['Team'].unique())
         col1, col2 = st.columns([1, 3])
         with col1:
