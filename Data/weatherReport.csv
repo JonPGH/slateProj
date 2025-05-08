@@ -1,16 +1,12 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Guardians  @  Nationals,Mostly Clear,70°,7.2 mph,"L to R, Weak",CLE,WSH,0,2025-5-7,0,0
-1,Astros  @  Brewers,Partly Cloudy,56°,14.3 mph,"L to R, Strong",HOU,MIL,0,2025-5-7,0,0
-2,Pirates  @  Cardinals,Partly Cloudy,69°,7.2 mph,"In, Weak",PIT,STL,0,2025-5-7,0,0
-3,Giants  @  Cubs,Partly Cloudy,57°,10.7 mph,"In, Strong",SF,CHC,0,2025-5-7,0,0
-4,Mariners  @  Athletics,Clear,72°,7.2 mph,"Out, Weak",SEA,OAK,0,2025-5-7,0,0
-5,Mets  @  Diamondbacks,Partly Cloudy,79°,3.6 mph,None,NYM,ARI,0,2025-5-7,1,0
-6,Dodgers  @  Marlins,Mostly Clear,83°,8.0 mph,"In, Weak",LAD,MIA,0,2025-5-7,1,0
-7,Rangers  @  Red Sox,Partly Cloudy,70°,7.2 mph,"Out, Weak",TEX,BOS,0,2025-5-7,0,0
-8,Padres  @  Yankees,Partly Cloudy,71°,7.2 mph,"Out, Weak",SD,NYY,0,2025-5-7,0,0
-9,Phillies  @  Rays,Partly Cloudy,84°,4.5 mph,None,PHI,TB,11,2025-5-7,0,0
-10,Reds  @  Braves,Mostly Cloudy,70°,4.5 mph,None,CIN,ATL,0,2025-5-7,0,0
-11,Orioles  @  Twins,Clear,70°,11.6 mph,"In, Strong",BAL,MIN,0,2025-5-7,0,0
-12,White Sox  @  Royals,Possible Drizzle,65°,8.0 mph,"In, Weak",CWS,KC,21,2025-5-7,0,0
-13,Tigers  @  Rockies,Possible Light Rain,53°,6.3 mph,"In, Weak",DET,COL,0,2025-5-7,0,0
-14,Blue Jays  @  Angels,Clear,72°,8.0 mph,"Out, Weak",TOR,LAA,0,2025-5-7,0,0
+0,Orioles  @  Twins,Clear,62°,6.3 mph,"In, Weak",BAL,MIN,0,2025-5-8,0,0
+1,Rangers  @  Red Sox,Partly Cloudy,71°,4.5 mph,None,TEX,BOS,0,2025-5-8,0,0
+2,White Sox  @  Royals,Mostly Clear,71°,8.9 mph,"In, Weak",CWS,KC,0,2025-5-8,0,0
+3,Tigers  @  Rockies,Clear,63°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
+4,Tigers  @  Rockies,Clear,63°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
+5,Tigers  @  Rockies,Clear,67°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
+6,Tigers  @  Rockies,Clear,67°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
+7,Phillies  @  Rays,Mostly Clear,84°,6.3 mph,"Out, Weak",PHI,TB,11,2025-5-8,0,0
+8,Reds  @  Braves,Mostly Clear,81°,5.4 mph,"R to L, Weak",CIN,ATL,11,2025-5-8,0,0
+9,Blue Jays  @  Angels,Clear,77°,7.2 mph,"Out, Weak",TOR,LAA,0,2025-5-8,0,0
+10,Dodgers  @  Diamondbacks,Clear,92°,3.6 mph,None,LAD,ARI,0,2025-5-8,1,0
