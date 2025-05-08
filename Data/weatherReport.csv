@@ -1,12 +1,12 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Orioles  @  Twins,Clear,62°,6.3 mph,"In, Weak",BAL,MIN,0,2025-5-8,0,0
-1,Rangers  @  Red Sox,Partly Cloudy,71°,4.5 mph,None,TEX,BOS,0,2025-5-8,0,0
-2,White Sox  @  Royals,Mostly Clear,71°,8.9 mph,"In, Weak",CWS,KC,0,2025-5-8,0,0
+1,Rangers  @  Red Sox,Partly Cloudy,72°,4.5 mph,None,TEX,BOS,0,2025-5-8,0,0
+2,White Sox  @  Royals,Mostly Clear,72°,8.9 mph,"In, Weak",CWS,KC,0,2025-5-8,0,0
 3,Tigers  @  Rockies,Clear,63°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
 4,Tigers  @  Rockies,Clear,63°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
 5,Tigers  @  Rockies,Clear,67°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
 6,Tigers  @  Rockies,Clear,67°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
 7,Phillies  @  Rays,Mostly Clear,84°,6.3 mph,"Out, Weak",PHI,TB,8,2025-5-8,0,0
-8,Reds  @  Braves,Drizzle,80°,5.4 mph,"R to L, Weak",CIN,ATL,25,2025-5-8,0,0
+8,Reds  @  Braves,Possible Drizzle,80°,5.4 mph,"R to L, Weak",CIN,ATL,16,2025-5-8,0,0
 9,Blue Jays  @  Angels,Clear,77°,7.2 mph,"Out, Weak",TOR,LAA,0,2025-5-8,0,0
 10,Dodgers  @  Diamondbacks,Clear,92°,3.6 mph,None,LAD,ARI,0,2025-5-8,1,0
