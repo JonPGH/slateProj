@@ -1294,7 +1294,7 @@ if check_password():
             elif option == 'Splits':
                 col1, col2 = st.columns(2)
                 with col1:
-                    st.markdown(f"<h4>{selected_road_team} vs. {home_sp_hand}HB</h4>", unsafe_allow_html=True)
+                    st.markdown(f"<h4>{selected_road_team} vs. {home_sp_hand}HP</h4>", unsafe_allow_html=True)
                     road_hitter_splits = road_hitter_stats[['Batter', 'Split PA', 'Split K%', 'Split BB%', 'Split Brl%', 'Split xwOBA', 'Split FB%']]
                     road_hitter_splits.columns = ['Hitter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']
                     styled_df = road_hitter_splits.style.apply(
@@ -1304,7 +1304,7 @@ if check_password():
                     })
                     st.dataframe(styled_df, hide_index=True, use_container_width=True)
                 with col2:
-                    st.markdown(f"<h4>{selected_home_team} vs. {road_sp_hand}HB</h4>", unsafe_allow_html=True)
+                    st.markdown(f"<h4>{selected_home_team} vs. {road_sp_hand}HP</h4>", unsafe_allow_html=True)
                     home_hitter_splits = home_hitter_stats[['Batter', 'Split PA', 'Split K%', 'Split BB%', 'Split Brl%', 'Split xwOBA', 'Split FB%']]
                     home_hitter_splits.columns = ['Hitter', 'PA', 'K%', 'BB%', 'Brl%', 'xwOBA', 'FB%']
                     styled_df = home_hitter_splits.style.apply(
