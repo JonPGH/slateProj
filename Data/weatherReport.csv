@@ -1,12 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Orioles  @  Twins,Clear,63°,6.3 mph,"In, Weak",BAL,MIN,0,2025-5-8,0,0
-1,Rangers  @  Red Sox,Partly Cloudy,71°,4.5 mph,None,TEX,BOS,0,2025-5-8,0,0
-2,White Sox  @  Royals,Mostly Clear,72°,8.9 mph,"In, Weak",CWS,KC,0,2025-5-8,0,0
-3,Tigers  @  Rockies,Clear,63°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
-4,Tigers  @  Rockies,Clear,63°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
-5,Tigers  @  Rockies,Clear,67°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
-6,Tigers  @  Rockies,Clear,67°,5.4 mph,"R to L, Weak",DET,COL,0,2025-5-8,0,0
-7,Phillies  @  Rays,Mostly Clear,83°,6.3 mph,"Out, Weak",PHI,TB,8,2025-5-8,0,0
-8,Reds  @  Braves,Possible Light Rain,80°,5.4 mph,"R to L, Weak",CIN,ATL,11,2025-5-8,0,0
-9,Blue Jays  @  Angels,Clear,76°,7.2 mph,"Out, Weak",TOR,LAA,0,2025-5-8,0,0
-10,Dodgers  @  Diamondbacks,Clear,91°,2.7 mph,None,LAD,ARI,0,2025-5-8,1,0
+0,Rangers  @  Tigers,Clear,63°,7.2 mph,"L to R, Weak",TEX,DET,0,2025-5-9,0,0
+1,Braves  @  Pirates,Mostly Clear,60°,9.8 mph,"L to R, Weak",ATL,PIT,0,2025-5-9,0,0
+2,Cardinals  @  Nationals,Partly Cloudy,63°,8.0 mph,"L to R, Weak",STL,WSH,0,2025-5-9,0,0
+3,Brewers  @  Rays,Partly Cloudy,84°,5.4 mph,"Out, Weak",MIL,TB,10,2025-5-9,0,0
+4,Phillies  @  Guardians,Clear,57°,6.3 mph,"In, Weak",PHI,CLE,0,2025-5-9,0,0
+5,Cubs  @  Mets,Mostly Cloudy,60°,8.9 mph,"In, Weak",CHC,NYM,26,2025-5-9,0,0
+6,Red Sox  @  Royals,Partly Cloudy,74°,6.3 mph,"In, Weak",BOS,KC,0,2025-5-9,0,0
+7,Marlins  @  White Sox,Clear,56°,3.6 mph,None,MIA,CWS,0,2025-5-9,0,0
+8,Reds  @  Astros,Mostly Clear,79°,8.9 mph,"In, Weak",CIN,HOU,0,2025-5-9,1,0
+9,Giants  @  Twins,Partly Cloudy,80°,7.2 mph,"L to R, Weak",SF,MIN,0,2025-5-9,0,0
+10,Padres  @  Rockies,Partly Cloudy,70°,7.2 mph,"R to L, Weak",SD,COL,0,2025-5-9,0,0
+11,Orioles  @  Angels,Clear,86°,8.0 mph,"Out, Weak",BAL,LAA,0,2025-5-9,0,0
+12,Blue Jays  @  Mariners,Mostly Cloudy,65°,5.4 mph,"L to R, Weak",TOR,SEA,0,2025-5-9,1,0
+13,Dodgers  @  Diamondbacks,Dry and Clear,98°,3.6 mph,None,LAD,ARI,0,2025-5-9,1,0
+14,Yankees  @  Athletics,Clear,88°,4.5 mph,None,NYY,OAK,0,2025-5-9,0,0
