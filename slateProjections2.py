@@ -928,7 +928,7 @@ if check_password():
         p_stats_cols = ['IP', 'K%', 'BB%', 'SwStr%', 'Ball%', 'xwOBA']
         road_sp_stats = pitcher_stats[pitcher_stats['Pitcher'] == road_sp_name]
         
-        if len(road_sp_stats)>1:
+        if len(road_sp_stats)>0:
             road_sp_hand = road_sp_stats['Hand'].iloc[0]
             is_road_p_hot = road_sp_stats['IsHot'].iloc[0]
             is_road_p_cold = road_sp_stats['IsCold'].iloc[0]
@@ -936,7 +936,6 @@ if check_password():
             road_sp_hand = 'R'
             is_road_p_hot = 0
             is_road_p_cold = 0
-
         if is_road_p_hot == 1:
             road_p_emoji = '🔥'
         elif is_road_p_cold == 1:
