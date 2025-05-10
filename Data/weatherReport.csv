@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Yankees  @  Athletics,Clear,88°,4.5 mph,None,NYY,OAK,0,2025-5-10,0,0
-1,Cardinals  @  Nationals,Clear,73°,8.0 mph,"L to R, Weak",STL,WSH,0,2025-5-10,0,0
+1,Cardinals  @  Nationals,Clear,72°,8.0 mph,"L to R, Weak",STL,WSH,0,2025-5-10,0,0
 2,Braves  @  Pirates,Clear,73°,7.2 mph,"Out, Weak",ATL,PIT,0,2025-5-10,0,0
-3,Brewers  @  Rays,Mostly Cloudy,86°,9.8 mph,"R to L, Weak",MIL,TB,10,2025-5-10,0,0
-4,Phillies  @  Guardians,Clear,71°,7.2 mph,"L to R, Weak",PHI,CLE,0,2025-5-10,0,0
-5,Rangers  @  Tigers,Mostly Clear,72°,10.7 mph,"Out, Strong",TEX,DET,0,2025-5-10,0,0
+3,Brewers  @  Rays,Possible Drizzle,85°,9.8 mph,"R to L, Weak",MIL,TB,14,2025-5-10,0,0
+4,Phillies  @  Guardians,Clear,72°,7.2 mph,"L to R, Weak",PHI,CLE,0,2025-5-10,0,0
+5,Rangers  @  Tigers,Clear,72°,10.7 mph,"Out, Strong",TEX,DET,0,2025-5-10,0,0
 6,Red Sox  @  Royals,Clear,80°,5.4 mph,"In, Weak",BOS,KC,0,2025-5-10,0,0
 7,Marlins  @  White Sox,Clear,52°,14.3 mph,"L to R, Strong",MIA,CWS,0,2025-5-10,0,0
-8,Reds  @  Astros,Mostly Clear,78°,10.7 mph,"In, Strong",CIN,HOU,9,2025-5-10,1,0
-9,Giants  @  Twins,Clear,75°,8.0 mph,"In, Weak",SF,MIN,0,2025-5-10,0,0
-10,Cubs  @  Mets,Clear,68°,9.8 mph,"L to R, Weak",CHC,NYM,0,2025-5-10,0,0
+8,Reds  @  Astros,Mostly Clear,78°,10.7 mph,"In, Strong",CIN,HOU,5,2025-5-10,1,0
+9,Giants  @  Twins,Clear,76°,8.0 mph,"In, Weak",SF,MIN,0,2025-5-10,0,0
+10,Cubs  @  Mets,Clear,67°,9.8 mph,"L to R, Weak",CHC,NYM,0,2025-5-10,0,0
 11,Dodgers  @  Diamondbacks,Dry and Clear,100°,8.9 mph,"R to L, Weak",LAD,ARI,0,2025-5-10,1,0
 12,Padres  @  Rockies,Clear,76°,8.0 mph,"R to L, Weak",SD,COL,0,2025-5-10,0,0
-13,Orioles  @  Angels,Mostly Clear,91°,8.0 mph,"L to R, Weak",BAL,LAA,0,2025-5-10,0,0
+13,Orioles  @  Angels,Mostly Clear,90°,8.0 mph,"L to R, Weak",BAL,LAA,0,2025-5-10,0,0
 14,Blue Jays  @  Mariners,Mostly Cloudy,61°,8.0 mph,"Out, Weak",TOR,SEA,0,2025-5-10,1,0
