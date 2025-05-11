@@ -1,6 +1,6 @@
 ,Pitcher,Opp,K%,BB%,Brl%,GB%,FB%,xwOBA,PPA,LU
-0,Griffin Canning,CHC,0.201,0.096,0.084,0.4,0.298,0.3304444444444445,3.933333333333334,"Pete Crow-Armstrong, Kyle Tucker, Seiya Suzuki, Michael Busch, Carson Kelly, Justin Turner, Nico Hoerner, Dansby Swanson, Nicky Lopez"
-0,Matthew Boyd,NYM,0.211,0.092,0.109,0.443,0.247,0.35200000000000004,3.928888888888889,"Francisco Lindor, Juan Soto, Pete Alonso, Starling Marte, Brandon Nimmo, Mark Vientos, Luis Torrens, Luisangel Acuna, Tyrone Taylor"
+0,Griffin Canning,CHC,0.205,0.094,0.085,0.399,0.295,0.33444444444444443,3.928888888888889,"Pete Crow-Armstrong, Kyle Tucker, Seiya Suzuki, Michael Busch, Carson Kelly, Nico Hoerner, Dansby Swanson, Justin Turner, Jon Berti"
+0,Matthew Boyd,NYM,0.212,0.092,0.109,0.442,0.248,0.35200000000000004,3.928888888888889,"Francisco Lindor, Juan Soto, Pete Alonso, Mark Vientos, Brandon Nimmo, Starling Marte, Luis Torrens, Luisangel Acuna, Tyrone Taylor"
 0,MacKenzie Gore,STL,0.205,0.083,0.071,0.436,0.235,0.31922222222222224,3.933333333333333,"Lars Nootbaar, Masyn Winn, Brendan Donovan, Nolan Arenado, Willson Contreras, Ivan Herrera, Jordan Walker, Pedro Pages, Victor Scott II"
 0,Miles Mikolas,WSH,0.201,0.08,0.067,0.479,0.232,0.3207777777777778,3.8722222222222222,"C.J. Abrams, Alex Call, James Wood, Nathaniel Lowe, Keibert Ruiz, Luis Garcia, Jose Tena, Jacob Young, Dylan Crews"
 0,Carmen Mlodzinski,ATL,0.208,0.077,0.097,0.444,0.258,0.3288888888888889,3.8966666666666665,"Alex Verdugo, Austin Riley, Marcell Ozuna, Matt Olson, Ozzie Albies, Michael Harris II, Eli White, Drake Baldwin, Nick Allen"
@@ -14,7 +14,7 @@
 0,Seth Lugo,BOS,0.233,0.076,0.089,0.417,0.26,0.31922222222222224,3.902222222222223,"Jarren Duran, Rafael Devers, Alex Bregman, Kristian Campbell, Wilyer Abreu, Trevor Story, Abraham Toro, Connor Wong, Ceddanne Rafaela"
 0,Lucas Giolito,KC,0.183,0.07,0.075,0.414,0.267,0.3216666666666666,3.7933333333333334,"Jonathan India, Bobby Witt Jr., Vinnie Pasquantino, Salvador Perez, Maikel Garcia, Michael Massey, Hunter Renfroe, Drew Waters, Kyle Isbel"
 0,Pablo Lopez,SF,0.219,0.088,0.088,0.396,0.276,0.32611111111111113,3.9633333333333334,"Mike Yastrzemski, Willy Adames, Jung Hoo Lee, Matt Chapman, Wilmer Flores, Heliot Ramos, LaMonte Wade Jr., Patrick Bailey, Christian Koss"
-0,Landen Roupp,MIN,0.211,0.071,0.088,0.411,0.27,0.3218888888888889,3.8333333333333335,"Byron Buxton, Trevor Larnach, Ty France, Brooks Lee, Ryan Jeffers, Carlos Correa, Willi Castro, Royce Lewis, Harrison Bader"
+0,Landen Roupp,MIN,0.211,0.071,0.088,0.412,0.27,0.3218888888888889,3.8333333333333335,"Byron Buxton, Trevor Larnach, Ty France, Brooks Lee, Carlos Correa, Ryan Jeffers, Willi Castro, Royce Lewis, Harrison Bader"
 0,Sean Burke,MIA,0.239,0.065,0.088,0.453,0.243,0.3034444444444444,3.693333333333333,"Xavier Edwards, Jesus Sanchez, Eric Wagaman, Agustin Ramirez, Kyle Stowers, Connor Norby, Matt Mervis, Nick Fortes, Javier Sanoja"
 0,Sandy Alcantara,CWS,0.214,0.085,0.055,0.456,0.251,0.2905555555555555,3.8333333333333335,"Chase Meidroth, Josh Rojas, Luis Robert, Matt Thaiss, Andrew Vaughn, Josh Palacios, Lenyn Sosa, Brooks Baldwin, Tim Elko"
 0,German Marquez,SD,0.185,0.067,0.083,0.43,0.259,0.3283333333333333,3.83,"Fernando Tatis Jr., Luis Arraez, Manny Machado, Jackson Merrill, Xander Bogaerts, Jake Cronenworth, Gavin Sheets, Jason Heyward, Martin Maldonado"
