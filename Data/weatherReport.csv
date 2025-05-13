@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Brewers  @  Guardians,Light Rain,68°,8.9 mph,"R to L, Weak",MIL,CLE,55,2025-5-13,0,0
-1,Twins  @  Orioles,Light Rain,70°,14.3 mph,"R to L, Strong",MIN,BAL,87,2025-5-13,0,0
-2,Red Sox  @  Tigers,Mostly Cloudy,68°,10.7 mph,"L to R, Strong",BOS,DET,22,2025-5-13,0,0
-3,White Sox  @  Reds,Possible Drizzle,73°,2.7 mph,None,CWS,CIN,22,2025-5-13,0,0
-4,Cardinals  @  Phillies,Drizzle,68°,10.7 mph,"R to L, Strong",STL,PHI,58,2025-5-13,0,0
-5,Rays  @  Blue Jays,Light Rain,60°,10.7 mph,"R to L, Strong",TB,TOR,45,2025-5-13,1,1
-6,Pirates  @  Mets,Overcast,64°,10.7 mph,"R to L, Strong",PIT,NYM,25,2025-5-13,0,0
-7,Nationals  @  Braves,Partly Cloudy,73°,5.4 mph,"R to L, Weak",WSH,ATL,20,2025-5-13,0,0
-8,Marlins  @  Cubs,Mostly Cloudy,60°,5.4 mph,"In, Weak",MIA,CHC,6,2025-5-13,0,0
-9,Rockies  @  Rangers,Clear,93°,8.0 mph,"Out, Weak",COL,TEX,0,2025-5-13,1,0
+0,Brewers  @  Guardians,Light Rain,69°,10.7 mph,"R to L, Strong",MIL,CLE,45,2025-5-13,0,0
+1,Twins  @  Orioles,Light Rain and Breezy,70°,15.2 mph,"R to L, Strong",MIN,BAL,73,2025-5-13,0,0
+2,Red Sox  @  Tigers,Possible Drizzle,67°,10.7 mph,"L to R, Strong",BOS,DET,20,2025-5-13,0,0
+3,White Sox  @  Reds,Rain,72°,2.7 mph,None,CWS,CIN,33,2025-5-13,0,0
+4,Cardinals  @  Phillies,Drizzle,67°,10.7 mph,"R to L, Strong",STL,PHI,50,2025-5-13,0,0
+5,Rays  @  Blue Jays,Light Rain,61°,10.7 mph,"R to L, Strong",TB,TOR,32,2025-5-13,1,1
+6,Pirates  @  Mets,Overcast,64°,10.7 mph,"R to L, Strong",PIT,NYM,19,2025-5-13,0,0
+7,Nationals  @  Braves,Partly Cloudy,73°,5.4 mph,"R to L, Weak",WSH,ATL,14,2025-5-13,0,0
+8,Marlins  @  Cubs,Foggy,61°,6.3 mph,"In, Weak",MIA,CHC,0,2025-5-13,0,0
+9,Rockies  @  Rangers,Clear,93°,8.9 mph,"R to L, Weak",COL,TEX,0,2025-5-13,1,0
 10,Royals  @  Astros,Breezy,86°,16.1 mph,"Out, Strong",KC,HOU,0,2025-5-13,1,0
 11,Yankees  @  Mariners,Partly Cloudy,64°,7.2 mph,"Out, Weak",NYY,SEA,0,2025-5-13,1,0
-12,Angels  @  Padres,Partly Cloudy,62°,9.8 mph,"L to R, Weak",LAA,SD,0,2025-5-13,0,0
+12,Angels  @  Padres,Partly Cloudy,62°,10.7 mph,"L to R, Strong",LAA,SD,0,2025-5-13,0,0
 13,Diamondbacks  @  Giants,Clear,60°,12.5 mph,"Out, Strong",ARI,SF,0,2025-5-13,0,0
 14,Athletics  @  Dodgers,Mostly Clear,62°,9.8 mph,"Out, Weak",OAK,LAD,0,2025-5-13,0,0
