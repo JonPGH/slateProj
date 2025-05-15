@@ -1,10 +1,8 @@
 ,Team,Player,SAVID,Hand
 0,BAL,Bryan Baker,641329,R
-2,BAL,Charlie Morton,450203,R
 3,BAL,Cionel Perez,672335,L
 5,BAL,Felix Bautista,642585,R
 6,BAL,Gregory Soto,642397,L
-7,BAL,Keegan Akin,669211,L
 8,BAL,Matt Bowman,621199,R
 9,BAL,Scott Blewett,656240,R
 10,BAL,Seranthony Dominguez,622554,R
@@ -21,7 +19,6 @@
 66,WSH,Cole Henry,669371,R
 67,WSH,Colin Poche,621363,L
 68,WSH,Eduardo Salazar,674285,R
-69,WSH,Jackson Rutledge,671131,R
 71,WSH,Jorge Lopez,605347,R
 72,WSH,Jose A. Ferrer,678606,L
 73,WSH,Kyle Finnegan,640448,R
@@ -79,7 +76,6 @@
 293,LAD,Kirby Yates,489446,R
 294,LAD,Luis Garcia,472610,R
 296,LAD,Tanner Scott,656945,L
-312,TEX,Caleb Boushley,676961,R
 313,TEX,Chris Martin,455119,R
 314,TEX,Hoby Milner,571948,L
 315,TEX,Jacob Latz,656641,L
