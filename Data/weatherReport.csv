@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Mets  @  Yankees,Mostly Clear,77°,10.7 mph,"R to L, Strong",NYM,NYY,0,2025-5-17,0,0
 1,White Sox  @  Cubs,Mostly Cloudy,62°,14.3 mph,"L to R, Strong",CWS,CHC,0,2025-5-17,0,0
-2,Tigers  @  Blue Jays,Partly Cloudy,64°,14.3 mph,"L to R, Strong",DET,TOR,13,2025-5-17,1,1
-3,Nationals  @  Orioles,Mostly Clear,87°,12.5 mph,"L to R, Strong",WSH,BAL,0,2025-5-17,0,0
+2,Tigers  @  Blue Jays,Partly Cloudy,65°,14.3 mph,"L to R, Strong",DET,TOR,13,2025-5-17,1,1
+3,Nationals  @  Orioles,Mostly Clear,88°,12.5 mph,"L to R, Strong",WSH,BAL,0,2025-5-17,0,0
 4,Rays  @  Marlins,Mostly Clear,87°,8.0 mph,"In, Weak",TB,MIA,0,2025-5-17,1,0
 5,Pirates  @  Phillies,Clear,82°,10.1 mph,"L to R, Strong",PIT,PHI,0,2025-5-17,0,0
-6,Guardians  @  Reds,Partly Cloudy,71°,12.7 mph,"Out, Strong",CLE,CIN,0,2025-5-17,0,0
-7,Astros  @  Rangers,Rain,82°,9.8 mph,"L to R, Weak",HOU,TEX,61,2025-5-17,1,1
-8,Cardinals  @  Royals,Clear,78°,6.3 mph,"L to R, Weak",STL,KC,0,2025-5-17,0,0
-9,Twins  @  Brewers,Breezy and Partly Cloudy,61°,15.2 mph,"Out, Strong",MIN,MIL,0,2025-5-17,0,0
+6,Guardians  @  Reds,Partly Cloudy,72°,12.7 mph,"Out, Strong",CLE,CIN,0,2025-5-17,0,0
+7,Astros  @  Rangers,Light Rain,84°,9.8 mph,"R to L, Weak",HOU,TEX,36,2025-5-17,1,1
+8,Cardinals  @  Royals,Clear,77°,6.3 mph,"L to R, Weak",STL,KC,0,2025-5-17,0,0
+9,Twins  @  Brewers,Breezy and Partly Cloudy,62°,15.2 mph,"Out, Strong",MIN,MIL,0,2025-5-17,0,0
 10,Braves  @  Red Sox,Mostly Clear,72°,7.2 mph,"Out, Weak",ATL,BOS,0,2025-5-17,0,0
-11,Rockies  @  Diamondbacks,Dry and Clear,90°,10.7 mph,"L to R, Strong",COL,ARI,0,2025-5-17,1,0
+11,Rockies  @  Diamondbacks,Dry and Mostly Clear,91°,10.7 mph,"L to R, Strong",COL,ARI,0,2025-5-17,1,0
 12,Mariners  @  Padres,Overcast,61°,9.8 mph,"L to R, Weak",SEA,SD,0,2025-5-17,0,0
 13,Athletics  @  Giants,Breezy,59°,17.9 mph,"Out, Strong",OAK,SF,0,2025-5-17,0,0
-14,Angels  @  Dodgers,Mostly Cloudy,59°,7.2 mph,"Out, Weak",LAA,LAD,0,2025-5-17,0,0
+14,Angels  @  Dodgers,Overcast,60°,7.2 mph,"Out, Weak",LAA,LAD,0,2025-5-17,0,0
