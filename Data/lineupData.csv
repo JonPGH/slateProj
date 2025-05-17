@@ -1,9 +1,9 @@
 ,Pitcher,Opp,K%,BB%,Brl%,GB%,FB%,xwOBA,PPA,LU
 0,Clarke Schmidt,NYM,0.212,0.093,0.11,0.428,0.264,0.34522222222222226,3.968888888888889,"Francisco Lindor, Juan Soto, Pete Alonso, Brandon Nimmo, Mark Vientos, Jeff McNeil, Luis Torrens, Brett Baty, Tyrone Taylor"
-0,Griffin Canning,NYY,0.227,0.101,0.115,0.413,0.291,0.34,3.9577777777777783,"Trent Grisham, Aaron Judge, Ben Rice, Paul Goldschmidt, Cody Bellinger, Anthony Volpe, Austin Wells, D.J. LeMahieu, Jorbit Vivas"
+0,Griffin Canning,NYY,0.226,0.105,0.102,0.433,0.259,0.3333333333333333,3.9577777777777783,"Ben Rice, Aaron Judge, Cody Bellinger, Paul Goldschmidt, Jasson Dominguez, Anthony Volpe, J.C. Escarra, D.J. LeMahieu, Jorbit Vivas"
 0,Matthew Boyd,CWS,0.241,0.073,0.063,0.438,0.243,0.28833333333333333,3.8666666666666663,"Chase Meidroth, Miguel Vargas, Edgar Quero, Luis Robert, Andrew Vaughn, Lenyn Sosa, Tim Elko, Brooks Baldwin, Michael A. Taylor"
 0,Sean Burke,CHC,0.189,0.094,0.081,0.439,0.265,0.3327777777777778,3.8233333333333337,"Pete Crow-Armstrong, Kyle Tucker, Seiya Suzuki, Michael Busch, Carson Kelly, Dansby Swanson, Moises Ballesteros, Nico Hoerner, Jon Berti"
-0,Jose Urena,DET,0.259,0.075,0.085,0.4,0.299,0.3026666666666667,3.9011111111111116,"Justyn-Henry Malloy, Gleyber Torres, Riley Greene, Andy Ibanez, Spencer Torkelson, Dillon Dingler, Javier Baez, Trey Sweeney, Tomas Nido"
+0,Eric Lauer,DET,0.259,0.075,0.085,0.4,0.299,0.3026666666666667,3.9011111111111116,"Justyn-Henry Malloy, Gleyber Torres, Riley Greene, Andy Ibanez, Spencer Torkelson, Dillon Dingler, Javier Baez, Trey Sweeney, Tomas Nido"
 0,Reese Olson,TOR,0.196,0.071,0.081,0.413,0.254,0.3076666666666667,3.8000000000000003,"Bo Bichette, Vladimir Guerrero Jr., Anthony Santander, George Springer, Daulton Varsho, Alejandro Kirk, Addison Barger, Ernie Clement, Jonatan Clase"
 0,Kyle Gibson,WSH,0.202,0.076,0.063,0.48,0.223,0.31366666666666665,3.863333333333333,"C.J. Abrams, Amed Rosario, James Wood, Keibert Ruiz, Nathaniel Lowe, Josh Bell, Alex Call, Jose Tena, Jacob Young"
 0,Jake Irvin,BAL,0.23,0.082,0.092,0.426,0.275,0.3258888888888889,3.9633333333333334,"Jackson Holliday, Ryan Mountcastle, Gunnar Henderson, Adley Rutschman, ""Ryan OHearn"", ""Tyler ONeill"", Cedric Mullins II, Ramon Urias, Heston Kjerstad"
@@ -27,5 +27,5 @@
 0,Emerson Hancock,SD,0.184,0.066,0.079,0.443,0.256,0.32355555555555554,3.7922222222222217,"Fernando Tatis Jr., Luis Arraez, Manny Machado, Jackson Merrill, Xander Bogaerts, Gavin Sheets, Jake Cronenworth, Brandon Lockridge, Martin Maldonado"
 0,Landen Roupp,OAK,0.218,0.077,0.095,0.434,0.265,0.3257777777777778,3.771111111111111,"Jacob Wilson, Tyler Soderstrom, Brent Rooker, Shea Langeliers, Lawrence Butler, Miguel Andujar, JJ Bleday, Nick Kurtz, Luis Urias"
 0,Luis Severino,SF,0.22,0.088,0.09,0.389,0.278,0.3241111111111111,3.9833333333333334,"Mike Yastrzemski, Matt Chapman, Heliot Ramos, Jung Hoo Lee, Wilmer Flores, Willy Adames, LaMonte Wade Jr., Patrick Bailey, Christian Koss"
-0,Clayton Kershaw,LAA,0.269,0.077,0.1,0.422,0.279,0.3065555555555555,3.8777777777777778,"Zach Neto, Yoan Moncada, Jorge Soler, Taylor Ward, ""Logan OHoppe"", Jo Adell, Kyren Paris, Kevin Newman, Tim Anderson"
+0,Clayton Kershaw,LAA,0.257,0.067,0.092,0.44,0.27,0.30133333333333334,3.842222222222222,"Zach Neto, Jorge Soler, Taylor Ward, ""Logan OHoppe"", Jo Adell, Luis Rengifo, Kyren Paris, Kevin Newman, Tim Anderson"
 0,Tyler Anderson,LAD,0.199,0.091,0.098,0.373,0.306,0.34122222222222226,3.9866666666666664,"Shohei Ohtani, Mookie Betts, Will Smith, Freddie Freeman, Andy Pages, Enrique Hernandez, Michael Conforto, Miguel Rojas, Chris Taylor"
