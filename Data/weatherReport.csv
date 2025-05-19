@@ -1,16 +1,13 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Astros  @  Rangers,Overcast,83°,14.3 mph,"R to L, Strong",HOU,TEX,7,2025-5-18,1,0
-1,Nationals  @  Orioles,Breezy and Mostly Clear,78°,15.2 mph,"L to R, Strong",WSH,BAL,0,2025-5-18,0,0
-2,Braves  @  Red Sox,Partly Cloudy,70°,13.4 mph,"L to R, Strong",ATL,BOS,0,2025-5-18,0,0
-3,Pirates  @  Phillies,Mostly Clear,74°,14.3 mph,"L to R, Strong",PIT,PHI,0,2025-5-18,0,0
-4,Tigers  @  Blue Jays,Breezy and Mostly Clear,60°,15.2 mph,"In, Strong",DET,TOR,0,2025-5-18,1,0
-5,Guardians  @  Reds,Mostly Clear,73°,6.3 mph,"Out, Weak",CLE,CIN,0,2025-5-18,0,0
-6,Rays  @  Marlins,Mostly Clear,87°,6.3 mph,"In, Weak",TB,MIA,0,2025-5-18,1,0
-7,Cardinals  @  Royals,Clear,74°,12.7 mph,"R to L, Strong",STL,KC,0,2025-5-18,0,0
-8,Twins  @  Brewers,Mostly Cloudy,55°,8.3 mph,"L to R, Weak",MIN,MIL,0,2025-5-18,0,0
-9,White Sox  @  Cubs,Partly Cloudy,56°,8.3 mph,"In, Weak",CWS,CHC,0,2025-5-18,0,0
-10,Athletics  @  Giants,Clear,63°,10.7 mph,"Out, Strong",OAK,SF,0,2025-5-18,0,0
-11,Angels  @  Dodgers,Mostly Clear,69°,8.0 mph,"Out, Weak",LAA,LAD,0,2025-5-18,0,0
-12,Mariners  @  Padres,Partly Cloudy,66°,8.0 mph,"L to R, Weak",SEA,SD,0,2025-5-18,0,0
-13,Rockies  @  Diamondbacks,Clear,83°,7.2 mph,"L to R, Weak",COL,ARI,0,2025-5-18,1,0
-14,Mets  @  Yankees,Breezy and Mostly Clear,70°,16.1 mph,"Out, Strong",NYM,NYY,0,2025-5-18,0,0
+0,Reds  @  Pirates,Partly Cloudy,66°,9.8 mph,"L to R, Weak",CIN,PIT,0,2025-5-19,0,0
+1,Cubs  @  Marlins,Clear,85°,8.0 mph,"In, Weak",CHC,MIA,0,2025-5-19,1,0
+2,Mets  @  Red Sox,Possible Drizzle,57°,14.3 mph,"L to R, Strong",NYM,BOS,19,2025-5-19,0,0
+3,Astros  @  Rays,Mostly Clear,87°,7.2 mph,"Out, Weak",HOU,TB,0,2025-5-19,0,0
+4,Mariners  @  White Sox,Partly Cloudy,53°,13.4 mph,"L to R, Strong",SEA,CWS,0,2025-5-19,0,0
+5,Orioles  @  Brewers,Partly Cloudy,50°,12.5 mph,"L to R, Strong",BAL,MIL,0,2025-5-19,0,0
+6,Guardians  @  Twins,Drizzle and Breezy,57°,17.0 mph,"In, Strong",CLE,MIN,37,2025-5-19,0,0
+7,Tigers  @  Cardinals,Mostly Cloudy,78°,12.5 mph,"R to L, Strong",DET,STL,10,2025-5-19,0,0
+8,Phillies  @  Rockies,Possible Drizzle,59°,9.8 mph,"L to R, Weak",PHI,COL,0,2025-5-19,0,0
+9,Royals  @  Giants,Breezy,64°,16.1 mph,"Out, Strong",KC,SF,0,2025-5-19,0,0
+10,Angels  @  Athletics,Clear,86°,8.0 mph,"Out, Weak",LAA,OAK,0,2025-5-19,0,0
+11,Diamondbacks  @  Dodgers,Clear,73°,6.3 mph,"Out, Weak",ARI,LAD,0,2025-5-19,0,0
