@@ -1,19 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Guardians  @  Twins,Light Rain and Breezy,45°,16.1 mph,"In, Strong",CLE,MIN,0,2025-5-20,0,0
 1,Guardians  @  Twins,Light Rain and Breezy,45°,16.1 mph,"In, Strong",CLE,MIN,77,2025-5-20,0,0
-2,Reds  @  Pirates,Overcast,69°,7.2 mph,"In, Weak",CIN,PIT,11,2025-5-20,0,0
+2,Reds  @  Pirates,Overcast,69°,7.2 mph,"In, Weak",CIN,PIT,10,2025-5-20,0,0
 3,Cubs  @  Marlins,Clear,86°,8.9 mph,"In, Weak",CHC,MIA,0,2025-5-20,1,0
-4,Braves  @  Nationals,Partly Cloudy,72°,2.7 mph,None,ATL,WSH,0,2025-5-20,0,0
+4,Braves  @  Nationals,Mostly Cloudy,72°,2.7 mph,None,ATL,WSH,0,2025-5-20,0,0
 5,Mets  @  Red Sox,Mostly Cloudy,56°,7.2 mph,"In, Weak",NYM,BOS,0,2025-5-20,0,0
-6,Astros  @  Rays,Clear,87°,7.2 mph,"Out, Weak",HOU,TB,0,2025-5-20,0,0
+6,Astros  @  Rays,Clear,88°,7.2 mph,"Out, Weak",HOU,TB,0,2025-5-20,0,0
 7,Rangers  @  Yankees,Partly Cloudy,65°,7.2 mph,"L to R, Weak",TEX,NYY,0,2025-5-20,0,0
 8,Padres  @  Blue Jays,Partly Cloudy,55°,6.3 mph,"R to L, Weak",SD,TOR,0,2025-5-20,1,0
-9,Guardians  @  Twins,Light Rain and Breezy,45°,15.2 mph,"In, Strong",CLE,MIN,0,2025-5-20,0,0
-10,Guardians  @  Twins,Light Rain and Breezy,45°,15.2 mph,"In, Strong",CLE,MIN,77,2025-5-20,0,0
-11,Orioles  @  Brewers,Light Rain and Breezy,50°,17.0 mph,"L to R, Strong",BAL,MIL,56,2025-5-20,0,0
-12,Mariners  @  White Sox,Light Rain and Breezy,57°,16.1 mph,"In, Strong",SEA,CWS,37,2025-5-20,0,0
-13,Tigers  @  Cardinals,Possible Light Rain,77°,11.6 mph,"Out, Strong",DET,STL,7,2025-5-20,0,0
+9,Guardians  @  Twins,Light Rain and Breezy,46°,15.2 mph,"In, Strong",CLE,MIN,0,2025-5-20,0,0
+10,Guardians  @  Twins,Light Rain and Breezy,46°,15.2 mph,"In, Strong",CLE,MIN,77,2025-5-20,0,0
+11,Orioles  @  Brewers,Light Rain and Breezy,49°,17.0 mph,"L to R, Strong",BAL,MIL,41,2025-5-20,0,0
+12,Mariners  @  White Sox,Drizzle and Breezy,56°,16.1 mph,"In, Strong",SEA,CWS,28,2025-5-20,0,0
+13,Tigers  @  Cardinals,Partly Cloudy,77°,11.6 mph,"Out, Strong",DET,STL,0,2025-5-20,0,0
 14,Phillies  @  Rockies,Clear,69°,13.4 mph,"L to R, Strong",PHI,COL,0,2025-5-20,0,0
 15,Royals  @  Giants,Clear,61°,11.6 mph,"Out, Strong",KC,SF,0,2025-5-20,0,0
-16,Angels  @  Athletics,Mostly Clear,84°,5.4 mph,"Out, Weak",LAA,OAK,0,2025-5-20,0,0
+16,Angels  @  Athletics,Clear,84°,5.4 mph,"Out, Weak",LAA,OAK,0,2025-5-20,0,0
 17,Diamondbacks  @  Dodgers,Clear,74°,5.4 mph,"Out, Weak",ARI,LAD,0,2025-5-20,0,0
