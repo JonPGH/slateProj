@@ -41,7 +41,6 @@
 60,STL,Phil Maton,664208,R
 61,STL,Ryan Fernandez,681676,R
 62,STL,Ryan Helsley,664854,R
-64,STL,Steven Matz,571927,L
 65,WSH,Brad Lord,695418,R
 66,WSH,Cole Henry,669371,R
 67,WSH,Colin Poche,621363,L
@@ -113,20 +112,17 @@
 175,TB,Mason Englert,669438,R
 176,TB,Mason Montgomery,682254,L
 177,TB,Pete Fairbanks,664126,R
-182,MIL,Abner Uribe,682842,R
 183,MIL,Bryan Hudson,663542,L
 186,MIL,Grant Anderson,681982,R
 187,MIL,Jared Koenig,657649,L
 188,MIL,Joel Payamps,606303,R
 191,MIL,Nick Mears,683232,R
 193,MIL,Trevor Megill,656730,R
-194,MIL,Tyler Alexander,641302,L
 195,BOS,Aroldis Chapman,547973,L
 196,BOS,Brennan Bernardino,657514,L
 198,BOS,Garrett Whitlock,676477,R
 199,BOS,Greg Weissert,669711,R
 201,BOS,Justin Slaten,686580,R
-202,BOS,Justin Wilson,458677,L
 203,BOS,Michael Fulmer,605242,R
 204,BOS,Sean Newcomb,656794,L
 207,BOS,Zack Kelly,677161,R
@@ -135,7 +131,6 @@
 214,ARI,Joe Mantiply,573009,L
 215,ARI,Justin Martinez,679885,R
 217,ARI,Ryan Thompson,657044,R
-218,ARI,Ryne Nelson,669194,R
 219,ARI,Shelby Miller,571946,R
 221,ATL,Aaron Bummer,607481,L
 224,ATL,Daysbel Hernandez,678226,R
@@ -186,13 +181,11 @@
 296,LAD,Tanner Scott,656945,L
 299,COL,Angel Chivilli,683409,R
 303,COL,Jake Bird,656234,R
-304,COL,Jimmy Herget,623474,R
 306,COL,Luis Peralta,678821,L
 308,COL,Scott Alexander,518397,L
 309,COL,Seth Halvorsen,678020,R
 310,COL,Tyler Kinley,641755,R
 311,COL,Victor Vodnik,680767,R
-312,TEX,Caleb Boushley,676961,R
 313,TEX,Chris Martin,455119,R
 314,TEX,Hoby Milner,571948,L
 315,TEX,Jacob Latz,656641,L
@@ -202,7 +195,6 @@
 323,TEX,Shawn Armstrong,542888,R
 325,LAA,Brock Burke,656271,L
 326,LAA,Garrett McDaniels,680729,L
-330,LAA,Kenley Jansen,445276,R
 332,LAA,Michael Darrell-Hicks,690382,R
 333,LAA,Reid Detmers,672282,L
 334,LAA,Ryan Johnson,696270,R
@@ -233,7 +225,6 @@
 375,CHC,Ryan Pressly,519151,R
 377,SF,Camilo Doval,666808,R
 378,SF,Erik Miller,669062,L
-379,SF,Hayden Birdsong,806185,R
 380,SF,Jordan Hicks,663855,R
 384,SF,Lou Trivino,642152,R
 385,SF,Randy Rodriguez,678495,R
