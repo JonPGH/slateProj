@@ -1,10 +1,10 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Rangers  @  Yankees,Drizzle and Breezy,52°,15.2 mph,"In, Strong",TEX,NYY,27,2025-5-22,0,0
-1,Padres  @  Blue Jays,Light Rain,52°,11.6 mph,"R to L, Strong",SD,TOR,43,2025-5-22,1,1
-2,Phillies  @  Rockies,Mostly Clear,70°,6.3 mph,"In, Weak",PHI,COL,0,2025-5-22,0,0
+1,Padres  @  Blue Jays,Drizzle,52°,11.6 mph,"R to L, Strong",SD,TOR,43,2025-5-22,1,1
+2,Phillies  @  Rockies,Mostly Clear,71°,6.3 mph,"In, Weak",PHI,COL,0,2025-5-22,0,0
 3,Angels  @  Athletics,Clear,80°,6.3 mph,"Out, Weak",LAA,OAK,0,2025-5-22,0,0
-4,Brewers  @  Pirates,Drizzle,54°,11.6 mph,"Out, Strong",MIL,PIT,58,2025-5-22,0,0
-5,Guardians  @  Tigers,Mostly Cloudy,55°,12.5 mph,"Out, Strong",CLE,DET,0,2025-5-22,0,0
-6,Orioles  @  Red Sox,Rain and Breezy,48°,17.9 mph,"In, Strong",BAL,BOS,99,2025-5-22,0,0
-7,Braves  @  Nationals,Light Rain,64°,8.9 mph,"L to R, Weak",ATL,WSH,28,2025-5-22,0,0
+4,Brewers  @  Pirates,Drizzle,54°,11.6 mph,"Out, Strong",MIL,PIT,59,2025-5-22,0,0
+5,Guardians  @  Tigers,Mostly Cloudy,54°,12.5 mph,"Out, Strong",CLE,DET,0,2025-5-22,0,0
+6,Orioles  @  Red Sox,Rain and Breezy,48°,17.9 mph,"In, Strong",BAL,BOS,100,2025-5-22,0,0
+7,Braves  @  Nationals,Light Rain,63°,8.9 mph,"L to R, Weak",ATL,WSH,26,2025-5-22,0,0
 8,Mariners  @  Astros,Clear,87°,10.7 mph,"Out, Strong",SEA,HOU,0,2025-5-22,1,0
