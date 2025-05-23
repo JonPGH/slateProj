@@ -1,19 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Orioles  @  Red Sox,Mostly Cloudy,55°,8.0 mph,"L to R, Weak",BAL,BOS,31,2025-5-23,0,0
+0,Orioles  @  Red Sox,Mostly Cloudy,55°,8.0 mph,"L to R, Weak",BAL,BOS,32,2025-5-23,0,0
 1,Orioles  @  Red Sox,Mostly Cloudy,55°,8.0 mph,"L to R, Weak",BAL,BOS,0,2025-5-23,0,0
 2,Brewers  @  Pirates,Mostly Cloudy,56°,12.5 mph,"Out, Strong",MIL,PIT,0,2025-5-23,0,0
 3,Cubs  @  Reds,Mostly Clear,67°,8.0 mph,"Out, Weak",CHC,CIN,0,2025-5-23,0,0
 4,Giants  @  Nationals,Mostly Clear,66°,12.5 mph,"L to R, Strong",SF,WSH,0,2025-5-23,0,0
 5,Blue Jays  @  Rays,Mostly Clear,89°,6.3 mph,"Out, Weak",TOR,TB,0,2025-5-23,0,0
 6,Guardians  @  Tigers,Mostly Cloudy,55°,11.6 mph,"Out, Strong",CLE,DET,0,2025-5-23,0,0
-7,Dodgers  @  Mets,Partly Cloudy,60°,8.9 mph,"L to R, Weak",LAD,NYM,16,2025-5-23,0,0
-8,Orioles  @  Red Sox,Drizzle,54°,3.6 mph,None,BAL,BOS,31,2025-5-23,0,0
+7,Dodgers  @  Mets,Partly Cloudy,60°,8.9 mph,"L to R, Weak",LAD,NYM,11,2025-5-23,0,0
+8,Orioles  @  Red Sox,Drizzle,54°,3.6 mph,None,BAL,BOS,32,2025-5-23,0,0
 9,Orioles  @  Red Sox,Drizzle,54°,3.6 mph,None,BAL,BOS,0,2025-5-23,0,0
 10,Padres  @  Braves,Clear,77°,8.0 mph,"Out, Weak",SD,ATL,0,2025-5-23,0,0
-11,Rangers  @  White Sox,Mostly Clear,52°,7.2 mph,"L to R, Weak",TEX,CWS,0,2025-5-23,0,0
+11,Rangers  @  White Sox,Mostly Clear,53°,7.2 mph,"L to R, Weak",TEX,CWS,0,2025-5-23,0,0
 12,Royals  @  Twins,Partly Cloudy,62°,5.4 mph,"L to R, Weak",KC,MIN,0,2025-5-23,0,0
 13,Mariners  @  Astros,Clear,87°,11.6 mph,"Out, Strong",SEA,HOU,0,2025-5-23,1,0
 14,Diamondbacks  @  Cardinals,Mostly Cloudy,70°,2.7 mph,None,ARI,STL,0,2025-5-23,0,0
 15,Yankees  @  Rockies,Mostly Clear,79°,10.7 mph,"In, Strong",NYY,COL,0,2025-5-23,0,0
 16,Marlins  @  Angels,Mostly Clear,71°,7.2 mph,"Out, Weak",MIA,LAA,0,2025-5-23,0,0
-17,Phillies  @  Athletics,Clear,77°,6.3 mph,"Out, Weak",PHI,OAK,0,2025-5-23,0,0
+17,Phillies  @  Athletics,Clear,76°,6.3 mph,"Out, Weak",PHI,OAK,0,2025-5-23,0,0
