@@ -1,19 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Orioles  @  Red Sox,Possible Drizzle,57°,8.9 mph,"L to R, Weak",BAL,BOS,13,2025-5-24,0,0
-1,Orioles  @  Red Sox,Possible Drizzle,57°,8.9 mph,"L to R, Weak",BAL,BOS,5,2025-5-24,0,0
-2,Royals  @  Twins,Mostly Clear,65°,4.5 mph,None,KC,MIN,0,2025-5-24,0,0
-3,Diamondbacks  @  Cardinals,Overcast,68°,7.2 mph,"R to L, Weak",ARI,STL,7,2025-5-24,0,0
+0,Orioles  @  Red Sox,Possible Drizzle,58°,8.9 mph,"L to R, Weak",BAL,BOS,12,2025-5-24,0,0
+1,Orioles  @  Red Sox,Possible Drizzle,58°,8.9 mph,"L to R, Weak",BAL,BOS,5,2025-5-24,0,0
+2,Royals  @  Twins,Mostly Clear,64°,4.5 mph,None,KC,MIN,0,2025-5-24,0,0
+3,Diamondbacks  @  Cardinals,Overcast,69°,7.2 mph,"R to L, Weak",ARI,STL,5,2025-5-24,0,0
 4,Giants  @  Nationals,Clear,70°,12.5 mph,"L to R, Strong",SF,WSH,0,2025-5-24,0,0
 5,Brewers  @  Pirates,Mostly Clear,63°,12.5 mph,"Out, Strong",MIL,PIT,0,2025-5-24,0,0
-6,Yankees  @  Rockies,Mostly Cloudy,69°,9.8 mph,"In, Weak",NYY,COL,16,2025-5-24,0,0
-7,Mariners  @  Astros,Mostly Clear,91°,13.4 mph,"Out, Strong",SEA,HOU,0,2025-5-24,1,0
+6,Yankees  @  Rockies,Mostly Cloudy,70°,9.8 mph,"In, Weak",NYY,COL,15,2025-5-24,0,0
+7,Mariners  @  Astros,Mostly Clear,92°,13.4 mph,"Out, Strong",SEA,HOU,0,2025-5-24,1,0
 8,Cubs  @  Reds,Partly Cloudy,72°,3.6 mph,None,CHC,CIN,0,2025-5-24,0,0
 9,Rangers  @  White Sox,Mostly Clear,56°,8.9 mph,"L to R, Weak",TEX,CWS,0,2025-5-24,0,0
 10,Padres  @  Braves,Partly Cloudy,81°,4.5 mph,None,SD,ATL,0,2025-5-24,0,0
-11,Orioles  @  Red Sox,Mostly Cloudy,59°,7.2 mph,"L to R, Weak",BAL,BOS,13,2025-5-24,0,0
+11,Orioles  @  Red Sox,Mostly Cloudy,59°,7.2 mph,"L to R, Weak",BAL,BOS,12,2025-5-24,0,0
 12,Orioles  @  Red Sox,Mostly Cloudy,59°,7.2 mph,"L to R, Weak",BAL,BOS,5,2025-5-24,0,0
-13,Blue Jays  @  Rays,Mostly Clear,88°,6.3 mph,"L to R, Weak",TOR,TB,7,2025-5-24,0,0
-14,Dodgers  @  Mets,Mostly Clear,61°,12.5 mph,"L to R, Strong",LAD,NYM,5,2025-5-24,0,0
-15,Guardians  @  Tigers,Mostly Clear,63°,8.0 mph,"Out, Weak",CLE,DET,0,2025-5-24,0,0
+13,Blue Jays  @  Rays,Mostly Clear,87°,6.3 mph,"L to R, Weak",TOR,TB,7,2025-5-24,0,0
+14,Dodgers  @  Mets,Partly Cloudy,61°,12.5 mph,"L to R, Strong",LAD,NYM,5,2025-5-24,0,0
+15,Guardians  @  Tigers,Partly Cloudy,63°,8.0 mph,"Out, Weak",CLE,DET,0,2025-5-24,0,0
 16,Phillies  @  Athletics,Clear,78°,10.7 mph,"Out, Strong",PHI,OAK,0,2025-5-24,0,0
 17,Marlins  @  Angels,Partly Cloudy,65°,7.2 mph,"Out, Weak",MIA,LAA,0,2025-5-24,0,0
