@@ -1,5 +1,11 @@
 ,HomeTeam,Umpire,Today,K Boost,BB Boost,UmpK,UmpBB
-1,COL,Andy Fletcher,NYY @ COL,0.97,1.06,0.985,1.03
-2,BOS,Mike Muchlinski,BAL @ BOS,0.96,0.94,0.98,0.97
-3,STL,Cory Blaser,AZ @ STL,0.96,0.96,0.98,0.98
-4,MIN,Nestor Ceja,KC @ MIN,0.99,0.93,0.995,0.9650000000000001
+1,ATL,Dan Iassogna,SD @ ATL,1.08,1.06,1.04,1.03
+2,COL,Andy Fletcher,NYY @ COL,0.97,1.06,0.985,1.03
+3,CIN,Dan Bellino,CHC @ CIN,1.02,1.02,1.01,1.01
+4,HOU,Mike Estabrook,SEA @ HOU,1.1,1.0,1.05,1.0
+5,BOS,Mike Muchlinski,BAL @ BOS,0.96,0.94,0.98,0.97
+6,STL,Cory Blaser,AZ @ STL,0.96,0.96,0.98,0.98
+7,PIT,Bruce Dreckman,MIL @ PIT,0.92,1.02,0.96,1.01
+8,CWS,David Rackley,TEX @ CWS,0.97,1.0,0.985,1.0
+9,WSH,Chris Segal,SF @ WSH,1.08,1.05,1.04,1.025
+10,MIN,Nestor Ceja,KC @ MIN,0.99,0.93,0.995,0.9650000000000001
