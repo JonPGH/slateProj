@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Guardians  @  Tigers,Mostly Clear,61°,6.3 mph,"Out, Weak",CLE,DET,0,2025-5-25,0,0
-1,Brewers  @  Pirates,Partly Cloudy,64°,6.3 mph,"Out, Weak",MIL,PIT,0,2025-5-25,0,0
+0,Guardians  @  Tigers,Mostly Clear,60°,6.3 mph,"Out, Weak",CLE,DET,0,2025-5-25,0,0
+1,Brewers  @  Pirates,Partly Cloudy,64°,7.2 mph,"Out, Weak",MIL,PIT,0,2025-5-25,0,0
 2,Giants  @  Nationals,Clear,69°,8.0 mph,"L to R, Weak",SF,WSH,0,2025-5-25,0,0
 3,Orioles  @  Red Sox,Mostly Cloudy,60°,8.9 mph,"L to R, Weak",BAL,BOS,0,2025-5-25,0,0
-4,Blue Jays  @  Rays,Mostly Clear,90°,5.4 mph,"R to L, Weak",TOR,TB,0,2025-5-25,0,0
-5,Cubs  @  Reds,Mostly Cloudy,70°,4.5 mph,None,CHC,CIN,0,2025-5-25,0,0
-6,Royals  @  Twins,Clear,68°,4.5 mph,None,KC,MIN,0,2025-5-25,0,0
+4,Blue Jays  @  Rays,Mostly Clear,89°,5.4 mph,"Out, Weak",TOR,TB,0,2025-5-25,0,0
+5,Cubs  @  Reds,Partly Cloudy,71°,4.5 mph,None,CHC,CIN,0,2025-5-25,0,0
+6,Royals  @  Twins,Clear,69°,2.7 mph,None,KC,MIN,0,2025-5-25,0,0
 7,Mariners  @  Astros,Mostly Clear,91°,14.3 mph,"Out, Strong",SEA,HOU,0,2025-5-25,1,0
 8,Rangers  @  White Sox,Partly Cloudy,55°,7.2 mph,"L to R, Weak",TEX,CWS,0,2025-5-25,0,0
-9,Diamondbacks  @  Cardinals,Drizzle,65°,8.0 mph,"In, Weak",ARI,STL,33,2025-5-25,0,0
-10,Yankees  @  Rockies,Mostly Cloudy,59°,7.2 mph,"In, Weak",NYY,COL,14,2025-5-25,0,0
-11,Phillies  @  Athletics,Clear,76°,8.9 mph,"Out, Weak",PHI,OAK,0,2025-5-25,0,0
+9,Diamondbacks  @  Cardinals,Drizzle,66°,8.0 mph,"In, Weak",ARI,STL,25,2025-5-25,0,0
+10,Yankees  @  Rockies,Mostly Cloudy,59°,7.2 mph,"In, Weak",NYY,COL,13,2025-5-25,0,0
+11,Phillies  @  Athletics,Clear,75°,8.0 mph,"Out, Weak",PHI,OAK,0,2025-5-25,0,0
 12,Marlins  @  Angels,Mostly Clear,71°,7.2 mph,"Out, Weak",MIA,LAA,0,2025-5-25,0,0
-13,Padres  @  Braves,Possible Light Rain,80°,5.4 mph,"L to R, Weak",SD,ATL,11,2025-5-25,0,0
-14,Dodgers  @  Mets,Mostly Clear,66°,8.9 mph,"L to R, Weak",LAD,NYM,0,2025-5-25,0,0
+13,Padres  @  Braves,Possible Light Rain,80°,5.4 mph,"L to R, Weak",SD,ATL,10,2025-5-25,0,0
+14,Dodgers  @  Mets,Partly Cloudy,65°,9.8 mph,"L to R, Weak",LAD,NYM,0,2025-5-25,0,0
