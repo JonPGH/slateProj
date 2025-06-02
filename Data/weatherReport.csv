@@ -1,8 +1,8 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rockies  @  Marlins,Rain,77°,8.0 mph,"In, Weak",COL,MIA,60,2025-6-2,1,1
+0,Rockies  @  Marlins,Rain,77°,8.0 mph,"In, Weak",COL,MIA,63,2025-6-2,1,1
 1,Angels  @  Red Sox,Mostly Clear,68°,5.4 mph,"Out, Weak",LAA,BOS,0,2025-6-2,0,0
-2,Brewers  @  Reds,Clear,78°,1.8 mph,None,MIL,CIN,0,2025-6-2,0,0
+2,Brewers  @  Reds,Mostly Clear,79°,1.8 mph,None,MIL,CIN,0,2025-6-2,0,0
 3,Tigers  @  White Sox,Clear,80°,9.8 mph,"R to L, Weak",DET,CWS,0,2025-6-2,0,0
 4,Padres  @  Giants,Clear,59°,10.7 mph,"Out, Strong",SD,SF,0,2025-6-2,0,0
 5,Twins  @  Athletics,Clear,81°,10.7 mph,"Out, Strong",MIN,OAK,0,2025-6-2,0,0
-6,Mets  @  Dodgers,Mostly Clear,66°,7.2 mph,"Out, Weak",NYM,LAD,0,2025-6-2,0,0
+6,Mets  @  Dodgers,Clear,66°,7.2 mph,"Out, Weak",NYM,LAD,0,2025-6-2,0,0
