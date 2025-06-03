@@ -1,13 +1,15 @@
 ,HomeTeam,Umpire,Today,K Boost,BB Boost,UmpK,UmpBB
 1,TB,Laz Diaz,TEX @ TB,1.02,1.09,1.01,1.045
 2,BOS,Chris Guccione,LAA @ BOS,0.99,1.01,0.995,1.005
-3,PIT,D.J. Reyburn,HOU @ PIT,1.24,0.95,1.12,0.975
-4,WSH,Bruce Dreckman,CHC @ WSH,0.92,1.02,0.96,1.01
-5,NYY,Manny Gonzalez,CLE @ NYY,1.15,0.99,1.075,0.995
-6,CIN,Mark Ripperger,MIL @ CIN,1.04,0.97,1.02,0.985
-7,CWS,Chris Segal,DET @ CWS,1.08,1.04,1.04,1.02
-8,ATL,Ben May,AZ @ ATL,1.0,0.94,1.0,0.97
-9,TOR,Ramon De Jesus,PHI @ TOR,1.04,1.08,1.02,1.04
-10,STL,Nestor Ceja,KC @ STL,0.99,0.94,0.995,0.97
-11,SEA,Brennan Miller,BAL @ SEA,1.02,0.95,1.01,0.975
-12,MIA,Derek Thomas,COL @ MIA,1.0,1.14,1.0,1.0699999999999998
+3,OAK,Alfonso Marquez,MIN @ ATH,0.9,1.1,0.95,1.05
+4,PIT,D.J. Reyburn,HOU @ PIT,1.24,0.95,1.12,0.975
+5,WSH,Bruce Dreckman,CHC @ WSH,0.92,1.02,0.96,1.01
+6,NYY,Manny Gonzalez,CLE @ NYY,1.15,0.99,1.075,0.995
+7,CIN,Mark Ripperger,MIL @ CIN,1.04,0.97,1.02,0.985
+8,LAD,Gabe Morales,NYM @ LAD,1.07,0.97,1.0350000000000001,0.985
+9,CWS,Chris Segal,DET @ CWS,1.08,1.04,1.04,1.02
+10,ATL,Ben May,AZ @ ATL,1.0,0.94,1.0,0.97
+11,TOR,Ramon De Jesus,PHI @ TOR,1.04,1.08,1.02,1.04
+12,STL,Nestor Ceja,KC @ STL,0.99,0.94,0.995,0.97
+13,SEA,Brennan Miller,BAL @ SEA,1.02,0.95,1.01,0.975
+14,MIA,Derek Thomas,COL @ MIA,1.0,1.14,1.0,1.0699999999999998
