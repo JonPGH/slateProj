@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rockies  @  Marlins,Rain,81°,11.6 mph,"In, Strong",COL,MIA,38,2025-6-4,1,1
+0,Rockies  @  Marlins,Rain,81°,11.6 mph,"In, Strong",COL,MIA,50,2025-6-4,1,1
 1,Brewers  @  Reds,Mostly Clear,84°,9.8 mph,"R to L, Weak",MIL,CIN,0,2025-6-4,0,0
 2,Angels  @  Red Sox,Partly Cloudy,84°,8.0 mph,"Out, Weak",LAA,BOS,0,2025-6-4,0,0
-3,Astros  @  Pirates,Mostly Clear,87°,7.2 mph,"R to L, Weak",HOU,PIT,0,2025-6-4,0,0
+3,Astros  @  Pirates,Mostly Clear,88°,7.2 mph,"R to L, Weak",HOU,PIT,0,2025-6-4,0,0
 4,Cubs  @  Nationals,Clear,86°,8.9 mph,"Out, Weak",CHC,WSH,0,2025-6-4,0,0
 5,Guardians  @  Yankees,Clear,79°,8.9 mph,"R to L, Weak",CLE,NYY,0,2025-6-4,0,0
-6,Phillies  @  Blue Jays,Mostly Clear,77°,12.5 mph,"L to R, Strong",PHI,TOR,5,2025-6-4,1,0
-7,Diamondbacks  @  Braves,Light Rain,78°,10.7 mph,"L to R, Strong",ARI,ATL,29,2025-6-4,0,0
-8,Rangers  @  Rays,Light Rain,80°,8.9 mph,"R to L, Weak",TEX,TB,37,2025-6-4,0,0
-9,Tigers  @  White Sox,Light Rain,58°,8.0 mph,"L to R, Weak",DET,CWS,46,2025-6-4,0,0
-10,Royals  @  Cardinals,Light Rain,76°,5.4 mph,"Out, Weak",KC,STL,52,2025-6-4,0,0
-11,Orioles  @  Mariners,Mostly Clear,69°,4.5 mph,None,BAL,SEA,0,2025-6-4,1,0
+6,Phillies  @  Blue Jays,Mostly Clear,77°,12.5 mph,"L to R, Strong",PHI,TOR,0,2025-6-4,1,0
+7,Diamondbacks  @  Braves,Possible Light Rain,79°,10.7 mph,"L to R, Strong",ARI,ATL,24,2025-6-4,0,0
+8,Rangers  @  Rays,Drizzle,80°,8.0 mph,"R to L, Weak",TEX,TB,47,2025-6-4,0,0
+9,Tigers  @  White Sox,Drizzle,58°,8.0 mph,"L to R, Weak",DET,CWS,25,2025-6-4,0,0
+10,Royals  @  Cardinals,Light Rain,75°,5.4 mph,"L to R, Weak",KC,STL,46,2025-6-4,0,0
+11,Orioles  @  Mariners,Mostly Clear,67°,4.5 mph,None,BAL,SEA,0,2025-6-4,1,0
 12,Padres  @  Giants,Mostly Clear,60°,10.7 mph,"Out, Strong",SD,SF,0,2025-6-4,0,0
-13,Twins  @  Athletics,Clear,86°,9.8 mph,"Out, Weak",MIN,OAK,0,2025-6-4,0,0
-14,Mets  @  Dodgers,Mostly Clear,64°,7.2 mph,"Out, Weak",NYM,LAD,9,2025-6-4,0,0
+13,Twins  @  Athletics,Clear,85°,9.8 mph,"Out, Weak",MIN,OAK,0,2025-6-4,0,0
+14,Mets  @  Dodgers,Clear,64°,6.3 mph,"Out, Weak",NYM,LAD,9,2025-6-4,0,0
