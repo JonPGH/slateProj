@@ -9,6 +9,7 @@
 10,BAL,Seranthony Dominguez,622554,R
 12,BAL,Yennier Cano,666974,R
 13,CIN,Alexis Diaz,664747,R
+16,CIN,Brent Suter,608718,L
 17,CIN,Emilio Pagan,641941,R
 18,CIN,Graham Ashcraft,668933,R
 20,CIN,Ian Gibaut,664139,R
@@ -17,6 +18,7 @@
 25,CIN,Tony Santillan,663574,R
 26,NYM,A.J. Minter,621345,L
 28,NYM,Danny Young,664849,L
+30,NYM,Edwin Diaz,621242,R
 33,NYM,Jose Butto,676130,R
 34,NYM,Justin Hagenman,663795,R
 36,NYM,Reed Garrett,657585,R
@@ -71,7 +73,6 @@
 110,KC,John Schreiber,670167,R
 112,KC,Lucas Erceg,668674,R
 116,KC,Steven Cruz,674444,R
-120,NYY,Devin Williams,642207,R
 121,NYY,Fernando Cruz,518585,R
 122,NYY,Ian Hamilton,641656,R
 123,NYY,Luke Weaver,596133,R
@@ -79,7 +80,6 @@
 127,NYY,Tim Hill,657612,L
 129,NYY,Yoendrys Gomez,672782,R
 130,DET,Beau Brieske,689225,R
-131,DET,Brant Hurter,676428,L
 135,DET,John Brebbia,605154,R
 140,DET,Tommy Kahnle,592454,R
 141,DET,Tyler Holton,663947,L
@@ -138,7 +138,6 @@
 225,ATL,Dylan Lee,669276,L
 226,ATL,Enyel De Los Santos,660853,R
 229,ATL,Pierce Johnson,572955,R
-230,ATL,Rafael Montero,606160,R
 231,ATL,Raisel Iglesias,628452,R
 234,SEA,Andres Munoz,662253,R
 237,SEA,Carlos Vargas,672841,R
@@ -165,6 +164,7 @@
 271,OAK,T.J. McFarland,519008,L
 272,OAK,Tyler Ferguson,621053,R
 273,CWS,Brandon Eisert,685126,L
+274,CWS,Bryse Wilson,669060,R
 275,CWS,Cam Booser,592155,L
 278,CWS,Jordan Leasure,673929,R
 280,CWS,Mike Vasil,678024,R
@@ -182,7 +182,6 @@
 296,LAD,Tanner Scott,656945,L
 299,COL,Angel Chivilli,683409,R
 303,COL,Jake Bird,656234,R
-304,COL,Jimmy Herget,623474,R
 306,COL,Luis Peralta,678821,L
 308,COL,Scott Alexander,518397,L
 309,COL,Seth Halvorsen,678020,R
@@ -200,7 +199,6 @@
 326,LAA,Garrett McDaniels,680729,L
 330,LAA,Kenley Jansen,445276,R
 332,LAA,Michael Darrell-Hicks,690382,R
-333,LAA,Reid Detmers,672282,L
 335,LAA,Ryan Zeferjahn,666171,R
 340,MIN,Cole Sands,663485,R
 341,MIN,Danny Coulombe,543056,L
