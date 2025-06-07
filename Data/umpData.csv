@@ -1,5 +1,10 @@
 ,HomeTeam,Umpire,Today,K Boost,BB Boost,UmpK,UmpBB
 1,DET,Doug Eddings,CHC @ DET,0.97,0.87,0.985,0.935
-2,STL,Chris Segal,LAD @ STL,1.08,1.05,1.04,1.025
-3,MIN,Chad Whitson,TOR @ MIN,1.1,1.08,1.05,1.04
-4,CWS,Nick Mahrley,KC @ CWS,1.01,1.01,1.005,1.005
+2,SF,Gabe Morales,ATL @ SF,1.07,0.97,1.0350000000000001,0.985
+3,STL,Chris Segal,LAD @ STL,1.08,1.05,1.04,1.025
+4,TB,Ben May,MIA @ TB,0.99,0.94,0.995,0.97
+5,MIN,Chad Whitson,TOR @ MIN,1.1,1.08,1.05,1.04
+6,CLE,Ramon De Jesus,HOU @ CLE,1.04,1.09,1.02,1.045
+7,WSH,John Libka,TEX @ WSH,0.97,1.07,0.985,1.0350000000000001
+8,CWS,Nick Mahrley,KC @ CWS,1.01,1.01,1.005,1.005
+9,PIT,Nestor Ceja,PHI @ PIT,0.99,0.94,0.995,0.97
