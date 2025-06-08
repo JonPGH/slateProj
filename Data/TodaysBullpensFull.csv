@@ -4,9 +4,7 @@
 5,BAL,Felix Bautista,642585,R
 6,BAL,Gregory Soto,642397,L
 7,BAL,Keegan Akin,669211,L
-8,BAL,Matt Bowman,621199,R
 9,BAL,Scott Blewett,656240,R
-10,BAL,Seranthony Dominguez,622554,R
 12,BAL,Yennier Cano,666974,R
 13,CIN,Alexis Diaz,664747,R
 16,CIN,Brent Suter,608718,L
@@ -27,6 +25,7 @@
 39,MIA,Anthony Bender,669622,R
 40,MIA,Anthony Veneziano,685107,L
 42,MIA,Calvin Faucher,676534,R
+45,MIA,George Soriano,666277,R
 46,MIA,Jesus Tinoco,622786,R
 47,MIA,Lake Bachar,669199,R
 49,MIA,Ronny Henriquez,678692,R
@@ -58,6 +57,7 @@
 88,PHI,Taijuan Walker,592836,R
 89,PHI,Tanner Banks,621383,L
 93,PIT,Caleb Ferguson,657571,L
+95,PIT,Chase Shugart,663767,R
 96,PIT,Dennis Santana,642701,R
 97,PIT,Joey Wentz,666214,L
 98,PIT,Justin Lawrence,664875,R
@@ -85,10 +85,10 @@
 140,DET,Tommy Kahnle,592454,R
 141,DET,Tyler Holton,663947,L
 142,DET,Will Vest,676684,R
+144,TOR,Brendon Little,663893,L
 145,TOR,Chad Green,643338,R
 147,TOR,Easton Lucas,687922,L
 148,TOR,Jacob Barnes,606930,R
-149,TOR,Jeff Hoffman,656546,R
 152,TOR,Mason Fluharty,689254,L
 153,TOR,Nick Sandlin,680704,R
 154,TOR,Yariel Rodriguez,684320,R
@@ -125,6 +125,7 @@
 202,BOS,Justin Wilson,458677,L
 203,BOS,Michael Fulmer,605242,R
 204,BOS,Sean Newcomb,656794,L
+207,BOS,Zack Kelly,677161,R
 208,ARI,A.J. Puk,640462,L
 213,ARI,Jalen Beeks,656222,L
 214,ARI,Joe Mantiply,573009,L
@@ -144,7 +145,6 @@
 239,SEA,Collin Snider,676092,R
 240,SEA,Eduard Bazardo,660825,R
 242,SEA,Gabe Speier,642100,L
-245,SEA,Trent Thornton,663423,R
 246,SEA,Troy Taylor,700187,R
 247,HOU,Bennett Sousa,656986,L
 248,HOU,Bryan Abreu,650556,R
@@ -199,7 +199,6 @@
 326,LAA,Garrett McDaniels,680729,L
 330,LAA,Kenley Jansen,445276,R
 332,LAA,Michael Darrell-Hicks,690382,R
-333,LAA,Reid Detmers,672282,L
 335,LAA,Ryan Zeferjahn,666171,R
 340,MIN,Cole Sands,663485,R
 341,MIN,Danny Coulombe,543056,L
@@ -212,7 +211,6 @@
 351,SD,Adrian Morejon,670970,L
 352,SD,Alek Jacob,689690,R
 354,SD,Jason Adam,592094,R
-355,SD,Jeremiah Estrada,669093,R
 357,SD,Logan Gillaspie,670810,R
 361,SD,Robert Suarez,663158,R
 362,SD,Wandy Peralta,593974,L
@@ -225,6 +223,7 @@
 372,CHC,Luke Little,681432,L
 374,CHC,Porter Hodge,687863,R
 375,CHC,Ryan Pressly,519151,R
+377,SF,Camilo Doval,666808,R
 378,SF,Erik Miller,669062,L
 380,SF,Jordan Hicks,663855,R
 384,SF,Lou Trivino,642152,R
