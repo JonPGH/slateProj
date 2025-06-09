@@ -1,55 +1,63 @@
 ,Player,Book,Type,OU,Line,Price,BetValue,Last Update,Recommended
-0,Mike Burrows,FanDuel,pitcher_strikeouts,Over,4.5,158,0.2309999999999999,06/09 07:53,Y
-6,Mike Burrows,FanDuel,pitcher_strikeouts,Over,5.5,360,0.228,06/09 07:53,Y
-12,Jose Berrios,FanDuel,pitcher_outs,Under,17.5,134,0.205,06/09 07:53,N
-13,Chris Sale,DraftKings,pitcher_outs,Over,18.5,155,0.1939999999999999,06/09 07:53,N
-14,Luis L. Ortiz,FanDuel,pitcher_outs,Under,17.5,-108,0.1929999999999999,06/09 07:53,N
-15,Mike Burrows,FanDuel,pitcher_strikeouts,Over,3.5,-152,0.178,06/09 07:53,Y
-21,Mike Burrows,FanDuel,pitcher_strikeouts,Over,6.5,750,0.173,06/09 07:53,Y
-27,Chris Sale,DraftKings,pitcher_walks,Over,2.5,260,0.1469999999999999,06/09 07:53,Y
-32,Dustin May,FanDuel,pitcher_outs,Under,17.5,110,0.145,06/09 07:53,N
-33,Chris Sale,DraftKings,pitcher_walks,Over,1.5,-120,0.142,06/09 07:53,Y
-38,Merrill Kelly,DraftKings,pitcher_outs,Under,17.5,145,0.135,06/09 07:53,N
-39,Andre Pallante,FanDuel,pitcher_outs,Under,17.5,106,0.13,06/09 07:53,N
-40,Jake Mangum,DraftKings,batter_stolen_bases,Under,0.5,-275,0.1109999999999999,06/09 07:53,N
-41,Josh Lowe,DraftKings,batter_stolen_bases,Under,0.5,-280,0.1069999999999999,06/09 07:53,N
-42,Mike Burrows,DraftKings,pitcher_strikeouts,Over,2.5,-390,0.1059999999999999,06/09 07:53,Y
-48,Luis L. Ortiz,DraftKings,pitcher_strikeouts,Under,5.5,115,0.1039999999999999,06/09 07:53,N
-49,Zack Wheeler,DraftKings,pitcher_outs,Over,18.5,120,0.102,06/09 07:53,N
-50,Mike Burrows,Caesars,pitcher_strikeouts,Over,7.5,1300,0.1009999999999999,06/09 07:53,Y
-56,Chris Sale,DraftKings,pitcher_walks,Over,3.5,750,0.099,06/09 07:53,Y
-61,Andre Pallante,DraftKings,pitcher_strikeouts,Under,3.5,-170,0.0989999999999999,06/09 07:53,N
-63,Andre Pallante,FanDuel,pitcher_strikeouts,Under,2.5,142,0.098,06/09 07:53,N
-65,Mike Burrows,DraftKings,pitcher_walks,Over,1.5,100,0.0939999999999999,06/09 07:53,Y
-67,George Springer,DraftKings,batter_stolen_bases,Under,0.5,-500,0.09,06/09 07:53,N
-68,Zack Wheeler,FanDuel,pitcher_strikeouts,Over,8.5,300,0.088,06/09 07:53,N
-72,Oneil Cruz,DraftKings,batter_stolen_bases,Under,0.5,-215,0.0879999999999999,06/09 07:53,N
-73,Trevor Story,DraftKings,batter_stolen_bases,Under,0.5,-500,0.081,06/09 07:53,N
-74,Zack Wheeler,FanDuel,pitcher_strikeouts,Over,7.5,154,0.0809999999999999,06/09 07:53,N
-78,Trevor Story,DraftKings,batter_hits,Under,0.5,155,0.0799999999999999,06/09 07:53,N
-79,Zack Wheeler,FanDuel,pitcher_strikeouts,Over,9.5,580,0.077,06/09 07:53,N
-83,Shane Baz,FanDuel,pitcher_outs,Over,16.5,-102,0.0739999999999999,06/09 07:53,N
-84,Matthew Boyd,DraftKings,pitcher_hits_allowed,Under,5.5,-140,0.073,06/09 07:53,N
-85,Liam Hicks,DraftKings,batter_hits,Over,1.5,450,0.071,06/09 07:53,N
-86,Johnathan Rodriguez,FanDuel,batter_hits,Over,1.5,460,0.071,06/09 07:53,N
-87,Dustin May,DraftKings,pitcher_hits_allowed,Under,5.5,-105,0.0709999999999999,06/09 07:53,N
-88,Marcelo Mayer,DraftKings,batter_hits,Over,1.5,425,0.067,06/09 07:53,N
-89,Chris Sale,DraftKings,pitcher_walks,Over,0.5,-525,0.067,06/09 07:53,Y
-94,Johnathan Rodriguez,FanDuel,batter_home_runs,Over,0.5,900,0.065,06/09 07:53,Y
-95,Matt McLain,DraftKings,batter_stolen_bases,Under,0.5,-525,0.065,06/09 07:53,N
-96,Aaron Civale,DraftKings,pitcher_walks,Over,1.5,-115,0.0639999999999999,06/09 07:53,Y
-98,Aaron Civale,DraftKings,pitcher_walks,Over,2.5,275,0.062,06/09 07:53,Y
-100,Jackson Chourio,DraftKings,batter_stolen_bases,Under,0.5,-340,0.0619999999999999,06/09 07:53,N
-101,Zack Wheeler,FanDuel,pitcher_strikeouts,Over,6.5,-128,0.0609999999999999,06/09 07:53,N
-105,Fernando Tatis Jr.,DraftKings,batter_stolen_bases,Under,0.5,-450,0.06,06/09 07:53,N
-106,Emerson Hancock,FanDuel,pitcher_outs,Over,15.5,136,0.06,06/09 07:53,N
-107,Andres Gimenez,DraftKings,batter_stolen_bases,Under,0.5,-380,0.0599999999999999,06/09 07:53,N
-108,Oneil Cruz,DraftKings,batter_hits,Over,1.5,285,0.059,06/09 07:53,N
-109,Dustin May,DraftKings,pitcher_walks,Over,1.5,120,0.0579999999999999,06/09 07:53,Y
-110,Vladimir Guerrero Jr.,DraftKings,batter_home_runs,Over,0.5,700,0.0559999999999999,06/09 07:53,Y
-111,Luis L. Ortiz,DraftKings,pitcher_walks,Over,2.5,150,0.0559999999999999,06/09 07:53,Y
-112,Andre Pallante,DraftKings,pitcher_walks,Over,1.5,100,0.055,06/09 07:53,Y
-113,Chris Sale,DraftKings,pitcher_walks,Over,4.5,2500,0.055,06/09 07:53,Y
-118,Mike Burrows,DraftKings,pitcher_walks,Over,2.5,270,0.0529999999999999,06/09 07:53,Y
-120,Mike Burrows,DraftKings,pitcher_hits_allowed,Under,5.5,-170,0.052,06/09 07:53,N
-121,Ketel Marte,DraftKings,batter_home_runs,Over,0.5,550,0.0509999999999999,06/09 07:53,Y
+0,Mike Burrows,FanDuel,pitcher_strikeouts,Over,4.5,158,0.2309999999999999,06/09 08:34,Y
+6,Mike Burrows,FanDuel,pitcher_strikeouts,Over,5.5,360,0.228,06/09 08:34,Y
+12,Jose Berrios,FanDuel,pitcher_outs,Under,17.5,134,0.205,06/09 08:34,N
+13,Chris Sale,DraftKings,pitcher_outs,Over,18.5,155,0.1939999999999999,06/09 08:34,N
+14,Luis L. Ortiz,FanDuel,pitcher_outs,Under,17.5,-108,0.1929999999999999,06/09 08:34,N
+15,Mike Burrows,FanDuel,pitcher_strikeouts,Over,3.5,-152,0.178,06/09 08:34,Y
+21,Mike Burrows,FanDuel,pitcher_strikeouts,Over,6.5,750,0.173,06/09 08:34,Y
+27,Eury Perez,FanDuel,pitcher_strikeouts,Over,6.5,280,0.1469999999999999,06/09 08:34,N
+33,Chris Sale,DraftKings,pitcher_walks,Over,2.5,260,0.1469999999999999,06/09 08:34,Y
+38,Eury Perez,FanDuel,pitcher_strikeouts,Over,5.5,136,0.1459999999999999,06/09 08:34,N
+44,Dustin May,FanDuel,pitcher_outs,Under,17.5,110,0.145,06/09 08:34,N
+45,Chris Sale,DraftKings,pitcher_walks,Over,1.5,-120,0.142,06/09 08:34,Y
+50,Merrill Kelly,DraftKings,pitcher_outs,Under,17.5,145,0.135,06/09 08:34,N
+51,Andre Pallante,FanDuel,pitcher_outs,Under,17.5,106,0.13,06/09 08:34,N
+52,Eury Perez,FanDuel,pitcher_strikeouts,Over,7.5,580,0.123,06/09 08:34,N
+58,Eury Perez,DraftKings,pitcher_strikeouts,Over,4.5,-160,0.1129999999999999,06/09 08:34,N
+64,Jake Mangum,DraftKings,batter_stolen_bases,Under,0.5,-275,0.1109999999999999,06/09 08:34,N
+65,Eury Perez,DraftKings,pitcher_walks,Under,1.5,145,0.107,06/09 08:34,N
+66,Josh Lowe,DraftKings,batter_stolen_bases,Under,0.5,-280,0.1069999999999999,06/09 08:34,N
+67,Mike Burrows,DraftKings,pitcher_strikeouts,Over,2.5,-390,0.1059999999999999,06/09 08:34,Y
+73,Oneil Cruz,DraftKings,batter_stolen_bases,Under,0.5,-215,0.1039999999999999,06/09 08:34,N
+74,Luis L. Ortiz,DraftKings,pitcher_strikeouts,Under,5.5,115,0.1039999999999999,06/09 08:34,N
+75,Zack Wheeler,DraftKings,pitcher_outs,Over,18.5,120,0.102,06/09 08:34,N
+76,Mike Burrows,Caesars,pitcher_strikeouts,Over,7.5,1300,0.1009999999999999,06/09 08:34,Y
+82,Chris Sale,DraftKings,pitcher_walks,Over,3.5,750,0.099,06/09 08:34,Y
+87,Andre Pallante,DraftKings,pitcher_strikeouts,Under,3.5,-170,0.0989999999999999,06/09 08:34,N
+89,Andre Pallante,FanDuel,pitcher_strikeouts,Under,2.5,142,0.098,06/09 08:34,N
+91,Mike Burrows,DraftKings,pitcher_walks,Over,1.5,100,0.0939999999999999,06/09 08:34,Y
+93,George Springer,DraftKings,batter_stolen_bases,Under,0.5,-500,0.09,06/09 08:34,N
+94,Zack Wheeler,FanDuel,pitcher_strikeouts,Over,8.5,300,0.088,06/09 08:34,N
+98,Trevor Story,DraftKings,batter_stolen_bases,Under,0.5,-500,0.081,06/09 08:34,N
+99,Zack Wheeler,FanDuel,pitcher_strikeouts,Over,7.5,154,0.0809999999999999,06/09 08:34,N
+103,Trevor Story,DraftKings,batter_hits,Under,0.5,155,0.0799999999999999,06/09 08:34,N
+104,Zack Wheeler,FanDuel,pitcher_strikeouts,Over,9.5,580,0.077,06/09 08:34,N
+108,Shane Baz,FanDuel,pitcher_outs,Over,16.5,-102,0.0739999999999999,06/09 08:34,N
+109,Eury Perez,DraftKings,pitcher_strikeouts,Over,3.5,-360,0.0739999999999999,06/09 08:34,N
+115,Matthew Boyd,DraftKings,pitcher_hits_allowed,Under,5.5,-140,0.073,06/09 08:34,N
+116,Liam Hicks,DraftKings,batter_hits,Over,1.5,450,0.071,06/09 08:34,N
+117,Johnathan Rodriguez,FanDuel,batter_hits,Over,1.5,460,0.071,06/09 08:34,N
+118,Dustin May,DraftKings,pitcher_hits_allowed,Under,5.5,-105,0.0709999999999999,06/09 08:34,N
+119,Marcelo Mayer,DraftKings,batter_hits,Over,1.5,425,0.067,06/09 08:34,N
+120,Chris Sale,DraftKings,pitcher_walks,Over,0.5,-525,0.067,06/09 08:34,Y
+125,Johnathan Rodriguez,FanDuel,batter_home_runs,Over,0.5,900,0.065,06/09 08:34,Y
+126,Matt McLain,DraftKings,batter_stolen_bases,Under,0.5,-525,0.065,06/09 08:34,N
+127,Aaron Civale,DraftKings,pitcher_walks,Over,1.5,-115,0.0639999999999999,06/09 08:34,Y
+129,Aaron Civale,DraftKings,pitcher_walks,Over,2.5,275,0.062,06/09 08:34,Y
+131,Jackson Chourio,DraftKings,batter_stolen_bases,Under,0.5,-340,0.0619999999999999,06/09 08:34,N
+132,Zack Wheeler,FanDuel,pitcher_strikeouts,Over,6.5,-128,0.0609999999999999,06/09 08:34,N
+136,Fernando Tatis Jr.,DraftKings,batter_stolen_bases,Under,0.5,-450,0.06,06/09 08:34,N
+137,Emerson Hancock,FanDuel,pitcher_outs,Over,15.5,136,0.06,06/09 08:34,N
+138,Andres Gimenez,DraftKings,batter_stolen_bases,Under,0.5,-380,0.0599999999999999,06/09 08:34,N
+139,Eury Perez,Caesars,pitcher_strikeouts,Over,8.5,850,0.058,06/09 08:34,N
+145,Dustin May,DraftKings,pitcher_walks,Over,1.5,120,0.0579999999999999,06/09 08:34,Y
+146,Vladimir Guerrero Jr.,DraftKings,batter_home_runs,Over,0.5,700,0.0559999999999999,06/09 08:34,Y
+147,Oneil Cruz,DraftKings,batter_hits,Over,1.5,285,0.0559999999999999,06/09 08:34,N
+148,Luis L. Ortiz,DraftKings,pitcher_walks,Over,2.5,150,0.0559999999999999,06/09 08:34,Y
+149,Andre Pallante,DraftKings,pitcher_walks,Over,1.5,100,0.055,06/09 08:34,Y
+150,Chris Sale,DraftKings,pitcher_walks,Over,4.5,2500,0.055,06/09 08:34,Y
+155,Bryan Reynolds,FanDuel,batter_home_runs,Over,0.5,600,0.054,06/09 08:34,Y
+156,Mike Burrows,DraftKings,pitcher_walks,Over,2.5,270,0.0529999999999999,06/09 08:34,Y
+158,Mike Burrows,DraftKings,pitcher_hits_allowed,Under,5.5,-170,0.052,06/09 08:34,N
+159,Ketel Marte,DraftKings,batter_home_runs,Over,0.5,550,0.0509999999999999,06/09 08:34,Y
