@@ -1,16 +1,10 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Marlins  @  Rays,Mostly Clear,87°,8.0 mph,"Out, Weak",MIA,TB,0,2025-6-8,0,0
-1,Padres  @  Brewers,Partly Cloudy,76°,10.7 mph,"R to L, Weak",SD,MIL,0,2025-6-8,0,0
-2,Phillies  @  Pirates,Light Rain,67°,8.9 mph,"In, Weak",PHI,PIT,50,2025-6-8,0,0
-3,Rangers  @  Nationals,Mostly Cloudy,73°,8.0 mph,"R to L, Weak",TEX,WSH,39,2025-6-8,0,0
-4,Astros  @  Guardians,Possible Drizzle,70°,7.2 mph,"R to L, Weak",HOU,CLE,23,2025-6-8,0,0
-5,Cubs  @  Tigers,Mostly Cloudy,72°,8.0 mph,"L to R, Weak",CHC,DET,0,2025-6-8,0,0
-6,Diamondbacks  @  Reds,Mostly Cloudy,75°,7.2 mph,"Out, Weak",ARI,CIN,8,2025-6-8,0,0
-7,Blue Jays  @  Twins,Mostly Clear,71°,14.3 mph,"Out, Strong",TOR,MIN,0,2025-6-8,0,0
-8,Royals  @  White Sox,Partly Cloudy,74°,8.0 mph,"In, Weak",KC,CWS,0,2025-6-8,0,0
-9,Dodgers  @  Cardinals,Clear,78°,6.3 mph,"Out, Weak",LAD,STL,0,2025-6-8,0,0
-10,Mets  @  Rockies,Mostly Clear,70°,7.4 mph,"In, Weak",NYM,COL,0,2025-6-8,0,0
-11,Braves  @  Giants,Mostly Clear,59°,8.3 mph,"Out, Weak",ATL,SF,0,2025-6-8,0,0
-12,Orioles  @  Athletics,Clear,83°,6.5 mph,"Out, Weak",BAL,OAK,0,2025-6-8,0,0
-13,Mariners  @  Angels,Clear,74°,7.4 mph,"Out, Weak",SEA,LAA,0,2025-6-8,0,0
-14,Red Sox  @  Yankees,Overcast,69°,10.7 mph,"In, Strong",BOS,NYY,12,2025-6-8,0,0
+0,Marlins  @  Pirates,Light Rain,73°,9.2 mph,"Out, Weak",MIA,PIT,43,2025-6-9,0,0
+1,Reds  @  Guardians,Possible Drizzle,71°,9.2 mph,"Out, Weak",CIN,CLE,19,2025-6-9,0,0
+2,Cubs  @  Phillies,Mostly Cloudy,73°,4.7 mph,None,CHC,PHI,0,2025-6-9,0,0
+3,Rays  @  Red Sox,Foggy,60°,7.2 mph,"In, Weak",TB,BOS,6,2025-6-9,0,0
+4,Braves  @  Brewers,Partly Cloudy,65°,11.6 mph,"Out, Strong",ATL,MIL,6,2025-6-9,0,0
+5,Blue Jays  @  Cardinals,Mostly Clear,78°,9.8 mph,"Out, Weak",TOR,STL,0,2025-6-9,0,0
+6,Athletics  @  Angels,Clear,73°,6.3 mph,"Out, Weak",OAK,LAA,0,2025-6-9,0,0
+7,Mariners  @  Diamondbacks,Dry and Clear,104°,8.0 mph,"L to R, Weak",SEA,ARI,0,2025-6-9,1,0
+8,Dodgers  @  Padres,Mostly Clear,67°,6.3 mph,"L to R, Weak",LAD,SD,0,2025-6-9,0,0
