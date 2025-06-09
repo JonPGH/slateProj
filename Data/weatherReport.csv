@@ -1,10 +1,10 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Marlins  @  Pirates,Rain,74°,9.2 mph,"R to L, Weak",MIA,PIT,37,2025-6-9,0,0
-1,Reds  @  Guardians,Possible Drizzle,71°,9.2 mph,"Out, Weak",CIN,CLE,17,2025-6-9,0,0
-2,Cubs  @  Phillies,Mostly Cloudy,72°,4.7 mph,None,CHC,PHI,0,2025-6-9,0,0
-3,Rays  @  Red Sox,Foggy,60°,7.2 mph,"In, Weak",TB,BOS,5,2025-6-9,0,0
-4,Braves  @  Brewers,Mostly Clear,66°,11.6 mph,"Out, Strong",ATL,MIL,0,2025-6-9,0,0
-5,Blue Jays  @  Cardinals,Mostly Clear,79°,9.8 mph,"Out, Weak",TOR,STL,0,2025-6-9,0,0
-6,Athletics  @  Angels,Clear,72°,6.3 mph,"Out, Weak",OAK,LAA,0,2025-6-9,0,0
+0,Marlins  @  Pirates,Overcast,63°,10.0 mph,"R to L, Weak",MIA,PIT,0,2025-6-9,0,0
+1,Reds  @  Guardians,Partly Cloudy,72°,9.2 mph,"Out, Weak",CIN,CLE,8,2025-6-9,0,0
+2,Cubs  @  Phillies,Mostly Cloudy,71°,4.7 mph,None,CHC,PHI,0,2025-6-9,0,0
+3,Rays  @  Red Sox,Overcast,60°,7.2 mph,"In, Weak",TB,BOS,5,2025-6-9,0,0
+4,Braves  @  Brewers,Breezy and Mostly Cloudy,63°,15.2 mph,"Out, Strong",ATL,MIL,0,2025-6-9,0,0
+5,Blue Jays  @  Cardinals,Clear,78°,12.8 mph,"Out, Strong",TOR,STL,0,2025-6-9,0,0
+6,Athletics  @  Angels,Mostly Clear,69°,8.9 mph,"Out, Weak",OAK,LAA,0,2025-6-9,0,0
 7,Mariners  @  Diamondbacks,Dry and Clear,104°,8.0 mph,"L to R, Weak",SEA,ARI,0,2025-6-9,1,0
-8,Dodgers  @  Padres,Mostly Clear,66°,6.3 mph,"L to R, Weak",LAD,SD,0,2025-6-9,0,0
+8,Dodgers  @  Padres,Partly Cloudy,65°,9.7 mph,"L to R, Weak",LAD,SD,0,2025-6-9,0,0
