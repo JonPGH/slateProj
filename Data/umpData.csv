@@ -1,6 +1,13 @@
 ,HomeTeam,Umpire,Today,K Boost,BB Boost,UmpK,UmpBB
 1,BOS,Marvin Hudson,TB @ BOS,0.88,0.94,0.94,0.97
-2,CLE,Todd Tichenor,CIN @ CLE,0.92,1.01,0.96,1.005
-3,PHI,Vic Carapazza,CHC @ PHI,0.94,0.89,0.97,0.9450000000000001
-4,NYM,David Rackley,WSH @ NYM,0.97,1.0,0.985,1.0
-5,STL,Clint Vondrak,TOR @ STL,0.96,1.04,0.98,1.02
+2,MIN,James Hoye,TEX @ MIN,1.04,1.09,1.02,1.045
+3,COL,Adrian Johnson,SF @ COL,1.01,1.12,1.005,1.06
+4,CLE,Todd Tichenor,CIN @ CLE,0.92,1.01,0.96,1.005
+5,PIT,Jim Wolf,MIA @ PIT,1.02,1.08,1.01,1.04
+6,PHI,Vic Carapazza,CHC @ PHI,0.94,0.89,0.97,0.9450000000000001
+7,NYM,David Rackley,WSH @ NYM,0.97,1.0,0.985,1.0
+8,HOU,Jeremie Rehak,CWS @ HOU,1.04,0.98,1.02,0.99
+9,BAL,Alex Tosi,DET @ BAL,0.97,0.9,0.985,0.95
+10,STL,Clint Vondrak,TOR @ STL,0.96,1.04,0.98,1.02
+11,MIL,Emil Jimenez,ATL @ MIL,1.02,0.96,1.01,0.98
+12,KC,Brian Walsh,NYY @ KC,1.03,0.96,1.0150000000000001,0.98
