@@ -1,6 +1,9 @@
 ,HomeTeam,Umpire,Today,K Boost,BB Boost,UmpK,UmpBB
 1,MIL,Doug Eddings,ATL @ MIL,0.97,0.87,0.985,0.935
 2,STL,Phil Cuzzi,TOR @ STL,0.95,0.89,0.975,0.9450000000000001
-3,PIT,Chris Segal,MIA @ PIT,1.08,1.05,1.04,1.025
-4,CLE,Nestor Ceja,CIN @ CLE,0.99,0.94,0.995,0.97
-5,PHI,Charlie Ramos,CHC @ PHI,0.98,1.04,0.99,1.02
+3,ARI,Scott Barry,SEA @ AZ,1.15,0.97,1.075,0.985
+4,LAA,Gabe Morales,ATH @ LAA,1.07,0.97,1.0350000000000001,0.985
+5,PIT,Chris Segal,MIA @ PIT,1.08,1.05,1.04,1.025
+6,CLE,Nestor Ceja,CIN @ CLE,0.99,0.94,0.995,0.97
+7,SD,Erich Bacchus,LAD @ SD,0.96,0.94,0.98,0.97
+8,PHI,Charlie Ramos,CHC @ PHI,0.98,1.04,0.99,1.02
