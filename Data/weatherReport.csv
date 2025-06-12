@@ -1,9 +1,9 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rangers  @  Twins,Overcast,65°,8.9 mph,"In, Weak",TEX,MIN,15,2025-6-12,0,0
+0,Rangers  @  Twins,Mostly Cloudy,66°,8.9 mph,"In, Weak",TEX,MIN,9,2025-6-12,0,0
 1,Nationals  @  Mets,Clear,86°,9.8 mph,"L to R, Weak",WSH,NYM,0,2025-6-12,0,0
 2,Giants  @  Rockies,Mostly Clear,87°,4.5 mph,None,SF,COL,0,2025-6-12,0,0
 3,Tigers  @  Orioles,Mostly Clear,95°,5.4 mph,"L to R, Weak",DET,BAL,0,2025-6-12,0,0
-4,Cardinals  @  Brewers,Partly Cloudy,66°,12.5 mph,"L to R, Strong",STL,MIL,0,2025-6-12,0,0
+4,Cardinals  @  Brewers,Partly Cloudy,67°,12.5 mph,"L to R, Strong",STL,MIL,0,2025-6-12,0,0
 5,Yankees  @  Royals,Mostly Cloudy,79°,8.9 mph,"R to L, Weak",NYY,KC,0,2025-6-12,0,0
-6,Pirates  @  Cubs,Mostly Cloudy,67°,8.0 mph,"In, Weak",PIT,CHC,0,2025-6-12,0,0
-7,White Sox  @  Astros,Mostly Cloudy,80°,8.0 mph,"Out, Weak",CWS,HOU,34,2025-6-12,1,1
+6,Pirates  @  Cubs,Mostly Cloudy,68°,8.0 mph,"In, Weak",PIT,CHC,0,2025-6-12,0,0
+7,White Sox  @  Astros,Possible Drizzle,80°,8.0 mph,"Out, Weak",CWS,HOU,34,2025-6-12,1,1
