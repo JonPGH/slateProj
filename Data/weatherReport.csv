@@ -1,16 +1,8 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Reds  @  Tigers,Clear,74°,8.0 mph,"L to R, Weak",CIN,DET,0,2025-6-15,0,0
-1,Blue Jays  @  Phillies,Possible Drizzle,64°,6.3 mph,"In, Weak",TOR,PHI,8,2025-6-15,0,0
-2,Yankees  @  Red Sox,Mostly Cloudy,65°,6.3 mph,"In, Weak",NYY,BOS,0,2025-6-15,0,0
-3,Angels  @  Orioles,Overcast,71°,7.2 mph,"R to L, Weak",LAA,BAL,0,2025-6-15,0,0
-4,Marlins  @  Nationals,Overcast,70°,8.0 mph,"R to L, Weak",MIA,WSH,0,2025-6-15,0,0
-5,Rockies  @  Braves,Possible Drizzle,81°,7.2 mph,"R to L, Weak",COL,ATL,7,2025-6-15,0,0
-6,Rays  @  Mets,Mostly Cloudy,63°,8.0 mph,"In, Weak",TB,NYM,7,2025-6-15,0,0
-7,Cardinals  @  Brewers,Partly Cloudy,71°,7.2 mph,"L to R, Weak",STL,MIL,0,2025-6-15,0,0
-8,Twins  @  Astros,Mostly Clear,87°,7.2 mph,"Out, Weak",MIN,HOU,13,2025-6-15,1,1
-9,Athletics  @  Royals,Mostly Cloudy,83°,6.3 mph,"R to L, Weak",OAK,KC,0,2025-6-15,0,0
-10,Pirates  @  Cubs,Partly Cloudy,70°,5.4 mph,"In, Weak",PIT,CHC,0,2025-6-15,0,0
-11,White Sox  @  Rangers,Partly Cloudy,85°,8.0 mph,"Out, Weak",CWS,TEX,11,2025-6-15,1,1
-12,Padres  @  Diamondbacks,Dry and Clear,107°,2.7 mph,None,SD,ARI,0,2025-6-15,1,0
-13,Guardians  @  Mariners,Mostly Clear,60°,4.5 mph,None,CLE,SEA,0,2025-6-15,1,0
-14,Giants  @  Dodgers,Clear,82°,8.0 mph,"Out, Weak",SF,LAD,0,2025-6-15,0,0
+0,Phillies  @  Marlins,Clear,87°,9.8 mph,"In, Weak",PHI,MIA,0,2025-6-16,1,0
+1,Rockies  @  Nationals,Mostly Cloudy,71°,6.3 mph,"In, Weak",COL,WSH,17,2025-6-16,0,0
+2,Angels  @  Yankees,Overcast,67°,8.0 mph,"In, Weak",LAA,NYY,7,2025-6-16,0,0
+3,Orioles  @  Rays,Mostly Clear,88°,6.3 mph,"Out, Weak",BAL,TB,7,2025-6-16,0,0
+4,Red Sox  @  Mariners,Clear,70°,4.5 mph,None,BOS,SEA,0,2025-6-16,1,0
+5,Astros  @  Athletics,Clear,85°,8.9 mph,"Out, Weak",HOU,OAK,0,2025-6-16,0,0
+6,Padres  @  Dodgers,Clear,77°,7.2 mph,"Out, Weak",SD,LAD,0,2025-6-16,0,0
