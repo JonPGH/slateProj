@@ -1,8 +1,8 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Phillies  @  Marlins,Clear,87°,9.8 mph,"In, Weak",PHI,MIA,0,2025-6-16,1,0
-1,Rockies  @  Nationals,Mostly Cloudy,71°,6.3 mph,"In, Weak",COL,WSH,17,2025-6-16,0,0
-2,Angels  @  Yankees,Overcast,67°,8.0 mph,"In, Weak",LAA,NYY,7,2025-6-16,0,0
+1,Rockies  @  Nationals,Mostly Cloudy,71°,6.3 mph,"In, Weak",COL,WSH,9,2025-6-16,0,0
+2,Angels  @  Yankees,Overcast,67°,8.0 mph,"In, Weak",LAA,NYY,6,2025-6-16,0,0
 3,Orioles  @  Rays,Mostly Clear,88°,6.3 mph,"Out, Weak",BAL,TB,7,2025-6-16,0,0
 4,Red Sox  @  Mariners,Clear,70°,4.5 mph,None,BOS,SEA,0,2025-6-16,1,0
-5,Astros  @  Athletics,Clear,85°,8.9 mph,"Out, Weak",HOU,OAK,0,2025-6-16,0,0
+5,Astros  @  Athletics,Clear,86°,8.9 mph,"Out, Weak",HOU,OAK,0,2025-6-16,0,0
 6,Padres  @  Dodgers,Clear,77°,7.2 mph,"Out, Weak",SD,LAD,0,2025-6-16,0,0
