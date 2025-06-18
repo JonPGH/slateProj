@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Red Sox  @  Mariners,Possible Light Rain,61°,10.7 mph,"Out, Strong",BOS,SEA,19,2025-6-18,1,1
-1,Pirates  @  Tigers,Partly Cloudy,82°,8.9 mph,"In, Weak",PIT,DET,13,2025-6-18,0,0
+0,Red Sox  @  Mariners,Possible Light Rain,61°,10.7 mph,"Out, Strong",BOS,SEA,23,2025-6-18,1,1
+1,Pirates  @  Tigers,Mostly Cloudy,82°,8.9 mph,"In, Weak",PIT,DET,12,2025-6-18,0,0
 2,Phillies  @  Marlins,Mostly Clear,87°,9.8 mph,"In, Weak",PHI,MIA,0,2025-6-18,1,0
-3,Rockies  @  Nationals,Light Rain,83°,8.0 mph,"Out, Weak",COL,WSH,31,2025-6-18,0,0
-4,Angels  @  Yankees,Possible Drizzle,78°,5.4 mph,"R to L, Weak",LAA,NYY,19,2025-6-18,0,0
-5,Diamondbacks  @  Blue Jays,Possible Rain,75°,5.4 mph,"In, Weak",ARI,TOR,21,2025-6-18,1,1
+3,Rockies  @  Nationals,Light Rain,82°,8.0 mph,"L to R, Weak",COL,WSH,40,2025-6-18,0,0
+4,Angels  @  Yankees,Possible Drizzle,79°,5.4 mph,"R to L, Weak",LAA,NYY,19,2025-6-18,0,0
+5,Diamondbacks  @  Blue Jays,Rain,74°,5.4 mph,"In, Weak",ARI,TOR,25,2025-6-18,1,1
 6,Twins  @  Reds,Possible Light Rain,84°,12.5 mph,"R to L, Strong",MIN,CIN,18,2025-6-18,0,0
-7,Mets  @  Braves,Partly Cloudy,85°,8.0 mph,"R to L, Weak",NYM,ATL,6,2025-6-18,0,0
+7,Mets  @  Braves,Mostly Cloudy,85°,8.0 mph,"R to L, Weak",NYM,ATL,6,2025-6-18,0,0
 8,Orioles  @  Rays,Partly Cloudy,90°,5.4 mph,"Out, Weak",BAL,TB,0,2025-6-18,0,0
-9,Cardinals  @  White Sox,Rain,69°,9.8 mph,"L to R, Weak",STL,CWS,62,2025-6-18,0,0
-10,Brewers  @  Cubs,Rain,68°,8.0 mph,"In, Weak",MIL,CHC,12,2025-6-18,0,0
+9,Cardinals  @  White Sox,Rain,69°,9.8 mph,"L to R, Weak",STL,CWS,76,2025-6-18,0,0
+10,Brewers  @  Cubs,Rain,69°,8.0 mph,"In, Weak",MIL,CHC,12,2025-6-18,0,0
 11,Royals  @  Rangers,Mostly Clear,93°,11.6 mph,"R to L, Strong",KC,TEX,0,2025-6-18,1,0
-12,Guardians  @  Giants,Clear,67°,12.5 mph,"Out, Strong",CLE,SF,0,2025-6-18,0,0
+12,Guardians  @  Giants,Clear,66°,12.5 mph,"Out, Strong",CLE,SF,0,2025-6-18,0,0
 13,Astros  @  Athletics,Clear,99°,7.2 mph,"Out, Weak",HOU,OAK,0,2025-6-18,0,0
 14,Padres  @  Dodgers,Clear,79°,7.2 mph,"Out, Weak",SD,LAD,0,2025-6-18,0,0
