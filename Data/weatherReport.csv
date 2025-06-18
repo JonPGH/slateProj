@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Red Sox  @  Mariners,Partly Cloudy,61°,10.7 mph,"Out, Strong",BOS,SEA,5,2025-6-18,1,0
-1,Pirates  @  Tigers,Rain,80°,9.8 mph,"In, Weak",PIT,DET,37,2025-6-18,0,0
+1,Pirates  @  Tigers,Rain,81°,9.8 mph,"R to L, Weak",PIT,DET,27,2025-6-18,0,0
 2,Phillies  @  Marlins,Mostly Clear,87°,10.7 mph,"In, Strong",PHI,MIA,0,2025-6-18,1,0
-3,Rockies  @  Nationals,Rain,83°,8.9 mph,"L to R, Weak",COL,WSH,67,2025-6-18,0,0
-4,Angels  @  Yankees,Light Rain,78°,6.3 mph,"R to L, Weak",LAA,NYY,34,2025-6-18,0,0
-5,Diamondbacks  @  Blue Jays,Light Rain,75°,6.3 mph,"In, Weak",ARI,TOR,60,2025-6-18,1,1
-6,Twins  @  Reds,Possible Light Rain,85°,12.5 mph,"R to L, Strong",MIN,CIN,17,2025-6-18,0,0
-7,Mets  @  Braves,Partly Cloudy,84°,8.0 mph,"R to L, Weak",NYM,ATL,9,2025-6-18,0,0
-8,Orioles  @  Rays,Possible Light Rain,90°,5.4 mph,"Out, Weak",BAL,TB,8,2025-6-18,0,0
-9,Cardinals  @  White Sox,Light Rain,69°,10.7 mph,"L to R, Strong",STL,CWS,74,2025-6-18,0,0
-10,Brewers  @  Cubs,Light Rain,68°,9.8 mph,"In, Weak",MIL,CHC,12,2025-6-18,0,0
-11,Royals  @  Rangers,Clear,93°,12.5 mph,"R to L, Strong",KC,TEX,0,2025-6-18,1,0
-12,Guardians  @  Giants,Clear,66°,11.6 mph,"Out, Strong",CLE,SF,0,2025-6-18,0,0
+3,Rockies  @  Nationals,Rain,83°,8.9 mph,"L to R, Weak",COL,WSH,62,2025-6-18,0,0
+4,Angels  @  Yankees,Light Rain,77°,6.3 mph,"R to L, Weak",LAA,NYY,37,2025-6-18,0,0
+5,Diamondbacks  @  Blue Jays,Light Rain,75°,6.3 mph,"In, Weak",ARI,TOR,59,2025-6-18,1,1
+6,Twins  @  Reds,Possible Light Rain,85°,12.5 mph,"R to L, Strong",MIN,CIN,16,2025-6-18,0,0
+7,Mets  @  Braves,Possible Drizzle,85°,8.0 mph,"R to L, Weak",NYM,ATL,11,2025-6-18,0,0
+8,Orioles  @  Rays,Possible Light Rain,90°,5.4 mph,"Out, Weak",BAL,TB,7,2025-6-18,0,0
+9,Cardinals  @  White Sox,Rain,69°,10.7 mph,"L to R, Strong",STL,CWS,78,2025-6-18,0,0
+10,Brewers  @  Cubs,Rain,68°,9.8 mph,"In, Weak",MIL,CHC,12,2025-6-18,0,0
+11,Royals  @  Rangers,Mostly Clear,93°,12.5 mph,"R to L, Strong",KC,TEX,0,2025-6-18,1,0
+12,Guardians  @  Giants,Clear,67°,11.6 mph,"Out, Strong",CLE,SF,0,2025-6-18,0,0
 13,Astros  @  Athletics,Clear,99°,7.2 mph,"Out, Weak",HOU,OAK,0,2025-6-18,0,0
 14,Padres  @  Dodgers,Clear,78°,7.2 mph,"Out, Weak",SD,LAD,0,2025-6-18,0,0
