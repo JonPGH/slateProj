@@ -1,12 +1,12 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Mariners  @  Cubs,Overcast,78°,9.8 mph,"Out, Weak",SEA,CHC,28,2025-6-20,0,0
-1,Rangers  @  Pirates,Mostly Cloudy,83°,8.0 mph,"Out, Weak",TEX,PIT,0,2025-6-20,0,0
+1,Rangers  @  Pirates,Mostly Cloudy,83°,8.0 mph,"Out, Weak",TEX,PIT,5,2025-6-20,0,0
 2,Tigers  @  Rays,Rain,83°,3.6 mph,None,DET,TB,33,2025-6-20,0,0
 3,Orioles  @  Yankees,Mostly Clear,83°,12.5 mph,"Out, Strong",BAL,NYY,0,2025-6-20,0,0
-4,White Sox  @  Blue Jays,Partly Cloudy,76°,7.2 mph,"L to R, Weak",CWS,TOR,0,2025-6-20,1,0
-5,Braves  @  Marlins,Mostly Clear,86°,8.0 mph,"In, Weak",ATL,MIA,0,2025-6-20,1,0
+4,White Sox  @  Blue Jays,Mostly Clear,76°,7.2 mph,"L to R, Weak",CWS,TOR,0,2025-6-20,1,0
+5,Braves  @  Marlins,Clear,87°,8.0 mph,"In, Weak",ATL,MIA,0,2025-6-20,1,0
 6,Reds  @  Cardinals,Clear,93°,9.8 mph,"R to L, Weak",CIN,STL,0,2025-6-20,0,0
-7,Mets  @  Phillies,Mostly Clear,83°,8.0 mph,"L to R, Weak",NYM,PHI,0,2025-6-20,0,0
+7,Mets  @  Phillies,Mostly Clear,84°,8.0 mph,"L to R, Weak",NYM,PHI,0,2025-6-20,0,0
 8,Brewers  @  Twins,Mostly Clear,86°,11.6 mph,"R to L, Strong",MIL,MIN,0,2025-6-20,0,0
 9,Diamondbacks  @  Rockies,Breezy and Mostly Clear,97°,16.1 mph,"Out, Strong",ARI,COL,0,2025-6-20,0,0
 10,Astros  @  Angels,Clear,74°,8.0 mph,"Out, Weak",HOU,LAA,0,2025-6-20,0,0
