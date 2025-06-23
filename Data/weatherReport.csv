@@ -1,10 +1,10 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Rangers  @  Orioles,Mostly Clear,101°,3.6 mph,None,TEX,BAL,0,2025-6-23,0,0
-1,Braves  @  Mets,Mostly Clear,89°,8.0 mph,"Out, Weak",ATL,NYM,0,2025-6-23,0,0
+1,Braves  @  Mets,Partly Cloudy,89°,8.0 mph,"Out, Weak",ATL,NYM,0,2025-6-23,0,0
 2,Yankees  @  Reds,Clear,94°,3.6 mph,None,NYY,CIN,0,2025-6-23,0,0
-3,Mariners  @  Twins,Mostly Clear,79°,9.8 mph,"Out, Weak",SEA,MIN,0,2025-6-23,0,0
-4,Pirates  @  Brewers,Mostly Clear,93°,14.3 mph,"R to L, Strong",PIT,MIL,0,2025-6-23,0,0
-5,Diamondbacks  @  White Sox,Mostly Clear,92°,13.4 mph,"R to L, Strong",ARI,CWS,0,2025-6-23,0,0
+3,Mariners  @  Twins,Mostly Clear,79°,8.9 mph,"L to R, Weak",SEA,MIN,0,2025-6-23,0,0
+4,Pirates  @  Brewers,Mostly Clear,92°,14.3 mph,"R to L, Strong",PIT,MIL,0,2025-6-23,0,0
+5,Diamondbacks  @  White Sox,Mostly Clear,93°,13.4 mph,"R to L, Strong",ARI,CWS,0,2025-6-23,0,0
 6,Cubs  @  Cardinals,Mostly Clear,96°,7.2 mph,"R to L, Weak",CHC,STL,0,2025-6-23,0,0
 7,Red Sox  @  Angels,Clear,72°,8.0 mph,"Out, Weak",BOS,LAA,0,2025-6-23,0,0
 8,Nationals  @  Padres,Partly Cloudy,66°,8.0 mph,"L to R, Weak",WSH,SD,0,2025-6-23,0,0
