@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rangers  @  Orioles,Clear,102°,5.4 mph,"L to R, Weak",TEX,BAL,0,2025-6-24,0,0
-1,Blue Jays  @  Guardians,Mostly Clear,91°,6.3 mph,"L to R, Weak",TOR,CLE,0,2025-6-24,0,0
-2,Athletics  @  Tigers,Light Rain,91°,8.9 mph,"R to L, Weak",OAK,DET,28,2025-6-24,0,0
-3,Yankees  @  Reds,Mostly Clear,96°,3.6 mph,None,NYY,CIN,6,2025-6-24,0,0
-4,Braves  @  Mets,Mostly Clear,98°,8.0 mph,"L to R, Weak",ATL,NYM,0,2025-6-24,0,0
-5,Pirates  @  Brewers,Light Rain,74°,8.0 mph,"L to R, Weak",PIT,MIL,42,2025-6-24,0,0
-6,Mariners  @  Twins,Partly Cloudy,78°,6.3 mph,"In, Weak",SEA,MIN,0,2025-6-24,0,0
-7,Rays  @  Royals,Possible Light Rain,89°,8.0 mph,"Out, Weak",TB,KC,15,2025-6-24,0,0
-8,Diamondbacks  @  White Sox,Partly Cloudy,78°,8.0 mph,"L to R, Weak",ARI,CWS,19,2025-6-24,0,0
-9,Cubs  @  Cardinals,Partly Cloudy,92°,4.5 mph,None,CHC,STL,28,2025-6-24,0,0
-10,Phillies  @  Astros,Partly Cloudy,88°,8.9 mph,"Out, Weak",PHI,HOU,0,2025-6-24,1,0
-11,Dodgers  @  Rockies,Possible Light Rain,74°,8.0 mph,"R to L, Weak",LAD,COL,0,2025-6-24,0,0
-12,Red Sox  @  Angels,Clear,72°,8.9 mph,"Out, Weak",BOS,LAA,0,2025-6-24,0,0
-13,Nationals  @  Padres,Mostly Clear,67°,8.0 mph,"L to R, Weak",WSH,SD,0,2025-6-24,0,0
-14,Marlins  @  Giants,Mostly Clear,56°,11.6 mph,"Out, Strong",MIA,SF,0,2025-6-24,0,0
+0,Rangers  @  Orioles,Clear,102°,4.5 mph,None,TEX,BAL,0,2025-6-24,0,0
+1,Blue Jays  @  Guardians,Mostly Clear,91°,5.4 mph,"L to R, Weak",TOR,CLE,0,2025-6-24,0,0
+2,Athletics  @  Tigers,Light Rain,90°,9.8 mph,"R to L, Weak",OAK,DET,25,2025-6-24,0,0
+3,Yankees  @  Reds,Mostly Clear,95°,4.5 mph,None,NYY,CIN,0,2025-6-24,0,0
+4,Braves  @  Mets,Clear,99°,8.0 mph,"L to R, Weak",ATL,NYM,0,2025-6-24,0,0
+5,Pirates  @  Brewers,Possible Light Rain,76°,7.2 mph,"L to R, Weak",PIT,MIL,22,2025-6-24,0,0
+6,Mariners  @  Twins,Partly Cloudy,78°,6.3 mph,"L to R, Weak",SEA,MIN,0,2025-6-24,0,0
+7,Rays  @  Royals,Partly Cloudy,91°,8.0 mph,"Out, Weak",TB,KC,9,2025-6-24,0,0
+8,Diamondbacks  @  White Sox,Partly Cloudy,79°,7.2 mph,"L to R, Weak",ARI,CWS,17,2025-6-24,0,0
+9,Cubs  @  Cardinals,Partly Cloudy,94°,4.5 mph,None,CHC,STL,10,2025-6-24,0,0
+10,Phillies  @  Astros,Possible Drizzle,88°,8.9 mph,"Out, Weak",PHI,HOU,0,2025-6-24,1,0
+11,Dodgers  @  Rockies,Light Rain,73°,7.2 mph,"R to L, Weak",LAD,COL,0,2025-6-24,0,0
+12,Red Sox  @  Angels,Clear,73°,8.9 mph,"Out, Weak",BOS,LAA,0,2025-6-24,0,0
+13,Nationals  @  Padres,Mostly Clear,68°,8.0 mph,"L to R, Weak",WSH,SD,0,2025-6-24,0,0
+14,Marlins  @  Giants,Mostly Clear,57°,11.6 mph,"Out, Strong",MIA,SF,0,2025-6-24,0,0
