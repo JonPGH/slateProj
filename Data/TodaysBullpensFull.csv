@@ -6,7 +6,6 @@
 7,BAL,Keegan Akin,669211,L
 8,BAL,Matt Bowman,621199,R
 9,BAL,Scott Blewett,656240,R
-10,BAL,Seranthony Dominguez,622554,R
 12,BAL,Yennier Cano,666974,R
 13,CIN,Alexis Diaz,664747,R
 16,CIN,Brent Suter,608718,L
@@ -15,14 +14,12 @@
 20,CIN,Ian Gibaut,664139,R
 23,CIN,Scott Barlow,605130,R
 24,CIN,Taylor Rogers,573124,L
-25,CIN,Tony Santillan,663574,R
 26,NYM,A.J. Minter,621345,L
 28,NYM,Danny Young,664849,L
 30,NYM,Edwin Diaz,621242,R
 32,NYM,Huascar Brazoban,623211,R
 33,NYM,Jose Butto,676130,R
 34,NYM,Justin Hagenman,663795,R
-36,NYM,Reed Garrett,657585,R
 37,NYM,Ryne Stanek,592773,R
 39,MIA,Anthony Bender,669622,R
 40,MIA,Anthony Veneziano,685107,L
@@ -59,9 +56,9 @@
 88,PHI,Taijuan Walker,592836,R
 89,PHI,Tanner Banks,621383,L
 93,PIT,Caleb Ferguson,657571,L
-94,PIT,Carmen Mlodzinski,669387,R
 95,PIT,Chase Shugart,663767,R
 96,PIT,Dennis Santana,642701,R
+97,PIT,Joey Wentz,666214,L
 98,PIT,Justin Lawrence,664875,R
 99,PIT,Kyle Nicolas,693312,R
 102,PIT,Ryan Borucki,621366,L
@@ -77,8 +74,8 @@
 117,NYY,Carlos Carrasco,471911,R
 120,NYY,Devin Williams,642207,R
 121,NYY,Fernando Cruz,518585,R
+122,NYY,Ian Hamilton,641656,R
 123,NYY,Luke Weaver,596133,R
-124,NYY,Mark Leiter Jr.,643410,R
 127,NYY,Tim Hill,657612,L
 130,DET,Beau Brieske,689225,R
 131,DET,Brant Hurter,676428,L
@@ -121,6 +118,7 @@
 194,MIL,Tyler Alexander,641302,L
 195,BOS,Aroldis Chapman,547973,L
 196,BOS,Brennan Bernardino,657514,L
+198,BOS,Garrett Whitlock,676477,R
 199,BOS,Greg Weissert,669711,R
 201,BOS,Justin Slaten,686580,R
 202,BOS,Justin Wilson,458677,L
@@ -169,7 +167,6 @@
 274,CWS,Bryse Wilson,669060,R
 275,CWS,Cam Booser,592155,L
 278,CWS,Jordan Leasure,673929,R
-280,CWS,Mike Vasil,678024,R
 281,CWS,Penn Murfee,682171,R
 284,CWS,Steven Wilson,621051,R
 285,CWS,Tyler Gilbert,656457,L
@@ -191,7 +188,6 @@
 312,TEX,Caleb Boushley,676961,R
 313,TEX,Chris Martin,455119,R
 314,TEX,Hoby Milner,571948,L
-315,TEX,Jacob Latz,656641,L
 316,TEX,Jacob Webb,657097,R
 319,TEX,Luke Jackson,592426,R
 322,TEX,Robert Garcia,676395,L
@@ -216,6 +212,7 @@
 355,SD,Jeremiah Estrada,669093,R
 357,SD,Logan Gillaspie,670810,R
 361,SD,Robert Suarez,663158,R
+362,SD,Wandy Peralta,593974,L
 363,SD,Yuki Matsui,673513,L
 365,CHC,Brad Keller,641745,R
 366,CHC,Caleb Thielbar,573204,L
