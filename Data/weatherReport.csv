@@ -1,10 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Athletics  @  Tigers,Mostly Clear,85°,6.3 mph,"R to L, Weak",OAK,DET,0,2025-6-26,0,0
-1,Blue Jays  @  Guardians,Mostly Clear,85°,5.4 mph,"L to R, Weak",TOR,CLE,0,2025-6-26,0,0
-2,Mariners  @  Twins,Light Rain,63°,6.3 mph,"In, Weak",SEA,MIN,48,2025-6-26,0,0
-3,Phillies  @  Astros,Mostly Clear,87°,5.4 mph,"Out, Weak",PHI,HOU,13,2025-6-26,1,1
-4,Rays  @  Royals,Mostly Clear,89°,13.4 mph,"Out, Strong",TB,KC,0,2025-6-26,0,0
-5,Cubs  @  Cardinals,Mostly Clear,92°,6.3 mph,"Out, Weak",CHC,STL,0,2025-6-26,0,0
-6,Dodgers  @  Rockies,Clear,79°,5.4 mph,"R to L, Weak",LAD,COL,0,2025-6-26,0,0
-7,Marlins  @  Giants,Mostly Clear,57°,6.3 mph,"R to L, Weak",MIA,SF,0,2025-6-26,0,0
-8,Braves  @  Mets,Partly Cloudy,76°,13.4 mph,"R to L, Strong",ATL,NYM,0,2025-6-26,0,0
+0,Mets  @  Pirates,Rain,82°,6.3 mph,"R to L, Weak",NYM,PIT,26,2025-6-27,0,0
+1,Athletics  @  Yankees,Mostly Cloudy,70°,11.6 mph,"In, Strong",OAK,NYY,0,2025-6-27,0,0
+2,Rays  @  Orioles,Possible Drizzle,77°,8.0 mph,"R to L, Weak",TB,BAL,8,2025-6-27,0,0
+3,Twins  @  Tigers,Possible Drizzle,87°,10.7 mph,"R to L, Strong",MIN,DET,19,2025-6-27,0,0
+4,Blue Jays  @  Red Sox,Partly Cloudy,69°,8.0 mph,"R to L, Weak",TOR,BOS,0,2025-6-27,0,0
+5,Padres  @  Reds,Mostly Clear,90°,7.2 mph,"R to L, Weak",SD,CIN,6,2025-6-27,0,0
+6,Cardinals  @  Guardians,Possible Drizzle,87°,8.9 mph,"Out, Weak",STL,CLE,17,2025-6-27,0,0
+7,Phillies  @  Braves,Possible Light Rain,83°,4.5 mph,None,PHI,ATL,19,2025-6-27,0,0
+8,Giants  @  White Sox,Partly Cloudy,85°,10.7 mph,"R to L, Strong",SF,CWS,0,2025-6-27,0,0
+9,Mariners  @  Rangers,Partly Cloudy,93°,8.0 mph,"R to L, Weak",SEA,TEX,0,2025-6-27,1,0
+10,Dodgers  @  Royals,Possible Light Rain,88°,6.3 mph,"Out, Weak",LAD,KC,0,2025-6-27,0,0
+11,Cubs  @  Astros,Partly Cloudy,87°,8.0 mph,"Out, Weak",CHC,HOU,0,2025-6-27,1,0
+12,Rockies  @  Brewers,Mostly Clear,80°,10.7 mph,"Out, Strong",COL,MIL,0,2025-6-27,0,0
+13,Nationals  @  Angels,Clear,78°,7.2 mph,"Out, Weak",WSH,LAA,0,2025-6-27,0,0
+14,Marlins  @  Diamondbacks,Dry and Clear,106°,8.0 mph,"L to R, Weak",MIA,ARI,0,2025-6-27,1,0
