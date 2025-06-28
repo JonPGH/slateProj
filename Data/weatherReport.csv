@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Athletics  @  Yankees,Mostly Cloudy,75°,6.3 mph,"Out, Weak",OAK,NYY,0,2025-6-28,0,0
-1,Twins  @  Tigers,Mostly Clear,80°,8.9 mph,"R to L, Weak",MIN,DET,0,2025-6-28,0,0
-2,Mariners  @  Rangers,Mostly Clear,93°,8.0 mph,"R to L, Weak",SEA,TEX,0,2025-6-28,1,0
-3,Mets  @  Pirates,Possible Light Rain,86°,8.9 mph,"Out, Weak",NYM,PIT,23,2025-6-28,0,0
+0,Athletics  @  Yankees,Mostly Cloudy,74°,6.3 mph,"Out, Weak",OAK,NYY,0,2025-6-28,0,0
+1,Twins  @  Tigers,Mostly Clear,81°,8.9 mph,"R to L, Weak",MIN,DET,0,2025-6-28,0,0
+2,Mariners  @  Rangers,Partly Cloudy,94°,8.0 mph,"R to L, Weak",SEA,TEX,0,2025-6-28,1,0
+3,Mets  @  Pirates,Possible Light Rain,86°,8.9 mph,"Out, Weak",NYM,PIT,22,2025-6-28,0,0
 4,Rays  @  Orioles,Mostly Clear,91°,5.4 mph,"Out, Weak",TB,BAL,0,2025-6-28,0,0
-5,Marlins  @  Diamondbacks,Clear,104°,3.6 mph,None,MIA,ARI,0,2025-6-28,1,0
-6,Dodgers  @  Royals,Mostly Clear,88°,8.9 mph,"R to L, Weak",LAD,KC,0,2025-6-28,0,0
-7,Rockies  @  Brewers,Mostly Clear,80°,6.3 mph,"In, Weak",COL,MIL,0,2025-6-28,0,0
+5,Marlins  @  Diamondbacks,Clear,103°,3.6 mph,None,MIA,ARI,0,2025-6-28,1,0
+6,Dodgers  @  Royals,Mostly Clear,89°,8.9 mph,"R to L, Weak",LAD,KC,0,2025-6-28,0,0
+7,Rockies  @  Brewers,Mostly Clear,81°,6.3 mph,"In, Weak",COL,MIL,0,2025-6-28,0,0
 8,Blue Jays  @  Red Sox,Overcast,73°,8.0 mph,"Out, Weak",TOR,BOS,0,2025-6-28,0,0
 9,Giants  @  White Sox,Clear,78°,7.2 mph,"In, Weak",SF,CWS,0,2025-6-28,0,0
-10,Padres  @  Reds,Partly Cloudy,88°,6.3 mph,"R to L, Weak",SD,CIN,15,2025-6-28,0,0
-11,Cardinals  @  Guardians,Mostly Clear,81°,8.9 mph,"L to R, Weak",STL,CLE,0,2025-6-28,0,0
-12,Cubs  @  Astros,Mostly Clear,90°,8.0 mph,"Out, Weak",CHC,HOU,6,2025-6-28,1,0
+10,Padres  @  Reds,Possible Drizzle,89°,6.3 mph,"Out, Weak",SD,CIN,20,2025-6-28,0,0
+11,Cardinals  @  Guardians,Partly Cloudy,81°,8.9 mph,"L to R, Weak",STL,CLE,0,2025-6-28,0,0
+12,Cubs  @  Astros,Mostly Clear,90°,8.0 mph,"Out, Weak",CHC,HOU,7,2025-6-28,1,0
 13,Phillies  @  Braves,Possible Drizzle,85°,5.4 mph,"R to L, Weak",PHI,ATL,8,2025-6-28,0,0
 14,Nationals  @  Angels,Clear,80°,8.0 mph,"Out, Weak",WSH,LAA,0,2025-6-28,0,0
