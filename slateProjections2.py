@@ -222,8 +222,12 @@ if check_password():
         bat_hitters = pd.read_csv(f'{file_path}/bat_hitters.csv')
         bat_pitchers = pd.read_csv(f'{file_path}/bat_pitchers.csv')
         bet_tracker = pd.read_csv(f'{file_path}/bet_tracker.csv')
+        base_sched = pd.read_csv(f'{file_path}/upcoming_schedule.csv')
+        upcoming_proj = pd.read_csv(f'{file_path}/next10projections.csv')
+        upcoming_p_scores = pd.read_csv(f'{file_path}/upcoming_p_schedule_scores.csv')
+        mlbplayerinfo = pd.read_csv(f'{file_path}/mlbplayerinfo.csv')
 
-        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker
+        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -775,7 +779,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker = load_data()
+    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -840,7 +844,7 @@ if check_password():
     # Sidebar navigation
     st.sidebar.image(logo, width=150)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -2640,5 +2644,65 @@ if check_password():
                     """, unsafe_allow_html=True)
                 st.plotly_chart(line_plot, use_container_width=False,width=50)
 
+    def sp_grade_color_score(val):
+        try:
+            score = float(val)
+            if score > 100:
+                intensity = min((score - 100) / 40, 1)  # Normalize to 0-1 scale, cap at 50 points above 100
+                color = f'rgba(144, 238, 144, {0.3 + 0.7 * intensity})'  # Light green with varying opacity
+            elif score < 90:
+                intensity = min((100 - score) / 50, 1)  # Normalize to 0-1 scale, cap at 50 points below 100
+                color = f'rgba(255, 182, 193, {0.3 + 0.7 * intensity})'  # Light pink/red with varying opacity
+            else:
+                color = 'rgba(245, 245, 245, 1)'  # Neutral light gray for 100
+            
+            return f'background-color: {color}; color: black;'
+        except:
+            return ''  # Return empty string for non-numeric values
 
+    if tab == "SP Planner":
+        st.markdown("nbsp;<h1><center>Upcoming Strength of Schedule Analysis</h1></center>&nbsp;",unsafe_allow_html=True)
+        
+        col1, col2 = st.columns([1,1])
+        with col1:
+            st.markdown("<h3>Softest Upcoming Schedules</h3>",unsafe_allow_html=True)
+            top_hits = upcoming_p_scores[upcoming_p_scores['Score']>=120][['Pitcher','Team','GS','Score','Matchups']]
+            top_hits['Score'] = top_hits['Score'].astype(float).astype(int)
+            styled_top_hits = top_hits.style.applymap(sp_grade_color_score, subset=['Score'])
+
+            st.dataframe(styled_top_hits, hide_index=True, height=400, width=900)
+
+        with col2:
+            st.markdown("<h3>Toughest Upcoming Schedules</h3>",unsafe_allow_html=True)
+            bot_hits = upcoming_p_scores[upcoming_p_scores['Score']<=80][['Pitcher','Team','GS','Score','Matchups']]
+            bot_hits['Score'] = bot_hits['Score'].astype(float).astype(int)
+            styled_bot_hits = bot_hits.style.applymap(sp_grade_color_score, subset=['Score'])
+            st.dataframe(styled_bot_hits, hide_index=True, height=400, width=900)
+
+        col1, col2 = st.columns([1,1])
+        with col1:
+            st.markdown("<h3>Search for a Pitcher</h3>", unsafe_allow_html=True)
+            pitcher_name = st.text_input("Enter Pitcher Name:")
+            if pitcher_name:
+                # Case-insensitive search for pitcher name
+                search_result = upcoming_p_scores[upcoming_p_scores['Pitcher'].str.contains(pitcher_name, case=False, na=False)][['Pitcher','Team','GS','Score','Matchups']]
+                if not search_result.empty:
+                    search_result['Score'] = search_result['Score'].astype(float).astype(int)
+                    styled_search_result = search_result.style.applymap(sp_grade_color_score, subset=['Score'])
+                    st.dataframe(styled_search_result, hide_index=True, width=900)
+                else:
+                    st.write("No matching pitcher found.")
+        with col2:
+
+            p_hand_dict = dict(zip(mlbplayerinfo.Player, mlbplayerinfo.PitchSide))
+            st.markdown("<h3>Filter by Opponent</h3>", unsafe_allow_html=True)
+            # Get unique OPP values and sort them for better UX
+            opp_options = sorted(base_sched['OPP'].unique())
+            # Create a dropdown for selecting an OPP
+            selected_opp = st.selectbox("Select Opponent:", opp_options)
+            # Filter base_sched based on selected OPP
+            base_sched['Hand'] = base_sched['Pitcher'].map(p_hand_dict)
+            filtered_sched = base_sched[base_sched['OPP'] == selected_opp][['DATE','GAME','TIME','Pitcher','Hand','TEAM','OPP']]
+            # Display the filtered dataframe
+            st.dataframe(filtered_sched, hide_index=True, width=900)
 
