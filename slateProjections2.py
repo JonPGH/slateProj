@@ -2661,7 +2661,7 @@ if check_password():
             return ''  # Return empty string for non-numeric values
 
     if tab == "SP Planner":
-        st.markdown("nbsp;<h1><center>Upcoming Strength of Schedule Analysis</h1></center>&nbsp;",unsafe_allow_html=True)
+        st.markdown("&nbsp;<h1><center>Upcoming Strength of Schedule Analysis</h1></center>&nbsp;",unsafe_allow_html=True)
         
         col1, col2 = st.columns([1,1])
         with col1:
