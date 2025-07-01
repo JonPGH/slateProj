@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Yankees  @  Blue Jays,Partly Cloudy,84°,8.9 mph,"L to R, Weak",NYY,TOR,5,2025-7-1,1,0
-1,Padres  @  Phillies,Rain,82°,8.0 mph,"L to R, Weak",SD,PHI,58,2025-7-1,0,0
-2,Cardinals  @  Pirates,Overcast,76°,3.6 mph,None,STL,PIT,11,2025-7-1,0,0
-3,Twins  @  Marlins,Partly Cloudy,85°,7.2 mph,"In, Weak",MIN,MIA,15,2025-7-1,1,1
-4,Tigers  @  Nationals,Rain,80°,8.0 mph,"Out, Weak",DET,WSH,49,2025-7-1,0,0
-5,Athletics  @  Rays,Possible Light Rain,83°,8.0 mph,"Out, Weak",OAK,TB,16,2025-7-1,0,0
-6,Brewers  @  Mets,Drizzle,81°,9.8 mph,"L to R, Weak",MIL,NYM,33,2025-7-1,0,0
-7,Reds  @  Red Sox,Possible Drizzle,85°,9.8 mph,"Out, Weak",CIN,BOS,12,2025-7-1,0,0
-8,Angels  @  Braves,Rain,81°,7.2 mph,"R to L, Weak",LAA,ATL,39,2025-7-1,0,0
-9,Orioles  @  Rangers,Partly Cloudy,91°,4.5 mph,None,BAL,TEX,0,2025-7-1,1,0
+0,Yankees  @  Blue Jays,Partly Cloudy,84°,8.9 mph,"L to R, Weak",NYY,TOR,0,2025-7-1,1,0
+1,Padres  @  Phillies,Rain,83°,8.0 mph,"L to R, Weak",SD,PHI,40,2025-7-1,0,0
+2,Cardinals  @  Pirates,Mostly Cloudy,76°,3.6 mph,None,STL,PIT,7,2025-7-1,0,0
+3,Twins  @  Marlins,Possible Drizzle,84°,7.2 mph,"In, Weak",MIN,MIA,12,2025-7-1,1,1
+4,Tigers  @  Nationals,Rain,79°,8.0 mph,"L to R, Weak",DET,WSH,71,2025-7-1,0,0
+5,Athletics  @  Rays,Possible Light Rain,83°,8.0 mph,"Out, Weak",OAK,TB,17,2025-7-1,0,0
+6,Brewers  @  Mets,Light Rain,80°,9.8 mph,"Out, Weak",MIL,NYM,32,2025-7-1,0,0
+7,Reds  @  Red Sox,Possible Drizzle,85°,9.8 mph,"Out, Weak",CIN,BOS,21,2025-7-1,0,0
+8,Angels  @  Braves,Rain,81°,7.2 mph,"R to L, Weak",LAA,ATL,32,2025-7-1,0,0
+9,Orioles  @  Rangers,Partly Cloudy,92°,4.5 mph,None,BAL,TEX,0,2025-7-1,1,0
 10,Guardians  @  Cubs,Clear,80°,4.5 mph,None,CLE,CHC,0,2025-7-1,0,0
-11,Astros  @  Rockies,Partly Cloudy,89°,8.0 mph,"Out, Weak",HOU,COL,0,2025-7-1,0,0
-12,Giants  @  Diamondbacks,Dry and Mostly Clear,111°,5.6 mph,"R to L, Weak",SF,ARI,0,2025-7-1,1,0
+11,Astros  @  Rockies,Partly Cloudy,89°,8.0 mph,"L to R, Weak",HOU,COL,0,2025-7-1,0,0
+12,Giants  @  Diamondbacks,Dry and Clear,110°,5.6 mph,"Out, Weak",SF,ARI,0,2025-7-1,1,0
 13,Royals  @  Mariners,Clear,76°,8.3 mph,"L to R, Weak",KC,SEA,0,2025-7-1,1,0
 14,White Sox  @  Dodgers,Clear,73°,8.0 mph,"Out, Weak",CWS,LAD,0,2025-7-1,0,0
