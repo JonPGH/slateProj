@@ -1,13 +1,13 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Yankees  @  Blue Jays,Possible Drizzle,84°,9.8 mph,"L to R, Weak",NYY,TOR,6,2025-7-1,1,0
-1,Cardinals  @  Pirates,Mostly Cloudy,77°,3.6 mph,None,STL,PIT,13,2025-7-1,0,0
-2,Twins  @  Marlins,Mostly Cloudy,84°,7.2 mph,"In, Weak",MIN,MIA,9,2025-7-1,1,0
-3,Athletics  @  Rays,Partly Cloudy,83°,7.2 mph,"Out, Weak",OAK,TB,9,2025-7-1,0,0
-4,Reds  @  Red Sox,Partly Cloudy,86°,8.9 mph,"Out, Weak",CIN,BOS,21,2025-7-1,0,0
-5,Angels  @  Braves,Drizzle,81°,7.2 mph,"R to L, Weak",LAA,ATL,25,2025-7-1,0,0
-6,Orioles  @  Rangers,Possible Light Rain,91°,4.5 mph,None,BAL,TEX,0,2025-7-1,1,0
-7,Guardians  @  Cubs,Clear,81°,4.5 mph,None,CLE,CHC,0,2025-7-1,0,0
-8,Astros  @  Rockies,Mostly Cloudy,86°,7.2 mph,"L to R, Weak",HOU,COL,0,2025-7-1,0,0
-9,Giants  @  Diamondbacks,Dry and Clear,110°,4.5 mph,None,SF,ARI,0,2025-7-1,1,0
-10,Royals  @  Mariners,Clear,77°,8.0 mph,"L to R, Weak",KC,SEA,0,2025-7-1,1,0
-11,White Sox  @  Dodgers,Clear,73°,8.0 mph,"Out, Weak",CWS,LAD,0,2025-7-1,0,0
+0,Yankees  @  Blue Jays,Possible Drizzle,84°,9.8 mph,"L to R, Weak",NYY,TOR,6,2025-7-2,1,0
+1,Cardinals  @  Pirates,Mostly Cloudy,77°,3.6 mph,None,STL,PIT,13,2025-7-2,0,0
+2,Twins  @  Marlins,Mostly Cloudy,84°,7.2 mph,"In, Weak",MIN,MIA,9,2025-7-2,1,0
+3,Athletics  @  Rays,Partly Cloudy,83°,7.2 mph,"Out, Weak",OAK,TB,9,2025-7-2,0,0
+4,Reds  @  Red Sox,Partly Cloudy,86°,8.9 mph,"Out, Weak",CIN,BOS,21,2025-7-2,0,0
+5,Angels  @  Braves,Drizzle,81°,7.2 mph,"R to L, Weak",LAA,ATL,25,2025-7-2,0,0
+6,Orioles  @  Rangers,Possible Light Rain,91°,4.5 mph,None,BAL,TEX,0,2025-7-2,1,0
+7,Guardians  @  Cubs,Clear,81°,4.5 mph,None,CLE,CHC,0,2025-7-2,0,0
+8,Astros  @  Rockies,Mostly Cloudy,86°,7.2 mph,"L to R, Weak",HOU,COL,0,2025-7-2,0,0
+9,Giants  @  Diamondbacks,Dry and Clear,110°,4.5 mph,None,SF,ARI,0,2025-7-2,1,0
+10,Royals  @  Mariners,Clear,77°,8.0 mph,"L to R, Weak",KC,SEA,0,2025-7-2,1,0
+11,White Sox  @  Dodgers,Clear,73°,8.0 mph,"Out, Weak",CWS,LAD,0,2025-7-2,0,0
