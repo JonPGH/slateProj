@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Red Sox  @  Nationals,Clear,80°,3.6 mph,None,BOS,WSH,0,2025-7-4,0,0
-1,Reds  @  Phillies,Clear,80°,5.4 mph,"In, Weak",CIN,PHI,0,2025-7-4,0,0
-2,Cardinals  @  Cubs,Mostly Cloudy,83°,6.3 mph,"In, Weak",STL,CHC,10,2025-7-4,0,0
-3,Yankees  @  Mets,Clear,82°,7.2 mph,"L to R, Weak",NYY,NYM,0,2025-7-4,0,0
+0,Red Sox  @  Nationals,Clear,79°,3.6 mph,None,BOS,WSH,0,2025-7-4,0,0
+1,Reds  @  Phillies,Clear,80°,4.5 mph,None,CIN,PHI,0,2025-7-4,0,0
+2,Cardinals  @  Cubs,Mostly Cloudy,83°,6.3 mph,"In, Weak",STL,CHC,16,2025-7-4,0,0
+3,Yankees  @  Mets,Clear,82°,8.0 mph,"L to R, Weak",NYY,NYM,0,2025-7-4,0,0
 4,Pirates  @  Mariners,Partly Cloudy,64°,4.5 mph,None,PIT,SEA,0,2025-7-4,1,0
-5,Rays  @  Twins,Mostly Clear,91°,13.4 mph,"R to L, Strong",TB,MIN,0,2025-7-4,0,0
+5,Rays  @  Twins,Mostly Clear,91°,14.3 mph,"R to L, Strong",TB,MIN,0,2025-7-4,0,0
 6,Rangers  @  Padres,Clear,74°,8.3 mph,"L to R, Weak",TEX,SD,0,2025-7-4,0,0
-7,Angels  @  Blue Jays,Clear,78°,7.2 mph,"Out, Weak",LAA,TOR,0,2025-7-4,1,0
-8,Tigers  @  Guardians,Clear,85°,4.5 mph,None,DET,CLE,0,2025-7-4,0,0
-9,Brewers  @  Marlins,Light Rain,83°,8.0 mph,"R to L, Weak",MIL,MIA,33,2025-7-4,1,1
+7,Angels  @  Blue Jays,Clear,77°,6.3 mph,"Out, Weak",LAA,TOR,0,2025-7-4,1,0
+8,Tigers  @  Guardians,Mostly Clear,85°,3.6 mph,None,DET,CLE,0,2025-7-4,0,0
+9,Brewers  @  Marlins,Drizzle,83°,8.0 mph,"R to L, Weak",MIL,MIA,38,2025-7-4,1,1
 10,Orioles  @  Braves,Mostly Clear,91°,8.0 mph,"L to R, Weak",BAL,ATL,0,2025-7-4,0,0
-11,White Sox  @  Rockies,Mostly Clear,86°,7.2 mph,"R to L, Weak",CWS,COL,0,2025-7-4,0,0
+11,White Sox  @  Rockies,Mostly Clear,86°,8.0 mph,"R to L, Weak",CWS,COL,0,2025-7-4,0,0
 12,Astros  @  Dodgers,Clear,77°,8.9 mph,"Out, Weak",HOU,LAD,0,2025-7-4,0,0
-13,Royals  @  Diamondbacks,Clear,103°,5.4 mph,"L to R, Weak",KC,ARI,0,2025-7-4,1,0
-14,Giants  @  Athletics,Clear,82°,10.7 mph,"Out, Strong",SF,OAK,0,2025-7-4,0,0
+13,Royals  @  Diamondbacks,Clear,102°,4.5 mph,None,KC,ARI,0,2025-7-4,1,0
+14,Giants  @  Athletics,Clear,82°,11.6 mph,"Out, Strong",SF,OAK,0,2025-7-4,0,0
