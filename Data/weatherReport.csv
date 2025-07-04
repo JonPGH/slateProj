@@ -1,11 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Twins  @  Marlins,Mostly Cloudy,86°,9.8 mph,"R to L, Weak",MIN,MIA,17,2025-7-4,1,1
-1,Astros  @  Rockies,Mostly Clear,87°,4.5 mph,None,HOU,COL,0,2025-7-4,0,0
-2,Tigers  @  Nationals,Clear,87°,6.3 mph,"L to R, Weak",DET,WSH,0,2025-7-4,0,0
-3,Yankees  @  Blue Jays,Clear,77°,10.7 mph,"In, Weak",NYY,TOR,0,2025-7-4,1,0
-4,Brewers  @  Mets,Drizzle,80°,9.8 mph,"L to R, Weak",MIL,NYM,19,2025-7-4,0,0
-5,Angels  @  Braves,Mostly Clear,86°,6.3 mph,"Out, Weak",LAA,ATL,0,2025-7-4,0,0
-6,Guardians  @  Cubs,Clear,85°,4.5 mph,None,CLE,CHC,5,2025-7-4,0,0
-7,Giants  @  Diamondbacks,Clear,100°,5.4 mph,"Out, Weak",SF,ARI,5,2025-7-4,1,0
-8,Royals  @  Mariners,Mostly Clear,67°,8.0 mph,"L to R, Weak",KC,SEA,0,2025-7-4,1,0
-9,White Sox  @  Dodgers,Clear,72°,7.2 mph,"Out, Weak",CWS,LAD,0,2025-7-4,0,0
+0,Red Sox  @  Nationals,Clear,79°,3.6 mph,None,BOS,WSH,0,2025-7-4,0,0
+1,Reds  @  Phillies,Clear,80°,5.4 mph,"In, Weak",CIN,PHI,0,2025-7-4,0,0
+2,Cardinals  @  Cubs,Mostly Cloudy,84°,6.3 mph,"In, Weak",STL,CHC,7,2025-7-4,0,0
+3,Yankees  @  Mets,Clear,82°,7.4 mph,"L to R, Weak",NYY,NYM,0,2025-7-4,0,0
+4,Pirates  @  Mariners,Mostly Clear,64°,3.8 mph,None,PIT,SEA,0,2025-7-4,1,0
+5,Rays  @  Twins,Mostly Clear,91°,13.6 mph,"R to L, Strong",TB,MIN,0,2025-7-4,0,0
+6,Rangers  @  Padres,Mostly Clear,74°,7.4 mph,"L to R, Weak",TEX,SD,0,2025-7-4,0,0
+7,Angels  @  Blue Jays,Clear,78°,7.2 mph,"Out, Weak",LAA,TOR,0,2025-7-4,1,0
+8,Tigers  @  Guardians,Clear,85°,4.5 mph,None,DET,CLE,0,2025-7-4,0,0
+9,Brewers  @  Marlins,Light Rain,84°,7.2 mph,"R to L, Weak",MIL,MIA,31,2025-7-4,1,1
+10,Orioles  @  Braves,Mostly Clear,91°,8.0 mph,"L to R, Weak",BAL,ATL,0,2025-7-4,0,0
+11,White Sox  @  Rockies,Mostly Clear,87°,6.3 mph,"L to R, Weak",CWS,COL,0,2025-7-4,0,0
+12,Astros  @  Dodgers,Clear,76°,8.9 mph,"Out, Weak",HOU,LAD,0,2025-7-4,0,0
+13,Royals  @  Diamondbacks,Clear,102°,5.4 mph,"L to R, Weak",KC,ARI,0,2025-7-4,1,0
+14,Giants  @  Athletics,Clear,82°,10.7 mph,"Out, Strong",SF,OAK,0,2025-7-4,0,0
