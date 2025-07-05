@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rays  @  Twins,Mostly Cloudy,79°,8.9 mph,"Out, Weak",TB,MIN,15,2025-7-5,0,0
-1,Cardinals  @  Cubs,Clear,90°,9.8 mph,"Out, Weak",STL,CHC,0,2025-7-5,0,0
-2,Angels  @  Blue Jays,Mostly Clear,84°,8.0 mph,"Out, Weak",LAA,TOR,0,2025-7-5,1,0
-3,Red Sox  @  Nationals,Mostly Clear,87°,7.2 mph,"Out, Weak",BOS,WSH,0,2025-7-5,0,0
+0,Rays  @  Twins,Mostly Cloudy,79°,8.9 mph,"Out, Weak",TB,MIN,13,2025-7-5,0,0
+1,Cardinals  @  Cubs,Clear,90°,10.7 mph,"Out, Strong",STL,CHC,0,2025-7-5,0,0
+2,Angels  @  Blue Jays,Clear,83°,8.0 mph,"Out, Weak",LAA,TOR,0,2025-7-5,1,0
+3,Red Sox  @  Nationals,Clear,88°,6.3 mph,"Out, Weak",BOS,WSH,0,2025-7-5,0,0
 4,Reds  @  Phillies,Clear,87°,6.3 mph,"Out, Weak",CIN,PHI,0,2025-7-5,0,0
 5,Royals  @  Diamondbacks,Clear,100°,3.6 mph,None,KC,ARI,0,2025-7-5,1,0
-6,Orioles  @  Braves,Clear,92°,8.0 mph,"L to R, Weak",BAL,ATL,0,2025-7-5,0,0
-7,Brewers  @  Marlins,Possible Light Rain,86°,13.4 mph,"R to L, Strong",MIL,MIA,24,2025-7-5,1,1
-8,Yankees  @  Mets,Mostly Clear,86°,10.7 mph,"Out, Strong",NYY,NYM,0,2025-7-5,0,0
-9,Astros  @  Dodgers,Clear,81°,8.9 mph,"Out, Weak",HOU,LAD,0,2025-7-5,0,0
-10,Tigers  @  Guardians,Mostly Clear,88°,5.4 mph,"Out, Weak",DET,CLE,0,2025-7-5,0,0
-11,White Sox  @  Rockies,Mostly Cloudy,84°,8.0 mph,"In, Weak",CWS,COL,7,2025-7-5,0,0
-12,Rangers  @  Padres,Clear,73°,7.2 mph,"L to R, Weak",TEX,SD,0,2025-7-5,0,0
-13,Giants  @  Athletics,Clear,87°,7.2 mph,"Out, Weak",SF,OAK,0,2025-7-5,0,0
+6,Orioles  @  Braves,Mostly Clear,92°,8.0 mph,"L to R, Weak",BAL,ATL,0,2025-7-5,0,0
+7,Brewers  @  Marlins,Possible Light Rain,85°,13.4 mph,"R to L, Strong",MIL,MIA,20,2025-7-5,1,1
+8,Yankees  @  Mets,Mostly Clear,85°,9.8 mph,"Out, Weak",NYY,NYM,0,2025-7-5,0,0
+9,Astros  @  Dodgers,Clear,81°,8.0 mph,"Out, Weak",HOU,LAD,0,2025-7-5,0,0
+10,Tigers  @  Guardians,Mostly Clear,89°,5.4 mph,"Out, Weak",DET,CLE,0,2025-7-5,0,0
+11,White Sox  @  Rockies,Mostly Cloudy,84°,8.0 mph,"R to L, Weak",CWS,COL,7,2025-7-5,0,0
+12,Rangers  @  Padres,Mostly Clear,73°,7.2 mph,"L to R, Weak",TEX,SD,0,2025-7-5,0,0
+13,Giants  @  Athletics,Clear,88°,6.3 mph,"Out, Weak",SF,OAK,0,2025-7-5,0,0
 14,Pirates  @  Mariners,Mostly Clear,69°,7.2 mph,"L to R, Weak",PIT,SEA,0,2025-7-5,1,0
