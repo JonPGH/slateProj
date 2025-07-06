@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Orioles  @  Braves,Mostly Clear,82°,1.8 mph,None,BAL,ATL,0,2025-7-6,0,0
-1,Red Sox  @  Nationals,Mostly Clear,85°,5.4 mph,"Out, Weak",BOS,WSH,0,2025-7-6,0,0
-2,Reds  @  Phillies,Mostly Clear,85°,5.4 mph,"Out, Weak",CIN,PHI,0,2025-7-6,0,0
+0,Orioles  @  Braves,Mostly Clear,81°,1.8 mph,None,BAL,ATL,0,2025-7-6,0,0
+1,Red Sox  @  Nationals,Mostly Clear,86°,5.4 mph,"Out, Weak",BOS,WSH,0,2025-7-6,0,0
+2,Reds  @  Phillies,Clear,85°,5.4 mph,"Out, Weak",CIN,PHI,0,2025-7-6,0,0
 3,Angels  @  Blue Jays,Clear,86°,12.5 mph,"L to R, Strong",LAA,TOR,0,2025-7-6,1,0
 4,Yankees  @  Mets,Mostly Clear,86°,10.7 mph,"Out, Strong",NYY,NYM,0,2025-7-6,0,0
-5,Brewers  @  Marlins,Partly Cloudy,86°,8.9 mph,"In, Weak",MIL,MIA,10,2025-7-6,1,0
+5,Brewers  @  Marlins,Partly Cloudy,86°,8.9 mph,"In, Weak",MIL,MIA,9,2025-7-6,1,0
 6,Tigers  @  Guardians,Clear,90°,8.9 mph,"Out, Weak",DET,CLE,0,2025-7-6,0,0
 7,Rays  @  Twins,Clear,78°,6.3 mph,"L to R, Weak",TB,MIN,0,2025-7-6,0,0
-8,White Sox  @  Rockies,Clear,84°,6.3 mph,"In, Weak",CWS,COL,0,2025-7-6,0,0
+8,White Sox  @  Rockies,Clear,85°,6.3 mph,"In, Weak",CWS,COL,0,2025-7-6,0,0
 9,Pirates  @  Mariners,Clear,66°,7.2 mph,"L to R, Weak",PIT,SEA,0,2025-7-6,1,0
 10,Astros  @  Dodgers,Clear,79°,5.4 mph,"Out, Weak",HOU,LAD,0,2025-7-6,0,0
 11,Royals  @  Diamondbacks,Clear,106°,3.6 mph,None,KC,ARI,0,2025-7-6,1,0
-12,Cardinals  @  Cubs,Rain,77°,10.1 mph,"L to R, Strong",STL,CHC,54,2025-7-6,0,0
+12,Cardinals  @  Cubs,Rain,77°,10.1 mph,"L to R, Strong",STL,CHC,59,2025-7-6,0,0
 13,Rangers  @  Padres,Mostly Clear,72°,7.2 mph,"L to R, Weak",TEX,SD,0,2025-7-6,0,0
 14,Giants  @  Athletics,Clear,90°,8.0 mph,"Out, Weak",SF,OAK,0,2025-7-6,0,0
