@@ -1,6 +1,9 @@
 ,HomeTeam,Umpire,Today,K Boost,BB Boost,UmpK,UmpBB
 1,PHI,Lance Barksdale,CIN @ PHI,0.9,1.07,0.95,1.0350000000000001
-2,WSH,Ben May,BOS @ WSH,0.99,0.94,0.995,0.97
-3,CLE,Jeremie Rehak,DET @ CLE,1.04,0.99,1.02,0.995
-4,ATL,Erich Bacchus,BAL @ ATL,0.96,0.95,0.98,0.975
-5,MIN,Jacob Metz,TB @ MIN,1.04,0.96,1.02,0.98
+2,MIA,Ron Kulpa,MIL @ MIA,0.97,0.89,0.985,0.9450000000000001
+3,WSH,Ben May,BOS @ WSH,0.99,0.94,0.995,0.97
+4,CLE,Jeremie Rehak,DET @ CLE,1.04,0.99,1.02,0.995
+5,ATL,Erich Bacchus,BAL @ ATL,0.96,0.95,0.98,0.975
+6,TOR,Charlie Ramos,LAA @ TOR,0.98,1.02,0.99,1.01
+7,NYM,John Bacon,NYY @ NYM,0.99,0.99,0.995,0.995
+8,MIN,Jacob Metz,TB @ MIN,1.04,0.96,1.02,0.98
