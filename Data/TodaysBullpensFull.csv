@@ -23,10 +23,10 @@
 32,NYM,Huascar Brazoban,623211,R
 33,NYM,Jose Butto,676130,R
 36,NYM,Reed Garrett,657585,R
-37,NYM,Ryne Stanek,592773,R
 39,MIA,Anthony Bender,669622,R
 40,MIA,Anthony Veneziano,685107,L
 42,MIA,Calvin Faucher,676534,R
+43,MIA,Connor Gillispie,687362,R
 45,MIA,George Soriano,666277,R
 46,MIA,Jesus Tinoco,622786,R
 47,MIA,Lake Bachar,669199,R
@@ -39,7 +39,6 @@
 60,STL,Phil Maton,664208,R
 61,STL,Ryan Fernandez,681676,R
 62,STL,Ryan Helsley,664854,R
-64,STL,Steven Matz,571927,L
 65,WSH,Brad Lord,695418,R
 66,WSH,Cole Henry,669371,R
 67,WSH,Colin Poche,621363,L
@@ -50,12 +49,12 @@
 73,WSH,Kyle Finnegan,640448,R
 74,WSH,Lucas Sims,608371,R
 79,PHI,Carlos Hernandez,672578,R
+82,PHI,Joe Ross,605452,R
 83,PHI,Jordan Romano,605447,R
 84,PHI,Jose Alvarado,621237,L
 85,PHI,Jose Ruiz,614179,R
 86,PHI,Matt Strahm,621381,L
 87,PHI,Orion Kerkering,689147,R
-88,PHI,Taijuan Walker,592836,R
 89,PHI,Tanner Banks,621383,L
 93,PIT,Caleb Ferguson,657571,L
 94,PIT,Carmen Mlodzinski,669387,R
@@ -69,7 +68,6 @@
 104,KC,Angel Zerpa,672582,L
 105,KC,Carlos Estevez,608032,R
 106,KC,Chris Stratton,608717,R
-108,KC,Daniel Lynch IV,663738,L
 109,KC,Evan Sisk,681895,L
 110,KC,John Schreiber,670167,R
 112,KC,Lucas Erceg,668674,R
@@ -77,6 +75,7 @@
 120,NYY,Devin Williams,642207,R
 121,NYY,Fernando Cruz,518585,R
 122,NYY,Ian Hamilton,641656,R
+123,NYY,Luke Weaver,596133,R
 124,NYY,Mark Leiter Jr.,643410,R
 127,NYY,Tim Hill,657612,L
 130,DET,Beau Brieske,689225,R
@@ -84,6 +83,7 @@
 135,DET,John Brebbia,605154,R
 136,DET,Keider Montero,672456,R
 140,DET,Tommy Kahnle,592454,R
+141,DET,Tyler Holton,663947,L
 142,DET,Will Vest,676684,R
 144,TOR,Brendon Little,663893,L
 145,TOR,Chad Green,643338,R
@@ -114,6 +114,7 @@
 187,MIL,Jared Koenig,657649,L
 188,MIL,Joel Payamps,606303,R
 191,MIL,Nick Mears,683232,R
+193,MIL,Trevor Megill,656730,R
 194,MIL,Tyler Alexander,641302,L
 195,BOS,Aroldis Chapman,547973,L
 196,BOS,Brennan Bernardino,657514,L
@@ -130,7 +131,6 @@
 215,ARI,Justin Martinez,679885,R
 217,ARI,Ryan Thompson,657044,R
 219,ARI,Shelby Miller,571946,R
-221,ATL,Aaron Bummer,607481,L
 224,ATL,Daysbel Hernandez,678226,R
 225,ATL,Dylan Lee,669276,L
 226,ATL,Enyel De Los Santos,660853,R
@@ -141,6 +141,7 @@
 237,SEA,Carlos Vargas,672841,R
 238,SEA,Casey Legumina,668984,R
 239,SEA,Collin Snider,676092,R
+240,SEA,Eduard Bazardo,660825,R
 242,SEA,Gabe Speier,642100,L
 245,SEA,Trent Thornton,663423,R
 246,SEA,Troy Taylor,700187,R
@@ -154,6 +155,7 @@
 258,HOU,Steven Okert,595345,L
 259,HOU,Tayler Scott,605463,R
 260,OAK,J.T. Ginn,669372,R
+262,OAK,Jason Alexander,669920,R
 264,OAK,Jose Leclerc,600917,R
 265,OAK,Justin Sterner,686993,R
 267,OAK,Mason Miller,695243,R
@@ -171,14 +173,15 @@
 285,CWS,Tyler Gilbert,656457,L
 286,LAD,Alex Vesia,681911,L
 287,LAD,Anthony Banda,607455,L
+288,LAD,Ben Casparius,676508,R
 289,LAD,Blake Treinen,595014,R
 290,LAD,Bobby Miller,676272,R
+292,LAD,Jack Dreyer,676263,L
 293,LAD,Kirby Yates,489446,R
 294,LAD,Luis Garcia,472610,R
 296,LAD,Tanner Scott,656945,L
 299,COL,Angel Chivilli,683409,R
 303,COL,Jake Bird,656234,R
-304,COL,Jimmy Herget,623474,R
 306,COL,Luis Peralta,678821,L
 308,COL,Scott Alexander,518397,L
 309,COL,Seth Halvorsen,678020,R
@@ -186,22 +189,18 @@
 311,COL,Victor Vodnik,680767,R
 312,TEX,Caleb Boushley,676961,R
 313,TEX,Chris Martin,455119,R
-314,TEX,Hoby Milner,571948,L
 315,TEX,Jacob Latz,656641,L
 316,TEX,Jacob Webb,657097,R
 319,TEX,Luke Jackson,592426,R
-322,TEX,Robert Garcia,676395,L
 323,TEX,Shawn Armstrong,542888,R
 325,LAA,Brock Burke,656271,L
 326,LAA,Garrett McDaniels,680729,L
 330,LAA,Kenley Jansen,445276,R
 332,LAA,Michael Darrell-Hicks,690382,R
-333,LAA,Reid Detmers,672282,L
 335,LAA,Ryan Zeferjahn,666171,R
 340,MIN,Cole Sands,663485,R
 341,MIN,Danny Coulombe,543056,L
 343,MIN,Griffin Jax,643377,R
-344,MIN,Jhoan Duran,661395,R
 346,MIN,Jorge Alcala,660896,R
 347,MIN,Justin Topa,623437,R
 348,MIN,Kody Funderburk,681892,L
@@ -214,7 +213,6 @@
 361,SD,Robert Suarez,663158,R
 362,SD,Wandy Peralta,593974,L
 363,SD,Yuki Matsui,673513,L
-365,CHC,Brad Keller,641745,R
 366,CHC,Caleb Thielbar,573204,L
 368,CHC,Daniel Palencia,694037,R
 369,CHC,Ethan Roberts,681799,R
