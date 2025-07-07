@@ -1,16 +1,11 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Orioles  @  Braves,Mostly Clear,82°,1.8 mph,None,BAL,ATL,0,2025-7-6,0,0
-1,Red Sox  @  Nationals,Mostly Clear,86°,5.4 mph,"Out, Weak",BOS,WSH,0,2025-7-6,0,0
-2,Reds  @  Phillies,Clear,85°,6.3 mph,"Out, Weak",CIN,PHI,0,2025-7-6,0,0
-3,Angels  @  Blue Jays,Clear,86°,12.5 mph,"Out, Strong",LAA,TOR,0,2025-7-6,1,0
-4,Yankees  @  Mets,Mostly Clear,86°,10.7 mph,"Out, Strong",NYY,NYM,0,2025-7-6,0,0
-5,Brewers  @  Marlins,Mostly Clear,87°,9.8 mph,"In, Weak",MIL,MIA,0,2025-7-6,1,0
-6,Tigers  @  Guardians,Clear,90°,9.8 mph,"Out, Weak",DET,CLE,0,2025-7-6,0,0
-7,Rays  @  Twins,Clear,79°,6.3 mph,"L to R, Weak",TB,MIN,0,2025-7-6,0,0
-8,White Sox  @  Rockies,Clear,86°,7.2 mph,"In, Weak",CWS,COL,0,2025-7-6,0,0
-9,Pirates  @  Mariners,Clear,66°,7.2 mph,"L to R, Weak",PIT,SEA,0,2025-7-6,1,0
-10,Astros  @  Dodgers,Clear,79°,5.4 mph,"Out, Weak",HOU,LAD,0,2025-7-6,0,0
-11,Royals  @  Diamondbacks,Clear,105°,3.6 mph,None,KC,ARI,0,2025-7-6,1,0
-12,Cardinals  @  Cubs,Rain,80°,10.7 mph,"In, Strong",STL,CHC,42,2025-7-6,0,0
-13,Rangers  @  Padres,Mostly Clear,72°,7.2 mph,"L to R, Weak",TEX,SD,0,2025-7-6,0,0
-14,Giants  @  Athletics,Clear,91°,8.9 mph,"Out, Weak",SF,OAK,0,2025-7-6,0,0
+0,Rays  @  Tigers,Mostly Cloudy,77°,8.0 mph,"L to R, Weak",TB,DET,0,2025-7-7,0,0
+1,Marlins  @  Reds,Light Rain,80°,4.5 mph,None,MIA,CIN,34,2025-7-7,0,0
+2,Rockies  @  Red Sox,Partly Cloudy,85°,10.7 mph,"Out, Strong",COL,BOS,0,2025-7-7,0,0
+3,Dodgers  @  Brewers,Partly Cloudy,74°,7.2 mph,"L to R, Weak",LAD,MIL,0,2025-7-7,0,0
+4,Pirates  @  Royals,Possible Light Rain,88°,4.5 mph,None,PIT,KC,11,2025-7-7,0,0
+5,Blue Jays  @  White Sox,Mostly Clear,75°,9.8 mph,"L to R, Weak",TOR,CWS,0,2025-7-7,0,0
+6,Guardians  @  Astros,Possible Light Rain,85°,6.3 mph,"Out, Weak",CLE,HOU,0,2025-7-7,1,0
+7,Rangers  @  Angels,Clear,79°,8.9 mph,"Out, Weak",TEX,LAA,0,2025-7-7,0,0
+8,Diamondbacks  @  Padres,Mostly Clear,72°,8.0 mph,"L to R, Weak",ARI,SD,0,2025-7-7,0,0
+9,Phillies  @  Giants,Clear,59°,12.5 mph,"Out, Strong",PHI,SF,0,2025-7-7,0,0
