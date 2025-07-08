@@ -1,11 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rays  @  Tigers,Partly Cloudy,78°,8.0 mph,"L to R, Weak",TB,DET,0,2025-7-7,0,0
-1,Marlins  @  Reds,Drizzle,80°,5.4 mph,"Out, Weak",MIA,CIN,26,2025-7-7,0,0
-2,Rockies  @  Red Sox,Mostly Clear,86°,10.7 mph,"Out, Strong",COL,BOS,0,2025-7-7,0,0
-3,Dodgers  @  Brewers,Mostly Clear,74°,8.0 mph,"L to R, Weak",LAD,MIL,0,2025-7-7,0,0
-4,Pirates  @  Royals,Mostly Clear,90°,4.5 mph,None,PIT,KC,0,2025-7-7,0,0
-5,Blue Jays  @  White Sox,Clear,76°,9.8 mph,"L to R, Weak",TOR,CWS,0,2025-7-7,0,0
-6,Guardians  @  Astros,Light Rain,85°,6.3 mph,"Out, Weak",CLE,HOU,0,2025-7-7,1,0
-7,Rangers  @  Angels,Clear,78°,8.9 mph,"Out, Weak",TEX,LAA,0,2025-7-7,0,0
-8,Diamondbacks  @  Padres,Mostly Clear,71°,8.0 mph,"L to R, Weak",ARI,SD,0,2025-7-7,0,0
-9,Phillies  @  Giants,Clear,60°,12.5 mph,"Out, Strong",PHI,SF,0,2025-7-7,0,0
+0,Mets  @  Orioles,Light Rain,90°,6.3 mph,"Out, Weak",NYM,BAL,44,2025-7-8,0,0
+1,Rays  @  Tigers,Mostly Clear,83°,5.4 mph,"In, Weak",TB,DET,0,2025-7-8,0,0
+2,Mariners  @  Yankees,Possible Light Rain,90°,8.0 mph,"Out, Weak",SEA,NYY,20,2025-7-8,0,0
+3,Rockies  @  Red Sox,Partly Cloudy,87°,5.4 mph,"L to R, Weak",COL,BOS,13,2025-7-8,0,0
+4,Marlins  @  Reds,Partly Cloudy,87°,2.7 mph,None,MIA,CIN,0,2025-7-8,0,0
+5,Blue Jays  @  White Sox,Mostly Cloudy,84°,7.2 mph,"R to L, Weak",TOR,CWS,13,2025-7-8,0,0
+6,Cubs  @  Twins,Mostly Clear,82°,8.9 mph,"Out, Weak",CHC,MIN,0,2025-7-8,0,0
+7,Dodgers  @  Brewers,Possible Drizzle,82°,7.2 mph,"In, Weak",LAD,MIL,13,2025-7-8,0,0
+8,Pirates  @  Royals,Possible Drizzle,87°,3.6 mph,None,PIT,KC,12,2025-7-8,0,0
+9,Nationals  @  Cardinals,Light Rain,87°,4.5 mph,None,WSH,STL,37,2025-7-8,0,0
+10,Guardians  @  Astros,Light Rain,84°,5.4 mph,"Out, Weak",CLE,HOU,27,2025-7-8,1,1
+11,Rangers  @  Angels,Clear,84°,8.9 mph,"Out, Weak",TEX,LAA,0,2025-7-8,0,0
+12,Diamondbacks  @  Padres,Clear,75°,9.8 mph,"L to R, Weak",ARI,SD,0,2025-7-8,0,0
+13,Phillies  @  Giants,Clear,61°,9.8 mph,"Out, Weak",PHI,SF,0,2025-7-8,0,0
+14,Braves  @  Athletics,Clear,85°,9.8 mph,"Out, Weak",ATL,OAK,0,2025-7-8,0,0
