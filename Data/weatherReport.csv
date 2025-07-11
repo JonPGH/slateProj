@@ -1,19 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Guardians  @  White Sox,Partly Cloudy,85°,9.8 mph,"R to L, Weak",CLE,CWS,5,2025-7-11,0,0
-1,Guardians  @  White Sox,Partly Cloudy,85°,9.8 mph,"R to L, Weak",CLE,CWS,5,2025-7-11,0,0
+0,Guardians  @  White Sox,Partly Cloudy,85°,8.9 mph,"R to L, Weak",CLE,CWS,6,2025-7-11,0,0
+1,Guardians  @  White Sox,Partly Cloudy,85°,8.9 mph,"R to L, Weak",CLE,CWS,6,2025-7-11,0,0
 2,Cubs  @  Yankees,Partly Cloudy,81°,8.0 mph,"R to L, Weak",CHC,NYY,0,2025-7-11,0,0
-3,Marlins  @  Orioles,Possible Light Rain,89°,2.7 mph,None,MIA,BAL,5,2025-7-11,0,0
+3,Marlins  @  Orioles,Clear,89°,2.7 mph,None,MIA,BAL,5,2025-7-11,0,0
 4,Rays  @  Red Sox,Possible Light Rain,76°,5.4 mph,"R to L, Weak",TB,BOS,7,2025-7-11,0,0
 5,Rockies  @  Reds,Clear,91°,3.6 mph,None,COL,CIN,0,2025-7-11,0,0
-6,Mariners  @  Tigers,Mostly Cloudy,84°,7.2 mph,"In, Weak",SEA,DET,17,2025-7-11,0,0
-7,Guardians  @  White Sox,Light Rain,83°,7.2 mph,"R to L, Weak",CLE,CWS,5,2025-7-11,0,0
-8,Guardians  @  White Sox,Light Rain,83°,7.2 mph,"R to L, Weak",CLE,CWS,5,2025-7-11,0,0
-9,Pirates  @  Twins,Possible Drizzle,84°,4.5 mph,None,PIT,MIN,0,2025-7-11,0,0
-10,Nationals  @  Brewers,Possible Light Rain,75°,5.4 mph,"L to R, Weak",WSH,MIL,0,2025-7-11,0,0
-11,Mets  @  Royals,Possible Drizzle,87°,11.6 mph,"Out, Strong",NYM,KC,0,2025-7-11,0,0
-12,Rangers  @  Astros,Mostly Clear,86°,10.7 mph,"Out, Strong",TEX,HOU,0,2025-7-11,1,0
+6,Mariners  @  Tigers,Partly Cloudy,84°,7.2 mph,"In, Weak",SEA,DET,14,2025-7-11,0,0
+7,Guardians  @  White Sox,Possible Drizzle,82°,6.3 mph,"R to L, Weak",CLE,CWS,6,2025-7-11,0,0
+8,Guardians  @  White Sox,Possible Drizzle,82°,6.3 mph,"R to L, Weak",CLE,CWS,6,2025-7-11,0,0
+9,Pirates  @  Twins,Possible Drizzle,85°,4.5 mph,None,PIT,MIN,0,2025-7-11,0,0
+10,Nationals  @  Brewers,Possible Light Rain,76°,5.4 mph,"L to R, Weak",WSH,MIL,0,2025-7-11,0,0
+11,Mets  @  Royals,Possible Light Rain,87°,10.7 mph,"Out, Strong",NYM,KC,0,2025-7-11,0,0
+12,Rangers  @  Astros,Mostly Clear,87°,10.7 mph,"Out, Strong",TEX,HOU,0,2025-7-11,1,0
 13,Braves  @  Cardinals,Mostly Clear,92°,8.0 mph,"R to L, Weak",ATL,STL,0,2025-7-11,0,0
 14,Diamondbacks  @  Angels,Clear,75°,7.2 mph,"Out, Weak",ARI,LAA,0,2025-7-11,0,0
 15,Phillies  @  Padres,Partly Cloudy,69°,5.4 mph,"Out, Weak",PHI,SD,0,2025-7-11,0,0
-16,Blue Jays  @  Athletics,Clear,96°,8.0 mph,"Out, Weak",TOR,OAK,0,2025-7-11,0,0
-17,Dodgers  @  Giants,Clear,60°,8.0 mph,"Out, Weak",LAD,SF,0,2025-7-11,0,0
+16,Blue Jays  @  Athletics,Clear,96°,8.9 mph,"Out, Weak",TOR,OAK,0,2025-7-11,0,0
+17,Dodgers  @  Giants,Clear,61°,8.0 mph,"Out, Weak",LAD,SF,0,2025-7-11,0,0
