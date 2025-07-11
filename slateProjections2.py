@@ -226,8 +226,9 @@ if check_password():
         upcoming_proj = pd.read_csv(f'{file_path}/next10projections.csv')
         upcoming_p_scores = pd.read_csv(f'{file_path}/upcoming_p_schedule_scores.csv')
         mlbplayerinfo = pd.read_csv(f'{file_path}/mlbplayerinfo.csv')
+        airpulldata = pd.read_csv(f'{file_path}/airpulldata.csv')
 
-        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo
+        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -325,6 +326,62 @@ if check_password():
             elif val < .3:
                 return f'background-color: {color1}'  
     def applyColor_HitStat(val, column):
+        if column == 'Hitter Air Pull / PA':
+            if val >= .14:
+                return f'background-color: {color5}'
+            elif val >= .11:
+                return f'background-color: {color4}'
+            elif val >= .08:
+                return f'background-color: {color3}'
+            elif val >= .05:
+                return f'background-color: {color2}'
+            elif val < .05:
+                return f'background-color: {color1}'
+        
+        if column == 'Pitcher Air Pull / PA':
+            if val >= .14:
+                return f'background-color: {color5}'
+            elif val >= .11:
+                return f'background-color: {color4}'
+            elif val >= .08:
+                return f'background-color: {color3}'
+            elif val >= .05:
+                return f'background-color: {color2}'
+            elif val < .05:
+                return f'background-color: {color1}'   
+        if column == 'Average Air Pull':
+            if val >= .14:
+                return f'background-color: {color5}'
+            elif val >= .11:
+                return f'background-color: {color4}'
+            elif val >= .08:
+                return f'background-color: {color3}'
+            elif val >= .05:
+                return f'background-color: {color2}'
+            elif val < .05:
+                return f'background-color: {color1}'        
+        if column == 'Hitter Air Pull / BIP':
+            if val >= .2:
+                return f'background-color: {color5}'
+            elif val >= .17:
+                return f'background-color: {color4}'
+            elif val >= .13:
+                return f'background-color: {color3}'
+            elif val >= .1:
+                return f'background-color: {color2}'
+            elif val < .1:
+                return f'background-color: {color1}'     
+        if column == 'Pitcher Air Pull / BIP':
+            if val >= .2:
+                return f'background-color: {color5}'
+            elif val >= .17:
+                return f'background-color: {color4}'
+            elif val >= .13:
+                return f'background-color: {color3}'
+            elif val >= .1:
+                return f'background-color: {color2}'
+            elif val < .1:
+                return f'background-color: {color1}'        
         if column == 'PPA':
             if val >= 4:
                 return f'background-color: {color1}'
@@ -779,7 +836,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo = load_data()
+    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -837,14 +894,13 @@ if check_password():
     hitter_stats['HR Boost'] = np.where(hitter_stats['Hitter'].isin(homer_boosts),'🚀','')
     hitter_stats['Batter'] = hitter_stats['Hitter'] + ' ' + hitter_stats['Hot'] +' ' +  hitter_stats['Cold'] + ' ' + hitter_stats['HR Boost']
     
-
     def get_player_image(player_id):
         return f'https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_426,q_auto:best/v1/people/{player_id}/headshot/67/current'
 
     # Sidebar navigation
     st.sidebar.image(logo, width=150)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -1774,6 +1830,9 @@ if check_password():
                 st.dataframe(styled_df,hide_index=True,width=850)
 
     if tab == "Matchups":
+
+        st.markdown("<h2><center><br>Matchups Model</h2></center>", unsafe_allow_html=True)
+
         if st.checkbox("Show Team Ranks"):
             
             st.markdown("<h2>Team Matchups</h2>", unsafe_allow_html=True)
@@ -1860,6 +1919,79 @@ if check_password():
         else:
             st.dataframe(styled_df, hide_index=True, use_container_width=True)
   
+    if tab == "Air Pull Matchups":
+
+        st.markdown("<h2><center><br>Air Pull Matchups</h2></center>", unsafe_allow_html=True)
+
+        #st.write(airpulldata)
+        hitters_ap = airpulldata[airpulldata['Sample']=='Hitters'][['BatterName','PA_flag','IsBIP','Air Pull / PA', 'Air Pull / BIP']]
+        hitters_ap = hitters_ap.rename({'PA_flag':'Hitter PA', 'BatterName':'Hitter', 'IsBIP': 'Hitter BIP', 'Air Pull / PA': 'Hitter Air Pull / PA', 'Air Pull / BIP': 'Hitter Air Pull / BIP'},axis=1)
+        
+        pitchers_ap = airpulldata[airpulldata['Sample']=='Pitchers'][['player_name','IsBIP', 'PA_flag','Air Pull / PA', 'Air Pull / BIP']]
+        pitchers_ap = pitchers_ap.rename({'PA_flag':'Pitcher PA', 'player_name':'Pitcher',  'IsBIP': 'Pitcher BIP','Air Pull / PA': 'Pitcher Air Pull / PA', 'Air Pull / BIP': 'Pitcher Air Pull / BIP'},axis=1)
+        
+        todays_matchups = hitterproj2[['Hitter','OppSP']]
+        todays_matchups.columns=['Hitter','Pitcher']
+
+        merge1 = pd.merge(todays_matchups,hitters_ap, how='left', on='Hitter')
+        merge2 = pd.merge(merge1,pitchers_ap, how='left', on='Pitcher')
+
+        col1, col2 = st.columns([1,5])
+        with col1:
+            option = st.radio('Select Stat Type', options=['Per PA','Per BIP'], horizontal=True)
+        
+        if option == 'Per PA':
+            show_data = merge2[['Hitter','Pitcher','Hitter PA','Pitcher PA','Hitter Air Pull / PA','Pitcher Air Pull / PA']]
+
+            show_data['Average Air Pull'] = (show_data['Hitter Air Pull / PA'] + show_data['Pitcher Air Pull / PA'])/2
+            min_pa = 10
+            max_h_pa = int(show_data['Hitter PA'].max()) if not show_data['Hitter PA'].empty else min_pa
+            max_p_pa = int(show_data['Pitcher PA'].max()) if not show_data['Pitcher PA'].empty else min_pa
+            max_pa = max(max_h_pa, max_p_pa)
+
+            col1, col2 = st.columns([1,3])
+            with col1:
+               pa_filter = st.slider("Filter by Plate Appearances (PA):",min_value=min_pa,max_value=max_pa,value=(min_pa, max_pa), step=1)
+
+            filtered_df = show_data[(show_data['Hitter PA']>pa_filter[0])&(show_data['Pitcher PA']>pa_filter[0])]
+
+            styled_df = filtered_df.style.apply(
+                    color_cells_HitStat, subset=['Hitter Air Pull / PA','Pitcher Air Pull / PA','Average Air Pull'], axis=1
+                ).format({'Hitter Air Pull / PA': '{:.1%}','Pitcher Air Pull / PA': '{:.1%}','Average Air Pull': '{:.1%}',
+                'Hitter PA': '{:.0f}','Pitcher PA': '{:.0f}'})
+
+            st.dataframe(styled_df, hide_index=True, width=850,height=750)
+        
+        elif option == 'Per BIP':
+            show_data = merge2[['Hitter','Pitcher','Hitter BIP','Pitcher BIP','Hitter Air Pull / BIP','Pitcher Air Pull / BIP']]
+            show_data['Average Air Pull'] = (show_data['Hitter Air Pull / BIP'] + show_data['Pitcher Air Pull / BIP'])/2
+
+            min_bip = 50
+            max_h_bip = int(show_data['Hitter BIP'].max()) if not show_data['Hitter BIP'].empty else min_pa
+            max_p_bip = int(show_data['Pitcher BIP'].max()) if not show_data['Pitcher BIP'].empty else min_pa
+            max_bip = max(max_h_bip, max_p_bip)
+
+            col1, col2 = st.columns([1,3])
+            with col1:
+               bip_filter = st.slider("Filter by Balls In Play (BIP):",min_value=min_bip,max_value=max_bip,value=(min_bip, max_bip), step=1)
+            
+            filtered_df = show_data[(show_data['Hitter BIP']>bip_filter[0])&(show_data['Pitcher BIP']>bip_filter[0])]
+
+            styled_df = filtered_df.style.apply(
+                    color_cells_HitStat, subset=['Hitter Air Pull / BIP','Pitcher Air Pull / BIP','Average Air Pull'], axis=1
+                ).format({'Hitter Air Pull / BIP': '{:.1%}','Pitcher Air Pull / BIP': '{:.1%}','Average Air Pull': '{:.1%}',
+                'Hitter BIP': '{:.0f}','Pitcher BIP': '{:.0f}'})
+
+            st.dataframe(styled_df, hide_index=True,height=750)
+
+
+        
+
+
+
+        # get todays matchups
+
+    
     if tab == "Weather & Umps":
         weather_show = weather_data[['HomeTeam','Game','Conditions','Temp','Winds','Wind Dir','Rain%']].sort_values(by='Rain%',ascending=False)
         weather_show = pd.merge(weather_show,umpire_data, how='left', on='HomeTeam')
