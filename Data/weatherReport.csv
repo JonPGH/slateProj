@@ -1,14 +1,14 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Cubs  @  Yankees,Partly Cloudy,83°,7.2 mph,"In, Weak",CHC,NYY,0,2025-7-12,0,0
-1,Mariners  @  Tigers,Partly Cloudy,87°,13.4 mph,"In, Strong",SEA,DET,9,2025-7-12,0,0
+0,Cubs  @  Yankees,Partly Cloudy,84°,7.2 mph,"In, Weak",CHC,NYY,0,2025-7-12,0,0
+1,Mariners  @  Tigers,Partly Cloudy,87°,13.4 mph,"In, Strong",SEA,DET,10,2025-7-12,0,0
 2,Pirates  @  Twins,Mostly Clear,77°,12.5 mph,"Out, Strong",PIT,MIN,0,2025-7-12,0,0
-3,Braves  @  Cardinals,Possible Drizzle,84°,8.9 mph,"Out, Weak",ATL,STL,12,2025-7-12,0,0
+3,Braves  @  Cardinals,Possible Drizzle,84°,8.9 mph,"Out, Weak",ATL,STL,13,2025-7-12,0,0
 4,Dodgers  @  Giants,Clear,62°,9.8 mph,"Out, Weak",LAD,SF,0,2025-7-12,0,0
-5,Marlins  @  Orioles,Mostly Clear,93°,6.3 mph,"R to L, Weak",MIA,BAL,7,2025-7-12,0,0
+5,Marlins  @  Orioles,Mostly Clear,92°,6.3 mph,"R to L, Weak",MIA,BAL,10,2025-7-12,0,0
 6,Nationals  @  Brewers,Mostly Clear,82°,10.7 mph,"R to L, Strong",WSH,MIL,0,2025-7-12,0,0
-7,Mets  @  Royals,Mostly Clear,86°,5.4 mph,"L to R, Weak",NYM,KC,0,2025-7-12,0,0
-8,Guardians  @  White Sox,Partly Cloudy,83°,8.9 mph,"R to L, Weak",CLE,CWS,0,2025-7-12,0,0
-9,Rockies  @  Reds,Possible Light Rain,90°,9.8 mph,"R to L, Weak",COL,CIN,15,2025-7-12,0,0
+7,Mets  @  Royals,Mostly Clear,85°,5.4 mph,"L to R, Weak",NYM,KC,0,2025-7-12,0,0
+8,Guardians  @  White Sox,Partly Cloudy,82°,8.9 mph,"R to L, Weak",CLE,CWS,0,2025-7-12,0,0
+9,Rockies  @  Reds,Possible Light Rain,90°,9.8 mph,"R to L, Weak",COL,CIN,14,2025-7-12,0,0
 10,Rays  @  Red Sox,Mostly Clear,80°,8.0 mph,"R to L, Weak",TB,BOS,0,2025-7-12,0,0
 11,Phillies  @  Padres,Partly Cloudy,71°,8.0 mph,"L to R, Weak",PHI,SD,0,2025-7-12,0,0
 12,Rangers  @  Astros,Mostly Clear,87°,8.9 mph,"Out, Weak",TEX,HOU,0,2025-7-12,1,0
