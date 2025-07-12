@@ -1,6 +1,6 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Cubs  @  Yankees,Partly Cloudy,84°,7.2 mph,"In, Weak",CHC,NYY,0,2025-7-12,0,0
-1,Mariners  @  Tigers,Partly Cloudy,87°,13.4 mph,"In, Strong",SEA,DET,10,2025-7-12,0,0
+1,Mariners  @  Tigers,Mostly Clear,87°,13.4 mph,"In, Strong",SEA,DET,10,2025-7-12,0,0
 2,Pirates  @  Twins,Mostly Clear,77°,11.6 mph,"Out, Strong",PIT,MIN,0,2025-7-12,0,0
 3,Braves  @  Cardinals,Possible Drizzle,83°,8.9 mph,"Out, Weak",ATL,STL,13,2025-7-12,0,0
 4,Dodgers  @  Giants,Clear,61°,9.8 mph,"Out, Weak",LAD,SF,0,2025-7-12,0,0
