@@ -1,9 +1,11 @@
 ,HomeTeam,Umpire,Today,K Boost,BB Boost,UmpK,UmpBB
-1,SF,Mike Estabrook,LAD @ SF,1.1,1.0,1.05,1.0
-2,MIN,Mike Muchlinski,PIT @ MIN,0.96,0.94,0.98,0.97
-3,BOS,Scott Barry,TB @ BOS,1.15,0.97,1.075,0.985
-4,CWS,Jordan Baker,CLE @ CWS,0.96,1.02,0.98,1.01
-5,STL,John Tumpane,ATL @ STL,1.07,1.11,1.0350000000000001,1.0550000000000002
-6,NYY,Ramon De Jesus,CHC @ NYY,1.04,1.08,1.02,1.04
-7,DET,Erich Bacchus,SEA @ DET,0.96,0.95,0.98,0.975
-8,CIN,David Arrieta,COL @ CIN,1.0,1.08,1.0,1.04
+1,MIL,Alfonso Marquez,WSH @ MIL,0.9,1.1,0.95,1.05
+2,SF,Mike Estabrook,LAD @ SF,1.1,1.0,1.05,1.0
+3,MIN,Mike Muchlinski,PIT @ MIN,0.96,0.94,0.98,0.97
+4,BOS,Scott Barry,TB @ BOS,1.15,0.97,1.075,0.985
+5,CWS,Jordan Baker,CLE @ CWS,0.96,1.02,0.98,1.01
+6,STL,John Tumpane,ATL @ STL,1.07,1.11,1.0350000000000001,1.0550000000000002
+7,KC,Chris Segal,NYM @ KC,1.08,1.05,1.04,1.025
+8,NYY,Ramon De Jesus,CHC @ NYY,1.04,1.08,1.02,1.04
+9,DET,Erich Bacchus,SEA @ DET,0.96,0.95,0.98,0.975
+10,CIN,David Arrieta,COL @ CIN,1.0,1.08,1.0,1.04
