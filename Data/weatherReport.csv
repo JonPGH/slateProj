@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Cubs  @  Yankees,Partly Cloudy,80°,7.2 mph,"In, Weak",CHC,NYY,0,2025-7-13,0,0
-1,Marlins  @  Orioles,Possible Rain,86°,5.4 mph,"R to L, Weak",MIA,BAL,11,2025-7-13,0,0
+0,Cubs  @  Yankees,Partly Cloudy,81°,7.2 mph,"In, Weak",CHC,NYY,0,2025-7-13,0,0
+1,Marlins  @  Orioles,Possible Rain,87°,5.4 mph,"R to L, Weak",MIA,BAL,12,2025-7-13,0,0
 2,Rays  @  Red Sox,Partly Cloudy,77°,7.2 mph,"R to L, Weak",TB,BOS,0,2025-7-13,0,0
 3,Mariners  @  Tigers,Partly Cloudy,84°,6.3 mph,"R to L, Weak",SEA,DET,0,2025-7-13,0,0
 4,Rockies  @  Reds,Mostly Clear,85°,4.5 mph,None,COL,CIN,0,2025-7-13,0,0
 5,Pirates  @  Twins,Clear,83°,10.7 mph,"R to L, Strong",PIT,MIN,0,2025-7-13,0,0
 6,Guardians  @  White Sox,Mostly Cloudy,80°,4.5 mph,None,CLE,CWS,0,2025-7-13,0,0
 7,Nationals  @  Brewers,Mostly Cloudy,80°,6.3 mph,"R to L, Weak",WSH,MIL,0,2025-7-13,0,0
-8,Mets  @  Royals,Partly Cloudy,80°,4.5 mph,None,NYM,KC,6,2025-7-13,0,0
-9,Rangers  @  Astros,Partly Cloudy,89°,7.2 mph,"Out, Weak",TEX,HOU,9,2025-7-13,1,0
-10,Braves  @  Cardinals,Rain,81°,4.5 mph,None,ATL,STL,32,2025-7-13,0,0
+8,Mets  @  Royals,Partly Cloudy,80°,4.5 mph,None,NYM,KC,0,2025-7-13,0,0
+9,Rangers  @  Astros,Partly Cloudy,89°,7.2 mph,"Out, Weak",TEX,HOU,11,2025-7-13,1,1
+10,Braves  @  Cardinals,Light Rain,81°,4.5 mph,None,ATL,STL,28,2025-7-13,0,0
 11,Blue Jays  @  Athletics,Clear,88°,5.4 mph,"Out, Weak",TOR,OAK,0,2025-7-13,0,0
-12,Dodgers  @  Giants,Mostly Clear,61°,7.2 mph,"Out, Weak",LAD,SF,0,2025-7-13,0,0
-13,Diamondbacks  @  Angels,Clear,78°,7.2 mph,"Out, Weak",ARI,LAA,0,2025-7-13,0,0
-14,Phillies  @  Padres,Mostly Clear,73°,8.9 mph,"L to R, Weak",PHI,SD,0,2025-7-13,0,0
+12,Dodgers  @  Giants,Clear,61°,7.2 mph,"Out, Weak",LAD,SF,0,2025-7-13,0,0
+13,Diamondbacks  @  Angels,Clear,77°,7.2 mph,"Out, Weak",ARI,LAA,0,2025-7-13,0,0
+14,Phillies  @  Padres,Partly Cloudy,73°,8.9 mph,"L to R, Weak",PHI,SD,0,2025-7-13,0,0
