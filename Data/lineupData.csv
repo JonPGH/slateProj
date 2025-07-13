@@ -1,6 +1,6 @@
 ,Pitcher,Opp,K%,BB%,Brl%,GB%,FB%,xwOBA,PPA,LU
 0,Brayan Bello,TB,0.199,0.08,0.072,0.473,0.213,0.31722222222222224,3.868888888888889,"Yandy Diaz, Jonathan Aranda, Junior Caminero, Josh Lowe, Ha-Seong Kim, Jake Mangum, Chandler Simpson, Jose Caballero, Matt Thaiss"
-0,Ryan Pepiot,BOS,0.228,0.071,0.085,0.446,0.261,0.31133333333333335,3.836666666666667,"Jarren Duran, Alex Bregman, Roman Anthony, Trevor Story, Wilyer Abreu, Abraham Toro, Ceddanne Rafaela, Marcelo Mayer, Connor Wong"
+0,Ryan Pepiot,BOS,0.22,0.068,0.086,0.468,0.244,0.3164444444444444,3.802222222222222,"Jarren Duran, Alex Bregman, Roman Anthony, Masataka Yoshida, Trevor Story, Ceddanne Rafaela, Marcelo Mayer, Romy Gonzalez, Connor Wong"
 0,Brandon Young,MIA,0.216,0.077,0.084,0.455,0.248,0.32866666666666666,3.7522222222222217,"Xavier Edwards, Jesus Sanchez, Otto Lopez, Agustin Ramirez, Kyle Stowers, Eric Wagaman, Liam Hicks, Connor Norby, Dane Myers"
 0,Eury Perez,BAL,0.258,0.078,0.108,0.424,0.285,0.32066666666666666,3.968888888888889,"Jackson Holliday, Jordan Westburg, Gunnar Henderson, ""Ryan OHearn"", Ramon Laureano, Colton Cowser, ""Tyler ONeill"", Cedric Mullins II, Alex Jackson"
 0,Will Warren,CHC,0.212,0.09,0.096,0.388,0.294,0.33055555555555555,3.9155555555555557,"Nico Hoerner, Kyle Tucker, Seiya Suzuki, Pete Crow-Armstrong, Michael Busch, Dansby Swanson, Ian Happ, Reese McGuire, Matt Shaw"
@@ -27,5 +27,5 @@
 0,Jose Berrios,OAK,0.247,0.073,0.098,0.453,0.26,0.3134444444444444,3.785555555555556,"Lawrence Butler, Jacob Wilson, Nick Kurtz, Brent Rooker, Tyler Soderstrom, Shea Langeliers, Miguel Andujar, Maxwell Muncy, Denzel Clarke"
 0,Jose Soriano,ARI,0.19,0.085,0.076,0.442,0.26,0.32488888888888895,3.836666666666667,"Corbin Carroll, Ketel Marte, Geraldo Perdomo, Josh Naylor, Eugenio Suarez, Lourdes Gurriel Jr., Jake McCarthy, Alek Thomas, Jose Herrera"
 0,Merrill Kelly,LAA,0.237,0.088,0.109,0.4,0.289,0.3387777777777778,3.9522222222222223,"Zach Neto, Nolan Schanuel, Mike Trout, Taylor Ward, Jo Adell, Yoan Moncada, Jorge Soler, ""Logan OHoppe"", Luis Rengifo"
-0,Nick Pivetta,PHI,0.214,0.087,0.091,0.416,0.278,0.33722222222222226,3.907777777777778,"Trea Turner, Kyle Schwarber, Bryce Harper, Alec Bohm, Nick Castellanos, Max Kepler, J.T. Realmuto, Bryson Stott, Brandon Marsh"
+0,Nick Pivetta,PHI,0.225,0.086,0.094,0.406,0.283,0.3386666666666667,3.921111111111111,"Trea Turner, Kyle Schwarber, Bryce Harper, Nick Castellanos, Bryson Stott, J.T. Realmuto, Max Kepler, Otto Kemp, Brandon Marsh"
 0,Cristopher Sanchez,SD,0.169,0.069,0.074,0.44,0.24,0.32766666666666666,3.8466666666666662,"Fernando Tatis Jr., Luis Arraez, Manny Machado, Gavin Sheets, Xander Bogaerts, Jackson Merrill, Jose Iglesias, Jake Cronenworth, Elias Diaz"
