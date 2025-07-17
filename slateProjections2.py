@@ -227,8 +227,10 @@ if check_password():
         upcoming_p_scores = pd.read_csv(f'{file_path}/upcoming_p_schedule_scores.csv')
         mlbplayerinfo = pd.read_csv(f'{file_path}/mlbplayerinfo.csv')
         airpulldata = pd.read_csv(f'{file_path}/airpulldata.csv')
+        trend_h = pd.read_csv(f'{file_path}/hot_hit_oe_data.csv')
+        trend_p = pd.read_csv(f'{file_path}/hot_pit_ja_era.csv')
 
-        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata
+        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -236,7 +238,75 @@ if check_password():
     color4='#CCFF99'
     color5='#99FF99'
 
+    def applyColor_PitMatchups(val, column):
+        if column == 'JA ERA':
+            if val >= 4.5:
+                return f'background-color: {color1}'
+            elif val >= 3.75:
+                return f'background-color: {color2}'
+            elif val >= 3.25:
+                return f'background-color: {color3}'
+            elif val >= 2.5:
+                return f'background-color: {color4}'
+            elif val < 2.5:
+                return f'background-color: {color5}'
+        if column == 'JA ERA L20':
+            if val >= 4.5:
+                return f'background-color: {color1}'
+            elif val >= 3.75:
+                return f'background-color: {color2}'
+            elif val >= 3.25:
+                return f'background-color: {color3}'
+            elif val >= 2.5:
+                return f'background-color: {color4}'
+            elif val < 2.5:
+                return f'background-color: {color5}'
+        if column == 'Hot Score':
+            if val >= 1.25:
+                return f'background-color: {color5}'
+            elif val >= 1:
+                return f'background-color: {color4}'
+            elif val >= .5:
+                return f'background-color: {color3}'
+            elif val >= -.5:
+                return f'background-color: {color2}'
+            elif val < -.5:
+                return f'background-color: {color1}'
+    
     def applyColor_HitMatchups(val, column):
+        if column == 'xwOBA OE':
+            if val >= .05:
+                return f'background-color: {color5}'
+            elif val >= .025:
+                return f'background-color: {color4}'
+            elif val >= -.025:
+                return f'background-color: {color3}'
+            elif val >= -.05:
+                return f'background-color: {color2}'
+            elif val < -.05:
+                return f'background-color: {color1}'
+        if column == 'xwOBA OE L15':
+            if val >= .05:
+                return f'background-color: {color5}'
+            elif val >= .025:
+                return f'background-color: {color4}'
+            elif val >= -.025:
+                return f'background-color: {color3}'
+            elif val >= -.05:
+                return f'background-color: {color2}'
+            elif val < -.05:
+                return f'background-color: {color1}'
+        if column == 'Hot Score':
+            if val >= .1:
+                return f'background-color: {color5}'
+            elif val >= .05:
+                return f'background-color: {color4}'
+            elif val >= -.05:
+                return f'background-color: {color3}'
+            elif val >= -.1:
+                return f'background-color: {color2}'
+            elif val < -.1:
+                return f'background-color: {color1}'
         if column == 'xwOBA':
             if val >= .35:
                 return f'background-color: {color5}'
@@ -832,11 +902,13 @@ if check_password():
         return [applyColor_HitStat(val, col) for val, col in zip(df_subset, df_subset.index)]
     def color_cells_HitMatchups(df_subset):
         return [applyColor_HitMatchups(val, col) for val, col in zip(df_subset, df_subset.index)]
+    def color_cells_PitMatchups(df_subset):
+        return [applyColor_PitMatchups(val, col) for val, col in zip(df_subset, df_subset.index)]
     def color_cells_Props(df_subset):
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata = load_data()
+    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -900,7 +972,7 @@ if check_password():
     # Sidebar navigation
     st.sidebar.image(logo, width=150)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -1919,6 +1991,119 @@ if check_password():
         else:
             st.dataframe(styled_df, hide_index=True, use_container_width=True)
   
+    if tab == "Player Trends":
+        st.markdown("<h1><center>Player Trends</center></h1>", unsafe_allow_html=True)
+
+        col1,col2,col3 = st.columns([3,1,3])
+        with col2:
+            h_p_selection = st.selectbox('Select',['Hitters','Pitchers'])
+        
+        if h_p_selection == 'Hitters':
+
+            st.markdown('<b><center><i>Determined by comparing xwOBA over expectation from the last 15 days with what each hitter did before these last 15 days', unsafe_allow_html=True)
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown("<h3><center>🔥 Hottest Hitters 🔥</center></h3>", unsafe_allow_html=True)
+
+                hot_five_ids = trend_h.sort_values(by='Hot Score',ascending=False).head(5)['batter'].unique()
+                xcol1,xcol2,xcol3 = st.columns(3)
+                picture_width = 105
+                with xcol1:
+                    st.image(get_player_image(hot_five_ids[0]), width=picture_width)
+                with xcol2:
+                    st.image(get_player_image(hot_five_ids[1]), width=picture_width)
+                with xcol3:
+                    st.image(get_player_image(hot_five_ids[2]), width=picture_width)
+
+                hot_five_h = trend_h.sort_values(by='Hot Score',ascending=False).head(10)[['BatterName','xwOBA OE','xwOBA OE L15','Hot Score']]
+                styled_hot_five = hot_five_h.style.apply(color_cells_HitMatchups, subset=['xwOBA OE','xwOBA OE L15','Hot Score'], axis=1).format({'xwOBA OE': '{:.3f}', 'xwOBA OE L15': '{:.3f}', 'Hot Score': '{:.3f}'})
+                st.dataframe(styled_hot_five, hide_index=True, width=600)
+            with col2:
+                st.markdown("<h3><center>🧊 Coldest Hitters 🧊</center></h3>", unsafe_allow_html=True)
+
+                cold_five_ids = trend_h.sort_values(by='Hot Score',ascending=True).head(5)['batter'].unique()
+                zcol1,zcol2,zcol3 = st.columns(3)
+                
+                with zcol1:
+                    st.image(get_player_image(cold_five_ids[0]), width=picture_width)
+                with zcol2:
+                    st.image(get_player_image(cold_five_ids[1]), width=picture_width)
+                with zcol3:
+                    st.image(get_player_image(cold_five_ids[2]), width=picture_width)
+                
+                col_five_h = trend_h.sort_values(by='Hot Score',ascending=True).head(10)[['BatterName','xwOBA OE','xwOBA OE L15','Hot Score']]
+                styled_cold_five = col_five_h.style.apply(color_cells_HitMatchups, subset=['xwOBA OE','xwOBA OE L15','Hot Score'], axis=1).format({'xwOBA OE': '{:.3f}', 'xwOBA OE L15': '{:.3f}', 'Hot Score': '{:.3f}'})
+                st.dataframe(styled_cold_five, hide_index=True, width=600)
+
+            st.markdown("<h3><center>Full Table</center></h3>", unsafe_allow_html=True)
+            
+            bcol1,bcol2,bcol3 = st.columns([1,3,1])
+            with bcol2:
+                all_trend_h = trend_h.sort_values(by='Hot Score',ascending=False)[['BatterName','xwOBA OE','xwOBA OE L15','Hot Score']]
+                styled_all_trend_h = all_trend_h.style.apply(color_cells_HitMatchups, subset=['xwOBA OE','xwOBA OE L15','Hot Score'], axis=1).format({'xwOBA OE': '{:.3f}', 'xwOBA OE L15': '{:.3f}', 'Hot Score': '{:.3f}'})
+                st.dataframe(styled_all_trend_h, hide_index=True, width=700,height=900)
+
+
+        elif h_p_selection == 'Pitchers':
+            st.markdown('<b><center><i>Determined by comparing JA ERA the last 20 days with what each pitcher did before these last 20 days', unsafe_allow_html=True)
+
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown("<h3><center>🔥 Hottest Pitchers 🔥</center></h3>", unsafe_allow_html=True)
+
+                hot_five_ids = trend_p.sort_values(by='Hot Score',ascending=False).head(5)['pitcher'].unique()
+
+                xcol1,xcol2,xcol3 = st.columns(3)
+                picture_width = 105
+                with xcol1:
+                    st.image(get_player_image(hot_five_ids[0]), width=picture_width)
+                with xcol2:
+                    st.image(get_player_image(hot_five_ids[1]), width=picture_width)
+                with xcol3:
+                    st.image(get_player_image(hot_five_ids[2]), width=picture_width)
+                
+                hot_five_p = trend_p.sort_values(by='Hot Score',ascending=False).head(10)[['player_name','JA ERA','JA ERA L20','Hot Score']]
+                styled_hot_five = hot_five_p.style.apply(color_cells_PitMatchups, subset=['JA ERA','JA ERA L20','Hot Score'], axis=1).format({'JA ERA': '{:.2f}', 'JA ERA L20': '{:.2f}', 'Hot Score': '{:.2f}'})
+                st.dataframe(styled_hot_five, hide_index=True, width=600)
+        
+            with col2:
+                st.markdown("<h3><center>🧊 Coldest Pitchers 🧊</center></h3>", unsafe_allow_html=True)
+
+                cold_five_ids = trend_p.sort_values(by='Hot Score',ascending=True).head(5)['pitcher'].unique()
+
+                xcol1,xcol2,xcol3 = st.columns(3)
+                picture_width = 105
+                with xcol1:
+                    st.image(get_player_image(cold_five_ids[0]), width=picture_width)
+                with xcol2:
+                    st.image(get_player_image(cold_five_ids[1]), width=picture_width)
+                with xcol3:
+                    st.image(get_player_image(cold_five_ids[2]), width=picture_width)
+                
+                cold_five_p = trend_p.sort_values(by='Hot Score',ascending=True).head(10)[['player_name','JA ERA','JA ERA L20','Hot Score']]
+                styled_cold_five = cold_five_p.style.apply(color_cells_PitMatchups, subset=['JA ERA','JA ERA L20','Hot Score'], axis=1).format({'JA ERA': '{:.2f}', 'JA ERA L20': '{:.2f}', 'Hot Score': '{:.2f}'})
+                st.dataframe(styled_cold_five, hide_index=True, width=600)
+
+            st.markdown("<h3><center>Full Table</center></h3>", unsafe_allow_html=True)
+
+            todays_pitchers = list(pitcherproj['Pitcher'])
+            today_box = st.checkbox('Show Only Today SP?')
+            if today_box:                
+                ccol1,ccol2,ccol3 = st.columns([1,3,1])
+                with ccol2:
+                    all_trend_p = trend_p[trend_p['player_name'].isin(todays_pitchers)].sort_values(by='Hot Score',ascending=False)[['player_name','JA ERA','JA ERA L20','Hot Score']]
+                    styled_all_trend_p = all_trend_p.style.apply(color_cells_HitMatchups, subset=['JA ERA','JA ERA L20','Hot Score'], axis=1).format({'JA ERA': '{:.2f}', 'JA ERA L20': '{:.2f}', 'Hot Score': '{:.2f}'})
+                    st.dataframe(styled_all_trend_p, hide_index=True, width=700,height=810)
+            else:
+                bcol1,bcol2,bcol3 = st.columns([1,3,1])
+                with bcol2:
+                    all_trend_p = trend_p.sort_values(by='Hot Score',ascending=False)[['player_name','JA ERA','JA ERA L20','Hot Score']]
+                    styled_all_trend_p = all_trend_p.style.apply(color_cells_HitMatchups, subset=['JA ERA','JA ERA L20','Hot Score'], axis=1).format({'JA ERA': '{:.2f}', 'JA ERA L20': '{:.2f}', 'Hot Score': '{:.2f}'})
+                    st.dataframe(styled_all_trend_p, hide_index=True, width=700,height=900)
+
+
+
     if tab == "Air Pull Matchups":
 
         st.markdown("<h2><center><br>Air Pull Matchups</h2></center>", unsafe_allow_html=True)
@@ -1983,14 +2168,6 @@ if check_password():
                 'Hitter BIP': '{:.0f}','Pitcher BIP': '{:.0f}'})
 
             st.dataframe(styled_df, hide_index=True,height=750)
-
-
-        
-
-
-
-        # get todays matchups
-
     
     if tab == "Weather & Umps":
         weather_show = weather_data[['HomeTeam','Game','Conditions','Temp','Winds','Wind Dir','Rain%']].sort_values(by='Rain%',ascending=False)
