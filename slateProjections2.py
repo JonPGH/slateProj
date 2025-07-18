@@ -30,7 +30,7 @@ def check_password():
             st.error("Incorrect password. Please try again.")
     
     if not st.session_state.authenticated:
-        st.text_input("Enter Password (new password in Resource Glossary 7/18/2025)", type="password", key="password", on_change=password_entered)
+        st.text_input("Enter Password (new password in resource glossary 7/18/2025)", type="password", key="password", on_change=password_entered)
         return False
     return True
 
@@ -2993,7 +2993,7 @@ if check_password():
             
             with col2:
                 sg_filtered_df = upcoming_start_grades[(upcoming_start_grades['Date'] >= date_range[0]) & (upcoming_start_grades['Date'] <= date_range[1])]
-                sg_filtered_df = upcoming_start_grades[(upcoming_start_grades['Own%'] >= own_range[0]) & (upcoming_start_grades['Own%'] <= own_range[1])]
+                sg_filtered_df = sg_filtered_df[(upcoming_start_grades['Own%'] >= own_range[0]) & (upcoming_start_grades['Own%'] <= own_range[1])]
 
                 sg_display = sg_filtered_df.style.applymap(sp_grade_color_score, subset=['Start Grade']).format({'Start Grade': '{:.0f}','Own%': '{:.0f}'})
                 #st.markdown("&nbsp;&nbsp;&nbsp;", unsafe_allow_html=True)
