@@ -229,8 +229,9 @@ if check_password():
         airpulldata = pd.read_csv(f'{file_path}/airpulldata.csv')
         trend_h = pd.read_csv(f'{file_path}/hot_hit_oe_data.csv')
         trend_p = pd.read_csv(f'{file_path}/hot_pit_ja_era.csv')
+        upcoming_start_grades = pd.read_csv(f'{file_path}/upcoming_start_grades.csv')
 
-        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h
+        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -908,7 +909,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h = load_data()
+    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -2102,8 +2103,6 @@ if check_password():
                     styled_all_trend_p = all_trend_p.style.apply(color_cells_HitMatchups, subset=['JA ERA','JA ERA L20','Hot Score'], axis=1).format({'JA ERA': '{:.2f}', 'JA ERA L20': '{:.2f}', 'Hot Score': '{:.2f}'})
                     st.dataframe(styled_all_trend_p, hide_index=True, width=700,height=900)
 
-
-
     if tab == "Air Pull Matchups":
 
         st.markdown("<h2><center><br>Air Pull Matchups</h2></center>", unsafe_allow_html=True)
@@ -2971,11 +2970,39 @@ if check_password():
 
     if tab == "SP Planner":
         st.markdown("&nbsp;<h1><center>Upcoming Strength of Schedule Analysis</h1></center>&nbsp;",unsafe_allow_html=True)
+
+        dpcheck = st.checkbox('Show Daily Planner?')
+        if dpcheck:
+            st.markdown("<h3><center>Upcoming Starting Pitcher Matchup Grades</h3></center>",unsafe_allow_html=True)
+            #sgcol1, sgcol2, sgcol3 = st.columns([1,5,1])
+            #with sgcol2:
+            upcoming_start_grades['Date'] = upcoming_start_grades['Date'] + '-2025'
+            upcoming_start_grades['Date'] = pd.to_datetime(upcoming_start_grades['Date'])
+            upcoming_start_grades['Date'] =upcoming_start_grades['Date'].dt.date
+            upcoming_start_grades['Own%'] = round(upcoming_start_grades['Own%'],0)
+            upcoming_start_grades = upcoming_start_grades[['Date','Pitcher','Team','Own%','Opp','Home','Start Grade','Day Rank']]
+            dates = upcoming_start_grades['Date'].unique()
+            ownerships = upcoming_start_grades['Own%'].unique()
+
+            col1, col2 = st.columns([1,4])
+
+            with col1:
+                # Sliders
+                date_range = st.slider("Select a Date Range", min_value=min(dates), max_value=max(dates), value=(min(dates), max(dates)), format="YYYY-MM-DD")
+                own_range = st.slider("Select an Ownership Range", min_value=min(ownerships), max_value=max(ownerships), value=(min(ownerships), max(ownerships)))
+            
+            with col2:
+                sg_filtered_df = upcoming_start_grades[(upcoming_start_grades['Date'] >= date_range[0]) & (upcoming_start_grades['Date'] <= date_range[1])]
+                sg_filtered_df = upcoming_start_grades[(upcoming_start_grades['Own%'] >= own_range[0]) & (upcoming_start_grades['Own%'] <= own_range[1])]
+
+                sg_display = sg_filtered_df.style.applymap(sp_grade_color_score, subset=['Start Grade']).format({'Start Grade': '{:.0f}','Own%': '{:.0f}'})
+                #st.markdown("&nbsp;&nbsp;&nbsp;", unsafe_allow_html=True)
+                st.dataframe(sg_display, width=900,height=500, hide_index=True)
         
         col1, col2 = st.columns([1,1])
         with col1:
             st.markdown("<h3>Softest Upcoming Schedules</h3>",unsafe_allow_html=True)
-            top_hits = upcoming_p_scores[upcoming_p_scores['Score']>=120][['Pitcher','Team','GS','Score','Matchups']]
+            top_hits = upcoming_p_scores[upcoming_p_scores['Score']>=110][['Pitcher','Team','GS','Score','Matchups']]
             top_hits['Score'] = top_hits['Score'].astype(float).astype(int)
             styled_top_hits = top_hits.style.applymap(sp_grade_color_score, subset=['Score'])
 
@@ -2983,7 +3010,7 @@ if check_password():
 
         with col2:
             st.markdown("<h3>Toughest Upcoming Schedules</h3>",unsafe_allow_html=True)
-            bot_hits = upcoming_p_scores[upcoming_p_scores['Score']<=80][['Pitcher','Team','GS','Score','Matchups']]
+            bot_hits = upcoming_p_scores[upcoming_p_scores['Score']<=90][['Pitcher','Team','GS','Score','Matchups']].sort_values(by='Score')
             bot_hits['Score'] = bot_hits['Score'].astype(float).astype(int)
             styled_bot_hits = bot_hits.style.applymap(sp_grade_color_score, subset=['Score'])
             st.dataframe(styled_bot_hits, hide_index=True, height=400, width=900)
