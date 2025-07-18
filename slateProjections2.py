@@ -17,8 +17,8 @@ if 'authenticated' not in st.session_state:
 
 # Define the correct password (replace with your desired password)
 #st.markdown("<h1>Enter Password to Access Slate Analysis Tool",unsafe_allow_html=True)
-CORRECT_PASSWORD = "chonefiggins"
-CORRECT_PASSWORD2 = 'a'
+CORRECT_PASSWORD = "hafner"
+CORRECT_PASSWORD2 = '1'
 
 # Function to check password
 def check_password():
