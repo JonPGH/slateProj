@@ -30,7 +30,7 @@ def check_password():
             st.error("Incorrect password. Please try again.")
     
     if not st.session_state.authenticated:
-        st.text_input("Enter Password", type="password", key="password", on_change=password_entered)
+        st.text_input("Enter Password (new password in Resource Glossary 7/18/2025)", type="password", key="password", on_change=password_entered)
         return False
     return True
 
