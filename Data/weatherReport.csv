@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Giants  @  Blue Jays,Partly Cloudy,80°,6.5 mph,"Out, Weak",SF,TOR,0,2025-7-19,1,0
-1,Reds  @  Mets,Partly Cloudy,82°,11.0 mph,"Out, Strong",CIN,NYM,0,2025-7-19,0,0
-2,Royals  @  Marlins,Clear,88°,9.2 mph,"In, Weak",KC,MIA,0,2025-7-19,1,0
-3,Angels  @  Phillies,Mostly Cloudy,80°,5.6 mph,"R to L, Weak",LAA,PHI,12,2025-7-19,0,0
-4,White Sox  @  Pirates,Mostly Clear,86°,4.7 mph,None,CWS,PIT,0,2025-7-19,0,0
-5,Padres  @  Nationals,Light Rain,84°,3.8 mph,None,SD,WSH,25,2025-7-19,0,0
+0,Giants  @  Blue Jays,Partly Cloudy,81°,6.5 mph,"Out, Weak",SF,TOR,0,2025-7-19,1,0
+1,Reds  @  Mets,Partly Cloudy,82°,10.1 mph,"Out, Strong",CIN,NYM,0,2025-7-19,0,0
+2,Royals  @  Marlins,Clear,89°,8.3 mph,"In, Weak",KC,MIA,0,2025-7-19,1,0
+3,Angels  @  Phillies,Partly Cloudy,80°,5.4 mph,"R to L, Weak",LAA,PHI,11,2025-7-19,0,0
+4,White Sox  @  Pirates,Mostly Clear,86°,5.4 mph,"Out, Weak",CWS,PIT,0,2025-7-19,0,0
+5,Padres  @  Nationals,Light Rain,84°,3.6 mph,None,SD,WSH,26,2025-7-19,0,0
 6,Tigers  @  Rangers,Mostly Clear,94°,12.7 mph,"R to L, Strong",DET,TEX,0,2025-7-19,1,0
-7,Orioles  @  Rays,Possible Light Rain,89°,3.8 mph,None,BAL,TB,11,2025-7-19,0,0
-8,Athletics  @  Guardians,Partly Cloudy,84°,4.7 mph,None,OAK,CLE,0,2025-7-19,0,0
+7,Orioles  @  Rays,Possible Light Rain,88°,4.7 mph,None,BAL,TB,11,2025-7-19,0,0
+8,Athletics  @  Guardians,Partly Cloudy,84°,5.6 mph,"In, Weak",OAK,CLE,0,2025-7-19,0,0
 9,Cardinals  @  Diamondbacks,Mostly Clear,106°,6.5 mph,"L to R, Weak",STL,ARI,0,2025-7-19,1,0
-10,Red Sox  @  Cubs,Partly Cloudy,83°,5.6 mph,"Out, Weak",BOS,CHC,0,2025-7-19,0,0
+10,Red Sox  @  Cubs,Partly Cloudy,83°,6.5 mph,"Out, Weak",BOS,CHC,0,2025-7-19,0,0
 11,Yankees  @  Braves,Possible Light Rain,86°,9.2 mph,"R to L, Weak",NYY,ATL,8,2025-7-19,0,0
-12,Twins  @  Rockies,Partly Cloudy,88°,8.0 mph,"Out, Weak",MIN,COL,21,2025-7-19,0,0
+12,Twins  @  Rockies,Partly Cloudy,88°,8.0 mph,"R to L, Weak",MIN,COL,21,2025-7-19,0,0
 13,Brewers  @  Dodgers,Clear,73°,8.0 mph,"Out, Weak",MIL,LAD,0,2025-7-19,0,0
-14,Astros  @  Mariners,Partly Cloudy,70°,4.5 mph,None,HOU,SEA,0,2025-7-19,1,0
+14,Astros  @  Mariners,Partly Cloudy,69°,4.5 mph,None,HOU,SEA,0,2025-7-19,1,0
