@@ -1,7 +1,6 @@
 ,Team,Player,SAVID,Hand
 0,BAL,Bryan Baker,641329,R
 3,BAL,Cionel Perez,672335,L
-5,BAL,Felix Bautista,642585,R
 6,BAL,Gregory Soto,642397,L
 7,BAL,Keegan Akin,669211,L
 8,BAL,Matt Bowman,621199,R
@@ -10,6 +9,7 @@
 12,BAL,Yennier Cano,666974,R
 13,CIN,Alexis Diaz,664747,R
 16,CIN,Brent Suter,608718,L
+17,CIN,Emilio Pagan,641941,R
 18,CIN,Graham Ashcraft,668933,R
 20,CIN,Ian Gibaut,664139,R
 23,CIN,Scott Barlow,605130,R
@@ -22,7 +22,6 @@
 33,NYM,Jose Butto,676130,R
 34,NYM,Justin Hagenman,663795,R
 36,NYM,Reed Garrett,657585,R
-37,NYM,Ryne Stanek,592773,R
 39,MIA,Anthony Bender,669622,R
 40,MIA,Anthony Veneziano,685107,L
 42,MIA,Calvin Faucher,676534,R
@@ -44,13 +43,11 @@
 66,WSH,Cole Henry,669371,R
 67,WSH,Colin Poche,621363,L
 68,WSH,Eduardo Salazar,674285,R
-69,WSH,Jackson Rutledge,671131,R
 71,WSH,Jorge Lopez,605347,R
 72,WSH,Jose A. Ferrer,678606,L
 73,WSH,Kyle Finnegan,640448,R
 74,WSH,Lucas Sims,608371,R
 79,PHI,Carlos Hernandez,672578,R
-82,PHI,Joe Ross,605452,R
 83,PHI,Jordan Romano,605447,R
 84,PHI,Jose Alvarado,621237,L
 85,PHI,Jose Ruiz,614179,R
@@ -58,8 +55,10 @@
 87,PHI,Orion Kerkering,689147,R
 89,PHI,Tanner Banks,621383,L
 93,PIT,Caleb Ferguson,657571,L
+94,PIT,Carmen Mlodzinski,669387,R
 95,PIT,Chase Shugart,663767,R
 96,PIT,Dennis Santana,642701,R
+97,PIT,Joey Wentz,666214,L
 98,PIT,Justin Lawrence,664875,R
 99,PIT,Kyle Nicolas,693312,R
 102,PIT,Ryan Borucki,621366,L
@@ -70,13 +69,15 @@
 108,KC,Daniel Lynch IV,663738,L
 109,KC,Evan Sisk,681895,L
 110,KC,John Schreiber,670167,R
+112,KC,Lucas Erceg,668674,R
 116,KC,Steven Cruz,674444,R
-120,NYY,Devin Williams,642207,R
 121,NYY,Fernando Cruz,518585,R
 122,NYY,Ian Hamilton,641656,R
+123,NYY,Luke Weaver,596133,R
 124,NYY,Mark Leiter Jr.,643410,R
 127,NYY,Tim Hill,657612,L
 130,DET,Beau Brieske,689225,R
+131,DET,Brant Hurter,676428,L
 135,DET,John Brebbia,605154,R
 140,DET,Tommy Kahnle,592454,R
 141,DET,Tyler Holton,663947,L
@@ -97,6 +98,7 @@
 165,CLE,Paul Sewald,623149,R
 167,CLE,Tim Herrin,682120,L
 168,CLE,Triston McKenzie,663474,R
+170,TB,Edwin Uceta,670955,R
 171,TB,Eric Orze,679358,R
 172,TB,Garrett Cleavinger,664076,L
 173,TB,Hunter Bigge,685801,R
@@ -131,24 +133,25 @@
 219,ARI,Shelby Miller,571946,R
 221,ATL,Aaron Bummer,607481,L
 224,ATL,Daysbel Hernandez,678226,R
+225,ATL,Dylan Lee,669276,L
 226,ATL,Enyel De Los Santos,660853,R
 229,ATL,Pierce Johnson,572955,R
 230,ATL,Rafael Montero,606160,R
 231,ATL,Raisel Iglesias,628452,R
 234,SEA,Andres Munoz,662253,R
 237,SEA,Carlos Vargas,672841,R
-238,SEA,Casey Legumina,668984,R
 239,SEA,Collin Snider,676092,R
 240,SEA,Eduard Bazardo,660825,R
 242,SEA,Gabe Speier,642100,L
 245,SEA,Trent Thornton,663423,R
 246,SEA,Troy Taylor,700187,R
 247,HOU,Bennett Sousa,656986,L
-248,HOU,Bryan Abreu,650556,R
 249,HOU,Bryan King,687911,L
+253,HOU,Josh Hader,623352,L
 254,HOU,Logan VanWey,701121,R
 255,HOU,Nick Hernandez,663321,R
 257,HOU,Ryan Gusto,687473,R
+258,HOU,Steven Okert,595345,L
 259,HOU,Tayler Scott,605463,R
 260,OAK,J.T. Ginn,669372,R
 262,OAK,Jason Alexander,669920,R
@@ -156,7 +159,6 @@
 265,OAK,Justin Sterner,686993,R
 267,OAK,Mason Miller,695243,R
 269,OAK,Noah Murdock,668716,R
-270,OAK,Osvaldo Bido,674370,R
 271,OAK,T.J. McFarland,519008,L
 272,OAK,Tyler Ferguson,621053,R
 273,CWS,Brandon Eisert,685126,L
@@ -169,6 +171,7 @@
 285,CWS,Tyler Gilbert,656457,L
 286,LAD,Alex Vesia,681911,L
 287,LAD,Anthony Banda,607455,L
+288,LAD,Ben Casparius,676508,R
 289,LAD,Blake Treinen,595014,R
 290,LAD,Bobby Miller,676272,R
 292,LAD,Jack Dreyer,676263,L
@@ -177,15 +180,14 @@
 296,LAD,Tanner Scott,656945,L
 299,COL,Angel Chivilli,683409,R
 303,COL,Jake Bird,656234,R
-304,COL,Jimmy Herget,623474,R
 306,COL,Luis Peralta,678821,L
 308,COL,Scott Alexander,518397,L
 309,COL,Seth Halvorsen,678020,R
 310,COL,Tyler Kinley,641755,R
 311,COL,Victor Vodnik,680767,R
+312,TEX,Caleb Boushley,676961,R
 313,TEX,Chris Martin,455119,R
 314,TEX,Hoby Milner,571948,L
-315,TEX,Jacob Latz,656641,L
 316,TEX,Jacob Webb,657097,R
 319,TEX,Luke Jackson,592426,R
 322,TEX,Robert Garcia,676395,L
@@ -205,13 +207,13 @@
 348,MIN,Kody Funderburk,681892,L
 349,MIN,Louis Varland,686973,R
 351,SD,Adrian Morejon,670970,L
-352,SD,Alek Jacob,689690,R
 354,SD,Jason Adam,592094,R
 355,SD,Jeremiah Estrada,669093,R
 356,SD,Kyle Hart,606996,L
 357,SD,Logan Gillaspie,670810,R
 361,SD,Robert Suarez,663158,R
 362,SD,Wandy Peralta,593974,L
+363,SD,Yuki Matsui,673513,L
 365,CHC,Brad Keller,641745,R
 366,CHC,Caleb Thielbar,573204,L
 368,CHC,Daniel Palencia,694037,R
