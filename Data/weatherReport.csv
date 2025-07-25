@@ -1,15 +1,15 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Marlins  @  Brewers,Partly Cloudy,79°,8.9 mph,"L to R, Weak",MIA,MIL,0,2025-7-25,0,0
-1,Diamondbacks  @  Pirates,Partly Cloudy,87°,5.4 mph,"Out, Weak",ARI,PIT,17,2025-7-25,0,0
-2,Phillies  @  Yankees,Partly Cloudy,87°,8.9 mph,"Out, Weak",PHI,NYY,15,2025-7-25,0,0
+1,Diamondbacks  @  Pirates,Drizzle,85°,6.3 mph,"Out, Weak",ARI,PIT,27,2025-7-25,0,0
+2,Phillies  @  Yankees,Possible Light Rain,87°,9.8 mph,"Out, Weak",PHI,NYY,19,2025-7-25,0,0
 3,Rockies  @  Orioles,Possible Drizzle,95°,5.4 mph,"L to R, Weak",COL,BAL,15,2025-7-25,0,0
-4,Dodgers  @  Red Sox,Possible Drizzle,86°,8.0 mph,"L to R, Weak",LAD,BOS,11,2025-7-25,0,0
-5,Rays  @  Reds,Partly Cloudy,90°,3.6 mph,None,TB,CIN,0,2025-7-25,0,0
-6,Blue Jays  @  Tigers,Mostly Cloudy,81°,5.4 mph,"In, Weak",TOR,DET,12,2025-7-25,0,0
-7,Padres  @  Cardinals,Possible Light Rain,90°,5.4 mph,"R to L, Weak",SD,STL,16,2025-7-25,0,0
-8,Cubs  @  White Sox,Partly Cloudy,77°,5.4 mph,"L to R, Weak",CHC,CWS,7,2025-7-25,0,0
+4,Dodgers  @  Red Sox,Possible Light Rain,85°,8.0 mph,"L to R, Weak",LAD,BOS,15,2025-7-25,0,0
+5,Rays  @  Reds,Mostly Clear,90°,3.6 mph,None,TB,CIN,0,2025-7-25,0,0
+6,Blue Jays  @  Tigers,Mostly Cloudy,82°,5.4 mph,"In, Weak",TOR,DET,14,2025-7-25,0,0
+7,Padres  @  Cardinals,Possible Light Rain,90°,5.4 mph,"R to L, Weak",SD,STL,17,2025-7-25,0,0
+8,Cubs  @  White Sox,Partly Cloudy,76°,6.3 mph,"L to R, Weak",CHC,CWS,6,2025-7-25,0,0
 9,Braves  @  Rangers,Mostly Clear,97°,8.0 mph,"R to L, Weak",ATL,TEX,0,2025-7-25,1,0
-10,Athletics  @  Astros,Drizzle,84°,4.5 mph,None,OAK,HOU,0,2025-7-25,1,0
+10,Athletics  @  Astros,Possible Drizzle,84°,4.5 mph,None,OAK,HOU,0,2025-7-25,1,0
 11,Guardians  @  Royals,Partly Cloudy,84°,4.5 mph,None,CLE,KC,0,2025-7-25,0,0
 12,Nationals  @  Twins,Partly Cloudy,83°,6.3 mph,"R to L, Weak",WSH,MIN,0,2025-7-25,0,0
 13,Mariners  @  Angels,Clear,73°,8.9 mph,"Out, Weak",SEA,LAA,0,2025-7-25,0,0
