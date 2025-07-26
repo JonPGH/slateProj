@@ -1,16 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Marlins  @  Brewers,Mostly Cloudy,79°,8.9 mph,"L to R, Weak",MIA,MIL,0,2025-7-25,0,0
-1,Diamondbacks  @  Pirates,Possible Light Rain,84°,6.3 mph,"Out, Weak",ARI,PIT,23,2025-7-25,0,0
-2,Phillies  @  Yankees,Possible Light Rain,86°,9.8 mph,"Out, Weak",PHI,NYY,18,2025-7-25,0,0
-3,Rockies  @  Orioles,Possible Light Rain,95°,5.4 mph,"L to R, Weak",COL,BAL,9,2025-7-25,0,0
-4,Dodgers  @  Red Sox,Possible Light Rain,85°,8.0 mph,"L to R, Weak",LAD,BOS,24,2025-7-25,0,0
-5,Rays  @  Reds,Mostly Clear,91°,3.6 mph,None,TB,CIN,0,2025-7-25,0,0
-6,Blue Jays  @  Tigers,Partly Cloudy,81°,5.4 mph,"L to R, Weak",TOR,DET,15,2025-7-25,0,0
-7,Padres  @  Cardinals,Possible Drizzle,92°,6.3 mph,"R to L, Weak",SD,STL,9,2025-7-25,0,0
-8,Cubs  @  White Sox,Partly Cloudy,76°,5.4 mph,"L to R, Weak",CHC,CWS,6,2025-7-25,0,0
-9,Braves  @  Rangers,Mostly Clear,98°,8.0 mph,"R to L, Weak",ATL,TEX,0,2025-7-25,1,0
-10,Athletics  @  Astros,Light Rain,83°,3.6 mph,None,OAK,HOU,0,2025-7-25,1,0
-11,Guardians  @  Royals,Possible Rain,82°,4.5 mph,None,CLE,KC,0,2025-7-25,0,0
-12,Nationals  @  Twins,Partly Cloudy,83°,6.3 mph,"R to L, Weak",WSH,MIN,0,2025-7-25,0,0
-13,Mariners  @  Angels,Clear,73°,8.9 mph,"Out, Weak",SEA,LAA,0,2025-7-25,0,0
-14,Mets  @  Giants,Mostly Cloudy,60°,10.7 mph,"Out, Strong",NYM,SF,0,2025-7-25,0,0
+0,Phillies  @  Yankees,Partly Cloudy,84°,8.0 mph,"In, Weak",PHI,NYY,0,2025-7-26,0,0
+1,Guardians  @  Royals,Partly Cloudy,85°,8.0 mph,"Out, Weak",CLE,KC,12,2025-7-26,0,0
+2,Guardians  @  Royals,Partly Cloudy,85°,8.0 mph,"Out, Weak",CLE,KC,7,2025-7-26,0,0
+3,Blue Jays  @  Tigers,Mostly Cloudy,81°,7.2 mph,"R to L, Weak",TOR,DET,17,2025-7-26,0,0
+4,Rays  @  Reds,Mostly Clear,89°,6.3 mph,"R to L, Weak",TB,CIN,15,2025-7-26,0,0
+5,Diamondbacks  @  Pirates,Possible Light Rain,87°,4.5 mph,None,ARI,PIT,21,2025-7-26,0,0
+6,Braves  @  Rangers,Partly Cloudy,93°,10.7 mph,"R to L, Strong",ATL,TEX,8,2025-7-26,1,0
+7,Rockies  @  Orioles,Possible Drizzle,89°,5.4 mph,"R to L, Weak",COL,BAL,22,2025-7-26,0,0
+8,Athletics  @  Astros,Mostly Cloudy,84°,8.0 mph,"Out, Weak",OAK,HOU,11,2025-7-26,1,1
+9,Cubs  @  White Sox,Light Rain,79°,7.2 mph,"R to L, Weak",CHC,CWS,42,2025-7-26,0,0
+10,Marlins  @  Brewers,Partly Cloudy,82°,6.3 mph,"R to L, Weak",MIA,MIL,12,2025-7-26,0,0
+11,Nationals  @  Twins,Clear,88°,8.0 mph,"R to L, Weak",WSH,MIN,0,2025-7-26,0,0
+12,Guardians  @  Royals,Partly Cloudy,87°,6.3 mph,"Out, Weak",CLE,KC,12,2025-7-26,0,0
+13,Guardians  @  Royals,Partly Cloudy,87°,6.3 mph,"Out, Weak",CLE,KC,7,2025-7-26,0,0
+14,Padres  @  Cardinals,Mostly Clear,89°,8.0 mph,"R to L, Weak",SD,STL,0,2025-7-26,0,0
+15,Dodgers  @  Red Sox,Partly Cloudy,78°,6.3 mph,"R to L, Weak",LAD,BOS,0,2025-7-26,0,0
+16,Mets  @  Giants,Partly Cloudy,60°,10.7 mph,"Out, Strong",NYM,SF,0,2025-7-26,0,0
+17,Mariners  @  Angels,Mostly Clear,73°,8.0 mph,"Out, Weak",SEA,LAA,0,2025-7-26,0,0

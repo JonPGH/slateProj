@@ -61,7 +61,6 @@
 94,PIT,Carmen Mlodzinski,669387,R
 95,PIT,Chase Shugart,663767,R
 96,PIT,Dennis Santana,642701,R
-97,PIT,Joey Wentz,666214,L
 98,PIT,Justin Lawrence,664875,R
 99,PIT,Kyle Nicolas,693312,R
 102,PIT,Ryan Borucki,621366,L
@@ -81,7 +80,6 @@
 124,NYY,Mark Leiter Jr.,643410,R
 127,NYY,Tim Hill,657612,L
 130,DET,Beau Brieske,689225,R
-131,DET,Brant Hurter,676428,L
 135,DET,John Brebbia,605154,R
 140,DET,Tommy Kahnle,592454,R
 141,DET,Tyler Holton,663947,L
@@ -152,7 +150,6 @@
 249,HOU,Bryan King,687911,L
 253,HOU,Josh Hader,623352,L
 254,HOU,Logan VanWey,701121,R
-255,HOU,Nick Hernandez,663321,R
 258,HOU,Steven Okert,595345,L
 259,HOU,Tayler Scott,605463,R
 264,OAK,Jose Leclerc,600917,R
@@ -213,6 +210,7 @@
 352,SD,Alek Jacob,689690,R
 354,SD,Jason Adam,592094,R
 355,SD,Jeremiah Estrada,669093,R
+356,SD,Kyle Hart,606996,L
 361,SD,Robert Suarez,663158,R
 362,SD,Wandy Peralta,593974,L
 363,SD,Yuki Matsui,673513,L
