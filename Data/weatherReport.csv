@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Dodgers  @  Red Sox,Mostly Cloudy,73°,8.9 mph,"Out, Weak",LAD,BOS,24,2025-7-27,0,0
-1,Diamondbacks  @  Pirates,Partly Cloudy,84°,8.0 mph,"Out, Weak",ARI,PIT,8,2025-7-27,0,0
-2,Rockies  @  Orioles,Mostly Cloudy,93°,5.4 mph,"L to R, Weak",COL,BAL,7,2025-7-27,0,0
-3,Phillies  @  Yankees,Mostly Cloudy,78°,8.0 mph,"R to L, Weak",PHI,NYY,19,2025-7-27,0,0
-4,Rays  @  Reds,Partly Cloudy,89°,6.3 mph,"R to L, Weak",TB,CIN,12,2025-7-27,0,0
-5,Blue Jays  @  Tigers,Mostly Clear,85°,5.4 mph,"Out, Weak",TOR,DET,0,2025-7-27,0,0
-6,Guardians  @  Royals,Mostly Clear,89°,7.2 mph,"Out, Weak",CLE,KC,11,2025-7-27,0,0
-7,Athletics  @  Astros,Drizzle,89°,7.2 mph,"Out, Weak",OAK,HOU,29,2025-7-27,1,1
-8,Marlins  @  Brewers,Clear,86°,5.4 mph,"In, Weak",MIA,MIL,0,2025-7-27,0,0
-9,Nationals  @  Twins,Clear,89°,9.8 mph,"R to L, Weak",WSH,MIN,0,2025-7-27,0,0
-10,Cubs  @  White Sox,Mostly Clear,81°,5.4 mph,"In, Weak",CHC,CWS,39,2025-7-27,0,0
-11,Padres  @  Cardinals,Possible Drizzle,90°,5.4 mph,"Out, Weak",SD,STL,21,2025-7-27,0,0
+0,Dodgers  @  Red Sox,Overcast,73°,8.9 mph,"Out, Weak",LAD,BOS,26,2025-7-27,0,0
+1,Diamondbacks  @  Pirates,Mostly Cloudy,84°,7.2 mph,"Out, Weak",ARI,PIT,14,2025-7-27,0,0
+2,Rockies  @  Orioles,Mostly Cloudy,93°,5.4 mph,"L to R, Weak",COL,BAL,8,2025-7-27,0,0
+3,Phillies  @  Yankees,Mostly Cloudy,79°,8.0 mph,"Out, Weak",PHI,NYY,14,2025-7-27,0,0
+4,Rays  @  Reds,Partly Cloudy,88°,6.3 mph,"R to L, Weak",TB,CIN,14,2025-7-27,0,0
+5,Blue Jays  @  Tigers,Mostly Clear,86°,4.5 mph,None,TOR,DET,0,2025-7-27,0,0
+6,Guardians  @  Royals,Mostly Clear,89°,8.0 mph,"Out, Weak",CLE,KC,0,2025-7-27,0,0
+7,Athletics  @  Astros,Possible Drizzle,88°,7.2 mph,"Out, Weak",OAK,HOU,14,2025-7-27,1,1
+8,Marlins  @  Brewers,Clear,87°,6.3 mph,"In, Weak",MIA,MIL,0,2025-7-27,0,0
+9,Nationals  @  Twins,Mostly Clear,89°,10.7 mph,"R to L, Strong",WSH,MIN,0,2025-7-27,0,0
+10,Cubs  @  White Sox,Mostly Clear,82°,5.4 mph,"In, Weak",CHC,CWS,0,2025-7-27,0,0
+11,Padres  @  Cardinals,Possible Drizzle,90°,4.5 mph,None,SD,STL,12,2025-7-27,0,0
 12,Braves  @  Rangers,Mostly Clear,92°,9.8 mph,"Out, Weak",ATL,TEX,0,2025-7-27,1,0
 13,Mariners  @  Angels,Clear,76°,7.2 mph,"Out, Weak",SEA,LAA,0,2025-7-27,0,0
-14,Mets  @  Giants,Mostly Clear,61°,10.7 mph,"Out, Strong",NYM,SF,0,2025-7-27,0,0
+14,Mets  @  Giants,Mostly Clear,61°,11.6 mph,"Out, Strong",NYM,SF,0,2025-7-27,0,0
