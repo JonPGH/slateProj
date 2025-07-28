@@ -1926,11 +1926,11 @@ if check_password():
             else:
                 st.dataframe(styled_df,hide_index=True,width=850)
             
-            show_proj_df_hr = filtered_havg[['Hitter','Team','Sal','Pos','Opp','OppSP','HR','Avg HR Proj','HR Diff']]
+            show_proj_df_hr = filtered_havg[['Hitter','Team','Pos','Opp','OppSP','HR','Avg HR Proj','HR Diff']]
             show_proj_df_hr = show_proj_df_hr.sort_values(by='HR Diff',ascending=False)
             styled_df_hr = show_proj_df_hr.style.apply(
-                color_cells_HitProj, subset=['HR', 'Sal', 'Avg HR Proj','HR Diff'], axis=1).format({
-                    'HR': '{:.2f}', 'Sal': '${:,.0f}',
+                color_cells_HitProj, subset=['HR', 'Avg HR Proj','HR Diff'], axis=1).format({
+                    'HR': '{:.2f}',
                     'Avg HR Proj': '{:.2f}', 'HR Diff': '{:.2f}', })
             
             st.markdown("<h2>Home Run Projection</h2>", unsafe_allow_html=True)
