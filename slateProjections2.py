@@ -814,6 +814,17 @@ if check_password():
                 return f'background-color: {color2}'
             elif val < 6:
                 return f'background-color: {color1}'
+        if column == 'HR Diff':
+            if val >= .05:
+                return f'background-color: {color5}'
+            elif val >= .03:
+                return f'background-color: {color4}'
+            elif val >= 0.01:
+                return f'background-color: {color3}'
+            elif val >= -.03:
+                return f'background-color: {color2}'
+            elif val < -.03:
+                return f'background-color: {color1}'
         if column == 'DKPts Diff':
             if val >= 1.5:
                 return f'background-color: {color5}'
@@ -848,6 +859,17 @@ if check_password():
             elif val < 2:
                 return f'background-color: {color1}'
         if column == 'HR':
+            if val >= .25:
+                return f'background-color: {color5}'
+            elif val >= .2:
+                return f'background-color: {color4}'
+            elif val >= .1:
+                return f'background-color: {color3}'
+            elif val >= .05:
+                return f'background-color: {color2}'
+            elif val < .05:
+                return f'background-color: {color1}'
+        if column == 'Avg HR Proj':
             if val >= .25:
                 return f'background-color: {color5}'
             elif val >= .2:
@@ -1867,6 +1889,7 @@ if check_password():
         elif hproj_option == "Today vs. Season Avg":
             needed_proj_data = hitterproj[['Hitter','Sal','Pos']]
             h_vs_avg = pd.merge(h_vs_avg,needed_proj_data,on=['Hitter'])
+
             if main_slate_check:
                 h_vs_avg = h_vs_avg[h_vs_avg['Team'].isin(mainslateteams)]
             else:
@@ -1901,6 +1924,17 @@ if check_password():
                 st.dataframe(styled_df,hide_index=True,width=850,height=600)
             else:
                 st.dataframe(styled_df,hide_index=True,width=850)
+            
+            show_proj_df_hr = filtered_havg[['Hitter','Team','Sal','Pos','Opp','OppSP','HR','Avg HR Proj','HR Diff']]
+            styled_df_hr = show_proj_df_hr.style.apply(
+                color_cells_HitProj, subset=['HR', 'Sal', 'Avg HR Proj','HR Diff'], axis=1).format({
+                    'HR': '{:.2f}', 'Sal': '${:,.0f}',
+                    'Avg HR Proj': '{:.2f}', 'HR Diff': '{:.2f}', })
+            
+            if len(show_proj_df)>20:
+                st.dataframe(styled_df_hr,hide_index=True,width=850,height=600)
+            else:
+                st.dataframe(styled_df_hr,hide_index=True,width=850)
 
     if tab == "Matchups":
 
