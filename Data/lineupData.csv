@@ -1,6 +1,6 @@
 ,Pitcher,Opp,K%,BB%,Brl%,GB%,FB%,xwOBA,PPA,LU
-0,Brady Singer,ATL,0.216,0.086,0.097,0.419,0.266,0.3321111111111111,3.96,"Jurickson Profar, Matt Olson, Austin Riley, Michael Harris II, Marcell Ozuna, Drake Baldwin, Ozzie Albies, Jarred Kelenic, Nick Allen"
-0,Bryce Elder,CIN,0.238,0.084,0.071,0.435,0.25,0.3012222222222222,3.848888888888889,"Gavin Lux, Matt McLain, Elly De La Cruz, Austin Hays, Spencer Steer, Jake Fraley, ""KeBryan Hayes"", Will Benson, Jose Trevino"
+0,Brady Singer,ATL,0.21,0.083,0.095,0.433,0.258,0.33077777777777784,3.9311111111111114,"Jurickson Profar, Matt Olson, Austin Riley, Drake Baldwin, Marcell Ozuna, Michael Harris II, Ozzie Albies, Eli White, Nick Allen"
+0,Bryce Elder,CIN,0.24,0.083,0.069,0.44,0.249,0.29866666666666664,3.8499999999999996,"Gavin Lux, Matt McLain, Elly De La Cruz, Noelvi Marte, Spencer Steer, Jake Fraley, Jose Trevino, Will Benson, ""KeBryan Hayes"""
 0,Cade Horton,BAL,0.237,0.077,0.091,0.42,0.284,0.313,3.973333333333333,"Jackson Holliday, Jordan Westburg, Gunnar Henderson, Adley Rutschman, ""Ryan OHearn"", Colton Cowser, Cedric Mullins II, Dylan Carlson, Alex Jackson"
 0,Trevor Rogers,CHC,0.195,0.094,0.088,0.386,0.294,0.3358888888888889,3.933333333333333,"Nico Hoerner, Kyle Tucker, Seiya Suzuki, Carson Kelly, Pete Crow-Armstrong, Dansby Swanson, Ian Happ, Justin Turner, Matt Shaw"
 0,Ranger Suarez,DET,0.238,0.073,0.089,0.374,0.287,0.3154444444444444,3.9177777777777774,"Matt Vierling, Gleyber Torres, Jahmai Jones, Spencer Torkelson, Riley Greene, Andy Ibanez, Dillon Dingler, Wenceel Perez, Javier Baez"
@@ -26,6 +26,6 @@
 0,Nick Pivetta,STL,0.193,0.071,0.068,0.423,0.241,0.31222222222222223,3.7999999999999994,"Brendan Donovan, Ivan Herrera, Alec Burleson, Willson Contreras, Nolan Arenado, Yohel Pozo, Jordan Walker, Thomas Saggese, Victor Scott II"
 0,Matthew Liberatore,SD,0.17,0.069,0.067,0.461,0.231,0.3237777777777778,3.764444444444445,"Fernando Tatis Jr., Luis Arraez, Manny Machado, Jackson Merrill, Xander Bogaerts, Jose Iglesias, Jake Cronenworth, Bryce Johnson, Elias Diaz"
 0,Osvaldo Bido,ARI,0.232,0.073,0.075,0.404,0.275,0.2916666666666667,3.913333333333333,"Corbin Carroll, Ketel Marte, Geraldo Perdomo, Eugenio Suarez, Lourdes Gurriel Jr., Adrian Del Castillo, Tristin English, Blaze Alexander, Jorge Barrosa"
-0,Merrill Kelly,OAK,0.246,0.079,0.098,0.417,0.278,0.31488888888888883,3.795555555555556,"Lawrence Butler, Nick Kurtz, Brent Rooker, Shea Langeliers, Tyler Soderstrom, Miguel Andujar, Carlos Cortes, Max Schuemann, Darell Hernaiz"
+0,Anthony DeSclafani,OAK,0.246,0.079,0.098,0.417,0.278,0.31488888888888883,3.795555555555556,"Lawrence Butler, Nick Kurtz, Brent Rooker, Shea Langeliers, Tyler Soderstrom, Miguel Andujar, Carlos Cortes, Max Schuemann, Darell Hernaiz"
 0,Logan Gilbert,TEX,0.216,0.083,0.091,0.402,0.288,0.3231111111111111,3.8711111111111114,"Josh Smith, Corey Seager, Marcus Semien, Adolis Garcia, Evan Carter, Wyatt Langford, Joc Pederson, Josh Jung, Jonah Heim"
 0,Jack Leiter,SEA,0.226,0.085,0.092,0.43,0.28,0.3253333333333333,3.9433333333333334,"J.P. Crawford, Julio Rodriguez, Cal Raleigh, Josh Naylor, Randy Arozarena, Jorge Polanco, Dominic Canzone, Ben Williamson, Cole Young"
