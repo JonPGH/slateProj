@@ -1,10 +1,10 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Dodgers  @  Rays,Partly Cloudy,92°,6.3 mph,"Out, Weak",LAD,TB,9,2025-8-2,0,0
+0,Dodgers  @  Rays,Partly Cloudy,91°,6.3 mph,"Out, Weak",LAD,TB,7,2025-8-2,0,0
 1,Orioles  @  Cubs,Mostly Clear,76°,7.2 mph,"In, Weak",BAL,CHC,0,2025-8-2,0,0
 2,Royals  @  Blue Jays,Clear,80°,8.0 mph,"Out, Weak",KC,TOR,0,2025-8-2,1,0
-3,Pirates  @  Rockies,Partly Cloudy,87°,5.4 mph,"In, Weak",PIT,COL,7,2025-8-2,0,0
-4,Brewers  @  Nationals,Partly Cloudy,80°,6.3 mph,"In, Weak",MIL,WSH,0,2025-8-2,0,0
-5,Tigers  @  Phillies,Mostly Cloudy,80°,4.5 mph,None,DET,PHI,0,2025-8-2,0,0
+3,Pirates  @  Rockies,Partly Cloudy,87°,5.4 mph,"In, Weak",PIT,COL,5,2025-8-2,0,0
+4,Brewers  @  Nationals,Partly Cloudy,79°,6.3 mph,"In, Weak",MIL,WSH,0,2025-8-2,0,0
+5,Tigers  @  Phillies,Mostly Cloudy,79°,4.5 mph,None,DET,PHI,0,2025-8-2,0,0
 6,Rangers  @  Mariners,Mostly Clear,66°,4.5 mph,None,TEX,SEA,0,2025-8-2,1,0
 7,Twins  @  Guardians,Partly Cloudy,75°,8.9 mph,"In, Weak",MIN,CLE,0,2025-8-2,0,0
 8,Astros  @  Red Sox,Clear,75°,5.4 mph,"R to L, Weak",HOU,BOS,0,2025-8-2,0,0
@@ -12,5 +12,5 @@
 10,Giants  @  Mets,Partly Cloudy,80°,5.4 mph,"In, Weak",SF,NYM,0,2025-8-2,0,0
 11,Braves  @  Reds,Rain,82°,4.5 mph,None,ATL,CIN,45,2025-8-2,0,0
 12,Diamondbacks  @  Athletics,Clear,89°,8.0 mph,"Out, Weak",ARI,OAK,0,2025-8-2,0,0
-13,White Sox  @  Angels,Clear,78°,5.4 mph,"Out, Weak",CWS,LAA,0,2025-8-2,0,0
-14,Cardinals  @  Padres,Mostly Clear,70°,4.5 mph,None,STL,SD,0,2025-8-2,0,0
+13,White Sox  @  Angels,Clear,77°,5.4 mph,"Out, Weak",CWS,LAA,0,2025-8-2,0,0
+14,Cardinals  @  Padres,Mostly Clear,69°,4.5 mph,None,STL,SD,0,2025-8-2,0,0
