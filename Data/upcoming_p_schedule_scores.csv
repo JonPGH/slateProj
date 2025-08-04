@@ -1,326 +1,326 @@
 ,Pitcher,Team,GS,Score,Matchups
-0,Zac Gallen,ARI,2,128.0,"8-8 vs. COL
+0,Eduardo Rodriguez,ARI,2,132.0,"8-9 vs. COL
+ 8-14 @ COL"
+1,Sean Burke,CWS,2,128.0,"8-9 vs. CLE
+ 8-15 @ KC"
+2,Zac Gallen,ARI,2,127.0,"8-8 vs. COL
  8-13 @ TEX"
-1,Jake Irvin,WSH,2,127.0,"8-8 @ SF
+3,Jake Irvin,WSH,2,126.0,"8-8 @ SF
  8-13 @ KC"
-2,Jack Flaherty,DET,2,125.0,"8-6 vs. MIN
+4,Michael Lorenzen,KC,2,125.0,"8-10 @ MIN
+ 8-16 vs. CWS"
+5,Seth Lugo,KC,2,125.0,"8-9 @ MIN
+ 8-15 vs. CWS"
+6,Jack Flaherty,DET,2,125.0,"8-6 vs. MIN
  8-12 @ CWS"
-3,Chris Paddack,DET,2,125.0,"8-5 vs. MIN
- 8-11 @ CWS"
-4,Brandon Pfaadt,ARI,3,124.0,"8-4 vs. SD
+7,Brandon Pfaadt,ARI,3,123.0,"8-4 vs. SD
  8-10 vs. COL
  8-15 @ COL"
-5,Sean Burke,CWS,3,121.0,"8-3 @ LAA
- 8-9 vs. CLE
- 8-15 @ KC"
-6,Tarik Skubal,DET,2,121.0,"8-8 vs. LAA
+8,Chris Paddack,DET,3,122.0,"8-5 vs. MIN
+ 8-11 @ CWS
+ 8-16 @ MIN"
+9,Ryne Nelson,ARI,3,120.0,"8-5 vs. SD
+ 8-11 @ TEX
+ 8-16 @ COL"
+10,Tarik Skubal,DET,2,119.0,"8-8 vs. LAA
  8-13 @ CWS"
-7,Sean Manaea,NYM,2,121.0,"8-4 vs. CLE
- 8-10 @ MIL"
-8,Mike Burrows,PIT,2,120.0,"8-5 vs. SF
- 8-10 vs. CIN"
-9,Eduardo Rodriguez,ARI,3,120.0,"8-3 @ OAK
- 8-9 vs. COL
- 8-14 @ COL"
-10,Carlos Rodon,NYY,2,120.0,"8-6 @ TEX
- 8-12 vs. MIN"
-11,Will Warren,NYY,2,120.0,"8-5 @ TEX
+11,Will Warren,NYY,2,119.0,"8-5 @ TEX
  8-11 vs. MIN"
-12,Mitch Keller,PIT,3,119.0,"8-3 @ COL
- 8-8 vs. CIN
- 8-13 @ MIL"
-13,Zack Wheeler,PHI,2,119.0,"8-8 @ TEX
+12,Carlos Rodon,NYY,2,119.0,"8-6 @ TEX
+ 8-12 vs. MIN"
+13,Zack Wheeler,PHI,2,118.0,"8-8 @ TEX
  8-13 @ CIN"
-14,Andrew Heaney,PIT,2,119.0,"8-6 vs. SF
- 8-11 @ MIL"
-15,Tanner Bibee,CLE,2,119.0,"8-8 @ CWS
- 8-14 vs. MIA"
-16,Janson Junk,MIA,2,119.0,"8-6 vs. HOU
+14,Janson Junk,MIA,2,117.0,"8-6 vs. HOU
  8-12 @ CLE"
-17,Logan Webb,SF,2,118.0,"8-5 @ PIT
- 8-11 vs. SD"
-18,Robbie Ray,SF,2,118.0,"8-6 @ PIT
- 8-12 vs. SD"
-19,Garrett Crochet,BOS,2,117.0,"8-5 vs. KC
- 8-11 @ HOU"
-20,Justin Verlander,SF,2,117.0,"8-4 @ PIT
- 8-10 vs. WSH"
-21,Brayan Bello,BOS,2,117.0,"8-4 vs. KC
- 8-10 @ SD"
-22,Dustin May,BOS,2,117.0,"8-6 vs. KC
+15,Tanner Bibee,CLE,2,117.0,"8-8 @ CWS
+ 8-14 vs. MIA"
+16,Dustin May,BOS,2,116.0,"8-6 vs. KC
  8-12 @ HOU"
-23,Bryan Woo,SEA,2,117.0,"8-5 vs. CWS
- 8-10 vs. TB"
-24,Michael Soroka,CHC,3,117.0,"8-4 vs. CIN
+17,Hunter Greene,CIN,2,116.0,"8-9 @ PIT
+ 8-16 vs. MIL"
+18,Chase Burns,CIN,2,116.0,"8-8 @ PIT
+ 8-15 vs. MIL"
+19,Garrett Crochet,BOS,2,116.0,"8-5 vs. KC
+ 8-11 @ HOU"
+20,Robbie Ray,SF,2,116.0,"8-6 @ PIT
+ 8-12 vs. SD"
+21,Colin Rea,CHC,2,116.0,"8-9 @ STL
+ 8-16 vs. PIT"
+22,Logan Webb,SF,2,116.0,"8-5 @ PIT
+ 8-11 vs. SD"
+23,Andrew Heaney,PIT,2,116.0,"8-6 vs. SF
+ 8-11 @ MIL"
+24,Michael Soroka,CHC,3,115.0,"8-4 vs. CIN
  8-10 @ STL
  8-15 vs. PIT"
-25,Joey Cantillo,CLE,3,116.0,"8-3 vs. MIN
- 8-9 @ CWS
- 8-15 vs. ATL"
-26,Anthony DeSclafani,ARI,2,115.0,"8-6 vs. SD
+25,Anthony DeSclafani,ARI,2,114.0,"8-6 vs. SD
  8-12 @ TEX"
-27,Ryne Nelson,ARI,2,115.0,"8-5 vs. SD
- 8-11 @ TEX"
-28,Max Fried,NYY,2,115.0,"8-4 @ TEX
- 8-10 vs. HOU"
-29,Erick Fedde,ATL,3,114.0,"8-4 vs. MIL
+26,Joey Cantillo,CLE,2,114.0,"8-9 @ CWS
+ 8-15 vs. ATL"
+27,Cristopher Sanchez,PHI,2,114.0,"8-9 @ TEX
+ 8-14 @ WSH"
+28,Davis Martin,CWS,3,113.0,"8-5 @ SEA
+ 8-10 vs. CLE
+ 8-16 @ KC"
+29,George Kirby,SEA,2,113.0,"8-6 vs. CWS
+ 8-12 @ BAL"
+30,Logan Gilbert,SEA,2,113.0,"8-7 vs. CWS
+ 8-14 @ BAL"
+31,Erick Fedde,ATL,3,112.0,"8-4 vs. MIL
  8-9 vs. MIA
  8-15 @ CLE"
-30,George Kirby,SEA,2,114.0,"8-6 vs. CWS
- 8-12 @ BAL"
-31,Logan Gilbert,SEA,2,114.0,"8-7 vs. CWS
- 8-14 @ BAL"
-32,Clay Holmes,NYM,2,113.0,"8-5 vs. CLE
- 8-12 vs. ATL"
-33,David Peterson,NYM,2,113.0,"8-6 vs. CLE
- 8-13 vs. ATL"
-34,Eury Perez,MIA,2,113.0,"8-7 @ ATL
- 8-13 @ CLE"
-35,Freddy Peralta,MIL,2,112.0,"8-5 @ ATL
- 8-11 vs. PIT"
-36,Jose Quintana,MIL,2,112.0,"8-6 @ ATL
- 8-12 vs. PIT"
-37,Paul Skenes,PIT,2,112.0,"8-7 vs. CIN
- 8-12 @ MIL"
-38,Casey Mize,DET,3,112.0,"8-4 vs. MIN
+32,Joey Wentz,ATL,3,112.0,"8-5 vs. MIL
+ 8-10 vs. MIA
+ 8-16 @ CLE"
+33,Casey Mize,DET,3,112.0,"8-4 vs. MIN
  8-10 vs. LAA
  8-15 @ MIN"
-39,Chase Burns,CIN,3,112.0,"8-3 vs. ATL
- 8-8 @ PIT
- 8-15 vs. MIL"
+34,David Peterson,NYM,2,112.0,"8-6 vs. CLE
+ 8-13 vs. ATL"
+35,Edward Cabrera,MIA,2,112.0,"8-8 @ ATL
+ 8-14 @ CLE"
+36,Eury Perez,MIA,2,112.0,"8-7 @ ATL
+ 8-13 @ CLE"
+37,Clay Holmes,NYM,2,112.0,"8-5 vs. CLE
+ 8-12 vs. ATL"
+38,Max Fried,NYY,3,111.0,"8-4 @ TEX
+ 8-10 vs. HOU
+ 8-16 @ STL"
+39,Brayan Bello,BOS,3,111.0,"8-4 vs. KC
+ 8-10 @ SD
+ 8-16 vs. MIA"
 40,Cam Schlittler,NYY,2,111.0,"8-8 vs. HOU
  8-13 vs. MIN"
-41,Logan Evans,SEA,2,111.0,"8-3 vs. TEX
- 8-9 vs. TB"
-42,Seth Lugo,KC,3,111.0,"8-3 @ TOR
- 8-9 @ MIN
- 8-15 vs. CWS"
-43,Noah Cameron,KC,2,110.0,"8-8 @ MIN
+41,Jose Quintana,MIL,2,110.0,"8-6 @ ATL
+ 8-12 vs. PIT"
+42,Freddy Peralta,MIL,2,110.0,"8-5 @ ATL
+ 8-11 vs. PIT"
+43,Justin Verlander,SF,3,110.0,"8-4 @ PIT
+ 8-10 vs. WSH
+ 8-16 vs. TB"
+44,Charlie Morton,DET,2,110.0,"8-9 vs. LAA
+ 8-14 @ MIN"
+45,Noah Cameron,KC,2,110.0,"8-8 @ MIN
  8-13 vs. WSH"
-44,Shinnosuke Ogasawara,WSH,2,110.0,"8-6 vs. OAK
- 8-11 @ KC"
-45,Mitchell Parker,WSH,2,110.0,"8-7 vs. OAK
+46,Paul Skenes,PIT,2,110.0,"8-7 vs. CIN
+ 8-12 @ MIL"
+47,Mitch Keller,PIT,2,110.0,"8-8 vs. CIN
+ 8-13 @ MIL"
+48,Mitchell Parker,WSH,2,109.0,"8-7 vs. OAK
  8-12 @ KC"
-46,Slade Cecconi,CLE,2,107.0,"8-4 @ NYM
- 8-10 @ CWS"
-47,Aaron Civale,CWS,2,107.0,"8-8 vs. CLE
+49,Aaron Nola,PHI,2,109.0,"8-11 @ CIN
+ 8-16 @ WSH"
+50,Aaron Civale,CWS,2,107.0,"8-8 vs. CLE
  8-13 vs. DET"
-48,Davis Martin,CWS,2,107.0,"8-5 @ SEA
- 8-10 vs. CLE"
-49,Frankie Montas,NYM,3,107.0,"8-3 vs. SF
- 8-9 @ MIL
- 8-15 vs. SEA"
-50,Jesus Luzardo,PHI,3,107.0,"8-4 vs. BAL
+51,Jose Urena,MIN,2,106.0,"8-10 vs. KC
+ 8-15 vs. DET"
+52,Bailey Ober,MIN,2,106.0,"8-9 vs. KC
+ 8-14 vs. DET"
+53,Jesus Luzardo,PHI,3,106.0,"8-4 vs. BAL
  8-10 @ TEX
  8-15 @ WSH"
-51,Walker Buehler,BOS,2,107.0,"8-8 @ SD
- 8-13 @ HOU"
-52,Tyler Glasnow,LAD,2,107.0,"8-4 vs. STL
- 8-11 @ LAA"
-53,Emmet Sheehan,LAD,2,107.0,"8-5 vs. STL
- 8-12 @ LAA"
-54,Shohei Ohtani,LAD,2,107.0,"8-6 vs. STL
- 8-13 @ LAA"
-55,Joey Wentz,ATL,2,106.0,"8-5 vs. MIL
- 8-10 vs. MIA"
-56,Taj Bradley,MIN,2,106.0,"8-9 vs. KC
- 8-14 vs. DET"
-57,Luis Gil,NYY,3,105.0,"8-3 @ MIA
- 8-9 vs. HOU
+54,Sean Manaea,NYM,3,106.0,"8-4 vs. CLE
+ 8-10 @ MIL
+ 8-16 vs. SEA"
+55,Luis Gil,NYY,2,106.0,"8-9 vs. HOU
  8-15 @ STL"
-58,Lucas Giolito,BOS,3,105.0,"8-3 vs. HOU
- 8-9 @ SD
+56,Walker Buehler,BOS,2,106.0,"8-8 @ SD
+ 8-13 @ HOU"
+57,Tyler Glasnow,LAD,2,105.0,"8-4 vs. STL
+ 8-11 @ LAA"
+58,Shohei Ohtani,LAD,2,105.0,"8-6 vs. STL
+ 8-13 @ LAA"
+59,Carson Whisenhunt,SF,2,105.0,"8-8 vs. WSH
+ 8-13 vs. SD"
+60,Emmet Sheehan,LAD,2,105.0,"8-5 vs. STL
+ 8-12 @ LAA"
+61,Adrian Houser,TB,3,104.0,"8-4 @ LAA
+ 8-10 @ SEA
+ 8-16 @ SF"
+62,Bryan Woo,SEA,3,104.0,"8-5 vs. CWS
+ 8-10 vs. TB
+ 8-16 @ NYM"
+63,Joe Boyle,TB,2,104.0,"8-9 @ SEA
+ 8-15 @ SF"
+64,Lucas Giolito,BOS,2,103.0,"8-9 @ SD
  8-15 vs. MIA"
-59,Cristopher Sanchez,PHI,3,105.0,"8-3 vs. DET
- 8-9 @ TEX
- 8-14 @ WSH"
-60,Brad Lord,WSH,3,105.0,"8-3 vs. MIL
- 8-9 @ SF
- 8-14 vs. PHI"
-61,Jack Kochanowicz,LAA,3,104.0,"8-3 vs. CWS
- 8-9 @ DET
- 8-15 @ OAK"
-62,Brandon Woodruff,MIL,2,104.0,"8-8 vs. NYM
+65,Brandon Woodruff,MIL,2,102.0,"8-8 vs. NYM
  8-13 vs. PIT"
-63,Kodai Senga,NYM,2,104.0,"8-8 @ MIL
- 8-14 vs. ATL"
-64,Ranger Suarez,PHI,2,103.0,"8-6 vs. BAL
- 8-12 @ CIN"
-65,Brady Singer,CIN,2,103.0,"8-7 @ PIT
- 8-13 vs. PHI"
-66,Cal Quantrill,MIA,2,102.0,"8-5 vs. HOU
- 8-10 @ ATL"
+66,Slade Cecconi,CLE,3,102.0,"8-4 @ NYM
+ 8-10 @ CWS
+ 8-16 vs. ATL"
 67,Jacob Lopez,OAK,2,102.0,"8-7 @ WSH
  8-12 vs. TB"
 68,Jeffrey Springs,OAK,2,102.0,"8-6 @ WSH
  8-11 vs. TB"
-69,Johan Oviedo,PIT,3,101.0,"8-4 vs. SF
+69,Ranger Suarez,PHI,2,102.0,"8-6 vs. BAL
+ 8-12 @ CIN"
+70,Brady Singer,CIN,2,101.0,"8-7 @ PIT
+ 8-13 vs. PHI"
+71,Johan Oviedo,PIT,3,101.0,"8-4 vs. SF
  8-9 vs. CIN
  8-15 @ CHC"
-70,Miles Mikolas,STL,2,101.0,"8-5 @ LAD
- 8-11 vs. COL"
-71,Matthew Liberatore,STL,2,101.0,"8-6 @ LAD
+72,Mike Burrows,PIT,3,101.0,"8-5 vs. SF
+ 8-10 vs. CIN
+ 8-16 @ CHC"
+73,Brad Lord,WSH,2,101.0,"8-9 @ SF
+ 8-14 vs. PHI"
+74,Kodai Senga,NYM,2,101.0,"8-8 @ MIL
+ 8-14 vs. ATL"
+75,Luis Severino,OAK,3,100.0,"8-5 @ WSH
+ 8-10 @ BAL
+ 8-16 vs. LAA"
+76,Matthew Liberatore,STL,2,100.0,"8-6 @ LAD
  8-12 vs. COL"
-72,Colin Rea,CHC,2,100.0,"8-3 vs. BAL
- 8-9 @ STL"
-73,Jacob Misiorowski,MIL,3,100.0,"8-3 @ WSH
- 8-9 vs. NYM
- 8-15 @ CIN"
-74,Ryan Pepiot,TB,2,99.0,"8-5 @ LAA
+77,Eric Lauer,TOR,2,100.0,"8-4 @ COL
+ 8-10 @ LAD"
+78,Miles Mikolas,STL,2,100.0,"8-5 @ LAD
+ 8-11 vs. COL"
+79,Brandon Young,BAL,2,99.0,"8-9 vs. OAK
+ 8-15 @ HOU"
+80,Ryan Pepiot,TB,2,98.0,"8-5 @ LAA
  8-11 @ OAK"
-75,Shane Baz,TB,2,99.0,"8-6 @ LAA
+81,Shane Baz,TB,2,98.0,"8-6 @ LAA
  8-12 @ OAK"
-76,Charlie Morton,DET,3,99.0,"8-3 @ PHI
- 8-9 vs. LAA
- 8-14 @ MIN"
-77,Zebby Matthews,MIN,3,99.0,"8-4 @ DET
- 8-10 vs. KC
- 8-15 vs. DET"
-78,MacKenzie Gore,WSH,3,99.0,"8-5 vs. OAK
+82,Cade Cavalli,WSH,3,98.0,"8-6 vs. OAK
+ 8-11 @ KC
+ 8-16 vs. PHI"
+83,Yu Darvish,SD,2,98.0,"8-5 @ ARI
+ 8-11 @ SF"
+84,Nick Pivetta,SD,2,98.0,"8-6 @ ARI
+ 8-12 @ SF"
+85,Jack Perkins,OAK,2,98.0,"8-9 @ BAL
+ 8-15 vs. LAA"
+86,Shota Imanaga,CHC,2,98.0,"8-5 vs. CIN
+ 8-12 @ TOR"
+87,Kevin Gausman,TOR,2,98.0,"8-6 @ COL
+ 8-13 vs. CHC"
+88,Jose Berrios,TOR,2,98.0,"8-5 @ COL
+ 8-12 vs. CHC"
+89,Cade Horton,CHC,2,98.0,"8-6 vs. CIN
+ 8-13 @ TOR"
+90,Michael McGreevy,STL,2,98.0,"8-8 vs. CHC
+ 8-13 vs. COL"
+91,MacKenzie Gore,WSH,3,98.0,"8-5 vs. OAK
  8-10 @ SF
  8-15 vs. PHI"
-79,Luis Severino,OAK,2,99.0,"8-5 @ WSH
- 8-10 @ BAL"
-80,Nick Pivetta,SD,2,99.0,"8-6 @ ARI
- 8-12 @ SF"
-81,Yu Darvish,SD,2,99.0,"8-5 @ ARI
- 8-11 @ SF"
-82,Kevin Gausman,TOR,2,98.0,"8-6 @ COL
- 8-13 vs. CHC"
-83,Jose Berrios,TOR,2,98.0,"8-5 @ COL
- 8-12 vs. CHC"
-84,Spencer Strider,ATL,3,98.0,"8-3 @ CIN
- 8-8 vs. MIA
- 8-14 @ NYM"
-85,Michael McGreevy,STL,2,98.0,"8-8 vs. CHC
- 8-13 vs. COL"
-86,Chris Bassitt,TOR,2,98.0,"8-3 vs. KC
- 8-10 @ LAD"
-87,Shota Imanaga,CHC,2,97.0,"8-5 vs. CIN
- 8-12 @ TOR"
-88,Cade Horton,CHC,2,97.0,"8-6 vs. CIN
- 8-13 @ TOR"
-89,Carson Whisenhunt,SF,3,97.0,"8-3 @ NYM
- 8-8 vs. WSH
- 8-13 vs. SD"
-90,Edward Cabrera,MIA,3,97.0,"8-3 vs. NYY
- 8-8 @ ATL
- 8-14 @ CLE"
-91,Max Scherzer,TOR,2,96.0,"8-9 @ LAD
- 8-15 vs. TEX"
-92,Nick Lodolo,CIN,2,96.0,"8-4 @ CHC
- 8-10 @ PIT"
-93,Bailey Ober,MIN,2,96.0,"8-8 vs. KC
+92,Joe Ryan,MIN,2,96.0,"8-8 vs. KC
  8-13 @ NYY"
-94,Adrian Houser,TB,2,95.0,"8-4 @ LAA
- 8-10 @ SEA"
-95,Carlos Carrasco,ATL,2,95.0,"8-6 vs. MIL
- 8-12 @ NYM"
-96,J.T. Ginn,OAK,2,95.0,"8-8 @ BAL
+93,J.T. Ginn,OAK,2,95.0,"8-8 @ BAL
  8-13 vs. TB"
-97,Matthew Boyd,CHC,2,94.0,"8-8 @ STL
- 8-14 @ TOR"
-98,Carson Palmquist,COL,2,94.0,"8-6 vs. TOR
- 8-12 @ STL"
-99,Kyle Freeland,COL,2,94.0,"8-5 vs. TOR
- 8-11 @ STL"
+94,Max Scherzer,TOR,2,95.0,"8-8 @ LAD
+ 8-15 vs. TEX"
+95,Chris Bassitt,TOR,2,95.0,"8-9 @ LAD
+ 8-16 vs. TEX"
+96,Quinn Priester,MIL,3,95.0,"8-4 @ ATL
+ 8-10 vs. NYM
+ 8-16 @ CIN"
+97,Nick Lodolo,CIN,2,95.0,"8-4 @ CHC
+ 8-10 @ PIT"
+98,Frankie Montas,NYM,2,94.0,"8-9 @ MIL
+ 8-15 vs. SEA"
+99,Blake Snell,LAD,2,94.0,"8-9 vs. TOR
+ 8-16 vs. SD"
 100,Clayton Kershaw,LAD,2,94.0,"8-8 vs. TOR
  8-15 vs. SD"
-101,Sandy Alcantara,MIA,3,94.0,"8-4 vs. HOU
+101,Anthony Molina,COL,2,94.0,"8-6 vs. TOR
+ 8-12 @ STL"
+102,Matthew Boyd,CHC,2,94.0,"8-8 @ STL
+ 8-14 @ TOR"
+103,Cal Quantrill,MIA,3,93.0,"8-5 vs. HOU
+ 8-10 @ ATL
+ 8-16 @ BOS"
+104,Sandy Alcantara,MIA,3,93.0,"8-4 vs. HOU
  8-9 @ ATL
  8-15 @ BOS"
-102,Joe Boyle,TB,3,93.0,"8-3 vs. LAD
- 8-9 @ SEA
- 8-15 @ SF"
-103,Cade Povich,BAL,3,92.0,"8-4 @ PHI
- 8-10 vs. OAK
- 8-15 @ HOU"
-104,Bailey Falter,KC,2,92.0,"8-4 @ BOS
+105,Spencer Strider,ATL,2,92.0,"8-6 vs. MIL
+ 8-12 @ NYM"
+106,Yusei Kikuchi,LAA,3,92.0,"8-4 vs. TB
+ 8-10 @ DET
+ 8-16 @ OAK"
+107,Bailey Falter,KC,2,92.0,"8-4 @ BOS
  8-11 vs. WSH"
-105,Michael Wacha,KC,2,92.0,"8-6 @ BOS
+108,Michael Wacha,KC,2,92.0,"8-6 @ BOS
  8-12 vs. WSH"
-106,Yusei Kikuchi,LAA,2,91.0,"8-4 vs. TB
- 8-10 @ DET"
-107,Logan Taylor Allen,CLE,2,90.0,"8-5 @ NYM
- 8-12 vs. MIA"
-108,Bryce Elder,ATL,2,90.0,"8-7 vs. MIA
- 8-13 @ NYM"
-109,Gavin Williams,CLE,2,90.0,"8-6 @ NYM
- 8-13 vs. MIA"
-110,Bradley Blalock,COL,3,90.0,"8-3 vs. PIT
- 8-9 @ ARI
- 8-14 vs. ARI"
-111,Hunter Brown,HOU,2,90.0,"8-6 @ MIA
+109,Cade Povich,BAL,3,91.0,"8-4 @ PHI
+ 8-10 vs. OAK
+ 8-16 @ HOU"
+110,Hunter Brown,HOU,2,90.0,"8-6 @ MIA
  8-12 vs. BOS"
-112,Spencer Arrighetti,HOU,2,90.0,"8-5 @ MIA
+111,Spencer Arrighetti,HOU,2,90.0,"8-5 @ MIA
  8-11 vs. BOS"
-113,Jack Perkins,OAK,3,89.0,"8-3 vs. ARI
- 8-9 @ BAL
- 8-15 vs. LAA"
-114,Yoshinobu Yamamoto,LAD,2,89.0,"8-3 @ TB
- 8-10 vs. TOR"
-115,Austin Gomber,COL,2,89.0,"8-8 @ ARI
- 8-13 @ STL"
-116,Tomoyuki Sugano,BAL,2,89.0,"8-8 vs. OAK
- 8-14 vs. SEA"
-117,Drew Rasmussen,TB,2,89.0,"8-8 @ SEA
- 8-13 @ OAK"
-118,Luis Castillo,SEA,2,88.0,"8-8 vs. TB
+112,Carlos Carrasco,ATL,2,90.0,"8-7 vs. MIA
+ 8-13 @ NYM"
+113,Logan Taylor Allen,CLE,2,90.0,"8-5 @ NYM
+ 8-12 vs. MIA"
+114,Bryce Elder,ATL,2,90.0,"8-8 vs. MIA
+ 8-14 @ NYM"
+115,Gavin Williams,CLE,2,90.0,"8-6 @ NYM
+ 8-13 vs. MIA"
+116,Luis Castillo,SEA,2,89.0,"8-8 vs. TB
  8-15 @ NYM"
-119,Quinn Priester,MIL,2,88.0,"8-4 @ ATL
- 8-10 vs. NYM"
-120,Dylan Cease,SD,3,85.0,"8-3 vs. STL
- 8-9 vs. BOS
- 8-15 @ LAD"
-121,Jonathan Cannon,CWS,2,85.0,"8-6 @ SEA
+117,Jack Kochanowicz,LAA,2,89.0,"8-9 @ DET
+ 8-15 @ OAK"
+118,Austin Gomber,COL,2,88.0,"8-8 @ ARI
+ 8-13 @ STL"
+119,Tomoyuki Sugano,BAL,2,87.0,"8-8 vs. OAK
+ 8-14 vs. SEA"
+120,Drew Rasmussen,TB,2,87.0,"8-8 @ SEA
+ 8-13 @ OAK"
+121,Kyle Freeland,COL,3,86.0,"8-5 vs. TOR
+ 8-11 @ STL
+ 8-16 vs. ARI"
+122,Jonathan Cannon,CWS,2,84.0,"8-6 @ SEA
  8-11 vs. DET"
-122,Shane Smith,CWS,2,85.0,"8-7 @ SEA
- 8-12 vs. DET"
-123,Tyler Anderson,LAA,2,83.0,"8-6 vs. TB
+123,Tyler Anderson,LAA,2,84.0,"8-6 vs. TB
  8-12 vs. LAD"
-124,Jason Alexander,HOU,2,83.0,"8-4 @ MIA
- 8-10 @ NYY"
-125,Jose Soriano,LAA,2,83.0,"8-5 vs. TB
+124,Shane Smith,CWS,2,84.0,"8-7 @ SEA
+ 8-12 vs. DET"
+125,Jose Soriano,LAA,2,84.0,"8-5 vs. TB
  8-11 vs. LAD"
-126,Trevor Rogers,BAL,2,81.0,"8-6 @ PHI
- 8-13 vs. SEA"
-127,Jacob deGrom,TEX,3,81.0,"8-3 @ SEA
- 8-9 vs. PHI
+126,Jason Alexander,HOU,2,83.0,"8-4 @ MIA
+ 8-10 @ NYY"
+127,Jacob deGrom,TEX,2,79.0,"8-9 vs. PHI
  8-15 @ TOR"
-128,Dean Kremer,BAL,2,81.0,"8-5 @ PHI
+128,Trevor Rogers,BAL,2,79.0,"8-6 @ PHI
+ 8-13 vs. SEA"
+129,Dean Kremer,BAL,2,79.0,"8-5 @ PHI
  8-12 vs. SEA"
-129,Brandon Young,BAL,2,78.0,"8-3 @ CHC
- 8-9 vs. OAK"
-130,Andre Pallante,STL,3,78.0,"8-3 @ SD
- 8-9 vs. CHC
- 8-15 vs. NYY"
+130,Zebby Matthews,MIN,3,78.0,"8-5 @ DET
+ 8-11 @ NYY
+ 8-16 vs. DET"
 131,Colton Gordon,HOU,2,78.0,"8-8 @ NYY
  8-15 vs. BAL"
-132,Kyle Hendricks,LAA,2,76.0,"8-8 @ DET
+132,Framber Valdez,HOU,2,78.0,"8-9 @ NYY
+ 8-16 vs. BAL"
+133,Kyle Hendricks,LAA,2,77.0,"8-8 @ DET
  8-13 vs. LAD"
-133,Tanner Gordon,COL,2,76.0,"8-4 vs. TOR
+134,Tanner Gordon,COL,2,77.0,"8-4 vs. TOR
  8-10 @ ARI"
-134,Simeon Woods Richardson,MIN,2,74.0,"8-5 @ DET
- 8-11 @ NYY"
-135,JP Sears,SD,2,74.0,"8-4 @ ARI
- 8-10 vs. BOS"
-136,Joe Ryan,MIN,2,74.0,"8-6 @ DET
+135,Simeon Woods Richardson,MIN,2,75.0,"8-6 @ DET
  8-12 @ NYY"
-137,Merrill Kelly,TEX,2,74.0,"8-8 vs. PHI
+136,Patrick Corbin,TEX,3,74.0,"8-4 vs. NYY
+ 8-10 vs. PHI
+ 8-16 @ TOR"
+137,Dylan Cease,SD,2,74.0,"8-9 vs. BOS
+ 8-15 @ LAD"
+138,Merrill Kelly,TEX,2,73.0,"8-8 vs. PHI
  8-13 vs. ARI"
-138,Framber Valdez,HOU,2,71.0,"8-3 @ BOS
- 8-9 @ NYY"
-139,Patrick Corbin,TEX,2,70.0,"8-4 vs. NYY
- 8-10 vs. PHI"
-140,Zack Littell,CIN,2,70.0,"8-5 @ CHC
+139,JP Sears,SD,3,73.0,"8-4 @ ARI
+ 8-10 vs. BOS
+ 8-16 @ LAD"
+140,Bradley Blalock,COL,2,71.0,"8-9 @ ARI
+ 8-14 vs. ARI"
+141,Zack Littell,CIN,2,70.0,"8-5 @ CHC
  8-11 vs. PHI"
-141,Andrew Abbott,CIN,2,70.0,"8-6 @ CHC
+142,Andrew Abbott,CIN,2,70.0,"8-6 @ CHC
  8-12 vs. PHI"
-142,Jack Leiter,TEX,2,67.0,"8-6 vs. NYY
- 8-12 vs. ARI"
-143,Nathan Eovaldi,TEX,2,67.0,"8-5 vs. NYY
+143,Nathan Eovaldi,TEX,2,68.0,"8-5 vs. NYY
  8-11 vs. ARI"
-144,Sonny Gray,STL,2,66.0,"8-4 @ LAD
- 8-10 vs. CHC"
-145,Shane Bieber,TOR,2,66.0,"8-8 @ LAD
- 8-14 vs. CHC"
+144,Jack Leiter,TEX,2,68.0,"8-6 vs. NYY
+ 8-12 vs. ARI"
+145,Sonny Gray,STL,3,65.0,"8-4 @ LAD
+ 8-10 vs. CHC
+ 8-16 vs. NYY"
+146,Andre Pallante,STL,2,64.0,"8-9 vs. CHC
+ 8-15 vs. NYY"

@@ -1,14 +1,14 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Twins  @  Tigers,Mostly Cloudy,81°,8.0 mph,"L to R, Weak",MIN,DET,0,2025-8-4,0,0
-1,Astros  @  Marlins,Clear,88°,7.2 mph,"In, Weak",HOU,MIA,6,2025-8-4,1,0
+1,Astros  @  Marlins,Clear,88°,7.2 mph,"In, Weak",HOU,MIA,5,2025-8-4,1,0
 2,Giants  @  Pirates,Partly Cloudy,84°,5.4 mph,"In, Weak",SF,PIT,0,2025-8-4,0,0
-3,Orioles  @  Phillies,Mostly Clear,85°,3.6 mph,None,BAL,PHI,0,2025-8-4,0,0
-4,Guardians  @  Mets,Mostly Clear,83°,7.2 mph,"Out, Weak",CLE,NYM,0,2025-8-4,0,0
+3,Orioles  @  Phillies,Clear,86°,3.6 mph,None,BAL,PHI,0,2025-8-4,0,0
+4,Guardians  @  Mets,Mostly Clear,82°,7.2 mph,"Out, Weak",CLE,NYM,0,2025-8-4,0,0
 5,Royals  @  Red Sox,Clear,84°,4.5 mph,None,KC,BOS,0,2025-8-4,0,0
-6,Brewers  @  Braves,Light Rain,66°,10.7 mph,"L to R, Strong",MIL,ATL,32,2025-8-4,0,0
-7,Yankees  @  Rangers,Mostly Clear,88°,6.3 mph,"R to L, Weak",NYY,TEX,0,2025-8-4,1,0
+6,Brewers  @  Braves,Drizzle,66°,10.7 mph,"L to R, Strong",MIL,ATL,35,2025-8-4,0,0
+7,Yankees  @  Rangers,Mostly Clear,90°,6.3 mph,"In, Weak",NYY,TEX,0,2025-8-4,1,0
 8,Reds  @  Cubs,Partly Cloudy,77°,7.2 mph,"In, Weak",CIN,CHC,0,2025-8-4,0,0
-9,Blue Jays  @  Rockies,Dry and Mostly Clear,93°,11.6 mph,"R to L, Strong",TOR,COL,0,2025-8-4,0,0
-10,Rays  @  Angels,Mostly Clear,81°,7.2 mph,"Out, Weak",TB,LAA,0,2025-8-4,0,0
+9,Blue Jays  @  Rockies,Dry and Mostly Clear,94°,11.6 mph,"R to L, Strong",TOR,COL,0,2025-8-4,0,0
+10,Rays  @  Angels,Mostly Clear,80°,7.2 mph,"Out, Weak",TB,LAA,0,2025-8-4,0,0
 11,Padres  @  Diamondbacks,Dry and Clear,109°,5.4 mph,"L to R, Weak",SD,ARI,0,2025-8-4,1,0
-12,Cardinals  @  Dodgers,Mostly Clear,75°,4.5 mph,None,STL,LAD,0,2025-8-4,0,0
+12,Cardinals  @  Dodgers,Mostly Clear,74°,4.5 mph,None,STL,LAD,0,2025-8-4,0,0
