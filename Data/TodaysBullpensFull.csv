@@ -1,8 +1,7 @@
 ,Team,Player,SAVID,Hand
-1,BAL,Corbin Martin,656686,R
-4,BAL,Elvin Rodriguez,660730,R
-5,BAL,Grant Wolfram,664991,L
-6,BAL,Houston Roth,674175,R
+2,BAL,Corbin Martin,656686,R
+5,BAL,Elvin Rodriguez,660730,R
+6,BAL,Grant Wolfram,664991,L
 7,BAL,Kade Strowd,669704,R
 8,BAL,Keegan Akin,669211,L
 11,BAL,Yaramil Hiraldo,682274,R
@@ -14,7 +13,8 @@
 22,CIN,Sam Moll,594580,L
 23,CIN,Scott Barlow,605130,R
 24,CIN,Tony Santillan,663574,R
-27,NYM,Brooks Raley,548384,L
+26,NYM,Brooks Raley,548384,L
+29,NYM,Dom Hamel,687589,R
 30,NYM,Edwin Diaz,621242,R
 32,NYM,Gregory Soto,642397,L
 34,NYM,Reed Garrett,657585,R
@@ -169,11 +169,12 @@
 334,LAA,Reid Detmers,672282,L
 335,LAA,Ryan Zeferjahn,666171,R
 339,MIN,Cole Sands,663485,R
-340,MIN,Erasmo Ramirez,541640,R
-343,MIN,Justin Topa,623437,R
-345,MIN,Michael Tonkin,543859,R
-346,MIN,Noah Davis,663562,R
-347,MIN,Pierson Ohl,701487,R
+340,MIN,Darren McCaughan,670766,R
+341,MIN,Erasmo Ramirez,541640,R
+344,MIN,Justin Topa,623437,R
+346,MIN,Michael Tonkin,543859,R
+347,MIN,Noah Davis,663562,R
+348,MIN,Pierson Ohl,701487,R
 351,SD,Adrian Morejon,670970,L
 355,SD,Jason Adam,592094,R
 356,SD,Jeremiah Estrada,669093,R
