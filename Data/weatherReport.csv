@@ -1,19 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Marlins  @  Braves,Mostly Clear,80°,10.7 mph,"L to R, Strong",MIA,ATL,0,2025-8-9,0,0
 1,Marlins  @  Braves,Mostly Clear,80°,10.7 mph,"L to R, Strong",MIA,ATL,0,2025-8-9,0,0
-2,Astros  @  Yankees,Clear,83°,6.3 mph,"In, Weak",HOU,NYY,0,2025-8-9,0,0
+2,Astros  @  Yankees,Clear,83°,5.4 mph,"In, Weak",HOU,NYY,0,2025-8-9,0,0
 3,Nationals  @  Giants,Clear,66°,6.3 mph,"Out, Weak",WSH,SF,0,2025-8-9,0,0
-4,Angels  @  Tigers,Clear,88°,10.7 mph,"In, Strong",LAA,DET,0,2025-8-9,0,0
+4,Angels  @  Tigers,Clear,88°,9.8 mph,"In, Weak",LAA,DET,0,2025-8-9,0,0
 5,Reds  @  Pirates,Clear,87°,4.5 mph,None,CIN,PIT,0,2025-8-9,0,0
-6,Athletics  @  Orioles,Clear,84°,3.6 mph,None,OAK,BAL,0,2025-8-9,0,0
+6,Athletics  @  Orioles,Clear,83°,3.6 mph,None,OAK,BAL,0,2025-8-9,0,0
 7,Guardians  @  White Sox,Clear,89°,13.4 mph,"R to L, Strong",CLE,CWS,0,2025-8-9,0,0
 8,Royals  @  Twins,Mostly Clear,83°,5.4 mph,"Out, Weak",KC,MIN,0,2025-8-9,0,0
-9,Mets  @  Brewers,Possible Drizzle,88°,11.6 mph,"R to L, Strong",NYM,MIL,12,2025-8-9,0,0
+9,Mets  @  Brewers,Possible Drizzle,89°,11.6 mph,"R to L, Strong",NYM,MIL,10,2025-8-9,0,0
 10,Phillies  @  Rangers,Clear,99°,10.7 mph,"R to L, Strong",PHI,TEX,0,2025-8-9,1,0
-11,Cubs  @  Cardinals,Clear,92°,10.7 mph,"R to L, Strong",CHC,STL,0,2025-8-9,0,0
+11,Cubs  @  Cardinals,Mostly Clear,92°,10.7 mph,"R to L, Strong",CHC,STL,0,2025-8-9,0,0
 12,Marlins  @  Braves,Partly Cloudy,81°,9.8 mph,"L to R, Weak",MIA,ATL,0,2025-8-9,0,0
 13,Marlins  @  Braves,Partly Cloudy,81°,9.8 mph,"L to R, Weak",MIA,ATL,0,2025-8-9,0,0
-14,Rockies  @  Diamondbacks,Clear,109°,8.0 mph,"L to R, Weak",COL,ARI,0,2025-8-9,1,0
+14,Rockies  @  Diamondbacks,Clear,110°,8.0 mph,"L to R, Weak",COL,ARI,0,2025-8-9,1,0
 15,Red Sox  @  Padres,Mostly Clear,73°,7.2 mph,"L to R, Weak",BOS,SD,0,2025-8-9,0,0
-16,Blue Jays  @  Dodgers,Clear,76°,8.0 mph,"Out, Weak",TOR,LAD,0,2025-8-9,0,0
+16,Blue Jays  @  Dodgers,Clear,77°,8.0 mph,"Out, Weak",TOR,LAD,0,2025-8-9,0,0
 17,Rays  @  Mariners,Mostly Clear,74°,8.0 mph,"L to R, Weak",TB,SEA,0,2025-8-9,1,0
