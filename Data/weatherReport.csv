@@ -1,16 +1,12 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Royals  @  Twins,Partly Cloudy,79°,5.4 mph,"Out, Weak",KC,MIN,0,2025-8-10,0,0
-1,Astros  @  Yankees,Clear,87°,4.5 mph,None,HOU,NYY,0,2025-8-10,0,0
-2,Reds  @  Pirates,Mostly Clear,86°,2.7 mph,None,CIN,PIT,0,2025-8-10,0,0
-3,Marlins  @  Braves,Mostly Cloudy,79°,10.7 mph,"L to R, Strong",MIA,ATL,0,2025-8-10,0,0
-4,Athletics  @  Orioles,Clear,87°,3.6 mph,None,OAK,BAL,0,2025-8-10,0,0
-5,Angels  @  Tigers,Mostly Clear,89°,8.9 mph,"In, Weak",LAA,DET,0,2025-8-10,0,0
-6,Guardians  @  White Sox,Partly Cloudy,88°,11.6 mph,"R to L, Strong",CLE,CWS,0,2025-8-10,0,0
-7,Mets  @  Brewers,Drizzle,81°,11.6 mph,"R to L, Strong",NYM,MIL,27,2025-8-10,0,0
-8,Phillies  @  Rangers,Clear,95°,8.0 mph,"R to L, Weak",PHI,TEX,0,2025-8-10,1,0
-9,Nationals  @  Giants,Clear,65°,6.3 mph,"Out, Weak",WSH,SF,0,2025-8-10,0,0
-10,Blue Jays  @  Dodgers,Clear,81°,6.3 mph,"Out, Weak",TOR,LAD,0,2025-8-10,0,0
-11,Red Sox  @  Padres,Clear,75°,8.0 mph,"L to R, Weak",BOS,SD,0,2025-8-10,0,0
-12,Rays  @  Mariners,Clear,73°,10.7 mph,"L to R, Strong",TB,SEA,0,2025-8-10,1,0
-13,Rockies  @  Diamondbacks,Clear,105°,6.3 mph,"L to R, Weak",COL,ARI,0,2025-8-10,1,0
-14,Cubs  @  Cardinals,Mostly Clear,91°,8.0 mph,"R to L, Weak",CHC,STL,0,2025-8-10,0,0
+0,Phillies  @  Reds,Mostly Clear,90°,3.6 mph,None,PHI,CIN,5,2025-8-11,0,0
+1,Twins  @  Yankees,Clear,83°,8.9 mph,"R to L, Weak",MIN,NYY,0,2025-8-11,0,0
+2,Tigers  @  White Sox,Possible Drizzle,83°,6.3 mph,"R to L, Weak",DET,CWS,10,2025-8-11,0,0
+3,Nationals  @  Royals,Light Rain,79°,4.5 mph,None,WSH,KC,30,2025-8-11,0,0
+4,Pirates  @  Brewers,Mostly Clear,83°,6.3 mph,"R to L, Weak",PIT,MIL,5,2025-8-11,0,0
+5,Rockies  @  Cardinals,Mostly Clear,88°,5.4 mph,"R to L, Weak",COL,STL,7,2025-8-11,0,0
+6,Diamondbacks  @  Rangers,Mostly Clear,94°,7.2 mph,"R to L, Weak",ARI,TEX,0,2025-8-11,1,0
+7,Red Sox  @  Astros,Mostly Clear,86°,5.4 mph,"Out, Weak",BOS,HOU,0,2025-8-11,1,0
+8,Dodgers  @  Angels,Clear,78°,6.3 mph,"Out, Weak",LAD,LAA,0,2025-8-11,0,0
+9,Padres  @  Giants,Clear,62°,8.9 mph,"Out, Weak",SD,SF,0,2025-8-11,0,0
+10,Rays  @  Athletics,Clear,89°,8.9 mph,"Out, Weak",TB,OAK,0,2025-8-11,0,0
