@@ -1,12 +1,12 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Phillies  @  Reds,Mostly Clear,90°,2.7 mph,None,PHI,CIN,5,2025-8-11,0,0
-1,Twins  @  Yankees,Clear,84°,8.9 mph,"R to L, Weak",MIN,NYY,0,2025-8-11,0,0
-2,Tigers  @  White Sox,Possible Drizzle,84°,6.3 mph,"R to L, Weak",DET,CWS,6,2025-8-11,0,0
-3,Nationals  @  Royals,Mostly Cloudy,79°,4.5 mph,None,WSH,KC,18,2025-8-11,0,0
-4,Pirates  @  Brewers,Mostly Clear,84°,5.4 mph,"R to L, Weak",PIT,MIL,0,2025-8-11,0,0
-5,Rockies  @  Cardinals,Clear,89°,4.5 mph,None,COL,STL,0,2025-8-11,0,0
-6,Diamondbacks  @  Rangers,Clear,96°,8.0 mph,"R to L, Weak",ARI,TEX,0,2025-8-11,1,0
-7,Red Sox  @  Astros,Mostly Clear,86°,6.3 mph,"R to L, Weak",BOS,HOU,0,2025-8-11,1,0
-8,Dodgers  @  Angels,Clear,78°,6.3 mph,"Out, Weak",LAD,LAA,0,2025-8-11,0,0
+1,Twins  @  Yankees,Clear,83°,8.9 mph,"R to L, Weak",MIN,NYY,0,2025-8-11,0,0
+2,Tigers  @  White Sox,Possible Drizzle,83°,6.3 mph,"R to L, Weak",DET,CWS,7,2025-8-11,0,0
+3,Nationals  @  Royals,Mostly Cloudy,80°,5.4 mph,"Out, Weak",WSH,KC,16,2025-8-11,0,0
+4,Pirates  @  Brewers,Mostly Clear,83°,5.4 mph,"R to L, Weak",PIT,MIL,0,2025-8-11,0,0
+5,Rockies  @  Cardinals,Clear,89°,5.4 mph,"R to L, Weak",COL,STL,0,2025-8-11,0,0
+6,Diamondbacks  @  Rangers,Clear,95°,7.2 mph,"R to L, Weak",ARI,TEX,0,2025-8-11,1,0
+7,Red Sox  @  Astros,Mostly Clear,87°,6.3 mph,"R to L, Weak",BOS,HOU,0,2025-8-11,1,0
+8,Dodgers  @  Angels,Clear,79°,6.3 mph,"Out, Weak",LAD,LAA,0,2025-8-11,0,0
 9,Padres  @  Giants,Mostly Clear,62°,8.9 mph,"Out, Weak",SD,SF,0,2025-8-11,0,0
-10,Rays  @  Athletics,Clear,89°,8.9 mph,"Out, Weak",TB,OAK,0,2025-8-11,0,0
+10,Rays  @  Athletics,Clear,88°,8.9 mph,"Out, Weak",TB,OAK,0,2025-8-11,0,0
