@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Tigers  @  White Sox,Clear,78°,8.0 mph,"L to R, Weak",DET,CWS,0,2025-8-13,0,0
-1,Pirates  @  Brewers,Clear,79°,6.3 mph,"L to R, Weak",PIT,MIL,0,2025-8-13,0,0
-2,Nationals  @  Royals,Clear,84°,3.6 mph,None,WSH,KC,0,2025-8-13,0,0
-3,Rockies  @  Cardinals,Possible Drizzle,86°,4.5 mph,None,COL,STL,7,2025-8-13,0,0
-4,Diamondbacks  @  Rangers,Mostly Clear,89°,3.6 mph,None,ARI,TEX,5,2025-8-13,1,0
+0,Tigers  @  White Sox,Clear,79°,7.2 mph,"L to R, Weak",DET,CWS,0,2025-8-13,0,0
+1,Pirates  @  Brewers,Clear,79°,5.4 mph,"L to R, Weak",PIT,MIL,0,2025-8-13,0,0
+2,Nationals  @  Royals,Clear,84°,2.7 mph,None,WSH,KC,0,2025-8-13,0,0
+3,Rockies  @  Cardinals,Possible Drizzle,86°,3.6 mph,None,COL,STL,7,2025-8-13,0,0
+4,Diamondbacks  @  Rangers,Mostly Clear,88°,3.6 mph,None,ARI,TEX,0,2025-8-13,1,0
 5,Padres  @  Giants,Partly Cloudy,61°,6.3 mph,"Out, Weak",SD,SF,0,2025-8-13,0,0
-6,Phillies  @  Reds,Possible Light Rain,86°,4.5 mph,None,PHI,CIN,18,2025-8-13,0,0
-7,Mariners  @  Orioles,Rain,87°,5.4 mph,"L to R, Weak",SEA,BAL,40,2025-8-13,0,0
-8,Marlins  @  Guardians,Partly Cloudy,79°,5.4 mph,"In, Weak",MIA,CLE,0,2025-8-13,0,0
-9,Twins  @  Yankees,Rain,82°,8.0 mph,"R to L, Weak",MIN,NYY,32,2025-8-13,0,0
-10,Cubs  @  Blue Jays,Possible Drizzle,82°,7.2 mph,"In, Weak",CHC,TOR,17,2025-8-13,1,1
-11,Red Sox  @  Astros,Possible Light Rain,89°,5.4 mph,"Out, Weak",BOS,HOU,15,2025-8-13,1,1
-12,Braves  @  Mets,Rain,81°,8.9 mph,"Out, Weak",ATL,NYM,30,2025-8-13,0,0
+6,Phillies  @  Reds,Possible Light Rain,85°,4.5 mph,None,PHI,CIN,18,2025-8-13,0,0
+7,Mariners  @  Orioles,Rain,88°,5.4 mph,"Out, Weak",SEA,BAL,27,2025-8-13,0,0
+8,Marlins  @  Guardians,Mostly Clear,79°,5.4 mph,"In, Weak",MIA,CLE,0,2025-8-13,0,0
+9,Twins  @  Yankees,Rain,81°,7.2 mph,"R to L, Weak",MIN,NYY,27,2025-8-13,0,0
+10,Cubs  @  Blue Jays,Mostly Clear,82°,8.0 mph,"In, Weak",CHC,TOR,12,2025-8-13,1,1
+11,Red Sox  @  Astros,Possible Light Rain,89°,5.4 mph,"Out, Weak",BOS,HOU,14,2025-8-13,1,1
+12,Braves  @  Mets,Rain,81°,8.0 mph,"Out, Weak",ATL,NYM,27,2025-8-13,0,0
 13,Dodgers  @  Angels,Clear,78°,7.2 mph,"Out, Weak",LAD,LAA,0,2025-8-13,0,0
 14,Rays  @  Athletics,Clear,81°,9.8 mph,"Out, Weak",TB,OAK,0,2025-8-13,0,0
