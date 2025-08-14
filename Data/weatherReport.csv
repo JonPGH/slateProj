@@ -1,8 +1,8 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Mariners  @  Orioles,Mostly Cloudy,90°,4.5 mph,None,SEA,BAL,11,2025-8-14,0,0
+0,Mariners  @  Orioles,Mostly Cloudy,90°,4.5 mph,None,SEA,BAL,10,2025-8-14,0,0
 1,Cubs  @  Blue Jays,Clear,82°,6.3 mph,"Out, Weak",CHC,TOR,0,2025-8-14,1,0
-2,Marlins  @  Guardians,Clear,80°,7.2 mph,"In, Weak",MIA,CLE,0,2025-8-14,0,0
-3,Phillies  @  Nationals,Mostly Cloudy,83°,4.5 mph,None,PHI,WSH,21,2025-8-14,0,0
-4,Braves  @  Mets,Partly Cloudy,84°,4.5 mph,None,ATL,NYM,0,2025-8-14,0,0
-5,Tigers  @  Twins,Possible Drizzle,77°,11.6 mph,"R to L, Strong",DET,MIN,21,2025-8-14,0,0
-6,Diamondbacks  @  Rockies,Mostly Cloudy,91°,9.8 mph,"L to R, Weak",ARI,COL,0,2025-8-14,0,0
+2,Marlins  @  Guardians,Clear,81°,7.2 mph,"In, Weak",MIA,CLE,0,2025-8-14,0,0
+3,Phillies  @  Nationals,Mostly Cloudy,85°,3.6 mph,None,PHI,WSH,10,2025-8-14,0,0
+4,Braves  @  Mets,Partly Cloudy,85°,4.5 mph,None,ATL,NYM,0,2025-8-14,0,0
+5,Tigers  @  Twins,Partly Cloudy,77°,11.6 mph,"R to L, Strong",DET,MIN,18,2025-8-14,0,0
+6,Diamondbacks  @  Rockies,Mostly Cloudy,90°,8.9 mph,"L to R, Weak",ARI,COL,0,2025-8-14,0,0
