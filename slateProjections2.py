@@ -230,8 +230,9 @@ if check_password():
         trend_h = pd.read_csv(f'{file_path}/hot_hit_oe_data.csv')
         trend_p = pd.read_csv(f'{file_path}/hot_pit_ja_era.csv')
         upcoming_start_grades = pd.read_csv(f'{file_path}/upcoming_start_grades.csv')
+        hotzonedata = pd.read_csv(f'{file_path}/hotzonedata.csv')
 
-        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades
+        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -931,7 +932,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades = load_data()
+    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -995,7 +996,8 @@ if check_password():
     # Sidebar navigation
     st.sidebar.image(logo, width=150)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner"], help="Choose a view to analyze games or player projections.")
+    #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections","Player Projection Details", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -1939,9 +1941,118 @@ if check_password():
             else:
                 st.dataframe(styled_df_hr,hide_index=True,width=850)
 
-    if tab == "Matchups":
 
-        st.markdown("<h2><center><br>Matchups Model</h2></center>", unsafe_allow_html=True)
+    if tab == "Player Projection Details":
+        st.markdown("<h2><center><br>Todays Projection Details</h2></center>", unsafe_allow_html=True)
+        a_col1, a_col2, a_col3 = st.columns([1,1,4])
+        with a_col1:
+            pos_choose = st.selectbox('Choose player', ['Hitters','Pitchers'])
+            if pos_choose == 'Hitters':
+                player_list = list(hitterproj['Hitter'].unique())
+                hitter_choose = st.selectbox('Choose a Hitter', player_list)
+            else:
+                player_list = list(pitcherproj['Pitcher'].unique())
+                pitcher_choose = st.selectbox('Choose a Pitcher', player_list)
+        if pos_choose == 'Hitters':
+            with a_col2:
+                this_hitter_projection = hitterproj[hitterproj['Hitter']==hitter_choose][['Hitter','DKPts','PA','R','HR','RBI','SB','SO','BB']]
+                opp_sp = hitterproj[hitterproj['Hitter']==hitter_choose]['OppSP'].iloc[0]
+                this_hitter_id = hitterproj[hitterproj['Hitter']==hitter_choose]['ID'].iloc[0]
+                st.image(get_player_image(this_hitter_id), width=125)
+
+                this_hitter_vs_avg = h_vs_avg[h_vs_avg['Hitter']==hitter_choose]
+
+                today_dk_proj = this_hitter_vs_avg['DKPts'].iloc[0]
+                avg_dk_proj = this_hitter_vs_avg['Avg DK Proj'].iloc[0]
+                max_proj = np.max([today_dk_proj,avg_dk_proj])
+
+                today_hr_proj = this_hitter_vs_avg['HR'].iloc[0]
+                avg_hr_proj = this_hitter_vs_avg['Avg HR Proj'].iloc[0]
+                max_hr_proj = np.max([today_hr_proj,avg_hr_proj])
+
+            with a_col3:
+                game_park = pitcherproj[pitcherproj['Pitcher']==opp_sp]['HomeTeam'].iloc[0]
+
+                st.markdown(f"<b><font size=5>Todays Matchup: vs. {opp_sp} in {game_park}</font></b>", unsafe_allow_html=True)
+                st.dataframe(this_hitter_projection, hide_index=True)
+
+                player_bet_lines = alllines[alllines['Player']==hitter_choose]
+                st.dataframe(player_bet_lines)
+
+
+            b_col1, b_col2 = st.columns([1,2.5])
+            with b_col1:
+                # FANTASY POINTS PLOT
+                fig, ax = plt.subplots(figsize=(4, 3))
+                labels = ['Today', 'Avg']
+                values = [today_dk_proj, avg_dk_proj]
+                bars = ax.bar(labels, values, color=['#1f77b4', '#2ca02c'], edgecolor='black', width=0.85)
+
+                # Add league average line
+                league_avg = 7.8
+                ax.axhline(y=league_avg, color='red', linestyle='--', alpha=0.7)
+
+                # Add numbers on top of bars
+                for bar in bars:
+                    height = bar.get_height()
+                    ax.text(
+                        x=bar.get_x() + bar.get_width() / 2,
+                        y=height + .1 if height >= 0 else height - 0.1,
+                        s=f'{height:.1f}',
+                        ha='center',
+                        va='bottom' if height >= 0 else 'top',
+                        fontsize=14,
+                        fontweight='bold'
+                    )
+                # Customize chart
+                ax.set_title('FPts Projection Comparison', fontsize=14)
+                ax.legend(fontsize=12, loc='best')
+                ax.tick_params(axis='both', labelsize=12)
+                ax.grid(True, axis='y', linestyle='--', alpha=0.3)
+                ax.set_ylim(top=max_proj+2)
+                plt.tight_layout(pad=.5)
+
+                # Display the chart
+                st.pyplot(fig)
+
+                
+                ## HOMERS PLOT
+                fig, ax = plt.subplots(figsize=(4,3))
+                labels = ['Today', 'Avg']
+                values = [today_hr_proj, avg_hr_proj]
+                bars = ax.bar(labels, values, color=['#1f77b4', '#2ca02c'], edgecolor='black', width=0.85)
+
+                # Add league average line
+                league_avg = 7.8
+                ax.axhline(y=league_avg, color='red', linestyle='--', alpha=0.7)
+
+                # Add numbers on top of bars
+                for bar in bars:
+                    height = bar.get_height()
+                    ax.text(
+                        x=bar.get_x() + bar.get_width() / 2,
+                        y=height + .01 if height >= 0 else height - 0.1,
+                        s=f'{height:.2f}',
+                        ha='center',
+                        va='bottom' if height >= 0 else 'top',
+                        fontsize=14,
+                        fontweight='bold'
+                    )
+                # Customize chart
+                ax.set_title('HR Projection Comparison', fontsize=14)
+                ax.legend(fontsize=12, loc='best')
+                ax.tick_params(axis='both', labelsize=12)
+                ax.grid(True, axis='y', linestyle='--', alpha=0.3)
+                ax.set_ylim(top=max_hr_proj+.1)
+                plt.tight_layout(pad=.5)
+
+                # Display the chart
+                st.pyplot(fig)
+
+
+    
+    if tab == "Matchups":
+        st.markdown("<h2><center><br>Projections Detail</h2></center>", unsafe_allow_html=True)
 
         if st.checkbox("Show Team Ranks"):
             
@@ -3078,4 +3189,154 @@ if check_password():
             filtered_sched = base_sched[base_sched['OPP'] == selected_opp][['DATE','GAME','TIME','Pitcher','Hand','TEAM','OPP']]
             # Display the filtered dataframe
             st.dataframe(filtered_sched, hide_index=True, width=900)
+
+    if tab == "Zone Matchups":
+        p_hand_dict = dict(zip(mlbplayerinfo.Player, mlbplayerinfo.PitchSide))
+        h_hand_dict = dict(zip(mlbplayerinfo.Player, mlbplayerinfo.BatSide))
+
+        hotzonedata = hotzonedata[hotzonedata['zone']>0]
+        #hotzonedata['xwOBA'] = np.where(hotzonedata['IsBIP']<49, 0, hotzonedata['xwOBA'])
+        st.markdown("<h1><center>Zone Matchups</h1></center>",unsafe_allow_html=True)
+        hotzonedata['P Hand'] = hotzonedata['player_name'].map(p_hand_dict)
+        hotzonedata['B Hand'] = hotzonedata['BatterName'].map(h_hand_dict)
+
+        zone_matchups_data_1 = pitcherproj[['Pitcher','ID']]
+        zone_matchups_data_1.columns=['Pitcher','Pitcher ID']
+        zone_matchups_data2 = hitterproj[['Hitter','ID','Team','Opp','OppSP','Park']]
+        zone_matchups_data2.columns=['Hitter','ID','Team','Opp','Pitcher','Park']
+        zone_matchups_data = pd.merge(zone_matchups_data2, zone_matchups_data_1, on='Pitcher', how='left')
+
+        game_selection = zone_matchups_data2[['Team','Opp','Park']].drop_duplicates()
+        game_selection['Symb'] = np.where(game_selection['Team']==game_selection['Park'],'vs','@')
+        game_selection = game_selection[game_selection['Symb']=='@']
+        game_selection['Game'] = game_selection['Team']+' '+game_selection['Symb']+' '+game_selection['Park']
+        
+        game_list = list(game_selection['Game'])
+
+        box_col1, box_col2, box_col3 = st.columns([1,1,1])
+        with box_col1:
+            game_selected = st.selectbox('Select a game',game_list)
+        with box_col2:
+            available_team_1 = game_selected.split('@')[0]
+            available_team_2 = game_selected.split('@')[1]
+            team_selected = st.selectbox('Select a team',[available_team_1,available_team_2])
+            team_selected = team_selected.strip()
+            this_matchup_data = zone_matchups_data[zone_matchups_data['Team']==team_selected]
+            this_pid = this_matchup_data['Pitcher ID'].iloc[0]
+            this_pname = this_matchup_data['Pitcher'].iloc[0]
+            this_matchup_data = zone_matchups_data[zone_matchups_data['Team']==team_selected]
+            this_p_hand = hotzonedata[(hotzonedata['pitcher']==this_pid)]['P Hand'].iloc[0]
+
+
+
+        with box_col3:
+            hitter_selection =list(this_matchup_data['Hitter'])
+            zone_hitter_selection = st.selectbox("Select a hitter", hitter_selection)
+            hitter_zone_data = hotzonedata[(hotzonedata['BatterName']==zone_hitter_selection)&(hotzonedata['Split']==this_p_hand)][['BatterName','batter','zone','IsBIP','xwOBA']].sort_values(by='zone')
+
+        # Show pitcher map
+        pitcher_zone_data_vr = hotzonedata[(hotzonedata['pitcher']==this_pid)&(hotzonedata['Split']=='R')][['player_name','pitcher','Split','zone','IsBIP','xwOBA']].sort_values(by='zone')
+        pitcher_zone_data_vl = hotzonedata[(hotzonedata['pitcher']==this_pid)&(hotzonedata['Split']=='L')][['player_name','pitcher','Split','zone','IsBIP','xwOBA']].sort_values(by='zone')
+
+        # TEST PLOT
+        col1, col2, col3, col4 = st.columns([1,2,2,1])
+        with col2:
+            st.markdown(f"<h5>{this_pname} xwOBA Zones vs. RHB</h5>", unsafe_allow_html=True)
+            data = {
+                'zone': list(pitcher_zone_data_vr['zone']),
+                'xwOBA': list(pitcher_zone_data_vr['xwOBA'])
+            }
+            df = pd.DataFrame(data)
+            fig, ax = plt.subplots(3, 3, figsize=(6, 6))
+            axes = ax.flatten()
+            norm = plt.Normalize(df['xwOBA'].min(), df['xwOBA'].max())
+            cmap = plt.get_cmap('RdYlGn_r')  # Reverse green to red
+
+            for idx, zone in enumerate(df['zone']):
+                # Create a rectangle for the cell
+                rect = plt.Rectangle((0, 0), 1, 1, linewidth=1, edgecolor='black', 
+                                    facecolor=cmap(norm(df['xwOBA'][idx])), zorder=0)
+                axes[idx].add_patch(rect)
+                # Add text
+                axes[idx].text(0.5, 0.5, f"{df['xwOBA'][idx]:.3f}", 
+                            ha='center', va='center', fontsize=25)
+                axes[idx].set_xlim(0, 1)
+                axes[idx].set_ylim(0, 1)
+                axes[idx].axis('off')
+
+            plt.tight_layout()
+            st.pyplot(fig)
+            sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+            sm.set_array([])
+            plt.colorbar(sm, ax=ax, label='xwOBA')
+        with col3:
+            st.markdown(f"<h5>{this_pname} xwOBA Zones vs. LHB</h5>", unsafe_allow_html=True)
+            data = {
+                'zone': list(pitcher_zone_data_vl['zone']),
+                'xwOBA': list(pitcher_zone_data_vl['xwOBA'])
+            }
+            df = pd.DataFrame(data)
+            fig, ax = plt.subplots(3, 3, figsize=(6, 6))
+            axes = ax.flatten()
+            norm = plt.Normalize(df['xwOBA'].min(), df['xwOBA'].max())
+            cmap = plt.get_cmap('RdYlGn_r')  # Reverse green to red
+
+            for idx, zone in enumerate(df['zone']):
+                # Create a rectangle for the cell
+                rect = plt.Rectangle((0, 0), 1, 1, linewidth=1, edgecolor='black', 
+                                    facecolor=cmap(norm(df['xwOBA'][idx])), zorder=0)
+                axes[idx].add_patch(rect)
+                # Add text
+                axes[idx].text(0.5, 0.5, f"{df['xwOBA'][idx]:.3f}", 
+                            ha='center', va='center', fontsize=25)
+                axes[idx].set_xlim(0, 1)
+                axes[idx].set_ylim(0, 1)
+                axes[idx].axis('off')
+
+            plt.tight_layout()
+            st.pyplot(fig)
+            sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+            sm.set_array([])
+            plt.colorbar(sm, ax=ax, label='xwOBA')
+        
+        #hitter_selection =list(this_matchup_data['Hitter'])
+        #zone_hitter_selection = st.selectbox("Select a hitter", hitter_selection)
+        #hitter_zone_data = hotzonedata[(hotzonedata['BatterName']==zone_hitter_selection)&(hotzonedata['Split']==this_p_hand)][['BatterName','batter','zone','IsBIP','xwOBA']].sort_values(by='zone')
+        
+        a_col1, a_col2, a_col3 = st.columns([1,1.5,1])
+        #with a_col1:
+            #zone_hitter_selection = st.selectbox("Select a hitter", hitter_selection)
+            #hitter_zone_data = hotzonedata[(hotzonedata['BatterName']==zone_hitter_selection)&(hotzonedata['Split']==this_p_hand)][['BatterName','batter','zone','IsBIP','xwOBA']].sort_values(by='zone')
+        with a_col2:
+            st.markdown(f"<h4>{zone_hitter_selection} xwOBA Zones vs. {this_p_hand}HB", unsafe_allow_html=True)
+            data = {
+                'zone': list(hitter_zone_data['zone']),
+                'xwOBA': list(hitter_zone_data['xwOBA'])
+            }
+            df = pd.DataFrame(data)
+            fig, ax = plt.subplots(3, 3, figsize=(3,3))
+            axes = ax.flatten()
+            norm = plt.Normalize(df['xwOBA'].min(), df['xwOBA'].max())
+            cmap = plt.get_cmap('RdYlGn_r')  # Reverse green to red
+
+            for idx, zone in enumerate(df['zone']):
+                # Create a rectangle for the cell
+                rect = plt.Rectangle((0, 0), 1, 1, linewidth=3, edgecolor='black', 
+                                    facecolor=cmap(norm(df['xwOBA'][idx])), zorder=0)
+                axes[idx].add_patch(rect)
+                # Add text
+                axes[idx].text(0.5, 0.5, f"{df['xwOBA'][idx]:.3f}", 
+                            ha='center', va='center', fontsize=10)
+                axes[idx].set_xlim(0, 1)
+                axes[idx].set_ylim(0, 1)
+                axes[idx].axis('off')
+
+            plt.tight_layout()
+            st.pyplot(fig)
+            sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+            sm.set_array([])
+            plt.colorbar(sm, ax=ax, label='xwOBA')
+
+
+
 
