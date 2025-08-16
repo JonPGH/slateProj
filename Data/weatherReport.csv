@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Pirates  @  Cubs,MostlyCloudy,87°,7.5 mph,"R to L, Weak",PIT,CHC,0,2025-8-16,0,0
-1,Rangers  @  Blue Jays,MostlyClear,84°,7.7 mph,"Out, Weak",TEX,TOR,0,2025-8-16,1,0
+0,Pirates  @  Cubs,MostlyClear,85°,7.5 mph,"R to L, Weak",PIT,CHC,0,2025-8-16,0,0
+1,Rangers  @  Blue Jays,PartlyCloudy,84°,7.2 mph,"Out, Weak",TEX,TOR,0,2025-8-16,1,0
 2,Phillies  @  Nationals,PartlyCloudy,89°,5.1 mph,"Out, Weak",PHI,WSH,0,2025-8-16,0,0
 3,Marlins  @  Red Sox,MostlyClear,83°,9.0 mph,"R to L, Weak",MIA,BOS,0,2025-8-16,0,0
 4,Mariners  @  Mets,PartlyCloudy,83°,9.2 mph,"Out, Weak",SEA,NYM,5,2025-8-16,0,0
-5,Brewers  @  Reds,PartlyCloudy,89°,4.4 mph,None,MIL,CIN,0,2025-8-16,0,0
-6,White Sox  @  Royals,MostlyClear,93°,9.4 mph,"Out, Weak",CWS,KC,0,2025-8-16,0,0
-7,Braves  @  Guardians,PartlyCloudy,84°,3.1 mph,None,ATL,CLE,0,2025-8-16,0,0
-8,Orioles  @  Astros,PartlyCloudy,91°,8.2 mph,"Out, Weak",BAL,HOU,0,2025-8-16,1,0
-9,Yankees  @  Cardinals,MostlyClear,92°,4.5 mph,None,NYY,STL,0,2025-8-16,0,0
-10,Tigers  @  Twins,MostlyCloudy,81°,5.8 mph,"In, Weak",DET,MIN,0,2025-8-16,0,0
-11,Diamondbacks  @  Rockies,MostlyCloudy,80°,5.1 mph,"L to R, Weak",ARI,COL,44,2025-8-16,0,0
-12,Rays  @  Giants,PartlyCloudy,67°,13.4 mph,"Out, Strong",TB,SF,0,2025-8-16,0,0
+5,Brewers  @  Reds,MostlyClear,90°,4.9 mph,None,MIL,CIN,0,2025-8-16,0,0
+6,White Sox  @  Royals,Clear,93°,9.5 mph,"Out, Weak",CWS,KC,0,2025-8-16,0,0
+7,Braves  @  Guardians,PartlyCloudy,84°,3.0 mph,None,ATL,CLE,0,2025-8-16,0,0
+8,Orioles  @  Astros,PartlyCloudy,91°,8.3 mph,"Out, Weak",BAL,HOU,0,2025-8-16,1,0
+9,Yankees  @  Cardinals,PartlyCloudy,91°,3.6 mph,None,NYY,STL,0,2025-8-16,0,0
+10,Tigers  @  Twins,MostlyCloudy,81°,6.3 mph,"In, Weak",DET,MIN,0,2025-8-16,0,0
+11,Diamondbacks  @  Rockies,MostlyCloudy,80°,5.4 mph,"L to R, Weak",ARI,COL,44,2025-8-16,0,0
+12,Rays  @  Giants,PartlyCloudy,67°,12.8 mph,"Out, Strong",TB,SF,0,2025-8-16,0,0
 13,Padres  @  Dodgers,Clear,76°,6.4 mph,"Out, Weak",SD,LAD,0,2025-8-16,0,0
 14,Angels  @  Athletics,Clear,82°,10.9 mph,"Out, Strong",LAA,OAK,0,2025-8-16,0,0
