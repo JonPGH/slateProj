@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Pirates  @  Cubs,PartlyCloudy,86°,6.0 mph,"R to L, Weak",PIT,CHC,0,2025-8-16,0,0
-1,Rangers  @  Blue Jays,PartlyCloudy,84°,6.9 mph,"Out, Weak",TEX,TOR,0,2025-8-16,1,0
-2,Phillies  @  Nationals,MostlyClear,90°,4.8 mph,None,PHI,WSH,0,2025-8-16,0,0
-3,Marlins  @  Red Sox,MostlyClear,83°,9.4 mph,"R to L, Weak",MIA,BOS,0,2025-8-16,0,0
-4,Mariners  @  Mets,MostlyClear,84°,9.6 mph,"Out, Weak",SEA,NYM,4,2025-8-16,0,0
-5,Brewers  @  Reds,MostlyClear,90°,5.0 mph,"Out, Weak",MIL,CIN,0,2025-8-16,0,0
-6,White Sox  @  Royals,Clear,93°,9.9 mph,"Out, Weak",CWS,KC,0,2025-8-16,0,0
-7,Braves  @  Guardians,PartlyCloudy,84°,3.1 mph,None,ATL,CLE,0,2025-8-16,0,0
+0,Pirates  @  Cubs,MostlyClear,87°,2.9 mph,None,PIT,CHC,0,2025-8-16,0,0
+1,Rangers  @  Blue Jays,MostlyClear,84°,6.5 mph,"Out, Weak",TEX,TOR,0,2025-8-16,1,0
+2,Phillies  @  Nationals,MostlyClear,89°,5.2 mph,"Out, Weak",PHI,WSH,0,2025-8-16,0,0
+3,Marlins  @  Red Sox,MostlyClear,83°,9.7 mph,"R to L, Weak",MIA,BOS,0,2025-8-16,0,0
+4,Mariners  @  Mets,MostlyClear,84°,9.4 mph,"Out, Weak",SEA,NYM,4,2025-8-16,0,0
+5,Brewers  @  Reds,MostlyClear,90°,4.7 mph,None,MIL,CIN,0,2025-8-16,0,0
+6,White Sox  @  Royals,Clear,93°,9.7 mph,"Out, Weak",CWS,KC,0,2025-8-16,0,0
+7,Braves  @  Guardians,PartlyCloudy,84°,2.9 mph,None,ATL,CLE,0,2025-8-16,0,0
 8,Orioles  @  Astros,MostlyClear,91°,8.6 mph,"Out, Weak",BAL,HOU,0,2025-8-16,1,0
-9,Yankees  @  Cardinals,MostlyCloudy,92°,4.4 mph,None,NYY,STL,0,2025-8-16,0,0
-10,Tigers  @  Twins,PartlyCloudy,81°,6.6 mph,"L to R, Weak",DET,MIN,0,2025-8-16,0,0
-11,Diamondbacks  @  Rockies,MostlyCloudy,81°,5.7 mph,"L to R, Weak",ARI,COL,44,2025-8-16,0,0
-12,Rays  @  Giants,PartlyCloudy,68°,12.9 mph,"Out, Strong",TB,SF,0,2025-8-16,0,0
+9,Yankees  @  Cardinals,PartlyCloudy,92°,5.4 mph,"R to L, Weak",NYY,STL,0,2025-8-16,0,0
+10,Tigers  @  Twins,PartlyCloudy,81°,5.5 mph,"L to R, Weak",DET,MIN,0,2025-8-16,0,0
+11,Diamondbacks  @  Rockies,MostlyCloudy,81°,8.5 mph,"L to R, Weak",ARI,COL,44,2025-8-16,0,0
+12,Rays  @  Giants,PartlyCloudy,67°,12.2 mph,"Out, Strong",TB,SF,0,2025-8-16,0,0
 13,Padres  @  Dodgers,Clear,76°,6.4 mph,"Out, Weak",SD,LAD,0,2025-8-16,0,0
 14,Angels  @  Athletics,Clear,82°,10.8 mph,"Out, Strong",LAA,OAK,0,2025-8-16,0,0
