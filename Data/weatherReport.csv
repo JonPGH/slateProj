@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Brewers  @  Cubs,MostlyClear,80°,9.6 mph,"R to L, Weak",MIL,CHC,36,2025-8-18,0,0
-1,Brewers  @  Cubs,MostlyClear,80°,9.6 mph,"R to L, Weak",MIL,CHC,36,2025-8-18,0,0
-2,Cardinals  @  Marlins,MostlyClear,89°,8.6 mph,"L to R, Weak",STL,MIA,35,2025-8-18,1,1
-3,Astros  @  Tigers,MostlyClear,77°,8.8 mph,"L to R, Weak",HOU,DET,0,2025-8-18,0,0
-4,Blue Jays  @  Pirates,Clear,82°,4.1 mph,None,TOR,PIT,0,2025-8-18,0,0
-5,Mariners  @  Phillies,Cloudy,74°,7.3 mph,"R to L, Weak",SEA,PHI,0,2025-8-18,0,0
-6,Orioles  @  Red Sox,MostlyCloudy,66°,5.6 mph,"R to L, Weak",BAL,BOS,0,2025-8-18,0,0
-7,White Sox  @  Braves,PartlyCloudy,86°,4.1 mph,None,CWS,ATL,38,2025-8-18,0,0
-8,Rangers  @  Royals,MostlyClear,94°,7.2 mph,"Out, Weak",TEX,KC,0,2025-8-18,0,0
-9,Brewers  @  Cubs,PartlyCloudy,81°,6.4 mph,"R to L, Weak",MIL,CHC,36,2025-8-18,0,0
-10,Brewers  @  Cubs,PartlyCloudy,81°,6.4 mph,"R to L, Weak",MIL,CHC,36,2025-8-18,0,0
-11,Dodgers  @  Rockies,PartlyCloudy,86°,9.4 mph,"Out, Weak",LAD,COL,0,2025-8-18,0,0
-12,Reds  @  Angels,Clear,80°,7.0 mph,"Out, Weak",CIN,LAA,0,2025-8-18,0,0
-13,Guardians  @  Diamondbacks,Clear,104°,8.9 mph,"L to R, Weak",CLE,ARI,0,2025-8-18,1,0
-14,Giants  @  Padres,MostlyClear,72°,5.4 mph,"L to R, Weak",SF,SD,0,2025-8-18,0,0
+0,Brewers  @  Cubs,MostlyClear,80°,10.3 mph,"R to L, Strong",MIL,CHC,51,2025-8-18,0,0
+1,Brewers  @  Cubs,MostlyClear,80°,10.3 mph,"R to L, Strong",MIL,CHC,51,2025-8-18,0,0
+2,Cardinals  @  Marlins,PartlyCloudy,88°,6.0 mph,"L to R, Weak",STL,MIA,52,2025-8-18,1,1
+3,Astros  @  Tigers,PartlyCloudy,76°,9.6 mph,"L to R, Weak",HOU,DET,0,2025-8-18,0,0
+4,Blue Jays  @  Pirates,Clear,82°,4.3 mph,None,TOR,PIT,0,2025-8-18,0,0
+5,Mariners  @  Phillies,Cloudy,72°,6.6 mph,"R to L, Weak",SEA,PHI,0,2025-8-18,0,0
+6,Orioles  @  Red Sox,MostlyCloudy,66°,6.4 mph,"R to L, Weak",BAL,BOS,0,2025-8-18,0,0
+7,White Sox  @  Braves,MostlyClear,87°,5.0 mph,"L to R, Weak",CWS,ATL,51,2025-8-18,0,0
+8,Rangers  @  Royals,MostlyClear,95°,7.5 mph,"Out, Weak",TEX,KC,0,2025-8-18,0,0
+9,Brewers  @  Cubs,Thunderstorms,80°,7.6 mph,"R to L, Weak",MIL,CHC,51,2025-8-18,0,0
+10,Brewers  @  Cubs,Thunderstorms,80°,7.6 mph,"R to L, Weak",MIL,CHC,51,2025-8-18,0,0
+11,Dodgers  @  Rockies,PartlyCloudy,84°,10.7 mph,"Out, Strong",LAD,COL,0,2025-8-18,0,0
+12,Reds  @  Angels,Clear,80°,6.8 mph,"Out, Weak",CIN,LAA,0,2025-8-18,0,0
+13,Guardians  @  Diamondbacks,Clear,104°,9.4 mph,"L to R, Weak",CLE,ARI,0,2025-8-18,1,0
+14,Giants  @  Padres,MostlyClear,72°,5.5 mph,"L to R, Weak",SF,SD,0,2025-8-18,0,0
