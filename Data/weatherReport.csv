@@ -1,19 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Brewers  @  Cubs,MostlyCloudy,78°,10.8 mph,"In, Strong",MIL,CHC,0,2025-8-19,0,0
-1,Brewers  @  Cubs,MostlyCloudy,78°,10.8 mph,"In, Strong",MIL,CHC,0,2025-8-19,0,0
+0,Brewers  @  Cubs,MostlyCloudy,77°,11.6 mph,"In, Strong",MIL,CHC,0,2025-8-19,0,0
+1,Brewers  @  Cubs,MostlyCloudy,77°,11.6 mph,"In, Strong",MIL,CHC,0,2025-8-19,0,0
 2,Blue Jays  @  Pirates,PartlyCloudy,86°,5.6 mph,"R to L, Weak",TOR,PIT,0,2025-8-19,0,0
-3,Astros  @  Tigers,Drizzle,78°,4.7 mph,None,HOU,DET,31,2025-8-19,0,0
-4,Cardinals  @  Marlins,MostlyCloudy,86°,7.3 mph,"L to R, Weak",STL,MIA,52,2025-8-19,1,1
+3,Astros  @  Tigers,Rain,78°,4.3 mph,None,HOU,DET,37,2025-8-19,0,0
+4,Cardinals  @  Marlins,PartlyCloudy,87°,8.3 mph,"L to R, Weak",STL,MIA,42,2025-8-19,1,1
 5,Mets  @  Nationals,Cloudy,74°,7.4 mph,"R to L, Weak",NYM,WSH,7,2025-8-19,0,0
-6,Mariners  @  Phillies,MostlyCloudy,74°,7.7 mph,"R to L, Weak",SEA,PHI,0,2025-8-19,0,0
-7,Orioles  @  Red Sox,MostlyCloudy,68°,6.9 mph,"R to L, Weak",BAL,BOS,0,2025-8-19,0,0
-8,White Sox  @  Braves,PartlyCloudy,83°,4.3 mph,None,CWS,ATL,49,2025-8-19,0,0
-9,Yankees  @  Rays,MostlyClear,87°,6.3 mph,"L to R, Weak",NYY,TB,53,2025-8-19,0,0
-10,Athletics  @  Twins,MostlyClear,83°,5.1 mph,"L to R, Weak",OAK,MIN,0,2025-8-19,0,0
-11,Rangers  @  Royals,PartlyCloudy,91°,7.3 mph,"In, Weak",TEX,KC,40,2025-8-19,0,0
-12,Brewers  @  Cubs,PartlyCloudy,75°,6.5 mph,"In, Weak",MIL,CHC,0,2025-8-19,0,0
-13,Brewers  @  Cubs,PartlyCloudy,75°,6.5 mph,"In, Weak",MIL,CHC,0,2025-8-19,0,0
-14,Dodgers  @  Rockies,PartlyCloudy,84°,10.4 mph,"R to L, Strong",LAD,COL,0,2025-8-19,0,0
-15,Reds  @  Angels,Clear,83°,6.6 mph,"Out, Weak",CIN,LAA,0,2025-8-19,0,0
-16,Giants  @  Padres,MostlyClear,75°,6.7 mph,"L to R, Weak",SF,SD,0,2025-8-19,0,0
-17,Guardians  @  Diamondbacks,Clear,106°,6.6 mph,"L to R, Weak",CLE,ARI,0,2025-8-19,1,0
+6,Mariners  @  Phillies,PartlyCloudy,75°,7.9 mph,"R to L, Weak",SEA,PHI,0,2025-8-19,0,0
+7,Orioles  @  Red Sox,MostlyCloudy,68°,7.0 mph,"R to L, Weak",BAL,BOS,0,2025-8-19,0,0
+8,White Sox  @  Braves,PartlyCloudy,83°,4.4 mph,None,CWS,ATL,53,2025-8-19,0,0
+9,Yankees  @  Rays,PartlyCloudy,87°,6.1 mph,"L to R, Weak",NYY,TB,52,2025-8-19,0,0
+10,Athletics  @  Twins,MostlyClear,82°,4.9 mph,None,OAK,MIN,0,2025-8-19,0,0
+11,Rangers  @  Royals,MostlyClear,91°,7.2 mph,"In, Weak",TEX,KC,40,2025-8-19,0,0
+12,Brewers  @  Cubs,PartlyCloudy,75°,6.8 mph,"In, Weak",MIL,CHC,0,2025-8-19,0,0
+13,Brewers  @  Cubs,PartlyCloudy,75°,6.8 mph,"In, Weak",MIL,CHC,0,2025-8-19,0,0
+14,Dodgers  @  Rockies,PartlyCloudy,85°,9.8 mph,"R to L, Weak",LAD,COL,0,2025-8-19,0,0
+15,Reds  @  Angels,Clear,82°,6.7 mph,"Out, Weak",CIN,LAA,0,2025-8-19,0,0
+16,Giants  @  Padres,Clear,75°,6.7 mph,"L to R, Weak",SF,SD,0,2025-8-19,0,0
+17,Guardians  @  Diamondbacks,Clear,106°,6.4 mph,"L to R, Weak",CLE,ARI,0,2025-8-19,1,0
