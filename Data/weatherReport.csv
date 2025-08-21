@@ -1,10 +1,10 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Athletics  @  Twins,MostlyClear,78°,3.7 mph,None,OAK,MIN,0,2025-8-21,0,0
-1,Rangers  @  Royals,MostlyClear,84°,6.7 mph,"In, Weak",TEX,KC,0,2025-8-21,0,0
-2,Brewers  @  Cubs,MostlyCloudy,73°,10.3 mph,"In, Strong",MIL,CHC,0,2025-8-21,0,0
-3,Dodgers  @  Rockies,Clear,92°,7.0 mph,"In, Weak",LAD,COL,0,2025-8-21,0,0
-4,Mets  @  Nationals,MostlyCloudy,76°,10.3 mph,"In, Strong",NYM,WSH,0,2025-8-21,0,0
-5,Giants  @  Padres,MostlyClear,81°,7.3 mph,"L to R, Weak",SF,SD,0,2025-8-21,0,0
-6,Red Sox  @  Yankees,PartlyCloudy,71°,11.5 mph,"In, Strong",BOS,NYY,0,2025-8-21,0,0
-7,Astros  @  Orioles,MostlyCloudy,74°,7.2 mph,"In, Weak",HOU,BAL,0,2025-8-21,0,0
+1,Rangers  @  Royals,MostlyClear,83°,6.9 mph,"In, Weak",TEX,KC,0,2025-8-21,0,0
+2,Brewers  @  Cubs,MostlyCloudy,74°,10.4 mph,"In, Strong",MIL,CHC,0,2025-8-21,0,0
+3,Dodgers  @  Rockies,Clear,92°,7.7 mph,"In, Weak",LAD,COL,0,2025-8-21,0,0
+4,Mets  @  Nationals,MostlyCloudy,76°,10.4 mph,"In, Strong",NYM,WSH,0,2025-8-21,0,0
+5,Giants  @  Padres,MostlyClear,79°,7.1 mph,"L to R, Weak",SF,SD,0,2025-8-21,0,0
+6,Red Sox  @  Yankees,PartlyCloudy,71°,10.9 mph,"L to R, Strong",BOS,NYY,0,2025-8-21,0,0
+7,Astros  @  Orioles,PartlyCloudy,74°,8.1 mph,"In, Weak",HOU,BAL,0,2025-8-21,0,0
 8,Cardinals  @  Rays,PartlyCloudy,87°,8.1 mph,"Out, Weak",STL,TB,0,2025-8-21,0,0
