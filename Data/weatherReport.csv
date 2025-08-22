@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Rockies  @  Pirates,MostlyClear,81°,2.8 mph,None,COL,PIT,0,2025-8-22,0,0
-1,Nationals  @  Phillies,Clear,81°,2.8 mph,None,WSH,PHI,0,2025-8-22,0,0
-2,Astros  @  Orioles,Clear,79°,5.0 mph,"R to L, Weak",HOU,BAL,0,2025-8-22,0,0
+1,Nationals  @  Phillies,Clear,82°,2.6 mph,None,WSH,PHI,0,2025-8-22,0,0
+2,Astros  @  Orioles,Clear,79°,5.1 mph,"R to L, Weak",HOU,BAL,0,2025-8-22,0,0
 3,Red Sox  @  Yankees,Clear,80°,3.5 mph,None,BOS,NYY,0,2025-8-22,0,0
-4,Blue Jays  @  Marlins,MostlyCloudy,85°,6.2 mph,"R to L, Weak",TOR,MIA,51,2025-8-22,1,1
+4,Blue Jays  @  Marlins,Cloudy,84°,7.2 mph,"R to L, Weak",TOR,MIA,48,2025-8-22,1,1
 5,Royals  @  Tigers,MostlyClear,78°,4.5 mph,None,KC,DET,0,2025-8-22,0,0
-6,Mets  @  Braves,Drizzle,78°,5.0 mph,None,NYM,ATL,35,2025-8-22,0,0
-7,Cardinals  @  Rays,MostlyCloudy,85°,6.1 mph,"Out, Weak",STL,TB,11,2025-8-22,0,0
-8,Twins  @  White Sox,MostlyCloudy,78°,3.8 mph,None,MIN,CWS,0,2025-8-22,0,0
-9,Guardians  @  Rangers,PartlyCloudy,90°,6.9 mph,"R to L, Weak",CLE,TEX,0,2025-8-22,1,0
+6,Mets  @  Braves,Drizzle,78°,4.3 mph,None,NYM,ATL,37,2025-8-22,0,0
+7,Cardinals  @  Rays,MostlyCloudy,86°,7.4 mph,"Out, Weak",STL,TB,48,2025-8-22,0,0
+8,Twins  @  White Sox,MostlyCloudy,77°,4.2 mph,None,MIN,CWS,0,2025-8-22,0,0
+9,Guardians  @  Rangers,PartlyCloudy,90°,6.7 mph,"In, Weak",CLE,TEX,0,2025-8-22,1,0
 10,Giants  @  Brewers,MostlyCloudy,76°,4.6 mph,None,SF,MIL,0,2025-8-22,0,0
-11,Cubs  @  Angels,Clear,86°,6.8 mph,"Out, Weak",CHC,LAA,0,2025-8-22,0,0
-12,Reds  @  Diamondbacks,MostlyClear,106°,4.4 mph,None,CIN,ARI,0,2025-8-22,1,0
-13,Dodgers  @  Padres,MostlyClear,77°,5.2 mph,"L to R, Weak",LAD,SD,0,2025-8-22,0,0
+11,Cubs  @  Angels,Clear,86°,7.0 mph,"Out, Weak",CHC,LAA,0,2025-8-22,0,0
+12,Reds  @  Diamondbacks,MostlyClear,107°,4.6 mph,None,CIN,ARI,0,2025-8-22,1,0
+13,Dodgers  @  Padres,MostlyClear,77°,5.3 mph,"L to R, Weak",LAD,SD,0,2025-8-22,0,0
 14,Athletics  @  Mariners,Clear,77°,7.5 mph,"L to R, Weak",OAK,SEA,0,2025-8-22,1,0
