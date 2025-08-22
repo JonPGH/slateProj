@@ -1,9 +1,9 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Rockies  @  Pirates,PartlyCloudy,81°,2.7 mph,None,COL,PIT,0,2025-8-22,0,0
 1,Nationals  @  Phillies,Clear,82°,4.1 mph,None,WSH,PHI,0,2025-8-22,0,0
-2,Astros  @  Orioles,Clear,80°,5.4 mph,"R to L, Weak",HOU,BAL,0,2025-8-22,0,0
+2,Astros  @  Orioles,Clear,80°,5.1 mph,"R to L, Weak",HOU,BAL,0,2025-8-22,0,0
 3,Red Sox  @  Yankees,Clear,81°,3.6 mph,None,BOS,NYY,0,2025-8-22,0,0
-4,Blue Jays  @  Marlins,Cloudy,83°,6.2 mph,"In, Weak",TOR,MIA,40,2025-8-22,1,1
+4,Blue Jays  @  Marlins,Cloudy,84°,8.8 mph,"In, Weak",TOR,MIA,40,2025-8-22,1,1
 5,Royals  @  Tigers,MostlyCloudy,77°,6.3 mph,"In, Weak",KC,DET,0,2025-8-22,0,0
 6,Mets  @  Braves,Cloudy,78°,5.3 mph,"L to R, Weak",NYM,ATL,18,2025-8-22,0,0
 7,Cardinals  @  Rays,MostlyCloudy,85°,5.2 mph,"Out, Weak",STL,TB,32,2025-8-22,0,0
