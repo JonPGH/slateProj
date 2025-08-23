@@ -1,16 +1,15 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rockies  @  Pirates,MostlyCloudy,81°,2.9 mph,None,COL,PIT,0,2025-8-22,0,0
-1,Nationals  @  Phillies,Clear,82°,4.2 mph,None,WSH,PHI,0,2025-8-22,0,0
-2,Astros  @  Orioles,Clear,80°,5.5 mph,"R to L, Weak",HOU,BAL,0,2025-8-22,0,0
-3,Red Sox  @  Yankees,Clear,81°,3.5 mph,None,BOS,NYY,0,2025-8-22,0,0
-4,Blue Jays  @  Marlins,Thunderstorms,81°,4.0 mph,None,TOR,MIA,40,2025-8-22,1,1
-5,Royals  @  Tigers,MostlyClear,78°,6.1 mph,"In, Weak",KC,DET,0,2025-8-22,0,0
-6,Mets  @  Braves,MostlyCloudy,79°,6.1 mph,"L to R, Weak",NYM,ATL,19,2025-8-22,0,0
-7,Cardinals  @  Rays,MostlyCloudy,85°,4.8 mph,None,STL,TB,5,2025-8-22,0,0
-8,Twins  @  White Sox,Cloudy,75°,4.6 mph,None,MIN,CWS,0,2025-8-22,0,0
-9,Guardians  @  Rangers,PartlyCloudy,89°,4.4 mph,None,CLE,TEX,0,2025-8-22,1,0
-10,Giants  @  Brewers,Cloudy,77°,5.1 mph,"R to L, Weak",SF,MIL,0,2025-8-22,0,0
-11,Cubs  @  Angels,PartlyCloudy,84°,7.4 mph,"Out, Weak",CHC,LAA,0,2025-8-22,0,0
-12,Reds  @  Diamondbacks,MostlyClear,108°,2.4 mph,None,CIN,ARI,0,2025-8-22,1,0
-13,Dodgers  @  Padres,PartlyCloudy,75°,5.1 mph,"L to R, Weak",LAD,SD,0,2025-8-22,0,0
-14,Athletics  @  Mariners,Clear,77°,7.2 mph,"L to R, Weak",OAK,SEA,0,2025-8-22,1,0
+0,Red Sox  @  Yankees,Clear,82°,11.5 mph,"R to L, Strong",BOS,NYY,0,2025-8-23,0,0
+1,Blue Jays  @  Marlins,MostlyCloudy,87°,8.4 mph,"R to L, Weak",TOR,MIA,40,2025-8-23,1,1
+2,Nationals  @  Phillies,MostlyClear,79°,10.7 mph,"Out, Strong",WSH,PHI,0,2025-8-23,0,0
+3,Royals  @  Tigers,MostlyCloudy,78°,10.0 mph,"R to L, Strong",KC,DET,6,2025-8-23,0,0
+4,Rockies  @  Pirates,MostlyClear,82°,7.6 mph,"R to L, Weak",COL,PIT,0,2025-8-23,0,0
+5,Guardians  @  Rangers,Clear,93°,7.8 mph,"In, Weak",CLE,TEX,0,2025-8-23,1,0
+6,Astros  @  Orioles,MostlyClear,78°,9.9 mph,"Out, Weak",HOU,BAL,0,2025-8-23,0,0
+7,Twins  @  White Sox,MostlyClear,77°,11.1 mph,"Out, Strong",MIN,CWS,0,2025-8-23,0,0
+8,Giants  @  Brewers,MostlyClear,72°,11.6 mph,"Out, Strong",SF,MIL,0,2025-8-23,0,0
+9,Mets  @  Braves,PartlyCloudy,76°,6.2 mph,"L to R, Weak",NYM,ATL,23,2025-8-23,0,0
+10,Reds  @  Diamondbacks,MostlyClear,105°,5.5 mph,"L to R, Weak",CIN,ARI,0,2025-8-23,1,0
+11,Dodgers  @  Padres,MostlyClear,77°,6.2 mph,"L to R, Weak",LAD,SD,0,2025-8-23,0,0
+12,Cubs  @  Angels,MostlyClear,84°,6.7 mph,"Out, Weak",CHC,LAA,0,2025-8-23,0,0
+13,Athletics  @  Mariners,PartlyCloudy,82°,7.7 mph,"L to R, Weak",OAK,SEA,0,2025-8-23,1,0
