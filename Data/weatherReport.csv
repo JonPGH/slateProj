@@ -1,6 +1,6 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Red Sox  @  Yankees,Clear,82°,11.0 mph,"R to L, Strong",BOS,NYY,0,2025-8-23,0,0
-1,Blue Jays  @  Marlins,Thunderstorms,81°,11.8 mph,"R to L, Strong",TOR,MIA,99,2025-8-23,1,1
+1,Blue Jays  @  Marlins,Thunderstorms,81°,11.8 mph,"R to L, Strong",TOR,MIA,100,2025-8-23,1,1
 2,Nationals  @  Phillies,Clear,80°,11.0 mph,"Out, Strong",WSH,PHI,0,2025-8-23,0,0
 3,Royals  @  Tigers,PartlyCloudy,78°,11.5 mph,"R to L, Strong",KC,DET,0,2025-8-23,0,0
 4,Rockies  @  Pirates,MostlyClear,83°,8.1 mph,"R to L, Weak",COL,PIT,0,2025-8-23,0,0
