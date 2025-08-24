@@ -1,6 +1,6 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Rockies  @  Pirates,MostlyClear,77°,6.1 mph,"R to L, Weak",COL,PIT,0,2025-8-24,0,0
-1,Cardinals  @  Rays,Thunderstorms,83°,7.2 mph,"Out, Weak",STL,TB,31,2025-8-24,0,0
+1,Cardinals  @  Rays,Thunderstorms,83°,7.2 mph,"Out, Weak",STL,TB,35,2025-8-24,0,0
 2,Astros  @  Orioles,Cloudy,81°,6.0 mph,"Out, Weak",HOU,BAL,0,2025-8-24,0,0
 3,Nationals  @  Phillies,MostlyCloudy,81°,8.4 mph,"Out, Weak",WSH,PHI,0,2025-8-24,0,0
 4,Mets  @  Braves,PartlyCloudy,79°,3.5 mph,None,NYM,ATL,6,2025-8-24,0,0
