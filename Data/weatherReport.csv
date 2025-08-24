@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rockies  @  Pirates,MostlyClear,77°,6.9 mph,"Out, Weak",COL,PIT,0,2025-8-24,0,0
-1,Cardinals  @  Rays,Thunderstorms,80°,11.4 mph,"Out, Strong",STL,TB,52,2025-8-24,0,0
-2,Astros  @  Orioles,PartlyCloudy,82°,7.8 mph,"Out, Weak",HOU,BAL,0,2025-8-24,0,0
-3,Nationals  @  Phillies,MostlyClear,83°,8.6 mph,"Out, Weak",WSH,PHI,0,2025-8-24,0,0
-4,Mets  @  Braves,PartlyCloudy,80°,3.0 mph,None,NYM,ATL,7,2025-8-24,0,0
-5,Blue Jays  @  Marlins,PartlyCloudy,89°,9.7 mph,"R to L, Weak",TOR,MIA,51,2025-8-24,1,1
-6,Royals  @  Tigers,PartlyCloudy,73°,9.6 mph,"R to L, Weak",KC,DET,0,2025-8-24,0,0
-7,Twins  @  White Sox,PartlyCloudy,71°,10.9 mph,"Out, Strong",MIN,CWS,0,2025-8-24,0,0
+0,Rockies  @  Pirates,MostlyClear,77°,6.4 mph,"Out, Weak",COL,PIT,0,2025-8-24,0,0
+1,Cardinals  @  Rays,Thunderstorms,81°,7.7 mph,"Out, Weak",STL,TB,52,2025-8-24,0,0
+2,Astros  @  Orioles,PartlyCloudy,81°,8.3 mph,"R to L, Weak",HOU,BAL,0,2025-8-24,0,0
+3,Nationals  @  Phillies,MostlyClear,82°,8.6 mph,"Out, Weak",WSH,PHI,0,2025-8-24,0,0
+4,Mets  @  Braves,MostlyClear,80°,3.4 mph,None,NYM,ATL,0,2025-8-24,0,0
+5,Blue Jays  @  Marlins,MostlyClear,89°,9.8 mph,"R to L, Weak",TOR,MIA,0,2025-8-24,1,0
+6,Royals  @  Tigers,PartlyCloudy,73°,9.9 mph,"R to L, Weak",KC,DET,0,2025-8-24,0,0
+7,Twins  @  White Sox,MostlyClear,71°,10.6 mph,"Out, Strong",MIN,CWS,0,2025-8-24,0,0
 8,Giants  @  Brewers,MostlyClear,69°,13.8 mph,"Out, Strong",SF,MIL,0,2025-8-24,0,0
-9,Guardians  @  Rangers,PartlyCloudy,91°,3.6 mph,None,CLE,TEX,0,2025-8-24,1,0
-10,Cubs  @  Angels,Clear,89°,7.2 mph,"Out, Weak",CHC,LAA,0,2025-8-24,0,0
+9,Guardians  @  Rangers,PartlyCloudy,91°,3.7 mph,None,CLE,TEX,0,2025-8-24,1,0
+10,Cubs  @  Angels,Clear,89°,7.3 mph,"Out, Weak",CHC,LAA,0,2025-8-24,0,0
 11,Athletics  @  Mariners,PartlyCloudy,81°,5.2 mph,"L to R, Weak",OAK,SEA,0,2025-8-24,1,0
 12,Dodgers  @  Padres,Clear,83°,7.8 mph,"L to R, Weak",LAD,SD,0,2025-8-24,0,0
-13,Reds  @  Diamondbacks,MostlyClear,104°,3.3 mph,None,CIN,ARI,0,2025-8-24,1,0
+13,Reds  @  Diamondbacks,MostlyClear,104°,3.5 mph,None,CIN,ARI,0,2025-8-24,1,0
 14,Red Sox  @  Yankees,PartlyCloudy,76°,11.0 mph,"R to L, Strong",BOS,NYY,0,2025-8-24,0,0
