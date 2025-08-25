@@ -1,14 +1,14 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Red Sox  @  Orioles,Clear,81°,9.8 mph,"L to R, Weak",BOS,BAL,0,2025-8-25,0,0
-1,Braves  @  Marlins,PartlyCloudy,88°,8.1 mph,"In, Weak",ATL,MIA,51,2025-8-25,1,1
-2,Rays  @  Guardians,MostlyClear,68°,10.0 mph,"L to R, Strong",TB,CLE,6,2025-8-25,0,0
-3,Nationals  @  Yankees,MostlyClear,80°,10.0 mph,"Out, Weak",WSH,NYY,0,2025-8-25,0,0
-4,Twins  @  Blue Jays,MostlyClear,67°,11.8 mph,"In, Strong",MIN,TOR,0,2025-8-25,1,0
-5,Phillies  @  Mets,MostlyClear,81°,10.5 mph,"L to R, Strong",PHI,NYM,0,2025-8-25,0,0
-6,Diamondbacks  @  Brewers,MostlyClear,67°,9.8 mph,"Out, Weak",ARI,MIL,0,2025-8-25,0,0
-7,Royals  @  White Sox,PartlyCloudy,69°,9.1 mph,"Out, Weak",KC,CWS,0,2025-8-25,0,0
-8,Pirates  @  Cardinals,MostlyCloudy,73°,6.9 mph,"L to R, Weak",PIT,STL,0,2025-8-25,0,0
-9,Angels  @  Rangers,MostlyClear,92°,7.6 mph,"R to L, Weak",LAA,TEX,0,2025-8-25,1,0
+0,Red Sox  @  Orioles,Clear,82°,11.0 mph,"L to R, Strong",BOS,BAL,0,2025-8-25,0,0
+1,Braves  @  Marlins,MostlyCloudy,86°,6.0 mph,"In, Weak",ATL,MIA,40,2025-8-25,1,1
+2,Rays  @  Guardians,MostlyClear,69°,9.6 mph,"L to R, Weak",TB,CLE,6,2025-8-25,0,0
+3,Nationals  @  Yankees,PartlyCloudy,80°,9.9 mph,"Out, Weak",WSH,NYY,0,2025-8-25,0,0
+4,Twins  @  Blue Jays,MostlyClear,67°,12.2 mph,"In, Strong",MIN,TOR,0,2025-8-25,1,0
+5,Phillies  @  Mets,PartlyCloudy,80°,10.5 mph,"L to R, Strong",PHI,NYM,0,2025-8-25,0,0
+6,Diamondbacks  @  Brewers,MostlyClear,67°,9.9 mph,"Out, Weak",ARI,MIL,0,2025-8-25,0,0
+7,Royals  @  White Sox,MostlyCloudy,69°,8.0 mph,"Out, Weak",KC,CWS,0,2025-8-25,0,0
+8,Pirates  @  Cardinals,PartlyCloudy,73°,6.8 mph,"L to R, Weak",PIT,STL,0,2025-8-25,0,0
+9,Angels  @  Rangers,MostlyClear,93°,7.7 mph,"R to L, Weak",LAA,TEX,0,2025-8-25,1,0
 10,Padres  @  Mariners,MostlyClear,83°,6.1 mph,"L to R, Weak",SD,SEA,0,2025-8-25,1,0
-11,Tigers  @  Athletics,Clear,88°,9.5 mph,"Out, Weak",DET,OAK,0,2025-8-25,0,0
-12,Reds  @  Dodgers,Clear,78°,4.6 mph,None,CIN,LAD,0,2025-8-25,0,0
+11,Tigers  @  Athletics,Clear,87°,9.8 mph,"Out, Weak",DET,OAK,0,2025-8-25,0,0
+12,Reds  @  Dodgers,MostlyClear,78°,4.5 mph,None,CIN,LAD,0,2025-8-25,0,0
