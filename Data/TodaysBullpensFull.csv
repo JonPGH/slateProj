@@ -20,7 +20,7 @@
 29,NYM,Edwin Diaz,621242,R
 30,NYM,Gregory Soto,642397,L
 31,NYM,Huascar Brazoban,623211,R
-34,NYM,Reed Garrett,657585,R
+32,NYM,Jose Castillo,620454,L
 35,NYM,Ryan Helsley,664854,R
 36,NYM,Ryne Stanek,592773,R
 38,NYM,Tyler Rogers,643511,R
@@ -30,6 +30,7 @@
 46,MIA,Ronny Henriquez,678692,R
 50,MIA,Tyler Zuber,676604,R
 51,MIA,Valente Bellozo,678368,R
+53,STL,Gordon Graceffo,700669,R
 54,STL,JoJo Romero,668941,L
 55,STL,John King,667463,L
 56,STL,Jorge Alcala,660896,R
@@ -85,8 +86,8 @@
 142,DET,Will Vest,676684,R
 143,TOR,Brendon Little,663893,L
 146,TOR,Jeff Hoffman,656546,R
-149,TOR,Louis Varland,686973,R
-151,TOR,Paxton Schultz,687606,R
+148,TOR,Justin Bruihl,677865,L
+150,TOR,Louis Varland,686973,R
 152,TOR,Seranthony Dominguez,622554,R
 154,TOR,Tommy Nance,667297,R
 155,TOR,Yariel Rodriguez,684320,R
@@ -101,7 +102,6 @@
 173,TB,Edwin Uceta,670955,R
 174,TB,Garrett Cleavinger,664076,L
 175,TB,Griffin Jax,643377,R
-176,TB,Ian Seymour,693855,L
 177,TB,Mason Englert,669438,R
 178,TB,Mason Montgomery,682254,L
 179,TB,Pete Fairbanks,664126,R
@@ -145,7 +145,6 @@
 261,OAK,Elvis Alvarado,665660,R
 262,OAK,Hogan Harris,663687,L
 267,OAK,Justin Sterner,686993,R
-268,OAK,Luis Morales,806960,R
 269,OAK,Michael Kelly,547184,R
 270,OAK,Osvaldo Bido,674370,R
 271,OAK,Sean Newcomb,656794,L
