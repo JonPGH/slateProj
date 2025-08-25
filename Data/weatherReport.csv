@@ -1,14 +1,14 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Red Sox  @  Orioles,Clear,80°,9.7 mph,"L to R, Weak",BOS,BAL,0,2025-8-25,0,0
-1,Braves  @  Marlins,MostlyCloudy,86°,12.9 mph,"R to L, Strong",ATL,MIA,40,2025-8-25,1,1
-2,Rays  @  Guardians,MostlyClear,68°,10.2 mph,"L to R, Strong",TB,CLE,0,2025-8-25,0,0
-3,Nationals  @  Yankees,PartlyCloudy,79°,9.5 mph,"Out, Weak",WSH,NYY,0,2025-8-25,0,0
-4,Twins  @  Blue Jays,MostlyClear,67°,11.8 mph,"In, Strong",MIN,TOR,0,2025-8-25,1,0
-5,Phillies  @  Mets,PartlyCloudy,80°,10.3 mph,"L to R, Strong",PHI,NYM,0,2025-8-25,0,0
-6,Diamondbacks  @  Brewers,MostlyClear,68°,10.7 mph,"Out, Strong",ARI,MIL,0,2025-8-25,0,0
-7,Royals  @  White Sox,MostlyCloudy,68°,5.5 mph,"Out, Weak",KC,CWS,0,2025-8-25,0,0
-8,Pirates  @  Cardinals,PartlyCloudy,74°,7.3 mph,"L to R, Weak",PIT,STL,0,2025-8-25,0,0
-9,Angels  @  Rangers,Clear,93°,8.3 mph,"R to L, Weak",LAA,TEX,0,2025-8-25,1,0
+0,Red Sox  @  Orioles,Clear,81°,10.0 mph,"L to R, Weak",BOS,BAL,0,2025-8-25,0,0
+1,Braves  @  Marlins,PartlyCloudy,88°,9.7 mph,"In, Weak",ATL,MIA,40,2025-8-25,1,1
+2,Rays  @  Guardians,PartlyCloudy,68°,9.7 mph,"L to R, Weak",TB,CLE,0,2025-8-25,0,0
+3,Nationals  @  Yankees,PartlyCloudy,79°,9.4 mph,"Out, Weak",WSH,NYY,0,2025-8-25,0,0
+4,Twins  @  Blue Jays,PartlyCloudy,66°,11.6 mph,"In, Strong",MIN,TOR,0,2025-8-25,1,0
+5,Phillies  @  Mets,PartlyCloudy,80°,10.7 mph,"L to R, Strong",PHI,NYM,0,2025-8-25,0,0
+6,Diamondbacks  @  Brewers,MostlyClear,68°,10.5 mph,"Out, Strong",ARI,MIL,0,2025-8-25,0,0
+7,Royals  @  White Sox,PartlyCloudy,68°,6.3 mph,"L to R, Weak",KC,CWS,0,2025-8-25,0,0
+8,Pirates  @  Cardinals,MostlyCloudy,73°,7.5 mph,"L to R, Weak",PIT,STL,0,2025-8-25,0,0
+9,Angels  @  Rangers,Clear,94°,8.0 mph,"R to L, Weak",LAA,TEX,0,2025-8-25,1,0
 10,Padres  @  Mariners,PartlyCloudy,82°,6.8 mph,"L to R, Weak",SD,SEA,0,2025-8-25,1,0
 11,Tigers  @  Athletics,Clear,88°,9.6 mph,"Out, Weak",DET,OAK,0,2025-8-25,0,0
 12,Reds  @  Dodgers,Clear,77°,5.2 mph,"Out, Weak",CIN,LAD,0,2025-8-25,0,0
