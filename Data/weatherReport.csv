@@ -1,6 +1,6 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Red Sox  @  Orioles,MostlyClear,76°,7.4 mph,"L to R, Weak",BOS,BAL,0,2025-8-26,0,0
-1,Braves  @  Marlins,MostlyClear,89°,7.6 mph,"In, Weak",ATL,MIA,40,2025-8-26,1,1
+1,Braves  @  Marlins,MostlyClear,89°,7.6 mph,"In, Weak",ATL,MIA,0,2025-8-26,1,0
 2,Rays  @  Guardians,Clear,67°,9.2 mph,"L to R, Weak",TB,CLE,0,2025-8-26,0,0
 3,Nationals  @  Yankees,MostlyClear,75°,6.5 mph,"Out, Weak",WSH,NYY,0,2025-8-26,0,0
 4,Twins  @  Blue Jays,MostlyCloudy,62°,6.7 mph,"In, Weak",MIN,TOR,17,2025-8-26,1,1
