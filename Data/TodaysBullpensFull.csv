@@ -1,6 +1,5 @@
 ,Team,Player,SAVID,Hand
 1,BAL,Corbin Martin,656686,R
-3,BAL,Dietrich Enns,608650,L
 4,BAL,Grant Wolfram,664991,L
 5,BAL,Kade Strowd,669704,R
 6,BAL,Keegan Akin,669211,L
@@ -23,12 +22,12 @@
 38,NYM,Tyler Rogers,643511,R
 39,MIA,Cade Gibson,806188,L
 40,MIA,Calvin Faucher,676534,R
-44,MIA,Josh Simpson,681006,L
-45,MIA,Lake Bachar,669199,R
-46,MIA,Ronny Henriquez,678692,R
+43,MIA,Freddy Tarnok,676206,R
+44,MIA,Lake Bachar,669199,R
+45,MIA,Ronny Henriquez,678692,R
+48,MIA,Seth Martinez,661527,R
 49,MIA,Tyler Phillips,663969,R
 50,MIA,Tyler Zuber,676604,R
-51,MIA,Valente Bellozo,678368,R
 54,STL,JoJo Romero,668941,L
 55,STL,John King,667463,L
 56,STL,Jorge Alcala,660896,R
@@ -50,7 +49,6 @@
 86,PHI,Matt Strahm,621381,L
 87,PHI,Orion Kerkering,689147,R
 90,PHI,Tanner Banks,621383,L
-93,PIT,Carmen Mlodzinski,669387,R
 94,PIT,Colin Holderman,670059,R
 95,PIT,Dauri Moreta,664294,R
 96,PIT,Dennis Santana,642701,R
@@ -133,9 +131,8 @@
 237,SEA,Caleb Ferguson,657571,L
 238,SEA,Carlos Vargas,672841,R
 239,SEA,Eduard Bazardo,660825,R
-240,SEA,Gabe Speier,642100,L
-244,SEA,Matt Brash,666374,R
-245,SEA,Sauryn Lao,666659,R
+241,SEA,Gabe Speier,642100,L
+245,SEA,Matt Brash,666374,R
 246,SEA,Tayler Saucedo,642048,L
 247,HOU,AJ Blubaugh,805123,R
 248,HOU,Bryan Abreu,650556,R
@@ -197,7 +194,6 @@
 343,MIN,Justin Topa,623437,R
 344,MIN,Kody Funderburk,681892,L
 345,MIN,Michael Tonkin,543859,R
-347,MIN,Pierson Ohl,701487,R
 349,MIN,Thomas Hatch,641672,R
 351,SD,Adrian Morejon,670970,L
 352,SD,Alek Jacob,689690,R
