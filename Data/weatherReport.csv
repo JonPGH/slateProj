@@ -1,9 +1,9 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Red Sox  @  Orioles,MostlyCloudy,76°,5.1 mph,"Out, Weak",BOS,BAL,0,2025-8-28,0,0
-1,Diamondbacks  @  Brewers,PartlyCloudy,72°,9.7 mph,"L to R, Weak",ARI,MIL,4,2025-8-28,0,0
-2,Rockies  @  Astros,MostlyClear,91°,4.5 mph,None,COL,HOU,47,2025-8-28,1,1
-3,Pirates  @  Cardinals,MostlyCloudy,80°,3.7 mph,None,PIT,STL,0,2025-8-28,0,0
-4,Cubs  @  Giants,Clear,67°,6.2 mph,"Out, Weak",CHC,SF,0,2025-8-28,0,0
-5,Braves  @  Phillies,MostlyClear,75°,8.9 mph,"Out, Weak",ATL,PHI,0,2025-8-28,0,0
-6,Marlins  @  Mets,MostlyCloudy,72°,10.3 mph,"Out, Strong",MIA,NYM,0,2025-8-28,0,0
-7,Yankees  @  White Sox,MostlyClear,71°,11.4 mph,"L to R, Strong",NYY,CWS,3,2025-8-28,0,0
+0,Red Sox  @  Orioles,MostlyCloudy,76°,6.2 mph,"Out, Weak",BOS,BAL,0,2025-8-28,0,0
+1,Diamondbacks  @  Brewers,PartlyCloudy,72°,9.5 mph,"L to R, Weak",ARI,MIL,0,2025-8-28,0,0
+2,Rockies  @  Astros,MostlyClear,91°,5.1 mph,"L to R, Weak",COL,HOU,46,2025-8-28,1,1
+3,Pirates  @  Cardinals,MostlyCloudy,80°,2.7 mph,None,PIT,STL,0,2025-8-28,0,0
+4,Cubs  @  Giants,MostlyClear,67°,4.7 mph,None,CHC,SF,0,2025-8-28,0,0
+5,Braves  @  Phillies,MostlyClear,75°,9.2 mph,"Out, Weak",ATL,PHI,0,2025-8-28,0,0
+6,Marlins  @  Mets,PartlyCloudy,73°,8.9 mph,"Out, Weak",MIA,NYM,0,2025-8-28,0,0
+7,Yankees  @  White Sox,MostlyClear,71°,11.5 mph,"L to R, Strong",NYY,CWS,0,2025-8-28,0,0
