@@ -1,1327 +1,1326 @@
 ,Unnamed: 0,Player,Yahoo,ESPN,Team
-0,0,Mookie Betts,99.0,99.0,LAD
-1,1,Freddie Freeman,99.0,100.0,LAD
-2,2,Ketel Marte,99.0,100.0,ARI
-3,3,Kyle Schwarber,99.0,99.0,PHI
+0,0,Jose Ramirez,99.0,100.0,CLE
+1,1,Bobby Witt Jr.,99.0,100.0,KC
+2,2,Cal Raleigh,99.0,100.0,SEA
+3,3,Mookie Betts,99.0,99.0,LAD
 4,4,Pete Alonso,99.0,100.0,NYM
-5,5,Francisco Lindor,99.0,100.0,NYM
-6,6,Manny Machado,99.0,100.0,SD
-7,7,Vladimir Guerrero Jr.,99.0,100.0,TOR
-8,8,Fernando Tatis Jr.,99.0,100.0,SD
-9,9,Jose Ramirez,99.0,100.0,CLE
-10,10,Bobby Witt Jr.,99.0,100.0,KC
-11,11,Logan Webb,99.0,99.0,SF
-12,12,Paul Skenes,99.0,100.0,PIT
-13,13,Jacob deGrom,99.0,98.0,TEX
-14,14,Yoshinobu Yamamoto,99.0,99.0,LAD
-15,15,Kyle Tucker,99.0,100.0,CHC
-16,16,Trea Turner,99.0,98.0,PHI
-17,17,Julio Rodriguez,99.0,98.0,SEA
-18,18,Juan Soto,99.0,100.0,NYM
-19,19,Ronald Acuna Jr.,99.0,99.0,ATL
-20,20,Aaron Judge,99.0,100.0,NYY
-21,21,Garrett Crochet,99.0,100.0,BOS
-22,22,Tarik Skubal,99.0,100.0,DET
-23,23,Jackson Chourio,99.0,97.0,l c
-24,24,Rafael Devers,99.0,99.0,SF
-25,25,Cal Raleigh,99.0,100.0,SEA
-26,26,Matt Olson,99.0,96.0,ATL
-27,27,Bryce Harper,99.0,100.0,PHI
-28,28,Elly De La Cruz,99.0,100.0,CIN
-29,29,Gunnar Henderson,99.0,97.0,BAL
-30,30,Corbin Carroll,99.0,100.0,ARI
-31,31,Max Fried,98.0,99.0,NYY
-32,32,Brent Rooker,98.0,93.0,OAK
-33,33,Cody Bellinger,98.0,98.0,NYY
-34,34,James Wood,98.0,94.0,WSH
-35,35,Shota Imanaga,98.0,96.0,CHC
-36,36,Hunter Brown,98.0,99.0,HOU
-37,37,Freddy Peralta,98.0,97.0,MIL
-38,38,Edwin Diaz,98.0,96.0,NYM
-39,39,William Contreras,98.0,98.0,MIL
-40,40,Andres Munoz,98.0,97.0,SEA
-41,41,Jarren Duran,98.0,96.0,BOS
-42,42,Jose Altuve,98.0,98.0,HOU
-43,43,Jazz Chisholm,98.0,94.0,NYY
-44,44,Framber Valdez,98.0,98.0,HOU
-45,45,Logan Gilbert,98.0,96.0,SEA
+5,5,Ketel Marte,99.0,100.0,ARI
+6,6,Paul Skenes,99.0,100.0,PIT
+7,7,Aaron Judge,99.0,100.0,NYY
+8,8,Tarik Skubal,99.0,100.0,DET
+9,9,Garrett Crochet,99.0,100.0,BOS
+10,10,Jacob deGrom,99.0,98.0,TEX
+11,11,Yoshinobu Yamamoto,99.0,99.0,LAD
+12,12,Logan Webb,99.0,99.0,SF
+13,13,Kyle Schwarber,99.0,99.0,PHI
+14,14,Kyle Tucker,99.0,100.0,CHC
+15,15,Corbin Carroll,99.0,100.0,ARI
+16,16,Gunnar Henderson,99.0,97.0,BAL
+17,17,Bryce Harper,99.0,100.0,PHI
+18,18,Freddie Freeman,99.0,100.0,LAD
+19,19,Francisco Lindor,99.0,100.0,NYM
+20,20,Manny Machado,99.0,100.0,SD
+21,21,Vladimir Guerrero Jr.,99.0,100.0,TOR
+22,22,Ronald Acuna Jr.,99.0,99.0,ATL
+23,23,Julio Rodriguez,99.0,98.0,SEA
+24,24,Elly De La Cruz,99.0,100.0,CIN
+25,25,Fernando Tatis Jr.,99.0,100.0,SD
+26,26,Trea Turner,99.0,98.0,PHI
+27,27,Juan Soto,99.0,100.0,NYM
+28,28,Jackson Chourio,99.0,97.0,l c
+29,29,Rafael Devers,99.0,99.0,SF
+30,30,Matt Olson,99.0,96.0,ATL
+31,31,Logan Gilbert,98.0,96.0,SEA
+32,32,Cody Bellinger,98.0,98.0,NYY
+33,33,Jazz Chisholm,98.0,94.0,NYY
+34,34,William Contreras,98.0,98.0,MIL
+35,35,Freddy Peralta,98.0,97.0,MIL
+36,36,Edwin Diaz,98.0,96.0,NYM
+37,37,Andres Munoz,98.0,97.0,SEA
+38,38,Brent Rooker,98.0,93.0,OAK
+39,39,Jarren Duran,98.0,95.0,BOS
+40,40,Hunter Brown,98.0,99.0,HOU
+41,41,Shota Imanaga,98.0,96.0,CHC
+42,42,Framber Valdez,98.0,98.0,HOU
+43,43,James Wood,98.0,94.0,WSH
+44,44,Max Fried,98.0,99.0,NYY
+45,45,Jose Altuve,98.0,98.0,HOU
 46,46,Joe Ryan,97.0,98.0,MIN
-47,47,Pete Crow-Armstrong,97.0,98.0,CHC
-48,48,Alex Bregman,97.0,98.0,BOS
-49,49,Josh Naylor,97.0,96.0,SEA
-50,50,Blake Snell,96.0,90.0,LAD
-51,51,Bo Bichette,96.0,86.0,TOR
-52,52,Riley Greene,96.0,89.0,DET
-53,53,Oneil Cruz,96.0,75.0,PIT
-54,54,C.J. Abrams,96.0,86.0,WSH
-55,55,Bryan Woo,96.0,96.0,SEA
-56,56,Carlos Rodon,96.0,97.0,NYY
-57,57,Hunter Greene,96.0,94.0,CIN
-58,58,Corey Seager,96.0,90.0,TEX
+47,47,Blake Snell,97.0,90.0,LAD
+48,48,Josh Naylor,97.0,96.0,SEA
+49,49,Pete Crow-Armstrong,97.0,98.0,CHC
+50,50,Alex Bregman,97.0,98.0,BOS
+51,51,Chris Sale,96.0,93.0,l c
+52,52,C.J. Abrams,96.0,86.0,WSH
+53,53,Bo Bichette,96.0,87.0,TOR
+54,54,Hunter Greene,96.0,94.0,CIN
+55,55,Riley Greene,96.0,89.0,DET
+56,56,Bryan Woo,96.0,96.0,SEA
+57,57,Tyler Glasnow,96.0,87.0,LAD
+58,58,Carlos Rodon,96.0,97.0,NYY
 59,59,Will Smith,96.0,99.0,LAD
-60,60,Junior Caminero,96.0,94.0,TB
-61,61,Chris Sale,96.0,92.0,l c
-62,62,Yordan Alvarez,96.0,90.0,HOU
-63,63,Tyler Glasnow,96.0,87.0,LAD
-64,64,Salvador Perez,95.0,86.0,KC
-65,65,Seiya Suzuki,95.0,93.0,CHC
+60,60,Yordan Alvarez,96.0,90.0,HOU
+61,61,Junior Caminero,96.0,94.0,TB
+62,62,Seiya Suzuki,95.0,93.0,CHC
+63,63,Nick Pivetta,95.0,95.0,SD
+64,64,Willson Contreras,95.0,85.0,STL
+65,65,Robert Suarez,95.0,93.0,SD
 66,66,Christian Yelich,95.0,90.0,MIL
-67,67,Jhoan Duran,95.0,87.0,PHI
-68,68,Nick Pivetta,95.0,95.0,SD
-69,69,Sonny Gray,95.0,95.0,STL
-70,70,Eugenio Suarez,95.0,92.0,SEA
-71,71,Teoscar Hernandez,95.0,85.0,LAD
-72,72,Willson Contreras,95.0,85.0,STL
-73,73,Robert Suarez,95.0,93.0,SD
-74,74,George Kirby,94.0,85.0,SEA
-75,75,Mason Miller,94.0,90.0,SD
-76,76,Robbie Ray,94.0,91.0,SF
-77,77,Dylan Cease,94.0,91.0,SD
-78,78,Cristopher Sanchez,94.0,96.0,PHI
-79,79,Luis Castillo,93.0,93.0,SEA
-80,80,Brice Turang,93.0,79.0,MIL
-81,81,Randy Arozarena,93.0,80.0,SEA
-82,82,Jeff Hoffman,93.0,81.0,TOR
-83,83,Wyatt Langford,93.0,76.0,TEX
-84,84,Michael Harris II,93.0,75.0,ATL
-85,85,Vinnie Pasquantino,92.0,83.0,KC
-86,86,Raisel Iglesias,92.0,75.0,ATL
-87,87,Michael King,92.0,86.0,l c
-88,88,Maikel Garcia,92.0,95.0,KC
-89,89,Shea Langeliers,92.0,88.0,OAK
-90,90,Kevin Gausman,91.0,90.0,TOR
-91,91,Mike Trout,91.0,81.0,LAA
-92,92,Aroldis Chapman,89.0,83.0,BOS
+67,67,Sonny Gray,95.0,94.0,STL
+68,68,Teoscar Hernandez,95.0,85.0,LAD
+69,69,Jhoan Duran,95.0,87.0,PHI
+70,70,Oneil Cruz,95.0,74.0,PIT
+71,71,Eugenio Suarez,95.0,92.0,SEA
+72,72,Salvador Perez,95.0,86.0,KC
+73,73,George Kirby,94.0,86.0,SEA
+74,74,Dylan Cease,94.0,90.0,SD
+75,75,Cristopher Sanchez,94.0,96.0,PHI
+76,76,Corey Seager,94.0,88.0,l c
+77,77,Robbie Ray,94.0,92.0,SF
+78,78,Luis Castillo,93.0,92.0,SEA
+79,79,Randy Arozarena,93.0,80.0,SEA
+80,80,Wyatt Langford,93.0,76.0,TEX
+81,81,Michael Harris II,93.0,75.0,ATL
+82,82,Brice Turang,93.0,79.0,MIL
+83,83,Mason Miller,93.0,90.0,SD
+84,84,Jeff Hoffman,93.0,81.0,TOR
+85,85,Shea Langeliers,92.0,88.0,OAK
+86,86,Maikel Garcia,92.0,95.0,KC
+87,87,Vinnie Pasquantino,92.0,83.0,KC
+88,88,Raisel Iglesias,92.0,75.0,ATL
+89,89,Michael King,92.0,86.0,l c
+90,90,Kevin Gausman,91.0,89.0,TOR
+91,91,Mike Trout,91.0,80.0,LAA
+92,92,Aroldis Chapman,90.0,83.0,BOS
 93,93,Byron Buxton,89.0,77.0,MIN
 94,94,George Springer,89.0,87.0,TOR
-95,95,Trevor Megill,89.0,66.0,l c
-96,96,Nick Kurtz,89.0,78.0,OAK
-97,97,Geraldo Perdomo,89.0,91.0,ARI
-98,98,Jackson Merrill,89.0,79.0,l c
-99,99,Taylor Ward,89.0,81.0,LAA
-100,100,Matthew Boyd,89.0,86.0,CHC
-101,101,Hunter Goodman,88.0,78.0,COL
-102,102,Carlos Estevez,88.0,68.0,KC
-103,103,Brandon Woodruff,88.0,81.0,MIL
-104,104,Ozzie Albies,88.0,82.0,ATL
-105,105,Tyler Soderstrom,88.0,76.0,OAK
-106,106,Jesus Luzardo,87.0,78.0,PHI
-107,107,Cole Ragans,87.0,76.0,l c
-108,108,Drew Rasmussen,87.0,71.0,TB
-109,109,Jeremy Pena,87.0,73.0,HOU
-110,110,Yandy Diaz,87.0,81.0,TB
-111,111,Nico Hoerner,87.0,92.0,CHC
-112,112,Spencer Strider,86.0,70.0,ATL
-113,113,Ranger Suarez,86.0,82.0,PHI
-114,114,Aaron Nola,86.0,71.0,PHI
-115,115,Xander Bogaerts,86.0,77.0,SD
-116,116,Steven Kwan,86.0,95.0,CLE
-117,117,Merrill Kelly,85.0,81.0,TEX
+95,95,Jackson Merrill,89.0,79.0,l c
+96,96,Geraldo Perdomo,89.0,91.0,ARI
+97,97,Matthew Boyd,89.0,86.0,CHC
+98,98,Nick Kurtz,89.0,78.0,OAK
+99,99,Ozzie Albies,89.0,83.0,ATL
+100,100,Brandon Woodruff,88.0,81.0,MIL
+101,101,Taylor Ward,88.0,81.0,LAA
+102,102,Tyler Soderstrom,88.0,75.0,OAK
+103,103,Carlos Estevez,88.0,69.0,KC
+104,104,Trevor Megill,88.0,64.0,l c
+105,105,Jesus Luzardo,87.0,78.0,PHI
+106,106,Aaron Nola,87.0,71.0,PHI
+107,107,Ranger Suarez,87.0,83.0,PHI
+108,108,Yandy Diaz,87.0,81.0,TB
+109,109,Jeremy Pena,87.0,74.0,HOU
+110,110,Hunter Goodman,87.0,78.0,COL
+111,111,Cole Ragans,87.0,76.0,l c
+112,112,Nico Hoerner,87.0,92.0,CHC
+113,113,Drew Rasmussen,87.0,70.0,TB
+114,114,Xander Bogaerts,86.0,76.0,l c
+115,115,Steven Kwan,86.0,95.0,CLE
+116,116,Merrill Kelly,85.0,81.0,TEX
+117,117,Spencer Strider,85.0,70.0,ATL
 118,118,Kodai Senga,85.0,78.0,NYM
-119,119,Zach Neto,84.0,35.0,LAA
-120,120,Nick Lodolo,84.0,64.0,CIN
-121,121,Marcell Ozuna,84.0,63.0,ATL
-122,122,Andrew Abbott,84.0,79.0,CIN
-123,123,Yainer Diaz,83.0,72.0,HOU
-124,124,Spencer Torkelson,83.0,67.0,DET
-125,125,Pete Fairbanks,83.0,36.0,TB
-126,126,Jack Flaherty,83.0,72.0,DET
-127,127,Zac Gallen,83.0,68.0,ARI
-128,128,Willy Adames,83.0,57.0,SF
-129,129,Tanner Bibee,82.0,69.0,CLE
-130,130,Luis Arraez,82.0,96.0,SD
+119,119,Zach Neto,85.0,36.0,LAA
+120,120,Marcell Ozuna,83.0,63.0,ATL
+121,121,Spencer Torkelson,83.0,67.0,DET
+122,122,Pete Fairbanks,83.0,36.0,TB
+123,123,Zac Gallen,83.0,68.0,ARI
+124,124,Willy Adames,83.0,58.0,SF
+125,125,Nick Lodolo,83.0,61.0,CIN
+126,126,Andrew Abbott,83.0,79.0,CIN
+127,127,Yainer Diaz,82.0,71.0,HOU
+128,128,Luis Arraez,82.0,96.0,SD
+129,129,Brandon Nimmo,82.0,72.0,NYM
+130,130,Jack Flaherty,82.0,71.0,DET
 131,131,J.T. Realmuto,82.0,42.0,PHI
-132,132,Jordan Westburg,82.0,54.0,l c
-133,133,Devin Williams,81.0,65.0,NYY
-134,134,Tanner Scott,81.0,63.0,LAD
-135,135,Brandon Nimmo,81.0,71.0,NYM
-136,136,Ryan Pepiot,81.0,51.0,TB
-137,137,Trevor Rogers,80.0,74.0,BAL
+132,132,Tanner Bibee,82.0,68.0,CLE
+133,133,Jordan Westburg,82.0,54.0,l c
+134,134,Ryan Pepiot,81.0,51.0,TB
+135,135,Tanner Scott,81.0,63.0,LAD
+136,136,Devin Williams,81.0,65.0,NYY
+137,137,Trevor Rogers,80.0,75.0,BAL
 138,138,Pablo Lopez,80.0,73.0,l c
-139,139,Brandon Lowe,79.0,42.0,TB
-140,140,Xavier Edwards,79.0,33.0,MIA
-141,141,Matt Chapman,79.0,66.0,SF
-142,142,Trevor Story,79.0,30.0,BOS
-143,143,Kenley Jansen,79.0,28.0,LAA
-144,144,Lawrence Butler,79.0,59.0,OAK
-145,145,MacKenzie Gore,79.0,71.0,WSH
-146,146,Gleyber Torres,79.0,86.0,DET
-147,147,Christian Walker,78.0,49.0,HOU
-148,148,Jacob Misiorowski,78.0,68.0,MIL
-149,149,Dansby Swanson,77.0,46.0,CHC
-150,150,David Bednar,77.0,47.0,NYY
-151,151,Ian Happ,77.0,74.0,CHC
-152,152,Kyle Finnegan,77.0,40.0,DET
+139,139,Matt Chapman,80.0,67.0,SF
+140,140,Trevor Story,80.0,31.0,BOS
+141,141,Kenley Jansen,79.0,28.0,LAA
+142,142,Christian Walker,79.0,50.0,HOU
+143,143,Lawrence Butler,78.0,59.0,OAK
+144,144,MacKenzie Gore,78.0,71.0,WSH
+145,145,Gleyber Torres,78.0,86.0,DET
+146,146,Brandon Lowe,78.0,42.0,TB
+147,147,Xavier Edwards,78.0,33.0,MIA
+148,148,Jacob Misiorowski,78.0,67.0,MIL
+149,149,Ian Happ,77.0,74.0,CHC
+150,150,Kyle Finnegan,77.0,40.0,DET
+151,151,Dansby Swanson,77.0,46.0,CHC
+152,152,Jurickson Profar,77.0,64.0,ATL
 153,153,Alec Bohm,76.0,66.0,PHI
-154,154,Adley Rutschman,76.0,78.0,l c
-155,155,Seth Lugo,75.0,66.0,KC
-156,156,Jose Berrios,75.0,66.0,TOR
-157,157,Nick Castellanos,75.0,63.0,PHI
-158,158,Bryan Reynolds,75.0,53.0,PIT
-159,159,Jurickson Profar,75.0,62.0,ATL
-160,160,Andy Pages,74.0,53.0,LAD
-161,161,Yusei Kikuchi,74.0,67.0,LAA
-162,162,Chris Bassitt,74.0,65.0,TOR
-163,163,Emilio Pagan,73.0,46.0,CIN
-164,164,Max Scherzer,73.0,37.0,TOR
-165,165,Shane Bieber,71.0,53.0,TOR
-166,166,David Peterson,71.0,57.0,NYM
-167,167,Max Muncy,71.0,48.0,l c
-168,168,Michael Busch,70.0,38.0,CHC
-169,169,Brenton Doyle,70.0,31.0,COL
-170,170,Kyle Stowers,70.0,54.0,l c
-171,171,Mark Vientos,69.0,28.0,NYM
-172,172,Heliot Ramos,69.0,29.0,SF
-173,173,Ryan Helsley,69.0,70.0,NYM
-174,174,Roman Anthony,68.0,35.0,BOS
-175,175,Luis Robert,68.0,21.0,l c
-176,176,Ryan Walker,68.0,59.0,SF
-177,177,Jackson Holliday,67.0,40.0,BAL
-178,178,Brayan Bello,67.0,39.0,BOS
-179,179,Ceddanne Rafaela,67.0,38.0,BOS
-180,180,Casey Mize,67.0,50.0,DET
-181,181,Sandy Alcantara,67.0,45.0,MIA
-182,182,Clay Holmes,67.0,55.0,NYM
-183,183,Marcus Semien,66.0,68.0,l c
-184,184,Bailey Ober,66.0,54.0,MIN
-185,185,Hurston Waldrep,66.0,57.0,ATL
-186,186,Roki Sasaki,65.0,46.0,l c
-187,187,Eury Perez,65.0,37.0,MIA
-188,188,Bryson Stott,65.0,62.0,PHI
+154,154,David Bednar,76.0,47.0,NYY
+155,155,Nick Castellanos,75.0,62.0,PHI
+156,156,Bryan Reynolds,75.0,53.0,PIT
+157,157,Jose Berrios,75.0,66.0,TOR
+158,158,Adley Rutschman,75.0,78.0,l c
+159,159,Seth Lugo,75.0,66.0,KC
+160,160,Chris Bassitt,74.0,64.0,TOR
+161,161,Andy Pages,74.0,53.0,LAD
+162,162,Emilio Pagan,73.0,46.0,CIN
+163,163,Yusei Kikuchi,73.0,66.0,LAA
+164,164,David Peterson,72.0,57.0,NYM
+165,165,Mark Vientos,72.0,31.0,NYM
+166,166,Shane Bieber,72.0,56.0,TOR
+167,167,Max Scherzer,72.0,36.0,TOR
+168,168,Max Muncy,71.0,48.0,l c
+169,169,Clay Holmes,71.0,56.0,NYM
+170,170,Heliot Ramos,70.0,29.0,SF
+171,171,Michael Busch,70.0,38.0,CHC
+172,172,Brenton Doyle,70.0,31.0,COL
+173,173,Ryan Walker,70.0,60.0,SF
+174,174,Kyle Stowers,70.0,54.0,l c
+175,175,Roman Anthony,69.0,36.0,BOS
+176,176,Ryan Helsley,68.0,69.0,NYM
+177,177,Ceddanne Rafaela,68.0,38.0,BOS
+178,178,Sandy Alcantara,67.0,45.0,MIA
+179,179,Jackson Holliday,67.0,40.0,BAL
+180,180,Brayan Bello,66.0,39.0,BOS
+181,181,Eury Perez,66.0,38.0,MIA
+182,182,Bryson Stott,65.0,62.0,PHI
+183,183,Roki Sasaki,65.0,46.0,l c
+184,184,Marcus Semien,65.0,67.0,l c
+185,185,Hurston Waldrep,65.0,56.0,ATL
+186,186,Luis Robert,65.0,20.0,l c
+187,187,Bailey Ober,65.0,54.0,MIN
+188,188,Agustin Ramirez,64.0,51.0,MIA
 189,189,Clayton Kershaw,64.0,35.0,LAD
-190,190,Anthony Volpe,64.0,35.0,NYY
-191,191,Agustin Ramirez,64.0,51.0,MIA
-192,192,Quinn Priester,64.0,42.0,MIL
+190,190,Ben Rice,64.0,40.0,NYY
+191,191,Anthony Volpe,63.0,34.0,NYY
+192,192,Quinn Priester,63.0,40.0,MIL
 193,193,Daniel Palencia,63.0,28.0,CHC
-194,194,Brady Singer,62.0,40.0,CIN
-195,195,Gavin Williams,62.0,35.0,CLE
-196,196,Bryce Miller,61.0,51.0,SEA
-197,197,Ben Rice,61.0,38.0,NYY
-198,198,Kerry Carpenter,61.0,45.0,DET
-199,199,Carlos Correa,61.0,51.0,HOU
-200,200,Brendan Donovan,61.0,78.0,l c
-201,201,Edward Cabrera,61.0,38.0,MIA
-202,202,Paul Goldschmidt,61.0,50.0,NYY
-203,203,Cade Horton,60.0,30.0,CHC
-204,204,Jacob Wilson,60.0,63.0,OAK
-205,205,Lourdes Gurriel Jr.,60.0,64.0,ARI
-206,206,Brandon Pfaadt,59.0,58.0,ARI
-207,207,Ramon Laureano,59.0,32.0,SD
-208,208,Bryan Abreu,58.0,34.0,HOU
-209,209,Logan O'Hoppe,57.0,31.0,LAA
-210,210,Adolis Garcia,57.0,42.0,TEX
-211,211,Giancarlo Stanton,57.0,24.0,NYY
+194,194,Cade Horton,62.0,35.0,CHC
+195,195,Carlos Correa,62.0,52.0,HOU
+196,196,Casey Mize,62.0,47.0,DET
+197,197,Edward Cabrera,62.0,38.0,MIA
+198,198,Brady Singer,62.0,41.0,CIN
+199,199,Paul Goldschmidt,61.0,50.0,NYY
+200,200,Kerry Carpenter,61.0,44.0,DET
+201,201,Gavin Williams,61.0,34.0,CLE
+202,202,Brendan Donovan,61.0,78.0,l c
+203,203,Lourdes Gurriel Jr.,61.0,64.0,ARI
+204,204,Jacob Wilson,61.0,64.0,OAK
+205,205,Bryce Miller,60.0,51.0,SEA
+206,206,Ramon Laureano,59.0,32.0,SD
+207,207,Adolis Garcia,59.0,43.0,TEX
+208,208,Bryan Abreu,59.0,35.0,HOU
+209,209,Brandon Pfaadt,59.0,57.0,ARI
+210,210,Giancarlo Stanton,58.0,26.0,NYY
+211,211,Logan O'Hoppe,57.0,31.0,LAA
 212,212,Cade Smith,56.0,26.0,CLE
-213,213,Jakob Marsee,55.0,28.0,MIA
-214,214,Will Vest,55.0,25.0,DET
-215,215,Matt McLain,53.0,37.0,CIN
-216,216,Cam Schlittler,53.0,26.0,NYY
-217,217,Zach McKinstry,52.0,31.0,DET
-218,218,Michael Wacha,52.0,27.0,KC
-219,219,Noah Cameron,52.0,38.0,KC
-220,220,Eric Lauer,52.0,20.0,TOR
-221,221,Lucas Giolito,52.0,33.0,BOS
-222,222,Luis Gil,51.0,32.0,NYY
-223,223,Jonathan Aranda,50.0,16.0,l c
-224,224,Nolan McLean,50.0,44.0,NYM
-225,225,Luke Keaschall,50.0,24.0,MIN
-226,226,Isaac Paredes,50.0,62.0,l c
-227,227,TJ Friedl,50.0,31.0,CIN
-228,228,Luis Garcia,50.0,35.0,WSH
-229,229,Chase Burns,50.0,24.0,l c
-230,230,Nolan Arenado,49.0,72.0,l c
-231,231,Cedric Mullins II,49.0,36.0,NYM
-232,232,Alec Burleson,48.0,44.0,STL
-233,233,Austin Wells,48.0,33.0,NYY
-234,234,Ivan Herrera,47.0,29.0,STL
-235,235,Noelvi Marte,47.0,37.0,CIN
-236,236,Anthony Santander,47.0,50.0,l c
-237,237,Yu Darvish,47.0,17.0,SD
-238,238,Tommy Edman,46.0,57.0,l c
-239,239,Wilyer Abreu,46.0,40.0,l c
-240,240,Matt Shaw,45.0,24.0,CHC
-241,241,Royce Lewis,45.0,21.0,MIN
-242,242,Spencer Steer,45.0,41.0,CIN
-243,243,Masyn Winn,45.0,33.0,STL
-244,244,Sal Frelick,45.0,35.0,MIL
-245,245,Dylan Crews,44.0,17.0,WSH
-246,246,Zack Littell,44.0,30.0,CIN
+213,213,Will Vest,55.0,25.0,DET
+214,214,Nolan McLean,55.0,48.0,NYM
+215,215,Jakob Marsee,55.0,29.0,MIA
+216,216,Cam Schlittler,54.0,28.0,NYY
+217,217,Matt McLain,53.0,37.0,CIN
+218,218,Lucas Giolito,53.0,33.0,BOS
+219,219,Zach McKinstry,52.0,31.0,DET
+220,220,Michael Wacha,52.0,26.0,l c
+221,221,Luke Keaschall,51.0,24.0,MIN
+222,222,Noah Cameron,51.0,37.0,KC
+223,223,Isaac Paredes,50.0,62.0,l c
+224,224,TJ Friedl,50.0,30.0,CIN
+225,225,Luis Gil,50.0,31.0,NYY
+226,226,Chase Burns,50.0,24.0,l c
+227,227,Luis Garcia,50.0,35.0,WSH
+228,228,Nolan Arenado,49.0,71.0,l c
+229,229,Will Warren,49.0,22.0,NYY
+230,230,Cedric Mullins II,49.0,36.0,NYM
+231,231,Jonathan Aranda,49.0,16.0,l c
+232,232,Austin Wells,48.0,33.0,NYY
+233,233,Alec Burleson,48.0,44.0,l c
+234,234,Anthony Santander,47.0,50.0,l c
+235,235,Ivan Herrera,47.0,29.0,STL
+236,236,Noelvi Marte,46.0,37.0,CIN
+237,237,Wilyer Abreu,46.0,40.0,l c
+238,238,Jose Quintana,46.0,22.0,MIL
+239,239,Tommy Edman,46.0,57.0,l c
+240,240,Sal Frelick,45.0,35.0,MIL
+241,241,Masyn Winn,45.0,33.0,STL
+242,242,Royce Lewis,45.0,21.0,MIN
+243,243,Jo Adell,44.0,15.0,LAA
+244,244,Zack Littell,44.0,31.0,CIN
+245,245,Spencer Steer,44.0,41.0,CIN
+246,246,Matt Shaw,44.0,24.0,CHC
 247,247,Ezequiel Tovar,44.0,16.0,COL
-248,248,Jo Adell,44.0,15.0,LAA
-249,249,Jose Quintana,44.0,23.0,MIL
-250,250,Will Warren,43.0,22.0,NYY
-251,251,Andrew Vaughn,43.0,22.0,MIL
-252,252,Shane Baz,42.0,29.0,TB
+248,248,Eric Lauer,43.0,18.0,TOR
+249,249,Dylan Crews,43.0,17.0,WSH
+250,250,Yu Darvish,43.0,15.0,SD
+251,251,Shane Baz,42.0,29.0,TB
+252,252,Andrew Vaughn,42.0,21.0,MIL
 253,253,Jasson Dominguez,42.0,16.0,NYY
-254,254,Jeffrey Springs,41.0,17.0,OAK
-255,255,Addison Barger,41.0,25.0,TOR
+254,254,Abner Uribe,41.0,27.0,MIL
+255,255,Jeffrey Springs,41.0,18.0,OAK
 256,256,Lenyn Sosa,41.0,17.0,CWS
-257,257,Alejandro Kirk,40.0,52.0,TOR
-258,258,Sean Manaea,39.0,28.0,NYM
-259,259,Jason Adam,38.0,33.0,SD
-260,260,Ryne Nelson,38.0,20.0,ARI
-261,261,Chandler Simpson,38.0,17.0,TB
-262,262,Jung Hoo Lee,38.0,75.0,SF
-263,263,Charlie Morton,37.0,11.0,DET
-264,264,Josh Lowe,36.0,8.0,TB
-265,265,Nathaniel Lowe,36.0,18.0,l c
-266,266,Jose Soriano,36.0,17.0,LAA
-267,267,Abner Uribe,36.0,25.0,MIL
-268,268,Colton Cowser,36.0,8.0,BAL
-269,269,Jonathan India,36.0,44.0,KC
-270,270,Mitch Keller,35.0,49.0,PIT
-271,271,Ryan Bergert,35.0,9.0,KC
-272,272,Jack Leiter,34.0,15.0,TEX
-273,273,Dennis Santana,34.0,7.0,PIT
-274,274,Colson Montgomery,34.0,14.0,CWS
-275,275,Bubba Chandler,34.0,16.0,PIT
-276,276,Randy Rodriguez,33.0,11.0,l c
-277,277,Jameson Taillon,33.0,18.0,l c
-278,278,Tyler O'Neill,33.0,9.0,l c
+257,257,Addison Barger,40.0,25.0,TOR
+258,258,Alejandro Kirk,39.0,51.0,TOR
+259,259,Sean Manaea,38.0,27.0,NYM
+260,260,Jung Hoo Lee,38.0,74.0,SF
+261,261,Ryne Nelson,38.0,19.0,ARI
+262,262,Jason Adam,38.0,33.0,SD
+263,263,Jonah Tong,37.0,20.0,NYM
+264,264,Jack Leiter,37.0,17.0,TEX
+265,265,Chandler Simpson,37.0,17.0,TB
+266,266,Josh Lowe,36.0,8.0,TB
+267,267,Jonathan India,36.0,44.0,KC
+268,268,Jose Soriano,36.0,17.0,LAA
+269,269,Colton Cowser,36.0,8.0,BAL
+270,270,Dennis Santana,35.0,8.0,PIT
+271,271,Mitch Keller,35.0,49.0,PIT
+272,272,Nathaniel Lowe,35.0,18.0,l c
+273,273,Charlie Morton,35.0,10.0,DET
+274,274,Jason Alexander,34.0,12.0,HOU
+275,275,Colson Montgomery,34.0,13.0,CWS
+276,276,Bubba Chandler,34.0,16.0,PIT
+277,277,Tyler O'Neill,33.0,9.0,l c
+278,278,Randy Rodriguez,33.0,10.0,l c
 279,279,Ryan O'Hearn,32.0,21.0,SD
-280,280,Jonah Tong,32.0,15.0,l c
-281,281,Colin Rea,32.0,11.0,CHC
-282,282,Tyler Mahle,32.0,28.0,l c
-283,283,Andres Gimenez,31.0,35.0,TOR
-284,284,Jake Burger,31.0,23.0,l c
-285,285,Ryan McMahon,31.0,6.0,NYY
-286,286,Jorge Polanco,30.0,30.0,SEA
-287,287,Luke Weaver,30.0,28.0,NYY
-288,288,Ernie Clement,30.0,40.0,TOR
-289,289,Kyle Bradish,30.0,10.0,BAL
-290,290,Emmet Sheehan,30.0,9.0,LAD
-291,291,Dustin May,30.0,16.0,BOS
-292,292,Camilo Doval,28.0,15.0,NYY
-293,293,Willi Castro,28.0,22.0,CHC
+280,280,Tyler Mahle,32.0,28.0,l c
+281,281,Jake Burger,31.0,23.0,l c
+282,282,Luke Weaver,31.0,28.0,NYY
+283,283,Emmet Sheehan,31.0,9.0,LAD
+284,284,Andres Gimenez,31.0,35.0,TOR
+285,285,Ryan Bergert,31.0,8.0,KC
+286,286,Jorge Polanco,31.0,30.0,SEA
+287,287,Ryan McMahon,31.0,6.0,NYY
+288,288,Jameson Taillon,31.0,17.0,l c
+289,289,Dustin May,30.0,16.0,BOS
+290,290,Kyle Bradish,30.0,11.0,BAL
+291,291,Dean Kremer,29.0,14.0,BAL
+292,292,Trent Grisham,29.0,24.0,NYY
+293,293,Ernie Clement,28.0,38.0,TOR
 294,294,Kirby Yates,28.0,10.0,LAD
-295,295,Dean Kremer,28.0,13.0,BAL
-296,296,Brooks Lee,27.0,13.0,MIN
+295,295,Willi Castro,28.0,22.0,CHC
+296,296,Camilo Doval,28.0,15.0,NYY
 297,297,Tylor Megill,27.0,15.0,l c
-298,298,Trent Grisham,26.0,24.0,NYY
-299,299,Josh Jung,26.0,7.0,TEX
-300,300,Jason Alexander,25.0,12.0,HOU
-301,301,Adrian Morejon,25.0,7.0,SD
-302,302,Nick Martinez,25.0,24.0,CIN
-303,303,Ryan Mountcastle,25.0,4.0,BAL
-304,304,Jordan Romano,25.0,5.0,l c
-305,305,Ryan Pressly,25.0,33.0,l c
-306,306,Miguel Andujar,25.0,15.0,CIN
-307,307,Samuel Basallo,25.0,11.0,BAL
-308,308,Rhys Hoskins,24.0,7.0,l c
-309,309,Ronny Henriquez,24.0,9.0,MIA
-310,310,Tomoyuki Sugano,24.0,11.0,BAL
-311,311,Spencer Arrighetti,24.0,6.0,HOU
-312,312,Jose Caballero,24.0,11.0,NYY
-313,313,Gabriel Moreno,24.0,28.0,ARI
-314,314,Colt Keith,24.0,8.0,DET
-315,315,Jacob Lopez,24.0,16.0,l c
-316,316,Jordan Beck,24.0,7.0,COL
-317,317,Tyler Stephenson,24.0,23.0,l c
+298,298,Brooks Lee,27.0,14.0,MIN
+299,299,Colin Rea,27.0,10.0,CHC
+300,300,Josh Jung,26.0,7.0,TEX
+301,301,Ryan Mountcastle,25.0,4.0,BAL
+302,302,Braxton Ashcraft,25.0,5.0,PIT
+303,303,Gabriel Moreno,25.0,29.0,ARI
+304,304,Jordan Romano,25.0,4.0,l c
+305,305,Adrian Morejon,25.0,8.0,SD
+306,306,Ryan Pressly,25.0,33.0,l c
+307,307,Nick Martinez,24.0,24.0,CIN
+308,308,Jared Triolo,24.0,5.0,PIT
+309,309,Colt Keith,24.0,8.0,DET
+310,310,Rhys Hoskins,24.0,7.0,l c
+311,311,Tomoyuki Sugano,24.0,11.0,BAL
+312,312,Spencer Arrighetti,24.0,6.0,HOU
+313,313,Jordan Beck,24.0,7.0,COL
+314,314,Adrian Houser,23.0,17.0,TB
+315,315,Miguel Andujar,23.0,14.0,CIN
+316,316,Samuel Basallo,23.0,11.0,BAL
+317,317,Nestor Cortes,23.0,16.0,SD
 318,318,JoJo Romero,23.0,6.0,STL
-319,319,Drake Baldwin,23.0,13.0,ATL
-320,320,Jose A. Ferrer,23.0,7.0,WSH
-321,321,Taj Bradley,22.0,31.0,MIN
-322,322,Lucas Erceg,22.0,27.0,KC
-323,323,Jared Triolo,22.0,4.0,PIT
-324,324,Carson Kelly,22.0,42.0,CHC
-325,325,Josh Smith,22.0,16.0,TEX
-326,326,Jeremiah Estrada,22.0,11.0,SD
-327,327,Jac Caglianone,21.0,11.0,l c
-328,328,Adrian Houser,21.0,16.0,TB
-329,329,Brett Baty,21.0,6.0,NYM
-330,330,Calvin Faucher,20.0,4.0,MIA
-331,331,Lars Nootbaar,20.0,28.0,STL
-332,332,Javier Baez,20.0,21.0,DET
-333,333,Luis Severino,20.0,12.0,l c
-334,334,Lane Thomas,20.0,3.0,l c
+319,319,Jose A. Ferrer,23.0,7.0,WSH
+320,320,Jose Caballero,23.0,11.0,NYY
+321,321,Drake Baldwin,23.0,14.0,ATL
+322,322,Ronny Henriquez,23.0,9.0,MIA
+323,323,Tyler Stephenson,23.0,22.0,l c
+324,324,Taj Bradley,22.0,30.0,MIN
+325,325,Lucas Erceg,22.0,27.0,KC
+326,326,Brett Baty,22.0,6.0,NYM
+327,327,Josh Smith,22.0,15.0,TEX
+328,328,Carson Kelly,22.0,42.0,CHC
+329,329,Jeremiah Estrada,21.0,11.0,SD
+330,330,Jac Caglianone,21.0,11.0,l c
+331,331,Calvin Faucher,20.0,4.0,MIA
+332,332,Luis Severino,20.0,12.0,l c
+333,333,Miguel Vargas,20.0,22.0,l c
+334,334,Lars Nootbaar,20.0,28.0,STL
 335,335,Jeff McNeil,20.0,13.0,NYM
-336,336,Miguel Vargas,20.0,22.0,CWS
-337,337,Matthew Liberatore,19.0,17.0,STL
-338,338,Tyler Rogers,19.0,8.0,NYM
-339,339,Nestor Cortes,19.0,14.0,SD
-340,340,Justin Verlander,19.0,8.0,SF
-341,341,Isaac Collins,19.0,10.0,MIL
+336,336,Lane Thomas,20.0,3.0,l c
+337,337,Javier Baez,20.0,21.0,DET
+338,338,Parker Messick,19.0,6.0,CLE
+339,339,Matthew Liberatore,19.0,17.0,STL
+340,340,Cristian Javier,19.0,8.0,HOU
+341,341,Justin Verlander,19.0,8.0,SF
 342,342,Ryan Jeffers,19.0,8.0,MIN
-343,343,Parker Messick,19.0,6.0,CLE
-344,344,Victor Vodnik,19.0,5.0,COL
-345,345,Cristian Javier,19.0,8.0,HOU
-346,346,Griffin Jax,18.0,16.0,TB
-347,347,Walker Buehler,18.0,12.0,BOS
+343,343,Tyler Rogers,19.0,9.0,NYM
+344,344,Walker Buehler,18.0,12.0,l c
+345,345,Griffin Jax,18.0,16.0,TB
+346,346,Isaac Collins,18.0,9.0,MIL
+347,347,Victor Vodnik,18.0,5.0,COL
 348,348,Otto Lopez,17.0,20.0,MIA
 349,349,Hunter Gaddis,17.0,9.0,CLE
-350,350,Braxton Ashcraft,17.0,5.0,PIT
-351,351,Luis Rengifo,17.0,5.0,LAA
-352,352,Alex Vesia,17.0,8.0,l c
-353,353,Daulton Varsho,17.0,11.0,TOR
-354,354,Kristian Campbell,17.0,20.0,l c
-355,355,Michael McGreevy,16.0,5.0,STL
-356,356,Nolan Schanuel,15.0,13.0,l c
-357,357,Andrew Painter,15.0,3.0,l c
-358,358,Matt Strahm,15.0,4.0,PHI
-359,359,Garrett Whitlock,15.0,5.0,BOS
-360,360,Sean Murphy,15.0,9.0,ATL
-361,361,Jake Cronenworth,15.0,35.0,SD
-362,362,Michael Toglia,15.0,2.0,l c
-363,363,Jorge Soler,15.0,6.0,l c
-364,364,Taijuan Walker,15.0,5.0,PHI
-365,365,Kyle Teel,15.0,4.0,CWS
-366,366,Tony Santillan,15.0,6.0,CIN
-367,367,Francisco Alvarez,15.0,11.0,l c
+350,350,Luis Rengifo,17.0,5.0,LAA
+351,351,Daulton Varsho,17.0,11.0,l c
+352,352,Kyle Teel,16.0,4.0,CWS
+353,353,Kristian Campbell,16.0,20.0,l c
+354,354,Matt Strahm,16.0,4.0,PHI
+355,355,Garrett Whitlock,16.0,5.0,BOS
+356,356,Michael McGreevy,16.0,5.0,STL
+357,357,Alex Vesia,16.0,7.0,l c
+358,358,Tony Santillan,15.0,6.0,CIN
+359,359,Shelby Miller,15.0,4.0,MIL
+360,360,Jorge Soler,15.0,6.0,l c
+361,361,Sean Murphy,15.0,9.0,ATL
+362,362,Francisco Alvarez,15.0,11.0,l c
+363,363,Luis Morales,15.0,4.0,OAK
+364,364,Jake Cronenworth,15.0,35.0,SD
+365,365,Michael Toglia,15.0,2.0,l c
+366,366,Andrew Painter,15.0,3.0,l c
+367,367,Nolan Schanuel,15.0,13.0,l c
 368,368,Cam Smith,14.0,7.0,HOU
-369,369,Zebby Matthews,14.0,4.0,MIN
-370,370,Shelby Miller,14.0,4.0,MIL
-371,371,Bowden Francis,14.0,28.0,l c
-372,372,Chris Paddack,13.0,5.0,DET
+369,369,Bowden Francis,14.0,28.0,l c
+370,370,Zebby Matthews,14.0,4.0,MIN
+371,371,Chris Paddack,14.0,6.0,DET
+372,372,Robert Garcia,13.0,3.0,TEX
 373,373,J.P. Crawford,13.0,9.0,SEA
-374,374,Landen Roupp,13.0,6.0,l c
-375,375,Slade Cecconi,13.0,6.0,CLE
-376,376,Logan Allen,13.0,5.0,CLE
+374,374,Kyle Manzardo,13.0,7.0,CLE
+375,375,Taijuan Walker,13.0,5.0,PHI
+376,376,Alexis Diaz,13.0,19.0,l c
 377,377,Orion Kerkering,13.0,4.0,PHI
-378,378,Kyle Manzardo,13.0,7.0,CLE
-379,379,Robert Garcia,13.0,3.0,TEX
-380,380,Alexis Diaz,13.0,19.0,l c
+378,378,Logan Allen,13.0,5.0,CLE
+379,379,Gavin Sheets,13.0,9.0,SD
+380,380,Slade Cecconi,12.0,6.0,CLE
 381,381,Chris Martin,12.0,3.0,l c
-382,382,Gavin Sheets,12.0,9.0,SD
-383,383,Eduardo Rodriguez,12.0,4.0,ARI
-384,384,Dillon Dingler,12.0,6.0,DET
-385,385,Luis Morales,12.0,3.0,OAK
-386,386,Brendon Little,11.0,4.0,TOR
-387,387,Tyler Holton,11.0,2.0,DET
-388,388,Brad Keller,11.0,3.0,CHC
-389,389,Shane Smith,11.0,6.0,CWS
-390,390,Carson Williams,11.0,6.0,TB
-391,391,Patrick Corbin,11.0,5.0,TEX
-392,392,Warming Bernabel,11.0,10.0,COL
-393,393,Wilmer Flores,11.0,14.0,SF
-394,394,Victor Robles,11.0,2.0,SEA
-395,395,Phil Maton,11.0,3.0,TEX
-396,396,Keibert Ruiz,10.0,41.0,l c
-397,397,Caleb Durbin,10.0,6.0,MIL
-398,398,Cade Cavalli,10.0,3.0,WSH
-399,399,Edwin Uceta,10.0,2.0,TB
-400,400,Jake McCarthy,10.0,3.0,ARI
-401,401,Blake Treinen,10.0,4.0,LAD
-402,402,Jake Irvin,10.0,9.0,WSH
-403,403,Tommy Kahnle,9.0,4.0,DET
-404,404,Matt Wallner,9.0,2.0,MIN
-405,405,Christian Encarnacion-Strand,9.0,1.0,l c
-406,406,Tyler Freeman,9.0,3.0,COL
-407,407,Mike Burrows,9.0,3.0,PIT
-408,408,Victor Scott II,9.0,5.0,l c
-409,409,Blaze Alexander,9.0,2.0,ARI
-410,410,Matt Brash,9.0,3.0,SEA
-411,411,Austin Hays,9.0,8.0,CIN
-412,412,Gavin Lux,9.0,6.0,CIN
-413,413,Mickey Moniak,9.0,4.0,COL
-414,414,Michael Lorenzen,9.0,4.0,KC
-415,415,Justin Topa,9.0,1.0,MIN
-416,416,Joey Ortiz,9.0,6.0,l c
-417,417,Spencer Horwitz,8.0,9.0,PIT
-418,418,Romy Gonzalez,8.0,4.0,BOS
-419,419,Shawn Armstrong,8.0,2.0,TEX
-420,420,Brandon Walter,8.0,6.0,l c
-421,421,Jordan Lawlar,8.0,2.0,l c
-422,422,JP Sears,8.0,6.0,l c
-423,423,Fernando Cruz,8.0,3.0,NYY
-424,424,Keegan Akin,8.0,1.0,BAL
-425,425,Ryan Yarbrough,8.0,3.0,l c
-426,426,Riley O'Brien,8.0,1.0,STL
-427,427,Jared Koenig,8.0,2.0,MIL
-428,428,Bryan King,8.0,3.0,HOU
-429,429,Carlos Narvaez,7.0,5.0,BOS
-430,430,Andrew Kittredge,7.0,2.0,CHC
-431,431,Jose Alvarado,7.0,10.0,PHI
-432,432,Joey Wentz,7.0,2.0,ATL
-433,433,Luis Garcia,7.0,2.0,l c
+382,382,Dillon Dingler,12.0,6.0,DET
+383,383,Carson Williams,11.0,6.0,TB
+384,384,Tyler Holton,11.0,2.0,DET
+385,385,Brad Keller,11.0,4.0,CHC
+386,386,Brendon Little,11.0,5.0,TOR
+387,387,Phil Maton,11.0,3.0,TEX
+388,388,Wilmer Flores,11.0,14.0,SF
+389,389,Eduardo Rodriguez,11.0,4.0,ARI
+390,390,Shane Smith,11.0,6.0,CWS
+391,391,Victor Robles,11.0,2.0,l c
+392,392,Caleb Durbin,11.0,6.0,MIL
+393,393,Payton Tolle,11.0,5.0,BOS
+394,394,Patrick Corbin,11.0,5.0,TEX
+395,395,Jake McCarthy,10.0,3.0,ARI
+396,396,Edwin Uceta,10.0,2.0,TB
+397,397,Jake Irvin,10.0,9.0,WSH
+398,398,Keibert Ruiz,10.0,41.0,l c
+399,399,Blake Treinen,10.0,4.0,LAD
+400,400,Warming Bernabel,10.0,10.0,COL
+401,401,Justin Topa,10.0,1.0,MIN
+402,402,Gavin Lux,9.0,6.0,CIN
+403,403,Matt Brash,9.0,3.0,SEA
+404,404,Spencer Horwitz,9.0,9.0,PIT
+405,405,Austin Hays,9.0,8.0,CIN
+406,406,Victor Scott II,9.0,5.0,l c
+407,407,Mickey Moniak,9.0,4.0,COL
+408,408,Matt Wallner,9.0,2.0,MIN
+409,409,Tommy Kahnle,9.0,4.0,DET
+410,410,Blaze Alexander,9.0,2.0,ARI
+411,411,Tyler Freeman,9.0,3.0,COL
+412,412,Christian Encarnacion-Strand,9.0,1.0,l c
+413,413,Joey Ortiz,9.0,6.0,l c
+414,414,Bryan King,8.0,3.0,HOU
+415,415,Mike Burrows,8.0,3.0,PIT
+416,416,JP Sears,8.0,6.0,l c
+417,417,Michael Lorenzen,8.0,4.0,KC
+418,418,Ryan Yarbrough,8.0,3.0,l c
+419,419,Fernando Cruz,8.0,3.0,NYY
+420,420,Shawn Armstrong,8.0,2.0,TEX
+421,421,Jared Koenig,8.0,2.0,MIL
+422,422,Romy Gonzalez,8.0,4.0,BOS
+423,423,Cade Cavalli,8.0,3.0,WSH
+424,424,Brandon Walter,8.0,6.0,l c
+425,425,Jordan Lawlar,8.0,2.0,ARI
+426,426,Carlos Narvaez,8.0,5.0,BOS
+427,427,Keegan Akin,8.0,1.0,BAL
+428,428,Riley O'Brien,8.0,1.0,STL
+429,429,Hyeseong Kim,7.0,5.0,l c
+430,430,JJ Bleday,7.0,20.0,OAK
+431,431,Dylan Beavers,7.0,4.0,BAL
+432,432,Tyler Anderson,7.0,5.0,LAA
+433,433,Mick Abel,7.0,3.0,MIN
 434,434,Kumar Rocker,7.0,2.0,l c
-435,435,Tyler Anderson,7.0,5.0,LAA
-436,436,Gabe Speier,7.0,1.0,SEA
-437,437,Hyeseong Kim,7.0,5.0,l c
-438,438,JJ Bleday,7.0,20.0,OAK
+435,435,Andrew Kittredge,7.0,2.0,CHC
+436,436,Luis Garcia,7.0,2.0,l c
+437,437,Jose Alvarado,7.0,10.0,PHI
+438,438,Gabe Speier,7.0,1.0,SEA
 439,439,Martin Perez,7.0,3.0,CWS
-440,440,Ben Casparius,7.0,3.0,LAD
-441,441,Dylan Beavers,7.0,4.0,BAL
-442,442,Mick Abel,7.0,3.0,MIN
-443,443,Aaron Civale,7.0,3.0,CWS
-444,444,Jake Meyers,7.0,4.0,l c
-445,445,Bryce Elder,6.0,2.0,ATL
-446,446,Caleb Thielbar,6.0,1.0,CHC
-447,447,Chad Patrick,6.0,4.0,l c
-448,448,Yoendrys Gomez,6.0,1.0,CWS
-449,449,Jesus Sanchez,6.0,3.0,HOU
-450,450,Parker Meadows,6.0,2.0,l c
-451,451,Andre Pallante,6.0,4.0,STL
-452,452,Erick Fedde,6.0,5.0,MIL
-453,453,Miles Mikolas,6.0,3.0,STL
+440,440,Mike Yastrzemski,7.0,6.0,KC
+441,441,Jake Meyers,7.0,4.0,l c
+442,442,Miles Mikolas,7.0,3.0,STL
+443,443,Ben Casparius,7.0,3.0,LAD
+444,444,Andre Pallante,6.0,3.0,STL
+445,445,Dylan Lee,6.0,1.0,ATL
+446,446,Cade Povich,6.0,2.0,BAL
+447,447,Bryce Elder,6.0,2.0,ATL
+448,448,Dylan Moore,6.0,8.0,TEX
+449,449,Parker Meadows,6.0,2.0,l c
+450,450,Luis Matos,6.0,2.0,SF
+451,451,Caleb Thielbar,6.0,1.0,CHC
+452,452,Seranthony Dominguez,6.0,1.0,TOR
+453,453,Louis Varland,6.0,2.0,TOR
 454,454,Lance McCullers Jr.,6.0,2.0,HOU
-455,455,Dylan Lee,6.0,1.0,ATL
-456,456,Janson Junk,6.0,4.0,l c
-457,457,Seranthony Dominguez,6.0,1.0,TOR
-458,458,Louis Varland,6.0,2.0,TOR
-459,459,Connor Norby,6.0,3.0,l c
-460,460,Michael Soroka,6.0,2.0,l c
-461,461,Owen Caissie,6.0,2.0,CHC
-462,462,Tyler Fitzgerald,6.0,1.0,l c
-463,463,Isiah Kiner-Falefa,6.0,5.0,PIT
-464,464,Dylan Moore,6.0,8.0,l c
-465,465,Travis Bazzana,6.0,1.0,l c
-466,466,Mike Yastrzemski,6.0,5.0,KC
-467,467,Bryce Eldridge,5.0,1.0,l c
-468,468,Nolan Jones,5.0,1.0,CLE
-469,469,Jonah Heim,5.0,6.0,TEX
-470,470,Kyle Hendricks,5.0,2.0,LAA
-471,471,Bailey Falter,5.0,3.0,l c
-472,472,Reed Garrett,5.0,3.0,l c
+455,455,Tyler Fitzgerald,6.0,1.0,l c
+456,456,Isiah Kiner-Falefa,6.0,5.0,PIT
+457,457,Owen Caissie,6.0,2.0,CHC
+458,458,Jesus Sanchez,6.0,3.0,HOU
+459,459,Michael Soroka,6.0,2.0,l c
+460,460,Yoendrys Gomez,6.0,1.0,CWS
+461,461,Travis Bazzana,6.0,1.0,l c
+462,462,Erick Fedde,6.0,5.0,MIL
+463,463,Chad Patrick,6.0,4.0,l c
+464,464,Aaron Civale,6.0,3.0,CWS
+465,465,Janson Junk,6.0,4.0,l c
+466,466,Joey Wentz,6.0,2.0,ATL
+467,467,Connor Norby,6.0,3.0,MIA
+468,468,Davis Martin,6.0,2.0,CWS
+469,469,Christopher Morel,5.0,7.0,TB
+470,470,Jonah Heim,5.0,6.0,TEX
+471,471,Jeremiah Jackson,5.0,2.0,BAL
+472,472,Josh Bell,5.0,4.0,WSH
 473,473,Mitchell Parker,5.0,4.0,WSH
-474,474,Luis Matos,5.0,2.0,SF
-475,475,Hayden Birdsong,5.0,2.0,l c
-476,476,Ben Brown,5.0,7.0,CHC
-477,477,Cade Povich,5.0,2.0,BAL
-478,478,Ke'Bryan Hayes,5.0,3.0,CIN
-479,479,Davis Martin,5.0,2.0,CWS
-480,480,Josh Bell,5.0,4.0,WSH
-481,481,Jeremiah Jackson,5.0,2.0,BAL
-482,482,Ryan Weathers,5.0,2.0,l c
-483,483,Trevor Larnach,5.0,4.0,MIN
+474,474,Ian Seymour,5.0,1.0,TB
+475,475,Zack Gelof,5.0,1.0,OAK
+476,476,Bailey Falter,5.0,3.0,l c
+477,477,Reed Garrett,5.0,3.0,l c
+478,478,Trevor Larnach,5.0,4.0,MIN
+479,479,Ke'Bryan Hayes,5.0,3.0,CIN
+480,480,Bryce Eldridge,5.0,1.0,l c
+481,481,Nolan Jones,5.0,1.0,CLE
+482,482,Ben Brown,5.0,7.0,CHC
+483,483,Hayden Birdsong,5.0,2.0,l c
 484,484,Carlos Santana,5.0,8.0,l c
-485,485,John Schreiber,5.0,2.0,KC
-486,486,Jhostynxon Garcia,5.0,1.0,BOS
-487,487,Reid Detmers,5.0,2.0,LAA
-488,488,Zack Gelof,5.0,1.0,OAK
-489,489,Christopher Morel,5.0,7.0,TB
-490,490,Gregory Soto,4.0,1.0,NYM
-491,491,Simeon Woods Richardson,4.0,1.0,MIN
+485,485,Andrew Saalfrank,5.0,1.0,ARI
+486,486,Ryan Weathers,5.0,2.0,l c
+487,487,Nolan Gorman,5.0,2.0,STL
+488,488,Reid Detmers,5.0,2.0,LAA
+489,489,Garrett Cleavinger,5.0,1.0,TB
+490,490,John Schreiber,5.0,2.0,KC
+491,491,Sean Burke,4.0,2.0,l c
 492,492,Michael Kopech,4.0,3.0,l c
-493,493,Troy Melton,4.0,1.0,DET
-494,494,Kyle Harrison,4.0,1.0,l c
-495,495,Chase Meidroth,4.0,2.0,CWS
-496,496,Enrique Hernandez,4.0,2.0,LAD
-497,497,Nolan Gorman,4.0,2.0,STL
+493,493,Nabil Crismatt,4.0,1.0,ARI
+494,494,Liam Hendriks,4.0,2.0,l c
+495,495,Joey Bart,4.0,1.0,PIT
+496,496,Connor Wong,4.0,1.0,BOS
+497,497,Enrique Hernandez,4.0,2.0,LAD
 498,498,Coby Mayo,4.0,2.0,BAL
-499,499,Victor Caratini,4.0,1.0,l c
-500,500,Joe Boyle,4.0,2.0,l c
-501,501,Bo Naylor,4.0,2.0,CLE
-502,502,Sean Burke,4.0,2.0,l c
-503,503,Seth Halvorsen,4.0,1.0,l c
-504,504,Brandon Marsh,4.0,1.0,PHI
-505,505,Jordan Walker,4.0,2.0,STL
-506,506,Garrett Cleavinger,4.0,1.0,TB
-507,507,Joey Bart,4.0,1.0,PIT
-508,508,Michael Conforto,4.0,2.0,LAD
-509,509,Liam Hendriks,4.0,2.0,l c
-510,510,Paul DeJong,4.0,1.0,WSH
-511,511,Brandon Sproat,4.0,1.0,l c
-512,512,Grant Taylor,4.0,1.0,CWS
-513,513,Connor Wong,4.0,1.0,BOS
-514,514,Wenceel Perez,4.0,3.0,DET
-515,515,Ian Seymour,4.0,1.0,TB
-516,516,Nick Gonzales,3.0,2.0,PIT
-517,517,Ryan Gusto,3.0,1.0,MIA
-518,518,J.T. Ginn,3.0,1.0,OAK
-519,519,Luke Raley,3.0,1.0,SEA
-520,520,Sean Newcomb,3.0,1.0,OAK
-521,521,Yariel Rodriguez,3.0,1.0,TOR
-522,522,Harrison Bader,3.0,2.0,PHI
-523,523,Bennett Sousa,3.0,1.0,l c
-524,524,David Robertson,3.0,1.0,PHI
+499,499,Michael Conforto,4.0,2.0,LAD
+500,500,Brandon Sproat,4.0,1.0,l c
+501,501,Brandon Marsh,4.0,1.0,PHI
+502,502,Wenceel Perez,4.0,3.0,DET
+503,503,Jordan Walker,4.0,2.0,STL
+504,504,Kyle Harrison,4.0,1.0,l c
+505,505,Gregory Soto,4.0,1.0,NYM
+506,506,Chase Meidroth,4.0,2.0,CWS
+507,507,Grant Taylor,4.0,1.0,CWS
+508,508,Kyle Hendricks,4.0,2.0,LAA
+509,509,Seth Halvorsen,4.0,1.0,l c
+510,510,Troy Melton,4.0,1.0,DET
+511,511,Simeon Woods Richardson,4.0,1.0,MIN
+512,512,Bo Naylor,4.0,2.0,CLE
+513,513,Jhostynxon Garcia,4.0,1.0,l c
+514,514,Ty France,3.0,2.0,TOR
+515,515,Nathan Lukes,3.0,2.0,TOR
+516,516,Deyvison De Los Santos,3.0,0.0,l c
+517,517,Danny Coulombe,3.0,0.0,TEX
+518,518,David Festa,3.0,1.0,l c
+519,519,Bennett Sousa,3.0,1.0,l c
+520,520,Justin Slaten,3.0,1.0,BOS
+521,521,Luke Raley,3.0,1.0,SEA
+522,522,Logan Evans,3.0,1.0,l c
+523,523,Daniel Schneemann,3.0,1.0,CLE
+524,524,Nick Gonzales,3.0,2.0,PIT
 525,525,Joey Cantillo,3.0,1.0,l c
-526,526,David Festa,3.0,1.0,l c
-527,527,Casey Schmitt,3.0,1.0,SF
-528,528,Gabriel Arias,3.0,3.0,CLE
-529,529,Jake Mangum,3.0,3.0,TB
-530,530,Daniel Schneemann,3.0,1.0,CLE
-531,531,Angel Martinez,3.0,1.0,CLE
-532,532,Logan Evans,3.0,1.0,l c
-533,533,Colby Thomas,3.0,1.0,OAK
-534,534,Pavin Smith,3.0,3.0,ARI
-535,535,Danny Coulombe,3.0,0.0,TEX
-536,536,Adam Frazier,3.0,1.0,KC
-537,537,Deyvison De Los Santos,3.0,0.0,l c
-538,538,Nathan Lukes,3.0,2.0,TOR
-539,539,Jordan Hicks,3.0,2.0,BOS
-540,540,Yimi Garcia,3.0,1.0,l c
-541,541,Justin Slaten,3.0,0.0,BOS
-542,542,Joc Pederson,3.0,1.0,TEX
-543,543,Patrick Bailey,3.0,1.0,SF
-544,544,Steven Matz,3.0,1.0,BOS
-545,545,Mauricio Dubon,3.0,3.0,HOU
-546,546,Ty France,3.0,2.0,TOR
-547,547,Andrew McCutchen,2.0,1.0,PIT
-548,548,Tommy Pham,2.0,1.0,PIT
-549,549,Nacho Alvarez,2.0,1.0,ATL
-550,550,Kyle Leahy,2.0,1.0,STL
-551,551,Drew Pomeranz,2.0,1.0,CHC
-552,552,Max Muncy,2.0,1.0,l c
-553,553,Alex Freeland,2.0,1.0,LAD
-554,554,Jack Dreyer,2.0,1.0,LAD
-555,555,Gary Sanchez,2.0,1.0,l c
-556,556,Pedro Pages,2.0,1.0,STL
-557,557,Nick Mears,2.0,0.0,MIL
-558,558,Starling Marte,2.0,1.0,NYM
-559,559,Dalton Rushing,2.0,1.0,LAD
-560,560,Brady House,2.0,1.0,WSH
-561,561,Anthony Banda,2.0,1.0,LAD
-562,562,Kyle Higashioka,2.0,1.0,TEX
-563,563,Greg Weissert,2.0,1.0,BOS
-564,564,Jacob Latz,2.0,0.0,TEX
-565,565,Erik Sabrowski,2.0,0.0,CLE
-566,566,Carmen Mlodzinski,2.0,1.0,PIT
+526,526,Andruw Monasterio,3.0,1.0,MIL
+527,527,Yariel Rodriguez,3.0,1.0,TOR
+528,528,Jake Mangum,3.0,3.0,TB
+529,529,Gabriel Arias,3.0,3.0,l c
+530,530,Joc Pederson,3.0,1.0,TEX
+531,531,Adam Frazier,3.0,1.0,KC
+532,532,Angel Martinez,3.0,1.0,CLE
+533,533,Paul DeJong,3.0,1.0,WSH
+534,534,Harrison Bader,3.0,2.0,PHI
+535,535,Colby Thomas,3.0,1.0,OAK
+536,536,Yimi Garcia,3.0,1.0,l c
+537,537,Steven Okert,3.0,1.0,HOU
+538,538,Casey Schmitt,3.0,1.0,SF
+539,539,David Robertson,3.0,1.0,PHI
+540,540,J.T. Ginn,3.0,1.0,OAK
+541,541,Patrick Bailey,3.0,1.0,SF
+542,542,Robby Snelling,3.0,1.0,l c
+543,543,Steven Matz,3.0,1.0,BOS
+544,544,Ryan Gusto,3.0,1.0,MIA
+545,545,Sean Newcomb,3.0,1.0,OAK
+546,546,Victor Caratini,3.0,1.0,l c
+547,547,Joe Boyle,3.0,2.0,l c
+548,548,Pavin Smith,3.0,3.0,l c
+549,549,Jordan Hicks,3.0,2.0,BOS
+550,550,Mauricio Dubon,3.0,3.0,HOU
+551,551,Johan Oviedo,2.0,1.0,PIT
+552,552,Gary Sanchez,2.0,1.0,l c
+553,553,Edgar Quero,2.0,1.0,CWS
+554,554,Ronny Mauricio,2.0,1.0,NYM
+555,555,Jack Dreyer,2.0,1.0,LAD
+556,556,Marcus Stroman,2.0,1.0,l c
+557,557,Porter Hodge,2.0,3.0,l c
+558,558,Andrew Benintendi,2.0,3.0,CWS
+559,559,Nick Mears,2.0,0.0,MIL
+560,560,Max Muncy,2.0,1.0,l c
+561,561,Drew Pomeranz,2.0,1.0,CHC
+562,562,Kyle Freeland,2.0,1.0,COL
+563,563,Brady House,2.0,1.0,WSH
+564,564,Andrew McCutchen,2.0,1.0,PIT
+565,565,Randy Vasquez,2.0,1.0,l c
+566,566,Mike Tauchman,2.0,1.0,CWS
 567,567,Javier Assad,2.0,1.0,CHC
-568,568,Johan Oviedo,2.0,1.0,PIT
-569,569,Eric Wagaman,2.0,3.0,MIA
-570,570,Edgar Quero,2.0,1.0,CWS
-571,571,Jordan Leasure,2.0,0.0,CWS
-572,572,Christian Moore,2.0,1.0,LAA
-573,573,Max Kepler,2.0,2.0,PHI
-574,574,Blake Perkins,2.0,1.0,MIL
-575,575,Marcus Stroman,2.0,1.0,l c
-576,576,Yennier Cano,2.0,2.0,BAL
-577,577,Andrew Benintendi,2.0,3.0,CWS
-578,578,Justin Crawford,2.0,1.0,l c
-579,579,Moises Ballesteros,2.0,0.0,l c
-580,580,Mike Tauchman,2.0,1.0,CWS
-581,581,Ha-Seong Kim,2.0,2.0,l c
-582,582,Nabil Crismatt,2.0,1.0,ARI
-583,583,Tyler Locklear,2.0,1.0,ARI
-584,584,Steven Okert,2.0,1.0,HOU
-585,585,Masataka Yoshida,2.0,2.0,BOS
-586,586,Pierce Johnson,2.0,1.0,ATL
-587,587,Kody Clemens,2.0,1.0,MIN
-588,588,Robby Snelling,2.0,1.0,l c
-589,589,Ronny Mauricio,2.0,1.0,NYM
-590,590,Luisangel Acuna,2.0,1.0,l c
-591,591,Graham Ashcraft,2.0,0.0,l c
-592,592,Stephen Kolek,2.0,2.0,l c
-593,593,Randy Vasquez,2.0,1.0,l c
-594,594,Chase Dollander,2.0,1.0,COL
-595,595,Porter Hodge,2.0,3.0,l c
+568,568,Pedro Pages,2.0,1.0,STL
+569,569,John Means,2.0,0.0,l c
+570,570,Hunter Harvey,2.0,0.0,l c
+571,571,Blake Perkins,2.0,1.0,MIL
+572,572,Masataka Yoshida,2.0,2.0,BOS
+573,573,Tommy Pham,2.0,1.0,PIT
+574,574,Carson Whisenhunt,2.0,1.0,SF
+575,575,Ha-Seong Kim,2.0,2.0,l c
+576,576,Kyle Higashioka,2.0,1.0,TEX
+577,577,Carmen Mlodzinski,2.0,1.0,PIT
+578,578,Stephen Kolek,2.0,2.0,KC
+579,579,Cole Young,2.0,1.0,SEA
+580,580,Chase Dollander,2.0,1.0,COL
+581,581,Anthony Banda,2.0,1.0,LAD
+582,582,Starling Marte,2.0,1.0,NYM
+583,583,Moises Ballesteros,2.0,0.0,l c
+584,584,Eric Wagaman,2.0,3.0,MIA
+585,585,Kody Clemens,2.0,1.0,MIN
+586,586,Dalton Rushing,2.0,1.0,LAD
+587,587,Cole Sands,2.0,1.0,MIN
+588,588,Yennier Cano,2.0,2.0,BAL
+589,589,Pierce Johnson,2.0,1.0,ATL
+590,590,Emmanuel Rodriguez,2.0,0.0,l c
+591,591,Kyle Leahy,2.0,1.0,STL
+592,592,Cal Quantrill,2.0,1.0,ATL
+593,593,Erik Sabrowski,2.0,0.0,CLE
+594,594,CJ Kayfus,2.0,1.0,CLE
+595,595,Tyler Locklear,2.0,1.0,ARI
 596,596,Kyren Paris,2.0,4.0,l c
-597,597,CJ Kayfus,2.0,1.0,CLE
-598,598,John Means,2.0,0.0,l c
-599,599,Hunter Harvey,2.0,0.0,l c
-600,600,Andrew Saalfrank,2.0,0.0,ARI
-601,601,Carson Whisenhunt,2.0,1.0,SF
-602,602,Kyle Freeland,2.0,1.0,COL
-603,603,Emmanuel Rodriguez,2.0,0.0,l c
-604,604,Cole Young,2.0,1.0,SEA
-605,605,Cole Sands,2.0,1.0,MIN
-606,606,Joey Loperfido,1.0,0.0,l c
-607,607,Andruw Monasterio,1.0,0.0,MIL
-608,608,Scott Barlow,1.0,0.0,CIN
-609,609,Will Benson,1.0,1.0,CIN
-610,610,Jake Fraley,1.0,0.0,ATL
+597,597,Christian Moore,2.0,1.0,LAA
+598,598,Luisangel Acuna,2.0,1.0,l c
+599,599,Max Kepler,2.0,2.0,PHI
+600,600,Alex Freeland,2.0,1.0,LAD
+601,601,Justin Crawford,2.0,1.0,l c
+602,602,Greg Weissert,2.0,1.0,BOS
+603,603,Jose Trevino,1.0,1.0,CIN
+604,604,Dietrich Enns,1.0,0.0,BAL
+605,605,Daylen Lile,1.0,0.0,WSH
+606,606,Darell Hernaiz,1.0,1.0,OAK
+607,607,Heriberto Hernandez,1.0,0.0,MIA
+608,608,Brooks Baldwin,1.0,0.0,CWS
+609,609,Bryan Hudson,1.0,0.0,l c
+610,610,Brant Hurter,1.0,0.0,l c
 611,611,Curtis Mead,1.0,0.0,CWS
-612,612,Jack Kochanowicz,1.0,0.0,l c
-613,613,Adrian Del Castillo,1.0,0.0,ARI
-614,614,Liam Hicks,1.0,0.0,MIA
-615,615,Matt Vierling,1.0,1.0,l c
-616,616,Craig Kimbrel,1.0,0.0,HOU
-617,617,Davis Schneider,1.0,0.0,TOR
-618,618,David Fry,1.0,0.0,CLE
-619,619,Tobias Myers,1.0,1.0,MIL
-620,620,Luis Garcia,1.0,0.0,LAA
-621,621,Zac Veen,1.0,0.0,l c
-622,622,Orlando Arcia,1.0,1.0,COL
-623,623,Chas McCormick,1.0,0.0,HOU
-624,624,Riley Adams,1.0,0.0,WSH
-625,625,Justin Turner,1.0,1.0,CHC
-626,626,Michael Massey,1.0,0.0,KC
-627,627,Dane Myers,1.0,1.0,MIA
-628,628,Thomas Saggese,1.0,0.0,STL
-629,629,Javier Sanoja,1.0,0.0,MIA
-630,630,Tyler Kinley,1.0,0.0,ATL
-631,631,Kyle Farmer,1.0,0.0,COL
-632,632,Jonny DeLuca,1.0,1.0,l c
-633,633,Angel Zerpa,1.0,0.0,KC
-634,634,Eduard Bazardo,1.0,0.0,SEA
-635,635,Tanner Banks,1.0,0.0,PHI
-636,636,Bryan Baker,1.0,0.0,TB
-637,637,Travis d'Arnaud,1.0,0.0,LAA
-638,638,Alex Call,1.0,1.0,LAD
-639,639,Dietrich Enns,1.0,0.0,BAL
-640,640,Taylor Rogers,1.0,0.0,CHC
-641,641,Ramon Urias,1.0,0.0,HOU
-642,642,Colton Gordon,1.0,1.0,l c
-643,643,Bryan Hudson,1.0,0.0,l c
-644,644,Harry Ford,1.0,0.0,l c
-645,645,Brice Matthews,1.0,0.0,l c
-646,646,Ryan Brasier,1.0,0.0,l c
-647,647,Osvaldo Bido,1.0,0.0,OAK
-648,648,Brock Stewart,1.0,0.0,l c
-649,649,Joe Kelly,1.0,0.0,l c
-650,650,Jonathan Cannon,1.0,0.0,l c
-651,651,Brant Hurter,1.0,0.0,l c
-652,652,Jakob Junis,1.0,0.0,CLE
-653,653,Robert Gasser,1.0,0.0,l c
-654,654,Huascar Brazoban,1.0,1.0,l c
-655,655,Gunnar Hoglund,1.0,0.0,l c
-656,656,Yuki Matsui,1.0,0.0,SD
-657,657,Paul Sewald,1.0,0.0,l c
-658,658,Mike Vasil,1.0,1.0,CWS
-659,659,Richard Fitts,1.0,0.0,l c
-660,660,Cal Quantrill,1.0,1.0,ATL
-661,661,Corbin Martin,1.0,0.0,BAL
-662,662,Jackson Ferris,1.0,0.0,l c
-663,663,Tyler Phillips,1.0,0.0,MIA
-664,664,Hogan Harris,1.0,0.0,OAK
-665,665,Zach Maxwell,1.0,0.0,CIN
-666,666,German Marquez,1.0,0.0,l c
-667,667,Hunter Barco,1.0,0.0,l c
-668,668,Daniel Lynch,1.0,0.0,KC
-669,669,Bobby Miller,1.0,0.0,l c
-670,670,Kyle Karros,1.0,1.0,COL
-671,671,Emerson Hancock,1.0,0.0,SEA
-672,672,Cole Henry,1.0,0.0,WSH
-673,673,Alek Manoah,1.0,0.0,l c
-674,674,Chad Green,1.0,1.0,l c
-675,675,Brandon Young,1.0,0.0,l c
-676,676,Alek Thomas,1.0,1.0,ARI
-677,677,Kyle Isbel,1.0,1.0,KC
-678,678,Erik Miller,1.0,0.0,l c
-679,679,Easton Lucas,1.0,1.0,l c
-680,680,Landon Knack,1.0,0.0,l c
-681,681,Jose Butto,1.0,0.0,SF
-682,682,Tim Herrin,1.0,0.0,CLE
-683,683,Justin Wilson,1.0,0.0,BOS
-684,684,Elias Diaz,1.0,0.0,SD
-685,685,Miguel Rojas,1.0,0.0,LAD
-686,686,Mitch Garver,1.0,0.0,SEA
-687,687,Danny Jansen,1.0,1.0,MIL
-688,688,Edmundo Sosa,1.0,2.0,PHI
-689,689,Ryne Stanek,1.0,0.0,NYM
-690,690,Brennan Bernardino,1.0,0.0,BOS
-691,691,Dominic Canzone,1.0,0.0,SEA
-692,692,Robert Hassell III,1.0,0.0,WSH
-693,693,James Outman,1.0,0.0,MIN
-694,694,Jose Trevino,1.0,1.0,CIN
-695,695,Tyler Wells,1.0,0.0,l c
-696,696,Amed Rosario,1.0,1.0,NYY
-697,697,Aaron Ashby,1.0,1.0,MIL
-698,698,Sawyer Gipson-Long,1.0,0.0,l c
-699,699,Mark Leiter Jr.,1.0,1.0,NYY
-700,700,Freddy Fermin,1.0,1.0,SD
-701,701,Hoby Milner,1.0,0.0,TEX
-702,702,Kameron Misner,1.0,1.0,l c
-703,703,Anthony DeSclafani,1.0,0.0,l c
-704,704,Mitch Spence,1.0,1.0,l c
-705,705,Tim Hill,1.0,0.0,NYY
-706,706,Heriberto Hernandez,1.0,0.0,MIA
-707,707,Ryan Zeferjahn,1.0,0.0,LAA
-708,708,Jace Jung,1.0,0.0,l c
-709,709,Miguel Amaya,1.0,2.0,l c
-710,710,Wandy Peralta,1.0,0.0,SD
-711,711,Brayan Rocchio,1.0,1.0,CLE
-712,712,Jacob Young,1.0,1.0,WSH
-713,713,Darell Hernaiz,1.0,1.0,OAK
-714,714,Yoan Moncada,1.0,0.0,LAA
-715,715,Brooks Baldwin,1.0,0.0,CWS
-716,716,Justin Wrobleski,1.0,1.0,LAD
-717,717,Jalen Beeks,1.0,0.0,ARI
-718,718,David Hamilton,1.0,0.0,BOS
-719,719,Jesse Winker,1.0,1.0,l c
-720,720,Daylen Lile,1.0,0.0,WSH
-721,721,Chris Murphy,0.0,0.0,l c
-722,722,Tim Mayza,0.0,0.0,l c
-723,723,Ben Bowden,0.0,0.0,l c
-724,724,Triston McKenzie,0.0,0.0,l c
-725,725,David Sandlin,0.0,0.0,l c
-726,726,Skylar Hales,0.0,0.0,l c
-727,727,Duncan Davitt,0.0,0.0,l c
-728,728,Yency Almonte,0.0,0.0,l c
-729,729,Casey Kelly,0.0,0.0,l c
-730,730,Nasim Nunez,0.0,0.0,l c
-731,731,Nick Sogard,0.0,0.0,l c
-732,732,Petey Halpin,0.0,0.0,l c
-733,733,Leo Rivas,0.0,0.0,l c
-734,734,Michael Siani,0.0,0.0,l c
-735,735,Victor Mesa Jr.,0.0,0.0,l c
-736,736,Hayden Senger,0.0,0.0,NYM
-737,737,Will Banfield,0.0,0.0,CIN
-738,738,Justin Dean,0.0,0.0,LAD
-739,739,Tyler Ferguson,0.0,0.0,OAK
-740,740,Josh Walker,0.0,0.0,l c
-741,741,Bruce Zimmermann,0.0,0.0,l c
-742,742,Zach Penrod,0.0,0.0,l c
-743,743,Luarbert Arias,0.0,0.0,l c
-744,744,Isaiah Campbell,0.0,0.0,l c
-745,745,Joe La Sorsa,0.0,0.0,l c
-746,746,Alek Jacob,0.0,0.0,SD
-747,747,Colin Selby,0.0,0.0,l c
-748,748,Kolby Allard,0.0,0.0,CLE
-749,749,Michael Darrell-Hicks,0.0,0.0,l c
-750,750,Nick Burdi,0.0,0.0,l c
-751,751,K.C. Hunt,0.0,0.0,l c
-752,752,Scott Effross,0.0,0.0,l c
-753,753,David Morgan,0.0,0.0,SD
-754,754,Carlos Rodriguez,0.0,0.0,l c
-755,755,Ty Adcock,0.0,0.0,l c
-756,756,Jack Little,0.0,0.0,l c
-757,757,Christian Roa,0.0,0.0,l c
-758,758,Luis Guerrero,0.0,0.0,l c
-759,759,Andrew Bash,0.0,0.0,l c
-760,760,John King,0.0,0.0,l c
-761,761,Travis Adams,0.0,0.0,l c
-762,762,Juan Morillo,0.0,0.0,l c
-763,763,Dylan Smith,0.0,0.0,l c
-764,764,Garrett Acton,0.0,0.0,l c
-765,765,Anderson Pilar,0.0,0.0,l c
-766,766,Ryan Fitzgerald,0.0,0.0,MIN
-767,767,Burch Smith,0.0,0.0,l c
-768,768,Will Dion,0.0,0.0,l c
-769,769,Jhonathan Diaz,0.0,0.0,l c
-770,770,James McArthur,0.0,0.0,l c
-771,771,Jackson Wolf,0.0,0.0,l c
-772,772,Dugan Darnell,0.0,0.0,l c
-773,773,Yosver Zulueta,0.0,0.0,l c
-774,774,Alex Pham,0.0,0.0,l c
-775,775,Valente Bellozo,0.0,0.0,MIA
-776,776,Erasmo Ramirez,0.0,0.0,l c
-777,777,Carson McCusker,0.0,0.0,l c
-778,778,Matthew Lugo,0.0,0.0,LAA
-779,779,Max Schuemann,0.0,0.0,l c
-780,780,Joe Mack,0.0,0.0,l c
-781,781,Weston Wilson,0.0,0.0,PHI
-782,782,Bradgley Rodriguez,0.0,0.0,l c
-783,783,Zach Agnos,0.0,0.0,l c
-784,784,Marc Church,0.0,0.0,l c
-785,785,Houston Roth,0.0,0.0,l c
-786,786,Zach McCambley,0.0,0.0,l c
-787,787,Julio Rodriguez,0.0,0.0,l c
-788,788,George Klassen,0.0,0.0,l c
-789,789,Nick Frasso,0.0,0.0,l c
-790,790,Thomas Hatch,0.0,0.0,MIN
-791,791,Chayce McDermott,0.0,0.0,l c
-792,792,Zack Thompson,0.0,0.0,l c
-793,793,Roansy Contreras,0.0,0.0,l c
-794,794,Hunter Bigge,0.0,0.0,l c
-795,795,Vinny Nittoli,0.0,0.0,l c
-796,796,Justin Lawrence,0.0,0.0,l c
-797,797,Justin Bruihl,0.0,0.0,TOR
-798,798,Luis Curvelo,0.0,0.0,TEX
-799,799,Juan Mejia,0.0,0.0,COL
-800,800,Nathan Wiles,0.0,0.0,l c
-801,801,Andrew Hoffmann,0.0,0.0,l c
-802,802,Sam Moll,0.0,0.0,CIN
-803,803,Keider Montero,0.0,0.0,l c
-804,804,Brooks Kriske,0.0,0.0,MIN
-805,805,PJ Poulin,0.0,0.0,WSH
-806,806,J.P. France,0.0,0.0,l c
-807,807,Daniel Robert,0.0,0.0,PHI
-808,808,Anthony Maldonado,0.0,0.0,l c
-809,809,Rico Garcia,0.0,0.0,BAL
-810,810,Matt Krook,0.0,0.0,l c
-811,811,Bryce Jarvis,0.0,0.0,ARI
-812,812,Joey Lucchesi,0.0,0.0,SF
-813,813,Trent Harris,0.0,0.0,l c
-814,814,Cesar Salazar,0.0,0.0,HOU
-815,815,CJ Stubbs,0.0,0.0,WSH
-816,816,Daniel Johnson,0.0,0.0,BAL
-817,817,Payton Eeles,0.0,0.0,l c
-818,818,Otto Kemp,0.0,0.0,l c
-819,819,DaShawn Keirsey,0.0,0.0,l c
-820,820,Jose Tena,0.0,0.0,l c
-821,821,Carter Jensen,0.0,0.0,l c
-822,822,Kyle Wright,0.0,0.0,l c
-823,823,Luke Williams,0.0,0.0,l c
-824,824,Caleb Boushley,0.0,0.0,TEX
-825,825,Caden Dana,0.0,0.0,l c
-826,826,Jose Ruiz,0.0,0.0,l c
-827,827,Jovani Moran,0.0,0.0,l c
-828,828,Emiliano Teodo,0.0,0.0,l c
-829,829,Chase Lee,0.0,0.0,l c
-830,830,Austin Warren,0.0,0.0,l c
-831,831,Trevor McDonald,0.0,0.0,l c
-832,832,Drew Romo,0.0,0.0,l c
-833,833,Ron Marinaccio,0.0,0.0,l c
-834,834,Joel Payamps,0.0,0.0,l c
-835,835,Colin Holderman,0.0,0.0,PIT
-836,836,Anthony Misiewicz,0.0,0.0,l c
-837,837,Joe Jacques,0.0,0.0,l c
-838,838,Elvis Alvarado,0.0,0.0,OAK
-839,839,Wander Suero,0.0,0.0,ATL
-840,840,Carlos Hernandez,0.0,0.0,l c
-841,841,Manuel Rodriguez,0.0,0.0,l c
-842,842,Austin Peterson,0.0,0.0,l c
-843,843,Kenta Maeda,0.0,0.0,l c
-844,844,Kyle Nelson,0.0,0.0,l c
-845,845,Seth Martinez,0.0,0.0,MIA
-846,846,Cody Poteet,0.0,0.0,l c
-847,847,Anthony Veneziano,0.0,0.0,l c
-848,848,JT Brubaker,0.0,0.0,l c
-849,849,Carson Fulmer,0.0,0.0,l c
-850,850,Matt Waldron,0.0,0.0,l c
-851,851,Taylor Rashi,0.0,0.0,ARI
-852,852,Troy Taylor,0.0,0.0,l c
-853,853,Robinson Pina,0.0,0.0,l c
-854,854,Sean Reynolds,0.0,0.0,l c
-855,855,Gavin Hollowell,0.0,0.0,l c
-856,856,Julian Fernandez,0.0,0.0,l c
-857,857,Austin Cox,0.0,0.0,ATL
-858,858,Dane Dunning,0.0,0.0,l c
-859,859,Brian Van Belle,0.0,0.0,TB
-860,860,Forrest Whitley,0.0,0.0,l c
-861,861,Domingo Gonzalez,0.0,0.0,l c
-862,862,Alex Faedo,0.0,0.0,l c
-863,863,Freddy Tarnok,0.0,0.0,l c
-864,864,Jimmy Herget,0.0,0.0,COL
-865,865,Josh White,0.0,0.0,l c
-866,866,Rafael Montero,0.0,0.0,DET
-867,867,Jackson Kowar,0.0,0.0,l c
-868,868,Kyle Hart,0.0,0.0,l c
-869,869,Ethan Roberts,0.0,0.0,l c
-870,870,Carson Ragsdale,0.0,0.0,l c
-871,871,Josh Simpson,0.0,0.0,l c
-872,872,Enoli Paredes,0.0,0.0,l c
-873,873,Dax Fulton,0.0,0.0,l c
-874,874,Dylan Covey,0.0,0.0,l c
-875,875,Tyler Zuber,0.0,0.0,MIA
-876,876,Grant Hartwig,0.0,0.0,l c
-877,877,Blas Castano,0.0,0.0,l c
-878,878,Thaddeus Ward,0.0,0.0,l c
-879,879,Sam Long,0.0,0.0,KC
-880,880,Jose Acuna,0.0,0.0,l c
-881,881,Carlos Duran,0.0,0.0,l c
-882,882,Kelvin Caceres,0.0,0.0,l c
-883,883,Nolan Hoffman,0.0,0.0,l c
-884,884,Jared Shuster,0.0,0.0,l c
-885,885,Nolan Clenney,0.0,0.0,l c
-886,886,Wesley Moore,0.0,0.0,l c
-887,887,Hayden Seig,0.0,0.0,l c
-888,888,Lyon Richardson,0.0,0.0,l c
-889,889,Brandyn Garcia,0.0,0.0,l c
-890,890,Chris Roycroft,0.0,0.0,l c
-891,891,Cam Sanders,0.0,0.0,l c
-892,892,Doug Nikhazy,0.0,0.0,l c
-893,893,Jose Fermin,0.0,0.0,LAA
-894,894,Kai-Wei Teng,0.0,0.0,l c
-895,895,Alan Busenitz,0.0,0.0,l c
-896,896,Andry Lara,0.0,0.0,l c
-897,897,Juan Burgos,0.0,0.0,ARI
-898,898,Deivi Garcia,0.0,0.0,l c
-899,899,Jackson Rutledge,0.0,0.0,WSH
-900,900,Cole Winn,0.0,0.0,l c
-901,901,Joel Peguero,0.0,0.0,SF
-902,902,Wyatt Mills,0.0,0.0,l c
-903,903,Matt Cronin,0.0,0.0,l c
-904,904,Marquis Grissom,0.0,0.0,l c
-905,905,William Kempner,0.0,0.0,l c
-906,906,Oddanier Mosqueda,0.0,0.0,l c
-907,907,Ken Waldichuk,0.0,0.0,l c
-908,908,Brandon Hughes,0.0,0.0,l c
-909,909,Tyler Baum,0.0,0.0,l c
-910,910,Gabriel Hughes,0.0,0.0,l c
-911,911,Kevin Gowdy,0.0,0.0,l c
-912,912,Dane Acker,0.0,0.0,l c
-913,913,Justin Yeager,0.0,0.0,l c
-914,914,Zach Brzykcy,0.0,0.0,l c
-915,915,Alimber Santa,0.0,0.0,l c
-916,916,Evan Justice,0.0,0.0,l c
-917,917,Jonathan Heasley,0.0,0.0,l c
-918,918,Clay Helvey,0.0,0.0,l c
-919,919,Joey Estes,0.0,0.0,l c
-920,920,Eric Adler,0.0,0.0,l c
-921,921,Antoine Kelly,0.0,0.0,l c
-922,922,Victor Mederos,0.0,0.0,l c
-923,923,Aaron Wilkerson,0.0,0.0,l c
-924,924,Kenyon Yovan,0.0,0.0,l c
-925,925,Tyler Owens,0.0,0.0,l c
-926,926,McCade Brown,0.0,0.0,COL
-927,927,Jake Palisch,0.0,0.0,l c
-928,928,Seth Johnson,0.0,0.0,l c
-929,929,Camden Minacci,0.0,0.0,l c
-930,930,Nicholas Padilla,0.0,0.0,l c
-931,931,Jack Sinclair,0.0,0.0,l c
-932,932,Orlando Ribalta,0.0,0.0,WSH
-933,933,Tanner Gordon,0.0,0.0,COL
-934,934,Hayden Juenger,0.0,0.0,l c
-935,935,Robby Ahlstrom,0.0,0.0,l c
-936,936,Alaska Abney,0.0,0.0,l c
-937,937,Eddy Yean,0.0,0.0,l c
-938,938,Braden Nett,0.0,0.0,l c
-939,939,Jesse Scholtens,0.0,0.0,l c
-940,940,Nick Yorke,0.0,0.0,l c
-941,941,Peyton Alford,0.0,0.0,l c
-942,942,Travis Kuhn,0.0,0.0,l c
-943,943,Moises Chace,0.0,0.0,l c
-944,944,Randy Labaut,0.0,0.0,l c
-945,945,Robert Kwiatkowski,0.0,0.0,l c
-946,946,Roddery Munoz,0.0,0.0,l c
-947,947,Matt Manning,0.0,0.0,l c
-948,948,Yilber Diaz,0.0,0.0,l c
-949,949,Mason Thompson,0.0,0.0,l c
-950,950,Matt Sauer,0.0,0.0,l c
-951,951,Jonathan Pintaro,0.0,0.0,l c
-952,952,Chad Kuhl,0.0,0.0,l c
-953,953,Jake Woodford,0.0,0.0,ARI
-954,954,Reiver Sanmartin,0.0,0.0,l c
-955,955,Tyler Jay,0.0,0.0,l c
-956,956,Oliver Ortega,0.0,0.0,l c
-957,957,Connor Phillips,0.0,0.0,CIN
-958,958,Connor Seabold,0.0,0.0,l c
-959,959,Brandon Komar,0.0,0.0,l c
-960,960,Chris Devenski,0.0,0.0,l c
-961,961,Alex Carrillo,0.0,0.0,l c
-962,962,Owen White,0.0,0.0,l c
-963,963,Sam Bachman,0.0,0.0,l c
-964,964,Carl Edwards Jr.,0.0,0.0,l c
-965,965,Chase Shugart,0.0,0.0,l c
-966,966,Codi Heuer,0.0,0.0,l c
-967,967,Hunter Strickland,0.0,0.0,l c
-968,968,Paul Gervase,0.0,0.0,l c
-969,969,Alec Marsh,0.0,0.0,l c
-970,970,Nick Sandlin,0.0,0.0,l c
-971,971,Albert Suarez,0.0,0.0,l c
-972,972,Brian Moran,0.0,0.0,l c
-973,973,Francis Pena,0.0,0.0,l c
-974,974,Yoniel Curet,0.0,0.0,l c
-975,975,Grant Holman,0.0,0.0,l c
-976,976,Ben Peoples,0.0,0.0,l c
-977,977,Michel Otanez,0.0,0.0,l c
-978,978,Drew Sommers,0.0,0.0,DET
-979,979,Blade Tidwell,0.0,0.0,l c
-980,980,Logan VanWey,0.0,0.0,l c
-981,981,Dom Hamel,0.0,0.0,l c
-982,982,Grant Wolfram,0.0,0.0,BAL
-983,983,Brandon Waddell,0.0,0.0,l c
-984,984,Ronan Kopp,0.0,0.0,l c
-985,985,Avery Weems,0.0,0.0,l c
-986,986,Konnor Pilkington,0.0,0.0,WSH
-987,987,Thomas Harrington,0.0,0.0,l c
-988,988,Christian Montes De Oca,0.0,0.0,l c
-989,989,Ian Gibaut,0.0,0.0,l c
-990,990,Chase Petty,0.0,0.0,l c
-991,991,Geoff Hartlieb,0.0,0.0,l c
-992,992,Michael Mercado,0.0,0.0,l c
-993,993,Tom Cosgrove,0.0,0.0,l c
-994,994,Bailey Horn,0.0,0.0,l c
-995,995,Keagan Gillies,0.0,0.0,l c
-996,996,Wade Miley,0.0,0.0,l c
-997,997,Misael Tamarez,0.0,0.0,l c
-998,998,Sam Benschoter,0.0,0.0,l c
-999,999,Andrew Alvarez,0.0,0.0,l c
-1000,1000,Jayvien Sandridge,0.0,0.0,l c
-1001,1001,Jairo Iriarte,0.0,0.0,l c
-1002,1002,Ryan Loutos,0.0,0.0,l c
-1003,1003,Juan Nunez,0.0,0.0,l c
-1004,1004,Adam Macko,0.0,0.0,l c
-1005,1005,Kyle Nicolas,0.0,0.0,PIT
-1006,1006,Cooper Criswell,0.0,0.0,l c
-1007,1007,Elvis Peguero,0.0,0.0,l c
-1008,1008,Elvin Rodriguez,0.0,0.0,l c
-1009,1009,Lazaro Estrada,0.0,0.0,l c
-1010,1010,Joan Adon,0.0,0.0,l c
-1011,1011,Shaun Anderson,0.0,0.0,l c
-1012,1012,George Soriano,0.0,0.0,l c
-1013,1013,Miguel Ullola,0.0,0.0,l c
-1014,1014,Peyton Pallette,0.0,0.0,l c
-1015,1015,Justin Garza,0.0,0.0,l c
-1016,1016,Noah Davis,0.0,0.0,l c
-1017,1017,Will Klein,0.0,0.0,l c
-1018,1018,Luinder Avila,0.0,0.0,l c
-1019,1019,Genesis Cabrera,0.0,0.0,MIN
-1020,1020,Jordan Weems,0.0,0.0,l c
-1021,1021,Phil Bickford,0.0,0.0,l c
-1022,1022,Will Robertson,0.0,0.0,CWS
-1023,1023,Myles Straw,0.0,0.0,TOR
-1024,1024,Brett Harris,0.0,0.0,OAK
-1025,1025,Christian Vazquez,0.0,0.0,l c
-1026,1026,Alex Jackson,0.0,0.0,BAL
-1027,1027,Mason Fluharty,0.0,0.0,l c
-1028,1028,Isaac Mattson,0.0,0.0,PIT
-1029,1029,Enyel De Los Santos,0.0,0.0,HOU
-1030,1030,Grant McCray,0.0,0.0,l c
-1031,1031,Michael Kelly,0.0,0.0,OAK
-1032,1032,Keaton Winn,0.0,0.0,SF
-1033,1033,Gordon Graceffo,0.0,0.0,STL
-1034,1034,Vimael Machin,0.0,0.0,l c
-1035,1035,Brandon Lockridge,0.0,0.0,MIL
-1036,1036,Austin Hedges,0.0,0.0,CLE
-1037,1037,Ildemaro Vargas,0.0,0.0,ARI
-1038,1038,Jose Siri,0.0,0.0,l c
-1039,1039,John Curtiss,0.0,0.0,ARI
-1040,1040,Jake Rogers,0.0,0.0,DET
-1041,1041,Carlos Cortes,0.0,0.0,OAK
+612,612,Dominic Canzone,1.0,0.0,SEA
+613,613,Joe Kelly,1.0,0.0,l c
+614,614,Bobby Miller,1.0,0.0,l c
+615,615,Nacho Alvarez,1.0,0.0,ATL
+616,616,James Outman,1.0,0.0,MIN
+617,617,Yoan Moncada,1.0,0.0,LAA
+618,618,Jakob Junis,1.0,0.0,CLE
+619,619,Paul Sewald,1.0,0.0,l c
+620,620,Taylor Rogers,1.0,0.0,CHC
+621,621,Miguel Rojas,1.0,0.0,LAD
+622,622,Alek Thomas,1.0,1.0,ARI
+623,623,Zach Maxwell,1.0,0.0,CIN
+624,624,Jacob Latz,1.0,0.0,TEX
+625,625,Craig Kimbrel,1.0,0.0,HOU
+626,626,Miguel Amaya,1.0,2.0,l c
+627,627,Aaron Ashby,1.0,1.0,MIL
+628,628,Justin Wrobleski,1.0,1.0,LAD
+629,629,Mike Vasil,1.0,1.0,CWS
+630,630,Hogan Harris,1.0,0.0,OAK
+631,631,German Marquez,1.0,0.0,COL
+632,632,Hunter Barco,1.0,0.0,l c
+633,633,Hoby Milner,1.0,0.0,TEX
+634,634,Kyle Isbel,1.0,0.0,KC
+635,635,Jesse Winker,1.0,1.0,l c
+636,636,Graham Ashcraft,1.0,0.0,l c
+637,637,Ryan Zeferjahn,1.0,0.0,LAA
+638,638,Brennan Bernardino,1.0,0.0,BOS
+639,639,Anthony DeSclafani,1.0,0.0,l c
+640,640,Matt Svanson,1.0,0.0,STL
+641,641,Wandy Peralta,1.0,0.0,SD
+642,642,Tyler Kinley,1.0,0.0,ATL
+643,643,Eduard Bazardo,1.0,0.0,SEA
+644,644,Tanner Banks,1.0,0.0,PHI
+645,645,Angel Zerpa,1.0,0.0,KC
+646,646,Brayan Rocchio,1.0,1.0,CLE
+647,647,Scott Barlow,1.0,0.0,CIN
+648,648,Mitch Spence,1.0,1.0,l c
+649,649,Tobias Myers,1.0,1.0,MIL
+650,650,Justin Wilson,1.0,0.0,BOS
+651,651,Jordan Leasure,1.0,0.0,CWS
+652,652,Jose Butto,1.0,0.0,SF
+653,653,Bryan Baker,1.0,0.0,TB
+654,654,Tyler Wells,1.0,0.0,l c
+655,655,Ryne Stanek,1.0,0.0,NYM
+656,656,Luis Garcia,1.0,0.0,LAA
+657,657,Yuki Matsui,1.0,0.0,SD
+658,658,Tim Herrin,1.0,0.0,CLE
+659,659,Elias Diaz,1.0,0.0,SD
+660,660,Kyle Karros,1.0,1.0,COL
+661,661,Sawyer Gipson-Long,1.0,0.0,l c
+662,662,Mark Leiter Jr.,1.0,1.0,NYY
+663,663,Robert Gasser,1.0,0.0,l c
+664,664,Amed Rosario,1.0,1.0,NYY
+665,665,Thomas Saggese,1.0,0.0,STL
+666,666,Alek Manoah,1.0,0.0,l c
+667,667,Ryan Brasier,1.0,0.0,l c
+668,668,Jackson Ferris,1.0,0.0,l c
+669,669,Michael Massey,1.0,0.0,KC
+670,670,Matt Vierling,1.0,1.0,l c
+671,671,Easton Lucas,1.0,1.0,l c
+672,672,Jake Fraley,1.0,0.0,ATL
+673,673,Davis Schneider,1.0,0.0,TOR
+674,674,Huascar Brazoban,1.0,1.0,l c
+675,675,David Fry,1.0,0.0,CLE
+676,676,Danny Jansen,1.0,1.0,MIL
+677,677,Richard Fitts,1.0,0.0,l c
+678,678,Tyler Phillips,1.0,0.0,MIA
+679,679,Justin Turner,1.0,1.0,CHC
+680,680,Edgardo Henriquez,1.0,0.0,LAD
+681,681,Corbin Martin,1.0,0.0,BAL
+682,682,Riley Adams,1.0,0.0,WSH
+683,683,Daniel Lynch,1.0,0.0,KC
+684,684,Harry Ford,1.0,0.0,l c
+685,685,Osvaldo Bido,1.0,0.0,OAK
+686,686,Erik Miller,1.0,0.0,l c
+687,687,Joey Loperfido,1.0,0.0,l c
+688,688,Brandon Young,1.0,0.0,l c
+689,689,Kyle Farmer,1.0,0.0,COL
+690,690,Javier Sanoja,1.0,1.0,MIA
+691,691,Landon Knack,1.0,0.0,l c
+692,692,Jonny DeLuca,1.0,1.0,l c
+693,693,Chas McCormick,1.0,0.0,HOU
+694,694,Zac Veen,1.0,0.0,l c
+695,695,Mitch Garver,1.0,0.0,SEA
+696,696,Gunnar Hoglund,1.0,0.0,l c
+697,697,Orlando Arcia,1.0,1.0,COL
+698,698,Edmundo Sosa,1.0,2.0,PHI
+699,699,Jacob Young,1.0,1.0,WSH
+700,700,Kameron Misner,1.0,1.0,l c
+701,701,Freddy Fermin,1.0,1.0,SD
+702,702,Jace Jung,1.0,0.0,l c
+703,703,Liam Hicks,1.0,1.0,MIA
+704,704,Adrian Del Castillo,1.0,0.0,ARI
+705,705,Ramon Urias,1.0,0.0,HOU
+706,706,Colton Gordon,1.0,1.0,l c
+707,707,Travis d'Arnaud,1.0,0.0,LAA
+708,708,Dane Myers,1.0,1.0,MIA
+709,709,Will Benson,1.0,1.0,CIN
+710,710,Tim Hill,1.0,0.0,NYY
+711,711,Emerson Hancock,1.0,0.0,SEA
+712,712,Brock Stewart,1.0,0.0,l c
+713,713,Robert Hassell III,1.0,0.0,WSH
+714,714,David Hamilton,1.0,0.0,BOS
+715,715,Jonathan Cannon,1.0,0.0,l c
+716,716,Jack Kochanowicz,1.0,0.0,l c
+717,717,Chad Green,1.0,1.0,l c
+718,718,Alex Call,1.0,1.0,LAD
+719,719,Cole Henry,1.0,0.0,WSH
+720,720,Domingo Gonzalez,0.0,0.0,l c
+721,721,Chris Roycroft,0.0,0.0,l c
+722,722,Jonathan Loaisiga,0.0,0.0,l c
+723,723,Ryan Rolison,0.0,0.0,l c
+724,724,Antoine Kelly,0.0,0.0,l c
+725,725,Eduardo Salazar,0.0,0.0,l c
+726,726,Justin Bruihl,0.0,0.0,TOR
+727,727,Cooper Criswell,0.0,0.0,l c
+728,728,Luis Mey,0.0,0.0,l c
+729,729,Eric Adler,0.0,0.0,l c
+730,730,Alex Faedo,0.0,0.0,l c
+731,731,Anthony Misiewicz,0.0,0.0,l c
+732,732,Luis Peralta,0.0,0.0,COL
+733,733,Carlos Rodriguez,0.0,0.0,l c
+734,734,Travis Adams,0.0,0.0,l c
+735,735,Zach Penrod,0.0,0.0,l c
+736,736,Dom Hamel,0.0,0.0,l c
+737,737,Robinson Pina,0.0,0.0,l c
+738,738,Sam Moll,0.0,0.0,CIN
+739,739,Alimber Santa,0.0,0.0,l c
+740,740,Michael Petersen,0.0,0.0,l c
+741,741,Gavin Hollowell,0.0,0.0,l c
+742,742,Kyle Nelson,0.0,0.0,l c
+743,743,Nick Burdi,0.0,0.0,l c
+744,744,Luis Curvelo,0.0,0.0,TEX
+745,745,Matt Krook,0.0,0.0,l c
+746,746,Kyle Wright,0.0,0.0,l c
+747,747,Casey Kelly,0.0,0.0,l c
+748,748,JT Brubaker,0.0,0.0,l c
+749,749,Alan Rangel,0.0,0.0,l c
+750,750,Wander Suero,0.0,0.0,l c
+751,751,Juan Mejia,0.0,0.0,COL
+752,752,Wikelman Gonzalez,0.0,0.0,CWS
+753,753,Elvis Alvarado,0.0,0.0,OAK
+754,754,Sean Reynolds,0.0,0.0,l c
+755,755,Forrest Whitley,0.0,0.0,l c
+756,756,Marc Church,0.0,0.0,l c
+757,757,Brooks Kriske,0.0,0.0,MIN
+758,758,Anthony Molina,0.0,0.0,COL
+759,759,Yohan Ramirez,0.0,0.0,PIT
+760,760,Joe La Sorsa,0.0,0.0,l c
+761,761,Tyler Ferguson,0.0,0.0,OAK
+762,762,Orlando Ribalta,0.0,0.0,WSH
+763,763,Troy Taylor,0.0,0.0,l c
+764,764,Anthony Maldonado,0.0,0.0,l c
+765,765,Nate Pearson,0.0,0.0,l c
+766,766,Trent Harris,0.0,0.0,l c
+767,767,Jackson Kowar,0.0,0.0,l c
+768,768,Isaiah Campbell,0.0,0.0,l c
+769,769,John Brebbia,0.0,0.0,ATL
+770,770,Jake Palisch,0.0,0.0,l c
+771,771,Michael Darrell-Hicks,0.0,0.0,l c
+772,772,Austin Cox,0.0,0.0,l c
+773,773,Nicholas Padilla,0.0,0.0,l c
+774,774,Devereaux Harrison,0.0,0.0,l c
+775,775,Justin Yeager,0.0,0.0,l c
+776,776,David Morgan,0.0,0.0,SD
+777,777,Kenta Maeda,0.0,0.0,l c
+778,778,Randy Wynne,0.0,0.0,l c
+779,779,Joel Payamps,0.0,0.0,l c
+780,780,Skylar Hales,0.0,0.0,l c
+781,781,Ron Marinaccio,0.0,0.0,l c
+782,782,Trace Bright,0.0,0.0,l c
+783,783,Shawn Dubin,0.0,0.0,BAL
+784,784,Grant Wolfram,0.0,0.0,BAL
+785,785,Matt Waldron,0.0,0.0,l c
+786,786,Austin Peterson,0.0,0.0,l c
+787,787,McCade Brown,0.0,0.0,COL
+788,788,Juan Burgos,0.0,0.0,ARI
+789,789,Jovani Moran,0.0,0.0,l c
+790,790,J.P. France,0.0,0.0,l c
+791,791,Taylor Floyd,0.0,0.0,l c
+792,792,Joel Peguero,0.0,0.0,SF
+793,793,Scott Effross,0.0,0.0,l c
+794,794,Christian Roa,0.0,0.0,l c
+795,795,Chris Murphy,0.0,0.0,l c
+796,796,K.C. Hunt,0.0,0.0,l c
+797,797,Alek Jacob,0.0,0.0,SD
+798,798,Burch Smith,0.0,0.0,l c
+799,799,Luarbert Arias,0.0,0.0,l c
+800,800,John King,0.0,0.0,l c
+801,801,Carlos Hernandez,0.0,0.0,l c
+802,802,Keider Montero,0.0,0.0,l c
+803,803,Roddery Munoz,0.0,0.0,l c
+804,804,Joe Jacques,0.0,0.0,l c
+805,805,Nick Anderson,0.0,0.0,l c
+806,806,Albert Suarez,0.0,0.0,l c
+807,807,Geoff Hartlieb,0.0,0.0,l c
+808,808,Tyler Zuber,0.0,0.0,MIA
+809,809,Carson Palmquist,0.0,0.0,l c
+810,810,Seth Martinez,0.0,0.0,MIA
+811,811,Eduarniel Nunez,0.0,0.0,OAK
+812,812,Lucas Gilbreath,0.0,0.0,l c
+813,813,Carl Edwards Jr.,0.0,0.0,l c
+814,814,Josh Walker,0.0,0.0,l c
+815,815,Tim Mayza,0.0,0.0,l c
+816,816,Kolby Allard,0.0,0.0,CLE
+817,817,Julian Fernandez,0.0,0.0,l c
+818,818,Carson Fulmer,0.0,0.0,l c
+819,819,Cody Poteet,0.0,0.0,l c
+820,820,Nick Hernandez,0.0,0.0,l c
+821,821,Chris Devenski,0.0,0.0,l c
+822,822,Jacob Webb,0.0,0.0,TEX
+823,823,Chase Shugart,0.0,0.0,l c
+824,824,Chayce McDermott,0.0,0.0,l c
+825,825,Samuel Aldegheri,0.0,0.0,l c
+826,826,Tanner Gordon,0.0,0.0,COL
+827,827,Vinny Nittoli,0.0,0.0,l c
+828,828,Kyle Hart,0.0,0.0,l c
+829,829,John Rooney,0.0,0.0,l c
+830,830,Touki Toussaint,0.0,0.0,l c
+831,831,Grant Holman,0.0,0.0,l c
+832,832,Ben Peoples,0.0,0.0,l c
+833,833,Ty Adcock,0.0,0.0,l c
+834,834,Justin Lawrence,0.0,0.0,l c
+835,835,Carson Ragsdale,0.0,0.0,l c
+836,836,Kyle Nicolas,0.0,0.0,l c
+837,837,Genesis Cabrera,0.0,0.0,MIN
+838,838,Matt Manning,0.0,0.0,l c
+839,839,Andrew Alvarez,0.0,0.0,l c
+840,840,Angel Chivilli,0.0,0.0,COL
+841,841,Chad Kuhl,0.0,0.0,l c
+842,842,Thomas Harrington,0.0,0.0,l c
+843,843,Connor Seabold,0.0,0.0,l c
+844,844,Michael Mercado,0.0,0.0,l c
+845,845,Jairo Iriarte,0.0,0.0,l c
+846,846,Tyler Jay,0.0,0.0,l c
+847,847,Aaron Wilkerson,0.0,0.0,l c
+848,848,Josh Simpson,0.0,0.0,l c
+849,849,Matt Sauer,0.0,0.0,l c
+850,850,Will Dion,0.0,0.0,l c
+851,851,Sam Benschoter,0.0,0.0,l c
+852,852,Michel Otanez,0.0,0.0,l c
+853,853,Ken Waldichuk,0.0,0.0,l c
+854,854,Cam Sanders,0.0,0.0,l c
+855,855,Alan Busenitz,0.0,0.0,l c
+856,856,Konnor Pilkington,0.0,0.0,WSH
+857,857,Caleb Freeman,0.0,0.0,l c
+858,858,Nick Sandlin,0.0,0.0,l c
+859,859,Alex Pham,0.0,0.0,l c
+860,860,Alec Marsh,0.0,0.0,l c
+861,861,Nick Frasso,0.0,0.0,l c
+862,862,Owen White,0.0,0.0,l c
+863,863,Jake Woodford,0.0,0.0,ARI
+864,864,Sam Long,0.0,0.0,KC
+865,865,Reiver Sanmartin,0.0,0.0,l c
+866,866,Thomas Hatch,0.0,0.0,MIN
+867,867,Brian Moran,0.0,0.0,l c
+868,868,Yosver Zulueta,0.0,0.0,l c
+869,869,Yoniel Curet,0.0,0.0,l c
+870,870,Gabriel Hughes,0.0,0.0,l c
+871,871,Andry Lara,0.0,0.0,l c
+872,872,Jack Neely,0.0,0.0,l c
+873,873,Luinder Avila,0.0,0.0,l c
+874,874,Wade Miley,0.0,0.0,l c
+875,875,Thaddeus Ward,0.0,0.0,l c
+876,876,Drew Sommers,0.0,0.0,DET
+877,877,Seth Johnson,0.0,0.0,l c
+878,878,Adam Macko,0.0,0.0,l c
+879,879,Noah Davis,0.0,0.0,l c
+880,880,Ronan Kopp,0.0,0.0,l c
+881,881,Roansy Contreras,0.0,0.0,l c
+882,882,Keagan Gillies,0.0,0.0,l c
+883,883,Juan Nunez,0.0,0.0,l c
+884,884,Justin Garza,0.0,0.0,l c
+885,885,Miguel Ullola,0.0,0.0,l c
+886,886,Peyton Pallette,0.0,0.0,l c
+887,887,Ryan Loutos,0.0,0.0,l c
+888,888,Christian Montes De Oca,0.0,0.0,l c
+889,889,Ian Gibaut,0.0,0.0,l c
+890,890,Chase Petty,0.0,0.0,l c
+891,891,Jordan Weems,0.0,0.0,l c
+892,892,George Soriano,0.0,0.0,l c
+893,893,Kai-Wei Teng,0.0,0.0,l c
+894,894,Paul Gervase,0.0,0.0,l c
+895,895,Fraser Ellard,0.0,0.0,l c
+896,896,Lazaro Estrada,0.0,0.0,l c
+897,897,Garrett Acton,0.0,0.0,l c
+898,898,Francis Pena,0.0,0.0,l c
+899,899,Sam Bachman,0.0,0.0,l c
+900,900,Connor Phillips,0.0,0.0,CIN
+901,901,Brandon Komar,0.0,0.0,l c
+902,902,Shaun Anderson,0.0,0.0,l c
+903,903,Mason Thompson,0.0,0.0,l c
+904,904,Alex Carrillo,0.0,0.0,l c
+905,905,Tom Cosgrove,0.0,0.0,l c
+906,906,Duncan Davitt,0.0,0.0,l c
+907,907,Joan Adon,0.0,0.0,l c
+908,908,Nathan Wiles,0.0,0.0,ATL
+909,909,Hunter Strickland,0.0,0.0,l c
+910,910,Jonathan Pintaro,0.0,0.0,l c
+911,911,Andrew Hoffmann,0.0,0.0,l c
+912,912,David Sandlin,0.0,0.0,l c
+913,913,Brandyn Garcia,0.0,0.0,ARI
+914,914,Phil Bickford,0.0,0.0,l c
+915,915,Didier Fuentes,0.0,0.0,l c
+916,916,Adisyn Coffey,0.0,0.0,l c
+917,917,Kelvin Caceres,0.0,0.0,l c
+918,918,Justin Armbruester,0.0,0.0,l c
+919,919,Wyatt Mills,0.0,0.0,l c
+920,920,Jose Fermin,0.0,0.0,LAA
+921,921,Bruce Zimmermann,0.0,0.0,l c
+922,922,Randy Labaut,0.0,0.0,l c
+923,923,Daniel Robert,0.0,0.0,PHI
+924,924,Hayden Seig,0.0,0.0,l c
+925,925,George Klassen,0.0,0.0,l c
+926,926,Bradgley Rodriguez,0.0,0.0,l c
+927,927,Jhonathan Diaz,0.0,0.0,l c
+928,928,Dane Acker,0.0,0.0,l c
+929,929,Hobie Harris,0.0,0.0,l c
+930,930,Anderson Pilar,0.0,0.0,l c
+931,931,Chris Flexen,0.0,0.0,l c
+932,932,Brandon Hughes,0.0,0.0,l c
+933,933,Andrew Bash,0.0,0.0,l c
+934,934,Houston Roth,0.0,0.0,l c
+935,935,James McArthur,0.0,0.0,l c
+936,936,Jose Acuna,0.0,0.0,l c
+937,937,Bradley Blalock,0.0,0.0,l c
+938,938,Antonio Senzatela,0.0,0.0,COL
+939,939,Juan Morillo,0.0,0.0,l c
+940,940,Brandon Waddell,0.0,0.0,l c
+941,941,Ben Bowden,0.0,0.0,l c
+942,942,Blade Tidwell,0.0,0.0,l c
+943,943,Yency Almonte,0.0,0.0,l c
+944,944,Kevin Gowdy,0.0,0.0,l c
+945,945,Triston McKenzie,0.0,0.0,l c
+946,946,Yilber Diaz,0.0,0.0,l c
+947,947,William Kempner,0.0,0.0,l c
+948,948,Tristan Garnett,0.0,0.0,l c
+949,949,Valente Bellozo,0.0,0.0,MIA
+950,950,Logan VanWey,0.0,0.0,l c
+951,951,Michael Hobbs,0.0,0.0,l c
+952,952,Dane Dunning,0.0,0.0,l c
+953,953,Erasmo Ramirez,0.0,0.0,l c
+954,954,Jack Little,0.0,0.0,l c
+955,955,Zack Thompson,0.0,0.0,l c
+956,956,Luis Guerrero,0.0,0.0,l c
+957,957,Hunter Bigge,0.0,0.0,l c
+958,958,Elvis Peguero,0.0,0.0,l c
+959,959,Enoli Paredes,0.0,0.0,l c
+960,960,Jack Sinclair,0.0,0.0,l c
+961,961,Zach McCambley,0.0,0.0,l c
+962,962,Cade Gibson,0.0,0.0,MIA
+963,963,Jackson Wolf,0.0,0.0,l c
+964,964,Marquis Grissom,0.0,0.0,l c
+965,965,Zach Agnos,0.0,0.0,l c
+966,966,Tyler Owens,0.0,0.0,l c
+967,967,Matt Cronin,0.0,0.0,l c
+968,968,Codi Heuer,0.0,0.0,l c
+969,969,Jayvien Sandridge,0.0,0.0,l c
+970,970,Victor Mederos,0.0,0.0,l c
+971,971,Will Klein,0.0,0.0,l c
+972,972,Jackson Rutledge,0.0,0.0,WSH
+973,973,Bailey Horn,0.0,0.0,l c
+974,974,Misael Tamarez,0.0,0.0,l c
+975,975,Doug Nikhazy,0.0,0.0,l c
+976,976,Deivi Garcia,0.0,0.0,l c
+977,977,Julio Rodriguez,0.0,0.0,l c
+978,978,Avery Weems,0.0,0.0,l c
+979,979,Blas Castano,0.0,0.0,l c
+980,980,Travis Kuhn,0.0,0.0,l c
+981,981,Peyton Alford,0.0,0.0,l c
+982,982,Wesley Moore,0.0,0.0,l c
+983,983,Moises Chace,0.0,0.0,l c
+984,984,Nolan Clenney,0.0,0.0,l c
+985,985,Jesse Scholtens,0.0,0.0,l c
+986,986,Lyon Richardson,0.0,0.0,l c
+987,987,Zach Brzykcy,0.0,0.0,l c
+988,988,Tyler Baum,0.0,0.0,l c
+989,989,Kenyon Yovan,0.0,0.0,l c
+990,990,Dax Fulton,0.0,0.0,l c
+991,991,Dan Altavilla,0.0,0.0,l c
+992,992,Robby Ahlstrom,0.0,0.0,l c
+993,993,Michael Flynn,0.0,0.0,l c
+994,994,Cole Winn,0.0,0.0,l c
+995,995,Dylan Smith,0.0,0.0,l c
+996,996,Grant Hartwig,0.0,0.0,l c
+997,997,Hunter Stratton,0.0,0.0,ATL
+998,998,Dylan Covey,0.0,0.0,l c
+999,999,Dugan Darnell,0.0,0.0,l c
+1000,1000,Eddy Yean,0.0,0.0,l c
+1001,1001,Carlos Duran,0.0,0.0,l c
+1002,1002,Luis Campusano,0.0,0.0,l c
+1003,1003,Jarred Kelenic,0.0,0.0,l c
+1004,1004,Garrett Stubbs,0.0,0.0,l c
+1005,1005,Daniel Johnson,0.0,0.0,BAL
+1006,1006,Gustavo Campero,0.0,0.0,l c
+1007,1007,Nick Sogard,0.0,0.0,BOS
+1008,1008,Aaron Schunk,0.0,0.0,l c
+1009,1009,DaShawn Keirsey,0.0,0.0,l c
+1010,1010,Grant McCray,0.0,0.0,l c
+1011,1011,Camden Minacci,0.0,0.0,l c
+1012,1012,Jose Tena,0.0,0.0,l c
+1013,1013,Carter Jensen,0.0,0.0,l c
+1014,1014,Drew Romo,0.0,0.0,l c
+1015,1015,Chad Stevens,0.0,0.0,l c
+1016,1016,Christian Vazquez,0.0,0.0,l c
+1017,1017,Eli White,0.0,0.0,ATL
+1018,1018,Christian Franklin,0.0,0.0,l c
+1019,1019,Ryan Kreidler,0.0,0.0,l c
+1020,1020,Aaron Sabato,0.0,0.0,l c
+1021,1021,Cesar Salazar,0.0,0.0,HOU
+1022,1022,Cesar Prieto,0.0,0.0,STL
+1023,1023,Adael Amador,0.0,0.0,l c
+1024,1024,Kevin Newman,0.0,0.0,l c
+1025,1025,Sebastian Rivero,0.0,0.0,l c
+1026,1026,Will Banfield,0.0,0.0,CIN
+1027,1027,Nasim Nunez,0.0,0.0,l c
+1028,1028,Petey Halpin,0.0,0.0,l c
+1029,1029,Leo Rivas,0.0,0.0,l c
+1030,1030,Michael Siani,0.0,0.0,l c
+1031,1031,Ali Sanchez,0.0,0.0,l c
+1032,1032,Carson McCusker,0.0,0.0,l c
+1033,1033,Payton Eeles,0.0,0.0,l c
+1034,1034,Otto Kemp,0.0,0.0,l c
+1035,1035,Matthew Lugo,0.0,0.0,LAA
+1036,1036,Max Schuemann,0.0,0.0,l c
+1037,1037,Joe Mack,0.0,0.0,l c
+1038,1038,Luke Williams,0.0,0.0,l c
+1039,1039,Weston Wilson,0.0,0.0,PHI
+1040,1040,J.C. Escarra,0.0,0.0,l c
+1041,1041,Victor Mesa Jr.,0.0,0.0,l c
 1042,1042,Trey Sweeney,0.0,1.0,DET
-1043,1043,Jake Bauers,0.0,0.0,MIL
-1044,1044,James McCann,0.0,0.0,ARI
-1045,1045,Jose Iglesias,0.0,0.0,SD
-1046,1046,Willie MacIver,0.0,0.0,OAK
-1047,1047,Tyler Tolbert,0.0,0.0,KC
-1048,1048,Luke Maile,0.0,0.0,KC
-1049,1049,Alejandro Osuna,0.0,0.0,TEX
-1050,1050,Nick Fortes,0.0,0.0,TB
-1051,1051,Anthony Seigler,0.0,0.0,MIL
-1052,1052,Edouard Julien,0.0,0.0,MIN
-1053,1053,Rowdy Tellez,0.0,0.0,TEX
-1054,1054,Ryan Fernandez,0.0,0.0,STL
-1055,1055,Matthew Festa,0.0,0.0,CLE
-1056,1056,Santiago Espinal,0.0,0.0,CIN
-1057,1057,Tristan Gray,0.0,0.0,TB
-1058,1058,Austin Slater,0.0,0.0,l c
-1059,1059,Tyler Alexander,0.0,0.0,CWS
-1060,1060,Paul Blackburn,0.0,0.0,NYY
-1061,1061,Jahmai Jones,0.0,0.0,DET
-1062,1062,Andy Ibanez,0.0,0.0,DET
-1063,1063,Taylor Trammell,0.0,0.0,l c
-1064,1064,Emmanuel Rivera,0.0,0.0,BAL
-1065,1065,Alex Verdugo,0.0,1.0,l c
-1066,1066,Tim Elko,0.0,0.0,l c
-1067,1067,Tyler Heineman,0.0,0.0,TOR
-1068,1068,Garrett Hampson,0.0,0.0,STL
-1069,1069,Ronny Simon,0.0,0.0,l c
-1070,1070,Donovan Solano,0.0,0.0,SEA
-1071,1071,Rafael Marchan,0.0,0.0,PHI
-1072,1072,David McCabe,0.0,0.0,l c
-1073,1073,Luis Vazquez,0.0,0.0,BAL
-1074,1074,Jose Castillo,0.0,0.0,NYM
-1075,1075,Kade Strowd,0.0,0.0,BAL
-1076,1076,Matt Svanson,0.0,0.0,STL
-1077,1077,Richie Palacios,0.0,0.0,l c
-1078,1078,Niko Kavadas,0.0,0.0,LAA
-1079,1079,John Rave,0.0,0.0,l c
-1080,1080,Mickey Gasper,0.0,0.0,MIN
-1081,1081,Reese McGuire,0.0,0.0,CHC
-1082,1082,Griffin Conine,0.0,0.0,l c
-1083,1083,Jerar Encarnacion,0.0,0.0,l c
-1084,1084,D.J. LeMahieu,0.0,0.0,l c
-1085,1085,Vidal Brujan,0.0,0.0,ATL
-1086,1086,Jaden Hill,0.0,0.0,COL
-1087,1087,Mason Englert,0.0,0.0,TB
-1088,1088,Carson Seymour,0.0,0.0,SF
-1089,1089,Joe Rock,0.0,0.0,l c
-1090,1090,Kody Funderburk,0.0,0.0,MIN
-1091,1091,Robert Stephenson,0.0,0.0,LAA
-1092,1092,Brad Lord,0.0,1.0,WSH
-1093,1093,Clayton Beeter,0.0,0.0,WSH
-1094,1094,Spencer Bivens,0.0,0.0,SF
-1095,1095,Daysbel Hernandez,0.0,0.0,l c
-1096,1096,Lake Bachar,0.0,0.0,MIA
-1097,1097,Hobie Harris,0.0,0.0,l c
-1098,1098,Touki Toussaint,0.0,0.0,l c
-1099,1099,Chris Flexen,0.0,0.0,l c
-1100,1100,Samuel Aldegheri,0.0,0.0,l c
-1101,1101,Trace Bright,0.0,0.0,l c
-1102,1102,Carson Palmquist,0.0,0.0,l c
-1103,1103,Ryan Rolison,0.0,0.0,l c
-1104,1104,Cade Gibson,0.0,0.0,MIA
-1105,1105,Oswald Peraza,0.0,0.0,LAA
-1106,1106,Henry Davis,0.0,0.0,PIT
-1107,1107,Derek Hill,0.0,0.0,MIA
-1108,1108,Luis Torrens,0.0,0.0,NYM
-1109,1109,Cody Freeman,0.0,0.0,TEX
-1110,1110,Jack Suwinski,0.0,0.0,PIT
-1111,1111,Liover Peguero,0.0,0.0,PIT
-1112,1112,Christian Koss,0.0,0.0,SF
-1113,1113,Nathan Church,0.0,0.0,STL
-1114,1114,Yanquiel Fernandez,0.0,0.0,COL
-1115,1115,Wikelman Gonzalez,0.0,0.0,CWS
-1116,1116,Luis Peralta,0.0,0.0,COL
-1117,1117,Luis Mey,0.0,0.0,l c
-1118,1118,Lucas Gilbreath,0.0,0.0,l c
-1119,1119,Anthony Molina,0.0,0.0,COL
-1120,1120,Eduarniel Nunez,0.0,0.0,OAK
-1121,1121,Caleb Freeman,0.0,0.0,l c
-1122,1122,Taylor Floyd,0.0,0.0,l c
-1123,1123,Dan Altavilla,0.0,0.0,l c
-1124,1124,Tristan Garnett,0.0,0.0,l c
-1125,1125,Devereaux Harrison,0.0,0.0,l c
-1126,1126,Randy Wynne,0.0,0.0,l c
-1127,1127,Eduardo Salazar,0.0,0.0,l c
-1128,1128,Michael Flynn,0.0,0.0,l c
-1129,1129,Antonio Senzatela,0.0,0.0,COL
-1130,1130,Justin Armbruester,0.0,0.0,l c
-1131,1131,Austin Krob,0.0,0.0,l c
-1132,1132,Adisyn Coffey,0.0,0.0,l c
-1133,1133,Michael Hobbs,0.0,0.0,l c
-1134,1134,Bradley Blalock,0.0,0.0,l c
-1135,1135,Randal Grichuk,0.0,0.0,KC
-1136,1136,Nic Enright,0.0,0.0,CLE
-1137,1137,Brooks Raley,0.0,0.0,NYM
-1138,1138,Brandon Eisert,0.0,0.0,CWS
-1139,1139,Braxton Fulford,0.0,0.0,COL
-1140,1140,Jacob Melton,0.0,0.0,HOU
-1141,1141,Taylor Walls,0.0,0.0,l c
-1142,1142,Dominic Smith,0.0,0.0,SF
-1143,1143,Bryce Teodosio,0.0,0.0,LAA
-1144,1144,Jose Miranda,0.0,1.0,l c
-1145,1145,Tyrone Taylor,0.0,0.0,NYM
-1146,1146,Hunter Feduccia,0.0,0.0,TB
-1147,1147,Denzel Clarke,0.0,0.0,l c
-1148,1148,Michael Tonkin,0.0,0.0,MIN
-1149,1149,Caleb Ferguson,0.0,0.0,SEA
-1150,1150,Jordan Wicks,0.0,0.0,CHC
-1151,1151,Brock Burke,0.0,0.0,LAA
-1152,1152,Kyle Backhus,0.0,0.0,ARI
-1153,1153,Michael Helman,0.0,0.0,TEX
-1154,1154,Dylan Carlson,0.0,0.0,BAL
-1155,1155,Yohel Pozo,0.0,0.0,STL
-1156,1156,Bob Seymour,0.0,0.0,TB
-1157,1157,Everson Pereira,0.0,0.0,TB
-1158,1158,Troy Johnston,0.0,0.0,MIA
-1159,1159,Mason Montgomery,0.0,0.0,TB
-1160,1160,Tommy Nance,0.0,0.0,TOR
-1161,1161,Alexander Canario,0.0,0.0,PIT
-1162,1162,Austin Martin,0.0,0.0,MIN
-1163,1163,Joey Wiemer,0.0,0.0,MIA
-1164,1164,Nick Loftin,0.0,0.0,KC
-1165,1165,Graham Pauley,0.0,0.0,l c
-1166,1166,Andres Chaparro,0.0,0.0,WSH
-1167,1167,Rob Refsnyder,0.0,0.0,BOS
-1168,1168,Sam Haggerty,0.0,0.0,l c
-1169,1169,Jorge Mateo,0.0,0.0,l c
-1170,1170,Drew Gilbert,0.0,0.0,SF
-1171,1171,Michael A. Taylor,0.0,0.0,CWS
-1172,1172,Eli White,0.0,0.0,ATL
-1173,1173,Jose Fermin,0.0,0.0,STL
-1174,1174,Marco Luciano,0.0,0.0,l c
-1175,1175,Cam Booser,0.0,0.0,CWS
-1176,1176,Jake Bird,0.0,0.0,l c
-1177,1177,Kevin Herget,0.0,0.0,NYM
-1178,1178,Cole Sulser,0.0,0.0,l c
-1179,1179,Tayler Saucedo,0.0,0.0,SEA
-1180,1180,DL Hall,0.0,0.0,l c
-1181,1181,Kaleb Ort,0.0,0.0,HOU
-1182,1182,Dylan Dodd,0.0,0.0,ATL
-1183,1183,Nick Hernandez,0.0,0.0,l c
-1184,1184,Yaramil Hiraldo,0.0,0.0,l c
-1185,1185,Josh Sborz,0.0,0.0,l c
-1186,1186,Yohan Ramirez,0.0,0.0,PIT
-1187,1187,Andrew Chafin,0.0,0.0,LAA
-1188,1188,Alex Cobb,0.0,0.0,l c
-1189,1189,Brent Suter,0.0,0.0,CIN
-1190,1190,Edgardo Henriquez,0.0,0.0,LAD
-1191,1191,Dakota Hudson,0.0,0.0,l c
-1192,1192,Zak Kent,0.0,0.0,l c
-1193,1193,Tristan Beck,0.0,0.0,SF
-1194,1194,Hunter Stratton,0.0,0.0,ATL
-1195,1195,Eli Morgan,0.0,0.0,l c
-1196,1196,Eric Orze,0.0,0.0,l c
-1197,1197,Bryan Hoeing,0.0,0.0,l c
-1198,1198,Grant Anderson,0.0,0.0,l c
-1199,1199,Drew Millas,0.0,0.0,WSH
-1200,1200,Alex Lange,0.0,0.0,l c
-1201,1201,Trey Lipscomb,0.0,0.0,l c
-1202,1202,Jacob Berry,0.0,0.0,l c
-1203,1203,Darren Baker,0.0,0.0,l c
-1204,1204,Christian Franklin,0.0,0.0,l c
-1205,1205,Aaron Sabato,0.0,0.0,l c
-1206,1206,Jarred Kelenic,0.0,0.0,l c
-1207,1207,Jesus Rodriguez,0.0,0.0,l c
-1208,1208,Daniel Susac,0.0,0.0,l c
-1209,1209,Gregory Santos,0.0,0.0,l c
-1210,1210,Allan Winans,0.0,0.0,l c
+1043,1043,Alexander Canario,0.0,0.0,PIT
+1044,1044,Willie MacIver,0.0,0.0,OAK
+1045,1045,Anthony Seigler,0.0,0.0,MIL
+1046,1046,Jake Bauers,0.0,0.0,MIL
+1047,1047,Nick Fortes,0.0,0.0,TB
+1048,1048,Connor Joe,0.0,0.0,l c
+1049,1049,Will Wilson,0.0,0.0,CLE
+1050,1050,Jose Iglesias,0.0,0.0,SD
+1051,1051,Tim Tawa,0.0,0.0,l c
+1052,1052,Jorge Mateo,0.0,0.0,l c
+1053,1053,Jose Miranda,0.0,1.0,l c
+1054,1054,Graham Pauley,0.0,0.0,l c
+1055,1055,Tyrone Taylor,0.0,0.0,NYM
+1056,1056,Denzel Clarke,0.0,0.0,l c
+1057,1057,Bryce Teodosio,0.0,0.0,LAA
+1058,1058,Taylor Walls,0.0,0.0,l c
+1059,1059,Hunter Feduccia,0.0,0.0,TB
+1060,1060,Joey Wiemer,0.0,0.0,MIA
+1061,1061,Michael Helman,0.0,0.0,TEX
+1062,1062,Jesus Rodriguez,0.0,0.0,l c
+1063,1063,Daniel Susac,0.0,0.0,l c
+1064,1064,Jacob Berry,0.0,0.0,l c
+1065,1065,Tsung-Che Cheng,0.0,0.0,l c
+1066,1066,Leo Jimenez,0.0,0.0,l c
+1067,1067,Ji Hwan Bae,0.0,0.0,l c
+1068,1068,Trey Lipscomb,0.0,0.0,l c
+1069,1069,Connor Kaiser,0.0,0.0,l c
+1070,1070,Darren Baker,0.0,0.0,l c
+1071,1071,James McCann,0.0,0.0,ARI
+1072,1072,Tristan Gray,0.0,0.0,TB
+1073,1073,Braxton Fulford,0.0,0.0,COL
+1074,1074,Jerar Encarnacion,0.0,0.0,l c
+1075,1075,Jacob Melton,0.0,0.0,HOU
+1076,1076,Alex Jackson,0.0,0.0,BAL
+1077,1077,Luke Maile,0.0,0.0,KC
+1078,1078,Oswald Peraza,0.0,0.0,LAA
+1079,1079,Brett Harris,0.0,0.0,OAK
+1080,1080,Carlos Cortes,0.0,0.0,OAK
+1081,1081,Jhonkensy Noel,0.0,0.0,l c
+1082,1082,Jose Siri,0.0,0.0,l c
+1083,1083,D.J. LeMahieu,0.0,0.0,l c
+1084,1084,John Rave,0.0,0.0,l c
+1085,1085,Reese McGuire,0.0,0.0,CHC
+1086,1086,Griffin Conine,0.0,0.0,l c
+1087,1087,Tyler Tolbert,0.0,0.0,KC
+1088,1088,Bryan Ramos,0.0,0.0,l c
+1089,1089,Taylor Trammell,0.0,0.0,l c
+1090,1090,Rafael Marchan,0.0,0.0,PHI
+1091,1091,Ryan Fitzgerald,0.0,0.0,MIN
+1092,1092,Luis Vazquez,0.0,0.0,BAL
+1093,1093,Alex Verdugo,0.0,1.0,l c
+1094,1094,Brandon Lockridge,0.0,0.0,MIL
+1095,1095,Mason McCoy,0.0,0.0,SD
+1096,1096,Austin Hedges,0.0,0.0,CLE
+1097,1097,Korey Lee,0.0,0.0,CWS
+1098,1098,Niko Kavadas,0.0,0.0,LAA
+1099,1099,Myles Straw,0.0,0.0,TOR
+1100,1100,Nick Yorke,0.0,0.0,l c
+1101,1101,Ildemaro Vargas,0.0,0.0,ARI
+1102,1102,Hayden Juenger,0.0,0.0,l c
+1103,1103,Robert Kwiatkowski,0.0,0.0,l c
+1104,1104,Alaska Abney,0.0,0.0,l c
+1105,1105,Elvin Rodriguez,0.0,0.0,l c
+1106,1106,Joey Estes,0.0,0.0,l c
+1107,1107,Evan Justice,0.0,0.0,l c
+1108,1108,Jonathan Heasley,0.0,0.0,l c
+1109,1109,Jared Shuster,0.0,0.0,l c
+1110,1110,Clay Helvey,0.0,0.0,l c
+1111,1111,Santiago Espinal,0.0,0.0,CIN
+1112,1112,Brett Kerry,0.0,0.0,l c
+1113,1113,Austin Krob,0.0,0.0,l c
+1114,1114,Braden Nett,0.0,0.0,l c
+1115,1115,Oddanier Mosqueda,0.0,0.0,l c
+1116,1116,Jake Rogers,0.0,0.0,DET
+1117,1117,Will Robertson,0.0,0.0,CWS
+1118,1118,Mickey Gasper,0.0,0.0,MIN
+1119,1119,Vidal Brujan,0.0,0.0,ATL
+1120,1120,Tim Elko,0.0,0.0,CWS
+1121,1121,Nolan Hoffman,0.0,0.0,l c
+1122,1122,Justyn-Henry Malloy,0.0,0.0,l c
+1123,1123,Dairon Blanco,0.0,0.0,l c
+1124,1124,Will Wagner,0.0,0.0,SD
+1125,1125,Emmanuel Rivera,0.0,0.0,BAL
+1126,1126,David McCabe,0.0,0.0,l c
+1127,1127,Cam Devanney,0.0,0.0,l c
+1128,1128,Bryce Johnson,0.0,0.0,SD
+1129,1129,Nate Eaton,0.0,0.0,BOS
+1130,1130,Justin Dean,0.0,0.0,LAD
+1131,1131,Jonatan Clase,0.0,0.0,l c
+1132,1132,Johnathan Rodriguez,0.0,0.0,l c
+1133,1133,Tristan Peters,0.0,0.0,l c
+1134,1134,Hao-Yu Lee,0.0,0.0,l c
+1135,1135,Johan Rojas,0.0,0.0,l c
+1136,1136,Miles Mastrobuoni,0.0,0.0,l c
+1137,1137,Jonathan Ornelas,0.0,0.0,l c
+1138,1138,Travis Jankowski,0.0,0.0,l c
+1139,1139,Hayden Senger,0.0,0.0,NYM
+1140,1140,CJ Stubbs,0.0,0.0,WSH
+1141,1141,Jose Fermin,0.0,0.0,STL
+1142,1142,Jorge Barrosa,0.0,0.0,l c
+1143,1143,George Valera,0.0,0.0,l c
+1144,1144,Chris Taylor,0.0,0.0,l c
+1145,1145,Andy Ibanez,0.0,0.0,DET
+1146,1146,Richie Palacios,0.0,0.0,l c
+1147,1147,Ronny Simon,0.0,0.0,PIT
+1148,1148,Drew Millas,0.0,0.0,l c
+1149,1149,Tyler Heineman,0.0,0.0,TOR
+1150,1150,Andrew Knizner,0.0,0.0,SF
+1151,1151,Garrett Hampson,0.0,0.0,STL
+1152,1152,Jahmai Jones,0.0,0.0,DET
+1153,1153,Donovan Solano,0.0,0.0,SEA
+1154,1154,Ben Williamson,0.0,0.0,l c
+1155,1155,Billy Cook,0.0,0.0,l c
+1156,1156,Brett Wisely,0.0,0.0,l c
+1157,1157,Blaine Crim,0.0,0.0,l c
+1158,1158,Vaughn Grissom,0.0,0.0,l c
+1159,1159,Marco Luciano,0.0,0.0,l c
+1160,1160,Martin Maldonado,0.0,0.0,l c
+1161,1161,Austin Slater,0.0,0.0,l c
+1162,1162,Eric Orze,0.0,0.0,l c
+1163,1163,Josh Sborz,0.0,0.0,l c
+1164,1164,DL Hall,0.0,0.0,l c
+1165,1165,Matt Gage,0.0,0.0,SF
+1166,1166,Ryan Thompson,0.0,0.0,l c
+1167,1167,Alex Cobb,0.0,0.0,l c
+1168,1168,Kevin Herget,0.0,0.0,l c
+1169,1169,Cole Sulser,0.0,0.0,l c
+1170,1170,Tyler Gilbert,0.0,0.0,l c
+1171,1171,Yanquiel Fernandez,0.0,0.0,COL
+1172,1172,Trevor Stephan,0.0,0.0,l c
+1173,1173,Zack Kelly,0.0,0.0,l c
+1174,1174,Joe Jimenez,0.0,0.0,l c
+1175,1175,Justin Hagenman,0.0,0.0,l c
+1176,1176,Andrew Chafin,0.0,0.0,LAA
+1177,1177,Easton McGee,0.0,0.0,l c
+1178,1178,Grant Anderson,0.0,0.0,l c
+1179,1179,Alex Lange,0.0,0.0,l c
+1180,1180,Jonathan Bowlan,0.0,0.0,KC
+1181,1181,Tayler Saucedo,0.0,0.0,SEA
+1182,1182,Jake Bird,0.0,0.0,l c
+1183,1183,Dylan Dodd,0.0,0.0,ATL
+1184,1184,Eli Morgan,0.0,0.0,l c
+1185,1185,Cam Booser,0.0,0.0,CWS
+1186,1186,Steven Wilson,0.0,0.0,CWS
+1187,1187,Griff McGarry,0.0,0.0,l c
+1188,1188,Keaton Winn,0.0,0.0,SF
+1189,1189,Dakota Hudson,0.0,0.0,l c
+1190,1190,Bryan Hoeing,0.0,0.0,l c
+1191,1191,Rico Garcia,0.0,0.0,BAL
+1192,1192,Ian Hamilton,0.0,0.0,l c
+1193,1193,Chase Silseth,0.0,0.0,LAA
+1194,1194,Andre Granillo,0.0,0.0,STL
+1195,1195,Paxton Schultz,0.0,0.0,l c
+1196,1196,Tristan Beck,0.0,0.0,SF
+1197,1197,Ryan Fernandez,0.0,0.0,STL
+1198,1198,Sauryn Lao,0.0,0.0,l c
+1199,1199,Colin Selby,0.0,0.0,l c
+1200,1200,Caden Dana,0.0,0.0,l c
+1201,1201,Gregory Santos,0.0,0.0,l c
+1202,1202,Steven Cruz,0.0,0.0,l c
+1203,1203,Yerry De Los Santos,0.0,0.0,l c
+1204,1204,Craig Yoho,0.0,0.0,l c
+1205,1205,Franco Aleman,0.0,0.0,l c
+1206,1206,Austin Warren,0.0,0.0,l c
+1207,1207,Yaramil Hiraldo,0.0,0.0,l c
+1208,1208,PJ Poulin,0.0,0.0,WSH
+1209,1209,Josh White,0.0,0.0,l c
+1210,1210,Trevor McDonald,0.0,0.0,l c
 1211,1211,Pierson Ohl,0.0,0.0,l c
-1212,1212,Andre Granillo,0.0,0.0,STL
-1213,1213,Kendry Rojas,0.0,0.0,l c
-1214,1214,John Brebbia,0.0,0.0,l c
-1215,1215,Jose Espada,0.0,0.0,l c
-1216,1216,Joey Gerber,0.0,0.0,l c
-1217,1217,Jake Eder,0.0,0.0,l c
-1218,1218,Franco Aleman,0.0,0.0,l c
-1219,1219,Tekoah Roby,0.0,0.0,l c
-1220,1220,Max Lazar,0.0,0.0,l c
-1221,1221,Michael Petersen,0.0,0.0,l c
-1222,1222,Omar Cruz,0.0,0.0,l c
-1223,1223,Leo Jimenez,0.0,0.0,l c
-1224,1224,Ji Hwan Bae,0.0,0.0,l c
-1225,1225,J.C. Escarra,0.0,0.0,l c
-1226,1226,Luis Campusano,0.0,0.0,l c
-1227,1227,Garrett Stubbs,0.0,0.0,l c
-1228,1228,John Rooney,0.0,0.0,l c
-1229,1229,Ryan Feltner,0.0,0.0,l c
-1230,1230,Jack Neely,0.0,0.0,l c
-1231,1231,Trevor Stephan,0.0,0.0,l c
-1232,1232,Taylor Clarke,0.0,0.0,KC
-1233,1233,Jonathan Bowlan,0.0,0.0,KC
-1234,1234,Casey Legumina,0.0,0.0,l c
-1235,1235,Nate Pearson,0.0,0.0,l c
-1236,1236,Joe Jimenez,0.0,0.0,l c
-1237,1237,Yerry De Los Santos,0.0,0.0,l c
-1238,1238,Tyler Gilbert,0.0,0.0,l c
-1239,1239,Alan Rangel,0.0,0.0,l c
-1240,1240,Steven Cruz,0.0,0.0,l c
-1241,1241,Beau Brieske,0.0,0.0,l c
-1242,1242,Evan Sisk,0.0,0.0,l c
-1243,1243,Jonathan Loaisiga,0.0,0.0,l c
-1244,1244,Fraser Ellard,0.0,0.0,l c
-1245,1245,Zack Kelly,0.0,0.0,l c
-1246,1246,Easton McGee,0.0,0.0,MIL
-1247,1247,Gus Varland,0.0,0.0,l c
-1248,1248,Lou Trivino,0.0,0.0,PHI
-1249,1249,Carlos Vargas,0.0,0.0,SEA
-1250,1250,Luke Little,0.0,0.0,l c
-1251,1251,Shinnosuke Ogasawara,0.0,0.0,WSH
-1252,1252,Brady Basso,0.0,0.0,OAK
-1253,1253,Kevin Kelly,0.0,0.0,l c
-1254,1254,Connor Joe,0.0,0.0,l c
-1255,1255,Will Wilson,0.0,0.0,CLE
-1256,1256,Ryan Kreidler,0.0,0.0,l c
-1257,1257,Kevin Newman,0.0,0.0,l c
-1258,1258,Ben Williamson,0.0,0.0,l c
-1259,1259,Tim Tawa,0.0,0.0,l c
-1260,1260,Brett Wisely,0.0,0.0,l c
-1261,1261,Blaine Crim,0.0,0.0,l c
-1262,1262,Vaughn Grissom,0.0,0.0,l c
-1263,1263,Mason Barnett,0.0,0.0,OAK
-1264,1264,Mason Black,0.0,0.0,l c
-1265,1265,Jorge Alcala,0.0,0.0,STL
-1266,1266,Justyn-Henry Malloy,0.0,0.0,l c
-1267,1267,Justin Sterner,0.0,0.0,OAK
-1268,1268,Didier Fuentes,0.0,0.0,l c
-1269,1269,Jonathan Ornelas,0.0,0.0,l c
-1270,1270,Johnathan Rodriguez,0.0,0.0,l c
-1271,1271,Martin Maldonado,0.0,0.0,l c
-1272,1272,Korey Lee,0.0,0.0,CWS
-1273,1273,Dairon Blanco,0.0,0.0,l c
-1274,1274,Will Wagner,0.0,0.0,SD
-1275,1275,Jacob Webb,0.0,0.0,TEX
-1276,1276,Tirso Ornelas,0.0,0.0,l c
-1277,1277,Bryce Johnson,0.0,0.0,SD
-1278,1278,Billy Cook,0.0,0.0,l c
-1279,1279,Jonatan Clase,0.0,0.0,l c
-1280,1280,Jhonkensy Noel,0.0,0.0,l c
-1281,1281,George Valera,0.0,0.0,l c
-1282,1282,Chris Taylor,0.0,0.0,l c
-1283,1283,Andrew Knizner,0.0,0.0,SF
-1284,1284,Adam Mazur,0.0,0.0,MIA
-1285,1285,Bryan Ramos,0.0,0.0,l c
-1286,1286,Chase Silseth,0.0,0.0,LAA
-1287,1287,Nick Anderson,0.0,0.0,COL
-1288,1288,Craig Yoho,0.0,0.0,l c
-1289,1289,Paxton Schultz,0.0,0.0,l c
-1290,1290,Tristan Peters,0.0,0.0,l c
-1291,1291,Jorge Barrosa,0.0,0.0,l c
-1292,1292,Hao-Yu Lee,0.0,0.0,l c
-1293,1293,Gustavo Campero,0.0,0.0,l c
-1294,1294,Brent Headrick,0.0,0.0,l c
-1295,1295,Aaron Schunk,0.0,0.0,l c
-1296,1296,Miles Mastrobuoni,0.0,0.0,l c
-1297,1297,Travis Jankowski,0.0,0.0,l c
-1298,1298,Tristin English,0.0,0.0,l c
-1299,1299,Cam Devanney,0.0,0.0,l c
-1300,1300,Nate Eaton,0.0,0.0,BOS
-1301,1301,Adael Amador,0.0,0.0,l c
-1302,1302,Tsung-Che Cheng,0.0,0.0,l c
-1303,1303,Connor Kaiser,0.0,0.0,l c
-1304,1304,Johan Rojas,0.0,0.0,l c
-1305,1305,Dauri Moreta,0.0,0.0,PIT
-1306,1306,Braydon Fisher,0.0,0.0,l c
-1307,1307,Angel Chivilli,0.0,0.0,COL
-1308,1308,Ryan Thompson,0.0,0.0,l c
-1309,1309,Rob Zastryzny,0.0,0.0,l c
-1310,1310,AJ Blubaugh,0.0,0.0,HOU
-1311,1311,Ryan Ritter,0.0,0.0,COL
-1312,1312,Nick Allen,0.0,0.0,ATL
-1313,1313,Shawn Dubin,0.0,0.0,BAL
-1314,1314,Sauryn Lao,0.0,0.0,l c
-1315,1315,Steven Wilson,0.0,0.0,CWS
-1316,1316,Justin Hagenman,0.0,0.0,l c
-1317,1317,Griff McGarry,0.0,0.0,l c
-1318,1318,Brenan Hanifee,0.0,0.0,DET
-1319,1319,Matt Gage,0.0,0.0,SF
-1320,1320,Hayden Harris,0.0,0.0,l c
-1321,1321,Aaron Bummer,0.0,0.0,l c
-1322,1322,Ian Hamilton,0.0,0.0,l c
-1323,1323,Ezequiel Duran,0.0,0.0,TEX
-1324,1324,Shohei Ohtani,100.0,100.0,LAD
-1325,1326,Tanner Dodson,0.0,0.0,l c
+1212,1212,Taylor Rashi,0.0,0.0,l c
+1213,1213,Omar Cruz,0.0,0.0,l c
+1214,1214,Caleb Boushley,0.0,0.0,TEX
+1215,1215,Bryce Jarvis,0.0,0.0,ARI
+1216,1216,Jose Espada,0.0,0.0,l c
+1217,1217,Max Lazar,0.0,0.0,l c
+1218,1218,Tekoah Roby,0.0,0.0,l c
+1219,1219,Jake Eder,0.0,0.0,l c
+1220,1220,Ethan Roberts,0.0,0.0,l c
+1221,1221,Joey Gerber,0.0,0.0,l c
+1222,1222,Colin Holderman,0.0,0.0,PIT
+1223,1223,Anthony Veneziano,0.0,0.0,l c
+1224,1224,Jose Ruiz,0.0,0.0,l c
+1225,1225,Joey Lucchesi,0.0,0.0,SF
+1226,1226,Kendry Rojas,0.0,0.0,l c
+1227,1227,Allan Winans,0.0,0.0,l c
+1228,1228,Aaron Bummer,0.0,0.0,l c
+1229,1229,Chase Lee,0.0,0.0,l c
+1230,1230,Taylor Clarke,0.0,0.0,KC
+1231,1231,Justin Sterner,0.0,0.0,OAK
+1232,1232,Evan Sisk,0.0,0.0,PIT
+1233,1233,Casey Legumina,0.0,0.0,l c
+1234,1234,Rafael Montero,0.0,0.0,DET
+1235,1235,Beau Brieske,0.0,0.0,l c
+1236,1236,Ryan Feltner,0.0,0.0,l c
+1237,1237,Freddy Tarnok,0.0,0.0,l c
+1238,1238,Emiliano Teodo,0.0,0.0,l c
+1239,1239,Manuel Rodriguez,0.0,0.0,l c
+1240,1240,Jimmy Herget,0.0,0.0,COL
+1241,1241,Brent Suter,0.0,0.0,CIN
+1242,1242,Cody Freeman,0.0,0.0,TEX
+1243,1243,Edouard Julien,0.0,0.0,MIN
+1244,1244,Austin Martin,0.0,0.0,MIN
+1245,1245,Randal Grichuk,0.0,0.0,KC
+1246,1246,Michael A. Taylor,0.0,0.0,CWS
+1247,1247,Ezequiel Duran,0.0,0.0,TEX
+1248,1248,Caleb Ferguson,0.0,0.0,SEA
+1249,1249,Tommy Nance,0.0,0.0,TOR
+1250,1250,Mason Montgomery,0.0,0.0,TB
+1251,1251,Zak Kent,0.0,0.0,l c
+1252,1252,Nic Enright,0.0,0.0,CLE
+1253,1253,Nick Allen,0.0,0.0,ATL
+1254,1254,Gordon Graceffo,0.0,0.0,STL
+1255,1255,Jordan Wicks,0.0,0.0,CHC
+1256,1256,Brock Burke,0.0,0.0,LAA
+1257,1257,Isaac Mattson,0.0,0.0,PIT
+1258,1258,Brandon Eisert,0.0,0.0,CWS
+1259,1259,Jalen Beeks,0.0,0.0,ARI
+1260,1260,Matthew Festa,0.0,0.0,CLE
+1261,1261,Michael Tonkin,0.0,0.0,MIN
+1262,1262,Dominic Smith,0.0,0.0,SF
+1263,1263,Yohel Pozo,0.0,0.0,l c
+1264,1264,Alejandro Osuna,0.0,0.0,TEX
+1265,1265,Everson Pereira,0.0,0.0,TB
+1266,1266,Andres Chaparro,0.0,0.0,WSH
+1267,1267,Christian Koss,0.0,0.0,SF
+1268,1268,Nick Loftin,0.0,0.0,KC
+1269,1269,Rob Refsnyder,0.0,0.0,BOS
+1270,1270,Nathan Church,0.0,0.0,STL
+1271,1271,Rowdy Tellez,0.0,0.0,TEX
+1272,1272,Bob Seymour,0.0,0.0,TB
+1273,1273,Henry Davis,0.0,0.0,PIT
+1274,1274,Troy Johnston,0.0,0.0,MIA
+1275,1275,Liover Peguero,0.0,0.0,PIT
+1276,1276,Derek Hill,0.0,0.0,MIA
+1277,1277,Dylan Carlson,0.0,0.0,BAL
+1278,1278,Jack Suwinski,0.0,0.0,l c
+1279,1279,Luis Torrens,0.0,0.0,NYM
+1280,1280,Sam Haggerty,0.0,0.0,l c
+1281,1281,Drew Gilbert,0.0,0.0,SF
+1282,1282,Tyler Alexander,0.0,0.0,CWS
+1283,1283,Joe Rock,0.0,0.0,l c
+1284,1284,Lake Bachar,0.0,0.0,MIA
+1285,1285,AJ Blubaugh,0.0,0.0,HOU
+1286,1286,Jorge Alcala,0.0,0.0,STL
+1287,1287,Mason Black,0.0,0.0,l c
+1288,1288,Brenan Hanifee,0.0,0.0,DET
+1289,1289,Adam Mazur,0.0,0.0,MIA
+1290,1290,Brady Basso,0.0,0.0,OAK
+1291,1291,Enyel De Los Santos,0.0,0.0,HOU
+1292,1292,Shinnosuke Ogasawara,0.0,0.0,WSH
+1293,1293,Kevin Kelly,0.0,0.0,l c
+1294,1294,Rob Zastryzny,0.0,0.0,MIL
+1295,1295,Jaden Hill,0.0,0.0,COL
+1296,1296,Hayden Harris,0.0,0.0,l c
+1297,1297,Brooks Raley,0.0,0.0,NYM
+1298,1298,Brent Headrick,0.0,0.0,l c
+1299,1299,Braydon Fisher,0.0,0.0,l c
+1300,1300,Dauri Moreta,0.0,0.0,PIT
+1301,1301,Mason Barnett,0.0,0.0,OAK
+1302,1302,Mason Fluharty,0.0,0.0,l c
+1303,1303,Clayton Beeter,0.0,0.0,WSH
+1304,1304,Mason Englert,0.0,0.0,TB
+1305,1305,Kyle Backhus,0.0,0.0,ARI
+1306,1306,Michael Kelly,0.0,0.0,OAK
+1307,1307,Ryan Ritter,0.0,0.0,COL
+1308,1308,Jose Castillo,0.0,0.0,NYM
+1309,1309,Lou Trivino,0.0,0.0,PHI
+1310,1310,Brad Lord,0.0,1.0,WSH
+1311,1311,Paul Blackburn,0.0,0.0,NYY
+1312,1312,Brian Van Belle,0.0,0.0,TB
+1313,1313,Luke Little,0.0,0.0,l c
+1314,1314,Kody Funderburk,0.0,0.0,MIN
+1315,1315,Kaleb Ort,0.0,0.0,HOU
+1316,1316,Spencer Bivens,0.0,0.0,SF
+1317,1317,Carlos Vargas,0.0,0.0,SEA
+1318,1318,Kade Strowd,0.0,0.0,BAL
+1319,1319,Carson Seymour,0.0,0.0,SF
+1320,1320,Robert Stephenson,0.0,0.0,LAA
+1321,1321,Daysbel Hernandez,0.0,0.0,l c
+1322,1322,John Curtiss,0.0,0.0,ARI
+1323,1323,Shohei Ohtani,100.0,100.0,LAD
+1324,1325,Tanner Dodson,0.0,0.0,l c
