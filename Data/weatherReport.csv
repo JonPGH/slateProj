@@ -1,16 +1,14 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Cardinals  @  Reds,Clear,72°,7.7 mph,"L to R, Weak",STL,CIN,0,2025-8-31,0,0
-1,Padres  @  Twins,Clear,73°,4.9 mph,"In, Weak",SD,MIN,0,2025-8-31,0,0
-2,Pirates  @  Red Sox,Clear,74°,7.0 mph,"In, Weak",PIT,BOS,0,2025-8-31,0,0
-3,Rays  @  Nationals,MostlyClear,75°,6.6 mph,"In, Weak",TB,WSH,0,2025-8-31,0,0
-4,Brewers  @  Blue Jays,Clear,70°,6.1 mph,"Out, Weak",MIL,TOR,0,2025-8-31,1,0
-5,Marlins  @  Mets,Clear,76°,6.1 mph,"In, Weak",MIA,NYM,0,2025-8-31,0,0
-6,Mariners  @  Guardians,Clear,70°,8.6 mph,"In, Weak",SEA,CLE,0,2025-8-31,0,0
-7,Angels  @  Astros,Thunderstorms,86°,3.6 mph,None,LAA,HOU,50,2025-8-31,1,1
-8,Tigers  @  Royals,Cloudy,76°,8.2 mph,"R to L, Weak",DET,KC,20,2025-8-31,0,0
-9,Yankees  @  White Sox,Clear,73°,7.3 mph,"L to R, Weak",NYY,CWS,0,2025-8-31,0,0
-10,Cubs  @  Rockies,Clear,79°,6.6 mph,"In, Weak",CHC,COL,0,2025-8-31,0,0
-11,Orioles  @  Giants,MostlyClear,76°,7.6 mph,"Out, Weak",BAL,SF,0,2025-8-31,0,0
-12,Rangers  @  Athletics,MostlyClear,96°,4.7 mph,None,TEX,OAK,0,2025-8-31,0,0
-13,Diamondbacks  @  Dodgers,Clear,92°,7.5 mph,"Out, Weak",ARI,LAD,0,2025-8-31,0,0
-14,Braves  @  Phillies,Cloudy,73°,4.0 mph,None,ATL,PHI,0,2025-8-31,0,0
+0,Marlins  @  Nationals,MostlyClear,77°,9.7 mph,"In, Weak",MIA,WSH,0,2025-9-1,0,0
+1,Mets  @  Tigers,Clear,73°,6.1 mph,"L to R, Weak",NYM,DET,0,2025-9-1,0,0
+2,Blue Jays  @  Reds,Clear,77°,4.8 mph,None,TOR,CIN,0,2025-9-1,0,0
+3,Guardians  @  Red Sox,MostlyCloudy,74°,9.2 mph,"In, Weak",CLE,BOS,0,2025-9-1,0,0
+4,Angels  @  Astros,PartlyCloudy,86°,4.0 mph,None,LAA,HOU,13,2025-9-1,1,1
+5,White Sox  @  Twins,MostlyClear,76°,3.4 mph,None,CWS,MIN,0,2025-9-1,0,0
+6,Athletics  @  Cardinals,MostlyCloudy,77°,5.2 mph,"In, Weak",OAK,STL,0,2025-9-1,0,0
+7,Braves  @  Cubs,Clear,74°,7.0 mph,"In, Weak",ATL,CHC,0,2025-9-1,0,0
+8,Giants  @  Rockies,Clear,82°,7.2 mph,"In, Weak",SF,COL,0,2025-9-1,0,0
+9,Phillies  @  Brewers,MostlyClear,74°,7.0 mph,"In, Weak",PHI,MIL,0,2025-9-1,0,0
+10,Orioles  @  Padres,PartlyCloudy,82°,8.3 mph,"L to R, Weak",BAL,SD,0,2025-9-1,0,0
+11,Mariners  @  Rays,MostlyClear,84°,11.2 mph,"L to R, Strong",SEA,TB,9,2025-9-1,0,0
+12,Rangers  @  Diamondbacks,MostlyCloudy,103°,4.8 mph,None,TEX,ARI,0,2025-9-1,1,0
