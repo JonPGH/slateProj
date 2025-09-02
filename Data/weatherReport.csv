@@ -1,15 +1,15 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Mets  @  Tigers,MostlyClear,76°,5.8 mph,"In, Weak",NYM,DET,0,2025-9-2,0,0
-1,Blue Jays  @  Reds,PartlyCloudy,80°,3.3 mph,None,TOR,CIN,0,2025-9-2,0,0
-2,Dodgers  @  Pirates,PartlyCloudy,73°,2.9 mph,None,LAD,PIT,0,2025-9-2,0,0
+0,Mets  @  Tigers,MostlyClear,76°,6.3 mph,"In, Weak",NYM,DET,0,2025-9-2,0,0
+1,Blue Jays  @  Reds,MostlyClear,80°,2.8 mph,None,TOR,CIN,0,2025-9-2,0,0
+2,Dodgers  @  Pirates,PartlyCloudy,74°,4.2 mph,None,LAD,PIT,0,2025-9-2,0,0
 3,Marlins  @  Nationals,MostlyClear,76°,4.9 mph,None,MIA,WSH,0,2025-9-2,0,0
 4,Guardians  @  Red Sox,PartlyCloudy,72°,7.7 mph,"R to L, Weak",CLE,BOS,0,2025-9-2,0,0
-5,Mariners  @  Rays,MostlyCloudy,85°,6.9 mph,"L to R, Weak",SEA,TB,8,2025-9-2,0,0
-6,White Sox  @  Twins,MostlyCloudy,75°,7.3 mph,"Out, Weak",CWS,MIN,11,2025-9-2,0,0
-7,Braves  @  Cubs,MostlyClear,74°,6.3 mph,"R to L, Weak",ATL,CHC,0,2025-9-2,0,0
-8,Angels  @  Royals,PartlyCloudy,77°,3.9 mph,None,LAA,KC,0,2025-9-2,0,0
-9,Athletics  @  Cardinals,MostlyClear,80°,4.6 mph,None,OAK,STL,0,2025-9-2,0,0
-10,Yankees  @  Astros,MostlyClear,86°,4.3 mph,None,NYY,HOU,0,2025-9-2,1,0
-11,Giants  @  Rockies,PartlyCloudy,81°,10.8 mph,"In, Strong",SF,COL,0,2025-9-2,0,0
-12,Orioles  @  Padres,Clear,78°,7.9 mph,"L to R, Weak",BAL,SD,0,2025-9-2,0,0
-13,Rangers  @  Diamondbacks,MostlyClear,101°,5.1 mph,"Out, Weak",TEX,ARI,0,2025-9-2,1,0
+5,Mariners  @  Rays,MostlyCloudy,85°,6.8 mph,"L to R, Weak",SEA,TB,6,2025-9-2,0,0
+6,White Sox  @  Twins,MostlyCloudy,75°,6.8 mph,"Out, Weak",CWS,MIN,8,2025-9-2,0,0
+7,Braves  @  Cubs,Clear,74°,5.9 mph,"In, Weak",ATL,CHC,0,2025-9-2,0,0
+8,Angels  @  Royals,MostlyClear,77°,4.0 mph,None,LAA,KC,2,2025-9-2,0,0
+9,Athletics  @  Cardinals,MostlyClear,80°,4.2 mph,None,OAK,STL,0,2025-9-2,0,0
+10,Yankees  @  Astros,PartlyCloudy,83°,5.2 mph,"Out, Weak",NYY,HOU,0,2025-9-2,1,0
+11,Giants  @  Rockies,MostlyCloudy,81°,9.0 mph,"In, Weak",SF,COL,0,2025-9-2,0,0
+12,Orioles  @  Padres,Clear,80°,7.5 mph,"L to R, Weak",BAL,SD,0,2025-9-2,0,0
+13,Rangers  @  Diamondbacks,PartlyCloudy,101°,7.4 mph,"Out, Weak",TEX,ARI,0,2025-9-2,1,0
