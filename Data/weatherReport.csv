@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Mariners  @  Braves,Clear,76°,7.5 mph,"Out, Weak",SEA,ATL,0,2025-9-7,0,0
 1,Guardians  @  Rays,MostlyCloudy,87°,5.5 mph,"R to L, Weak",CLE,TB,6,2025-9-7,0,0
-2,Brewers  @  Pirates,PartlyCloudy,66°,8.5 mph,"Out, Weak",MIL,PIT,0,2025-9-7,0,0
-3,Blue Jays  @  Yankees,Drizzle,67°,2.7 mph,None,TOR,NYY,81,2025-9-7,0,0
-4,Dodgers  @  Orioles,MostlyCloudy,69°,2.2 mph,None,LAD,BAL,0,2025-9-7,0,0
-5,White Sox  @  Tigers,MostlyClear,66°,8.2 mph,"R to L, Weak",CWS,DET,0,2025-9-7,0,0
-6,Phillies  @  Marlins,MostlyCloudy,84°,5.6 mph,"R to L, Weak",PHI,MIA,21,2025-9-7,1,1
-7,Mets  @  Reds,MostlyClear,69°,4.6 mph,None,NYM,CIN,0,2025-9-7,0,0
-8,Twins  @  Royals,Clear,75°,4.3 mph,None,MIN,KC,0,2025-9-7,0,0
-9,Giants  @  Cardinals,Clear,72°,7.5 mph,"L to R, Weak",SF,STL,0,2025-9-7,0,0
-10,Nationals  @  Cubs,Clear,65°,8.3 mph,"In, Weak",WSH,CHC,0,2025-9-7,0,0
-11,Astros  @  Rangers,PartlyCloudy,79°,6.2 mph,"In, Weak",HOU,TEX,0,2025-9-7,1,0
-12,Padres  @  Rockies,MostlyClear,82°,3.1 mph,None,SD,COL,0,2025-9-7,0,0
-13,Athletics  @  Angels,Clear,88°,7.7 mph,"Out, Weak",OAK,LAA,0,2025-9-7,0,0
-14,Red Sox  @  Diamondbacks,Clear,96°,5.1 mph,"L to R, Weak",BOS,ARI,0,2025-9-7,1,0
+2,Brewers  @  Pirates,PartlyCloudy,66°,8.1 mph,"Out, Weak",MIL,PIT,0,2025-9-7,0,0
+3,Blue Jays  @  Yankees,Drizzle,65°,1.7 mph,None,TOR,NYY,32,2025-9-7,0,0
+4,Dodgers  @  Orioles,MostlyCloudy,70°,2.5 mph,None,LAD,BAL,0,2025-9-7,0,0
+5,White Sox  @  Tigers,PartlyCloudy,66°,7.9 mph,"R to L, Weak",CWS,DET,0,2025-9-7,0,0
+6,Phillies  @  Marlins,Thunderstorms,84°,6.6 mph,"In, Weak",PHI,MIA,55,2025-9-7,1,1
+7,Mets  @  Reds,PartlyCloudy,69°,4.9 mph,None,NYM,CIN,0,2025-9-7,0,0
+8,Twins  @  Royals,Clear,75°,4.0 mph,None,MIN,KC,0,2025-9-7,0,0
+9,Giants  @  Cardinals,Clear,72°,8.0 mph,"L to R, Weak",SF,STL,0,2025-9-7,0,0
+10,Nationals  @  Cubs,Clear,65°,7.8 mph,"In, Weak",WSH,CHC,0,2025-9-7,0,0
+11,Astros  @  Rangers,MostlyCloudy,78°,6.3 mph,"In, Weak",HOU,TEX,0,2025-9-7,1,0
+12,Padres  @  Rockies,MostlyClear,83°,3.6 mph,None,SD,COL,0,2025-9-7,0,0
+13,Athletics  @  Angels,Clear,88°,7.4 mph,"Out, Weak",OAK,LAA,0,2025-9-7,0,0
+14,Red Sox  @  Diamondbacks,Clear,96°,4.9 mph,None,BOS,ARI,0,2025-9-7,1,0
