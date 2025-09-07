@@ -1,8 +1,8 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Mariners  @  Braves,Clear,76°,7.6 mph,"Out, Weak",SEA,ATL,0,2025-9-7,0,0
-1,Guardians  @  Rays,MostlyCloudy,88°,5.2 mph,"R to L, Weak",CLE,TB,6,2025-9-7,0,0
+1,Guardians  @  Rays,MostlyCloudy,88°,5.2 mph,"R to L, Weak",CLE,TB,11,2025-9-7,0,0
 2,Brewers  @  Pirates,PartlyCloudy,66°,7.6 mph,"Out, Weak",MIL,PIT,0,2025-9-7,0,0
-3,Blue Jays  @  Yankees,Cloudy,67°,4.3 mph,None,TOR,NYY,17,2025-9-7,0,0
+3,Blue Jays  @  Yankees,Rain,67°,4.3 mph,None,TOR,NYY,76,2025-9-7,0,0
 4,Dodgers  @  Orioles,PartlyCloudy,71°,2.7 mph,None,LAD,BAL,12,2025-9-7,0,0
 5,White Sox  @  Tigers,MostlyClear,66°,8.2 mph,"R to L, Weak",CWS,DET,0,2025-9-7,0,0
 6,Phillies  @  Marlins,Thunderstorms,85°,4.0 mph,None,PHI,MIA,45,2025-9-7,1,1
