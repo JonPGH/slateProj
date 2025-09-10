@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Brewers  @  Rangers,Clear,86°,3.1 mph,None,MIL,TEX,0,2025-9-10,1,0
-1,Red Sox  @  Athletics,PartlyCloudy,75°,6.1 mph,"Out, Weak",BOS,OAK,3,2025-9-10,0,0
-2,Diamondbacks  @  Giants,PartlyCloudy,67°,7.0 mph,"Out, Weak",ARI,SF,5,2025-9-10,0,0
-3,Twins  @  Angels,Clear,78°,8.5 mph,"Out, Weak",MIN,LAA,0,2025-9-10,0,0
-4,Pirates  @  Orioles,Cloudy,70°,5.0 mph,"In, Weak",PIT,BAL,5,2025-9-10,0,0
+1,Red Sox  @  Athletics,PartlyCloudy,74°,6.0 mph,"Out, Weak",BOS,OAK,4,2025-9-10,0,0
+2,Diamondbacks  @  Giants,MostlyCloudy,67°,6.3 mph,"Out, Weak",ARI,SF,6,2025-9-10,0,0
+3,Twins  @  Angels,Clear,79°,8.5 mph,"Out, Weak",MIN,LAA,0,2025-9-10,0,0
+4,Pirates  @  Orioles,Cloudy,70°,5.1 mph,"In, Weak",PIT,BAL,0,2025-9-10,0,0
 5,Royals  @  Guardians,MostlyClear,74°,7.3 mph,"In, Weak",KC,CLE,0,2025-9-10,0,0
-6,Nationals  @  Marlins,MostlyCloudy,82°,3.3 mph,None,WSH,MIA,23,2025-9-10,1,1
-7,Mets  @  Phillies,PartlyCloudy,70°,6.4 mph,"In, Weak",NYM,PHI,0,2025-9-10,0,0
-8,Tigers  @  Yankees,MostlyClear,71°,3.3 mph,None,DET,NYY,0,2025-9-10,0,0
-9,Astros  @  Blue Jays,MostlyCloudy,70°,4.2 mph,None,HOU,TOR,0,2025-9-10,1,0
-10,Cubs  @  Braves,Clear,79°,6.4 mph,"Out, Weak",CHC,ATL,0,2025-9-10,0,0
-11,Rays  @  White Sox,MostlyCloudy,75°,7.1 mph,"In, Weak",TB,CWS,0,2025-9-10,0,0
-12,Reds  @  Padres,MostlyClear,74°,8.4 mph,"L to R, Weak",CIN,SD,0,2025-9-10,0,0
+6,Nationals  @  Marlins,MostlyCloudy,82°,4.3 mph,None,WSH,MIA,36,2025-9-10,1,1
+7,Mets  @  Phillies,MostlyCloudy,70°,6.6 mph,"In, Weak",NYM,PHI,0,2025-9-10,0,0
+8,Tigers  @  Yankees,MostlyClear,71°,4.1 mph,None,DET,NYY,0,2025-9-10,0,0
+9,Astros  @  Blue Jays,MostlyCloudy,70°,3.9 mph,None,HOU,TOR,0,2025-9-10,1,0
+10,Cubs  @  Braves,Clear,79°,5.8 mph,"Out, Weak",CHC,ATL,0,2025-9-10,0,0
+11,Rays  @  White Sox,MostlyClear,75°,6.8 mph,"In, Weak",TB,CWS,0,2025-9-10,0,0
+12,Reds  @  Padres,PartlyCloudy,74°,8.6 mph,"L to R, Weak",CIN,SD,0,2025-9-10,0,0
 13,Cardinals  @  Mariners,Clear,71°,6.2 mph,"L to R, Weak",STL,SEA,0,2025-9-10,1,0
-14,Rockies  @  Dodgers,Clear,72°,4.9 mph,None,COL,LAD,0,2025-9-10,0,0
+14,Rockies  @  Dodgers,Clear,71°,5.6 mph,"Out, Weak",COL,LAD,0,2025-9-10,0,0
