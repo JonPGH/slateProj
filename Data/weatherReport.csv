@@ -1,10 +1,10 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Pirates  @  Orioles,PartlyCloudy,76°,3.4 mph,None,PIT,BAL,0,2025-9-11,0,0
-1,Rays  @  White Sox,Clear,76°,7.3 mph,"L to R, Weak",TB,CWS,0,2025-9-11,0,0
-2,Astros  @  Blue Jays,Clear,74°,4.4 mph,None,HOU,TOR,0,2025-9-11,1,0
-3,Nationals  @  Marlins,Thunderstorms,83°,4.3 mph,None,WSH,MIA,45,2025-9-11,1,1
-4,Tigers  @  Yankees,Clear,75°,5.6 mph,"L to R, Weak",DET,NYY,0,2025-9-11,0,0
-5,Royals  @  Guardians,Clear,71°,5.4 mph,"In, Weak",KC,CLE,0,2025-9-11,0,0
-6,Mets  @  Phillies,MostlyClear,75°,3.6 mph,None,NYM,PHI,0,2025-9-11,0,0
-7,Angels  @  Mariners,PartlyCloudy,71°,2.1 mph,None,LAA,SEA,0,2025-9-11,1,0
-8,Rockies  @  Padres,MostlyClear,72°,7.3 mph,"L to R, Weak",COL,SD,0,2025-9-11,0,0
+0,Pirates  @  Orioles,MostlyCloudy,77°,1.8 mph,None,PIT,BAL,0,2025-9-11,0,0
+1,Rays  @  White Sox,Clear,75°,8.5 mph,"L to R, Weak",TB,CWS,0,2025-9-11,0,0
+2,Astros  @  Blue Jays,Clear,74°,6.2 mph,"Out, Weak",HOU,TOR,0,2025-9-11,1,0
+3,Nationals  @  Marlins,Thunderstorms,80°,3.5 mph,None,WSH,MIA,47,2025-9-11,1,1
+4,Tigers  @  Yankees,Clear,75°,5.3 mph,"L to R, Weak",DET,NYY,0,2025-9-11,0,0
+5,Royals  @  Guardians,Clear,71°,5.3 mph,"In, Weak",KC,CLE,0,2025-9-11,0,0
+6,Mets  @  Phillies,Clear,76°,4.5 mph,None,NYM,PHI,0,2025-9-11,0,0
+7,Angels  @  Mariners,MostlyClear,71°,1.7 mph,None,LAA,SEA,0,2025-9-11,1,0
+8,Rockies  @  Padres,PartlyCloudy,71°,6.9 mph,"L to R, Weak",COL,SD,0,2025-9-11,0,0

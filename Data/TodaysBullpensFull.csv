@@ -18,15 +18,13 @@
 49,MIA,Lake Bachar,669199,R
 50,MIA,Michael Petersen,656848,R
 51,MIA,Ronny Henriquez,678692,R
-53,MIA,Seth Martinez,661527,R
 54,MIA,Tyler Phillips,663969,R
 55,MIA,Valente Bellozo,678368,R
 73,WSH,Clayton Beeter,690925,R
 74,WSH,Cole Henry,669371,R
 77,WSH,Jose A. Ferrer,678606,L
 78,WSH,Konnor Pilkington,663455,L
-79,WSH,Mason Thompson,666168,R
-81,WSH,Orlando Ribalta,687377,R
+80,WSH,Mason Thompson,666168,R
 82,WSH,PJ Poulin,676571,L
 83,WSH,Shinnosuke Ogasawara,829272,L
 86,PHI,David Robertson,502085,R
@@ -84,9 +82,11 @@
 180,CLE,Zak Kent,687849,R
 182,TB,Bryan Baker,641329,R
 185,TB,Edwin Uceta,670955,R
-186,TB,Garrett Cleavinger,664076,L
-187,TB,Griffin Jax,643377,R
-190,TB,Kevin Kelly,687330,R
+186,TB,Eric Orze,679358,R
+187,TB,Garrett Cleavinger,664076,L
+188,TB,Griffin Jax,643377,R
+190,TB,Joey Gerber,680702,R
+191,TB,Kevin Kelly,687330,R
 192,TB,Pete Fairbanks,664126,R
 251,SEA,Andres Munoz,662253,R
 254,SEA,Caleb Ferguson,657571,L
@@ -95,7 +95,6 @@
 258,SEA,Gabe Speier,642100,L
 260,SEA,Jose Castillo,620454,L
 264,SEA,Matt Brash,666374,R
-265,HOU,AJ Blubaugh,805123,R
 267,HOU,Bryan King,687911,L
 268,HOU,Craig Kimbrel,518886,R
 270,HOU,Enyel De Los Santos,660853,R
