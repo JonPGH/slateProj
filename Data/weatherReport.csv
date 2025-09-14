@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rays  @  Cubs,Cloudy,74°,5.2 mph,"R to L, Weak",TB,CHC,52,2025-9-13,0,0
-1,Orioles  @  Blue Jays,Cloudy,72°,5.7 mph,"Out, Weak",BAL,TOR,0,2025-9-13,1,0
-2,Pirates  @  Nationals,MostlyClear,83°,3.2 mph,None,PIT,WSH,0,2025-9-13,0,0
-3,Yankees  @  Red Sox,MostlyCloudy,75°,6.6 mph,"Out, Weak",NYY,BOS,0,2025-9-13,0,0
-4,Tigers  @  Marlins,MostlyCloudy,83°,7.1 mph,"L to R, Weak",DET,MIA,40,2025-9-13,1,1
-5,Rangers  @  Mets,MostlyClear,77°,10.0 mph,"Out, Strong",TEX,NYM,0,2025-9-13,0,0
-6,Royals  @  Phillies,PartlyCloudy,80°,5.7 mph,"Out, Weak",KC,PHI,0,2025-9-13,0,0
-7,White Sox  @  Guardians,Cloudy,71°,5.6 mph,"In, Weak",CWS,CLE,0,2025-9-13,0,0
-8,Diamondbacks  @  Twins,MostlyClear,82°,8.8 mph,"In, Weak",ARI,MIN,0,2025-9-13,0,0
-9,Astros  @  Braves,MostlyClear,81°,4.1 mph,None,HOU,ATL,0,2025-9-13,0,0
-10,Cardinals  @  Brewers,MostlyClear,69°,4.6 mph,None,STL,MIL,0,2025-9-13,0,0
-11,Rockies  @  Padres,Clear,74°,6.6 mph,"L to R, Weak",COL,SD,0,2025-9-13,0,0
-12,Dodgers  @  Giants,MostlyClear,65°,13.4 mph,"Out, Strong",LAD,SF,0,2025-9-13,0,0
-13,Angels  @  Mariners,MostlyClear,73°,6.5 mph,"Out, Weak",LAA,SEA,0,2025-9-13,1,0
-14,Reds  @  Athletics,Clear,78°,9.5 mph,"Out, Weak",CIN,OAK,0,2025-9-13,0,0
+0,Pirates  @  Nationals,PartlyCloudy,78°,1.5 mph,None,PIT,WSH,0,2025-9-14,0,0
+1,Astros  @  Braves,MostlyClear,81°,1.7 mph,None,HOU,ATL,0,2025-9-14,0,0
+2,Royals  @  Phillies,PartlyCloudy,82°,5.1 mph,"In, Weak",KC,PHI,0,2025-9-14,0,0
+3,Orioles  @  Blue Jays,MostlyClear,75°,5.0 mph,None,BAL,TOR,0,2025-9-14,1,0
+4,White Sox  @  Guardians,Clear,75°,7.7 mph,"In, Weak",CWS,CLE,0,2025-9-14,0,0
+5,Tigers  @  Marlins,MostlyClear,86°,2.6 mph,None,DET,MIA,0,2025-9-14,1,0
+6,Rangers  @  Mets,MostlyClear,80°,4.7 mph,None,TEX,NYM,0,2025-9-14,0,0
+7,Diamondbacks  @  Twins,MostlyCloudy,84°,8.1 mph,"R to L, Weak",ARI,MIN,0,2025-9-14,0,0
+8,Cardinals  @  Brewers,Clear,75°,7.9 mph,"In, Weak",STL,MIL,0,2025-9-14,0,0
+9,Rays  @  Cubs,Clear,75°,7.6 mph,"In, Weak",TB,CHC,0,2025-9-14,0,0
+10,Dodgers  @  Giants,MostlyClear,72°,9.4 mph,"Out, Weak",LAD,SF,0,2025-9-14,0,0
+11,Reds  @  Athletics,Clear,81°,3.4 mph,None,CIN,OAK,0,2025-9-14,0,0
+12,Angels  @  Mariners,Rain,64°,7.5 mph,"Out, Weak",LAA,SEA,61,2025-9-14,1,1
+13,Rockies  @  Padres,MostlyClear,76°,7.6 mph,"L to R, Weak",COL,SD,0,2025-9-14,0,0
+14,Yankees  @  Red Sox,MostlyClear,70°,4.0 mph,None,NYY,BOS,0,2025-9-14,0,0
