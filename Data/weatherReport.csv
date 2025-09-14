@@ -1,14 +1,14 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Pirates  @  Nationals,MostlyClear,78°,1.9 mph,None,PIT,WSH,0,2025-9-14,0,0
+0,Pirates  @  Nationals,MostlyClear,78°,2.5 mph,None,PIT,WSH,0,2025-9-14,0,0
 1,Astros  @  Braves,MostlyClear,81°,0.7 mph,None,HOU,ATL,0,2025-9-14,0,0
-2,Royals  @  Phillies,Clear,82°,5.2 mph,"In, Weak",KC,PHI,0,2025-9-14,0,0
-3,Orioles  @  Blue Jays,MostlyClear,75°,3.3 mph,None,BAL,TOR,0,2025-9-14,1,0
-4,White Sox  @  Guardians,Clear,76°,9.1 mph,"In, Weak",CWS,CLE,0,2025-9-14,0,0
+2,Royals  @  Phillies,Clear,83°,4.6 mph,None,KC,PHI,0,2025-9-14,0,0
+3,Orioles  @  Blue Jays,PartlyCloudy,74°,3.3 mph,None,BAL,TOR,0,2025-9-14,1,0
+4,White Sox  @  Guardians,Clear,76°,8.3 mph,"In, Weak",CWS,CLE,0,2025-9-14,0,0
 5,Tigers  @  Marlins,MostlyClear,86°,2.1 mph,None,DET,MIA,0,2025-9-14,1,0
-6,Rangers  @  Mets,MostlyClear,80°,4.3 mph,None,TEX,NYM,0,2025-9-14,0,0
-7,Diamondbacks  @  Twins,PartlyCloudy,85°,7.8 mph,"R to L, Weak",ARI,MIN,0,2025-9-14,0,0
-8,Cardinals  @  Brewers,Clear,75°,7.4 mph,"In, Weak",STL,MIL,0,2025-9-14,0,0
-9,Rays  @  Cubs,Clear,75°,6.8 mph,"In, Weak",TB,CHC,0,2025-9-14,0,0
+6,Rangers  @  Mets,MostlyClear,80°,4.2 mph,None,TEX,NYM,0,2025-9-14,0,0
+7,Diamondbacks  @  Twins,PartlyCloudy,85°,7.7 mph,"R to L, Weak",ARI,MIN,0,2025-9-14,0,0
+8,Cardinals  @  Brewers,Clear,74°,7.7 mph,"In, Weak",STL,MIL,0,2025-9-14,0,0
+9,Rays  @  Cubs,Clear,75°,7.2 mph,"In, Weak",TB,CHC,0,2025-9-14,0,0
 10,Dodgers  @  Giants,Clear,70°,10.3 mph,"Out, Strong",LAD,SF,0,2025-9-14,0,0
 11,Reds  @  Athletics,Clear,82°,3.8 mph,None,CIN,OAK,0,2025-9-14,0,0
 12,Angels  @  Mariners,Drizzle,65°,9.3 mph,"Out, Weak",LAA,SEA,42,2025-9-14,1,1
