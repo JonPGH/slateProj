@@ -1,10 +1,10 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Cubs  @  Pirates,MostlyCloudy,80°,5.5 mph,"In, Weak",CHC,PIT,0,2025-9-15,0,0
-1,Braves  @  Nationals,Cloudy,78°,9.1 mph,"R to L, Weak",ATL,WSH,0,2025-9-15,0,0
-2,Blue Jays  @  Rays,Clear,83°,7.7 mph,"L to R, Weak",TOR,TB,0,2025-9-15,0,0
-3,Yankees  @  Twins,MostlyClear,82°,10.2 mph,"R to L, Strong",NYY,MIN,0,2025-9-15,0,0
-4,Orioles  @  White Sox,Clear,76°,7.8 mph,"L to R, Weak",BAL,CWS,0,2025-9-15,0,0
-5,Reds  @  Cardinals,MostlyCloudy,87°,7.0 mph,"In, Weak",CIN,STL,0,2025-9-15,0,0
-6,Rangers  @  Astros,PartlyCloudy,82°,6.3 mph,"Out, Weak",TEX,HOU,0,2025-9-15,1,0
-7,Giants  @  Diamondbacks,Clear,99°,5.8 mph,"L to R, Weak",SF,ARI,0,2025-9-15,1,0
-8,Phillies  @  Dodgers,Clear,77°,3.3 mph,None,PHI,LAD,0,2025-9-15,0,0
+0,Cubs  @  Pirates,PartlyCloudy,80°,5.3 mph,"In, Weak",CHC,PIT,0,2025-9-15,0,0
+1,Braves  @  Nationals,Cloudy,78°,9.3 mph,"R to L, Weak",ATL,WSH,0,2025-9-15,0,0
+2,Blue Jays  @  Rays,Clear,83°,8.0 mph,"L to R, Weak",TOR,TB,0,2025-9-15,0,0
+3,Yankees  @  Twins,MostlyClear,82°,10.3 mph,"R to L, Strong",NYY,MIN,0,2025-9-15,0,0
+4,Orioles  @  White Sox,Clear,76°,7.7 mph,"L to R, Weak",BAL,CWS,0,2025-9-15,0,0
+5,Reds  @  Cardinals,MostlyCloudy,87°,6.7 mph,"In, Weak",CIN,STL,0,2025-9-15,0,0
+6,Rangers  @  Astros,Clear,84°,6.8 mph,"Out, Weak",TEX,HOU,0,2025-9-15,1,0
+7,Giants  @  Diamondbacks,Clear,99°,5.9 mph,"L to R, Weak",SF,ARI,0,2025-9-15,1,0
+8,Phillies  @  Dodgers,Clear,76°,4.1 mph,None,PHI,LAD,0,2025-9-15,0,0
