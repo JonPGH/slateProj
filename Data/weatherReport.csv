@@ -1,10 +1,19 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Cubs  @  Pirates,PartlyCloudy,80°,5.0 mph,None,CHC,PIT,0,2025-9-15,0,0
-1,Braves  @  Nationals,Cloudy,78°,8.1 mph,"R to L, Weak",ATL,WSH,0,2025-9-15,0,0
-2,Blue Jays  @  Rays,Clear,84°,6.5 mph,"L to R, Weak",TOR,TB,0,2025-9-15,0,0
-3,Yankees  @  Twins,MostlyClear,81°,10.4 mph,"R to L, Strong",NYY,MIN,0,2025-9-15,0,0
-4,Orioles  @  White Sox,Clear,76°,9.7 mph,"L to R, Weak",BAL,CWS,0,2025-9-15,0,0
-5,Reds  @  Cardinals,MostlyClear,88°,5.7 mph,"In, Weak",CIN,STL,0,2025-9-15,0,0
-6,Rangers  @  Astros,Clear,83°,7.2 mph,"Out, Weak",TEX,HOU,0,2025-9-15,1,0
-7,Giants  @  Diamondbacks,Clear,99°,6.9 mph,"L to R, Weak",SF,ARI,0,2025-9-15,1,0
-8,Phillies  @  Dodgers,Clear,77°,4.4 mph,None,PHI,LAD,0,2025-9-15,0,0
+0,Braves  @  Nationals,Drizzle,73°,11.8 mph,"In, Strong",ATL,WSH,30,2025-9-16,0,0
+1,Braves  @  Nationals,Drizzle,73°,11.8 mph,"In, Strong",ATL,WSH,25,2025-9-16,0,0
+2,Guardians  @  Tigers,Clear,80°,4.5 mph,None,CLE,DET,0,2025-9-16,0,0
+3,Cubs  @  Pirates,MostlyCloudy,78°,4.8 mph,None,CHC,PIT,0,2025-9-16,0,0
+4,Braves  @  Nationals,Cloudy,70°,10.1 mph,"In, Strong",ATL,WSH,30,2025-9-16,0,0
+5,Braves  @  Nationals,Cloudy,70°,10.1 mph,"In, Strong",ATL,WSH,25,2025-9-16,0,0
+6,Athletics  @  Red Sox,MostlyCloudy,68°,5.7 mph,"R to L, Weak",OAK,BOS,0,2025-9-16,0,0
+7,Padres  @  Mets,Cloudy,71°,8.3 mph,"R to L, Weak",SD,NYM,0,2025-9-16,0,0
+8,Blue Jays  @  Rays,MostlyCloudy,82°,5.7 mph,"L to R, Weak",TOR,TB,0,2025-9-16,0,0
+9,Angels  @  Brewers,MostlyClear,76°,4.5 mph,None,LAA,MIL,0,2025-9-16,0,0
+10,Yankees  @  Twins,MostlyClear,85°,7.2 mph,"R to L, Weak",NYY,MIN,0,2025-9-16,0,0
+11,Mariners  @  Royals,MostlyCloudy,85°,3.8 mph,None,SEA,KC,0,2025-9-16,0,0
+12,Orioles  @  White Sox,PartlyCloudy,76°,6.1 mph,"L to R, Weak",BAL,CWS,0,2025-9-16,0,0
+13,Reds  @  Cardinals,Clear,88°,5.6 mph,"In, Weak",CIN,STL,0,2025-9-16,0,0
+14,Rangers  @  Astros,MostlyClear,86°,5.6 mph,"Out, Weak",TEX,HOU,0,2025-9-16,1,0
+15,Marlins  @  Rockies,MostlyCloudy,69°,8.2 mph,"L to R, Weak",MIA,COL,0,2025-9-16,0,0
+16,Giants  @  Diamondbacks,MostlyClear,99°,6.2 mph,"L to R, Weak",SF,ARI,0,2025-9-16,1,0
+17,Phillies  @  Dodgers,Clear,80°,4.7 mph,None,PHI,LAD,0,2025-9-16,0,0
