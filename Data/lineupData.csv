@@ -1,8 +1,8 @@
 ,Pitcher,Opp,K%,BB%,Brl%,GB%,FB%,xwOBA,PPA,LU
-0,Johan Oviedo,CHC,0.207,0.084,0.085,0.432,0.267,0.3251111111111111,3.8711111111111114,"Michael Busch, Nico Hoerner, Ian Happ, Moises Ballesteros, Dansby Swanson, Pete Crow-Armstrong, Willi Castro, Matt Shaw, Reese McGuire"
-0,Matthew Boyd,PIT,0.277,0.077,0.084,0.418,0.273,0.29577777777777775,3.894444444444444,"Jared Triolo, Tommy Pham, Bryan Reynolds, Nick Gonzales, Andrew McCutchen, Alexander Canario, Nick Yorke, Henry Davis, Cam Devanney"
-0,Andre Pallante,CIN,0.232,0.075,0.083,0.434,0.261,0.31877777777777777,3.8388888888888886,"TJ Friedl, Gavin Lux, Noelvi Marte, Sal Stewart, Will Benson, Jose Trevino, Elly De La Cruz, ""KeBryan Hayes"", Matt McLain"
-0,Brady Singer,STL,0.213,0.071,0.077,0.42,0.263,0.3096666666666667,3.927777777777778,"Brendan Donovan, Ivan Herrera, Alec Burleson, Willson Contreras, Lars Nootbaar, Nolan Arenado, Thomas Saggese, Jimmy Crooks III, Victor Scott II"
+0,Johan Oviedo,CHC,0.21,0.086,0.093,0.423,0.274,0.32966666666666666,3.9111111111111105,"Michael Busch, Nico Hoerner, Ian Happ, Moises Ballesteros, Seiya Suzuki, Pete Crow-Armstrong, Dansby Swanson, Reese McGuire, Matt Shaw"
+0,Matthew Boyd,PIT,0.271,0.079,0.081,0.429,0.269,0.29666666666666663,3.9033333333333338,"Jared Triolo, Nick Gonzales, Tommy Pham, Andrew McCutchen, Joey Bart, Alexander Canario, Nick Yorke, Rafael Flores, Cam Devanney"
+0,Andre Pallante,CIN,0.249,0.073,0.095,0.421,0.276,0.321,3.842222222222222,"Gavin Lux, Noelvi Marte, Will Benson, Austin Hays, Sal Stewart, Elly De La Cruz, Spencer Steer, Jose Trevino, Matt McLain"
+0,Brady Singer,STL,0.244,0.071,0.08,0.411,0.277,0.29600000000000004,3.9555555555555557,"Lars Nootbaar, Ivan Herrera, Alec Burleson, Nolan Arenado, Nolan Gorman, Thomas Saggese, Jimmy Crooks III, Jordan Walker, Victor Scott II"
 0,Martin Perez,BAL,0.263,0.084,0.104,0.427,0.281,0.3222222222222222,3.964444444444444,"Jackson Holliday, Jeremiah Jackson, Gunnar Henderson, Jordan Westburg, ""Tyler ONeill"", Ryan Mountcastle, Dylan Beavers, Coby Mayo, Alex Jackson"
 0,Tyler Wells,CWS,0.215,0.088,0.077,0.392,0.281,0.319,3.9699999999999998,"Chase Meidroth, Kyle Teel, Colson Montgomery, Miguel Vargas, Mike Tauchman, Lenyn Sosa, Andrew Benintendi, Edgar Quero, Brooks Baldwin"
 0,Brandon Pfaadt,SF,0.233,0.075,0.138,0.412,0.303,0.3642222222222223,3.9911111111111115,"Jung Hoo Lee, Willy Adames, Rafael Devers, Matt Chapman, Bryce Eldridge, Heliot Ramos, Patrick Bailey, Casey Schmitt, Drew Gilbert"
