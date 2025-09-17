@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Cubs  @  Pirates,MostlyClear,75°,1.9 mph,None,CHC,PIT,0,2025-9-17,0,0
+0,Cubs  @  Pirates,MostlyClear,75°,1.7 mph,None,CHC,PIT,0,2025-9-17,0,0
 1,Reds  @  Cardinals,Clear,84°,2.2 mph,None,CIN,STL,0,2025-9-17,0,0
-2,Orioles  @  White Sox,Clear,77°,6.9 mph,"L to R, Weak",BAL,CWS,0,2025-9-17,0,0
-3,Giants  @  Diamondbacks,Cloudy,94°,3.8 mph,None,SF,ARI,0,2025-9-17,1,0
-4,Braves  @  Nationals,Drizzle,70°,9.3 mph,"In, Weak",ATL,WSH,35,2025-9-17,0,0
-5,Guardians  @  Tigers,Clear,80°,4.9 mph,None,CLE,DET,0,2025-9-17,0,0
-6,Athletics  @  Red Sox,PartlyCloudy,67°,6.9 mph,"In, Weak",OAK,BOS,0,2025-9-17,0,0
-7,Blue Jays  @  Rays,MostlyCloudy,82°,6.1 mph,"In, Weak",TOR,TB,34,2025-9-17,0,0
-8,Padres  @  Mets,Cloudy,68°,8.0 mph,"In, Weak",SD,NYM,21,2025-9-17,0,0
-9,Yankees  @  Twins,Cloudy,79°,4.6 mph,None,NYY,MIN,49,2025-9-17,0,0
-10,Mariners  @  Royals,MostlyCloudy,82°,3.4 mph,None,SEA,KC,49,2025-9-17,0,0
-11,Angels  @  Brewers,MostlyClear,79°,5.0 mph,"In, Weak",LAA,MIL,0,2025-9-17,0,0
-12,Rangers  @  Astros,MostlyCloudy,84°,6.4 mph,"Out, Weak",TEX,HOU,0,2025-9-17,1,0
-13,Marlins  @  Rockies,MostlyCloudy,65°,7.6 mph,"In, Weak",MIA,COL,53,2025-9-17,0,0
-14,Phillies  @  Dodgers,Cloudy,76°,2.7 mph,None,PHI,LAD,0,2025-9-17,0,0
+2,Orioles  @  White Sox,Clear,78°,7.0 mph,"L to R, Weak",BAL,CWS,0,2025-9-17,0,0
+3,Giants  @  Diamondbacks,Cloudy,95°,3.4 mph,None,SF,ARI,0,2025-9-17,1,0
+4,Braves  @  Nationals,Drizzle,70°,8.9 mph,"In, Weak",ATL,WSH,31,2025-9-17,0,0
+5,Guardians  @  Tigers,Clear,80°,5.0 mph,None,CLE,DET,0,2025-9-17,0,0
+6,Athletics  @  Red Sox,MostlyCloudy,67°,6.7 mph,"In, Weak",OAK,BOS,0,2025-9-17,0,0
+7,Blue Jays  @  Rays,MostlyCloudy,80°,7.9 mph,"In, Weak",TOR,TB,19,2025-9-17,0,0
+8,Padres  @  Mets,Cloudy,69°,8.4 mph,"In, Weak",SD,NYM,17,2025-9-17,0,0
+9,Yankees  @  Twins,Cloudy,76°,8.8 mph,"L to R, Weak",NYY,MIN,47,2025-9-17,0,0
+10,Mariners  @  Royals,MostlyCloudy,84°,4.5 mph,None,SEA,KC,44,2025-9-17,0,0
+11,Angels  @  Brewers,Clear,79°,4.6 mph,None,LAA,MIL,0,2025-9-17,0,0
+12,Rangers  @  Astros,MostlyCloudy,84°,6.6 mph,"Out, Weak",TEX,HOU,0,2025-9-17,1,0
+13,Marlins  @  Rockies,MostlyCloudy,66°,6.7 mph,"In, Weak",MIA,COL,53,2025-9-17,0,0
+14,Phillies  @  Dodgers,Cloudy,76°,3.0 mph,None,PHI,LAD,0,2025-9-17,0,0
