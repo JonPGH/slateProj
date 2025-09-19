@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Athletics  @  Pirates,PartlyCloudy,80°,5.4 mph,"L to R, Weak",OAK,PIT,0,2025-9-19,0,0
-1,Cubs  @  Reds,MostlyClear,86°,2.3 mph,None,CHC,CIN,0,2025-9-19,0,0
-2,Braves  @  Tigers,Clear,76°,8.7 mph,"L to R, Weak",ATL,DET,0,2025-9-19,0,0
-3,Yankees  @  Orioles,MostlyClear,80°,2.5 mph,None,NYY,BAL,0,2025-9-19,0,0
-4,Nationals  @  Mets,Clear,78°,6.0 mph,"L to R, Weak",WSH,NYM,0,2025-9-19,0,0
-5,Red Sox  @  Rays,MostlyClear,86°,6.2 mph,"L to R, Weak",BOS,TB,0,2025-9-19,0,0
-6,Blue Jays  @  Royals,MostlyClear,79°,2.5 mph,None,TOR,KC,0,2025-9-19,0,0
-7,Padres  @  White Sox,Cloudy,78°,4.3 mph,None,SD,CWS,0,2025-9-19,0,0
-8,Marlins  @  Rangers,MostlyCloudy,87°,6.6 mph,"R to L, Weak",MIA,TEX,0,2025-9-19,1,0
-9,Angels  @  Rockies,MostlyCloudy,77°,5.1 mph,"R to L, Weak",LAA,COL,0,2025-9-19,0,0
+0,Athletics  @  Pirates,PartlyCloudy,80°,5.7 mph,"L to R, Weak",OAK,PIT,0,2025-9-19,0,0
+1,Cubs  @  Reds,MostlyClear,86°,2.2 mph,None,CHC,CIN,0,2025-9-19,0,0
+2,Braves  @  Tigers,Clear,76°,9.1 mph,"L to R, Weak",ATL,DET,0,2025-9-19,0,0
+3,Yankees  @  Orioles,MostlyClear,80°,3.4 mph,None,NYY,BAL,0,2025-9-19,0,0
+4,Nationals  @  Mets,Clear,79°,5.4 mph,"L to R, Weak",WSH,NYM,0,2025-9-19,0,0
+5,Red Sox  @  Rays,Clear,86°,5.4 mph,"L to R, Weak",BOS,TB,0,2025-9-19,0,0
+6,Blue Jays  @  Royals,MostlyClear,79°,2.3 mph,None,TOR,KC,0,2025-9-19,0,0
+7,Padres  @  White Sox,Cloudy,77°,5.7 mph,"In, Weak",SD,CWS,35,2025-9-19,0,0
+8,Marlins  @  Rangers,MostlyCloudy,87°,6.4 mph,"R to L, Weak",MIA,TEX,0,2025-9-19,1,0
+9,Angels  @  Rockies,Cloudy,76°,5.3 mph,"R to L, Weak",LAA,COL,0,2025-9-19,0,0
 10,Mariners  @  Astros,Clear,85°,7.8 mph,"Out, Weak",SEA,HOU,0,2025-9-19,1,0
-11,Guardians  @  Twins,Drizzle,68°,5.0 mph,None,CLE,MIN,0,2025-9-19,0,0
-12,Brewers  @  Cardinals,Clear,77°,3.2 mph,None,MIL,STL,0,2025-9-19,0,0
-13,Phillies  @  Diamondbacks,Clear,92°,4.4 mph,None,PHI,ARI,0,2025-9-19,1,0
-14,Giants  @  Dodgers,Clear,74°,4.8 mph,None,SF,LAD,0,2025-9-19,0,0
+11,Guardians  @  Twins,Rain,69°,4.5 mph,None,CLE,MIN,0,2025-9-19,0,0
+12,Brewers  @  Cardinals,MostlyClear,77°,4.2 mph,None,MIL,STL,0,2025-9-19,0,0
+13,Phillies  @  Diamondbacks,Clear,92°,4.2 mph,None,PHI,ARI,0,2025-9-19,1,0
+14,Giants  @  Dodgers,Clear,74°,4.6 mph,None,SF,LAD,0,2025-9-19,0,0
