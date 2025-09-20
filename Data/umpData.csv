@@ -1,6 +1,10 @@
 ,HomeTeam,Umpire,Today,K Boost,BB Boost,UmpK,UmpBB
-1,CIN,David Rackley,CHC @ CIN,0.97,1.0,0.985,1.0
-2,MIN,Mark Ripperger,CLE @ MIN,1.04,0.97,1.02,0.985
-3,DET,Ben May,ATL @ DET,0.99,0.94,0.995,0.97
-4,NYM,Jeremie Rehak,WSH @ NYM,1.04,0.98,1.02,0.99
-5,PIT,Emil Jimenez,ATH @ PIT,1.02,0.96,1.01,0.98
+1,COL,Chad Fairchild,LAA @ COL,0.97,1.02,0.985,1.01
+2,TB,Jim Wolf,BOS @ TB,1.03,1.08,1.0150000000000001,1.04
+3,CIN,David Rackley,CHC @ CIN,0.97,1.0,0.985,1.0
+4,MIN,Mark Ripperger,CLE @ MIN,1.04,0.97,1.02,0.985
+5,DET,Ben May,ATL @ DET,0.99,0.94,0.995,0.97
+6,TEX,Stu Scheurwater,MIA @ TEX,0.93,0.94,0.9650000000000001,0.97
+7,NYM,Jeremie Rehak,WSH @ NYM,1.04,0.98,1.02,0.99
+8,HOU,Shane Livensparger,SEA @ HOU,0.96,1.03,0.98,1.0150000000000001
+9,PIT,Emil Jimenez,ATH @ PIT,1.02,0.96,1.01,0.98
