@@ -1,8 +1,8 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Athletics  @  Pirates,MostlyClear,81°,8.7 mph,"R to L, Weak",OAK,PIT,0,2025-9-21,0,0
-1,Yankees  @  Orioles,Cloudy,72°,7.2 mph,"R to L, Weak",NYY,BAL,0,2025-9-21,0,0
-2,Nationals  @  Mets,Cloudy,72°,6.4 mph,"R to L, Weak",WSH,NYM,0,2025-9-21,0,0
-3,Braves  @  Tigers,Cloudy,78°,2.9 mph,None,ATL,DET,4,2025-9-21,0,0
+0,Braves  @  Tigers,Cloudy,78°,2.9 mph,None,ATL,DET,4,2025-9-21,0,0
+1,Athletics  @  Pirates,MostlyClear,81°,8.7 mph,"R to L, Weak",OAK,PIT,0,2025-9-21,0,0
+2,Yankees  @  Orioles,Cloudy,72°,7.2 mph,"R to L, Weak",NYY,BAL,0,2025-9-21,0,0
+3,Nationals  @  Mets,Cloudy,72°,6.4 mph,"R to L, Weak",WSH,NYM,0,2025-9-21,0,0
 4,Cubs  @  Reds,Cloudy,83°,9.4 mph,"R to L, Weak",CHC,CIN,0,2025-9-21,0,0
 5,Guardians  @  Twins,MostlyClear,72°,5.6 mph,"Out, Weak",CLE,MIN,0,2025-9-21,0,0
 6,Blue Jays  @  Royals,Cloudy,78°,5.0 mph,"Out, Weak",TOR,KC,0,2025-9-21,0,0
