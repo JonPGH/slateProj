@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Athletics  @  Pirates,MostlyClear,81°,7.4 mph,"R to L, Weak",OAK,PIT,0,2025-9-21,0,0
-1,Yankees  @  Orioles,MostlyCloudy,73°,6.2 mph,"R to L, Weak",NYY,BAL,0,2025-9-21,0,0
-2,Nationals  @  Mets,MostlyCloudy,71°,6.9 mph,"R to L, Weak",WSH,NYM,0,2025-9-21,0,0
-3,Braves  @  Tigers,PartlyCloudy,79°,6.6 mph,"In, Weak",ATL,DET,3,2025-9-21,0,0
-4,Cubs  @  Reds,MostlyCloudy,83°,7.5 mph,"R to L, Weak",CHC,CIN,0,2025-9-21,0,0
-5,Guardians  @  Twins,PartlyCloudy,72°,5.1 mph,"Out, Weak",CLE,MIN,0,2025-9-21,0,0
-6,Blue Jays  @  Royals,Cloudy,76°,4.3 mph,None,TOR,KC,40,2025-9-21,0,0
-7,Padres  @  White Sox,MostlyCloudy,78°,6.6 mph,"R to L, Weak",SD,CWS,0,2025-9-21,0,0
-8,Brewers  @  Cardinals,MostlyCloudy,80°,8.1 mph,"Out, Weak",MIL,STL,0,2025-9-21,0,0
-9,Marlins  @  Rangers,MostlyClear,90°,9.4 mph,"Out, Weak",MIA,TEX,0,2025-9-21,1,0
-10,Angels  @  Rockies,PartlyCloudy,78°,2.0 mph,None,LAA,COL,0,2025-9-21,0,0
-11,Giants  @  Dodgers,MostlyCloudy,81°,4.4 mph,None,SF,LAD,0,2025-9-21,0,0
-12,Phillies  @  Diamondbacks,MostlyCloudy,96°,3.1 mph,None,PHI,ARI,0,2025-9-21,1,0
-13,Mariners  @  Astros,PartlyCloudy,84°,9.1 mph,"Out, Weak",SEA,HOU,8,2025-9-21,1,0
-14,Red Sox  @  Rays,MostlyCloudy,87°,7.3 mph,"In, Weak",BOS,TB,0,2025-9-21,0,0
+0,Athletics  @  Pirates,MostlyClear,80°,8.7 mph,"R to L, Weak",OAK,PIT,0,2025-9-21,0,0
+1,Yankees  @  Orioles,Cloudy,73°,7.0 mph,"R to L, Weak",NYY,BAL,0,2025-9-21,0,0
+2,Nationals  @  Mets,Cloudy,72°,6.8 mph,"R to L, Weak",WSH,NYM,0,2025-9-21,0,0
+3,Braves  @  Tigers,MostlyCloudy,78°,5.2 mph,"R to L, Weak",ATL,DET,3,2025-9-21,0,0
+4,Cubs  @  Reds,MostlyCloudy,83°,9.2 mph,"R to L, Weak",CHC,CIN,0,2025-9-21,0,0
+5,Guardians  @  Twins,PartlyCloudy,72°,4.8 mph,None,CLE,MIN,0,2025-9-21,0,0
+6,Blue Jays  @  Royals,Cloudy,78°,5.0 mph,"Out, Weak",TOR,KC,50,2025-9-21,0,0
+7,Padres  @  White Sox,MostlyCloudy,78°,7.8 mph,"R to L, Weak",SD,CWS,0,2025-9-21,0,0
+8,Brewers  @  Cardinals,Cloudy,81°,7.8 mph,"Out, Weak",MIL,STL,0,2025-9-21,0,0
+9,Marlins  @  Rangers,MostlyClear,89°,10.0 mph,"R to L, Strong",MIA,TEX,0,2025-9-21,1,0
+10,Angels  @  Rockies,PartlyCloudy,78°,2.6 mph,None,LAA,COL,0,2025-9-21,0,0
+11,Giants  @  Dodgers,MostlyCloudy,81°,4.7 mph,None,SF,LAD,0,2025-9-21,0,0
+12,Phillies  @  Diamondbacks,MostlyCloudy,95°,4.7 mph,None,PHI,ARI,0,2025-9-21,1,0
+13,Mariners  @  Astros,PartlyCloudy,84°,8.7 mph,"Out, Weak",SEA,HOU,28,2025-9-21,1,1
+14,Red Sox  @  Rays,MostlyCloudy,86°,6.5 mph,"In, Weak",BOS,TB,0,2025-9-21,0,0
