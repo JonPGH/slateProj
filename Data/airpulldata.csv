@@ -13,7 +13,7 @@
 11,Alan Roden,702176.0,102,153.0,8,0.052,0.078,Hitters,,
 12,Alan Trejo,676701.0,35,43.0,7,0.163,0.2,Hitters,,
 13,Alec Bohm,664761.0,366,478.0,26,0.054,0.071,Hitters,,
-14,Alec Burleson,676475.0,407,524.0,46,0.088,0.113,Hitters,,
+14,Alec Burleson,676475.0,411,529.0,46,0.087,0.112,Hitters,,
 15,Alejandro Kirk,672386.0,383,484.0,39,0.081,0.102,Hitters,,
 16,Alejandro Osuna,696030.0,106,156.0,9,0.058,0.085,Hitters,,
 17,Alek Thomas,677950.0,311,453.0,29,0.064,0.093,Hitters,,
@@ -25,12 +25,12 @@
 23,Alexander Canario,672744.0,133,223.0,21,0.094,0.158,Hitters,,
 24,Ali Sanchez,645305.0,17,23.0,4,0.174,0.235,Hitters,,
 25,Amed Rosario,642708.0,150,187.0,20,0.107,0.133,Hitters,,
-26,Andres Chaparro,665953.0,40,66.0,7,0.106,0.175,Hitters,,
+26,Andres Chaparro,665953.0,45,71.0,9,0.127,0.2,Hitters,,
 27,Andres Gimenez,665926.0,256,353.0,36,0.102,0.141,Hitters,,
 28,Andrew Benintendi,643217.0,344,468.0,78,0.167,0.227,Hitters,,
 29,Andrew Knizner,668800.0,64,81.0,9,0.111,0.141,Hitters,,
 30,Andrew McCutchen,457705.0,350,529.0,59,0.112,0.169,Hitters,,
-31,Andrew Vaughn,683734.0,321,428.0,48,0.112,0.15,Hitters,,
+31,Andrew Vaughn,683734.0,323,432.0,48,0.111,0.149,Hitters,,
 32,Andruw Monasterio,655316.0,89,127.0,19,0.15,0.213,Hitters,,
 33,Andy Ibanez,628451.0,140,177.0,29,0.164,0.207,Hitters,,
 34,Andy Pages,681624.0,438,599.0,68,0.114,0.155,Hitters,,
@@ -55,7 +55,7 @@
 53,Billy McKinney,641856.0,6,8.0,0,0.0,0.0,Hitters,,
 54,Blaine Crim,688760.0,27,49.0,4,0.082,0.148,Hitters,,
 55,Blake Dunn,694362.0,35,75.0,3,0.04,0.086,Hitters,,
-56,Blake Perkins,663368.0,102,164.0,10,0.061,0.098,Hitters,,
+56,Blake Perkins,663368.0,103,165.0,10,0.061,0.097,Hitters,,
 57,Blake Sabol,666165.0,10,18.0,1,0.056,0.1,Hitters,,
 58,Blaze Alexander,677942.0,141,249.0,18,0.072,0.128,Hitters,,
 59,Bo Bichette,666182.0,494,626.0,60,0.096,0.121,Hitters,,
@@ -63,7 +63,7 @@
 61,Bobby Dalbec,666915.0,12,21.0,1,0.048,0.083,Hitters,,
 62,Bobby Seymour,676044.0,38,66.0,5,0.076,0.132,Hitters,,
 63,Bobby Witt Jr.,677951.0,478,651.0,65,0.1,0.136,Hitters,,
-64,Brady House,691781.0,181,260.0,17,0.065,0.094,Hitters,,
+64,Brady House,691781.0,182,264.0,17,0.064,0.093,Hitters,,
 65,Brandon Lockridge,663604.0,103,148.0,6,0.041,0.058,Hitters,,
 66,Brandon Lowe,664040.0,354,536.0,68,0.127,0.192,Hitters,,
 67,Brandon Marsh,669016.0,269,407.0,37,0.091,0.138,Hitters,,
@@ -81,26 +81,26 @@
 79,Brewer Hicklen,676551.0,2,4.0,0,0.0,0.0,Hitters,,
 80,Brian Navarreto,640459.0,9,11.0,0,0.0,0.0,Hitters,,
 81,Brice Matthews,694728.0,19,40.0,5,0.125,0.263,Hitters,,
-82,Brice Turang,668930.0,427,632.0,25,0.04,0.059,Hitters,,
+82,Brice Turang,668930.0,429,637.0,26,0.041,0.061,Hitters,,
 83,Brooks Baldwin,681460.0,207,307.0,30,0.098,0.145,Hitters,,
 84,Brooks Lee,686797.0,381,504.0,53,0.105,0.139,Hitters,,
 85,Bryan De La Cruz,650559.0,29,50.0,4,0.08,0.138,Hitters,,
 86,Bryan Ramos,682868.0,8,12.0,1,0.083,0.125,Hitters,,
 87,Bryan Reynolds,668804.0,399,629.0,51,0.081,0.128,Hitters,,
-88,Bryce Eldridge,805811.0,8,18.0,1,0.056,0.125,Hitters,,
+88,Bryce Eldridge,805811.0,10,22.0,1,0.045,0.1,Hitters,,
 89,Bryce Harper,547180.0,373,558.0,52,0.093,0.139,Hitters,,
-90,Bryce Johnson,669369.0,47,68.0,6,0.088,0.128,Hitters,,
+90,Bryce Johnson,669369.0,51,73.0,6,0.082,0.118,Hitters,,
 91,Bryce Teodosio,669326.0,84,134.0,6,0.045,0.071,Hitters,,
 92,Bryson Stott,681082.0,399,538.0,46,0.086,0.115,Hitters,,
 93,Buddy Kennedy,671083.0,21,32.0,7,0.219,0.333,Hitters,,
 94,Byron Buxton,621439.0,332,515.0,80,0.155,0.241,Hitters,,
-95,C.J. Abrams,682928.0,443,608.0,74,0.122,0.167,Hitters,,
+95,C.J. Abrams,682928.0,445,613.0,74,0.121,0.166,Hitters,,
 96,C.J. Kayfus,692216.0,79,127.0,13,0.102,0.165,Hitters,,
 97,C.J. Stubbs,667690.0,3,3.0,0,0.0,0.0,Hitters,,
 98,CJ Alexander,680769.0,9,17.0,5,0.294,0.556,Hitters,,
 99,Cal Raleigh,663728.0,396,662.0,125,0.189,0.316,Hitters,,
 100,Cal Stevenson,670276.0,6,8.0,0,0.0,0.0,Hitters,,
-101,Caleb Durbin,702332.0,385,485.0,65,0.134,0.169,Hitters,,
+101,Caleb Durbin,702332.0,390,490.0,65,0.133,0.167,Hitters,,
 102,Cam Devanney,687478.0,14,35.0,6,0.171,0.429,Hitters,,
 103,Cam Smith,701358.0,297,479.0,30,0.063,0.101,Hitters,,
 104,Carlos Correa,621043.0,412,566.0,55,0.097,0.133,Hitters,,
@@ -112,7 +112,7 @@
 110,Carson Williams,700246.0,48,86.0,8,0.093,0.167,Hitters,,
 111,Carter Jensen,695600.0,32,46.0,8,0.174,0.25,Hitters,,
 112,Carter Kieboom,666198.0,2,3.0,0,0.0,0.0,Hitters,,
-113,Casey Schmitt,669477.0,220,331.0,52,0.157,0.236,Hitters,,
+113,Casey Schmitt,669477.0,223,335.0,52,0.155,0.233,Hitters,,
 114,Cavan Biggio,624415.0,50,82.0,12,0.146,0.24,Hitters,,
 115,Ceddanne Rafaela,678882.0,417,564.0,60,0.106,0.144,Hitters,,
 116,Cedric Mullins II,656775.0,321,493.0,75,0.152,0.234,Hitters,,
@@ -129,7 +129,7 @@
 127,Christian Moore,695681.0,89,161.0,6,0.037,0.067,Hitters,,
 128,Christian Vazquez,543877.0,147,199.0,24,0.121,0.163,Hitters,,
 129,Christian Walker,572233.0,394,618.0,68,0.11,0.173,Hitters,,
-130,Christian Yelich,592885.0,389,610.0,26,0.043,0.067,Hitters,,
+130,Christian Yelich,592885.0,392,615.0,26,0.042,0.066,Hitters,,
 131,Christopher Morel,666624.0,162,295.0,36,0.122,0.222,Hitters,,
 132,Chuckie Robinson,642020.0,2,2.0,0,0.0,0.0,Hitters,,
 133,Coby Mayo,691723.0,169,276.0,37,0.134,0.219,Hitters,,
@@ -179,23 +179,23 @@
 177,Dominic Smith,642086.0,166,225.0,23,0.102,0.139,Hitters,,
 178,Donovan Solano,456781.0,127,176.0,18,0.102,0.142,Hitters,,
 179,Donovan Walton,622268.0,8,9.0,0,0.0,0.0,Hitters,,
-180,Drake Baldwin,686948.0,319,420.0,38,0.09,0.119,Hitters,,
+180,Drake Baldwin,686948.0,321,425.0,39,0.092,0.121,Hitters,,
 181,Drew Avans,682183.0,12,18.0,1,0.056,0.083,Hitters,,
-182,Drew Gilbert,687551.0,71,94.0,13,0.138,0.183,Hitters,,
+182,Drew Gilbert,687551.0,73,97.0,13,0.134,0.178,Hitters,,
 183,Drew Millas,686452.0,43,55.0,5,0.091,0.116,Hitters,,
 184,Drew Romo,691011.0,0,3.0,0,0.0,,Hitters,,
 185,Drew Waters,671221.0,146,219.0,20,0.091,0.137,Hitters,,
 186,Dustin Harris,687957.0,27,43.0,5,0.116,0.185,Hitters,,
 187,Dylan Beavers,687637.0,63,114.0,15,0.132,0.238,Hitters,,
 188,Dylan Carlson,666185.0,163,238.0,25,0.105,0.153,Hitters,,
-189,Dylan Crews,686611.0,203,303.0,21,0.069,0.103,Hitters,,
+189,Dylan Crews,686611.0,207,307.0,23,0.075,0.111,Hitters,,
 190,Dylan Moore,664238.0,137,237.0,27,0.114,0.197,Hitters,,
 191,Eddie Rosario,592696.0,6,8.0,0,0.0,0.0,Hitters,,
 192,Edgar Quero,700337.0,276,378.0,17,0.045,0.062,Hitters,,
 193,Edmundo Sosa,624641.0,180,248.0,24,0.097,0.133,Hitters,,
 194,Edouard Julien,666397.0,116,196.0,12,0.061,0.103,Hitters,,
 195,Eli White,642201.0,186,266.0,23,0.086,0.124,Hitters,,
-196,Elias Diaz,553869.0,185,279.0,31,0.111,0.168,Hitters,,
+196,Elias Diaz,553869.0,185,281.0,31,0.11,0.168,Hitters,,
 197,Elly De La Cruz,682829.0,431,663.0,37,0.056,0.086,Hitters,,
 198,Emmanuel Rivera,656896.0,96,127.0,8,0.063,0.083,Hitters,,
 199,Endy Rodriguez,682848.0,38,57.0,8,0.14,0.211,Hitters,,
@@ -214,7 +214,7 @@
 212,Francisco Alvarez,682626.0,163,258.0,12,0.047,0.074,Hitters,,
 213,Francisco Lindor,596019.0,500,702.0,98,0.14,0.196,Hitters,,
 214,Freddie Freeman,518692.0,420,601.0,71,0.118,0.169,Hitters,,
-215,Freddy Fermin,666023.0,251,328.0,24,0.073,0.096,Hitters,,
+215,Freddy Fermin,666023.0,253,330.0,24,0.073,0.095,Hitters,,
 216,Gabriel Arias,672356.0,265,448.0,27,0.06,0.102,Hitters,,
 217,Gabriel Moreno,672515.0,213,283.0,28,0.099,0.131,Hitters,,
 218,Gage Workman,669398.0,9,17.0,1,0.059,0.111,Hitters,,
@@ -222,7 +222,7 @@
 220,Garrett Mitchell,669003.0,45,78.0,4,0.051,0.089,Hitters,,
 221,Gary Sanchez,596142.0,65,101.0,14,0.139,0.215,Hitters,,
 222,Gavin Lux,666158.0,318,485.0,49,0.101,0.154,Hitters,,
-223,Gavin Sheets,657757.0,369,519.0,75,0.145,0.203,Hitters,,
+223,Gavin Sheets,657757.0,373,524.0,75,0.143,0.201,Hitters,,
 224,George Springer,543807.0,373,556.0,65,0.117,0.174,Hitters,,
 225,George Valera,671655.0,19,34.0,2,0.059,0.105,Hitters,,
 226,Geraldo Perdomo,672695.0,514,691.0,81,0.117,0.158,Hitters,,
@@ -236,11 +236,11 @@
 234,Griffin Conine,665052.0,45,71.0,4,0.056,0.089,Hitters,,
 235,Gunnar Henderson,683002.0,427,620.0,50,0.081,0.117,Hitters,,
 236,Gustavo Campero,672569.0,44,66.0,6,0.091,0.136,Hitters,,
-237,Ha-Seong Kim,673490.0,115,166.0,25,0.151,0.217,Hitters,,
+237,Ha-Seong Kim,673490.0,119,171.0,27,0.158,0.227,Hitters,,
 238,Harrison Bader,664056.0,301,479.0,63,0.132,0.209,Hitters,,
 239,Harry Ford,695670.0,2,4.0,0,0.0,0.0,Hitters,,
 240,Hayden Senger,663584.0,52,78.0,5,0.064,0.096,Hitters,,
-241,Heliot Ramos,671218.0,445,665.0,48,0.072,0.108,Hitters,,
+241,Heliot Ramos,671218.0,449,670.0,49,0.073,0.109,Hitters,,
 242,Henry Davis,680779.0,173,271.0,33,0.122,0.191,Hitters,,
 243,Heriberto Hernandez,681715.0,172,274.0,33,0.12,0.192,Hitters,,
 244,Heston Kjerstad,677008.0,112,167.0,10,0.06,0.089,Hitters,,
@@ -250,10 +250,10 @@
 248,Hyeseong Kim,808975.0,105,161.0,10,0.062,0.095,Hitters,,
 249,Ian Happ,664023.0,410,638.0,71,0.111,0.173,Hitters,,
 250,Ildemaro Vargas,545121.0,84,99.0,10,0.101,0.119,Hitters,,
-251,Isaac Collins,686555.0,282,431.0,50,0.116,0.177,Hitters,,
+251,Isaac Collins,686555.0,282,434.0,50,0.115,0.177,Hitters,,
 252,Isaac Paredes,670623.0,291,421.0,95,0.226,0.326,Hitters,,
 253,Isiah Kiner-Falefa,643396.0,356,454.0,31,0.068,0.087,Hitters,,
-254,Ivan Herrera,671056.0,291,427.0,32,0.075,0.11,Hitters,,
+254,Ivan Herrera,671056.0,294,431.0,32,0.074,0.109,Hitters,,
 255,J.C. Escarra,641555.0,72,98.0,12,0.122,0.167,Hitters,,
 256,J.D. Davis,605204.0,6,9.0,0,0.0,0.0,Hitters,,
 257,J.P. Crawford,641487.0,445,636.0,61,0.096,0.137,Hitters,,
@@ -264,19 +264,19 @@
 262,Jack Leiter,683004.0,0,1.0,0,0.0,,Hitters,,
 263,Jack Suwinski,669261.0,83,162.0,16,0.099,0.193,Hitters,,
 264,Jack Winkler,676466.0,12,16.0,3,0.188,0.25,Hitters,,
-265,Jackson Chourio,694192.0,417,559.0,49,0.088,0.118,Hitters,,
+265,Jackson Chourio,694192.0,421,565.0,50,0.088,0.119,Hitters,,
 266,Jackson Holliday,702616.0,434,631.0,39,0.062,0.09,Hitters,,
-267,Jackson Merrill,701538.0,323,459.0,39,0.085,0.121,Hitters,,
+267,Jackson Merrill,701538.0,326,464.0,39,0.084,0.12,Hitters,,
 268,Jacob Amaya,676070.0,54,73.0,3,0.041,0.056,Hitters,,
 269,Jacob Hurtubise,674441.0,6,15.0,1,0.067,0.167,Hitters,,
 270,Jacob Melton,689200.0,39,74.0,1,0.014,0.026,Hitters,,
 271,Jacob Stallings,607732.0,80,129.0,12,0.093,0.15,Hitters,,
 272,Jacob Wilson,805779.0,437,503.0,55,0.109,0.126,Hitters,,
-273,Jacob Young,696285.0,260,350.0,14,0.04,0.054,Hitters,,
+273,Jacob Young,696285.0,264,354.0,15,0.042,0.057,Hitters,,
 274,Jahmai Jones,663330.0,89,138.0,16,0.116,0.18,Hitters,,
-275,Jake Bauers,641343.0,117,204.0,16,0.078,0.137,Hitters,,
+275,Jake Bauers,641343.0,118,205.0,17,0.083,0.144,Hitters,,
 276,Jake Burger,669394.0,257,362.0,28,0.077,0.109,Hitters,,
-277,Jake Cronenworth,630105.0,313,496.0,45,0.091,0.144,Hitters,,
+277,Jake Cronenworth,630105.0,315,501.0,45,0.09,0.143,Hitters,,
 278,Jake Fraley,641584.0,142,216.0,33,0.153,0.232,Hitters,,
 279,Jake Mangum,663968.0,326,405.0,17,0.042,0.052,Hitters,,
 280,Jake McCarthy,664983.0,158,207.0,15,0.072,0.095,Hitters,,
@@ -297,7 +297,7 @@
 295,Jazz Chisholm,665862.0,307,511.0,61,0.119,0.199,Hitters,,
 296,Jeff McNeil,643446.0,337,439.0,73,0.166,0.217,Hitters,,
 297,Jeimer Candelario,600869.0,53,91.0,10,0.11,0.189,Hitters,,
-298,Jerar Encarnacion,666464.0,36,50.0,6,0.12,0.167,Hitters,,
+298,Jerar Encarnacion,666464.0,38,54.0,6,0.111,0.158,Hitters,,
 299,Jeremiah Jackson,669236.0,117,171.0,8,0.047,0.068,Hitters,,
 300,Jeremy Pena,665161.0,403,541.0,69,0.128,0.171,Hitters,,
 301,Jesse Winker,608385.0,51,79.0,13,0.165,0.255,Hitters,,
@@ -311,7 +311,7 @@
 309,Joc Pederson,592626.0,191,290.0,38,0.131,0.199,Hitters,,
 310,Joey Bart,663698.0,186,321.0,25,0.078,0.134,Hitters,,
 311,Joey Loperfido,694388.0,69,103.0,10,0.097,0.145,Hitters,,
-312,Joey Ortiz,687401.0,390,489.0,34,0.07,0.087,Hitters,,
+312,Joey Ortiz,687401.0,393,494.0,34,0.069,0.087,Hitters,,
 313,Joey Wiemer,686894.0,33,57.0,10,0.175,0.303,Hitters,,
 314,Johan Rojas,679032.0,119,172.0,11,0.064,0.092,Hitters,,
 315,John Rave,670231.0,104,164.0,12,0.073,0.115,Hitters,,
@@ -328,7 +328,7 @@
 326,Jorbit Vivas,678391.0,43,66.0,5,0.076,0.116,Hitters,,
 327,Jordan Beck,687597.0,354,564.0,53,0.094,0.15,Hitters,,
 328,Jordan Lawlar,691783.0,38,67.0,11,0.164,0.289,Hitters,,
-329,Jordan Walker,691023.0,223,372.0,23,0.062,0.103,Hitters,,
+329,Jordan Walker,691023.0,226,376.0,23,0.061,0.102,Hitters,,
 330,Jordan Westburg,676059.0,228,326.0,22,0.067,0.096,Hitters,,
 331,Jordyn Adams,677941.0,3,5.0,0,0.0,0.0,Hitters,,
 332,Jorge Alfaro,595751.0,20,31.0,2,0.065,0.1,Hitters,,
@@ -340,9 +340,9 @@
 338,Jose Azocar,640492.0,18,21.0,0,0.0,0.0,Hitters,,
 339,Jose Barrero,676480.0,20,31.0,5,0.161,0.25,Hitters,,
 340,Jose Caballero,676609.0,217,359.0,32,0.089,0.147,Hitters,,
-341,Jose Fermin,665877.0,43,59.0,7,0.119,0.163,Hitters,,
+341,Jose Fermin,665877.0,46,63.0,9,0.143,0.196,Hitters,,
 342,Jose Herrera,645444.0,133,204.0,16,0.078,0.12,Hitters,,
-343,Jose Iglesias,578428.0,242,326.0,19,0.058,0.079,Hitters,,
+343,Jose Iglesias,578428.0,246,331.0,20,0.06,0.081,Hitters,,
 344,Jose Miranda,669304.0,23,36.0,6,0.167,0.261,Hitters,,
 345,Jose Ramirez,608070.0,504,626.0,133,0.212,0.264,Hitters,,
 346,Jose Siri,642350.0,15,36.0,1,0.028,0.067,Hitters,,
@@ -359,7 +359,7 @@
 357,Julio Rodriguez,677594.0,491,686.0,56,0.082,0.114,Hitters,,
 358,Jung Hoo Lee,808982.0,478,597.0,59,0.099,0.123,Hitters,,
 359,Junior Caminero,691406.0,464,627.0,84,0.134,0.181,Hitters,,
-360,Jurickson Profar,595777.0,247,342.0,48,0.14,0.194,Hitters,,
+360,Jurickson Profar,595777.0,249,348.0,48,0.138,0.193,Hitters,,
 361,Justin Dean,681909.0,1,2.0,0,0.0,0.0,Hitters,,
 362,Justin Foscue,679822.0,6,9.0,2,0.222,0.333,Hitters,,
 363,Justin Turner,457759.0,133,184.0,20,0.109,0.15,Hitters,,
@@ -390,7 +390,7 @@
 388,Kyren Paris,677347.0,67,140.0,11,0.079,0.164,Hitters,,
 389,LaMonte Wade Jr.,664774.0,154,241.0,26,0.108,0.169,Hitters,,
 390,Lane Thomas,657041.0,83,142.0,13,0.092,0.157,Hitters,,
-391,Lars Nootbaar,663457.0,384,558.0,51,0.091,0.133,Hitters,,
+391,Lars Nootbaar,663457.0,386,563.0,52,0.092,0.135,Hitters,,
 392,Lawrence Butler,671732.0,380,612.0,34,0.056,0.089,Hitters,,
 393,Lenyn Sosa,672820.0,379,524.0,65,0.124,0.172,Hitters,,
 394,Leo Jimenez,677870.0,22,31.0,2,0.065,0.091,Hitters,,
@@ -402,7 +402,7 @@
 400,Logan O'Hoppe,681351.0,273,433.0,50,0.115,0.183,Hitters,,
 401,Logan Porter,682515.0,5,9.0,0,0.0,0.0,Hitters,,
 402,Lourdes Gurriel Jr.,666971.0,433,545.0,75,0.138,0.173,Hitters,,
-403,Luis Arraez,650333.0,598,653.0,64,0.098,0.107,Hitters,,
+403,Luis Arraez,650333.0,603,658.0,64,0.097,0.106,Hitters,,
 404,Luis Campusano,669134.0,10,27.0,1,0.037,0.1,Hitters,,
 405,Luis Garcia,671277.0,398,506.0,46,0.091,0.116,Hitters,,
 406,Luis Guillorme,641645.0,12,21.0,2,0.095,0.167,Hitters,,
@@ -420,9 +420,9 @@
 418,Luken Baker,663609.0,24,41.0,4,0.098,0.167,Hitters,,
 419,MJ Melendez,669004.0,37,65.0,10,0.154,0.27,Hitters,,
 420,Maikel Garcia,672580.0,499,639.0,64,0.1,0.128,Hitters,,
-421,Manny Machado,592518.0,481,658.0,77,0.117,0.16,Hitters,,
+421,Manny Machado,592518.0,484,662.0,78,0.118,0.161,Hitters,,
 422,Manuel Margot,622534.0,14,20.0,3,0.15,0.214,Hitters,,
-423,Marcell Ozuna,542303.0,337,568.0,56,0.099,0.166,Hitters,,
+423,Marcell Ozuna,542303.0,341,573.0,58,0.101,0.17,Hitters,,
 424,Marcelo Mayer,691785.0,87,136.0,10,0.074,0.115,Hitters,,
 425,Marcus Semien,543760.0,386,534.0,77,0.144,0.199,Hitters,,
 426,Mark Canha,592192.0,91,125.0,13,0.104,0.143,Hitters,,
@@ -431,11 +431,11 @@
 429,Masataka Yoshida,807799.0,145,180.0,24,0.133,0.166,Hitters,,
 430,Mason McCoy,669200.0,11,19.0,3,0.158,0.273,Hitters,,
 431,Masyn Winn,691026.0,393,537.0,67,0.125,0.17,Hitters,,
-432,Matt Chapman,656305.0,317,513.0,47,0.092,0.148,Hitters,,
+432,Matt Chapman,656305.0,321,517.0,48,0.093,0.15,Hitters,,
 433,Matt Gorski,685301.0,25,42.0,5,0.119,0.2,Hitters,,
 434,Matt McLain,680574.0,340,555.0,36,0.065,0.106,Hitters,,
 435,Matt Mervis,670223.0,71,133.0,17,0.128,0.239,Hitters,,
-436,Matt Olson,621566.0,437,695.0,54,0.078,0.124,Hitters,,
+436,Matt Olson,621566.0,439,701.0,55,0.078,0.125,Hitters,,
 437,Matt Shaw,807713.0,295,418.0,54,0.129,0.183,Hitters,,
 438,Matt Thaiss,642136.0,112,190.0,17,0.089,0.152,Hitters,,
 439,Matt Vierling,663837.0,66,100.0,4,0.04,0.061,Hitters,,
@@ -451,7 +451,7 @@
 449,Michael A. Taylor,572191.0,184,313.0,24,0.077,0.13,Hitters,,
 450,Michael Busch,683737.0,370,567.0,63,0.111,0.17,Hitters,,
 451,Michael Conforto,624424.0,290,466.0,42,0.09,0.145,Hitters,,
-452,Michael Harris II,671739.0,473,618.0,43,0.07,0.091,Hitters,,
+452,Michael Harris II,671739.0,478,623.0,44,0.071,0.092,Hitters,,
 453,Michael Helman,680737.0,66,90.0,20,0.222,0.303,Hitters,,
 454,Michael Massey,686681.0,213,264.0,36,0.136,0.169,Hitters,,
 455,Michael Stefanic,683021.0,19,25.0,2,0.08,0.105,Hitters,,
@@ -471,14 +471,14 @@
 469,Moises Ballesteros,694208.0,38,53.0,3,0.057,0.079,Hitters,,
 470,Mookie Betts,605141.0,513,639.0,102,0.16,0.199,Hitters,,
 471,Myles Straw,664702.0,223,290.0,29,0.1,0.13,Hitters,,
-472,Nacho Alvarez,805373.0,127,186.0,21,0.113,0.165,Hitters,,
-473,Nasim Nunez,683083.0,57,77.0,5,0.065,0.088,Hitters,,
+472,Nacho Alvarez,805373.0,131,191.0,21,0.11,0.16,Hitters,,
+473,Nasim Nunez,683083.0,61,82.0,6,0.073,0.098,Hitters,,
 474,Nate Eaton,681987.0,61,86.0,5,0.058,0.082,Hitters,,
 475,Nathan Church,701675.0,39,61.0,2,0.033,0.051,Hitters,,
 476,Nathan Lukes,664770.0,325,418.0,38,0.091,0.117,Hitters,,
 477,Nathaniel Lowe,663993.0,372,585.0,44,0.075,0.118,Hitters,,
 478,Nick Ahmed,605113.0,6,10.0,0,0.0,0.0,Hitters,,
-479,Nick Allen,669397.0,277,407.0,23,0.057,0.083,Hitters,,
+479,Nick Allen,669397.0,279,410.0,23,0.056,0.082,Hitters,,
 480,Nick Castellanos,592206.0,410,571.0,72,0.126,0.176,Hitters,,
 481,Nick Fortes,663743.0,167,233.0,30,0.129,0.18,Hitters,,
 482,Nick Gonzales,693304.0,291,382.0,31,0.081,0.107,Hitters,,
@@ -493,7 +493,7 @@
 491,Nico Hoerner,663538.0,532,620.0,80,0.129,0.15,Hitters,,
 492,Niko Kavadas,694359.0,10,23.0,4,0.174,0.4,Hitters,,
 493,Noelvi Marte,682622.0,238,333.0,30,0.09,0.126,Hitters,,
-494,Nolan Arenado,571448.0,340,411.0,65,0.158,0.191,Hitters,,
+494,Nolan Arenado,571448.0,342,416.0,66,0.159,0.193,Hitters,,
 495,Nolan Gorman,669357.0,214,388.0,45,0.116,0.21,Hitters,,
 496,Nolan Jones,666134.0,246,401.0,28,0.07,0.114,Hitters,,
 497,Nolan Schanuel,694384.0,413,544.0,64,0.118,0.155,Hitters,,
@@ -508,37 +508,37 @@
 506,Otto Lopez,672640.0,445,568.0,41,0.072,0.092,Hitters,,
 507,Owen Caissie,683357.0,15,27.0,1,0.037,0.067,Hitters,,
 508,Owen Miller,680911.0,10,17.0,2,0.118,0.2,Hitters,,
-509,Ozzie Albies,645277.0,512,663.0,112,0.169,0.219,Hitters,,
+509,Ozzie Albies,645277.0,514,665.0,112,0.168,0.218,Hitters,,
 510,Pablo Reyes,622569.0,22,34.0,0,0.0,0.0,Hitters,,
 511,Parker Meadows,678009.0,123,190.0,20,0.105,0.163,Hitters,,
-512,Patrick Bailey,672275.0,271,436.0,42,0.096,0.155,Hitters,,
-513,Paul DeJong,657557.0,121,198.0,26,0.131,0.215,Hitters,,
+512,Patrick Bailey,672275.0,275,440.0,42,0.095,0.153,Hitters,,
+513,Paul DeJong,657557.0,123,202.0,26,0.129,0.211,Hitters,,
 514,Paul Goldschmidt,502671.0,381,515.0,60,0.117,0.157,Hitters,,
 515,Pavin Smith,656976.0,154,287.0,22,0.077,0.143,Hitters,,
-516,Pedro Pages,686780.0,252,375.0,35,0.093,0.139,Hitters,,
+516,Pedro Pages,686780.0,256,380.0,35,0.092,0.137,Hitters,,
 517,Pete Alonso,624413.0,456,678.0,72,0.106,0.158,Hitters,,
 518,Pete Crow-Armstrong,691718.0,437,623.0,107,0.172,0.245,Hitters,,
 519,Petey Halpin,690984.0,2,5.0,0,0.0,0.0,Hitters,,
-520,Rafael Devers,646240.0,403,692.0,54,0.078,0.134,Hitters,,
+520,Rafael Devers,646240.0,406,696.0,55,0.079,0.135,Hitters,,
 521,Rafael Flores,804668.0,3,6.0,0,0.0,0.0,Hitters,,
 522,Rafael Marchan,665561.0,84,110.0,7,0.064,0.083,Hitters,,
-523,Ramon Laureano,657656.0,322,481.0,57,0.119,0.177,Hitters,,
+523,Ramon Laureano,657656.0,322,482.0,57,0.118,0.177,Hitters,,
 524,Ramon Urias,602104.0,262,373.0,53,0.142,0.202,Hitters,,
 525,Randal Grichuk,545341.0,206,281.0,35,0.125,0.17,Hitters,,
 526,Randy Arozarena,668227.0,412,679.0,63,0.093,0.153,Hitters,,
 527,Rece Hinds,677956.0,22,44.0,3,0.068,0.136,Hitters,,
 528,Reese McGuire,624512.0,105,134.0,20,0.149,0.19,Hitters,,
 529,Rhylan Thomas,689041.0,9,10.0,0,0.0,0.0,Hitters,,
-530,Rhys Hoskins,656555.0,193,323.0,55,0.17,0.285,Hitters,,
+530,Rhys Hoskins,656555.0,193,324.0,55,0.17,0.285,Hitters,,
 531,Richie Palacios,680700.0,24,33.0,3,0.091,0.125,Hitters,,
-532,Riley Adams,656180.0,149,271.0,20,0.074,0.134,Hitters,,
+532,Riley Adams,656180.0,151,276.0,20,0.072,0.132,Hitters,,
 533,Riley Greene,682985.0,393,634.0,61,0.096,0.155,Hitters,,
 534,Rob Brantly,542963.0,6,7.0,0,0.0,0.0,Hitters,,
 535,Rob Refsnyder,608701.0,126,201.0,18,0.09,0.143,Hitters,,
-536,Robert Hassell III,690987.0,129,193.0,15,0.078,0.116,Hitters,,
+536,Robert Hassell III,690987.0,130,197.0,15,0.076,0.115,Hitters,,
 537,Roman Anthony,701350.0,174,303.0,20,0.066,0.115,Hitters,,
 538,Romy Gonzalez,663853.0,229,323.0,18,0.056,0.079,Hitters,,
-539,Ronald Acuna Jr.,660670.0,222,380.0,26,0.068,0.117,Hitters,,
+539,Ronald Acuna Jr.,660670.0,224,386.0,27,0.07,0.121,Hitters,,
 540,Ronny Mauricio,677595.0,110,173.0,21,0.121,0.191,Hitters,,
 541,Ronny Simon,682927.0,65,88.0,3,0.034,0.046,Hitters,,
 542,Rowdy Tellez,642133.0,204,301.0,30,0.1,0.147,Hitters,,
@@ -550,11 +550,11 @@
 548,Ryan McMahon,641857.0,318,569.0,47,0.083,0.148,Hitters,,
 549,Ryan Mountcastle,663624.0,231,345.0,33,0.096,0.143,Hitters,,
 550,Ryan Noda,676116.0,23,57.0,5,0.088,0.217,Hitters,,
-551,Ryan O'Hearn,656811.0,351,515.0,38,0.074,0.108,Hitters,,
+551,Ryan O'Hearn,656811.0,354,520.0,39,0.075,0.11,Hitters,,
 552,Ryan Ritter,690022.0,120,190.0,17,0.089,0.142,Hitters,,
 553,Ryan Vilade,668723.0,8,15.0,0,0.0,0.0,Hitters,,
 554,Ryne Nelson,669194.0,1,1.0,0,0.0,0.0,Hitters,,
-555,Sal Frelick,686217.0,438,572.0,64,0.112,0.146,Hitters,,
+555,Sal Frelick,686217.0,442,577.0,64,0.111,0.145,Hitters,,
 556,Sal Stewart,701398.0,34,49.0,10,0.204,0.294,Hitters,,
 557,Salvador Perez,521692.0,458,610.0,104,0.17,0.227,Hitters,,
 558,Sam Haggerty,664059.0,126,181.0,12,0.066,0.095,Hitters,,
@@ -589,7 +589,7 @@
 587,Teoscar Hernandez,606192.0,366,525.0,41,0.078,0.112,Hitters,,
 588,Terrin Vavra,679631.0,1,1.0,0,0.0,0.0,Hitters,,
 589,Thairo Estrada,642731.0,131,165.0,21,0.127,0.16,Hitters,,
-590,Thomas Saggese,695336.0,179,269.0,23,0.086,0.128,Hitters,,
+590,Thomas Saggese,695336.0,183,274.0,23,0.084,0.126,Hitters,,
 591,Tim Anderson,641313.0,55,90.0,5,0.056,0.091,Hitters,,
 592,Tim Elko,671284.0,37,72.0,5,0.069,0.135,Hitters,,
 593,Tim Tawa,694374.0,132,205.0,19,0.093,0.144,Hitters,,
@@ -631,7 +631,7 @@
 629,Victor Caratini,605170.0,276,370.0,39,0.105,0.141,Hitters,,
 630,Victor Mesa Jr.,683748.0,28,38.0,5,0.132,0.179,Hitters,,
 631,Victor Robles,645302.0,80,107.0,13,0.121,0.162,Hitters,,
-632,Victor Scott II,687363.0,288,444.0,33,0.074,0.115,Hitters,,
+632,Victor Scott II,687363.0,292,448.0,33,0.074,0.113,Hitters,,
 633,Vidal Brujan,660644.0,67,95.0,10,0.105,0.149,Hitters,,
 634,Vimael Machin,605353.0,9,12.0,1,0.083,0.111,Hitters,,
 635,Vinnie Pasquantino,686469.0,499,649.0,99,0.153,0.198,Hitters,,
@@ -648,11 +648,11 @@
 646,Will Wagner,695238.0,99,145.0,13,0.09,0.131,Hitters,,
 647,Will Wilson,669717.0,49,91.0,7,0.077,0.143,Hitters,,
 648,Willi Castro,650489.0,291,450.0,50,0.111,0.172,Hitters,,
-649,William Contreras,661388.0,445,643.0,47,0.073,0.106,Hitters,,
+649,William Contreras,661388.0,448,648.0,47,0.073,0.105,Hitters,,
 650,Willie MacIver,680862.0,70,103.0,4,0.039,0.057,Hitters,,
 651,Willson Contreras,575929.0,353,562.0,63,0.112,0.178,Hitters,,
-652,Willy Adames,642715.0,401,657.0,82,0.125,0.204,Hitters,,
-653,Wilmer Flores,527038.0,331,456.0,63,0.138,0.19,Hitters,,
+652,Willy Adames,642715.0,405,661.0,83,0.126,0.205,Hitters,,
+653,Wilmer Flores,527038.0,331,457.0,63,0.138,0.19,Hitters,,
 654,Wilyer Abreu,677800.0,263,394.0,58,0.147,0.221,Hitters,,
 655,Wyatt Langford,694671.0,341,568.0,72,0.127,0.211,Hitters,,
 656,Xander Bogaerts,593428.0,392,531.0,66,0.124,0.168,Hitters,,
@@ -675,16 +675,16 @@
 1,,,20,35.0,5,0.143,0.25,Pitchers,A.J. Puk,640462.0
 2,,,68,109.0,10,0.092,0.147,Pitchers,AJ Blubaugh,805123.0
 3,,,128,191.0,25,0.131,0.195,Pitchers,AJ Smith-Shawver,700363.0
-4,,,160,259.0,15,0.058,0.094,Pitchers,Aaron Ashby,676879.0
+4,,,161,262.0,15,0.057,0.093,Pitchers,Aaron Ashby,676879.0
 5,,,156,232.0,22,0.095,0.141,Pitchers,Aaron Bummer,607481.0
 6,,,299,423.0,57,0.135,0.191,Pitchers,Aaron Civale,650644.0
 7,,,258,378.0,50,0.132,0.194,Pitchers,Aaron Nola,605400.0
-8,,,167,286.0,19,0.066,0.114,Pitchers,Abner Uribe,682842.0
+8,,,171,290.0,19,0.066,0.111,Pitchers,Abner Uribe,682842.0
 9,,,7,8.0,2,0.25,0.286,Pitchers,Abraham Toro,647351.0
 10,,,107,139.0,13,0.094,0.121,Pitchers,Adam Mazur,800049.0
 11,,,2,9.0,0,0.0,0.0,Pitchers,Adam Ottavino,493603.0
 12,,,361,492.0,48,0.098,0.133,Pitchers,Adrian Houser,605288.0
-13,,,189,271.0,11,0.041,0.058,Pitchers,Adrian Morejon,670970.0
+13,,,192,275.0,11,0.04,0.057,Pitchers,Adrian Morejon,670970.0
 14,,,32,46.0,8,0.174,0.25,Pitchers,Alan Rangel,660604.0
 15,,,3,3.0,0,0.0,0.0,Pitchers,Alan Trejo,676701.0
 16,,,31,43.0,3,0.07,0.097,Pitchers,Albert Suarez,544150.0
@@ -747,7 +747,7 @@
 73,,,201,288.0,43,0.149,0.214,Pitchers,Bowden Francis,670102.0
 74,,,168,267.0,13,0.049,0.077,Pitchers,Brad Keller,641745.0
 75,,,361,504.0,40,0.079,0.111,Pitchers,Brad Lord,695418.0
-76,,,10,18.0,0,0.0,0.0,Pitchers,Bradgley Rodriguez,699134.0
+76,,,13,21.0,0,0.0,0.0,Pitchers,Bradgley Rodriguez,699134.0
 77,,,206,255.0,32,0.125,0.155,Pitchers,Bradley Blalock,687134.0
 78,,,27,38.0,3,0.079,0.111,Pitchers,Brady Basso,669620.0
 79,,,450,675.0,61,0.09,0.136,Pitchers,Brady Singer,663903.0
@@ -839,7 +839,7 @@
 165,,,80,127.0,12,0.094,0.15,Pitchers,Chris Murphy,669684.0
 166,,,503,646.0,86,0.133,0.171,Pitchers,Chris Paddack,663978.0
 167,,,59,83.0,5,0.06,0.085,Pitchers,Chris Roycroft,688297.0
-168,,,279,465.0,45,0.097,0.161,Pitchers,Chris Sale,519242.0
+168,,,291,488.0,49,0.1,0.168,Pitchers,Chris Sale,519242.0
 169,,,72,104.0,10,0.096,0.139,Pitchers,Chris Stratton,608717.0
 170,,,16,16.0,2,0.125,0.125,Pitchers,Christian Koss,683766.0
 171,,,6,9.0,1,0.111,0.167,Pitchers,Christian Montes De Oca,801216.0
@@ -956,7 +956,7 @@
 282,,,522,771.0,42,0.054,0.08,Pitchers,Framber Valdez,664285.0
 283,,,131,178.0,21,0.118,0.16,Pitchers,Frankie Montas,593423.0
 284,,,31,68.0,5,0.074,0.161,Pitchers,Fraser Ellard,686642.0
-285,,,424,694.0,56,0.081,0.132,Pitchers,Freddy Peralta,642547.0
+285,,,437,714.0,58,0.081,0.133,Pitchers,Freddy Peralta,642547.0
 286,,,13,28.0,1,0.036,0.077,Pitchers,Freddy Tarnok,676206.0
 287,,,139,231.0,11,0.048,0.079,Pitchers,Gabe Speier,642100.0
 288,,,3,5.0,0,0.0,0.0,Pitchers,Garrett Acton,670183.0
@@ -976,7 +976,7 @@
 302,,,30,41.0,5,0.122,0.167,Pitchers,Gerson Garabito,642520.0
 303,,,134,187.0,21,0.112,0.157,Pitchers,Gordon Graceffo,700669.0
 304,,,188,273.0,12,0.044,0.064,Pitchers,Graham Ashcraft,668933.0
-305,,,187,287.0,29,0.101,0.155,Pitchers,Grant Anderson,681982.0
+305,,,189,289.0,29,0.1,0.153,Pitchers,Grant Anderson,681982.0
 306,,,76,103.0,9,0.087,0.118,Pitchers,Grant Holman,680880.0
 307,,,308,491.0,37,0.075,0.12,Pitchers,Grant Holmes,656550.0
 308,,,82,147.0,9,0.061,0.11,Pitchers,Grant Taylor,691799.0
@@ -1000,7 +1000,7 @@
 326,,,175,260.0,37,0.142,0.211,Pitchers,Hunter Gaddis,683769.0
 327,,,246,397.0,32,0.081,0.13,Pitchers,Hunter Greene,668881.0
 328,,,27,39.0,4,0.103,0.148,Pitchers,Hunter Harvey,640451.0
-329,,,61,82.0,14,0.171,0.23,Pitchers,Hunter Stratton,676702.0
+329,,,62,85.0,14,0.165,0.226,Pitchers,Hunter Stratton,676702.0
 330,,,67,89.0,18,0.202,0.269,Pitchers,Hunter Strickland,519326.0
 331,,,133,203.0,22,0.108,0.165,Pitchers,Hurston Waldrep,694462.0
 332,,,36,50.0,6,0.12,0.167,Pitchers,Ian Anderson,666120.0
@@ -1023,7 +1023,7 @@
 349,,,104,161.0,12,0.075,0.115,Pitchers,Jack Perkins,678022.0
 350,,,150,218.0,30,0.138,0.2,Pitchers,Jackson Jobe,695549.0
 351,,,48,71.0,3,0.042,0.062,Pitchers,Jackson Kowar,663804.0
-352,,,223,317.0,35,0.11,0.157,Pitchers,Jackson Rutledge,671131.0
+352,,,227,323.0,36,0.111,0.159,Pitchers,Jackson Rutledge,671131.0
 353,,,3,3.0,0,0.0,0.0,Pitchers,Jacob Amaya,676070.0
 354,,,28,36.0,3,0.083,0.107,Pitchers,Jacob Barnes,606930.0
 355,,,222,327.0,33,0.101,0.149,Pitchers,Jacob Latz,656641.0
@@ -1044,7 +1044,7 @@
 370,,,159,224.0,23,0.103,0.145,Pitchers,Jalen Beeks,656222.0
 371,,,382,497.0,75,0.151,0.196,Pitchers,Jameson Taillon,592791.0
 372,,,338,428.0,56,0.131,0.166,Pitchers,Janson Junk,676083.0
-373,,,168,256.0,22,0.086,0.131,Pitchers,Jared Koenig,657649.0
+373,,,171,260.0,22,0.085,0.129,Pitchers,Jared Koenig,657649.0
 374,,,63,80.0,6,0.075,0.095,Pitchers,Jared Shuster,694363.0
 375,,,7,8.0,1,0.125,0.143,Pitchers,Jared Triolo,669707.0
 376,,,2,3.0,0,0.0,0.0,Pitchers,Jared Young,676724.0
@@ -1057,7 +1057,7 @@
 383,,,14,18.0,4,0.222,0.286,Pitchers,Jeff Brigham,656257.0
 384,,,166,275.0,26,0.095,0.157,Pitchers,Jeff Hoffman,656546.0
 385,,,503,693.0,92,0.133,0.183,Pitchers,Jeffrey Springs,605488.0
-386,,,158,289.0,19,0.066,0.12,Pitchers,Jeremiah Estrada,669093.0
+386,,,161,294.0,20,0.068,0.124,Pitchers,Jeremiah Estrada,669093.0
 387,,,30,43.0,8,0.186,0.267,Pitchers,Jesse Chavez,445926.0
 388,,,16,22.0,2,0.091,0.125,Pitchers,Jesse Hahn,534910.0
 389,,,12,16.0,0,0.0,0.0,Pitchers,Jesse Scholtens,669947.0
@@ -1067,7 +1067,7 @@
 393,,,4,5.0,1,0.2,0.25,Pitchers,Jhonathan Diaz,646242.0
 394,,,15,20.0,2,0.1,0.133,Pitchers,Jhonny Pereda,640902.0
 395,,,229,335.0,45,0.134,0.197,Pitchers,Jimmy Herget,623474.0
-396,,,164,244.0,15,0.061,0.091,Pitchers,JoJo Romero,668941.0
+396,,,166,247.0,15,0.061,0.09,Pitchers,JoJo Romero,668941.0
 397,,,124,204.0,16,0.078,0.129,Pitchers,Joe Boyle,671212.0
 398,,,29,33.0,6,0.182,0.207,Pitchers,Joe La Sorsa,686747.0
 399,,,46,57.0,11,0.193,0.239,Pitchers,Joe Mantiply,573009.0
@@ -1075,7 +1075,7 @@
 401,,,168,227.0,27,0.119,0.161,Pitchers,Joe Ross,605452.0
 402,,,433,668.0,71,0.106,0.164,Pitchers,Joe Ryan,657746.0
 403,,,75,107.0,17,0.159,0.227,Pitchers,Joel Payamps,606303.0
-404,,,53,72.0,4,0.056,0.075,Pitchers,Joel Peguero,666711.0
+404,,,54,75.0,4,0.053,0.074,Pitchers,Joel Peguero,666711.0
 405,,,239,381.0,34,0.089,0.142,Pitchers,Joey Cantillo,676282.0
 406,,,42,55.0,14,0.255,0.333,Pitchers,Joey Estes,683155.0
 407,,,11,15.0,1,0.067,0.091,Pitchers,Joey Gerber,680702.0
@@ -1084,7 +1084,7 @@
 410,,,80,132.0,17,0.129,0.212,Pitchers,Johan Oviedo,670912.0
 411,,,72,114.0,18,0.158,0.25,Pitchers,John Brebbia,605154.0
 412,,,109,135.0,21,0.156,0.193,Pitchers,John Curtiss,595928.0
-413,,,163,202.0,19,0.094,0.117,Pitchers,John King,667463.0
+413,,,165,204.0,19,0.093,0.115,Pitchers,John King,667463.0
 414,,,3,6.0,0,0.0,0.0,Pitchers,John Rooney,680701.0
 415,,,174,253.0,25,0.099,0.144,Pitchers,John Schreiber,670167.0
 416,,,15,19.0,4,0.211,0.267,Pitchers,Jon Berti,542932.0
@@ -1117,7 +1117,7 @@
 443,,,412,556.0,53,0.095,0.129,Pitchers,Jose Quintana,500779.0
 444,,,55,79.0,9,0.114,0.164,Pitchers,Jose Ruiz,614179.0
 445,,,488,724.0,40,0.055,0.082,Pitchers,Jose Soriano,667755.0
-446,,,39,61.0,8,0.131,0.205,Pitchers,Jose Suarez,660761.0
+446,,,51,75.0,10,0.133,0.196,Pitchers,Jose Suarez,660761.0
 447,,,10,12.0,2,0.167,0.2,Pitchers,Jose Trevino,624431.0
 448,,,168,225.0,37,0.164,0.22,Pitchers,Jose Urena,570632.0
 449,,,8,14.0,4,0.286,0.5,Pitchers,Jose Urquidy,664353.0
@@ -1140,7 +1140,7 @@
 466,,,65,92.0,13,0.141,0.2,Pitchers,Justin Steele,657006.0
 467,,,162,255.0,27,0.106,0.167,Pitchers,Justin Sterner,686993.0
 468,,,197,265.0,21,0.079,0.107,Pitchers,Justin Topa,623437.0
-469,,,432,613.0,80,0.131,0.185,Pitchers,Justin Verlander,434378.0
+469,,,451,637.0,84,0.132,0.186,Pitchers,Justin Verlander,434378.0
 470,,,122,196.0,10,0.051,0.082,Pitchers,Justin Wilson,458677.0
 471,,,178,267.0,15,0.056,0.084,Pitchers,Justin Wrobleski,680736.0
 472,,,65,101.0,1,0.01,0.015,Pitchers,Kade Strowd,669704.0
@@ -1162,7 +1162,7 @@
 488,,,6,6.0,1,0.167,0.167,Pitchers,Kody Clemens,665019.0
 489,,,116,170.0,12,0.071,0.103,Pitchers,Kody Funderburk,681892.0
 490,,,202,253.0,25,0.099,0.124,Pitchers,Kolby Allard,663465.0
-491,,,66,114.0,12,0.105,0.182,Pitchers,Konnor Pilkington,663455.0
+491,,,66,117.0,12,0.103,0.182,Pitchers,Konnor Pilkington,663455.0
 492,,,12,14.0,2,0.143,0.167,Pitchers,Korey Lee,686676.0
 493,,,318,475.0,42,0.088,0.132,Pitchers,Kris Bubic,663460.0
 494,,,204,287.0,22,0.077,0.108,Pitchers,Kumar Rocker,677958.0
@@ -1173,9 +1173,9 @@
 499,,,524,685.0,89,0.13,0.17,Pitchers,Kyle Freeland,607536.0
 500,,,56,73.0,9,0.123,0.161,Pitchers,Kyle Gibson,502043.0
 501,,,93,136.0,12,0.088,0.129,Pitchers,Kyle Harrison,690986.0
-502,,,122,171.0,24,0.14,0.197,Pitchers,Kyle Hart,606996.0
+502,,,124,173.0,25,0.145,0.202,Pitchers,Kyle Hart,606996.0
 503,,,519,670.0,70,0.104,0.135,Pitchers,Kyle Hendricks,543294.0
-504,,,241,344.0,20,0.058,0.083,Pitchers,Kyle Leahy,681517.0
+504,,,243,348.0,20,0.057,0.082,Pitchers,Kyle Leahy,681517.0
 505,,,5,11.0,1,0.091,0.2,Pitchers,Kyle Nelson,669459.0
 506,,,108,157.0,20,0.127,0.185,Pitchers,Kyle Nicolas,693312.0
 507,,,182,285.0,35,0.123,0.192,Pitchers,Lake Bachar,669199.0
@@ -1223,7 +1223,7 @@
 549,,,160,250.0,29,0.116,0.181,Pitchers,Luke Weaver,596133.0
 550,,,20,25.0,3,0.12,0.15,Pitchers,Luke Williams,663897.0
 551,,,119,168.0,16,0.095,0.134,Pitchers,Lyon Richardson,680689.0
-552,,,420,666.0,60,0.09,0.143,Pitchers,MacKenzie Gore,669022.0
+552,,,426,679.0,63,0.093,0.148,Pitchers,MacKenzie Gore,669022.0
 553,,,89,121.0,7,0.058,0.079,Pitchers,Manuel Rodriguez,655889.0
 554,,,12,23.0,0,0.0,0.0,Pitchers,Marc Church,687847.0
 555,,,131,175.0,18,0.103,0.137,Pitchers,Marcus Stroman,573186.0
@@ -1238,7 +1238,7 @@
 564,,,37,58.0,7,0.121,0.189,Pitchers,Mason Thompson,666168.0
 565,,,88,114.0,21,0.184,0.239,Pitchers,Matt Bowman,621199.0
 566,,,119,192.0,11,0.057,0.092,Pitchers,Matt Brash,666374.0
-567,,,92,130.0,8,0.062,0.087,Pitchers,Matt Gage,657424.0
+567,,,94,133.0,8,0.06,0.085,Pitchers,Matt Gage,657424.0
 568,,,11,15.0,2,0.133,0.182,Pitchers,Matt Krook,640454.0
 569,,,95,129.0,19,0.147,0.2,Pitchers,Matt Sauer,669422.0
 570,,,162,252.0,32,0.127,0.198,Pitchers,Matt Strahm,621381.0
@@ -1260,7 +1260,7 @@
 586,,,196,296.0,33,0.111,0.168,Pitchers,Michael King,650633.0
 587,,,28,53.0,1,0.019,0.036,Pitchers,Michael Kopech,656629.0
 588,,,421,584.0,75,0.128,0.178,Pitchers,Michael Lorenzen,547179.0
-589,,,284,355.0,25,0.07,0.088,Pitchers,Michael McGreevy,700241.0
+589,,,303,379.0,29,0.077,0.096,Pitchers,Michael McGreevy,700241.0
 590,,,12,20.0,4,0.2,0.333,Pitchers,Michael Mercado,675650.0
 591,,,47,68.0,8,0.118,0.17,Pitchers,Michael Petersen,656848.0
 592,,,228,364.0,37,0.102,0.162,Pitchers,Michael Soroka,647336.0
@@ -1293,8 +1293,8 @@
 619,,,29,45.0,3,0.067,0.103,Pitchers,Nick Hernandez,663321.0
 620,,,428,611.0,50,0.082,0.117,Pitchers,Nick Lodolo,666157.0
 621,,,511,670.0,89,0.133,0.174,Pitchers,Nick Martinez,607259.0
-622,,,152,207.0,28,0.135,0.184,Pitchers,Nick Mears,683232.0
-623,,,463,695.0,71,0.102,0.153,Pitchers,Nick Pivetta,601713.0
+622,,,155,213.0,28,0.131,0.181,Pitchers,Nick Mears,683232.0
+623,,,478,720.0,72,0.1,0.151,Pitchers,Nick Pivetta,601713.0
 624,,,5,7.0,0,0.0,0.0,Pitchers,Nick Raquet,675919.0
 625,,,43,69.0,9,0.13,0.209,Pitchers,Nick Sandlin,680704.0
 626,,,1,2.0,0,0.0,0.0,Pitchers,Nicky Lopez,670032.0
@@ -1310,7 +1310,7 @@
 636,,,243,344.0,46,0.134,0.189,Pitchers,Osvaldo Bido,674370.0
 637,,,15,16.0,3,0.188,0.2,Pitchers,Oswald Peraza,672724.0
 638,,,26,35.0,2,0.057,0.077,Pitchers,Owen White,669391.0
-639,,,63,98.0,10,0.102,0.159,Pitchers,PJ Poulin,676571.0
+639,,,67,106.0,10,0.094,0.149,Pitchers,PJ Poulin,676571.0
 640,,,215,312.0,30,0.096,0.14,Pitchers,Pablo Lopez,641154.0
 641,,,8,8.0,2,0.25,0.25,Pitchers,Pablo Reyes,622569.0
 642,,,106,142.0,13,0.092,0.123,Pitchers,Parker Messick,800048.0
@@ -1349,18 +1349,18 @@
 675,,,87,130.0,13,0.1,0.149,Pitchers,Rico Garcia,670329.0
 676,,,118,186.0,16,0.086,0.136,Pitchers,Riley O'Brien,676617.0
 677,,,42,51.0,5,0.098,0.119,Pitchers,Roansy Contreras,672710.0
-678,,,57,84.0,9,0.107,0.158,Pitchers,Rob Zastryzny,642239.0
+678,,,61,89.0,10,0.112,0.164,Pitchers,Rob Zastryzny,642239.0
 679,,,492,754.0,88,0.117,0.179,Pitchers,Robbie Ray,592662.0
 680,,,170,256.0,35,0.137,0.206,Pitchers,Robert Garcia,676395.0
 681,,,8,13.0,2,0.154,0.25,Pitchers,Robert Gasser,688107.0
 682,,,27,41.0,8,0.195,0.296,Pitchers,Robert Stephenson,596112.0
 683,,,10,15.0,2,0.133,0.2,Pitchers,Robert Stock,476594.0
-684,,,173,261.0,18,0.069,0.104,Pitchers,Robert Suarez,663158.0
+684,,,174,264.0,18,0.068,0.103,Pitchers,Robert Suarez,663158.0
 685,,,12,14.0,0,0.0,0.0,Pitchers,Robinson Pina,673820.0
 686,,,28,51.0,4,0.078,0.143,Pitchers,Roddery Munoz,682610.0
 687,,,105,154.0,15,0.097,0.143,Pitchers,Roki Sasaki,808963.0
 688,,,9,21.0,0,0.0,0.0,Pitchers,Rolddy Munoz,691548.0
-689,,,25,38.0,2,0.053,0.08,Pitchers,Ron Marinaccio,676760.0
+689,,,26,42.0,2,0.048,0.077,Pitchers,Ron Marinaccio,676760.0
 690,,,131,199.0,29,0.146,0.221,Pitchers,Ronel Blanco,669854.0
 691,,,167,289.0,22,0.076,0.132,Pitchers,Ronny Henriquez,678692.0
 692,,,10,11.0,4,0.364,0.4,Pitchers,Rowdy Tellez,642133.0
@@ -1369,7 +1369,7 @@
 695,,,80,105.0,16,0.152,0.2,Pitchers,Ryan Brasier,518489.0
 696,,,4,8.0,1,0.125,0.25,Pitchers,Ryan Burr,621114.0
 697,,,98,135.0,18,0.133,0.184,Pitchers,Ryan Feltner,663372.0
-698,,,81,124.0,14,0.113,0.173,Pitchers,Ryan Fernandez,681676.0
+698,,,84,128.0,14,0.109,0.167,Pitchers,Ryan Fernandez,681676.0
 699,,,8,8.0,2,0.25,0.25,Pitchers,Ryan Fitzgerald,680837.0
 700,,,315,452.0,54,0.119,0.171,Pitchers,Ryan Gusto,687473.0
 701,,,155,237.0,30,0.127,0.194,Pitchers,Ryan Helsley,664854.0
@@ -1391,7 +1391,7 @@
 717,,,36,46.0,5,0.109,0.139,Pitchers,Sammy Peralta,671111.0
 718,,,15,25.0,2,0.08,0.133,Pitchers,Samuel Aldegheri,691951.0
 719,,,513,717.0,86,0.12,0.168,Pitchers,Sandy Alcantara,645261.0
-720,,,25,32.0,3,0.094,0.12,Pitchers,Sauryn Lao,666659.0
+720,,,33,42.0,5,0.119,0.152,Pitchers,Sauryn Lao,666659.0
 721,,,99,133.0,21,0.158,0.212,Pitchers,Sawyer Gipson-Long,687830.0
 722,,,63,81.0,7,0.086,0.111,Pitchers,Scott Alexander,518397.0
 723,,,172,292.0,26,0.089,0.151,Pitchers,Scott Barlow,605130.0
@@ -1417,7 +1417,7 @@
 743,,,174,272.0,24,0.088,0.138,Pitchers,Shawn Armstrong,542888.0
 744,,,104,145.0,10,0.069,0.096,Pitchers,Shawn Dubin,681869.0
 745,,,113,182.0,17,0.093,0.15,Pitchers,Shelby Miller,571946.0
-746,,,109,155.0,22,0.142,0.202,Pitchers,Shinnosuke Ogasawara,829272.0
+746,,,116,163.0,24,0.147,0.207,Pitchers,Shinnosuke Ogasawara,829272.0
 747,,,103,165.0,15,0.091,0.146,Pitchers,Shohei Ohtani,660271.0
 748,,,401,541.0,92,0.17,0.229,Pitchers,Shota Imanaga,684007.0
 749,,,305,451.0,59,0.131,0.193,Pitchers,Simeon Woods Richardson,680573.0
@@ -1472,7 +1472,7 @@
 798,,,280,408.0,38,0.093,0.136,Pitchers,Trevor Rogers,669432.0
 799,,,285,373.0,51,0.137,0.179,Pitchers,Trevor Williams,592866.0
 800,,,24,40.0,4,0.1,0.167,Pitchers,Trey Yesavage,702056.0
-801,,,157,210.0,27,0.129,0.172,Pitchers,Tristan Beck,663941.0
+801,,,164,221.0,27,0.122,0.165,Pitchers,Tristan Beck,663941.0
 802,,,19,30.0,5,0.167,0.263,Pitchers,Triston McKenzie,663474.0
 803,,,116,165.0,15,0.091,0.129,Pitchers,Troy Melton,675512.0
 804,,,31,37.0,9,0.243,0.29,Pitchers,Troy Taylor,700187.0

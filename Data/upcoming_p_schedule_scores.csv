@@ -1,49 +1,37 @@
 ,Pitcher,Team,GS,Score,Matchups
-0,Jacob deGrom,TEX,2,124.0,"9-23 vs. MIN
+0,Patrick Corbin,TEX,2,126.0,"9-23 vs. MIN
  9-28 @ CLE"
-1,Justin Verlander,SF,2,124.0,"9-22 vs. STL
- 9-28 vs. COL"
-2,Chris Sale,ATL,2,118.0,"9-22 vs. WSH
- 9-28 vs. PIT"
-3,Luis Gil,NYY,2,116.0,"9-23 vs. CWS
+1,Luis Gil,NYY,2,118.0,"9-23 vs. CWS
  9-28 vs. BAL"
-4,Jeffrey Springs,OAK,2,113.0,"9-23 vs. HOU
- 9-28 vs. KC"
-5,Samuel Aldegheri,LAA,2,113.0,"9-23 vs. KC
+2,Samuel Aldegheri,LAA,2,115.0,"9-23 vs. KC
  9-28 vs. HOU"
-6,Brady Singer,CIN,2,112.0,"9-23 vs. PIT
+3,Jeffrey Springs,OAK,2,115.0,"9-23 vs. HOU
+ 9-28 vs. KC"
+4,Brady Singer,CIN,2,114.0,"9-23 vs. PIT
  9-28 @ MIL"
-7,MacKenzie Gore,WSH,2,110.0,"9-22 @ ATL
- 9-28 vs. CWS"
-8,Tarik Skubal,DET,2,105.0,"9-23 @ CLE
+5,Tarik Skubal,DET,2,107.0,"9-23 @ CLE
  9-28 @ BOS"
-9,Freddy Peralta,MIL,2,105.0,"9-22 @ SD
- 9-28 vs. CIN"
-10,Cole Ragans,KC,2,103.0,"9-23 @ LAA
+6,Cole Ragans,KC,2,104.0,"9-23 @ LAA
  9-28 @ OAK"
-11,Cristian Javier,HOU,2,103.0,"9-23 @ OAK
+7,Cristian Javier,HOU,2,104.0,"9-23 @ OAK
  9-28 @ LAA"
-12,Gavin Williams,CLE,2,102.0,"9-23 vs. DET
+8,Gavin Williams,CLE,2,103.0,"9-23 vs. DET
  9-28 vs. TEX"
-13,McCade Brown,COL,2,100.0,"9-23 @ SEA
+9,McCade Brown,COL,2,101.0,"9-23 @ SEA
  9-28 @ SF"
-14,Bryce Miller,SEA,2,99.0,"9-23 vs. COL
+10,Bryce Miller,SEA,2,101.0,"9-23 vs. COL
  9-28 vs. LAD"
-15,Zebby Matthews,MIN,2,94.0,"9-23 @ TEX
+11,Zebby Matthews,MIN,2,96.0,"9-23 @ TEX
  9-28 @ PHI"
-16,Michael McGreevy,STL,2,94.0,"9-22 @ SF
- 9-28 @ CHC"
-17,Kevin Gausman,TOR,2,88.0,"9-23 vs. BOS
+12,Kevin Gausman,TOR,2,90.0,"9-23 vs. BOS
  9-28 vs. TB"
-18,Shane Smith,CWS,2,83.0,"9-23 @ NYY
+13,Shane Smith,CWS,2,85.0,"9-23 @ NYY
  9-28 @ WSH"
-19,Lucas Giolito,BOS,2,83.0,"9-23 @ TOR
+14,Lucas Giolito,BOS,2,84.0,"9-23 @ TOR
  9-28 vs. DET"
-20,David Peterson,NYM,2,81.0,"9-23 @ CHC
+15,David Peterson,NYM,2,83.0,"9-23 @ CHC
  9-28 @ MIA"
-21,Nick Pivetta,SD,2,80.0,"9-22 vs. MIL
- 9-28 vs. ARI"
-22,Brandon Pfaadt,ARI,2,79.0,"9-23 vs. LAD
+16,Brandon Pfaadt,ARI,2,80.0,"9-23 vs. LAD
  9-28 @ SD"
-23,Edward Cabrera,MIA,2,71.0,"9-23 @ PHI
+17,Edward Cabrera,MIA,2,72.0,"9-23 @ PHI
  9-28 vs. NYM"
