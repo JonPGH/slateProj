@@ -1,10 +1,10 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Nationals  @  Braves,MostlyCloudy,83°,5.7 mph,"R to L, Weak",WSH,ATL,0,2025-9-24,0,0
 1,Brewers  @  Padres,Clear,78°,8.7 mph,"L to R, Weak",MIL,SD,0,2025-9-24,0,0
-2,Rays  @  Orioles,Cloudy,75°,4.0 mph,None,TB,BAL,28,2025-9-24,0,0
+2,Rays  @  Orioles,Cloudy,75°,4.0 mph,None,TB,BAL,20,2025-9-24,0,0
 3,Pirates  @  Reds,MostlyCloudy,74°,3.0 mph,None,PIT,CIN,23,2025-9-24,0,0
-4,Tigers  @  Guardians,Rain,69°,3.2 mph,None,DET,CLE,52,2025-9-24,0,0
-5,Marlins  @  Phillies,Drizzle,76°,3.0 mph,None,MIA,PHI,100,2025-9-24,0,0
+4,Tigers  @  Guardians,Rain,69°,3.2 mph,None,DET,CLE,78,2025-9-24,0,0
+5,Marlins  @  Phillies,Drizzle,76°,3.0 mph,None,MIA,PHI,95,2025-9-24,0,0
 6,White Sox  @  Yankees,Cloudy,73°,4.8 mph,None,CWS,NYY,21,2025-9-24,0,0
 7,Red Sox  @  Blue Jays,Cloudy,67°,7.4 mph,"R to L, Weak",BOS,TOR,20,2025-9-24,1,1
 8,Twins  @  Rangers,Clear,80°,7.0 mph,"L to R, Weak",MIN,TEX,0,2025-9-24,1,0
