@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Nationals  @  Braves,MostlyCloudy,83°,5.7 mph,"R to L, Weak",WSH,ATL,0,2025-9-24,0,0
 1,Brewers  @  Padres,Clear,78°,8.7 mph,"L to R, Weak",MIL,SD,0,2025-9-24,0,0
-2,Rays  @  Orioles,Cloudy,75°,4.0 mph,None,TB,BAL,20,2025-9-24,0,0
-3,Pirates  @  Reds,MostlyCloudy,74°,3.0 mph,None,PIT,CIN,23,2025-9-24,0,0
-4,Tigers  @  Guardians,Rain,69°,3.2 mph,None,DET,CLE,78,2025-9-24,0,0
-5,Marlins  @  Phillies,Drizzle,76°,3.0 mph,None,MIA,PHI,95,2025-9-24,0,0
-6,White Sox  @  Yankees,Cloudy,73°,4.8 mph,None,CWS,NYY,21,2025-9-24,0,0
-7,Red Sox  @  Blue Jays,Cloudy,67°,7.4 mph,"R to L, Weak",BOS,TOR,20,2025-9-24,1,1
-8,Twins  @  Rangers,Clear,80°,7.0 mph,"L to R, Weak",MIN,TEX,0,2025-9-24,1,0
-9,Mets  @  Cubs,Clear,65°,9.2 mph,"In, Weak",NYM,CHC,0,2025-9-24,0,0
-10,Royals  @  Angels,Clear,79°,6.3 mph,"Out, Weak",KC,LAA,0,2025-9-24,0,0
-11,Dodgers  @  Diamondbacks,Clear,103°,2.7 mph,None,LAD,ARI,0,2025-9-24,1,0
-12,Rockies  @  Mariners,Clear,67°,5.7 mph,"L to R, Weak",COL,SEA,0,2025-9-24,1,0
-13,Cardinals  @  Giants,MostlyCloudy,69°,5.5 mph,"Out, Weak",STL,SF,0,2025-9-24,0,0
-14,Astros  @  Athletics,Cloudy,78°,6.4 mph,"Out, Weak",HOU,OAK,0,2025-9-24,0,0
+2,Rays  @  Orioles,Drizzle,74°,2.5 mph,None,TB,BAL,40,2025-9-24,0,0
+3,Pirates  @  Reds,MostlyCloudy,74°,2.5 mph,None,PIT,CIN,23,2025-9-24,0,0
+4,Tigers  @  Guardians,Drizzle,69°,3.9 mph,None,DET,CLE,49,2025-9-24,0,0
+5,Marlins  @  Phillies,Cloudy,74°,3.6 mph,None,MIA,PHI,22,2025-9-24,0,0
+6,White Sox  @  Yankees,Cloudy,73°,4.8 mph,None,CWS,NYY,24,2025-9-24,0,0
+7,Red Sox  @  Blue Jays,Cloudy,67°,7.0 mph,"R to L, Weak",BOS,TOR,17,2025-9-24,1,1
+8,Twins  @  Rangers,Clear,80°,6.4 mph,"L to R, Weak",MIN,TEX,0,2025-9-24,1,0
+9,Mets  @  Cubs,Clear,65°,10.7 mph,"In, Strong",NYM,CHC,0,2025-9-24,0,0
+10,Royals  @  Angels,Clear,79°,6.6 mph,"Out, Weak",KC,LAA,0,2025-9-24,0,0
+11,Dodgers  @  Diamondbacks,Clear,103°,2.6 mph,None,LAD,ARI,0,2025-9-24,1,0
+12,Rockies  @  Mariners,Clear,67°,5.4 mph,"L to R, Weak",COL,SEA,0,2025-9-24,1,0
+13,Cardinals  @  Giants,Cloudy,68°,5.0 mph,None,STL,SF,0,2025-9-24,0,0
+14,Astros  @  Athletics,Cloudy,78°,6.7 mph,"Out, Weak",HOU,OAK,0,2025-9-24,0,0
