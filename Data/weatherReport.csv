@@ -1,13 +1,13 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Pirates  @  Reds,MostlyCloudy,72°,4.4 mph,None,PIT,CIN,19,2025-9-25,0,0
-1,Rays  @  Orioles,Drizzle,76°,7.7 mph,"Out, Weak",TB,BAL,31,2025-9-25,0,0
-2,Twins  @  Rangers,Clear,82°,9.4 mph,"L to R, Weak",MIN,TEX,0,2025-9-25,1,0
-3,Astros  @  Athletics,MostlyCloudy,80°,5.9 mph,"Out, Weak",HOU,OAK,0,2025-9-25,0,0
-4,Dodgers  @  Diamondbacks,Clear,100°,7.5 mph,"Out, Weak",LAD,ARI,0,2025-9-25,1,0
-5,Marlins  @  Phillies,Drizzle,78°,7.7 mph,"Out, Weak",MIA,PHI,34,2025-9-25,0,0
-6,Tigers  @  Guardians,MostlyClear,70°,6.5 mph,"L to R, Weak",DET,CLE,0,2025-9-25,0,0
-7,White Sox  @  Yankees,Drizzle,74°,7.0 mph,"R to L, Weak",CWS,NYY,54,2025-9-25,0,0
-8,Red Sox  @  Blue Jays,PartlyCloudy,69°,3.4 mph,None,BOS,TOR,16,2025-9-25,1,1
-9,Mets  @  Cubs,Clear,69°,4.3 mph,None,NYM,CHC,0,2025-9-25,0,0
-10,Royals  @  Angels,MostlyClear,74°,6.9 mph,"Out, Weak",KC,LAA,0,2025-9-25,0,0
-11,Rockies  @  Mariners,Cloudy,61°,6.1 mph,"In, Weak",COL,SEA,0,2025-9-25,1,0
+0,Pirates  @  Reds,Rain,70°,2.9 mph,None,PIT,CIN,100,2025-9-25,0,0
+1,Rays  @  Orioles,Cloudy,77°,9.8 mph,"Out, Weak",TB,BAL,0,2025-9-25,0,0
+2,Twins  @  Rangers,MostlyClear,82°,8.6 mph,"L to R, Weak",MIN,TEX,0,2025-9-25,1,0
+3,Astros  @  Athletics,PartlyCloudy,80°,6.1 mph,"Out, Weak",HOU,OAK,0,2025-9-25,0,0
+4,Dodgers  @  Diamondbacks,Clear,101°,8.1 mph,"Out, Weak",LAD,ARI,0,2025-9-25,1,0
+5,Marlins  @  Phillies,MostlyCloudy,79°,9.2 mph,"Out, Weak",MIA,PHI,32,2025-9-25,0,0
+6,Tigers  @  Guardians,PartlyCloudy,69°,6.3 mph,"L to R, Weak",DET,CLE,9,2025-9-25,0,0
+7,White Sox  @  Yankees,Thunderstorms,74°,6.9 mph,"R to L, Weak",CWS,NYY,46,2025-9-25,0,0
+8,Red Sox  @  Blue Jays,MostlyCloudy,68°,2.2 mph,None,BOS,TOR,16,2025-9-25,1,1
+9,Mets  @  Cubs,Clear,68°,4.7 mph,None,NYM,CHC,0,2025-9-25,0,0
+10,Royals  @  Angels,MostlyClear,74°,7.0 mph,"Out, Weak",KC,LAA,0,2025-9-25,0,0
+11,Rockies  @  Mariners,MostlyCloudy,61°,5.4 mph,"In, Weak",COL,SEA,0,2025-9-25,1,0
