@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
 0,Cardinals  @  Cubs,Clear,76°,4.6 mph,"Out, Weak",STL,CHC,0,2025-9-26,0,0
 1,White Sox  @  Nationals,MostlyCloudy,80°,5.8 mph,"In, Weak",CWS,WSH,0,2025-9-26,0,0
-2,Twins  @  Phillies,MostlyClear,79°,5.5 mph,"L to R, Weak",MIN,PHI,0,2025-9-26,0,0
-3,Orioles  @  Yankees,Clear,76°,4.4 mph,None,BAL,NYY,0,2025-9-26,0,0
-4,Rays  @  Blue Jays,Clear,69°,3.8 mph,None,TB,TOR,0,2025-9-26,1,0
+2,Twins  @  Phillies,MostlyClear,79°,5.1 mph,"L to R, Weak",MIN,PHI,0,2025-9-26,0,0
+3,Orioles  @  Yankees,Clear,76°,4.1 mph,None,BAL,NYY,0,2025-9-26,0,0
+4,Rays  @  Blue Jays,Clear,69°,3.5 mph,None,TB,TOR,0,2025-9-26,1,0
 5,Mets  @  Marlins,MostlyClear,83°,3.3 mph,None,NYM,MIA,40,2025-9-26,1,1
 6,Rangers  @  Guardians,Clear,71°,2.4 mph,None,TEX,CLE,0,2025-9-26,0,0
-7,Tigers  @  Red Sox,MostlyClear,72°,5.5 mph,"Out, Weak",DET,BOS,0,2025-9-26,0,0
-8,Pirates  @  Braves,MostlyCloudy,76°,0.7 mph,None,PIT,ATL,12,2025-9-26,0,0
-9,Reds  @  Brewers,PartlyCloudy,66°,6.8 mph,"L to R, Weak",CIN,MIL,0,2025-9-26,0,0
+7,Tigers  @  Red Sox,Clear,72°,5.3 mph,"Out, Weak",DET,BOS,0,2025-9-26,0,0
+8,Pirates  @  Braves,MostlyCloudy,76°,0.7 mph,None,PIT,ATL,26,2025-9-26,0,0
+9,Reds  @  Brewers,MostlyClear,66°,6.9 mph,"L to R, Weak",CIN,MIL,0,2025-9-26,0,0
 10,Astros  @  Angels,MostlyClear,72°,5.8 mph,"Out, Weak",HOU,LAA,0,2025-9-26,0,0
-11,Dodgers  @  Mariners,MostlyClear,67°,4.8 mph,None,LAD,SEA,0,2025-9-26,1,0
+11,Dodgers  @  Mariners,PartlyCloudy,67°,4.9 mph,None,LAD,SEA,0,2025-9-26,1,0
 12,Diamondbacks  @  Padres,PartlyCloudy,69°,6.1 mph,"Out, Weak",ARI,SD,0,2025-9-26,0,0
 13,Royals  @  Athletics,Clear,83°,6.0 mph,"Out, Weak",KC,OAK,0,2025-9-26,0,0
-14,Rockies  @  Giants,Clear,65°,4.3 mph,None,COL,SF,0,2025-9-26,0,0
+14,Rockies  @  Giants,Clear,66°,4.3 mph,None,COL,SF,0,2025-9-26,0,0
