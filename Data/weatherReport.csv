@@ -2,15 +2,15 @@
 0,Orioles  @  Yankees,Cloudy,78°,2.2 mph,None,BAL,NYY,0,2025-9-27,0,0
 1,Cardinals  @  Cubs,Clear,81°,6.4 mph,"Out, Weak",STL,CHC,0,2025-9-27,0,0
 2,Rays  @  Blue Jays,Cloudy,74°,6.8 mph,"Out, Weak",TB,TOR,0,2025-9-27,1,0
-3,Rockies  @  Giants,MostlyClear,66°,11.9 mph,"Out, Strong",COL,SF,0,2025-9-27,0,0
-4,White Sox  @  Nationals,Rain,77°,6.5 mph,"R to L, Weak",CWS,WSH,97,2025-9-27,0,0
+3,Rockies  @  Giants,MostlyClear,67°,11.9 mph,"Out, Strong",COL,SF,0,2025-9-27,0,0
+4,White Sox  @  Nationals,Rain,77°,6.5 mph,"R to L, Weak",CWS,WSH,92,2025-9-27,0,0
 5,Tigers  @  Red Sox,Cloudy,75°,6.5 mph,"R to L, Weak",DET,BOS,0,2025-9-27,0,0
 6,Mets  @  Marlins,Thunderstorms,86°,6.5 mph,"L to R, Weak",NYM,MIA,40,2025-9-27,1,1
 7,Twins  @  Phillies,Cloudy,77°,4.9 mph,None,MIN,PHI,0,2025-9-27,0,0
 8,Reds  @  Brewers,Clear,79°,6.5 mph,"R to L, Weak",CIN,MIL,0,2025-9-27,0,0
-9,Pirates  @  Braves,MostlyClear,79°,3.6 mph,None,PIT,ATL,2,2025-9-27,0,0
+9,Pirates  @  Braves,MostlyClear,79°,3.4 mph,None,PIT,ATL,0,2025-9-27,0,0
 10,Rangers  @  Guardians,Clear,75°,2.0 mph,None,TEX,CLE,0,2025-9-27,0,0
-11,Diamondbacks  @  Padres,MostlyClear,72°,6.7 mph,"Out, Weak",ARI,SD,0,2025-9-27,0,0
-12,Astros  @  Angels,MostlyClear,73°,7.3 mph,"Out, Weak",HOU,LAA,0,2025-9-27,0,0
+11,Diamondbacks  @  Padres,PartlyCloudy,72°,6.9 mph,"Out, Weak",ARI,SD,0,2025-9-27,0,0
+12,Astros  @  Angels,MostlyClear,72°,7.2 mph,"Out, Weak",HOU,LAA,0,2025-9-27,0,0
 13,Dodgers  @  Mariners,Clear,68°,4.4 mph,None,LAD,SEA,0,2025-9-27,1,0
-14,Royals  @  Athletics,Clear,72°,11.4 mph,"Out, Strong",KC,OAK,0,2025-9-27,0,0
+14,Royals  @  Athletics,Clear,71°,11.7 mph,"Out, Strong",KC,OAK,0,2025-9-27,0,0
