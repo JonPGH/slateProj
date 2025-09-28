@@ -1,16 +1,16 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Rockies  @  Giants,Cloudy,66°,6.7 mph,"R to L, Weak",COL,SF,0,2025-9-28,0,0
-1,Royals  @  Athletics,PartlyCloudy,72°,4.6 mph,None,KC,OAK,0,2025-9-28,0,0
-2,Orioles  @  Yankees,Clear,83°,4.1 mph,None,BAL,NYY,0,2025-9-28,0,0
-3,Twins  @  Phillies,Clear,82°,4.3 mph,None,MIN,PHI,0,2025-9-28,0,0
-4,White Sox  @  Nationals,MostlyClear,82°,3.5 mph,None,CWS,WSH,0,2025-9-28,0,0
-5,Tigers  @  Red Sox,Clear,82°,9.1 mph,"Out, Weak",DET,BOS,0,2025-9-28,0,0
-6,Astros  @  Angels,MostlyClear,77°,4.0 mph,None,HOU,LAA,0,2025-9-28,0,0
-7,Rays  @  Blue Jays,Clear,75°,6.5 mph,"In, Weak",TB,TOR,0,2025-9-28,1,0
-8,Diamondbacks  @  Padres,MostlyClear,75°,5.9 mph,"L to R, Weak",ARI,SD,0,2025-9-28,0,0
-9,Dodgers  @  Mariners,MostlyCloudy,66°,7.3 mph,"Out, Weak",LAD,SEA,0,2025-9-28,1,0
-10,Reds  @  Brewers,Clear,74°,6.2 mph,"In, Weak",CIN,MIL,0,2025-9-28,0,0
-11,Rangers  @  Guardians,Clear,77°,7.1 mph,"In, Weak",TEX,CLE,0,2025-9-28,0,0
+0,Rockies  @  Giants,Cloudy,66°,7.2 mph,"Out, Weak",COL,SF,0,2025-9-28,0,0
+1,Royals  @  Athletics,PartlyCloudy,72°,5.9 mph,"Out, Weak",KC,OAK,0,2025-9-28,0,0
+2,Orioles  @  Yankees,Clear,83°,4.4 mph,None,BAL,NYY,0,2025-9-28,0,0
+3,Twins  @  Phillies,Clear,82°,3.7 mph,None,MIN,PHI,0,2025-9-28,0,0
+4,White Sox  @  Nationals,MostlyClear,82°,3.9 mph,None,CWS,WSH,0,2025-9-28,0,0
+5,Tigers  @  Red Sox,Clear,82°,9.2 mph,"Out, Weak",DET,BOS,0,2025-9-28,0,0
+6,Astros  @  Angels,MostlyClear,78°,2.5 mph,None,HOU,LAA,0,2025-9-28,0,0
+7,Rays  @  Blue Jays,Clear,76°,6.6 mph,"In, Weak",TB,TOR,0,2025-9-28,1,0
+8,Diamondbacks  @  Padres,Clear,75°,6.2 mph,"L to R, Weak",ARI,SD,0,2025-9-28,0,0
+9,Dodgers  @  Mariners,MostlyCloudy,66°,7.2 mph,"Out, Weak",LAD,SEA,0,2025-9-28,1,0
+10,Reds  @  Brewers,Clear,74°,6.3 mph,"In, Weak",CIN,MIL,0,2025-9-28,0,0
+11,Rangers  @  Guardians,Clear,78°,6.9 mph,"In, Weak",TEX,CLE,0,2025-9-28,0,0
 12,Mets  @  Marlins,MostlyCloudy,85°,12.0 mph,"L to R, Strong",NYM,MIA,27,2025-9-28,1,1
-13,Pirates  @  Braves,MostlyClear,83°,8.3 mph,"L to R, Weak",PIT,ATL,0,2025-9-28,0,0
-14,Cardinals  @  Cubs,Clear,74°,6.3 mph,"In, Weak",STL,CHC,0,2025-9-28,0,0
+13,Pirates  @  Braves,MostlyClear,83°,8.1 mph,"L to R, Weak",PIT,ATL,0,2025-9-28,0,0
+14,Cardinals  @  Cubs,Clear,75°,6.1 mph,"In, Weak",STL,CHC,0,2025-9-28,0,0
