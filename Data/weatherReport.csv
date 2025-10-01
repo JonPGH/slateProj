@@ -1,5 +1,5 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Tigers  @  Guardians,Clear,72°,9.8 mph,"R to L, Weak",DET,CLE,0,2025-10-1,0,0
-1,Padres  @  Cubs,MostlyCloudy,74°,9.1 mph,"In, Weak",SD,CHC,0,2025-10-1,0,0
-2,Red Sox  @  Yankees,Clear,67°,8.9 mph,"L to R, Weak",BOS,NYY,0,2025-10-1,0,0
+0,Tigers  @  Guardians,Clear,71°,11.2 mph,"In, Strong",DET,CLE,0,2025-10-1,0,0
+1,Padres  @  Cubs,Cloudy,73°,9.2 mph,"In, Weak",SD,CHC,0,2025-10-1,0,0
+2,Red Sox  @  Yankees,Clear,68°,8.2 mph,"L to R, Weak",BOS,NYY,0,2025-10-1,0,0
 3,Reds  @  Dodgers,Clear,73°,5.5 mph,"Out, Weak",CIN,LAD,0,2025-10-1,0,0
