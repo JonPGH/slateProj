@@ -38,7 +38,7 @@ def check_password():
 if check_password():
 
     # Set page configuration
-    st.set_page_config(page_title="MLB DW Slate Analysis Tool", layout="wide")
+    st.set_page_config(page_title="MLB DW Web App", layout="wide")
 
     st.markdown(
         """
@@ -210,7 +210,8 @@ if check_password():
         h_vs_avg = pd.read_csv(f'{file_path}/vsAvg_Hit.csv')
         p_vs_avg = pd.read_csv(f'{file_path}/vsAvg_Pitch.csv')
         h_vs_sim = pd.read_csv(f'{file_path}/hitters_vs_sim_data.csv')
-        logo = "{}/Logo.jpeg".format(file_path)
+        #logo = "{}/Logo.jpeg".format(file_path)
+        logo = "{}/Logo.png".format(file_path)
         gameinfo = pd.read_csv(f'{file_path}/gameinfo.csv')
         bpreport = pd.read_csv(f'{file_path}/BullpenReport.csv')
         rpstats = pd.read_csv(f'{file_path}/relieverstats.csv')
@@ -994,7 +995,7 @@ if check_password():
         return f'https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_426,q_auto:best/v1/people/{player_id}/headshot/67/current'
 
     # Sidebar navigation
-    st.sidebar.image(logo, width=150)  # Added logo to sidebar
+    st.sidebar.image(logo, width=250)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
     tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections","Player Projection Details","Player Rater", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
@@ -1007,12 +1008,12 @@ if check_password():
         #logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim = load_data()
 
     # Main content
-    st.markdown(f"<center><h1>⚾ MLB DW Slate Analysis Tool ⚾</h1></center>", unsafe_allow_html=True)
-    st.markdown(f"<center><i>Last projection update time: {last_update}est</center></i>",unsafe_allow_html=True)
+    st.markdown(f"<center><h1>⚾ MLB DW Web App ⚾</h1></center>", unsafe_allow_html=True)
+    #st.markdown(f"<center><i>Last projection update time: {last_update}est</center></i>",unsafe_allow_html=True)
     
     if tab == "Player Rater":
         st.markdown("<h1><center>Dynamic Player Rater</center></h1>", unsafe_allow_html=True)
-
+        team_selection_list = list(hitdb['affiliate'].unique())
         teamlist=hitdb[['player_id','game_date','affiliate']].sort_values(by='game_date')
         teamlist[['player_id','affiliate']].drop_duplicates(keep='last')
         teamdict = dict(zip(teamlist.player_id,teamlist.affiliate))
@@ -1132,9 +1133,13 @@ if check_password():
             return filtered
 
         
-        pos_col1, pos_col2, pos_col3 = st.columns([1,1.5,1])
+        pos_col1, pos_col2,pos_col3,pos_col4 = st.columns([1,1,1,1])
         with pos_col2:
             pos_chosen = st.selectbox('Choose Position',['Hitters','Pitchers'])
+        with pos_col3:
+            team_selection_list.sort()
+            team_selection_list = ['All'] + team_selection_list
+            team_choose = st.selectbox('Choose Team', team_selection_list)
 
         if pos_chosen == 'Hitters':
             filtered_hitdb = select_and_filter_by_date_slider(hitdb, date_col="game_date")
@@ -1145,12 +1150,15 @@ if check_password():
             df['Team'] = df['player_id'].map(teamdict)
             df = df[['Player','Team','AB','R','HR','RBI','SB','AVG']]
 
-
             hitter_sgp = calculateSGP_Hitters(df)
             hitter_sgp = hitter_sgp.drop(['AB'],axis=1)
             show_df = pd.merge(df,hitter_sgp,on=['Player','Team'],how='left')
             show_df = show_df.round(2)
             show_df = show_df.sort_values(by='SGP',ascending=False)
+            if team_choose == 'All':
+                pass
+            else:
+                show_df = show_df[show_df['Team']==team_choose]
 
             styled_df = (
                 show_df.style
@@ -1199,6 +1207,11 @@ if check_password():
             show_df = pd.merge(df,pitcher_sgp,on=['Player','Team'],how='left')
             show_df = show_df.round(2)
             show_df = show_df.sort_values(by='SGP',ascending=False)
+
+            if team_choose == 'All':
+                pass
+            else:
+                show_df = show_df[show_df['Team']==team_choose]
 
             if rp_only:
                 show_df = show_df[show_df['SV']>0]
