@@ -996,8 +996,8 @@ if check_password():
     # Sidebar navigation
     st.sidebar.image(logo, width=150)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections","Player Projection Details", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections","Player Projection Details","Player Rater", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
+    #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -1009,6 +1009,229 @@ if check_password():
     # Main content
     st.markdown(f"<center><h1>⚾ MLB DW Slate Analysis Tool ⚾</h1></center>", unsafe_allow_html=True)
     st.markdown(f"<center><i>Last projection update time: {last_update}est</center></i>",unsafe_allow_html=True)
+    
+    if tab == "Player Rater":
+        st.markdown("<h1><center>Dynamic Player Rater</center></h1>", unsafe_allow_html=True)
+
+        teamlist=hitdb[['player_id','game_date','affiliate']].sort_values(by='game_date')
+        teamlist[['player_id','affiliate']].drop_duplicates(keep='last')
+        teamdict = dict(zip(teamlist.player_id,teamlist.affiliate))
+
+        teamlist_p=pitdb[['player_id','game_date','affiliate']].sort_values(by='game_date')
+        teamlist_p[['player_id','affiliate']].drop_duplicates(keep='last')
+        teamdict_p = dict(zip(teamlist_p.player_id,teamlist_p.affiliate))
+
+        ### FUNCTIONS
+        def calculateSGP_Hitters(hitdb: pd.DataFrame, merge_df: pd.DataFrame | None = None):
+            df = hitdb.copy()
+
+            count_cats = ["R", "HR", "RBI", "SB"]
+            for cat in count_cats:
+                std = df[cat].std(ddof=0)
+                df[f"{cat}_z"] = (df[cat] - df[cat].mean()) / (std if std != 0 else 1.0)
+
+            total_ab = df["AB"].sum()
+            lg_avg = np.divide((df["AVG"] * df["AB"]).sum(), total_ab) if total_ab else df["AVG"].mean()
+
+            df["AVG_contrib"] = (df["AVG"] - lg_avg) * df["AB"]
+            std = df["AVG_contrib"].std(ddof=0)
+            df["AVG_z"] = (df["AVG_contrib"] - df["AVG_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            z_cols = [f"{c}_z" for c in count_cats] + ["AVG_z"]
+            df["SGP"] = df[z_cols].sum(axis=1)
+
+            df_sorted = (
+                df[["Player", "Team", "AB", "SGP"] + z_cols]
+                .sort_values("SGP", ascending=False)
+                .reset_index(drop=True)
+            )
+
+            if merge_df is not None:
+                out = merge_df.merge(df_sorted[["Player", "Team", "SGP"]], on=["Player", "Team"], how="left")
+                out["SGP"] = out["SGP"].round(2)
+                return out.sort_values("SGP", ascending=False)
+
+            return df_sorted
+        
+        def calculateSGP_Pitchers(pitchdb: pd.DataFrame, merge_df: pd.DataFrame | None = None):
+            df = pitchdb.copy()
+
+            count_cats = ["W", "SV", "SO"]
+            for cat in count_cats:
+                std = df[cat].std(ddof=0)
+                df[f"{cat}_z"] = (df[cat] - df[cat].mean()) / (std if std != 0 else 1.0)
+
+            lg_era = np.divide((df["ERA"] * df["IP"]).sum(), df["IP"].sum()) if df["IP"].sum() else df["ERA"].mean()
+            df["ERA_contrib"] = (lg_era - df["ERA"]) * df["IP"]
+            std = df["ERA_contrib"].std(ddof=0)
+            df["ERA_z"] = (df["ERA_contrib"] - df["ERA_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            lg_whip = np.divide((df["WHIP"] * df["IP"]).sum(), df["IP"].sum()) if df["IP"].sum() else df["WHIP"].mean()
+            df["WHIP_contrib"] = (lg_whip - df["WHIP"]) * df["IP"]
+            std = df["WHIP_contrib"].std(ddof=0)
+            df["WHIP_z"] = (df["WHIP_contrib"] - df["WHIP_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            z_cols = [f"{c}_z" for c in count_cats] + ["ERA_z", "WHIP_z"]
+            df["SGP"] = df[z_cols].sum(axis=1)
+
+            df_sorted = (
+                df[["Player", "Team", "IP", "SGP"] + z_cols]
+                .sort_values("SGP", ascending=False)
+                .reset_index(drop=True)
+            )
+
+            if merge_df is not None:
+                out = merge_df.merge(df_sorted[["Player", "Team", "SGP"]], on=["Player", "Team"], how="left")
+                out["SGP"] = out["SGP"].round(2)
+                return out.sort_values("SGP", ascending=False)
+
+            return df_sorted
+        
+        def select_and_filter_by_date_slider(df: pd.DataFrame, date_col: str = "Timestamp") -> pd.DataFrame:
+            """
+            Build a date RANGE SLIDER from the data's min/max dates and
+            return df filtered to that inclusive range.
+            """
+            from datetime import timedelta
+
+            # Parse robustly (e.g., "2025-09-01 13:17:19 EDT")
+            dt = pd.to_datetime(df[date_col], errors="coerce", utc=True)
+            if getattr(dt.dt, "tz", None) is None:
+                dt = dt.dt.tz_localize("UTC")
+
+            df = df.copy()
+            df[date_col] = dt
+
+            if not df[date_col].notna().any():
+                st.warning(f"No valid dates found in column '{date_col}'.")
+                return df.iloc[0:0]
+
+            # Slider uses date (not datetime) for a nice UX
+            min_date = df[date_col].min().date()
+            max_date = df[date_col].max().date()
+
+            datecol1, datecol2, datecol3 = st.columns([1,1.5,1])
+            with datecol2:
+                start_date, end_date = st.slider(
+                    "Select date range",
+                    min_value=min_date,
+                    max_value=max_date,
+                    value=(min_date, max_date),
+                    step=timedelta(days=1),
+                    format="YYYY-MM-DD",
+                )
+
+            # Inclusive end: [start, end] by filtering < (end + 1 day)
+            start_dt = pd.Timestamp(start_date).tz_localize("UTC")
+            end_dt_exclusive = pd.Timestamp(end_date).tz_localize("UTC") + pd.Timedelta(days=1)
+
+            mask = (df[date_col] >= start_dt) & (df[date_col] < end_dt_exclusive)
+            filtered = df.loc[mask].copy()
+
+            st.caption(f"Showing {len(filtered):,} of {len(df):,} rows from {start_date} to {end_date} (inclusive).")
+            return filtered
+
+        
+        pos_col1, pos_col2, pos_col3 = st.columns([1,1.5,1])
+        with pos_col2:
+            pos_chosen = st.selectbox('Choose Position',['Hitters','Pitchers'])
+
+        if pos_chosen == 'Hitters':
+            filtered_hitdb = select_and_filter_by_date_slider(hitdb, date_col="game_date")
+
+            df = filtered_hitdb.groupby(['Player','player_id'],as_index=False)[['R','HR','RBI','SB','H','AB']].sum()
+            df['AVG'] = round(df['H']/df['AB'],3)
+            df = df[df['AB']>9]
+            df['Team'] = df['player_id'].map(teamdict)
+            df = df[['Player','Team','AB','R','HR','RBI','SB','AVG']]
+
+
+            hitter_sgp = calculateSGP_Hitters(df)
+            hitter_sgp = hitter_sgp.drop(['AB'],axis=1)
+            show_df = pd.merge(df,hitter_sgp,on=['Player','Team'],how='left')
+            show_df = show_df.round(2)
+            show_df = show_df.sort_values(by='SGP',ascending=False)
+
+            styled_df = (
+                show_df.style
+                .background_gradient(subset=["SGP"], cmap="Blues")   # blue shading on SGP
+                .set_table_styles(                                   # make text bigger
+                    [{
+                        "selector": "th, td",
+                        "props": [("font-size", "16px")]
+                    }]
+                ).set_properties(subset=["SGP"], **{"font-weight": "bold", "font-size": "18px"})
+                .format({"AB": "{:.0f}",
+                        "R": "{:.0f}",
+                        "HR": "{:.0f}",
+                        "RBI": "{:.0f}",
+                        "SB": "{:.0f}",
+                        "AVG": "{:.3f}",
+                        "SGP": "{:.2f}",
+                        "R_z": "{:.2f}",
+                        "HR_z": "{:.2f}",
+                        "RBI_z": "{:.2f}",
+                        "SB_z": "{:.2f}",
+                        "AVG_z": "{:.2f}",})
+                )
+
+            st.dataframe(
+                styled_df, hide_index=True,
+                use_container_width=True,   # stretch across page
+                height=600                  # adjust height to your liking
+            )
+        if pos_chosen == 'Pitchers':
+            rp_only = st.checkbox('Show Only RP?')
+
+            filtered_pitdb = select_and_filter_by_date_slider(pitdb, date_col="game_date")
+
+            df = filtered_pitdb.groupby(['Player','player_id'],as_index=False)[['IP','ER','H','BB','SO','W','SV']].sum()
+
+            df['ERA'] = round(df['ER']*9/df['IP'],3)
+            df['WHIP'] = round((df['H']+df['BB'])/df['IP'],3)
+
+            df = df[df['IP']>1]
+            df['Team'] = df['player_id'].map(teamdict_p)
+            df = df[['Player','Team','IP','W','SO','SV','ERA','WHIP']]
+
+            pitcher_sgp = calculateSGP_Pitchers(df)
+            pitcher_sgp = pitcher_sgp.drop(['IP'],axis=1)
+            show_df = pd.merge(df,pitcher_sgp,on=['Player','Team'],how='left')
+            show_df = show_df.round(2)
+            show_df = show_df.sort_values(by='SGP',ascending=False)
+
+            if rp_only:
+                show_df = show_df[show_df['SV']>0]
+
+            styled_df = (
+                show_df.style
+                .background_gradient(subset=["SGP"], cmap="Blues")   # blue shading on SGP
+                .set_table_styles(                                   # make text bigger
+                    [{
+                        "selector": "th, td",
+                        "props": [("font-size", "16px")]
+                    }]
+                ).set_properties(subset=["SGP"], **{"font-weight": "bold", "font-size": "18px"})
+                .format({"IP": "{:.1f}",
+                         "ERA": "{:.2f}",
+                         "WHIP": "{:.2f}",
+                         "SGP": "{:.2f}",
+                         "W_z": "{:.2f}",
+                         "SV_z": "{:.2f}",
+                         "SO_z": "{:.2f}",
+                         "ERA_z": "{:.2f}",
+                         "WHIP_z": "{:.2f}",
+                         })
+                )
+
+            st.dataframe(
+                styled_df, hide_index=True,
+                use_container_width=True,   # stretch across page
+                height=600                  # adjust height to your liking
+            )
+
+        
+    
     if tab == "Game Previews":
         #game_selection = list(games_df['GameString'])
         game_selection = list(gameinfo['GameString'].unique())
@@ -1976,8 +2199,8 @@ if check_password():
                 st.markdown(f"<b><font size=5>Todays Matchup: vs. {opp_sp} in {game_park}</font></b>", unsafe_allow_html=True)
                 st.dataframe(this_hitter_projection, hide_index=True)
 
-                player_bet_lines = alllines[alllines['Player']==hitter_choose]
-                st.dataframe(player_bet_lines)
+                player_bet_lines = alllines[(alllines['Player']==hitter_choose)&(alllines['Book']=='DraftKings')][['Type','OU','Line','Price']]
+                #st.dataframe(player_bet_lines)
 
 
             b_col1, b_col2 = st.columns([1,2.5])
