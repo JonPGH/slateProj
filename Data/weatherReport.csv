@@ -1,3 +1,5 @@
 ,Game,Conditions,Temp,Winds,Wind Dir,AwayTeam,HomeTeam,Rain%,Date,Roof,IgnoreWind
-0,Mariners  @  Tigers,Drizzle,63°,10.3 mph,"Out, Strong",SEA,DET,43,2025-10-7,0,0
-1,Blue Jays  @  Yankees,Cloudy,72°,11.2 mph,"R to L, Strong",TOR,NYY,0,2025-10-7,0,0
+0,Mariners  @  Tigers,MostlyClear,62°,8.3 mph,"Out, Weak",SEA,DET,0,2025-10-8,0,0
+1,Brewers  @  Cubs,MostlyClear,62°,8.2 mph,"In, Weak",MIL,CHC,0,2025-10-8,0,0
+2,Blue Jays  @  Yankees,MostlyClear,63°,8.7 mph,"L to R, Weak",TOR,NYY,0,2025-10-8,0,0
+3,Phillies  @  Dodgers,Clear,70°,5.0 mph,None,PHI,LAD,0,2025-10-8,0,0
