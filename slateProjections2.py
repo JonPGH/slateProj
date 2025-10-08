@@ -2740,54 +2740,55 @@ if check_password():
             max_exposure = st.slider("Maximum Player Exposure (%)", min_value=10, max_value=100, value=50, step=10) / 100
 
         # Optimizer function
-        def optimize_lineup(players, player_usage, max_usage, used_lineups):
+        def optimize_lineup(players, player_usage, max_usage, used_lineups, name_to_indices):
+            import pulp
+
             # Initialize PuLP problem
             prob = pulp.LpProblem("DFS_Optimizer", pulp.LpMaximize)
 
-            # Decision variables
-            player_vars = pulp.LpVariable.dicts("Player", players.index, cat='Binary')
+            # Decision variables: 1 if roster spot (row) is used
+            player_vars = pulp.LpVariable.dicts("Player", players.index, cat="Binary")
 
-            # Objective: Maximize projected points
-            prob += pulp.lpSum([players.loc[i, 'Points'] * player_vars[i] for i in players.index])
+            # Objective: maximize projected points
+            prob += pulp.lpSum(players.loc[i, "Points"] * player_vars[i] for i in players.index)
 
-            # Constraints
-            # 1. Salary cap
-            prob += pulp.lpSum([players.loc[i, 'Salary'] * player_vars[i] for i in players.index]) <= SALARY_CAP
+            # 1) Salary cap
+            prob += pulp.lpSum(players.loc[i, "Salary"] * player_vars[i] for i in players.index) <= SALARY_CAP
 
-            # 2. Roster size
-            prob += pulp.lpSum([player_vars[i] for i in players.index]) == ROSTER_SIZE
+            # 2) Roster size
+            prob += pulp.lpSum(player_vars[i] for i in players.index) == ROSTER_SIZE
 
-            # 3. Positional constraints
+            # 3) Positional constraints
             for pos, count in POSITIONS.items():
-                prob += pulp.lpSum([player_vars[i] for i in players.index if players.loc[i, 'Pos'] == pos]) == count
+                prob += pulp.lpSum(player_vars[i] for i in players.index if players.loc[i, "Pos"] == pos) == count
 
-            # 4. Max exposure constraint
-            for idx in players.index:
-                player_name = players.loc[idx, 'Name']
-                if player_name in player_usage and player_usage[player_name] >= max_usage:
-                    prob += player_vars[idx] == 0
+            # 3b) Single player per lineup (prevent same Name twice across positions)
+            for name, idxs in name_to_indices.items():
+                prob += pulp.lpSum(player_vars[i] for i in idxs) <= 1
 
-            # 5. Exclude previously used lineups
+            # 4) Max exposure constraint (lock out players already at/over cap)
+            for i in players.index:
+                pname = players.loc[i, "Name"]
+                if pname in player_usage and player_usage[pname] >= max_usage:
+                    prob += player_vars[i] == 0
+
+            # 5) Exclude previously used exact lineups (no identical set)
             for lineup_indices in used_lineups:
-                # Prevent the exact same combination of players
-                prob += pulp.lpSum([player_vars[i] for i in lineup_indices]) <= ROSTER_SIZE - 1
+                prob += pulp.lpSum(player_vars[i] for i in lineup_indices) <= ROSTER_SIZE - 1
 
             # Solve
             prob.solve()
 
             # Extract results
-            lineup = []
-            if pulp.LpStatus[prob.status] == 'Optimal':
-                for i in players.index:
-                    if player_vars[i].varValue == 1:
-                        lineup.append(players.loc[i])
-                lineup_df = pd.DataFrame(lineup)
-                total_points = sum(players.loc[i, 'Points'] for i in players.index if player_vars[i].varValue == 1)
-                total_salary = sum(players.loc[i, 'Salary'] for i in players.index if player_vars[i].varValue == 1)
-                selected_indices = [i for i in players.index if player_vars[i].varValue == 1]
-                return lineup_df, total_points, total_salary, selected_indices
-            else:
+            if pulp.LpStatus[prob.status] != "Optimal":
                 return None, 0, 0, []
+
+            selected_indices = [i for i in players.index if player_vars[i].varValue == 1]
+            lineup_df = pd.DataFrame([players.loc[i] for i in selected_indices])
+            total_points = float(sum(players.loc[i, "Points"] for i in selected_indices))
+            total_salary = float(sum(players.loc[i, "Salary"] for i in selected_indices))
+            return lineup_df, total_points, total_salary, selected_indices
+
 
         # Function to sort lineup by position order
         def sort_lineup(lineup_df):
@@ -2822,7 +2823,11 @@ if check_password():
                 players['Points'] = players['Points'] * np.random.uniform(1 - projection_variance, 1 + projection_variance, size=len(players))
 
                 # Optimize lineup with max exposure and unique lineup constraints
-                lineup_df, total_points, total_salary, selected_indices = optimize_lineup(players, player_usage, max_usage, used_lineups)
+                # Build once after you finish constructing/cleaning `players` (right after astype(float))
+                name_to_indices = players.groupby('Name').apply(lambda s: list(s.index)).to_dict()
+
+                #lineup_df, total_points, total_salary, selected_indices = optimize_lineup(players, player_usage, max_usage, used_lineups)
+                lineup_df, total_points, total_salary, selected_indices = optimize_lineup(players, player_usage, max_usage, used_lineups, name_to_indices)
 
                 if lineup_df is not None:
                     # Sort lineup by position order
