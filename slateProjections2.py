@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd, math
 import os
-import warnings
+import warnings, re
 warnings.filterwarnings("ignore")
 
 import numpy as np
@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
 import plotly.express as px
 import plotly.graph_objects as go
+import altair as alt
 
 
 # Initialize session state for authentication
@@ -232,8 +233,11 @@ if check_password():
         trend_p = pd.read_csv(f'{file_path}/hot_pit_ja_era.csv')
         upcoming_start_grades = pd.read_csv(f'{file_path}/upcoming_start_grades.csv')
         hotzonedata = pd.read_csv(f'{file_path}/hotzonedata.csv')
+        hprofiles24 = pd.read_csv(f'{file_path}/hitter_profiles_data_2024.csv')
+        hprofiles25 = pd.read_csv(f'{file_path}/hitter_profiles_data_2025.csv')
+        hprofiles2425 = pd.read_csv(f'{file_path}/hitter_profiles_data_2024_2025.csv')
 
-        return logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
+        return hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -933,7 +937,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
+    hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -997,7 +1001,7 @@ if check_password():
     # Sidebar navigation
     st.sidebar.image(logo, width=250)  # Added logo to sidebar
     st.sidebar.title("MLB Projections")
-    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections","Player Projection Details","Player Rater", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections","Hitter Profiles","Hitter Comps", "Player Projection Details","Player Rater", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     if "reload" not in st.session_state:
         st.session_state.reload = False
@@ -1010,6 +1014,634 @@ if check_password():
     # Main content
     st.markdown(f"<center><h1>⚾ MLB DW Web App ⚾</h1></center>", unsafe_allow_html=True)
     #st.markdown(f"<center><i>Last projection update time: {last_update}est</center></i>",unsafe_allow_html=True)
+    
+
+
+
+
+
+
+    # --- HITTER PROFILES (drop-in) -------------------------------------------------
+    # Requirements: streamlit, pandas, altair (add "altair" to requirements.txt)
+
+    def _fmt_cols(df: pd.DataFrame, pct_cols=None, trip_cols=None, int_cols=None):
+        """Return Streamlit column_config dict + a formatted copy of df."""
+        pct_cols = pct_cols or []
+        trip_cols = trip_cols or []  # 3-decimal (AVG/OBP/SLG)
+        int_cols = int_cols or []
+
+        cfg = {}
+        df2 = df.copy()
+
+        # Build configs only for columns that actually exist
+        for c in df2.columns:
+            if c in pct_cols:
+                cfg[c] = st.column_config.NumberColumn(format="%.1f%%", help=f"{c} (percent)")
+                # If values look like 0–1, convert to percent
+                if df2[c].dropna().between(0, 1).all():
+                    df2[c] = df2[c] * 100.0
+            elif c in trip_cols:
+                cfg[c] = st.column_config.NumberColumn(format="%.3f", help=f"{c} (triple-slash)")
+            elif c in int_cols:
+                cfg[c] = st.column_config.NumberColumn(format="%d")
+            elif pd.api.types.is_float_dtype(df2[c]):
+                cfg[c] = st.column_config.NumberColumn(format="%.2f")
+
+        return df2, cfg
+
+    def _cols_existing(df, wanted):
+        return [c for c in wanted if c in df.columns]
+
+    def _metric_or_dash(val):
+        try:
+            if pd.isna(val): return "—"
+            if isinstance(val, (float, np.floating)): return f"{val:.3f}" if 0 <= val <= 1 else f"{val:.3f}" if "0." in f"{val}" else f"{val}"
+            return f"{val}"
+        except Exception:
+            return "—"
+
+    def render_hitter_profiles(hprofiles24: pd.DataFrame,
+                            hprofiles25: pd.DataFrame,
+                            hprofiles2425: pd.DataFrame):
+
+        st.markdown("""
+            <div style="text-align:center">
+                <div style="font-size:38px; font-weight:800; line-height:1.1">Hitter Profiles ⚾</div>
+                <div style="opacity:0.8; margin-top:4px">Fast, visual snapshots of each hitter’s skills and batted-ball DNA</div>
+            </div>
+            <hr style="margin:1rem 0 0.5rem 0; opacity:.2;">
+        """, unsafe_allow_html=True)
+
+        # ------------------------- Controls -------------------------
+        colA, colB, colC = st.columns([2, 1, 2])
+        with colA:
+            hitter_options = sorted(hprofiles2425["BatterName"].dropna().unique().tolist())
+            hitter = st.selectbox("Choose a Hitter", hitter_options, index=0)
+
+        with colB:
+            sample = st.selectbox("Choose Sample", ["2025", "2024", "2024-2025"], index=0)
+
+        with colC:
+            st.caption("Display options")
+            show_tables = st.toggle("Show raw tables", value=False, help="Reveal the raw profile tables below the charts/cards")
+            show_all_cols = st.toggle("Show all columns", value=False, help="If off, show the key subset for each table")
+
+        if sample == "2025":
+            data = hprofiles25.copy()
+        elif sample == "2024":
+            data = hprofiles24.copy()
+        else:
+            data = hprofiles2425.copy()
+
+        player = data.loc[data["BatterName"] == hitter].copy()
+        if player.empty:
+            st.warning("No rows found for that hitter in the selected sample.")
+            return
+
+        # If there are multiple rows (e.g., team splits), pick the most recent/highest PA row as default view
+        if "PA" in player.columns:
+            player = player.sort_values("PA", ascending=False).head(1)
+        else:
+            player = player.head(1)
+
+        # ------------------------- Top Cards -------------------------
+        # Pull headline metrics safely
+        def gv(col, default=None):
+            return player[col].values[0] if col in player.columns else default
+
+        PA = gv("PA", 0)
+        HR = gv("HR", 0)
+        SB = gv("SB", 0)
+        AVG = gv("AVG", np.nan)
+        OBP = gv("OBP", np.nan)
+        SLG = gv("SLG", np.nan)
+        xwOBA = gv("xwOBA", np.nan)
+        wOBA = gv("wOBA", np.nan) if "wOBA" in player.columns else np.nan
+
+        st.markdown("### Snapshot")
+        mc1, mc2, mc3, mc4, mc5, mc6 = st.columns(6)
+        mc1.metric("PA", f"{int(PA) if pd.notna(PA) else '—'}")
+        mc2.metric("HR", f"{int(HR) if pd.notna(HR) else '—'}")
+        mc3.metric("SB", f"{int(SB) if pd.notna(SB) else '—'}")
+        mc4.metric("AVG", _metric_or_dash(AVG))
+        mc5.metric("OBP", _metric_or_dash(OBP))
+        mc6.metric("SLG", _metric_or_dash(SLG))
+
+        # ------------------------- Quick Charts -------------------------
+        st.markdown("### Visuals")
+
+        ch_left, ch_mid, ch_right = st.columns([1.2, 1.2, 1.4])
+
+        # Slash line bar
+        with ch_left:
+            slash_cols = _cols_existing(player, ["AVG", "OBP", "SLG"])
+            if slash_cols:
+                plot_df = pd.melt(player[slash_cols], var_name="Stat", value_name="Value")
+                bar = (
+                    alt.Chart(plot_df)
+                    .mark_bar()
+                    .encode(x=alt.X("Stat:N", title="", sort=slash_cols),
+                            y=alt.Y("Value:Q", title="", scale=alt.Scale(zero=False)),
+                            tooltip=[alt.Tooltip("Stat:N"), alt.Tooltip("Value:Q", format=".3f")])
+                    .properties(height=200)
+                )
+                st.altair_chart(bar, use_container_width=True)
+            else:
+                st.caption("Slash chart: required columns not found.")
+
+        # Batted-ball profile horizontal bars
+        with ch_mid:
+            bb_cols = _cols_existing(player, ["Brl%", "AirPull%", "GB%", "LD%", "FB%", "SweetSpot%"])
+            if bb_cols:
+                bb_df = player[bb_cols].T.reset_index()
+                bb_df.columns = ["Metric", "Value"]
+                # Normalize to percent if needed
+                if bb_df["Value"].dropna().between(0, 1).all():
+                    bb_df["Value"] = bb_df["Value"] * 100.0
+                hbar = (
+                    alt.Chart(bb_df)
+                    .mark_bar()
+                    .encode(
+                        y=alt.Y("Metric:N", sort="-x", title=""),
+                        x=alt.X("Value:Q", title="", scale=alt.Scale(domain=[0, max(100, float(bb_df["Value"].max() or 0))])),
+                        tooltip=[alt.Tooltip("Metric:N"), alt.Tooltip("Value:Q", format=".1f")]
+                    )
+                    .properties(height=220)
+                )
+                st.altair_chart(hbar, use_container_width=True)
+            else:
+                st.caption("Batted-ball chart: required columns not found.")
+
+        # Contact/discipline scatter (x: Z-Contact%, y: Z-Swing%, size: BB%/K% diff)
+        with ch_right:
+            d_cols = _cols_existing(player, ["Z-Contact%", "Z-Swing%", "BB%", "K%"])
+            if d_cols:
+                ddf = player.copy()
+                # Convert to 0–100 if in decimals
+                for c in ["Z-Contact%", "Z-Swing%", "BB%", "K%"]:
+                    if c in ddf.columns:
+                        if ddf[c].dropna().between(0, 1).all():
+                            ddf[c] = ddf[c] * 100.0
+                ddf["DisciplineScore"] = (ddf.get("BB%", 0) - ddf.get("K%", 0))
+                scat = (
+                    alt.Chart(ddf)
+                    .mark_circle()
+                    .encode(
+                        x=alt.X("Z-Contact%:Q", title="Z-Contact%"), 
+                        y=alt.Y("Z-Swing%:Q", title="Z-Swing%"),
+                        size=alt.Size("DisciplineScore:Q", title="BB% - K%"),
+                        tooltip=[
+                            alt.Tooltip("Z-Contact%:Q", format=".1f"),
+                            alt.Tooltip("Z-Swing%:Q", format=".1f"),
+                            alt.Tooltip("BB%:Q", format=".1f"),
+                            alt.Tooltip("K%:Q", format=".1f")
+                        ],
+                    )
+                    .properties(height=230)
+                )
+                st.altair_chart(scat, use_container_width=True)
+            else:
+                st.caption("Plate-discipline scatter: required columns not found.")
+
+        # ------------------------- Detail Tabs -------------------------
+        tab1, tab2, tab3, tab4 = st.tabs(["Base Stats", "Batted Ball", "Plate Discipline", "fScores"])
+
+        # Base stats
+        with tab1:
+            base_cols = _cols_existing(player, ["BatterName", "PA", "AB", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "xwOBA", "wOBA"])
+            if base_cols:
+                df_base = player[base_cols].copy()
+                df_base, cfg = _fmt_cols(
+                    df_base,
+                    pct_cols=[],  # slash/xwOBA are 3-decimal
+                    trip_cols=_cols_existing(df_base, ["AVG", "OBP", "SLG", "xwOBA", "wOBA"]),
+                    int_cols=_cols_existing(df_base, ["PA", "AB", "R", "HR", "RBI", "SB"])
+                )
+                st.dataframe(df_base if show_all_cols else df_base[base_cols], use_container_width=True, column_config=cfg, hide_index=True)
+            else:
+                st.info("No base stat columns found.")
+
+        # Batted ball
+        with tab2:
+            bb_cols_full = _cols_existing(player, ["BatterName","xwOBA","xwOBACON","Brl%","AirPull%","GB%","LD%","FB%","SweetSpot%"])
+            if bb_cols_full:
+                df_bb = player[bb_cols_full].copy()
+                df_bb, cfg = _fmt_cols(
+                    df_bb,
+                    pct_cols=_cols_existing(df_bb, ["Brl%","AirPull%","GB%","LD%","FB%","SweetSpot%"]),
+                    trip_cols=_cols_existing(df_bb, ["xwOBA","xwOBACON"]),
+                )
+                st.dataframe(df_bb if show_all_cols else df_bb[bb_cols_full], use_container_width=True, column_config=cfg, hide_index=True)
+            else:
+                st.info("No batted-ball profile columns found.")
+
+        # Plate discipline
+        with tab3:
+            disc_cols = _cols_existing(player, ["BatterName","K%","BB%","Z-Contact%","Z-Swing%","O-Swing%","O-Contact%"])
+            if disc_cols:
+                df_disc = player[disc_cols].copy()
+                df_disc, cfg = _fmt_cols(
+                    df_disc,
+                    pct_cols=[c for c in disc_cols if c.endswith("%")]
+                )
+                st.dataframe(df_disc if show_all_cols else df_disc[disc_cols], use_container_width=True, column_config=cfg, hide_index=True)
+            else:
+                st.info("No plate-discipline columns found.")
+
+        # fScores
+        with tab4:
+            f_cols = _cols_existing(player, ["BatterName","fHitTool","fPower","fDiscipline","fSpeed","fDurability"])
+            if f_cols:
+                df_f = player[f_cols].copy()
+                # Horizontal bar chart for fScores
+                score_cols = [c for c in f_cols if c != "BatterName"]
+                if score_cols:
+                    longf = pd.melt(df_f[["BatterName"] + score_cols], id_vars=["BatterName"], var_name="Trait", value_name="Score")
+                    fbar = (
+                        alt.Chart(longf)
+                        .mark_bar()
+                        .encode(
+                            y=alt.Y("Trait:N", sort="-x", title=""),
+                            x=alt.X("Score:Q", title="", scale=alt.Scale(zero=False)),
+                            tooltip=["Trait:N", alt.Tooltip("Score:Q", format=".1f")]
+                        )
+                        .properties(height=220)
+                    )
+                    st.altair_chart(fbar, use_container_width=True)
+
+                # Table
+                df_f, cfg = _fmt_cols(df_f)
+                st.dataframe(df_f if show_all_cols else df_f[f_cols], use_container_width=True, column_config=cfg, hide_index=True)
+            else:
+                st.info("No fScore columns found.")
+
+        # ------------------------- Optional: Raw tables -------------------------
+        if show_tables:
+            st.divider()
+            st.subheader("Raw tables")
+            st.write("Below are your original selections as plain tables (useful for debugging).")
+
+            # These mimic your original blocks but cleaner + resilient
+            base_cols_raw = _cols_existing(data, ["BatterName","PA","AB","R","HR","RBI","SB","AVG","OBP","SLG"])
+            if base_cols_raw:
+                df0 = player[base_cols_raw].copy()
+                df0, cfg0 = _fmt_cols(df0, trip_cols=_cols_existing(df0, ["AVG","OBP","SLG"]), int_cols=_cols_existing(df0, ["PA","AB","R","HR","RBI","SB"]))
+                st.dataframe(df0, use_container_width=True, column_config=cfg0, hide_index=True)
+
+            bb_cols_raw = _cols_existing(data, ["BatterName","xwOBA","xwOBACON","Brl%","AirPull%","GB%","LD%","FB%","SweetSpot%"])
+            if bb_cols_raw:
+                df1 = player[bb_cols_raw].copy()
+                df1, cfg1 = _fmt_cols(df1, pct_cols=_cols_existing(df1, ["Brl%","AirPull%","GB%","LD%","FB%","SweetSpot%"]),
+                                    trip_cols=_cols_existing(df1, ["xwOBA","xwOBACON"]))
+                st.dataframe(df1, use_container_width=True, column_config=cfg1, hide_index=True)
+
+            disc_cols_raw = _cols_existing(data, ["BatterName","K%","BB%","Z-Contact%","Z-Swing%"])
+            if disc_cols_raw:
+                df2 = player[disc_cols_raw].copy()
+                df2, cfg2 = _fmt_cols(df2, pct_cols=[c for c in disc_cols_raw if c.endswith("%")])
+                st.dataframe(df2, use_container_width=True, column_config=cfg2, hide_index=True)
+
+            f_cols_raw = _cols_existing(data, ["BatterName","fHitTool","fPower","fDiscipline","fSpeed","fDurability"])
+            if f_cols_raw:
+                df3 = player[f_cols_raw].copy()
+                df3, cfg3 = _fmt_cols(df3)
+                st.dataframe(df3, use_container_width=True, column_config=cfg3, hide_index=True)
+
+    if tab == "Hitter Profiles":
+        render_hitter_profiles(hprofiles24, hprofiles25, hprofiles2425)
+
+
+    ######### HITTER COMP
+
+
+
+    # --- HITTER COMPS PAGE ---------------------------------------------------------
+    # Usage:
+    #   if tab == "Hitter Comps":
+    #       render_hitter_comps_page(csv_path="/mnt/data/hitter_profiles_data_2024_2025.csv")
+    #
+    # Data assumptions:
+    # - "BatterName" column exists
+    # - Stats include (any capitalization/spaces/percent signs tolerated):
+    #     brl%, gb%, air pull%, swing%, contact%, k%, bb%, sbatt%
+    # - Optional columns: "PA", "Season" or "Sample" to filter by season buckets
+
+    # -------------------- Helpers --------------------
+
+    # Normalize column name keys (case/space/% tolerant)
+    def _norm(s: str) -> str:
+        return re.sub(r"[^a-z0-9]", "", (s or "").lower())
+
+    # Map flexible user-provided names to your canonical stat keys
+    CANON_KEYS = {
+        "brl%": ["brl%", "barrel%", "brl", "barrels%"],
+        "gb%": ["gb%", "groundball%", "gbpct"],
+        "airpull%": ["airpull%", "air pull%", "pullair%", "pullfb%", "airpullpct"],
+        "swing%": ["swing%", "swingpct", "sw%"],
+        "contact%": ["contact%", "contactpct", "ct%"],
+        "k%": ["k%", "so%", "strikeout%"],
+        "bb%": ["bb%", "walk%", "baseonballs%"],
+        "sbatt%": ["sbatt%", "sb attempt%", "steal attempt%", "sbattpct", "sbatt"],
+    }
+
+    def _locate_columns(df: pd.DataFrame):
+        found = {}
+        all_cols = { _norm(c): c for c in df.columns }
+        for canon, variants in CANON_KEYS.items():
+            for v in variants:
+                key = _norm(v)
+                if key in all_cols:
+                    found[canon] = all_cols[key]
+                    break
+            # If we didn't find via variants, try exact canon
+            if canon not in found and _norm(canon) in all_cols:
+                found[canon] = all_cols[_norm(canon)]
+        return found
+
+    def _percentify(series: pd.Series) -> pd.Series:
+        """Convert 0–1 decimals to 0–100 if needed; leave 0–100 ints/floats alone."""
+        s = series.astype(float)
+        if s.dropna().between(0, 1.0).all():
+            return s * 100.0
+        return s
+
+    def _zscore(df: pd.DataFrame) -> pd.DataFrame:
+        mu = df.mean(numeric_only=True)
+        sd = df.std(ddof=0, numeric_only=True).replace(0, np.nan)
+        z = (df - mu) / sd
+        return z.fillna(0.0)
+
+    def _cosine_dist(a: np.ndarray, B: np.ndarray) -> np.ndarray:
+        a = a.astype(float)
+        B = B.astype(float)
+        a_norm = np.linalg.norm(a)
+        B_norm = np.linalg.norm(B, axis=1)
+        # Avoid divide by zero
+        a_norm = 1e-12 if a_norm == 0 else a_norm
+        B_norm = np.where(B_norm == 0, 1e-12, B_norm)
+        sim = (B @ a) / (B_norm * a_norm)
+        return 1.0 - sim  # distance = 1 - cosine similarity
+
+    def _euclid_dist(a: np.ndarray, B: np.ndarray) -> np.ndarray:
+        return np.linalg.norm(B - a[None, :], axis=1)
+
+    def _mahalanobis_dist(a: np.ndarray, B: np.ndarray, VI: np.ndarray) -> np.ndarray:
+        diff = B - a[None, :]
+        # sqrt((x-μ)^T V^{-1} (x-μ))
+        return np.sqrt(np.einsum("ij,jk,ik->i", diff, VI, diff))
+
+    def _mahalanobis_inv(cov: np.ndarray) -> np.ndarray | None:
+        try:
+            return np.linalg.inv(cov)
+        except Exception:
+            return None
+
+    # -------------------- Main Renderer --------------------
+
+    def render_hitter_comps_page(data: pd.DataFrame | None = None,
+                                csv_path: str | None = None):
+        st.markdown("""
+            <div style="text-align:center">
+                <div style="font-size:36px; font-weight:800;">Hitter Similarity Comps</div>
+                <div style="opacity:.8; margin-top:.25rem;">Find 3–5 closest player profiles from your dataset</div>
+            </div>
+            <hr style="margin:1rem 0 .5rem 0; opacity:.2;">
+        """, unsafe_allow_html=True)
+
+        # ---- Load data ----
+        data = hprofiles2425.copy()
+
+        # Basic sanity: need names
+        if "BatterName" not in data.columns:
+            # Try a tolerant fallback name
+            name_col = None
+            for c in data.columns:
+                if _norm(c) in {"battername", "player", "name", "hitter"}:
+                    name_col = c
+                    break
+            if not name_col:
+                st.error("No 'BatterName' column found.")
+                return
+            data = data.rename(columns={name_col: "BatterName"})
+
+        # Locate stat columns flexibly
+        stat_map = _locate_columns(data)
+        present = {k: v for k, v in stat_map.items() if v in data.columns}
+        missing = [k for k in CANON_KEYS.keys() if k not in present]
+
+        if len(present) < 3:
+            st.error(f"Not enough stat columns found for comps. Missing: {', '.join(missing)}")
+            return
+
+        # Optional filters cluster
+        c1, c2, c3 = st.columns([2,1.2,1.2])
+        with c1:
+            hitter_options = sorted(data["BatterName"].dropna().unique().tolist())
+            hitter = st.selectbox("Choose a hitter", hitter_options, index=0)
+
+        # Season/Sample filter if available
+        with c2:
+            season_col = None
+            for candidate in ["Season", "Year", "Sample"]:
+                if candidate in data.columns:
+                    season_col = candidate
+                    break
+            season_val = None
+            if season_col:
+                opts = ["All"] + [str(x) for x in sorted(data[season_col].dropna().unique().tolist())]
+                season_val = st.selectbox("Sample filter", opts, index=0)
+            else:
+                st.caption("No season/sample column detected.")
+
+        with c3:
+            min_pa = 0
+            if "PA" in data.columns:
+                max_pa = int(np.nanmax(data["PA"].values))
+                min_pa = st.slider("Min PA", 0, max_pa if max_pa>0 else 0, value=min(50, max_pa), step=10)
+
+        # Filter by season & PA (if present)
+        df = data.copy()
+        if season_col and season_val and season_val != "All":
+            df = df[df[season_col].astype(str) == season_val]
+        if "PA" in df.columns:
+            df = df[df["PA"].fillna(0) >= min_pa]
+
+        # If multiple rows per hitter (team splits, etc.), aggregate to one row (mean)
+        agg_cols = list({v for v in present.values()}) + (["PA"] if "PA" in df.columns else [])
+        df_agg = df.groupby("BatterName", as_index=False)[agg_cols].mean(numeric_only=True)
+
+        # Rebuild present mapping against df_agg
+        present_agg = {k: v for k, v in present.items() if v in df_agg.columns}
+
+        # Build matrix
+        stat_cols = [present_agg[k] for k in ["brl%","gb%","airpull%","swing%","contact%","k%","bb%","sbatt%"] if k in present_agg]
+        if hitter not in df_agg["BatterName"].values:
+            st.warning("Selected hitter not found after filters.")
+            return
+
+        # Percentify columns (0–1 => 0–100), then z-score
+        M = df_agg[stat_cols].copy()
+        for c in stat_cols:
+            M[c] = _percentify(M[c])
+
+        # Optional per-stat weights
+        with st.expander("Weights (optional)", expanded=False):
+            weights = {}
+            for k in ["brl%","gb%","airpull%","swing%","contact%","k%","bb%","sbatt%"]:
+                if k in present_agg:
+                    w = st.slider(f"Weight: {k}", 0.0, 3.0, 1.0, 0.1)
+                    weights[present_agg[k]] = w
+            # apply weights by scaling columns
+            for c in stat_cols:
+                M[c] = M[c] * float(weights.get(c, 1.0))
+
+        Z = _zscore(M)
+
+        # Target vector
+        target_row = df_agg[df_agg["BatterName"] == hitter].iloc[0]
+        a = Z.loc[df_agg["BatterName"] == hitter, stat_cols].values[0]
+        B = Z[stat_cols].values
+
+        # Distance metric selection
+        rowA, rowB = st.columns([1.2, 1])
+        with rowA:
+            metric = st.selectbox("Similarity metric", ["Cosine (direction)", "Euclidean (z-dist)", "Mahalanobis (cov-aware)"])
+        with rowB:
+            k = st.slider("Number of comps", 3, 5, 5, 1)
+
+        # Compute distances
+        if metric.startswith("Cosine"):
+            dists = _cosine_dist(a, B)
+        elif metric.startswith("Euclidean"):
+            dists = _euclid_dist(a, B)
+        else:
+            cov = np.cov(Z[stat_cols].values, rowvar=False)
+            VI = _mahilanobis_inv(cov) if ( _mahilanobis_inv := _mahilanobis_inv ) else None  # python 3.10 fallback trick
+            VI = _mahilanobis_inv(cov)
+            if VI is None:
+                st.warning("Mahalanobis covariance not invertible; falling back to Euclidean.")
+                dists = _euclid_dist(a, B)
+                metric = "Euclidean (fallback)"
+            else:
+                dists = _mahalanobis_dist(a, B, VI)
+
+        # Rank & take top k (exclude the player themself)
+        result = df_agg[["BatterName"]].copy()
+        result["Distance"] = dists
+        result = result[result["BatterName"] != hitter].sort_values("Distance", ascending=True).head(k)
+
+        # Build output table with raw stats (post-filter, unweighted raw percents) + distances
+        # Reconstruct a nice table
+        show_cols = ["BatterName", "Distance"] + stat_cols
+        # Pull the unweighted, percentified stats for readability:
+        pretty = df_agg[["BatterName"] + stat_cols].copy()
+        for c in stat_cols:
+            pretty[c] = _percentify(pretty[c])  # ensure in 0–100 scale
+
+        out = result.merge(pretty, on="BatterName", how="left")
+
+        # Format for display
+        col_cfg = {
+            "BatterName": st.column_config.TextColumn(help="Similar hitter"),
+            "Distance": st.column_config.NumberColumn(format="%.3f"),
+        }
+        for c in stat_cols:
+            col_cfg[c] = st.column_config.NumberColumn(format="%.1f", help=f"{c} (%, comparable scale)")
+
+        st.markdown("### Most similar hitters")
+        st.dataframe(out[show_cols], use_container_width=True, hide_index=True, column_config=col_cfg)
+
+        # ---------- Viz: Parallel coordinates (z-scores) for target + comps ----------
+        st.markdown("#### Profile comparison (z-scores)")
+        players_for_viz = [hitter] + out["BatterName"].tolist()
+        Z_v = Z.copy()
+        Z_v["BatterName"] = df_agg["BatterName"]
+
+        long = Z_v[["BatterName"] + stat_cols].melt(id_vars="BatterName", var_name="Stat", value_name="Z")
+        long = long[long["BatterName"].isin(players_for_viz)]
+
+        # Order stats in original desired order
+        stat_order = stat_cols  # keep current column order
+        chart = (
+            alt.Chart(long)
+            .mark_line(point=True)
+            .encode(
+                x=alt.X("Stat:N", sort=stat_order, title=""),
+                y=alt.Y("Z:Q", title="z-score (within pool)", scale=alt.Scale(zero=False)),
+                color=alt.Color("BatterName:N", legend=alt.Legend(title="Player")),
+                tooltip=["BatterName:N", "Stat:N", alt.Tooltip("Z:Q", format=".2f")]
+            )
+            .properties(height=300)
+        )
+        st.altair_chart(chart, use_container_width=True)
+
+        # ---------- Target snapshot ----------
+        st.markdown("#### Selected hitter snapshot")
+        target_pretty = pretty[pretty["BatterName"] == hitter].copy()
+        st.dataframe(target_pretty.set_index("BatterName"), use_container_width=True)
+
+        # ---------- Debug / footer ----------
+        with st.expander("Columns detected", expanded=False):
+            st.write("Mapped stat columns (canonical → actual):")
+            st.json(present_agg)
+            if missing:
+                st.caption(f"Missing canon keys not found: {', '.join(missing)}")
+
+
+    # Optional: alias for your app
+    def render_hitter_comps(data=None, csv_path=None):
+        render_hitter_comps_page(data=data, csv_path=csv_path)
+
+    if tab == "Hitter Comps":
+        render_hitter_comps_page()
+
+
+
+
+
+
+
+
+
+    ########################
+
+
+    if tab == "Hitter Profiles Base":
+        st.markdown("<h1><center>Hitter Profiles</center></h1>", unsafe_allow_html=True)
+
+        hitter_selection_list = list(hprofiles2425['BatterName'].unique())
+        hp_col1, hp_col2,hp_col3 = st.columns([1,1,3])
+        with hp_col1:
+            hitter_selection = st.selectbox('Choose a Hitter', hitter_selection_list)
+        with hp_col2:
+            year_selection = st.selectbox('Choose Sample', ['2025','2024','2024-2025'])
+        
+        if year_selection == '2025':
+            data_to_use = hprofiles25.copy()
+        elif year_selection == '2024':
+            data_to_use = hprofiles24.copy()
+        elif year_selection == '2024-2025':
+            data_to_use = hprofiles2425.copy()
+        
+        data_to_use = data_to_use[data_to_use['BatterName']==hitter_selection]
+
+        # Base stats
+        base_stats = data_to_use[['BatterName','PA','AB','R','HR','RBI','SB','AVG','OBP','SLG']]
+        st.dataframe(base_stats)
+
+        # Batted Ball Profile
+        bb_profile = data_to_use[['BatterName','xwOBA','xwOBACON','Brl%','AirPull%','GB%','LD%','FB%','SweetSpot%']]
+        st.dataframe(bb_profile)
+
+        # Plate Discipline
+        disc_profile = data_to_use[['BatterName','K%','BB%','Z-Contact%','Z-Swing%']]
+        st.dataframe(disc_profile)
+
+        # fScores
+        fprofiles = data_to_use[['BatterName','fHitTool','fPower','fDiscipline','fSpeed','fDurability']]
+        st.dataframe(fprofiles)
+
+
     
     if tab == "Player Rater":
         st.markdown("<h1><center>Dynamic Player Rater</center></h1>", unsafe_allow_html=True)
