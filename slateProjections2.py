@@ -236,8 +236,9 @@ if check_password():
         hprofiles24 = pd.read_csv(f'{file_path}/hitter_profiles_data_2024.csv')
         hprofiles25 = pd.read_csv(f'{file_path}/hitter_profiles_data_2025.csv')
         hprofiles2425 = pd.read_csv(f'{file_path}/hitter_profiles_data_2024_2025.csv')
+        posdata = pd.read_csv(f'{file_path}/mlbposdata.csv')
 
-        return hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
+        return posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -937,7 +938,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
+    posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -1765,10 +1766,12 @@ if check_password():
             return filtered
 
         
-        pos_col1, pos_col2,pos_col3,pos_col4 = st.columns([1,1,1,1])
+        pos_col1, pos_col2,pos_col3,pos_col4,pos_col5 = st.columns([1,1,1,1,1])
         with pos_col2:
             pos_chosen = st.selectbox('Choose Position',['Hitters','Pitchers'])
         with pos_col3:
+            h_pos_chosen = st.selectbox('Hitter Pos',['All','C','1B','2B','3B','SS','OF'])
+        with pos_col4:
             team_selection_list.sort()
             team_selection_list = ['All'] + team_selection_list
             team_choose = st.selectbox('Choose Team', team_selection_list)
@@ -1777,20 +1780,32 @@ if check_password():
             filtered_hitdb = select_and_filter_by_date_slider(hitdb, date_col="game_date")
 
             df = filtered_hitdb.groupby(['Player','player_id'],as_index=False)[['R','HR','RBI','SB','H','AB']].sum()
+            posdata = posdata.drop_duplicates()
+            df = pd.merge(df,posdata,how='left',left_on='player_id', right_on='ID')
+            df['Pos2'] = df['Pos'].str.split('/',expand=True)[0]
             df['AVG'] = round(df['H']/df['AB'],3)
             df = df[df['AB']>9]
             df['Team'] = df['player_id'].map(teamdict)
-            df = df[['Player','Team','AB','R','HR','RBI','SB','AVG']]
+            df = df[['Player','Team','Pos2','AB','R','HR','RBI','SB','AVG']]
+            df = df.rename({'Pos2': 'Pos'},axis=1)
 
             hitter_sgp = calculateSGP_Hitters(df)
             hitter_sgp = hitter_sgp.drop(['AB'],axis=1)
             show_df = pd.merge(df,hitter_sgp,on=['Player','Team'],how='left')
             show_df = show_df.round(2)
             show_df = show_df.sort_values(by='SGP',ascending=False)
+
             if team_choose == 'All':
                 pass
             else:
                 show_df = show_df[show_df['Team']==team_choose]
+
+            if h_pos_chosen == 'All':
+                pass
+            else:
+                show_df = show_df[show_df['Pos']==h_pos_chosen]
+
+            
 
             styled_df = (
                 show_df.style
