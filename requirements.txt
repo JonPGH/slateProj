@@ -14,3 +14,4 @@ plotly==5.20.0
 matplotlib
 ipywidgets
 pulp
+gspread
