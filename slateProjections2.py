@@ -1610,14 +1610,6 @@ if check_password():
 
 
 
-
-
-
-
-
-
-
-
     if tab == "2026 Ranks Old":
         import pandas as pd, numpy as np, html
         import streamlit as st
