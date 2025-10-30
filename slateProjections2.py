@@ -241,8 +241,10 @@ if check_password():
         hprofiles25 = pd.read_csv(f'{file_path}/hitter_profiles_data_2025.csv')
         hprofiles2425 = pd.read_csv(f'{file_path}/hitter_profiles_data_2024_2025.csv')
         posdata = pd.read_csv(f'{file_path}/mlbposdata.csv')
+        hitterranks = pd.read_csv(f'{file_path}/MLB DW 2026 Player Ranks - Hitters.csv')
+        pitcherranks = pd.read_csv(f'{file_path}/MLB DW 2026 Player Ranks - Pitchers.csv')
 
-        return posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
+        return hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -942,7 +944,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
+    hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -1009,7 +1011,7 @@ if check_password():
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews", "Pitcher Projections", "Hitter Projections","Hitter Profiles","Hitter Comps", "Player Projection Details","Player Rater", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
-    tab = st.sidebar.radio("Select View", ["Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["2026 Ranks","Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
     
     if "reload" not in st.session_state:
         st.session_state.reload = False
@@ -1365,8 +1367,253 @@ if check_password():
                 get_gspread_client.clear()
                 st.experimental_rerun()
 
-    
+
     if tab == "2026 Ranks":
+        import pandas as pd, numpy as np, html
+        import streamlit as st
+        import streamlit.components.v1 as components
+
+        # ===== Title =====
+        st.markdown('<h2 style="text-align:center;margin:.25rem 0 1rem;">2026 Ranks</h2>', unsafe_allow_html=True)
+
+        # ===== Load data =====
+        # If you want to swap to live Sheets later, hook back into your helper functions.
+        hitters_raw = hitterranks.copy()
+        pitchers_raw = pitcherranks.copy()
+
+        # Build link dicts from the Link column
+        h_with_links = hitters_raw[~hitters_raw['Link'].isna()]
+        h_link_dict = dict(zip(h_with_links['Player'], h_with_links['Link']))
+
+        p_with_links = pitchers_raw[~pitchers_raw['Link'].isna()]
+        p_link_dict = dict(zip(p_with_links['Player'], p_with_links['Link']))
+
+        # ===== Toggle =====
+        group = st.radio("Group", ["Hitters", "Pitchers"], horizontal=True, index=0)
+        df_raw = hitters_raw.copy() if group == "Hitters" else pitchers_raw.copy()
+
+        # Expected cols
+        expected = ["Rank","Player","Team","Pos","Primary Pos","Pos Rank","Comments","Link"]
+        for c in expected:
+            if c not in df_raw.columns:
+                df_raw[c] = np.nan
+
+        # Coerce numeric ints for display
+        for c in ["Rank","Pos Rank"]:
+            df_raw[c] = pd.to_numeric(df_raw[c], errors="coerce").astype("Int64")
+
+        # ===== Filters =====
+        pos_field = "Primary Pos" if group == "Hitters" else "Pos"
+
+        c1, c2, c3 = st.columns([1,1,1.6])
+        with c1:
+            pos_opts = ["All"] + sorted(df_raw[pos_field].dropna().astype(str).unique().tolist())
+            sel_pos = st.selectbox(pos_field, pos_opts, index=0)
+        with c2:
+            team_opts = ["All"] + sorted(df_raw["Team"].dropna().astype(str).unique().tolist())
+            sel_team = st.selectbox("Team", team_opts, index=0)
+        with c3:
+            q = st.text_input("Search Player", placeholder="type a name…").strip().lower()
+
+        df = df_raw.copy()
+        if sel_pos != "All":
+            df = df[df[pos_field] == sel_pos]
+        if sel_team != "All":
+            df = df[df["Team"] == sel_team]
+        if q:
+            df = df[df["Player"].fillna("").str.lower().str.contains(q, na=False)]
+        df = df.sort_values(["Rank","Player"], na_position="last").reset_index(drop=True)
+
+        # ===== Row colors =====
+        pos_colors = (
+            {"C":"#E691FF","1B":"#FFE5B4","2B":"#FF7F47","3B":"#D9EBFA","SS":"#47C5FF","OF":"#5CEDB5","DH":"#91C6FF"}
+            if group == "Hitters" else
+            {"SP":"#FF7F47","RP":"#FF7F47","P":"#FF7F47"}
+        )
+
+        # Which link dict to use
+        link_dict = h_link_dict if group == "Hitters" else p_link_dict
+
+        # ===== Utilities =====
+        def esc(x):
+            if pd.isna(x):
+                return ""
+            try:
+                return html.escape(str(x))
+            except Exception:
+                return ""
+
+        # ===== CSS =====
+        css = """
+        <style>
+        .wrap { max-width: 1200px; margin: 0 auto; }
+        .card { background:#fff; border:1px solid #e9e9ee; border-radius:16px; box-shadow:0 4px 14px rgba(0,0,0,.05); overflow:hidden; }
+        table.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:15px; }
+        thead th { position:sticky; top:0; background:#f7f8fb; padding:10px; text-align:center; font-weight:700; border-bottom:1px solid #ececf4; z-index:1; }
+        tbody td { padding:10px; text-align:center; border-bottom:1px solid #f2f2f6; }
+        tbody tr:last-child td { border-bottom:none; }
+        td.player { text-align:left; }
+        .pwrap { position:relative; display:inline-block; }
+        .pname { font-weight:700; color:#0f172a; cursor:help; }
+        .tip {
+            visibility:hidden; opacity:0; transition:opacity .12s ease-in-out;
+            position:absolute; left:0; top:110%;
+            min-width:260px; max-width:540px;
+            background:#0f172a; color:#fff; border-radius:10px; padding:10px 12px;
+            box-shadow:0 8px 22px rgba(0,0,0,.18); z-index:5; line-height:1.35;
+            white-space:normal; word-wrap:break-word;
+        }
+        .tip::after { content:""; position:absolute; top:-6px; left:14px; border-width:6px; border-style:solid;
+                        border-color:transparent transparent #0f172a transparent; }
+        .pwrap:hover .tip { visibility:visible; opacity:1; }
+        @media (max-width: 800px) { .tip { max-width: 80vw; } }
+
+        /* Read button */
+        .readcol { text-align:center; }
+        .readbtn {
+            display:inline-block; padding:4px 8px; border-radius:80px;
+            text-decoration:none; font-weight:600; border:1px solid #dbe0ea;
+            background:#f2f5fb; color:#0f172a;
+        }
+        .readbtn:hover { background:#e6ecf7; }
+        .muted { color:#9aa3b2; font-style:italic; }
+        </style>
+        """
+
+        # ----- Header (conditional) -----
+        if group == "Hitters":
+            header = """
+            <div class="wrap"><div class="card">
+            <table class="tbl">
+                <thead>
+                <tr>
+                    <th style="width:70px;">Rank</th>
+                    <th>Player</th>
+                    <th style="width:90px;">Team</th>
+                    <th style="width:90px;">Pos</th>
+                    <th style="width:120px;">Primary Pos</th>
+                    <th style="width:110px;">Pos Rank</th>
+                    <th style="width:160px;">Link</th>
+                    <th style="width:45%;">Comments</th>
+                </tr>
+                </thead>
+                <tbody>
+            """
+        else:  # Pitchers
+            header = """
+            <div class="wrap"><div class="card">
+            <table class="tbl">
+                <thead>
+                <tr>
+                    <th style="width:70px;">Rank</th>
+                    <th>Player</th>
+                    <th style="width:90px;">Team</th>
+                    <th style="width:120px;">Pos</th>
+                    <th style="width:160px;">Read</th>
+                    <th style="width:55%;">Comments</th>
+                </tr>
+                </thead>
+                <tbody>
+            """
+
+        # ----- Rows -----
+        rows = []
+        for _, r in df.iterrows():
+            # background color by position key (Primary Pos for hitters, Pos for pitchers)
+            pos_key = esc(r.get(pos_field, ""))
+            bg = pos_colors.get(pos_key, "#F7F7F7")
+
+            rank    = "" if pd.isna(r["Rank"]) else int(r["Rank"])
+            player  = esc(r["Player"])
+            team    = esc(r["Team"])
+            pos     = esc(r["Pos"])
+            ppos    = esc(r.get("Primary Pos", ""))
+            posrank = "" if pd.isna(r.get("Pos Rank", np.nan)) else int(r["Pos Rank"])
+
+            cm_full = esc(r["Comments"]).replace("\n"," ")
+            cm_prev = (cm_full[:180] + "…") if len(cm_full) > 180 else cm_full
+
+            # Link cell
+            raw_player = r["Player"]
+            plink = None
+            # Prefer dict lookup; if missing, fall back to row's Link column
+            if isinstance(raw_player, str):
+                plink = link_dict.get(raw_player)
+            if (not isinstance(plink, str) or not plink.strip()) and isinstance(r.get("Link", None), str):
+                if r["Link"].strip():
+                    plink = r["Link"].strip()
+
+            if isinstance(plink, str) and plink.strip():
+                link_cell = f'<a class="readbtn" href="{html.escape(plink)}" target="_blank" rel="noopener noreferrer">Read Full Breakdown</a>'
+            else:
+                link_cell = '<span class="muted">—</span>'
+
+            if group == "Hitters":
+                rows.append(f"""
+                <tr style="background:{bg};">
+                    <td>{rank}</td>
+                    <td class="player">
+                        <span class="pwrap">
+                            <span class="pname">{player}</span>
+                            <span class="tip">{cm_full or "No comment."}</span>
+                        </span>
+                    </td>
+                    <td>{team}</td>
+                    <td>{pos}</td>
+                    <td>{ppos}</td>
+                    <td>{posrank}</td>
+                    <td class="readcol">{link_cell}</td>
+                    <td style="text-align:left;">{cm_prev}</td>
+                </tr>
+                """)
+            else:
+                rows.append(f"""
+                <tr style="background:{bg};">
+                    <td>{rank}</td>
+                    <td class="player">
+                        <span class="pwrap">
+                            <span class="pname">{player}</span>
+                            <span class="tip">{cm_full or "No comment."}</span>
+                        </span>
+                    </td>
+                    <td>{team}</td>
+                    <td>{pos}</td>
+                    <td class="readcol">{link_cell}</td>
+                    <td style="text-align:left;">{cm_prev}</td>
+                </tr>
+                """)
+
+        footer = """
+                </tbody>
+            </table>
+            </div></div>
+        """
+
+        html_out = css + header + "\n".join(rows) + footer
+
+        # Sensible container height
+        row_h = 44     # px per row (roughly)
+        base_h = 120   # header + padding
+        max_h = 900
+        height = min(max_h, base_h + row_h * max(1, len(df)))
+
+        components.html(html_out, height=height, scrolling=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if tab == "2026 Ranks Old":
         import pandas as pd, numpy as np, html
         import streamlit as st
         import streamlit.components.v1 as components
@@ -1383,9 +1630,18 @@ if check_password():
         # Optional refresh button at the top of the tab
         #render_refresh_button()
 
-        data = load_ranks_data(sheet_url)
-        hitters_raw  = data["hitters"]
-        pitchers_raw = data["pitchers"]
+        #data = load_ranks_data(sheet_url)
+        #hitters_raw  = data["hitters"]
+        #pitchers_raw = data["pitchers"]
+
+        hitters_raw = hitterranks.copy()
+        pitchers_raw = pitcherranks.copy()
+
+        h_with_links = hitters_raw[~hitters_raw['Link'].isna()]
+        h_link_dict = dict(zip(h_with_links.Player,h_with_links.Link))
+
+        p_with_links = pitchers_raw[~pitchers_raw['Link'].isna()]
+        p_link_dict = dict(zip(p_with_links.Player,p_with_links.Link))
 
         # ===== Toggle =====
         group = st.radio("Group", ["Hitters", "Pitchers"], horizontal=True, index=0)
@@ -1557,29 +1813,6 @@ if check_password():
         #components.html(html_out, height=min(max_h, base_h + row_h * len(df)), scrolling=True)
         
         components.html(html_out, height=len(df)*100, scrolling=True)
-
-
-
-    if tab == "2026 Ranks_1":
-        st.write('2026 ranks title')
-
-        sheet_urls = {
-        "MLB DW 2026 Player Ranks": "https://docs.google.com/spreadsheets/d/1FJDdRNsWV_TzMOA5ex_DKaFw2U2G450eYMBrM2oMO2g/edit"
-        }
-        sheet_url = "https://docs.google.com/spreadsheets/d/1FJDdRNsWV_TzMOA5ex_DKaFw2U2G450eYMBrM2oMO2g/edit"
-
-        #all_data = load_all_sheets(sheet_urls)
-        #hitter_ranks = all_data.get('MLB DW 2026 Player Ranks')
-
-        hitter_data = get_sheet_data(sheet_url, "Hitters")
-        pitcher_data = get_sheet_data(sheet_url, "Pitchers")
-
-        st.dataframe(hitter_data)
-        st.dataframe(pitcher_data)
-
-
-
-
 
     
     if tab == "Hitter Profiles":
