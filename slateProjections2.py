@@ -1381,6 +1381,11 @@ if check_password():
         hitters_raw = hitterranks.copy()
         pitchers_raw = pitcherranks.copy()
 
+        teams_completed = hitters_raw['Team'].unique()
+
+        st.markdown(f'<h5 style="text-align:center;margin:.25rem 0 1rem;">work in progress...</h5><center>Teams Completed: {teams_completed}</center>', unsafe_allow_html=True)
+
+
         # Build link dicts from the Link column
         h_with_links = hitters_raw[~hitters_raw['Link'].isna()]
         h_link_dict = dict(zip(h_with_links['Player'], h_with_links['Link']))
