@@ -1,26 +1,31 @@
-Rank,Player,Team,Pos,Primary Pos,Pos Rank,Comments,Link
-1,James Wood,WSH,OF,OF,1,"Betting on the skills. Elite raw power and speed. Just lost his way at the plate in the 2H of 2025. Needs to get the K% under 30% and pull a bit more, but the HR/SB is nice and the upside is a round one talent.",
-2,C.J. Abrams,WSH,SS,SS,1,"Consistent source of playing time and steals while being fine in average and power. He's a good mid-round pick if you need steals, and I still think his best years are ahead of him. Possible mid-season sell high though? Check the monthly splits.",
-3,Byron Buxton,MIN,OF,OF,2,"Top 10 hitter when healthy, but I'm hesitant to pay the rising price for a 32-year-old with this injury sheet. It all depends on what kind of outfielder replacement value your league gives you. ",
-4,Hunter Goodman,COL,C,C,1,Hit tool seems good enough to keep the power coming. But buying high on a breakout Rockies bat feels more risky than a lot of drafters will think.,https://www.mlbdatawarehouse.com/i/175451426/hunter-goodman
-5,Ezequiel Tovar,COL,SS,SS,2,"improved batted ball profile (LA) between injury stints. solid roto league SS potential, disaster in points / OBP leagues.",https://www.mlbdatawarehouse.com/i/175451426/ezequiel-tovar
-6,Dylan Crews,WSH,OF,OF,3,"Injuries derailed 2025, but he has not hit well in the Majors yet. Nothing terrible under the hood. Betting on the tools here. I like him.",
-7,Brenton Doyle,COL,OF,OF,4,"Decent buy-low for locked-in playing time with some power and good speed. Subject to huge slumps, very limited counting stat ceiling, but probably an underrated pick in 5 OF leagues.",https://www.mlbdatawarehouse.com/i/175451426/brenton-doyle
-8,Kyle Teel,CWS,C,C,2,"Enormous potential if he can develop some more power. Batting average looks solid with a great launch angle profile. 15+ homers, 10 steals, .270 average with a bunch of walks.",
-9,Colson Montgomery,CWS,SS,SS,3,"Clearly has 30-homer potential, but the plate discipline, lack of speed, and team context seem to outweigh the benefits that come from the power. Could see him whiffing his way back to the minors for a stint.",
-10,Luis Robert,CWS,OF,OF,5,"Serious improvements in plate discipline the last two years, career-low BABIP in 2025. Made himself a positive roto value player with the steals alone. There's still some hope, but the injuries, team context, and recent history make him tough to really buy into",
-11,Mickey Moniak,COL,OF,OF,6,"Improved enough in plate discipline to make us think he can stay in the lineup, but the home/road splits and high swing rate will lead to brutal slumps.",https://www.mlbdatawarehouse.com/i/175451426/mickey-moniak
-12,Luis Garcia,WSH,2B,2B,1,"Nearly went 20-20 back in 2024. Elite K% gives him batting average upside, but has never put it all together and will sit a bunch against lefties. Better 5x5 guy than OBP/points.",
-13,Luke Keaschall,MIN,2B,2B,2,Will get his fantasy value from steals and batting average. So you're relying heavily on another high LD% and BABIP. Power likely to max out at 15 homers? Solid player but can certainly underwhelm for fantasy purposes.,
-14,Royce Lewis,MIN,3B,3B,1,"Has not been a good hitter in the last two seasons, but maybe it was due to a lack of health? Started stealing bases again in September. Fine source of power, but everything else is in question.",
-15,Jordan Beck,COL,OF,OF,7,"Could be a 20+ homer guy with 15 steals, but the K% and organizational context keep him well outside of standard league consideration. Maybe some upside for deeper leagues, but there are better bets out there.",https://www.mlbdatawarehouse.com/i/175451426/jordan-beck
-16,Daylen Lile,WSH,OF,OF,8,"Put up nice numbers in the 2H with an elite (and yet unrepeatable) launch angle profile. Regression coming on the batting average, and it seems like he over-performed in power. But a good shot to be a .280 hitter with 15-15 upside.",
-17,Matt Wallner,MIN,OF,OF,9,"Improved against lefties last year, made more contact, still posted elite HR%. He is a valuable per-game fantasy player and gets boosted in OBP/points leagues. But a fringey top 300 player in my estimation.",
-18,Lenyn Sosa,CWS,2B/1B,2B,3,"Power surge in late 2025, but didn't show that prior. Solid hit tool, can be a batting average guy. But if the power regresses back (likely), he's not worth much in a fantasy league.",
-19,Miguel Vargas,CWS,3B/1B,3B,2,"He is a league-average hitter who excels at nothing. Not a horrible depth option for volume purposes, but no real fantasy appeal at the end of the day. ",
-20,Zac Veen,COL,OF,OF,10,"Potential to be an elite source of steals. Maybe a 15-homer bat? But it's a longshot. Viewing him as ""wait and see steals streamer"" ahead of 2026 drafts for now.",https://www.mlbdatawarehouse.com/i/175451426/zac-veen
-21,Chase Meidroth,CWS,SS/2B,SS,4,"No power, very replaceable speed, does not swing the bat. Nothing to like.",
-22,Brady House,WSH,3B,3B,3,"A tall 22-year-old with raw power, but the plate discipline means he has an uphill climb to fantasy relevance. Will he even be the Nats starting 3B at beginning of the year?",
-23,Andrew Benintendi,CWS,OF,OF,11,40 homers in the last two seasons with 25+ homer potential. But he does nothing else and I have real doubts about his job security given the age and lack of defense.,
-24,Edgar Quero,CWS,C,C,3,"Can get some base hits and get on base, but no power or speed and would figure to play behind Kyle Teel",
-25,Keibert Ruiz,WSH,C,C,4,Concussion issues and has been a very poor hitter in his pretty long career at this point. No reason to consider him in fantasy leagues.,
+,Rank,Player,Team,Pos,Primary Pos,Pos Rank,Comments,Link
+0,1,James Wood,WSH,OF,OF,1,"Betting on the skills. Elite raw power and speed. Just lost his way at the plate in the 2H of 2025. Needs to get the K% under 30% and pull a bit more, but the HR/SB is nice and the upside is a round one talent.",
+1,2,C.J. Abrams,WSH,SS,SS,1,"Consistent source of playing time and steals while being fine in average and power. He's a good mid-round pick if you need steals, and I still think his best years are ahead of him. Possible mid-season sell high though? Check the monthly splits.",
+2,3,Byron Buxton,MIN,OF,OF,2,"Top 10 hitter when healthy, but I'm hesitant to pay the rising price for a 32-year-old with this injury sheet. It all depends on what kind of outfielder replacement value your league gives you. ",
+3,4,Hunter Goodman,COL,C,C,1,Hit tool seems good enough to keep the power coming. But buying high on a breakout Rockies bat feels more risky than a lot of drafters will think.,https://www.mlbdatawarehouse.com/i/175451426/hunter-goodman
+4,5,Oneil Cruz,PIT,OF,OF,3,,
+5,6,Ezequiel Tovar,COL,SS,SS,2,"improved batted ball profile (LA) between injury stints. solid roto league SS potential, disaster in points / OBP leagues.",https://www.mlbdatawarehouse.com/i/175451426/ezequiel-tovar
+6,7,Dylan Crews,WSH,OF,OF,4,"Injuries derailed 2025, but he has not hit well in the Majors yet. Nothing terrible under the hood. Betting on the tools here. I like him.",
+7,8,Brenton Doyle,COL,OF,OF,5,"Decent buy-low for locked-in playing time with some power and good speed. Subject to huge slumps, very limited counting stat ceiling, but probably an underrated pick in 5 OF leagues.",https://www.mlbdatawarehouse.com/i/175451426/brenton-doyle
+8,9,Kyle Teel,CWS,C,C,2,"Enormous potential if he can develop some more power. Batting average looks solid with a great launch angle profile. 15+ homers, 10 steals, .270 average with a bunch of walks.",
+9,10,Colson Montgomery,CWS,SS,SS,3,"Clearly has 30-homer potential, but the plate discipline, lack of speed, and team context seem to outweigh the benefits that come from the power. Could see him whiffing his way back to the minors for a stint.",
+10,11,Luis Robert,CWS,OF,OF,6,"Serious improvements in plate discipline the last two years, career-low BABIP in 2025. Made himself a positive roto value player with the steals alone. There's still some hope, but the injuries, team context, and recent history make him tough to really buy into",
+11,12,Mickey Moniak,COL,OF,OF,7,"Improved enough in plate discipline to make us think he can stay in the lineup, but the home/road splits and high swing rate will lead to brutal slumps.",https://www.mlbdatawarehouse.com/i/175451426/mickey-moniak
+12,13,Luis Garcia,WSH,2B,2B,1,"Nearly went 20-20 back in 2024. Elite K% gives him batting average upside, but has never put it all together and will sit a bunch against lefties. Better 5x5 guy than OBP/points.",
+13,14,Luke Keaschall,MIN,2B,2B,2,Will get his fantasy value from steals and batting average. So you're relying heavily on another high LD% and BABIP. Power likely to max out at 15 homers? Solid player but can certainly underwhelm for fantasy purposes.,
+14,15,Royce Lewis,MIN,3B,3B,1,"Has not been a good hitter in the last two seasons, but maybe it was due to a lack of health? Started stealing bases again in September. Fine source of power, but everything else is in question.",
+15,16,Jordan Beck,COL,OF,OF,8,"Could be a 20+ homer guy with 15 steals, but the K% and organizational context keep him well outside of standard league consideration. Maybe some upside for deeper leagues, but there are better bets out there.",https://www.mlbdatawarehouse.com/i/175451426/jordan-beck
+16,17,Daylen Lile,WSH,OF,OF,9,"Put up nice numbers in the 2H with an elite (and yet unrepeatable) launch angle profile. Regression coming on the batting average, and it seems like he over-performed in power. But a good shot to be a .280 hitter with 15-15 upside.",
+17,18,Matt Wallner,MIN,OF,OF,10,"Improved against lefties last year, made more contact, still posted elite HR%. He is a valuable per-game fantasy player and gets boosted in OBP/points leagues. But a fringey top 300 player in my estimation.",
+18,19,Lenyn Sosa,CWS,2B/1B,2B,3,"Power surge in late 2025, but didn't show that prior. Solid hit tool, can be a batting average guy. But if the power regresses back (likely), he's not worth much in a fantasy league.",
+19,20,Miguel Vargas,CWS,3B/1B,3B,2,"He is a league-average hitter who excels at nothing. Not a horrible depth option for volume purposes, but no real fantasy appeal at the end of the day. ",
+20,21,Zac Veen,COL,OF,OF,11,"Potential to be an elite source of steals. Maybe a 15-homer bat? But it's a longshot. Viewing him as ""wait and see steals streamer"" ahead of 2026 drafts for now.",https://www.mlbdatawarehouse.com/i/175451426/zac-veen
+21,22,Chase Meidroth,CWS,SS/2B,SS,4,"No power, very replaceable speed, does not swing the bat. Nothing to like.",
+22,23,Brady House,WSH,3B,3B,3,"A tall 22-year-old with raw power, but the plate discipline means he has an uphill climb to fantasy relevance. Will he even be the Nats starting 3B at beginning of the year?",
+23,24,Andrew Benintendi,CWS,OF,OF,12,40 homers in the last two seasons with 25+ homer potential. But he does nothing else and I have real doubts about his job security given the age and lack of defense.,
+24,25,Edgar Quero,CWS,C,C,3,"Can get some base hits and get on base, but no power or speed and would figure to play behind Kyle Teel",
+25,26,Keibert Ruiz,WSH,C,C,4,Concussion issues and has been a very poor hitter in his pretty long career at this point. No reason to consider him in fantasy leagues.,
+26,,Spencer Horwitz,PIT,1B,1B,,,
+27,,Bryan Reynolds,PIT,OF,OF,,,
+28,,Jared Triolo,PIT,SS/3B/1B,SS,,,
+29,,Nick Gonzales,PIT,2B,2B,,,
