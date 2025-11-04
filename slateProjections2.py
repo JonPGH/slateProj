@@ -1594,8 +1594,8 @@ if check_password():
                 st.dataframe(
                     comps.style.format(precision=1, thousands=","),
                     use_container_width=True,
-                    hide_index=True,
-                    height=460,
+                    hide_index=True
+                    #height=len(comps)*50,
                 )
                 st.download_button(
                     "⬇️ Download comps as CSV",
