@@ -1618,7 +1618,8 @@ if check_password():
                     index=0,
                 )
             with right:
-                top_n = st.slider("How many comps?", 5, 25, 10, 1)
+                top_n = st.slider("How many comps?", 3, 10, 5, 1)
+                #top_n = st.slider("How many comps?", 5, 25, 10, 1)
 
             with st.expander("Advanced options"):
                 st.caption("fERA is treated as ‘lower is better’.")
@@ -1645,18 +1646,20 @@ if check_password():
                     flip_lower_is_better=["fERA"],
                 )
 
-            if not sel_row.empty:
-                st.markdown("#### Selected pitcher's scores")
-                sel_display = {
-                    "Player": sel_player,
-                }
-                for c in pit_features:
-                    sel_display[c] = sel_row.get(c, "")
-                st.dataframe(
-                    pd.DataFrame([sel_display]),
-                    use_container_width=True,
-                    hide_index=True,
-                )
+            zzz1,zzz2,zzz3 = st.columns([1,5,1])
+            with zzz2:
+                if not sel_row.empty:
+                    st.markdown("#### Selected pitcher's scores")
+                    sel_display = {
+                        "Player": sel_player,
+                    }
+                    for c in pit_features:
+                        sel_display[c] = sel_row.get(c, "")
+                    st.dataframe(
+                        pd.DataFrame([sel_display]),
+                        use_container_width=True,
+                        hide_index=True,
+                    )
 
             st.markdown(f"### Top {top_n} MLB Comps for **{sel_player}**")
             if comps.empty:
@@ -1665,8 +1668,8 @@ if check_password():
                 st.dataframe(
                     comps.style.format(precision=2, thousands=","),
                     use_container_width=True,
-                    hide_index=True,
-                    height=460,
+                    hide_index=True
+                    #height=460,
                 )
                 st.download_button(
                     "⬇️ Download comps as CSV",
