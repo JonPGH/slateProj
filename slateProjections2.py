@@ -243,8 +243,12 @@ if check_password():
         posdata = pd.read_csv(f'{file_path}/mlbposdata.csv')
         hitterranks = pd.read_csv(f'{file_path}/MLB DW 2026 Player Ranks - Hitters.csv')
         pitcherranks = pd.read_csv(f'{file_path}/MLB DW 2026 Player Ranks - Pitchers.csv')
+        fscores_mlb_hit = pd.read_csv(f'{file_path}/All_MLB_Scores.csv')
+        fscores_milb_hit = pd.read_csv(f'{file_path}/All_MiLB_Scores.csv')
+        fscores_mlb_pitch = pd.read_csv(f'{file_path}/All_Pitching_Majors_MLB_Scores.csv')
+        fscores_milb_pitch = pd.read_csv(f'{file_path}/All_Pitching_Minors_MLB_Scores.csv')
 
-        return hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
+        return fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -944,7 +948,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
+    fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -1011,7 +1015,7 @@ if check_password():
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews", "Pitcher Projections", "Hitter Projections","Hitter Profiles","Hitter Comps", "Player Projection Details","Player Rater", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
-    tab = st.sidebar.radio("Select View", ["2026 Ranks","Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["2026 Ranks","Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
     
     if "reload" not in st.session_state:
         st.session_state.reload = False
@@ -1368,6 +1372,309 @@ if check_password():
                 st.experimental_rerun()
 
 
+    if tab == "Prospect Comps":
+        import numpy as np
+        import pandas as pd
+        import streamlit as st
+
+        st.markdown(
+            "<h2 style='text-align:center;margin:.25rem 0 1rem;'>Prospect Comps</h2>",
+            unsafe_allow_html=True,
+        )
+
+        # ========= Helpers =========
+        def _prep_hitters(minors: pd.DataFrame, majors: pd.DataFrame):
+            use_cols = ["Player", "Team", "Pos", "Age", "HitTool", "Discipline", "Power", "Speed", "Durability"]
+            minors = minors.copy()
+            majors = majors.copy()
+            minors = minors[[c for c in use_cols if c in minors.columns]].dropna(subset=["Player"])
+            majors = majors[[c for c in use_cols if c in majors.columns]].dropna(subset=["Player"])
+
+            # numeric cols must exist in BOTH
+            num_cols = [
+                c
+                for c in ["Age", "HitTool", "Discipline", "Power", "Speed", "Durability"]
+                if c in minors.columns and c in majors.columns
+            ]
+            for c in num_cols:
+                minors[c] = pd.to_numeric(minors[c], errors="coerce")
+                majors[c] = pd.to_numeric(majors[c], errors="coerce")
+
+            minors = minors.dropna(subset=num_cols)
+            majors = majors.dropna(subset=num_cols)
+            return minors, majors, num_cols
+
+        def _prep_pitchers(minors: pd.DataFrame, majors: pd.DataFrame):
+            if "Player" not in minors.columns and "player_name" in minors.columns:
+                minors = minors.rename(columns={"player_name": "Player"})
+            if "Player" not in majors.columns and "player_name" in majors.columns:
+                majors = majors.rename(columns={"player_name": "Player"})
+
+            keep = ["Player", "pitcher", "fERA", "fControl", "fStuff", "fDurability", "Age"]
+            minors = minors[[c for c in keep if c in minors.columns]].dropna(subset=["Player"])
+            majors = majors[[c for c in keep if c in majors.columns]].dropna(subset=["Player"])
+
+            num_cols = [c for c in ["fERA", "fControl", "fStuff", "fDurability", "Age"] if c in minors.columns and c in majors.columns]
+            for c in num_cols:
+                minors[c] = pd.to_numeric(minors[c], errors="coerce")
+                majors[c] = pd.to_numeric(majors[c], errors="coerce")
+
+            # allow Age to be optional
+            minors = minors.dropna(subset=[c for c in num_cols if c != "Age"] or num_cols)
+            majors = majors.dropna(subset=[c for c in num_cols if c != "Age"] or num_cols)
+
+            core_feats = [c for c in ["fERA", "fControl", "fStuff", "fDurability"] if c in num_cols]
+            has_age = "Age" in num_cols
+            return minors, majors, core_feats, has_age
+
+        def _standardize(maj_matrix: np.ndarray, vec: np.ndarray, flip_mask=None):
+            mu = maj_matrix.mean(axis=0)
+            sd = maj_matrix.std(axis=0, ddof=0)
+            sd = np.where(sd == 0, 1.0, sd)
+            A = (maj_matrix - mu) / sd
+            b = (vec - mu) / sd
+            if flip_mask is not None:
+                A = np.where(flip_mask, -A, A)
+                b = np.where(flip_mask, -b, b)
+            return A, b
+
+        def _cosine(A: np.ndarray, b: np.ndarray, weights: np.ndarray | None = None) -> np.ndarray:
+            if weights is not None:
+                A = A * weights
+                b = b * weights
+            An = np.linalg.norm(A, axis=1)
+            bn = np.linalg.norm(b)
+            An = np.where(An == 0, 1.0, An)
+            if bn == 0:
+                bn = 1.0
+            sims = (A @ b) / (An * bn)
+            return np.clip(sims, -1.0, 1.0)
+
+        def _sim_to_score(sim: np.ndarray) -> np.ndarray:
+            return ((sim + 1.0) / 2.0) * 100.0
+
+        def _build_output_no_dupes(pool, q_row, features, scores, top_n):
+            """
+            Build one dataframe (same index!) so columns don't get misaligned.
+            """
+            base_cols = ["Player"] + [c for c in ["Team", "Pos", "Age"] if c in pool.columns]
+
+            # start with base + feature values from MLB player
+            all_feat_cols = [c for c in features if c not in base_cols]
+            df = pool[base_cols + all_feat_cols].copy()
+
+            # similarity
+            df.insert(1, "Similarity", np.round(scores, 1))
+
+            # deltas vs selected minor leaguer
+            for c in features:
+                df[f"Δ {c}"] = (pool[c].to_numpy() - float(q_row[c])).round(1)
+
+            # sort and trim
+            df = df.sort_values("Similarity", ascending=False).head(top_n).reset_index(drop=True)
+
+            # final guard
+            df = df.loc[:, ~df.columns.duplicated()]
+            return df
+
+        def _run_comps(
+            minors_df: pd.DataFrame,
+            majors_df: pd.DataFrame,
+            features: list[str],
+            query_name: str,
+            top_n: int = 10,
+            same_pos_only: bool = False,
+            pos_col: str | None = None,
+            weights_dict: dict | None = None,
+            flip_lower_is_better: list[str] | None = None,
+        ) -> tuple[pd.DataFrame, pd.Series]:
+            q = minors_df[minors_df["Player"] == query_name]
+            if q.empty:
+                return pd.DataFrame(), pd.Series(dtype=float)
+            q = q.iloc[0]
+
+            pool = majors_df.copy()
+            if same_pos_only and pos_col and pos_col in minors_df.columns and pos_col in majors_df.columns:
+                pool = pool[pool[pos_col] == q[pos_col]].copy()
+                if pool.empty:
+                    pool = majors_df.copy()
+
+            A = pool[features].to_numpy(dtype=float)
+            b = q[features].to_numpy(dtype=float)
+
+            weights = None
+            if weights_dict:
+                weights = np.array([weights_dict.get(f, 1.0) for f in features], dtype=float)
+
+            flip_mask = np.array([f in (flip_lower_is_better or []) for f in features], dtype=bool)
+
+            A_z, b_z = _standardize(A, b, flip_mask=flip_mask)
+            sims = _cosine(A_z, b_z, weights=weights)
+            scores = _sim_to_score(sims)
+
+            out = _build_output_no_dupes(pool, q, features, scores, top_n)
+            return out, q  # also return the selected player row so we can show it
+
+        # ========= UI =========
+        group = st.radio("Group", ["Hitters", "Pitchers"], horizontal=True, index=0)
+
+        if group == "Hitters":
+            # these must already be in your session
+            minors_hit = fscores_milb_hit.copy()
+            majors_hit = fscores_mlb_hit.copy()
+            minors_hit, majors_hit, hit_features = _prep_hitters(minors_hit, majors_hit)
+
+            left, right = st.columns([2, 1])
+            with left:
+                sel_player = st.selectbox(
+                    "Select a Minor League Hitter",
+                    options=sorted(minors_hit["Player"].unique().tolist()),
+                    index=0,
+                )
+            with right:
+                top_n = st.slider("How many comps?", 3, 10, 5, 1)
+
+            with st.expander("Advanced options"):
+                same_pos = st.checkbox("Limit comps to the same primary position", value=True)
+                st.caption("Similarity = cosine over MLB-standardized features (0–100 score).")
+                w_cols = st.columns(6)
+                w_hittool   = w_cols[0].number_input("HitTool",   min_value=0.0, value=1.0, step=0.1)
+                w_disc      = w_cols[1].number_input("Discipline", min_value=0.0, value=1.0, step=0.1)
+                w_power     = w_cols[2].number_input("Power",      min_value=0.0, value=1.0, step=0.1)
+                w_speed     = w_cols[3].number_input("Speed",      min_value=0.0, value=1.0, step=0.1)
+                w_dur       = w_cols[4].number_input("Durability", min_value=0.0, value=1.0, step=0.1)
+                w_age       = w_cols[5].number_input("Age",        min_value=0.0, value=0.5, step=0.1)
+
+                weights_hit = {
+                    "HitTool": w_hittool,
+                    "Discipline": w_disc,
+                    "Power": w_power,
+                    "Speed": w_speed,
+                    "Durability": w_dur,
+                    "Age": w_age,
+                }
+
+            with st.spinner("Computing hitter comps..."):
+                comps, sel_row = _run_comps(
+                    minors_df=minors_hit,
+                    majors_df=majors_hit,
+                    features=hit_features,
+                    query_name=sel_player,
+                    top_n=top_n,
+                    same_pos_only=same_pos,
+                    pos_col="Pos",
+                    weights_dict=weights_hit,
+                    flip_lower_is_better=None,
+                )
+
+            # ---- show selected minor leaguer's scores ----
+            sel1,sel2,sel3 = st.columns([1,5,1])
+            with sel2:
+                if not sel_row.empty:
+                    st.markdown("#### Selected player's scores")
+                    sel_display = {
+                        "Player": sel_player,
+                        "Team": sel_row.get("Team", ""),
+                        "Pos": sel_row.get("Pos", ""),
+                    }
+                    for c in hit_features:
+                        sel_display[c] = sel_row.get(c, "")
+                    st.dataframe(
+                        pd.DataFrame([sel_display]),
+                        use_container_width=True,
+                        hide_index=True,
+                    )
+
+            # ---- show comps ----
+            st.markdown(f"### Top {top_n} MLB Comps for **{sel_player}**")
+            if comps.empty:
+                st.info("No comps found. Try turning off same-position filter or adjusting weights.")
+            else:
+                st.dataframe(
+                    comps.style.format(precision=1, thousands=","),
+                    use_container_width=True,
+                    hide_index=True,
+                    height=460,
+                )
+                st.download_button(
+                    "⬇️ Download comps as CSV",
+                    data=comps.to_csv(index=False).encode("utf-8"),
+                    file_name=f"{sel_player.replace(' ','_')}_MLB_Comps.csv",
+                    mime="text/csv",
+                )
+
+        else:  # Pitchers
+            minors_pitch = fscores_milb_pitch.copy()
+            majors_pitch = fscores_mlb_pitch.copy()
+            minors_pitch, majors_pitch, pit_core_feats, has_age = _prep_pitchers(minors_pitch, majors_pitch)
+            pit_features = pit_core_feats + (["Age"] if has_age else [])
+
+            left, right = st.columns([2, 1])
+            with left:
+                sel_player = st.selectbox(
+                    "Select a Minor League Pitcher",
+                    options=sorted(minors_pitch["Player"].unique().tolist()),
+                    index=0,
+                )
+            with right:
+                top_n = st.slider("How many comps?", 5, 25, 10, 1)
+
+            with st.expander("Advanced options"):
+                st.caption("fERA is treated as ‘lower is better’.")
+                w_cols = st.columns(5 if has_age else 4)
+                w_fera   = w_cols[0].number_input("fERA",        min_value=0.0, value=1.2, step=0.1)
+                w_fctl   = w_cols[1].number_input("fControl",    min_value=0.0, value=1.0, step=0.1)
+                w_fstuff = w_cols[2].number_input("fStuff",      min_value=0.0, value=1.0, step=0.1)
+                w_fdur   = w_cols[3].number_input("fDurability", min_value=0.0, value=0.7, step=0.1)
+                weights_pit = {"fERA": w_fera, "fControl": w_fctl, "fStuff": w_fstuff, "fDurability": w_fdur}
+                if has_age:
+                    w_age = w_cols[4].number_input("Age", min_value=0.0, value=0.4, step=0.1)
+                    weights_pit["Age"] = w_age
+
+            with st.spinner("Computing pitcher comps..."):
+                comps, sel_row = _run_comps(
+                    minors_df=minors_pitch,
+                    majors_df=majors_pitch,
+                    features=pit_features,
+                    query_name=sel_player,
+                    top_n=top_n,
+                    same_pos_only=False,
+                    pos_col=None,
+                    weights_dict=weights_pit,
+                    flip_lower_is_better=["fERA"],
+                )
+
+            if not sel_row.empty:
+                st.markdown("#### Selected pitcher's scores")
+                sel_display = {
+                    "Player": sel_player,
+                }
+                for c in pit_features:
+                    sel_display[c] = sel_row.get(c, "")
+                st.dataframe(
+                    pd.DataFrame([sel_display]),
+                    use_container_width=True,
+                    hide_index=True,
+                )
+
+            st.markdown(f"### Top {top_n} MLB Comps for **{sel_player}**")
+            if comps.empty:
+                st.info("No comps found. Try adjusting weights.")
+            else:
+                st.dataframe(
+                    comps.style.format(precision=2, thousands=","),
+                    use_container_width=True,
+                    hide_index=True,
+                    height=460,
+                )
+                st.download_button(
+                    "⬇️ Download comps as CSV",
+                    data=comps.to_csv(index=False).encode("utf-8"),
+                    file_name=f"{sel_player.replace(' ','_')}_MLB_Comps.csv",
+                    mime="text/csv",
+                )
+
+    
     if tab == "2026 Ranks":
         import pandas as pd, numpy as np, html
         import streamlit as st
@@ -1603,10 +1910,6 @@ if check_password():
         height = min(max_h, base_h + row_h * max(1, len(df)))
 
         components.html(html_out, height=height, scrolling=True)
-
-
-
-
 
 
 
