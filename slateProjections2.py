@@ -2459,7 +2459,7 @@ if check_password():
         import pandas as pd
         import streamlit as st
 
-        st.markdown("<h1><center>Dynamic Player Rater</center></h1>", unsafe_allow_html=True)
+        st.markdown("<h1><center>Dynamic Player Rater</center></h1><br><br><i>SRV = Standard Roto Value</i>", unsafe_allow_html=True)
 
         # ==== build team dicts (latest affiliate per player) ====
         team_selection_list = list(hitdb["affiliate"].unique())
