@@ -2454,8 +2454,396 @@ if check_password():
         st.dataframe(fprofiles)
 
 
-    
     if tab == "Player Rater":
+        import numpy as np
+        import pandas as pd
+        import streamlit as st
+
+        st.markdown("<h1><center>Dynamic Player Rater</center></h1>", unsafe_allow_html=True)
+
+        # ==== build team dicts (latest affiliate per player) ====
+        team_selection_list = list(hitdb["affiliate"].unique())
+        teamlist = hitdb[["player_id", "game_date", "affiliate"]].sort_values(by="game_date")
+        teamlist = teamlist[["player_id", "affiliate"]].drop_duplicates(keep="last")
+        teamdict = dict(zip(teamlist.player_id, teamlist.affiliate))
+
+        teamlist_p = pitdb[["player_id", "game_date", "affiliate"]].sort_values(by="game_date")
+        teamlist_p = teamlist_p[["player_id", "affiliate"]].drop_duplicates(keep="last")
+        teamdict_p = dict(zip(teamlist_p.player_id, teamlist_p.affiliate))
+
+        # ========= FUNCTIONS =========
+        def calculateSRV_Hitters(hitdf: pd.DataFrame, merge_df: pd.DataFrame | None = None):
+            """
+            Same logic as your old SGP, but final col is now SRV.
+            Also preserves player_id when present so we can look players up later.
+            """
+            df = hitdf.copy()
+
+            count_cats = ["R", "HR", "RBI", "SB"]
+            for cat in count_cats:
+                std = df[cat].std(ddof=0)
+                df[f"{cat}_z"] = (df[cat] - df[cat].mean()) / (std if std != 0 else 1.0)
+
+            total_ab = df["AB"].sum()
+            lg_avg = np.divide((df["AVG"] * df["AB"]).sum(), total_ab) if total_ab else df["AVG"].mean()
+
+            df["AVG_contrib"] = (df["AVG"] - lg_avg) * df["AB"]
+            std = df["AVG_contrib"].std(ddof=0)
+            df["AVG_z"] = (df["AVG_contrib"] - df["AVG_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            z_cols = [f"{c}_z" for c in count_cats] + ["AVG_z"]
+            df["SRV"] = df[z_cols].sum(axis=1)
+
+            # keep player_id if we have it
+            base_cols = ["Player", "Team", "SRV"] + z_cols
+            if "player_id" in df.columns:
+                base_cols.insert(1, "player_id")
+
+            df_sorted = df[base_cols].sort_values("SRV", ascending=False).reset_index(drop=True)
+
+            if merge_df is not None:
+                out = merge_df.merge(df_sorted[[c for c in ["Player", "Team", "SRV", "player_id"] if c in df_sorted.columns]],
+                                    on=[c for c in ["Player", "Team"] if c in merge_df.columns],
+                                    how="left")
+                out["SRV"] = out["SRV"].round(2)
+                return out.sort_values("SRV", ascending=False)
+
+            return df_sorted
+
+        def calculateSRV_Pitchers(pitchdf: pd.DataFrame, merge_df: pd.DataFrame | None = None):
+            df = pitchdf.copy()
+
+            count_cats = ["W", "SV", "SO"]
+            for cat in count_cats:
+                std = df[cat].std(ddof=0)
+                df[f"{cat}_z"] = (df[cat] - df[cat].mean()) / (std if std != 0 else 1.0)
+
+            # rate cats as contrib * IP
+            lg_era = np.divide((df["ERA"] * df["IP"]).sum(), df["IP"].sum()) if df["IP"].sum() else df["ERA"].mean()
+            df["ERA_contrib"] = (lg_era - df["ERA"]) * df["IP"]
+            std = df["ERA_contrib"].std(ddof=0)
+            df["ERA_z"] = (df["ERA_contrib"] - df["ERA_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            lg_whip = np.divide((df["WHIP"] * df["IP"]).sum(), df["IP"].sum()) if df["IP"].sum() else df["WHIP"].mean()
+            df["WHIP_contrib"] = (lg_whip - df["WHIP"]) * df["IP"]
+            std = df["WHIP_contrib"].std(ddof=0)
+            df["WHIP_z"] = (df["WHIP_contrib"] - df["WHIP_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            z_cols = [f"{c}_z" for c in count_cats] + ["ERA_z", "WHIP_z"]
+            df["SRV"] = df[z_cols].sum(axis=1)
+
+            base_cols = ["Player", "Team", "SRV"] + z_cols
+            if "player_id" in df.columns:
+                base_cols.insert(1, "player_id")
+
+            df_sorted = df[base_cols].sort_values("SRV", ascending=False).reset_index(drop=True)
+
+            if merge_df is not None:
+                out = merge_df.merge(df_sorted[[c for c in ["Player", "Team", "SRV", "player_id"] if c in df_sorted.columns]],
+                                    on=[c for c in ["Player", "Team"] if c in merge_df.columns],
+                                    how="left")
+                out["SRV"] = out["SRV"].round(2)
+                return out.sort_values("SRV", ascending=False)
+
+            return df_sorted
+
+        def select_and_filter_by_date_slider(df: pd.DataFrame, date_col: str = "Timestamp") -> pd.DataFrame:
+            from datetime import timedelta
+
+            dt = pd.to_datetime(df[date_col], errors="coerce", utc=True)
+            if getattr(dt.dt, "tz", None) is None:
+                dt = dt.dt.tz_localize("UTC")
+
+            df = df.copy()
+            df[date_col] = dt
+
+            if not df[date_col].notna().any():
+                st.warning(f"No valid dates found in column '{date_col}'.")
+                return df.iloc[0:0]
+
+            min_date = df[date_col].min().date()
+            max_date = df[date_col].max().date()
+
+            datecol1, datecol2, datecol3 = st.columns([1, 1.5, 1])
+            with datecol2:
+                start_date, end_date = st.slider(
+                    "Select date range",
+                    min_value=min_date,
+                    max_value=max_date,
+                    value=(min_date, max_date),
+                    step=timedelta(days=1),
+                    format="YYYY-MM-DD",
+                )
+
+            start_dt = pd.Timestamp(start_date).tz_localize("UTC")
+            end_dt_exclusive = pd.Timestamp(end_date).tz_localize("UTC") + pd.Timedelta(days=1)
+
+            mask = (df[date_col] >= start_dt) & (df[date_col] < end_dt_exclusive)
+            filtered = df.loc[mask].copy()
+
+            st.caption(f"Showing {len(filtered):,} of {len(df):,} rows from {start_date} to {end_date} (inclusive).")
+            return filtered
+
+        # === FILTER ROW ===
+        pos_col1, pos_col2, pos_col3, pos_col4, pos_col5 = st.columns([1, 1, 1, 1, 1])
+        with pos_col1:
+            player_search = st.text_input("Player search", "").strip()
+        with pos_col2:
+            pos_chosen = st.selectbox("Choose Position", ["Hitters", "Pitchers"])
+        with pos_col3:
+            h_pos_chosen = st.selectbox("Hitter Pos", ["All", "C", "1B", "2B", "3B", "SS", "OF"])
+        with pos_col4:
+            team_selection_list.sort()
+            team_selection_list = ["All"] + team_selection_list
+            team_choose = st.selectbox("Choose Team", team_selection_list)
+
+        # ===== HITERS =====
+        if pos_chosen == "Hitters":
+            filtered_hitdb = select_and_filter_by_date_slider(hitdb, date_col="game_date")
+
+            # aggregate over chosen date range
+            df = (
+                filtered_hitdb
+                .groupby(["Player", "player_id"], as_index=False)[["R", "HR", "RBI", "SB", "H", "AB"]]
+                .sum()
+            )
+
+            # merge in position info
+            posdata_unique = posdata.drop_duplicates()
+            df = pd.merge(df, posdata_unique, how="left", left_on="player_id", right_on="ID")
+
+            df["Pos2"] = df["Pos"].str.split("/", expand=True)[0]
+            df["AVG"] = (df["H"] / df["AB"]).round(3)
+            df = df[df["AB"] > 9]  # keep only hitters with some AB
+            df["Team"] = df["player_id"].map(teamdict)
+            df = df[["Player", "player_id", "Team", "Pos2", "AB", "R", "HR", "RBI", "SB", "AVG"]]
+            df = df.rename({"Pos2": "Pos"}, axis=1)
+
+            hitter_srv = calculateSRV_Hitters(df)
+            # drop AB from the srv frame; we already have it in df
+            if "AB" in hitter_srv.columns:
+                hitter_srv = hitter_srv.drop(["AB"], axis=1, errors="ignore")
+
+            show_df = pd.merge(df, hitter_srv, on=["Player", "Team", "player_id"], how="left")
+            show_df = show_df.round(2)
+            show_df = show_df.sort_values(by="SRV", ascending=False)
+            show_df['player_id'] = show_df['player_id'].astype(int)
+
+            # apply team filter
+            if team_choose != "All":
+                show_df = show_df[show_df["Team"] == team_choose]
+
+            # apply hitter pos filter
+            if h_pos_chosen != "All":
+                show_df = show_df[show_df["Pos"] == h_pos_chosen]
+
+            show_df = show_df[['Player','player_id','Team','Pos','SRV','AB','R','HR','RBI','SB','AVG']]
+            # apply player search filter
+            if player_search:
+                show_df = show_df[show_df["Player"].str.contains(player_search, case=False, na=False)]
+            
+                show_df = show_df[['Player','player_id','Team','Pos','SRV','AB','R','HR','RBI','SB','AVG']]
+
+
+            styled_df = (
+                show_df.style
+                .background_gradient(subset=["SRV"], cmap="Blues")
+                .set_table_styles(
+                    [{
+                        "selector": "th, td",
+                        "props": [("font-size", "16px")]
+                    }]
+                )
+                .set_properties(subset=["SRV"], **{"font-weight": "bold", "font-size": "18px"})
+                .format({
+                    "AB": "{:.0f}",
+                    "R": "{:.0f}",
+                    "HR": "{:.0f}",
+                    "RBI": "{:.0f}",
+                    "SB": "{:.0f}",
+                    "AVG": "{:.3f}",
+                    "SRV": "{:.2f}",
+                    "R_z": "{:.2f}",
+                    "HR_z": "{:.2f}",
+                    "RBI_z": "{:.2f}",
+                    "SB_z": "{:.2f}",
+                    "AVG_z": "{:.2f}",
+                })
+            )
+
+            h_rv_showcol1,h_rv_showcol2,h_rv_showcol3 = st.columns([1,3,1])
+            with h_rv_showcol2:
+                if len(show_df)<2:
+                    st.dataframe(
+                        styled_df,
+                        hide_index=True,
+                        use_container_width=True,
+                        height=50,
+                    )
+                    
+                else:
+                    st.dataframe(
+                        styled_df,
+                        hide_index=True,
+                        use_container_width=True,
+                        height=600,
+                    )
+
+            st.markdown("<br><hr>",unsafe_allow_html=True)
+            # ===== 30-day rolling SRV plot (hitters) =====
+            # show only when we've narrowed to exactly one player
+            unique_players = show_df["player_id"].dropna().unique()
+            if len(unique_players) == 1:
+                selected_pid = unique_players[0]
+
+                # build day-by-day 30d SRV for that player
+                hd = hitdb.copy()
+                hd["game_date"] = pd.to_datetime(hd["game_date"])
+                hd = hd.sort_values("game_date")
+
+                all_dates = hd["game_date"].dt.normalize().unique()
+                rows = []
+                for d in all_dates:
+                    start = d - np.timedelta64(29, "D")
+                    window = hd[(hd["game_date"] >= start) & (hd["game_date"] <= d)]
+                    if window.empty:
+                        continue
+
+                    agg = (
+                        window.groupby(["Player", "player_id"], as_index=False)[["R", "HR", "RBI", "SB", "H", "AB"]]
+                        .sum()
+                    )
+                    agg["AVG"] = np.where(agg["AB"] > 0, agg["H"] / agg["AB"], 0)
+                    agg["Team"] = agg["player_id"].map(teamdict)
+
+                    srv_frame = calculateSRV_Hitters(agg)
+                    this_row = srv_frame[srv_frame["player_id"] == selected_pid]
+                    if not this_row.empty:
+                        rows.append({"date": pd.to_datetime(d).date(), "SRV": float(this_row["SRV"].iloc[0])})
+
+                if rows:
+                    srv_hist = pd.DataFrame(rows).sort_values("date")
+                    st.subheader(f"30-Day Rolling SRV – {show_df['Player'].iloc[0]}")
+                    srv_hist = srv_hist.set_index("date")
+                    st.line_chart(srv_hist)
+
+        # ===== PITCHERS =====
+        if pos_chosen == "Pitchers":
+            rp_only = st.checkbox("Show Only RP?")
+
+            filtered_pitdb = select_and_filter_by_date_slider(pitdb, date_col="game_date")
+
+            df = (
+                filtered_pitdb
+                .groupby(["Player", "player_id"], as_index=False)[["IP", "ER", "H", "BB", "SO", "W", "SV"]]
+                .sum()
+            )
+
+            df["ERA"] = (df["ER"] * 9 / df["IP"]).round(3)
+            df["WHIP"] = ((df["H"] + df["BB"]) / df["IP"]).round(3)
+            df = df[df["IP"] > 1]
+
+            df["Team"] = df["player_id"].map(teamdict_p)
+            df = df[["Player", "player_id", "Team", "IP", "W", "SO", "SV", "ERA", "WHIP"]]
+
+            pitcher_srv = calculateSRV_Pitchers(df)
+            if "IP" in pitcher_srv.columns:
+                pitcher_srv = pitcher_srv.drop(["IP"], axis=1, errors="ignore")
+
+            show_df = pd.merge(df, pitcher_srv, on=["Player", "Team", "player_id"], how="left")
+            show_df = show_df.round(2)
+            show_df = show_df.sort_values(by="SRV", ascending=False)
+
+            if team_choose != "All":
+                show_df = show_df[show_df["Team"] == team_choose]
+
+            if rp_only:
+                show_df = show_df[show_df["SV"] > 0]
+
+            if player_search:
+                show_df = show_df[show_df["Player"].str.contains(player_search, case=False, na=False)]
+
+            
+            show_df = show_df[['Player','player_id','Team','SRV','IP','W','SO','SV','ERA','WHIP']]
+            prvcol1,prvcol2,prvcol3 = st.columns([1,5,1])
+            with prvcol2:
+                styled_df = (
+                    show_df.style
+                    .background_gradient(subset=["SRV"], cmap="Blues")
+                    .set_table_styles(
+                        [{
+                            "selector": "th, td",
+                            "props": [("font-size", "16px")]
+                        }]
+                    )
+                    .set_properties(subset=["SRV"], **{"font-weight": "bold", "font-size": "18px"})
+                    .format({
+                        "IP": "{:.1f}",
+                        "ERA": "{:.2f}",
+                        "WHIP": "{:.2f}",
+                        "SRV": "{:.2f}",
+                        "W_z": "{:.2f}",
+                        "SV_z": "{:.2f}",
+                        "SO_z": "{:.2f}",
+                        "ERA_z": "{:.2f}",
+                        "WHIP_z": "{:.2f}",
+                    })
+                )
+
+                if len(show_df)<2:
+                    st.dataframe(
+                    styled_df,
+                    hide_index=True,
+                    use_container_width=True,
+                    height=55,
+                )
+                else:
+                    st.dataframe(
+                        styled_df,
+                        hide_index=True,
+                        use_container_width=True,
+                        height=600,
+                    )
+
+            st.markdown("<br><hr>",unsafe_allow_html=True)
+            # ===== 30-day rolling SRV plot (pitchers) =====
+            unique_players = show_df["player_id"].dropna().unique()
+            if len(unique_players) == 1:
+                selected_pid = unique_players[0]
+
+                pdx = pitdb.copy()
+                pdx["game_date"] = pd.to_datetime(pdx["game_date"])
+                pdx = pdx.sort_values("game_date")
+                all_dates = pdx["game_date"].dt.normalize().unique()
+                rows = []
+                for d in all_dates:
+                    start = d - np.timedelta64(29, "D")
+                    window = pdx[(pdx["game_date"] >= start) & (pdx["game_date"] <= d)]
+                    if window.empty:
+                        continue
+
+                    agg = (
+                        window.groupby(["Player", "player_id"], as_index=False)[["IP", "ER", "H", "BB", "SO", "W", "SV"]]
+                        .sum()
+                    )
+                    # rebuild rate stats
+                    agg = agg[agg["IP"] > 0]
+                    agg["ERA"] = (agg["ER"] * 9 / agg["IP"]).round(3)
+                    agg["WHIP"] = ((agg["H"] + agg["BB"]) / agg["IP"]).round(3)
+                    agg["Team"] = agg["player_id"].map(teamdict_p)
+
+                    srv_frame = calculateSRV_Pitchers(agg)
+                    this_row = srv_frame[srv_frame["player_id"] == selected_pid]
+                    if not this_row.empty:
+                        rows.append({"date": pd.to_datetime(d).date(), "SRV": float(this_row["SRV"].iloc[0])})
+
+                if rows:
+                    srv_hist = pd.DataFrame(rows).sort_values("date").set_index("date")
+                    st.subheader(f"30-Day Rolling SRV – {show_df['Player'].iloc[0]}")
+                    st.line_chart(srv_hist)
+
+    
+    if tab == "Player Rater2":
         st.markdown("<h1><center>Dynamic Player Rater</center></h1>", unsafe_allow_html=True)
         team_selection_list = list(hitdb['affiliate'].unique())
         teamlist=hitdb[['player_id','game_date','affiliate']].sort_values(by='game_date')
