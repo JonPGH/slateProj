@@ -2678,7 +2678,7 @@ if check_password():
                         styled_df,
                         hide_index=True,
                         use_container_width=True,
-                        height=100,
+                        height=70,
                     )
                     
                 else:
@@ -2795,7 +2795,7 @@ if check_password():
                     styled_df,
                     hide_index=True,
                     use_container_width=True,
-                    height=100,
+                    height=75,
                 )
                 else:
                     st.dataframe(
