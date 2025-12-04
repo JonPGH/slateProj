@@ -251,8 +251,9 @@ if check_password():
         ja_pitch = pd.read_csv(f'{file_path}/ja_2026_pitching_projections.csv')
         steamerhit = pd.read_csv(f'{file_path}/steamerhit.csv')
         steamerpit = pd.read_csv(f'{file_path}/steamerpitch.csv')
+        adp2026 = pd.read_csv(f'{file_path}/MasterADPTableau.csv')
 
-        return ja_hit,ja_pitch,steamerhit,steamerpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
+        return adp2026,ja_hit,ja_pitch,steamerhit,steamerpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -952,7 +953,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    ja_hit,ja_pitch,steamerhit,steamerpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
+    adp2026,ja_hit,ja_pitch,steamerhit,steamerpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -1020,7 +1021,7 @@ if check_password():
     #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks","Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
-    tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","2026 ADP","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater"], help="Choose a view to analyze games or player projections.")
     
     if "reload" not in st.session_state:
         st.session_state.reload = False
@@ -1377,6 +1378,421 @@ if check_password():
                 st.experimental_rerun()
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if tab == "2026 ADP":
+
+        # ----------------------------
+        # CONFIG / DATA LOADING
+        # ----------------------------
+        st.set_page_config(page_title="MLB DW ADP Explorer", layout="wide")
+        
+        adp = adp2026.copy()
+        adp['Date'] = pd.to_datetime(adp['Date'])
+
+        st.title("⚾ MLB DW ADP Explorer")
+
+        # ----------------------------
+        # SIDEBAR FILTERS
+        # ----------------------------
+        with st.sidebar:
+            st.header("Filters")
+
+            # Format
+            all_formats = sorted(adp["Format"].dropna().unique().tolist())
+            sel_formats = st.multiselect(
+                "Draft Format",
+                options=all_formats,
+                default=all_formats
+            )
+
+            # Date range
+            min_date = adp["Date"].min()
+            max_date = adp["Date"].max()
+            date_range = st.date_input(
+                "Date Range",
+                value=(min_date, max_date),
+                min_value=min_date,
+                max_value=max_date
+            )
+            if isinstance(date_range, tuple):
+                start_date, end_date = date_range
+            else:  # if user picks only one day
+                start_date = end_date = date_range
+
+            # Position filter
+            pos_filter_type = st.radio(
+                "Position Filter By",
+                options=["Primary Pos", "Position(s)"],
+                index=0
+            )
+
+            if pos_filter_type == "Primary Pos":
+                all_pos = sorted(adp["Primary Pos"].dropna().unique().tolist())
+            else:
+                # explode all listed positions from "Position(s)" column
+                temp_pos = (
+                    adp["Position(s)"]
+                    .dropna()
+                    .str.split(",")
+                    .explode()
+                    .str.strip()
+                    .unique()
+                    .tolist()
+                )
+                all_pos = sorted(temp_pos)
+
+            sel_pos = st.multiselect(
+                "Positions",
+                options=all_pos,
+                default=[]
+            )
+
+            # Pitcher role filter
+            all_roles = sorted(adp["PitcherRole"].fillna("None").unique().tolist())
+            sel_roles = st.multiselect(
+                "Pitcher Role",
+                options=all_roles,
+                default=all_roles
+            )
+
+            # Player search
+            search_text = st.text_input("Search Player (contains)")
+
+            # Minimum drafts filter
+            min_drafts = st.number_input(
+                "Minimum Drafts (sample size)",
+                min_value=1,
+                max_value=10000,
+                value=5,
+                step=1
+            )
+
+        # ----------------------------
+        # APPLY FILTERS
+        # ----------------------------
+        df = adp.copy()
+        df = df[df["Format"].isin(sel_formats)]
+        df = df[(df["Date"] >= pd.to_datetime(start_date)) &
+                (df["Date"] <= pd.to_datetime(end_date))]
+
+        if sel_pos:
+            if pos_filter_type == "Primary Pos":
+                df = df[df["Primary Pos"].isin(sel_pos)]
+            else:
+                # "Position(s)" contains any selected position
+                pos_mask = df["Position(s)"].fillna("").apply(
+                    lambda x: any(p in [p2.strip() for p2 in x.split(",")] for p in sel_pos)
+                )
+                df = df[pos_mask]
+
+        # PitcherRole (treat NaN as "None" to match sidebar choices)
+        df = df.copy()
+        df["PitcherRole_display"] = df["PitcherRole"].fillna("None")
+        df = df[df["PitcherRole_display"].isin(sel_roles)]
+
+        if search_text:
+            df = df[df["Player"].str.contains(search_text, case=False, na=False)]
+
+        # ----------------------------
+        # AGGREGATED PLAYER TABLE
+        # ----------------------------
+        if df.empty:
+            st.warning("No data with current filters.")
+            st.stop()
+
+        group_cols = ["Player", "Player ID", "Team", "Primary Pos",
+                    "PitcherRole_display", "Format"]
+
+        agg = df.groupby(group_cols).agg(
+            Drafts=("DayADP", "count"),
+            ADP=("DayADP", "mean"),
+            MinPick=("DayMin", "min"),
+            MaxPick=("DayMax", "max"),
+            StdDev=("DayADP", "std"),
+            FirstDate=("Date", "min"),
+            LastDate=("Date", "max")
+        ).reset_index()
+
+        # remove players with too few drafts
+        agg = agg[agg["Drafts"] >= min_drafts]
+
+        # fill NaN std dev for single-draft guys
+        agg["StdDev"] = agg["StdDev"].fillna(0.0)
+
+        # ----------------------------
+        # POSITIONAL RANKS
+        # ----------------------------
+        # Rank within Format + Primary Pos by ADP
+        agg = agg.sort_values(["Format", "Primary Pos", "ADP"])
+        agg["PosRank"] = (
+            agg.groupby(["Format", "Primary Pos"])["ADP"]
+            .rank(method="first")
+            .astype(int)
+        )
+        agg["Pos Rank Label"] = agg["Primary Pos"] + agg["PosRank"].astype(str)
+
+        # For SP / RP we can also use PitcherRole
+        is_sp = agg["PitcherRole_display"] == "SP"
+        is_rp = agg["PitcherRole_display"] == "RP"
+
+        agg.loc[is_sp, "Role Rank Label"] = (
+            "SP" + agg[is_sp].groupby(["Format"])["ADP"]
+                        .rank(method="first")
+                        .astype(int)
+                        .astype(str)
+        )
+        agg.loc[is_rp, "Role Rank Label"] = (
+            "RP" + agg[is_rp].groupby(["Format"])["ADP"]
+                        .rank(method="first")
+                        .astype(int)
+                        .astype(str)
+        )
+
+        # ----------------------------
+        # TREND ANALYSIS
+        # ----------------------------
+        # Define "early" vs "late" windows inside selected date range
+        unique_dates = sorted(df["Date"].unique())
+        if len(unique_dates) >= 2:
+            window = max(1, len(unique_dates) // 3)
+            early_dates = unique_dates[:window]
+            late_dates = unique_dates[-window:]
+
+            df_early = df[df["Date"].isin(early_dates)]
+            df_late = df[df["Date"].isin(late_dates)]
+
+            early = df_early.groupby(group_cols).agg(
+                EarlyADP=("DayADP", "mean")
+            ).reset_index()
+
+            late = df_late.groupby(group_cols).agg(
+                LateADP=("DayADP", "mean")
+            ).reset_index()
+
+            trends = pd.merge(early, late, how="inner", on=group_cols)
+            # Positive = moving up board (ADP smaller number)
+            trends["ADP Change"] = trends["EarlyADP"] - trends["LateADP"]
+
+            agg = agg.merge(trends, how="left", on=group_cols)
+        else:
+            agg["EarlyADP"] = np.nan
+            agg["LateADP"] = np.nan
+            agg["ADP Change"] = np.nan
+
+        # Formatting
+        for c in ["ADP", "MinPick", "MaxPick", "StdDev", "EarlyADP", "LateADP", "ADP Change"]:
+            agg[c] = agg[c].round(2)
+
+        # ----------------------------
+        # LAYOUT: TABS
+        # ----------------------------
+        tab_players, tab_trends, tab_rp = st.tabs(
+            ["Player Explorer", "Trend Dashboard", "RP Competition"]
+        )
+
+        # ----------------------------
+        # TAB 1: PLAYER EXPLORER
+        # ----------------------------
+        with tab_players:
+            st.subheader("Player ADP Summary")
+
+            # small search just within the aggregated table
+            table_search = st.text_input("Filter results (player / team / position contains):", key="table_search")
+            view_df = agg.copy()
+            if table_search:
+                mask = (
+                    view_df["Player"].str.contains(table_search, case=False, na=False)
+                    | view_df["Team"].str.contains(table_search, case=False, na=False)
+                    | view_df["Primary Pos"].astype(str).str.contains(table_search, case=False, na=False)
+                    | view_df["Pos Rank Label"].astype(str).str.contains(table_search, case=False, na=False)
+                )
+                view_df = view_df[mask]
+
+            # nice default sort: by ADP
+            view_df = view_df.sort_values(["Format", "ADP"])
+
+            display_cols = [
+                "Player", "Team", "Format", "Primary Pos", "PitcherRole_display",
+                "Pos Rank Label", "Role Rank Label",
+                "ADP", "MinPick", "MaxPick", "StdDev", "Drafts",
+                "EarlyADP", "LateADP", "ADP Change"
+            ]
+            view_df = view_df.round(0)
+            st.dataframe(
+                view_df[display_cols],
+                use_container_width=True,
+                hide_index=True
+            )
+
+            # Player-specific chart
+            st.markdown("---")
+            st.subheader("Player ADP History")
+
+            selected_players = st.multiselect(
+                "Select player(s) to chart",
+                options=sorted(df["Player"].unique().tolist()),
+                default=[]
+            )
+
+            if selected_players:
+                chart_df = df[df["Player"].isin(selected_players)]
+                # average ADP per day + format
+                chart_df = chart_df.groupby(["Date", "Player", "Format"]).agg(
+                    DayADP=("DayADP", "mean")
+                ).reset_index()
+
+                # pivot: Date as index, Player (with format) as columns
+                chart_df["PlayerLabel"] = chart_df["Player"] + " (" + chart_df["Format"] + ")"
+                pivot = chart_df.pivot_table(
+                    index="Date",
+                    columns="PlayerLabel",
+                    values="DayADP"
+                ).sort_index()
+
+                st.line_chart(pivot)
+
+        # ----------------------------
+        # TAB 2: TRENDS
+        # ----------------------------
+        with tab_trends:
+            st.subheader("Risers & Fallers (within selected date range)")
+
+            st.caption(
+                "Trend = Early-window ADP minus Late-window ADP within your selected date range. "
+                "Positive numbers = moving up the board (going earlier)."
+            )
+
+            # Only keep rows where we have both early & late ADP
+            trend_df = agg.dropna(subset=["EarlyADP", "LateADP", "ADP Change"]).copy()
+
+            top_n = st.slider("How many risers/fallers to show?", min_value=5, max_value=50, value=15, step=5)
+
+            # Top risers: biggest positive ADP Change
+            risers = trend_df.sort_values("ADP Change", ascending=False).head(top_n)
+            fallers = trend_df.sort_values("ADP Change", ascending=True).head(top_n)
+
+            col1, col2 = st.columns(2)
+
+            with col1:
+                st.markdown("### 📈 Top Risers")
+                st.dataframe(
+                    risers[[
+                        "Player", "Team", "Format", "Primary Pos", "Pos Rank Label",
+                        "ADP", "EarlyADP", "LateADP", "ADP Change", "Drafts"
+                    ]],
+                    use_container_width=True,
+                    hide_index=True
+                )
+
+            with col2:
+                st.markdown("### 📉 Top Fallers")
+                st.dataframe(
+                    fallers[[
+                        "Player", "Team", "Format", "Primary Pos", "Pos Rank Label",
+                        "ADP", "EarlyADP", "LateADP", "ADP Change", "Drafts"
+                    ]],
+                    use_container_width=True,
+                    hide_index=True
+                )
+
+        # ----------------------------
+        # TAB 3: RP COMPETITION
+        # ----------------------------
+        with tab_rp:
+            st.subheader("Bullpen Landscape & RP Competition")
+
+            rp = df[df["PitcherRole_display"] == "RP"].copy()
+            if rp.empty:
+                st.info("No RP data with current filters.")
+            else:
+                # Aggregate per RP per team per format
+                rp_agg = rp.groupby(["Player", "Player ID", "Team", "Format"]).agg(
+                    Drafts=("DayADP", "count"),
+                    ADP=("DayADP", "mean"),
+                    MinPick=("DayMin", "min"),
+                    MaxPick=("DayMax", "max")
+                ).reset_index()
+
+                rp_agg = rp_agg[rp_agg["Drafts"] >= min_drafts]
+
+                # Team RP ranks & ADP gaps
+                rp_agg = rp_agg.sort_values(["Team", "Format", "ADP"])
+                rp_agg["TeamRPIndex"] = rp_agg.groupby(["Team", "Format"]).cumcount() + 1
+                rp_agg["Team Role"] = "RP" + rp_agg["TeamRPIndex"].astype(str)
+
+                rp_agg["Next_ADP"] = rp_agg.groupby(["Team", "Format"])["ADP"].shift(-1)
+                rp_agg["Picks Ahead"] = (rp_agg["Next_ADP"] - rp_agg["ADP"]).round(1)
+
+                # Overall closer-ish rank per format
+                rp_agg = rp_agg.sort_values(["Format", "ADP"])
+                rp_agg["Overall RP Rank"] = (
+                    rp_agg.groupby("Format")["ADP"].rank(method="first").astype(int)
+                )
+
+                for c in ["ADP", "MinPick", "MaxPick"]:
+                    rp_agg[c] = rp_agg[c].round(2)
+
+                st.caption(
+                    "Picks Ahead = how many picks the current RP is going ahead of the next RP on his team "
+                    "(so bigger number = more secure role)."
+                )
+
+                # Focus on competition: show only RP1s by default
+                show_all_rps = st.checkbox("Show all team RPs (not just RP1)?", value=False)
+                if not show_all_rps:
+                    rp_view = rp_agg[rp_agg["TeamRPIndex"] == 1].copy()
+                else:
+                    rp_view = rp_agg.copy()
+
+                # smaller gap = more competition
+                comp_sorted = rp_view.sort_values("Picks Ahead", ascending=True)
+
+                st.markdown("### Teams with the Tightest Bullpen Battles")
+                st.dataframe(
+                    comp_sorted[[
+                        "Team", "Format", "Player", "Team Role", "Overall RP Rank",
+                        "ADP", "MinPick", "MaxPick", "Drafts", "Picks Ahead"
+                    ]],
+                    use_container_width=True,
+                    hide_index=True
+                )
+
+                st.markdown("---")
+                st.markdown("### Raw RP Table")
+                st.dataframe(
+                    rp_agg[[
+                        "Team", "Format", "Player", "Team Role", "Overall RP Rank",
+                        "ADP", "MinPick", "MaxPick", "Drafts", "Picks Ahead"
+                    ]].sort_values(["Format", "ADP"]),
+                    use_container_width=True,
+                    hide_index=True
+                )
+
+
+
+
+
+
+
+    
     if tab == "2026 Projections":
         import pandas as pd
         import numpy as np
