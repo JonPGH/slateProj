@@ -252,8 +252,10 @@ if check_password():
         steamerhit = pd.read_csv(f'{file_path}/steamerhit.csv')
         steamerpit = pd.read_csv(f'{file_path}/steamerpitch.csv')
         adp2026 = pd.read_csv(f'{file_path}/MasterADPTableau.csv')
+        timrank_hitters = pd.read_csv(f'{file_path}/timrank_hitters.csv')
+        timrank_pitchers = pd.read_csv(f'{file_path}/timrank_pitchers.csv')
 
-        return adp2026,ja_hit,ja_pitch,steamerhit,steamerpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
+        return timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,steamerhit,steamerpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -953,7 +955,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    adp2026,ja_hit,ja_pitch,steamerhit,steamerpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
+    timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,steamerhit,steamerpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -1021,7 +1023,7 @@ if check_password():
     #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks","Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
-    tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","2026 ADP","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","2026 ADP","Hitter Profiles","Prospect Ranks","Hitter Comps","Prospect Comps", "Player Rater","Team Talk"], help="Choose a view to analyze games or player projections.")
     
     if "reload" not in st.session_state:
         st.session_state.reload = False
@@ -1380,19 +1382,259 @@ if check_password():
 
 
 
+    if tab == "Team Talk":
+        st.title("MLB Team Fan Accounts on X")
+
+        TEAM_X_LISTS = {
+            "Phillies": "https://x.com/i/lists/1998094471389429763",
+            "Mets": "https://x.com/i/lists/1998094471389429763",  # fake placeholder
+            "Nationals": "https://x.com/i/lists/1998098849437479020",
+            "Braves": "https://x.com/i/lists/1998097122676052283",
+            "Marlins": "https://x.com/i/lists/1998098786376159713",
+        }
+
+        team = st.selectbox("Select a team", list(TEAM_X_LISTS.keys()))
+
+        if team:
+            list_url = TEAM_X_LISTS[team]
+            
+            st.subheader(f"{team} X Fan List")
+
+            st.markdown(
+                f"""
+                <div style="padding:20px; border-radius:12px; 
+                            background:#f5f7fa; border:1px solid #dadde1;">
+                    <h3 style="margin-top:0;">{team} Fan Accounts</h3>
+                    <p>This will open the curated X list for {team} fans.</p>
+                    <a href="{list_url}" target="_blank"
+                    style="font-size:18px; font-weight:600; 
+                            color:#1d9bf0; text-decoration:none;">
+                        👉 Open {team} Fan List on X
+                    </a>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
 
 
 
+    if tab == "Prospect Ranks":
+        import re
 
 
+        # ---------- LIGHT CUSTOM STYLING ----------
+        custom_css = """
+        <style>
+        html, body, [class*="css"]  {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
 
+        .stDataFrame table {
+            border-collapse: collapse !important;
+        }
 
+        .stDataFrame th {
+            background: #0f172a !important;  /* dark navy */
+            color: #f9fafb !important;       /* near white */
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+        }
 
+        .stDataFrame td {
+            font-size: 0.9rem !important;
+            padding: 0.35rem 0.5rem !important;
+        }
 
+        .stDataFrame tbody tr:hover {
+            background-color: #e5f2ff !important;
+        }
+        </style>
+        """
+        st.markdown(custom_css, unsafe_allow_html=True)
 
+        # ---------- TITLE / INTRO ----------
+        st.title("Top 150 Prospect Rankings")
+        st.caption("Fantasy-focused prospect list from Tim Kanak (@fantasyaceball)")
 
+        st.markdown(
+            """
+            These rankings are based on **fantasy value** (not real-life WAR), 
+            with hitters generally favored over pitchers and a blend of proximity + 5-year upside.
+            """
+        )
 
+        # ---------- PLAYER TYPE TOGGLE ----------
+        col_pool_left, col_pool_right = st.columns([2, 3])
+        with col_pool_left:
+            pool = st.radio(
+                "Player type",
+                ["Hitters", "Pitchers"],
+                horizontal=True,
+            )
+
+        if pool == "Hitters":
+            base_df = timrank_hitters.copy()
+        else:
+            base_df = timrank_pitchers.copy()
+
+        base_df["rank"] = pd.to_numeric(base_df["rank"], errors="coerce")
+
+        # ---------- SEARCH FILTERS (PLAYER + TEAM ONLY) ----------
+        st.markdown("### Search")
+
+        c1, c2 = st.columns(2)
+        with c1:
+            player_query = st.text_input(
+                "Search by player name",
+                placeholder="e.g. Walcott, Basallo, Konnor Griffin...",
+            )
+        with c2:
+            team_query = st.text_input(
+                "Search by organization",
+                placeholder="e.g. Pirates, Guardians, Dodgers...",
+            )
+
+        df = base_df.copy()
+
+        # Player search
+        if player_query:
+            pat = player_query.lower()
+            df = df[df["player_name"].str.lower().str.contains(pat, na=False)]
+
+        # Team search
+        if team_query:
+            pat = team_query.lower()
+            df = df[df["organization"].str.lower().str.contains(pat, na=False)]
+
+        df = df.sort_values("rank")
+
+        # ---------- LAYOUT: TABLE LEFT, DETAIL RIGHT ----------
+        left_col, right_col = st.columns([2,4])
+
+        # ===== LEFT: MAIN TABLE =====
+        with left_col:
+            st.markdown("### Prospect List")
+
+            display_cols = ["rank", "player_name", "organization", "eta"]
+            display_cols = [c for c in display_cols if c in df.columns]
+
+            table_df = df[display_cols].reset_index(drop=True)
+
+            column_config = {}
+            if "rank" in table_df.columns:
+                column_config["rank"] = st.column_config.NumberColumn(
+                    "Rank",
+                    help="Overall fantasy prospect rank",
+                    format="%d",
+                )
+            if "player_name" in table_df.columns:
+                column_config["player_name"] = st.column_config.TextColumn(
+                    "Player",
+                    help="Prospect name",
+                )
+            if "organization" in table_df.columns:
+                column_config["organization"] = st.column_config.TextColumn(
+                    "Org",
+                    help="MLB organization",
+                )
+            if "eta" in table_df.columns:
+                column_config["eta"] = st.column_config.TextColumn(
+                    "ETA",
+                    help="Estimated time of arrival",
+                )
+
+            st.dataframe(
+                table_df,
+                use_container_width=True,
+                hide_index=True,
+                column_config=column_config,
+                height=min(600, 40 + 32 * len(table_df)),
+            )
+
+        # ===== RIGHT: DETAIL / POPUP =====
+        with right_col:
+            st.markdown("### Player Details")
+
+            if table_df.empty:
+                st.info("No prospects match your current search.")
+            else:
+                # Choose a player from the currently filtered list
+                selected_name = st.selectbox(
+                    "Select a player",
+                    options=table_df["player_name"].tolist(),
+                )
+
+                p = base_df[base_df["player_name"] == selected_name].iloc[0]
+
+                # Quick summary card always visible on the right
+                st.markdown(
+                    f"#### {p['player_name']}"
+                    f"<br><span style='font-size:0.9rem; color:#6b7280;'>"
+                    f"{p.get('positions', '')} • {p.get('organization', '')}"
+                    f"</span>",
+                    unsafe_allow_html=True,
+                )
+
+                meta_bits = []
+                if pd.notna(p.get("rank")):
+                    meta_bits.append(f"**Rank:** {int(p['rank'])}")
+                if pd.notna(p.get("eta")):
+                    meta_bits.append(f"**ETA:** {p['eta']}")
+                if pd.notna(p.get("previous_rank")):
+                    meta_bits.append(f"**Previous Rank:** {p['previous_rank']}")
+                if meta_bits:
+                    st.markdown(" | ".join(meta_bits))
+
+                if pd.notna(p.get("comp")) and str(p["comp"]).strip():
+                    st.markdown(f"**Comp:** {p['comp']}")
+
+                # Build grades block
+                grades_text = ""
+                if pool == "Hitters":
+                    hit = p.get("hit_grade", None)
+                    pa = p.get("plate_approach_grade", None)
+                    pow_ = p.get("power_grade", None)
+                    spd = p.get("speed_grade", None)
+                    chunks = []
+                    if pd.notna(hit):
+                        chunks.append(f"**Hit:** {hit}")
+                    if pd.notna(pa):
+                        chunks.append(f"**Plate Approach:** {pa}")
+                    if pd.notna(pow_):
+                        chunks.append(f"**Power:** {pow_}")
+                    if pd.notna(spd):
+                        chunks.append(f"**Speed:** {spd}")
+                    if chunks:
+                        grades_text = " • ".join(chunks)
+                else:
+                    pitch_cols = [c for c in base_df.columns if c.endswith("_grade")]
+                    lines = []
+                    for c in pitch_cols:
+                        val = p.get(c)
+                        if pd.notna(val):
+                            label = c.replace("_grade", "")
+                            lines.append(f"- **{label}:** {val}")
+                    if lines:
+                        grades_text = "\n".join(lines)
+
+                if grades_text:
+                    if pool == "Hitters":
+                        st.markdown("**Tool Grades**")
+                        st.markdown(grades_text)
+                    else:
+                        st.markdown("**Arsenal / Command Grades**")
+                        st.markdown(grades_text)
+
+                # Popover "cloud" for full write-up
+                with st.popover("View full scouting report ✨"):
+                    if pd.notna(p.get("prime_skills")) and str(p["prime_skills"]).strip():
+                        st.markdown("#### Prime Skills")
+                        st.write(p["prime_skills"])
+
+                    if pd.notna(p.get("ranking_explanation")) and str(p["ranking_explanation"]).strip():
+                        st.markdown("#### Ranking Explanation")
+                        st.write(p["ranking_explanation"])
 
 
 
@@ -1787,16 +2029,389 @@ if check_password():
                 )
 
 
-
-
-
-
-
-    
     if tab == "2026 Projections":
         import pandas as pd
         import numpy as np
         import streamlit as st
+
+        # === POSITION DATA ===
+        pos_data = adp2026[['Player', 'Player ID', 'Position(s)']].drop_duplicates()
+
+        # ===== SRV FUNCTIONS =====
+        def calculateSRV_Hitters(hitdf: pd.DataFrame, merge_df: pd.DataFrame | None = None):
+            df = hitdf.copy()
+
+            count_cats = ["R", "HR", "RBI", "SB"]
+            for cat in count_cats:
+                std = df[cat].std(ddof=0)
+                df[f"{cat}_z"] = (df[cat] - df[cat].mean()) / (std if std != 0 else 1.0)
+
+            total_ab = df["AB"].sum()
+            lg_avg = np.divide((df["AVG"] * df["AB"]).sum(), total_ab) if total_ab else df["AVG"].mean()
+
+            df["AVG_contrib"] = (df["AVG"] - lg_avg) * df["AB"]
+            std = df["AVG_contrib"].std(ddof=0)
+            df["AVG_z"] = (df["AVG_contrib"] - df["AVG_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            z_cols = [f"{c}_z" for c in count_cats] + ["AVG_z"]
+            df["SRV"] = df[z_cols].sum(axis=1)
+
+            base_cols = ["Player", "Team", "SRV"] + z_cols
+            if "player_id" in df.columns:
+                base_cols.insert(1, "player_id")
+
+            df_sorted = df[base_cols].sort_values("SRV", ascending=False).reset_index(drop=True)
+
+            if merge_df is not None:
+                out = merge_df.merge(
+                    df_sorted[[c for c in ["Player", "Team", "SRV", "player_id"] if c in df_sorted.columns]],
+                    on=[c for c in ["Player", "Team"] if c in merge_df.columns],
+                    how="left",
+                )
+                out["SRV"] = out["SRV"].round(2)
+                return out.sort_values("SRV", ascending=False)
+
+            return df_sorted
+
+        def calculateSRV_Pitchers(pitchdf: pd.DataFrame, merge_df: pd.DataFrame | None = None):
+            df = pitchdf.copy()
+
+            count_cats = ["W", "SV", "SO"]
+            for cat in count_cats:
+                std = df[cat].std(ddof=0)
+                df[f"{cat}_z"] = (df[cat] - df[cat].mean()) / (std if std != 0 else 1.0)
+
+            lg_era = np.divide((df["ERA"] * df["IP"]).sum(), df["IP"].sum()) if df["IP"].sum() else df["ERA"].mean()
+            df["ERA_contrib"] = (lg_era - df["ERA"]) * df["IP"]
+            std = df["ERA_contrib"].std(ddof=0)
+            df["ERA_z"] = (df["ERA_contrib"] - df["ERA_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            lg_whip = np.divide((df["WHIP"] * df["IP"]).sum(), df["IP"].sum()) if df["IP"].sum() else df["WHIP"].mean()
+            df["WHIP_contrib"] = (lg_whip - df["WHIP"]) * df["IP"]
+            std = df["WHIP_contrib"].std(ddof=0)
+            df["WHIP_z"] = (df["WHIP_contrib"] - df["WHIP_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            z_cols = [f"{c}_z" for c in count_cats] + ["ERA_z", "WHIP_z"]
+            df["SRV"] = df[z_cols].sum(axis=1)
+
+            base_cols = ["Player", "Team", "SRV"] + z_cols
+            if "player_id" in df.columns:
+                base_cols.insert(1, "player_id")
+
+            df_sorted = df[base_cols].sort_values("SRV", ascending=False).reset_index(drop=True)
+
+            if merge_df is not None:
+                out = merge_df.merge(
+                    df_sorted[[c for c in ["Player", "Team", "SRV", "player_id"] if c in df_sorted.columns]],
+                    on=[c for c in ["Player", "Team"] if c in merge_df.columns],
+                    how="left",
+                )
+                out["SRV"] = out["SRV"].round(2)
+                return out.sort_values("SRV", ascending=False)
+
+            return df_sorted
+
+        # ===== TITLE =====
+        st.markdown(
+            """
+            <h2 style='text-align:center;margin:.25rem 0 1rem;'>2026 Projections</h2>
+            <p style='text-align:center;margin:0 0 1.25rem; font-size:0.85rem; color:#666;'>
+                Compare MLB DW vs Steamer projections and roto value (SRV).
+            </p>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        # ===== RAW DATA PREP =====
+        # Work on local copies so we don't double-merge on rerun
+        ja_hit_local = ja_hit.copy()
+        steamerhit_local = steamerhit.copy()
+
+        # --- attach positions robustly to ja_hit_local ---
+        ja_hit_local = ja_hit_local.merge(
+            pos_data[['Player', 'Position(s)']],
+            on='Player',
+            how='left',
+            suffixes=('', '_pos')
+        )
+        ja_pos_cols = [c for c in ja_hit_local.columns if "Position(s)" in c]
+        if ja_pos_cols:
+            ja_hit_local["Pos"] = ja_hit_local[ja_pos_cols[-1]]
+        ja_hit_local = ja_hit_local.drop(columns=ja_pos_cols, errors="ignore")
+
+        ja_hitters = ja_hit_local[
+            ['Player', 'Team', 'Pos', 'PA', 'R', 'HR', 'RBI', 'SB',
+            'AVG', 'OBP', 'SLG', 'OPS', 'K%', 'BB%']
+        ].copy()
+
+        # --- attach positions robustly to steamerhit_local ---
+        steamerhit_local = steamerhit_local.rename({'Name': 'Player'}, axis=1)
+        steamerhit_local = steamerhit_local.merge(
+            pos_data[['Player', 'Position(s)']],
+            on='Player',
+            how='left',
+            suffixes=('', '_pos')
+        )
+        steamer_pos_cols = [c for c in steamerhit_local.columns if "Position(s)" in c]
+        if steamer_pos_cols:
+            steamerhit_local["Pos"] = steamerhit_local[steamer_pos_cols[-1]]
+        steamerhit_local = steamerhit_local.drop(columns=steamer_pos_cols, errors="ignore")
+
+        steamer_hitters = steamerhit_local[
+            ['Player', 'Team', 'Pos', 'PA', 'R', 'HR', 'RBI', 'SB',
+            'AVG', 'OBP', 'SLG', 'OPS', 'K%', 'BB%']
+        ].copy()
+
+        # Add AB if missing (needed in SRV)
+        for hdf in (ja_hitters, steamer_hitters):
+            if "AB" not in hdf.columns:
+                hdf["AB"] = (hdf["PA"] * 0.9).fillna(0).astype(int)
+
+        # Pitchers
+        ja_pitchers = ja_pitch[
+            ['Pitcher', 'Team', 'GS', 'IP', 'H', 'ER', 'K', 'ERA', 'WHIP', 'K/9', 'BB/9', 'K%', 'BB%']
+        ].copy()
+        ja_pitchers = ja_pitchers.rename({'Pitcher': 'Player'}, axis=1)
+
+        steamerpit_local = steamerpit.rename({'Name': 'Player', 'SO': 'K'}, axis=1)
+        steamer_pitchers = steamerpit_local[
+            ['Player', 'Team', 'GS', 'IP', 'H', 'ER', 'K', 'ERA', 'WHIP', 'K/9', 'BB/9', 'K%', 'BB%']
+        ].copy()
+
+        # ensure pitcher SRV inputs exist
+        for pdf in (ja_pitchers, steamer_pitchers):
+            if "W" not in pdf.columns:
+                pdf["W"] = 0
+            if "SV" not in pdf.columns:
+                pdf["SV"] = 0
+            if "SO" not in pdf.columns and "K" in pdf.columns:
+                pdf["SO"] = pdf["K"]
+            if "IP" not in pdf.columns:
+                pdf["IP"] = 0
+
+        # ===== CONTROLS =====
+        top_col1, top_col2, top_col3 = st.columns([1.1, 1, 1.2])
+
+        with top_col1:
+            group = st.radio("Group", ["Hitters", "Pitchers"], horizontal=True)
+
+        with top_col2:
+            source_choice = st.radio("Source", ["MLB DW", "Steamer", "Both"], horizontal=True)
+
+        # team list
+        if group == "Hitters":
+            all_teams = pd.concat([ja_hitters["Team"], steamer_hitters["Team"]]).dropna().unique().tolist()
+        else:
+            all_teams = pd.concat([ja_pitchers["Team"], steamer_pitchers["Team"]]).dropna().unique().tolist()
+        all_teams = sorted(list(set(all_teams)))
+        teams_opts = ["All Teams"] + all_teams
+
+        with top_col3:
+            team_filter = st.selectbox("Team", teams_opts, index=0)
+
+        player_search = st.text_input("Player search", "", placeholder="Start typing a player name...")
+
+        # Position search (hitters only)
+        if group == "Hitters":
+            pos_search = st.text_input(
+                "Position search",
+                "",
+                placeholder='Type a position like "2B", "SS", "OF"...',
+            )
+        else:
+            pos_search = ""
+
+        st.markdown("<hr style='margin:0.75rem 0 1rem;'/>", unsafe_allow_html=True)
+
+        # ===== HELPER to filter =====
+        def _filter_df(df: pd.DataFrame, is_hitter: bool = False) -> pd.DataFrame:
+            out = df.copy()
+            if team_filter != "All Teams":
+                out = out[out["Team"] == team_filter]
+            if player_search:
+                out = out[out["Player"].str.contains(player_search, case=False, na=False)]
+            if is_hitter and pos_search:
+                if "Pos" in out.columns:
+                    pos_series = out["Pos"].astype(str).fillna("")
+                    token = pos_search.strip().upper()
+                    out = out[pos_series.str.contains(token, case=False)]
+            return out
+
+        # ===== BUILD DISPLAY =====
+        display_df = pd.DataFrame()  # default
+
+        if group == "Hitters":
+            if source_choice == "MLB DW":
+                full_pool = ja_hitters
+                filtered = _filter_df(ja_hitters, is_hitter=True)
+                display_df = calculateSRV_Hitters(full_pool, merge_df=filtered)
+
+                cols_order = [
+                    "Player", "Team", "Pos", "SRV",
+                    "PA", "R", "HR", "RBI", "SB",
+                    "AVG", "OBP", "SLG", "OPS", "K%", "BB%"
+                ]
+                display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+
+            elif source_choice == "Steamer":
+                full_pool = steamer_hitters
+                filtered = _filter_df(steamer_hitters, is_hitter=True)
+                display_df = calculateSRV_Hitters(full_pool, merge_df=filtered)
+
+                cols_order = [
+                    "Player", "Team", "Pos", "SRV",
+                    "PA", "R", "HR", "RBI", "SB",
+                    "AVG", "OBP", "SLG", "OPS", "K%", "BB%"
+                ]
+                display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+
+            else:  # Both
+                ja_filtered = _filter_df(ja_hitters, is_hitter=True)
+                steamer_filtered = _filter_df(steamer_hitters, is_hitter=True)
+
+                ja_with_srv = calculateSRV_Hitters(ja_hitters, merge_df=ja_filtered)
+                steamer_with_srv = calculateSRV_Hitters(steamer_hitters, merge_df=steamer_filtered)
+
+                display_df = pd.merge(
+                    ja_with_srv,
+                    steamer_with_srv,
+                    on=["Player", "Team"],
+                    how="outer",
+                    suffixes=("_MLB_DW", "_Steamer"),
+                )
+
+                # unify Pos from both sides and make it third column
+                if "Pos_MLB_DW" in display_df.columns or "Pos_Steamer" in display_df.columns:
+                    display_df["Pos"] = (
+                        display_df.get("Pos_MLB_DW").fillna("")
+                        .astype(str)
+                        .replace("nan", "")
+                    )
+                    if "Pos_Steamer" in display_df.columns:
+                        display_df["Pos"] = display_df["Pos"].replace("", np.nan).fillna(display_df["Pos_Steamer"])
+                    display_df = display_df.drop(columns=["Pos_MLB_DW", "Pos_Steamer"], errors="ignore")
+
+                cols_order = [
+                    "Player", "Team", "Pos",
+                    "SRV_MLB_DW", "PA_MLB_DW", "R_MLB_DW", "HR_MLB_DW", "RBI_MLB_DW", "SB_MLB_DW", "AVG_MLB_DW",
+                    "SRV_Steamer", "PA_Steamer", "R_Steamer", "HR_Steamer", "RBI_Steamer", "SB_Steamer", "AVG_Steamer",
+                ]
+                display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+
+        else:  # Pitchers
+            if source_choice == "MLB DW":
+                full_pool = ja_pitchers
+                filtered = _filter_df(ja_pitchers, is_hitter=False)
+                display_df = calculateSRV_Pitchers(full_pool, merge_df=filtered)
+
+                cols_order = [
+                    "Player", "Team", "SRV",
+                    "IP", "ERA", "WHIP", "SO", "W", "SV",
+                    "GS", "H", "ER", "K/9", "BB/9", "K%", "BB%"
+                ]
+                display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+
+            elif source_choice == "Steamer":
+                full_pool = steamer_pitchers
+                filtered = _filter_df(steamer_pitchers, is_hitter=False)
+                display_df = calculateSRV_Pitchers(full_pool, merge_df=filtered)
+
+                cols_order = [
+                    "Player", "Team", "SRV",
+                    "IP", "ERA", "WHIP", "SO", "W", "SV",
+                    "GS", "H", "ER", "K/9", "BB/9", "K%", "BB%"
+                ]
+                display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+
+            else:
+                ja_filtered = _filter_df(ja_pitchers, is_hitter=False)
+                steamer_filtered = _filter_df(steamer_pitchers, is_hitter=False)
+
+                ja_with_srv = calculateSRV_Pitchers(ja_pitchers, merge_df=ja_filtered)
+                steamer_with_srv = calculateSRV_Pitchers(steamer_pitchers, merge_df=steamer_filtered)
+
+                display_df = pd.merge(
+                    ja_with_srv,
+                    steamer_with_srv,
+                    on=["Player", "Team"],
+                    how="outer",
+                    suffixes=("_MLB_DW", "_Steamer"),
+                )
+
+                cols_order = [
+                    "Player", "Team",
+                    "SRV_MLB_DW", "IP_MLB_DW", "ERA_MLB_DW", "WHIP_MLB_DW", "SO_MLB_DW",
+                    "SRV_Steamer", "IP_Steamer", "ERA_Steamer", "WHIP_Steamer", "SO_Steamer",
+                ]
+                display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+
+        # ===== STYLING (format + gradients) =====
+        def style_table(df: pd.DataFrame):
+            fmt = {}
+
+            for col in df.columns:
+                # counting stats
+                if col in ["PA", "R", "HR", "RBI", "SB", "SO", "W", "SV", "GS", "H", "ER"]:
+                    fmt[col] = "{:.0f}"
+                # rate stats with 3 decimals
+                elif any(stat in col for stat in ["AVG", "OBP", "SLG", "OPS"]):
+                    fmt[col] = "{:.3f}"
+                # ERA / WHIP style
+                elif "ERA" in col or "WHIP" in col:
+                    fmt[col] = "{:.2f}"
+                # innings
+                elif col == "IP" or col.endswith("IP"):
+                    fmt[col] = "{:.1f}"
+                # SRV columns
+                elif "SRV" in col:
+                    fmt[col] = "{:.2f}"
+                # K%, BB%, any % column: one decimal percent
+                elif col.endswith("%"):
+                    # assumes underlying value is 0–1; if you store 0–100, change to "{:.1f}%"
+                    fmt[col] = "{:.1%}"
+                # K/9, BB/9 etc
+                elif "/9" in col:
+                    fmt[col] = "{:.1f}"
+
+            numeric_cols = df.select_dtypes(include=["float", "int"]).columns.tolist()
+
+            sty = df.style.format(fmt)
+
+            if numeric_cols:
+                sty = sty.background_gradient(axis=0, cmap="Blues", subset=numeric_cols)
+
+            # hide index if available (pandas>=1.4)
+            if hasattr(sty, "hide_index"):
+                sty = sty.hide_index()
+
+            sty = sty.set_properties(**{"text-align": "left", "font-size": "0.8rem"})
+            return sty
+
+        st.dataframe(
+            style_table(display_df),
+            use_container_width=True,
+            hide_index=True,
+            height=650,
+        )
+
+        # ===== DOWNLOAD =====
+        csv = display_df.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            "Download current view as CSV",
+            csv,
+            "2026_projections.csv",
+            "text/csv",
+        )
+
+
+    
+    if tab == "2026 Projections2":
+        import pandas as pd
+        import numpy as np
+        import streamlit as st
+
+        pos_data = adp2026[['Player','Player ID','Position(s)']]
+        pos_data = pos_data.drop_duplicates()
 
         # ===== SRV FUNCTIONS (yours) =====
         def calculateSRV_Hitters(hitdf: pd.DataFrame, merge_df: pd.DataFrame | None = None):
@@ -1883,13 +2498,18 @@ if check_password():
 
         # ===== RAW DATA PREP (your inputs) =====
         # Hitters
+        ja_hit = pd.merge(ja_hit,pos_data,on='Player',how='left')
+        ja_hit = ja_hit.rename({'Position(s)':'Pos'},axis=1)
         ja_hitters = ja_hit[
-            ['Player','Team','PA','R','HR','RBI','SB','AVG','OBP','SLG','OPS','K%','BB%']
+            ['Player','Team','Pos','PA','R','HR','RBI','SB','AVG','OBP','SLG','OPS','K%','BB%']
         ].copy()
 
         steamerhit = steamerhit.rename({'Name':'Player'}, axis=1)
+        steamerhit = pd.merge(steamerhit,pos_data,on='Player',how='left')
+        steamerhit = steamerhit.rename({'Position(s)':'Pos'},axis=1)
+
         steamer_hitters = steamerhit[
-            ['Player','Team','PA','R','HR','RBI','SB','AVG','OBP','SLG','OPS','K%','BB%']
+            ['Player','Team','Pos','PA','R','HR','RBI','SB','AVG','OBP','SLG','OPS','K%','BB%']
         ].copy()
 
         # Add AB if missing (needed in SRV)
@@ -1960,7 +2580,13 @@ if check_password():
                 display_df = calculateSRV_Hitters(full_pool, merge_df=filtered)
 
                 # order: Player, Team, SRV, rest...
-                cols_order = ["Player", "Team", "SRV",
+                #cols_order = ["Player", "Team", "SRV","PA","R","HR","RBI","SB","AVG","OBP","SLG","OPS","K%","BB%"]
+                #display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+                display_df = pd.merge(display_df,pos_data,how='left',on='Player')
+                display_df = display_df.drop(['Player ID'],axis=1)
+                display_df = display_df.rename({'Position(s)':'Pos'},axis=1)
+
+                cols_order = ["Player", "Team", "Pos", "SRV",
                             "PA","R","HR","RBI","SB","AVG","OBP","SLG","OPS","K%","BB%"]
                 display_df = display_df[[c for c in cols_order if c in display_df.columns]]
 
@@ -1969,9 +2595,15 @@ if check_password():
                 filtered = _filter_df(steamer_hitters)
                 display_df = calculateSRV_Hitters(full_pool, merge_df=filtered)
 
-                cols_order = ["Player", "Team", "SRV",
-                            "PA","R","HR","RBI","SB","AVG","OBP","SLG","OPS","K%","BB%"]
+                #cols_order = ["Player", "Team", "SRV","PA","R","HR","RBI","SB","AVG","OBP","SLG","OPS","K%","BB%"]
+                #display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+                display_df = pd.merge(display_df,pos_data,how='left',on='Player')
+                display_df = display_df.drop(['Player ID'],axis=1)
+                display_df = display_df.rename({'Position(s)':'Pos'},axis=1)
+
+                cols_order = ["Player", "Team", "Pos", "SRV","PA","R","HR","RBI","SB","AVG","OBP","SLG","OPS","K%","BB%"]
                 display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+
 
             else:  # Both
                 ja_filtered = _filter_df(ja_hitters)
@@ -2002,8 +2634,7 @@ if check_password():
                 filtered = _filter_df(ja_pitchers)
                 display_df = calculateSRV_Pitchers(full_pool, merge_df=filtered)
 
-                cols_order = ["Player", "Team", "SRV",
-                            "IP","ERA","WHIP","SO","W","SV","GS","H","ER","K/9","BB/9","K%","BB%"]
+                cols_order = ["Player", "Team", "SRV","IP","ERA","WHIP","SO","W","SV","GS","H","ER","K/9","BB/9","K%","BB%"]
                 display_df = display_df[[c for c in cols_order if c in display_df.columns]]
 
             elif source_choice == "Steamer":
@@ -2011,8 +2642,7 @@ if check_password():
                 filtered = _filter_df(steamer_pitchers)
                 display_df = calculateSRV_Pitchers(full_pool, merge_df=filtered)
 
-                cols_order = ["Player", "Team", "SRV",
-                            "IP","ERA","WHIP","SO","W","SV","GS","H","ER","K/9","BB/9","K%","BB%"]
+                cols_order = ["Player", "Team", "SRV", "IP","ERA","WHIP","SO","W","SV","GS","H","ER","K/9","BB/9","K%","BB%"]
                 display_df = display_df[[c for c in cols_order if c in display_df.columns]]
 
             else:
