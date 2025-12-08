@@ -2209,17 +2209,19 @@ if check_password():
         with top_col3:
             team_filter = st.selectbox("Team", teams_opts, index=0)
 
-        player_search = st.text_input("Player search", "", placeholder="Start typing a player name...")
-
-        # Position search (hitters only)
-        if group == "Hitters":
-            pos_search = st.text_input(
-                "Position search",
-                "",
-                placeholder='Type a position like "2B", "SS", "OF"...',
-            )
-        else:
-            pos_search = ""
+        search_x_col1, search_x_col2 = st.columns([1,1])
+        with search_x_col1:
+            player_search = st.text_input("Player search", "", placeholder="Start typing a player name...")
+        with search_x_col2:
+            # Position search (hitters only)
+            if group == "Hitters":
+                pos_search = st.text_input(
+                    "Position search",
+                    "",
+                    placeholder='Type a position like "2B", "SS", "OF"...',
+                )
+            else:
+                pos_search = ""
 
         st.markdown("<hr style='margin:0.75rem 0 1rem;'/>", unsafe_allow_html=True)
 
