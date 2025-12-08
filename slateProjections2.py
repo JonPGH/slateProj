@@ -1023,7 +1023,7 @@ if check_password():
     #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks","Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
-    tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","2026 ADP","Hitter Profiles","Prospect Ranks","Hitter Comps","Prospect Comps", "Player Rater","Team Talk"], help="Choose a view to analyze games or player projections.")
+    tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","2026 ADP","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater"], help="Choose a view to analyze games or player projections.")
     
     if "reload" not in st.session_state:
         st.session_state.reload = False
