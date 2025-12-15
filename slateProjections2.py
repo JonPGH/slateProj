@@ -2210,8 +2210,23 @@ if check_password():
             team_filter = st.selectbox("Team", teams_opts, index=0)
 
         search_x_col1, search_x_col2 = st.columns([1,1])
+        
         with search_x_col1:
-            player_search = st.text_input("Player search", "", placeholder="Start typing a player name...")
+            if group == "Hitters":
+                player_pool = pd.concat(
+                    [ja_hitters["Player"], steamer_hitters["Player"]]
+                ).dropna().unique()
+            else:
+                player_pool = pd.concat(
+                    [ja_pitchers["Player"], steamer_pitchers["Player"]]
+                ).dropna().unique()
+
+            player_search = st.multiselect(
+                "Player search",
+                options=sorted(player_pool),
+                placeholder="Start typing player names...",
+            )
+
         with search_x_col2:
             # Position search (hitters only)
             if group == "Hitters":
@@ -2231,7 +2246,7 @@ if check_password():
             if team_filter != "All Teams":
                 out = out[out["Team"] == team_filter]
             if player_search:
-                out = out[out["Player"].str.contains(player_search, case=False, na=False)]
+                out = out[out["Player"].isin(player_search)]
             if is_hitter and pos_search:
                 if "Pos" in out.columns:
                     pos_series = out["Pos"].astype(str).fillna("")
