@@ -13,37 +13,129 @@ import plotly.express as px
 import plotly.graph_objects as go
 import altair as alt
 from google.oauth2.service_account import Credentials
+from datetime import datetime, timezone
 
 
-
-# Initialize session state for authentication
-if 'authenticated' not in st.session_state:
+if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 
-# Define the correct password (replace with your desired password)
-#st.markdown("<h1>Enter Password to Access Slate Analysis Tool",unsafe_allow_html=True)
-CORRECT_PASSWORD = "hafner"
-CORRECT_PASSWORD2 = '1'
+# Store what access they have (None / "basic" / "full" / etc.)
+if "access_level" not in st.session_state:
+    st.session_state.access_level = None
 
-# Function to check password
+# Optional: store which password key they used (not the raw password)
+if "auth_key" not in st.session_state:
+    st.session_state.auth_key = None
+
+
+# ----------------------------
+# Password -> access mapping
+# (use env vars / st.secrets in production; see note below)
+# ----------------------------
+PASSWORDS = {
+    "jack":   {"access_level": "basic", "auth_key": "BASIC_1"},
+    "1":      {"access_level": "full", "auth_key": "FULL"},
+    "kanak": {"access_level": "full",  "auth_key": "FULL"},
+}
+
 def check_password():
     def password_entered():
-        if (st.session_state["password"] == CORRECT_PASSWORD) or (st.session_state["password"] == CORRECT_PASSWORD2):
+        pw = st.session_state.get("password", "")
+        info = PASSWORDS.get(pw)
+
+        if info:
             st.session_state.authenticated = True
-            del st.session_state["password"]  # Clear password from session state
+            st.session_state.access_level = info["access_level"]
+            st.session_state.auth_key = info["auth_key"]
+            # clear the entered password from session state
+            st.session_state.pop("password", None)
         else:
+            st.session_state.authenticated = False
+            st.session_state.access_level = None
+            st.session_state.auth_key = None
             st.error("Incorrect password. Please try again.")
-    
+
     if not st.session_state.authenticated:
-        st.text_input("Enter Password (new password in resource glossary 7/18/2025)", type="password", key="password", on_change=password_entered)
+        st.text_input(
+            "Enter Password (new password in resource glossary 7/18/2025)",
+            type="password",
+            key="password",
+            on_change=password_entered,
+        )
         return False
+
     return True
 
-# Main app content (only displayed if authenticated)
+
+# ----------------------------
+# Main app content
+# ----------------------------
 if check_password():
+
+    # Access variables you can use anywhere later:
+    access_level = st.session_state.access_level   # "basic" or "full"
+    auth_key     = st.session_state.auth_key       # e.g., "FULL"
+
+    #st.write(f"Logged in with access: {access_level}")
 
     # Set page configuration
     st.set_page_config(page_title="MLB DW Web App", layout="wide")
+
+    ### count down banner 
+
+    try:
+        from zoneinfo import ZoneInfo  # py3.9+
+    except ImportError:
+        ZoneInfo = None
+
+    def render_opening_day_banner():
+        from datetime import datetime
+        import streamlit as st
+
+        target = datetime(2026, 3, 26)
+        now = datetime.now()
+        delta = target - now
+        total_seconds = int(delta.total_seconds())
+
+        if total_seconds <= 0:
+            headline = "⚾ MLB Opening Day is HERE"
+            sub = "Play ball."
+        else:
+            days = total_seconds // 86400
+            hours = (total_seconds % 86400) // 3600
+            minutes = (total_seconds % 3600) // 60
+            headline = f"{days} Days Until Opening Day!"
+            sub = f"{days} days"# {hours}h {minutes}m remaining"
+
+        html = f"""
+        <div style="
+            width:100%;
+            padding:16px 20px;
+            margin-bottom:14px;
+            border-radius:14px;
+            background:#0f172a;
+            color:#ffffff;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 8px 20px rgba(0,0,0,0.18);
+        ">
+            <div>
+                <div style="font-size:22px;font-weight:800;">
+                    {headline}
+                </div>
+            </div>
+
+            
+        </div>
+        """
+
+        st.markdown(html, unsafe_allow_html=True)
+
+    # Call this once per page render (put it right after set_page_config / before your page content)
+    render_opening_day_banner()
+
+    #######
 
     st.markdown(
         """
@@ -1023,7 +1115,12 @@ if check_password():
     #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks","Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
-    tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","2026 ADP","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater"], help="Choose a view to analyze games or player projections.")
+    
+    if st.session_state.access_level == "full":
+        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","2026 ADP","Prospect Ranks","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater"], help="Choose a view to analyze games or player projections.")
+    else:
+        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","2026 ADP", "Player Rater"], help="Choose a view to analyze games or player projections.")
+
     
     if "reload" not in st.session_state:
         st.session_state.reload = False
@@ -1455,12 +1552,15 @@ if check_password():
 
         # ---------- TITLE / INTRO ----------
         st.title("Top 150 Prospect Rankings")
-        st.caption("Fantasy-focused prospect list from Tim Kanak (@fantasyaceball)")
+        #st.caption("Fantasy-focused prospect list from Tim Kanak (@fantasyaceball)")
+        st.markdown("<font size=5>Fantasy-focused prospect list from Tim Kanak (@fantasyaceball)</font>", unsafe_allow_html=True)
 
         st.markdown(
             """
             These rankings are based on **fantasy value** (not real-life WAR), 
             with hitters generally favored over pitchers and a blend of proximity + 5-year upside.
+
+            Tim's top 150 has been split between hitters and pitchers below. 
             """
         )
 
@@ -1924,6 +2024,8 @@ if check_password():
 
             # Only keep rows where we have both early & late ADP
             trend_df = agg.dropna(subset=["EarlyADP", "LateADP", "ADP Change"]).copy()
+
+            st.write(trend_df)
 
             top_n = st.slider("How many risers/fallers to show?", min_value=5, max_value=50, value=15, step=5)
 
