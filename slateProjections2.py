@@ -57,7 +57,7 @@ def check_password():
 
     if not st.session_state.authenticated:
         st.text_input(
-            "Enter Password (new password in resource glossary 7/18/2025)",
+            "Enter Password (new password in resource glossary 12/20/2025)",
             type="password",
             key="password",
             on_change=password_entered,
