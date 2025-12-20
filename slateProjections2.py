@@ -1131,7 +1131,11 @@ if check_password():
         #logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim = load_data()
 
     # Main content
-    st.markdown(f"<center><h1>⚾ MLB DW Web App ⚾</h1></center>", unsafe_allow_html=True)
+    st.markdown(f"""
+                <center><h1>MLB DW Web App</h1></center>
+                <center><b><i>On mobile, be sure to set the theme to 'light mode' (go to settings in the top right)</b></i></center></b>
+                """, unsafe_allow_html=True)
+    #st.markdown("<b><center>If you're on mobile, be sure you're using 'light mode' in settings (hit the three dots in the top right of the screen)</center></b>",unsafe_allow_html=True)
     #st.markdown(f"<center><i>Last projection update time: {last_update}est</center></i>",unsafe_allow_html=True)
     
 
