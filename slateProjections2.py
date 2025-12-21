@@ -1521,9 +1521,55 @@ if check_password():
 
 
     if tab == "Prospect Ranks":
+
+        ## Some functions ##
+
+        def score_bg_color(val: float) -> str:
+            if val < 80:
+                return "#7f1d1d"      # darkest red
+            elif val < 100:
+                return "#dc2626"      # red
+            elif val < 105:
+                return "#facc15"      # yellow
+            elif val < 120:
+                return "#86efac"      # light green
+            else:
+                return "#16a34a"      # greenest
+
+        def render_score_tile(label: str, value: float):
+            bg = score_bg_color(value)
+
+            html = f"""
+            <div style="
+                background:{bg};
+                border-radius:14px;
+                padding:12px 8px;          /* ↓ was 18px 10px */
+                text-align:center;
+                box-shadow:0 4px 10px rgba(0,0,0,0.12);
+                min-width:110px;
+            ">
+                <div style="
+                    font-size:30px;        /* ↓ was 38px */
+                    font-weight:800;
+                    color:#111827;
+                    line-height:1.05;
+                ">
+                    {value:.0f}
+                </div>
+                <div style="
+                    font-size:13px;        /* ↓ was 14px */
+                    font-weight:600;
+                    margin-top:4px;        /* ↓ was 6px */
+                    color:#1f2937;
+                    letter-spacing:0.04em;
+                ">
+                    {label.upper()}
+                </div>
+            </div>
+            """
+            st.markdown(html, unsafe_allow_html=True)
+
         import re
-
-
         # ---------- LIGHT CUSTOM STYLING ----------
         custom_css = """
         <style>
@@ -1668,6 +1714,76 @@ if check_password():
                     "Select a player",
                     options=table_df["player_name"].tolist(),
                 )
+
+                ### fscores
+                ## try hitter fscores
+                player_f_scores_1 = fscores_milb_hit[fscores_milb_hit['Player']==selected_name]
+                player_f_scores_2 = fscores_milb_pitch[fscores_milb_pitch['player_name']==selected_name]
+
+                if len(player_f_scores_1)>0:
+                    player_f_scores = player_f_scores_1
+                    f_score_cat = 'Hitter'
+                elif len(player_f_scores_2)>0:
+                    player_f_scores = player_f_scores_2
+                    f_score_cat = 'Pitcher'
+                else:
+                    player_f_scores = pd.DataFrame()
+                    f_score_cat = 'None'
+                
+                if f_score_cat == 'Hitter':
+                    f_hit = player_f_scores['HitTool'].iloc[0]
+                    f_power = player_f_scores['Power'].iloc[0]
+                    f_dur = player_f_scores['Durability'].iloc[0]
+                    f_disc = player_f_scores['Discipline'].iloc[0]
+                    f_speed = player_f_scores['Speed'].iloc[0]
+
+                    f_grade = (f_power*.3) + (f_hit*.3) + (f_disc*.2) + (f_dur*.05) + (f_speed*.15)
+
+                    st.markdown("### 🧬 fScore Grades")
+
+                    c1, c2, c3, c4, c5, c6 = st.columns(6)
+
+                    with c1:
+                        render_score_tile("Hit", f_hit)
+                    with c2:
+                        render_score_tile("Power", f_power)
+                    with c3:
+                        render_score_tile("Discipline", f_disc)
+                    with c4:
+                        render_score_tile("Speed", f_speed)
+                    with c5:
+                        render_score_tile("Durability", f_dur)
+                    with c6:
+                        render_score_tile("Overall", f_grade)
+
+                    st.markdown("---")
+                
+                if f_score_cat == 'Pitcher':
+                    #st.write(player_f_scores)
+                    f_era = player_f_scores['fERA'].iloc[0]
+                    f_stuff = player_f_scores['fStuff'].iloc[0]
+                    f_dur = player_f_scores['fDurability'].iloc[0]
+                    f_control = player_f_scores['fControl'].iloc[0]
+
+                    f_grade = (f_era*.3) + (f_stuff*.3) + (f_control*.3) + (f_dur*.1)
+
+                    st.markdown("### 🧬 fScore Grades")
+
+                    c1, c2, c3, c4, c5 = st.columns(5)
+
+                    with c1:
+                        render_score_tile("Stuff", f_stuff)
+                    with c2:
+                        render_score_tile("Control", f_control)
+                    with c3:
+                        render_score_tile("ERA", f_era)
+                    with c4:
+                        render_score_tile("Durability", f_dur)
+                    with c5:
+                        render_score_tile("Overall", f_grade)
+
+                    st.markdown("---")
+
 
                 p = base_df[base_df["player_name"] == selected_name].iloc[0]
 
@@ -2364,6 +2480,7 @@ if check_password():
             else:
                 pos_search = ""
 
+        #st.markdown("<center>The MLB DW system gives every hitter on the 40-man roster a baseline 100 PA so we can use the 600 PA adjustment to see what they <i>would</i> projection like in the case they get unexpected playing time",unsafe_allow_html=True)
         st.markdown("<hr style='margin:0.75rem 0 1rem;'/>", unsafe_allow_html=True)
 
         # ===== HELPER to filter =====
@@ -2521,7 +2638,8 @@ if check_password():
                 hide_index=True,
                 height=650,
             )
-
+        st.markdown("<center><hr><font face=Oswald><b>The MLB DW system gives every hitter on the 40-man roster a baseline 100 PA so we can use the 600 PA adjustment to see what they <i>would</i> projection like in the case they get unexpected playing time</b></font><hr>",unsafe_allow_html=True)
+        
         # ===== DOWNLOAD =====
         csv = display_df.to_csv(index=False).encode("utf-8")
         st.download_button(
@@ -2816,6 +2934,7 @@ if check_password():
                     "SRV_Steamer", "PA_Steamer", "R_Steamer", "HR_Steamer", "RBI_Steamer", "SB_Steamer", "AVG_Steamer",
                 ]
                 display_df = display_df[[c for c in cols_order if c in display_df.columns]]
+
 
         else:  # Pitchers
             if source_choice == "MLB DW":
