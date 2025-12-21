@@ -1523,6 +1523,8 @@ if check_password():
     if tab == "Prospect Ranks":
 
         ## Some functions ##
+        fscores_milb_hit = fscores_milb_hit.dropna()
+        fscores_milb_pitch = fscores_milb_pitch.dropna()
 
         def score_bg_color(val: float) -> str:
             if val < 80:
