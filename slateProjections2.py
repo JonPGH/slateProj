@@ -33,7 +33,7 @@ if "auth_key" not in st.session_state:
 # (use env vars / st.secrets in production; see note below)
 # ----------------------------
 PASSWORDS = {
-    "jack":   {"access_level": "basic", "auth_key": "BASIC_1"},
+    "jack":   {"access_level": "basic", "auth_key": "FULL"},
     "1":      {"access_level": "full", "auth_key": "FULL"},
     "kanak": {"access_level": "full",  "auth_key": "FULL"},
 }
