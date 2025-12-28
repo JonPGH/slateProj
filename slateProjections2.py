@@ -2531,7 +2531,7 @@ if check_password():
         # =========================
         # UI
         # =========================
-        st.subheader("Auction Value Calculator (FanGraphs-style)")
+        st.subheader("Auction Value Calculator")
 
         left, right = st.columns([1, 1], gap="large")
 
