@@ -1501,6 +1501,10 @@ if check_password():
         # release_speed, release_pos_x, release_pos_z, release_extension, pfx_x_in, pfx_z_in
         # -----------------------------
         df = pitch_move_data.copy()
+        df['PitchGrade'] = round(df['PitchGrade'],0)
+        df = df.rename({'PitchGrade': 'MLBDW Grade'},axis=1)
+
+        grade_df = df[['pitcher','pitch_type','MLBDW Grade']]
 
         required = {
             "player_name","pitcher","p_throws","pitch_type","n_pitches",
@@ -1650,6 +1654,7 @@ if check_password():
         # Selected pitcher summary + selected pitch comps in left pane
         # -----------------------------
         with left:
+            #df = pd.merge(df,grade_df,how='left',on=['pitcher','pitch_type'])
             sel = df[(df["player_name"] == pitcher_name) & (df["pitcher"] == pitcher_id)].copy()
             if sel.empty:
                 st.error("Selected pitcher not found in the data after filtering/standardization.")
@@ -1661,7 +1666,7 @@ if check_password():
             st.caption(f"Pitcher ID: {pitcher_id}")
 
             st.markdown("### Pitch Arsenal (Averages)")
-            summary_cols = ["pitch_type","n_pitches","release_speed","pfx_x_in","pfx_z_in","release_pos_x","release_pos_z","release_extension"]
+            summary_cols = ["pitch_type","n_pitches","MLBDW Grade","release_speed","pfx_x_in","pfx_z_in","release_pos_x","release_pos_z","release_extension"]
             summary_cols = [c for c in summary_cols if c in sel.columns]
             arsenal = sel[summary_cols].sort_values("n_pitches", ascending=False).reset_index(drop=True)
             st.dataframe(arsenal, use_container_width=True, hide_index=True)
@@ -1681,16 +1686,17 @@ if check_password():
                 st.stop()
 
             # Target metrics row
-            cols = st.columns(6)
-            cols[0].metric("Velo", f"{trow['release_speed']:.1f}")
-            cols[1].metric("HB (in)", f"{trow['pfx_x_in']:.1f}")
-            cols[2].metric("VB (in)", f"{trow['pfx_z_in']:.1f}")
+            cols = st.columns(7)
+            cols[0].metric("MLBDW Grade", f"{trow['MLBDW Grade']:.0f}")
+            cols[1].metric("Velo", f"{trow['release_speed']:.1f}")
+            cols[2].metric("HB (in)", f"{trow['pfx_x_in']:.1f}")
+            cols[3].metric("VB (in)", f"{trow['pfx_z_in']:.1f}")
             if "release_extension" in trow:
-                cols[3].metric("Ext", f"{trow['release_extension']:.2f}")
+                cols[4].metric("Ext", f"{trow['release_extension']:.2f}")
             if "release_pos_x" in trow:
-                cols[4].metric("Rel X", f"{trow['release_pos_x']:.2f}")
+                cols[5].metric("Rel X", f"{trow['release_pos_x']:.2f}")
             if "release_pos_z" in trow:
-                cols[5].metric("Rel Z", f"{trow['release_pos_z']:.2f}")
+                cols[6].metric("Rel Z", f"{trow['release_pos_z']:.2f}")
 
             st.markdown("### Most Similar Pitches (Same Pitch Type)")
             comps = get_comps_for_row(trow, top_k=k)
@@ -1698,7 +1704,9 @@ if check_password():
             if comps.empty:
                 st.info("No comps found after filters (try lowering 'Min samples for comp pitches').")
             else:
+                comps = pd.merge(comps, grade_df, how='left', on=['pitcher','pitch_type'])
                 display = comps.copy()
+
                 if "distance" in display.columns:
                     display["distance"] = display["distance"].round(3)
                 if "score" in display.columns:
@@ -1706,6 +1714,9 @@ if check_password():
                 for c in ["release_speed","pfx_x_in","pfx_z_in","release_extension","release_pos_x","release_pos_z"]:
                     if c in display.columns:
                         display[c] = display[c].round(2)
+                
+                display = display[['player_name','pitch_type','MLBDW Grade','n_pitches','release_speed','pfx_x_in','pfx_z_in','release_pos_x','release_pos_z','release_extension','distance','score']]
+                display.columns=['Pitcher','Pitch','MLBDW Grade','#','Velo','X Move','V Move','Release X','Release Y','Ext','Distance','Sim Score']
                 st.dataframe(display, use_container_width=True, hide_index=True)
 
             # Optional movement plot
@@ -3388,6 +3399,7 @@ if check_password():
                     "IP", "ERA", "WHIP", "SO", "W", "SV",
                     "GS", "H", "ER", "K/9", "BB/9", "K%", "BB%",
                 ]
+
                 display_df = display_df.reindex(columns=cols_order)
 
             else:  # All (single player, stacked rows) — fixed to always show all columns
@@ -3406,7 +3418,7 @@ if check_password():
                     "IP", "ERA", "WHIP", "SO", "W", "SV",
                     "GS", "H", "ER", "K/9", "BB/9", "K%", "BB%",
                 ]
-
+                
                 if rows:
                     display_df = pd.concat(rows, ignore_index=True).reindex(columns=cols_order)
                 else:
@@ -3850,11 +3862,11 @@ if check_password():
                     filtered = _filter_df(full_pool, is_hitter=False)
                     display_df = calculateSRV_Pitchers(full_pool, merge_df=filtered)
 
+                    #cols_order = ["Player", "Team", "SRV","IP", "ERA", "WHIP", "SO", "W", "SV","GS", "H", "ER", "K/9", "BB/9", "K%", "BB%",]
                     cols_order = [
-                        "Player", "Team", "SRV",
-                        "IP", "ERA", "WHIP", "SO", "W", "SV",
-                        "GS", "H", "ER", "K/9", "BB/9", "K%", "BB%",
-                    ]
+                            "Player", "Team", "Source", "SRV",
+                            "GS","IP", "ERA", "WHIP", "K%","BB%", "W", "SV", "SO", "BB"
+                        ]
                     display_df = display_df[[c for c in cols_order if c in display_df.columns]]
 
                 else:  # All (single player, stacked rows)
@@ -3872,8 +3884,7 @@ if check_password():
                         display_df = pd.concat(rows, ignore_index=True)
                         cols_order = [
                             "Player", "Team", "Source", "SRV",
-                            "IP", "ERA", "WHIP", "SO", "W", "SV",
-                            "GS", "H", "ER", "K/9", "BB/9", "K%", "BB%",
+                            "GS","IP", "ERA", "WHIP", "K%","BB%", "W", "SV", "SO", "BB"
                         ]
                         display_df = display_df[[c for c in cols_order if c in display_df.columns]]
                     else:
