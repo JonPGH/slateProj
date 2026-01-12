@@ -351,7 +351,9 @@ if check_password():
         timrank_hitters = pd.read_csv(f'{file_path}/timrank_hitters.csv')
         timrank_pitchers = pd.read_csv(f'{file_path}/timrank_pitchers.csv')
 
-        return timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,oopsyhit,oopsypitch,steamerhit,steamerpit,bathit,batpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
+        pitch_move_data = pd.read_csv(f'{file_path}/mlb_pitch_movement_clustering_data_2025.csv')
+
+        return pitch_move_data,timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,oopsyhit,oopsypitch,steamerhit,steamerpit,bathit,batpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -1051,7 +1053,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,oopsyhit,oopsypitch,steamerhit,steamerpit,bathit,batpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
+    pitch_move_data,timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,oopsyhit,oopsypitch,steamerhit,steamerpit,bathit,batpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -1121,9 +1123,9 @@ if check_password():
     #tab = st.sidebar.radio("Select View", ["2026 Ranks","Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
     
     if st.session_state.access_level == "full":
-        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP","Prospect Ranks","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater"], help="Choose a view to analyze games or player projections.")
+        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP","Prospect Ranks","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Pitch Movement Comps"], help="Choose a view to analyze games or player projections.")
     else:
-        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Player Rater"], help="Choose a view to analyze games or player projections.")
+        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Player Rater","Pitch Movement Comps"], help="Choose a view to analyze games or player projections.")
 
     
     if "reload" not in st.session_state:
@@ -1484,42 +1486,294 @@ if check_password():
                 get_gspread_client.clear()
                 st.experimental_rerun()
 
+    if tab == "Pitch Movement Comps":
+        import numpy as np
+        import pandas as pd
+        import streamlit as st
 
+        st.title("Pitch Movement Comps")
+        st.caption("Find the most similar pitch shapes (by pitch type) across MLB, using averaged Statcast movement + release traits.")
 
+        # -----------------------------
+        # Expect: pitch_move_data is already loaded as a DataFrame
+        # Required columns:
+        # player_name, pitcher, p_throws, pitch_type, n_pitches,
+        # release_speed, release_pos_x, release_pos_z, release_extension, pfx_x_in, pfx_z_in
+        # -----------------------------
+        df = pitch_move_data.copy()
 
-    if tab == "Team Talk":
-        st.title("MLB Team Fan Accounts on X")
-
-        TEAM_X_LISTS = {
-            "Phillies": "https://x.com/i/lists/1998094471389429763",
-            "Mets": "https://x.com/i/lists/1998094471389429763",  # fake placeholder
-            "Nationals": "https://x.com/i/lists/1998098849437479020",
-            "Braves": "https://x.com/i/lists/1998097122676052283",
-            "Marlins": "https://x.com/i/lists/1998098786376159713",
+        required = {
+            "player_name","pitcher","p_throws","pitch_type","n_pitches",
+            "release_speed","release_pos_x","release_pos_z","release_extension","pfx_x_in","pfx_z_in"
         }
+        missing = sorted(list(required - set(df.columns)))
+        if missing:
+            st.error(f"pitch_move_data is missing required columns: {missing}")
+            st.stop()
 
-        team = st.selectbox("Select a team", list(TEAM_X_LISTS.keys()))
+        # Ensure numeric
+        num_cols = ["n_pitches","release_speed","release_pos_x","release_pos_z","release_extension","pfx_x_in","pfx_z_in"]
+        for c in num_cols:
+            df[c] = pd.to_numeric(df[c], errors="coerce")
 
-        if team:
-            list_url = TEAM_X_LISTS[team]
-            
-            st.subheader(f"{team} X Fan List")
+        df = df.dropna(subset=["player_name","pitcher","pitch_type","p_throws"] + num_cols).copy()
+        df["pitch_type"] = df["pitch_type"].astype(str)
+        df["p_throws"] = df["p_throws"].astype(str)
 
-            st.markdown(
-                f"""
-                <div style="padding:20px; border-radius:12px; 
-                            background:#f5f7fa; border:1px solid #dadde1;">
-                    <h3 style="margin-top:0;">{team} Fan Accounts</h3>
-                    <p>This will open the curated X list for {team} fans.</p>
-                    <a href="{list_url}" target="_blank"
-                    style="font-size:18px; font-weight:600; 
-                            color:#1d9bf0; text-decoration:none;">
-                        👉 Open {team} Fan List on X
-                    </a>
-                </div>
-                """,
-                unsafe_allow_html=True
+        # -----------------------------
+        # Layout: Left = results, Right = controls (top) + filters (below)
+        # -----------------------------
+        left, right = st.columns([3, 1])
+
+        with right:
+            st.subheader("Select Pitcher & Pitch")
+
+            # Pitcher search + select (in the right pane, top)
+            search = st.text_input("Search pitcher", value="", placeholder="Type a name (e.g., Cade Horton)")
+            all_names = np.array(sorted(df["player_name"].unique()))
+
+            if search.strip():
+                mask = np.char.find(np.char.lower(all_names), search.strip().lower()) >= 0
+                filtered_names = all_names[mask]
+            else:
+                filtered_names = all_names
+
+            if len(filtered_names) == 0:
+                st.warning("No names match your search.")
+                st.stop()
+
+            pitcher_name = st.selectbox("Pitcher", filtered_names, index=0)
+
+            # Identify pitcher_id (handle duplicate names by choosing largest total sample)
+            sel_name = df[df["player_name"] == pitcher_name].copy()
+            totals = sel_name.groupby("pitcher", as_index=False)["n_pitches"].sum().sort_values("n_pitches", ascending=False)
+            pitcher_id = int(totals.iloc[0]["pitcher"])
+            sel_pitcher = sel_name[sel_name["pitcher"] == pitcher_id].copy()
+
+            # Pitch selection box (top)
+            pitch_options = (
+                sel_pitcher.sort_values("n_pitches", ascending=False)["pitch_type"].unique().tolist()
             )
+            default_pitch = pitch_options[0] if pitch_options else None
+            selected_pitch_type = st.selectbox("Pitch type", pitch_options, index=0)
+
+            st.divider()
+            st.subheader("Filters")
+
+            k = st.slider("Comps per pitch", min_value=5, max_value=15, value=10, step=1)
+            min_target_n = st.slider("Min samples for selected pitch", min_value=1, max_value=100, value=15, step=1)
+            min_comp_n = st.slider("Min samples for comp pitches", min_value=10, max_value=150, value=30, step=5)
+
+            same_hand_only = st.checkbox("Only compare to same throwing hand", value=True)
+
+            st.divider()
+            st.subheader("Bias toward bigger samples")
+            st.caption("Penalizes low-sample comps so you don’t just get random 12-pitch reliever shapes.")
+            sample_penalty = st.slider(
+                "Penalty strength",
+                min_value=0.0, max_value=10.0, value=5.0, step=0.5,
+                help="Higher = more penalty for low-sample comps. 0 = no bias, pure distance."
+            )
+
+            st.divider()
+            feat_mode = st.selectbox(
+                "Feature set",
+                ["Shape + Release (recommended)", "Movement + Velo only"],
+                index=0,
+                help="Shape + Release tends to produce more intuitive pitcher-to-pitcher comps."
+            )
+
+        # -----------------------------
+        # Feature selection
+        # -----------------------------
+        if feat_mode == "Movement + Velo only":
+            feat_cols = ["release_speed","pfx_x_in","pfx_z_in"]
+        else:
+            feat_cols = ["release_speed","release_pos_x","release_pos_z","release_extension","pfx_x_in","pfx_z_in"]
+
+        # -----------------------------
+        # Standardize features *within pitch_type* (and optionally within hand)
+        # -----------------------------
+        group_keys = ["pitch_type"] + (["p_throws"] if same_hand_only else [])
+
+        for c in feat_cols:
+            df[f"{c}__mu"] = df.groupby(group_keys)[c].transform("mean")
+            df[f"{c}__sd"] = df.groupby(group_keys)[c].transform("std").replace(0, np.nan)
+            df[f"z_{c}"] = (df[c] - df[f"{c}__mu"]) / df[f"{c}__sd"]
+
+        z_cols = [f"z_{c}" for c in feat_cols]
+        df = df.dropna(subset=z_cols).copy()
+
+        # -----------------------------
+        # Helper: compute comps for a single (pitcher, pitch_type) row
+        # -----------------------------
+        def get_comps_for_row(target_row: pd.Series, top_k: int) -> pd.DataFrame:
+            pt = target_row["pitch_type"]
+            hand = target_row["p_throws"]
+
+            pool = df[df["pitch_type"] == pt].copy()
+            if same_hand_only:
+                pool = pool[pool["p_throws"] == hand].copy()
+
+            # Exclude same pitcher
+            pool = pool[pool["pitcher"] != target_row["pitcher"]].copy()
+
+            # Filter by comp sample size
+            pool = pool[pool["n_pitches"] >= min_comp_n].copy()
+            if pool.empty:
+                return pool
+
+            # Vector distances in z-space
+            t = target_row[z_cols].to_numpy(dtype=float)
+            X = pool[z_cols].to_numpy(dtype=float)
+            d = np.sqrt(((X - t) ** 2).sum(axis=1))
+
+            # Penalize small sample comps (optional)
+            n = pool["n_pitches"].to_numpy(dtype=float)
+            factor = 1.0 + (sample_penalty / np.sqrt(np.maximum(n, 1.0)))
+            score = d * factor
+
+            pool = pool.assign(distance=d, score=score)
+
+            # Rank: primarily by score, then raw distance, then larger sample
+            pool = pool.sort_values(["score","distance","n_pitches"], ascending=[True, True, False]).head(top_k)
+
+            show_cols = [
+                "player_name","pitcher","p_throws","pitch_type","n_pitches",
+                "release_speed","pfx_x_in","pfx_z_in","release_pos_x","release_pos_z","release_extension",
+                "distance","score"
+            ]
+            show_cols = [c for c in show_cols if c in pool.columns]
+            return pool[show_cols].reset_index(drop=True)
+
+        # -----------------------------
+        # Selected pitcher summary + selected pitch comps in left pane
+        # -----------------------------
+        with left:
+            sel = df[(df["player_name"] == pitcher_name) & (df["pitcher"] == pitcher_id)].copy()
+            if sel.empty:
+                st.error("Selected pitcher not found in the data after filtering/standardization.")
+                st.stop()
+
+            hand = sel["p_throws"].iloc[0]
+
+            st.subheader(f"{pitcher_name}  ·  {hand}-handed")
+            st.caption(f"Pitcher ID: {pitcher_id}")
+
+            st.markdown("### Pitch Arsenal (Averages)")
+            summary_cols = ["pitch_type","n_pitches","release_speed","pfx_x_in","pfx_z_in","release_pos_x","release_pos_z","release_extension"]
+            summary_cols = [c for c in summary_cols if c in sel.columns]
+            arsenal = sel[summary_cols].sort_values("n_pitches", ascending=False).reset_index(drop=True)
+            st.dataframe(arsenal, use_container_width=True, hide_index=True)
+
+            st.markdown(f"### Selected Pitch: **{selected_pitch_type}**")
+            target = sel[sel["pitch_type"] == selected_pitch_type].copy()
+            if target.empty:
+                st.warning("That pitch type wasn't found for the selected pitcher.")
+                st.stop()
+
+            trow = target.sort_values("n_pitches", ascending=False).iloc[0]
+            if int(trow["n_pitches"]) < min_target_n:
+                st.warning(
+                    f"{pitcher_name} {selected_pitch_type} only has n={int(trow['n_pitches'])} in your table. "
+                    f"Lower 'Min samples for selected pitch' or pick a different pitch."
+                )
+                st.stop()
+
+            # Target metrics row
+            cols = st.columns(6)
+            cols[0].metric("Velo", f"{trow['release_speed']:.1f}")
+            cols[1].metric("HB (in)", f"{trow['pfx_x_in']:.1f}")
+            cols[2].metric("VB (in)", f"{trow['pfx_z_in']:.1f}")
+            if "release_extension" in trow:
+                cols[3].metric("Ext", f"{trow['release_extension']:.2f}")
+            if "release_pos_x" in trow:
+                cols[4].metric("Rel X", f"{trow['release_pos_x']:.2f}")
+            if "release_pos_z" in trow:
+                cols[5].metric("Rel Z", f"{trow['release_pos_z']:.2f}")
+
+            st.markdown("### Most Similar Pitches (Same Pitch Type)")
+            comps = get_comps_for_row(trow, top_k=k)
+
+            if comps.empty:
+                st.info("No comps found after filters (try lowering 'Min samples for comp pitches').")
+            else:
+                display = comps.copy()
+                if "distance" in display.columns:
+                    display["distance"] = display["distance"].round(3)
+                if "score" in display.columns:
+                    display["score"] = display["score"].round(3)
+                for c in ["release_speed","pfx_x_in","pfx_z_in","release_extension","release_pos_x","release_pos_z"]:
+                    if c in display.columns:
+                        display[c] = display[c].round(2)
+                st.dataframe(display, use_container_width=True, hide_index=True)
+
+            # Optional movement plot
+            show_plot = st.checkbox("Show movement scatter (context)", value=False)
+            if show_plot:
+                import matplotlib.pyplot as plt
+
+                pool = df[df["pitch_type"] == selected_pitch_type].copy()
+                if same_hand_only:
+                    pool = pool[pool["p_throws"] == hand].copy()
+
+                cloud = pool[pool["n_pitches"] >= min_comp_n].copy()
+                highlight_names = set(comps["player_name"].tolist()) if not comps.empty else set()
+                highlight = cloud[cloud["player_name"].isin(highlight_names)].copy()
+
+                fig, ax = plt.subplots()
+                ax.scatter(cloud["pfx_x_in"], cloud["pfx_z_in"], alpha=0.15)
+                if not highlight.empty:
+                    ax.scatter(highlight["pfx_x_in"], highlight["pfx_z_in"], alpha=0.9)
+
+                ax.scatter([trow["pfx_x_in"]], [trow["pfx_z_in"]], marker="X", s=120)
+
+                ax.set_xlabel("Horizontal Break (in)  [pitcher POV]")
+                ax.set_ylabel("Vertical Break (in)")
+                ax.set_title(f"{pitcher_name} {selected_pitch_type} — Movement Neighborhood")
+                st.pyplot(fig, clear_figure=True)
+
+            st.divider()
+            st.caption(
+                "Under the hood: we z-score features within pitch type (and optionally hand), then use nearest-neighbor distance. "
+                "The sample penalty biases comps toward higher-sample pitches."
+            )
+
+
+
+        if tab == "Team Talk":
+            st.title("MLB Team Fan Accounts on X")
+
+            TEAM_X_LISTS = {
+                "Phillies": "https://x.com/i/lists/1998094471389429763",
+                "Mets": "https://x.com/i/lists/1998094471389429763",  # fake placeholder
+                "Nationals": "https://x.com/i/lists/1998098849437479020",
+                "Braves": "https://x.com/i/lists/1998097122676052283",
+                "Marlins": "https://x.com/i/lists/1998098786376159713",
+            }
+
+            team = st.selectbox("Select a team", list(TEAM_X_LISTS.keys()))
+
+            if team:
+                list_url = TEAM_X_LISTS[team]
+                
+                st.subheader(f"{team} X Fan List")
+
+                st.markdown(
+                    f"""
+                    <div style="padding:20px; border-radius:12px; 
+                                background:#f5f7fa; border:1px solid #dadde1;">
+                        <h3 style="margin-top:0;">{team} Fan Accounts</h3>
+                        <p>This will open the curated X list for {team} fans.</p>
+                        <a href="{list_url}" target="_blank"
+                        style="font-size:18px; font-weight:600; 
+                                color:#1d9bf0; text-decoration:none;">
+                            👉 Open {team} Fan List on X
+                        </a>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
 
 
 
