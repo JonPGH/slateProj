@@ -4570,7 +4570,7 @@ if check_password():
         pos_colors = (
             {"C":"#E691FF","1B":"#FFE5B4","2B":"#FF7F47","3B":"#D9EBFA","SS":"#47C5FF","OF":"#5CEDB5","DH":"#91C6FF"}
             if group == "Hitters" else
-            {"SP":"#FF7F47","RP":"#FF7F47","P":"#FF7F47"}
+            {"SP":"#47C5FF","RP":"#47C5FF","P":"#47C5FF"}
         )
 
         # ===== Build HTML with hover popovers =====
