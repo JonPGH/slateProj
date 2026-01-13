@@ -4570,7 +4570,7 @@ if check_password():
         pos_colors = (
             {"C":"#E691FF","1B":"#FFE5B4","2B":"#FF7F47","3B":"#D9EBFA","SS":"#47C5FF","OF":"#5CEDB5","DH":"#91C6FF"}
             if group == "Hitters" else
-            {"SP":"#47C5FF","RP":"#47C5FF","P":"#47C5FF"}
+            {"SP":"#004687","RP":"#004687","P":"#004687"}
         )
 
         # ===== Build HTML with hover popovers =====
@@ -4643,7 +4643,7 @@ if check_password():
             # pick the field used for color (Primary Pos for hitters, Pos for pitchers)
             pos_key = esc(r.get(pos_field, ""))
             bg = pos_colors.get(pos_key, "#004687")
-
+            
             rank    = "" if pd.isna(r["Rank"])      else int(r["Rank"])
             player  = esc(r["Player"])
             team    = esc(r["Team"])
