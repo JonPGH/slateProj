@@ -4642,7 +4642,7 @@ if check_password():
         for _, r in df.iterrows():
             # pick the field used for color (Primary Pos for hitters, Pos for pitchers)
             pos_key = esc(r.get(pos_field, ""))
-            bg = pos_colors.get(pos_key, "#F7F7F7")
+            bg = pos_colors.get(pos_key, "#004687")
 
             rank    = "" if pd.isna(r["Rank"])      else int(r["Rank"])
             player  = esc(r["Player"])
