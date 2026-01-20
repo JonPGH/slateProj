@@ -3,6 +3,7 @@ import pandas as pd, math
 import os
 import warnings, re
 import gspread
+import unidecode
 
 warnings.filterwarnings("ignore")
 
@@ -2525,11 +2526,532 @@ if check_password():
 
     if tab == "Auction Value Calculator":
 
+        # =========================
+        # RAW INPUTS (you already added these)
+        # =========================
         steamer_h_raw = steamerhit.copy()
         steamer_p_raw = steamerpit.copy()
 
         ja_h_raw = ja_hit.copy()
         ja_p_raw = ja_pitch.copy()
+
+        bat_h_raw = bathit.copy()
+        bat_p_raw = batpit.copy()
+
+        atc_h_raw = atchit.copy()
+        atc_p_raw = atcpit.copy()
+
+        oopsy_h_raw = oopsyhit.copy()
+        oopsy_p_raw = oopsypitch.copy()
+
+        pos_dict = dict(zip(posdata.ID,posdata.Pos))
+        steamer_h_raw['Pos'] = steamer_h_raw['MLBAMID'].map(pos_dict)
+        bat_h_raw['Pos'] = bat_h_raw['MLBAMID'].map(pos_dict)
+        atc_h_raw['Pos'] = atc_h_raw['MLBAMID'].map(pos_dict)
+        oopsy_h_raw['Pos'] = oopsy_h_raw['MLBAMID'].map(pos_dict)
+
+        # NOTE: assumes you have these dataframes loaded elsewhere (same pattern as others):
+        #   oopsy_h_raw = oopsyhit.copy()
+        #   oopsy_p_raw = oopsypitch.copy()
+        # If your variable names differ, just swap them below.
+
+        # =========================
+        # HELPERS
+        # =========================
+        def _safe_col(df, col, default=np.nan):
+            return df[col] if col in df.columns else default
+
+        def _first_present(df: pd.DataFrame, candidates: list[str]):
+            for c in candidates:
+                if c in df.columns:
+                    return c
+            return None
+
+        def _rename_first_present(df: pd.DataFrame, candidates: list[str], to: str):
+            c = _first_present(df, candidates)
+            if c is not None and c != to:
+                df.rename(columns={c: to}, inplace=True)
+
+        def _coerce_numeric_cols(df: pd.DataFrame, cols: list[str]) -> None:
+            for c in cols:
+                if c in df.columns:
+                    df[c] = pd.to_numeric(df[c], errors="coerce")
+
+        def _standardize_hitters(df: pd.DataFrame, system: str) -> pd.DataFrame:
+            """
+            Standard output columns:
+            Name, Team, Pos, PA, AB, R, HR, RBI, SB, AVG, OBP, SLG, OPS, H, BB, HBP, SF
+            """
+            d = df.copy()
+
+            # --- Name / Team / Pos ---
+            if system == "JA":
+                _rename_first_present(d, ["Player", "Name", "NameASCII", "player_name"], "Name")
+            else:
+                _rename_first_present(d, ["Name", "Player", "NameASCII", "player_name", "PlayerName"], "Name")
+
+            _rename_first_present(d, ["Team", "Tm", "team", "MLB Team"], "Team")
+            _rename_first_present(d, ["Pos", "POS", "Position", "Positions", "Position(s)"], "Pos")
+
+            if "Pos" not in d.columns:
+                d["Pos"] = "UTIL"
+
+            # --- Core counting stats ---
+            # These are usually consistent across systems, but we still guard them.
+            for c in ["PA", "AB", "R", "HR", "RBI", "SB", "H", "BB", "HBP", "SF"]:
+                if c not in d.columns:
+                    d[c] = np.nan
+
+            # --- Rate stats ---
+            for c in ["AVG", "OBP", "SLG", "OPS"]:
+                if c not in d.columns:
+                    d[c] = np.nan
+
+            # Common alternates some files use
+            # (Only fill if the standard col is missing/empty)
+            if d["AVG"].isna().all():
+                alt = _first_present(d, ["BA", "AVG_"])
+                if alt:
+                    d["AVG"] = pd.to_numeric(d[alt], errors="coerce")
+
+            if d["OBP"].isna().all():
+                alt = _first_present(d, ["OBP_"])
+                if alt:
+                    d["OBP"] = pd.to_numeric(d[alt], errors="coerce")
+
+            if d["SLG"].isna().all():
+                alt = _first_present(d, ["SLG_"])
+                if alt:
+                    d["SLG"] = pd.to_numeric(d[alt], errors="coerce")
+
+            # OPS: compute if missing but OBP/SLG available
+            if d["OPS"].isna().all() and (not d["OBP"].isna().all()) and (not d["SLG"].isna().all()):
+                d["OPS"] = pd.to_numeric(d["OBP"], errors="coerce") + pd.to_numeric(d["SLG"], errors="coerce")
+
+            # Build AB if still missing but PA exists (rough fallback)
+            if d["AB"].isna().all() and (not d["PA"].isna().all()):
+                d["AB"] = np.where(pd.to_numeric(d["PA"], errors="coerce").notna(), (pd.to_numeric(d["PA"], errors="coerce") * 0.86), np.nan)
+
+            # --- Cleanup / types ---
+            d = d.dropna(subset=["Name"]).copy()
+            d["Team"] = d["Team"].fillna("")
+            d["Pos"] = d["Pos"].fillna("UTIL")
+
+            _coerce_numeric_cols(d, ["PA", "AB", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "H", "BB", "HBP", "SF"])
+
+            d = d[d["PA"].fillna(0) > 0].copy()
+            return d
+
+        def _standardize_pitchers(df: pd.DataFrame, system: str) -> pd.DataFrame:
+            """
+            Standard output columns:
+            Name, Team, Pos, GS, IP, W, SV, ERA, WHIP, SO, BB, K/9, BB/9
+            """
+            d = df.copy()
+
+            # --- Name / Team ---
+            if system == "JA":
+                _rename_first_present(d, ["Pitcher", "Name", "NameASCII", "player_name"], "Name")
+            else:
+                _rename_first_present(d, ["Name", "Pitcher", "NameASCII", "player_name", "PlayerName"], "Name")
+
+            _rename_first_present(d, ["Team", "Tm", "team", "MLB Team"], "Team")
+
+            # --- Normalize SO/K and core cols ---
+            # Some sets use K instead of SO
+            if "SO" not in d.columns and "K" in d.columns:
+                d["SO"] = d["K"]
+            if "SO" not in d.columns:
+                # sometimes "SO" is "SO_" etc
+                alt = _first_present(d, ["SO_", "Ks", "KSO"])
+                if alt:
+                    d["SO"] = d[alt]
+                else:
+                    d["SO"] = np.nan
+
+            # Ensure core columns exist
+            for c in ["GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "BB"]:
+                if c not in d.columns:
+                    d[c] = np.nan
+
+            # Infer Pos (SP/RP) by GS if not provided
+            if "Pos" not in d.columns:
+                gs = pd.to_numeric(_safe_col(d, "GS", 0), errors="coerce").fillna(0)
+                d["Pos"] = np.where(gs > 0, "SP", "RP")
+            else:
+                d["Pos"] = d["Pos"].fillna("P")
+
+            # Compute K/9 and BB/9 if missing
+            d["IP"] = pd.to_numeric(_safe_col(d, "IP", np.nan), errors="coerce")
+            d["BB"] = pd.to_numeric(_safe_col(d, "BB", np.nan), errors="coerce")
+            d["SO"] = pd.to_numeric(_safe_col(d, "SO", np.nan), errors="coerce")
+
+            if "K/9" not in d.columns:
+                d["K/9"] = np.where(d["IP"].fillna(0) > 0, (d["SO"] * 9) / d["IP"], np.nan)
+            if "BB/9" not in d.columns:
+                d["BB/9"] = np.where(d["IP"].fillna(0) > 0, (d["BB"] * 9) / d["IP"], np.nan)
+
+            # Final type coercion
+            d = d.dropna(subset=["Name"]).copy()
+            d["Team"] = d["Team"].fillna("")
+            d["Pos"] = d["Pos"].fillna("P")
+
+            _coerce_numeric_cols(d, ["GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "BB", "K/9", "BB/9"])
+
+            d = d[d["IP"].fillna(0) > 0].copy()
+            return d
+
+        def _parse_roster_string(roster_str: str) -> list[str]:
+            parts = [p.strip().upper() for p in roster_str.split(",") if p.strip()]
+            return parts
+
+        def _is_pitch_slot(slot: str) -> bool:
+            slot = slot.upper().strip()
+            return slot in {"SP", "RP", "P"}
+
+        def _compute_marginal_hit_rate(df: pd.DataFrame, rate_col: str) -> pd.Series:
+            """
+            Convert a rate stat into a counting-like contribution using playing time.
+            AVG/SLG use AB if present; OBP/OPS use PA.
+            """
+            rate = pd.to_numeric(df[rate_col], errors="coerce")
+
+            if rate_col in {"AVG", "SLG"}:
+                denom = pd.to_numeric(df["AB"], errors="coerce")
+            else:
+                denom = pd.to_numeric(df["PA"], errors="coerce")
+
+            denom = denom.fillna(0)
+            if denom.sum() > 0:
+                lg_rate = np.nansum(rate * denom) / np.nansum(denom)
+            else:
+                lg_rate = np.nanmean(rate)
+
+            return (rate - lg_rate) * denom
+
+        def _compute_marginal_pitch_rate(df: pd.DataFrame, rate_col: str) -> pd.Series:
+            """
+            Convert a rate stat into a counting-like contribution.
+            Lower-is-better for ERA/WHIP/BB9; higher-is-better for K9.
+            """
+            ip = pd.to_numeric(df["IP"], errors="coerce").fillna(0)
+            r = pd.to_numeric(df[rate_col], errors="coerce")
+
+            if rate_col in {"ERA", "WHIP"}:
+                lg = np.nansum(r * ip) / np.nansum(ip) if ip.sum() > 0 else np.nanmean(r)
+                return (lg - r) * ip  # better (lower) => positive
+
+            if rate_col == "BB/9":
+                w = ip / 9.0
+                lg = np.nansum(r * w) / np.nansum(w) if w.sum() > 0 else np.nanmean(r)
+                return (lg - r) * w
+
+            if rate_col == "K/9":
+                w = ip / 9.0
+                lg = np.nansum(r * w) / np.nansum(w) if w.sum() > 0 else np.nanmean(r)
+                return (r - lg) * w  # better (higher) => positive
+
+            return r
+
+        def _zscore(series: pd.Series) -> pd.Series:
+            s = pd.to_numeric(series, errors="coerce")
+            mu = np.nanmean(s)
+            sd = np.nanstd(s)
+            if not np.isfinite(sd) or sd == 0:
+                sd = 1.0
+            return (s - mu) / sd
+
+        def _auction_values(
+            hitters: pd.DataFrame,
+            pitchers: pd.DataFrame,
+            hit_cats: list[str],
+            pit_cats: list[str],
+            roster_slots: list[str],
+            teams: int,
+            budget_per_team: int,
+            hitter_pct: float,
+        ):
+            # How many total players are expected to be drafted (starters only)
+            total_slots = len(roster_slots) * teams
+            n_hit = int(round(total_slots * hitter_pct))
+            n_pit = total_slots - n_hit
+
+            total_budget = teams * budget_per_team
+            hit_budget = total_budget * hitter_pct
+            pit_budget = total_budget - hit_budget
+
+            # --- Build category matrices (with proper handling for rate cats) ---
+            hit_df = hitters.copy()
+            pit_df = pitchers.copy()
+
+            hit_feat = {}
+            for c in hit_cats:
+                if c in {"AVG", "OBP", "SLG", "OPS"}:
+                    hit_feat[c] = _compute_marginal_hit_rate(hit_df, c)
+                else:
+                    hit_feat[c] = pd.to_numeric(hit_df[c], errors="coerce") if c in hit_df.columns else np.nan
+
+            pit_feat = {}
+            for c in pit_cats:
+                if c in {"ERA", "WHIP", "K/9", "BB/9"}:
+                    pit_feat[c] = _compute_marginal_pitch_rate(pit_df, c)
+                else:
+                    pit_feat[c] = pd.to_numeric(pit_df[c], errors="coerce") if c in pit_df.columns else np.nan
+
+            # --- First pass z-scores to identify the drafted pool ---
+            for c, v in hit_feat.items():
+                hit_df[f"z_{c}"] = _zscore(v)
+            hit_df["z_total_pre"] = hit_df[[f"z_{c}" for c in hit_cats]].sum(axis=1)
+
+            for c, v in pit_feat.items():
+                pit_df[f"z_{c}"] = _zscore(v)
+            pit_df["z_total_pre"] = pit_df[[f"z_{c}" for c in pit_cats]].sum(axis=1)
+
+            hit_pool = hit_df.sort_values("z_total_pre", ascending=False).head(n_hit).copy()
+            pit_pool = pit_df.sort_values("z_total_pre", ascending=False).head(n_pit).copy()
+
+            # --- Second pass: recompute z within drafted pool (closer to FG behavior) ---
+            for c in hit_cats:
+                if c in {"AVG", "OBP", "SLG", "OPS"}:
+                    vals = _compute_marginal_hit_rate(hit_pool, c)
+                else:
+                    vals = pd.to_numeric(hit_pool[c], errors="coerce") if c in hit_pool.columns else np.nan
+                hit_pool[f"z_{c}"] = _zscore(vals)
+            hit_pool["z_total"] = hit_pool[[f"z_{c}" for c in hit_cats]].sum(axis=1)
+
+            for c in pit_cats:
+                if c in {"ERA", "WHIP", "K/9", "BB/9"}:
+                    vals = _compute_marginal_pitch_rate(pit_pool, c)
+                else:
+                    vals = pd.to_numeric(pit_pool[c], errors="coerce") if c in pit_pool.columns else np.nan
+                pit_pool[f"z_{c}"] = _zscore(vals)
+            pit_pool["z_total"] = pit_pool[[f"z_{c}" for c in pit_cats]].sum(axis=1)
+
+            # Replacement baselines: last drafted at each pool
+            hit_rep = hit_pool["z_total"].min()
+            pit_rep = pit_pool["z_total"].min()
+
+            hit_pool["AAR"] = (hit_pool["z_total"] - hit_rep).clip(lower=0)
+            pit_pool["AAR"] = (pit_pool["z_total"] - pit_rep).clip(lower=0)
+
+            # Dollar allocation (optionally $1 floor)
+            def allocate(pool: pd.DataFrame, pool_budget: float, n: int) -> pd.DataFrame:
+                out = pool.copy()
+                if pool_budget >= n:
+                    floor = 1.0
+                    rem = pool_budget - (floor * n)
+                    aar_sum = out["AAR"].sum()
+                    if aar_sum > 0 and rem > 0:
+                        out["$"] = floor + (out["AAR"] / aar_sum) * rem
+                    else:
+                        out["$"] = floor
+                else:
+                    aar_sum = out["AAR"].sum()
+                    if aar_sum > 0:
+                        out["$"] = (out["AAR"] / aar_sum) * pool_budget
+                    else:
+                        out["$"] = pool_budget / max(n, 1)
+                out["$"] = out["$"].round(1)
+                return out
+
+            hit_vals = allocate(hit_pool, hit_budget, n_hit)
+            pit_vals = allocate(pit_pool, pit_budget, n_pit)
+
+            return hit_vals, pit_vals, {
+                "teams": teams,
+                "budget_per_team": budget_per_team,
+                "total_budget": total_budget,
+                "hitter_pct": hitter_pct,
+                "hit_budget": hit_budget,
+                "pit_budget": pit_budget,
+                "slots_per_team": len(roster_slots),
+                "total_drafted": total_slots,
+                "drafted_hitters": n_hit,
+                "drafted_pitchers": n_pit,
+            }
+
+        # =========================
+        # UI
+        # =========================
+        st.subheader("Auction Value Calculator")
+
+        left, right = st.columns([1, 1], gap="large")
+
+        with left:
+            proj_system = st.radio(
+                "Projection system",
+                ["JA", "Steamer", "THE BAT", "ATC", "OOPSY"],
+                index=0,
+                horizontal=True,
+                help="Choose the projection set used to calculate auction values.",
+            )
+
+            roster_default = (
+                "C, 1B, 2B, 3B, SS, 1B/3B, 2B/SS, "
+                "OF, OF, OF, OF, OF, UTIL, UTIL, "
+                "SP, SP, SP, SP, SP, SP, RP, RP, RP"
+            )
+            roster_str = st.text_area(
+                "Starting lineup slots (comma-separated)",
+                value=roster_default,
+                height=90,
+                help="Use SP/RP for pitchers. Anything else is treated as hitter/UTIL.",
+            )
+            roster_slots = _parse_roster_string(roster_str)
+
+            teams = st.number_input("Teams", min_value=4, max_value=30, value=12, step=1)
+            budget_per_team = st.number_input("Budget per team ($)", min_value=50, max_value=1000, value=260, step=10)
+
+            hitter_pct = st.slider(
+                "Drafted player split: % hitters",
+                min_value=0.40,
+                max_value=0.80,
+                value=0.60,
+                step=0.01,
+            )
+            st.caption(f"Pitchers: {int(round((1 - hitter_pct) * 100))}%")
+
+        # =========================
+        # Load & standardize per selection
+        # =========================
+        if proj_system == "JA":
+            hitters = _standardize_hitters(ja_h_raw, "JA")
+            pitchers = _standardize_pitchers(ja_p_raw, "JA")
+        elif proj_system == "Steamer":
+            hitters = _standardize_hitters(steamer_h_raw, "Steamer")
+            pitchers = _standardize_pitchers(steamer_p_raw, "Steamer")
+        elif proj_system == "THE BAT":
+            hitters = _standardize_hitters(bat_h_raw, "THE BAT")
+            pitchers = _standardize_pitchers(bat_p_raw, "THE BAT")
+        elif proj_system == "ATC":
+            hitters = _standardize_hitters(atc_h_raw, "ATC")
+            pitchers = _standardize_pitchers(atc_p_raw, "ATC")
+        else:  # OOPSY
+            hitters = _standardize_hitters(oopsy_h_raw, "OOPSY")
+            pitchers = _standardize_pitchers(oopsy_p_raw, "OOPSY")
+
+        # =========================
+        # Category pickers + preview
+        # =========================
+        with right:
+            st.markdown("### League categories")
+
+            hit_default = ["R", "HR", "RBI", "SB", "AVG"]  # common 5x5 hitters
+            pit_default = ["W", "SV", "ERA", "WHIP", "SO"]  # common 5x5 pitchers
+
+            hit_all = ["R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "PA"]
+            pit_all = ["W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9", "IP", "GS"]
+
+            hit_cats = st.multiselect("Hitting categories", hit_all, default=hit_default)
+            pit_cats = st.multiselect("Pitching categories", pit_all, default=pit_default)
+
+            st.markdown("### Projection table view")
+            show_side = st.radio("Show", ["Hitters", "Pitchers"], index=0, horizontal=True)
+
+            show_hit_cols = ["Name", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS"]
+            show_pit_cols = ["Name", "Team", "Pos", "GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9"]
+
+            if show_side == "Hitters":
+                cols = [c for c in show_hit_cols if c in hitters.columns]
+                st.dataframe(hitters[cols].sort_values("PA", ascending=False), use_container_width=True, height=420)
+            else:
+                cols = [c for c in show_pit_cols if c in pitchers.columns]
+                st.dataframe(pitchers[cols].sort_values("IP", ascending=False), use_container_width=True, height=420)
+
+        # =========================
+        # RUN CALC
+        # =========================
+        st.divider()
+        c1, c2 = st.columns([1, 3], gap="large")
+
+        with c1:
+            run = st.button("Run Auction Values", type="primary", use_container_width=True)
+
+        with c2:
+            pit_slots = sum(_is_pitch_slot(s) for s in roster_slots)
+            hit_slots = len(roster_slots) - pit_slots
+            st.caption(
+                f"Slots per team: **{len(roster_slots)}** "
+                f"(Hit: **{hit_slots}**, Pitch: **{pit_slots}**) • "
+                f"Total drafted (starters): **{len(roster_slots) * int(teams)}**"
+            )
+
+        if run:
+            if len(hit_cats) == 0 or len(pit_cats) == 0:
+                st.error("Please select at least one hitting category and one pitching category.")
+            else:
+                hit_vals, pit_vals, meta = _auction_values(
+                    hitters=hitters,
+                    pitchers=pitchers,
+                    hit_cats=hit_cats,
+                    pit_cats=pit_cats,
+                    roster_slots=roster_slots,
+                    teams=int(teams),
+                    budget_per_team=int(budget_per_team),
+                    hitter_pct=float(hitter_pct),
+                )
+
+                st.success("Auction values calculated.")
+
+                # Summary metrics
+                s1, s2, s3, s4 = st.columns(4)
+                s1.metric("Total Budget", f"${meta['total_budget']:.0f}")
+                s2.metric("Hitter Budget", f"${meta['hit_budget']:.0f}")
+                s3.metric("Pitcher Budget", f"${meta['pit_budget']:.0f}")
+                s4.metric("Drafted Players", f"{meta['total_drafted']}")
+
+                # Combine + display
+                hit_out_cols = ["Name", "Team", "Pos", "$"] + [c for c in ["PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS"] if c in hit_vals.columns]
+                pit_out_cols = ["Name", "Team", "Pos", "$"] + [c for c in ["GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9"] if c in pit_vals.columns]
+
+                st.markdown("### Top Auction Values — Hitters")
+                st.dataframe(hit_vals[hit_out_cols].sort_values("$", ascending=False).reset_index(drop=True), use_container_width=True, height=420)
+
+                st.markdown("### Top Auction Values — Pitchers")
+                st.dataframe(pit_vals[pit_out_cols].sort_values("$", ascending=False).reset_index(drop=True), use_container_width=True, height=420)
+
+                combined = pd.concat(
+                    [
+                        hit_vals.assign(Side="Hitter")[["Side"] + hit_out_cols],
+                        pit_vals.assign(Side="Pitcher")[["Side"] + pit_out_cols],
+                    ],
+                    ignore_index=True,
+                ).sort_values(["Side", "$"], ascending=[True, False])
+
+                st.download_button(
+                    f"Download auction values (CSV) — {proj_system}",
+                    data=combined.to_csv(index=False).encode("utf-8"),
+                    file_name=f"auction_values_{proj_system.lower().replace(' ', '_')}_2026.csv",
+                    mime="text/csv",
+                    use_container_width=True,
+                )
+
+                with st.expander("How this is being calculated (quick)"):
+                    st.markdown(
+                        """
+                        - Counting categories use **z-scores** directly (higher = better).
+                        - Rate categories are converted to counting-like **marginal contributions** using playing time:
+                        - Hitters: `(player_rate - league_rate) * PA` (OBP/OPS) or `* AB` (AVG/SLG).
+                        - Pitchers: `(league_rate - player_rate) * IP` for ERA/WHIP; K/9 and BB/9 use IP/9 weighting.
+                        - We identify the drafted pool, then recompute z-scores **within the drafted pool**.
+                        - Dollar values are distributed by **above-replacement** total z-score, with a **$1 floor** when possible.
+                        """.strip()
+                    )
+
+
+    if tab == "Auction Value Calculator_Back":
+
+        steamer_h_raw = steamerhit.copy()
+        steamer_p_raw = steamerpit.copy()
+
+        ja_h_raw = ja_hit.copy()
+        ja_p_raw = ja_pitch.copy()
+        
+        bat_h_raw = bathit.copy()
+        bat_p_raw = batpit.copy()
+
+        atc_h_raw = atc_hitters.copy()
+        atc_p_raw = atc_pitchers.copy()
 
 
         # =========================
@@ -2956,10 +3478,6 @@ if check_password():
                         )
 
     if tab == "2026 Projections":
-        import pandas as pd
-        import numpy as np
-        import streamlit as st
-
         # =========================
         # ===== DEBUG (optional) ===
         # =========================
@@ -3273,6 +3791,7 @@ if check_password():
         # =========================
         # ===== CONTROLS =====
         # =========================
+        st.write(oopsy_hitters[oopsy_hitters['Player']=='Aaron Judge'])
         top_col1, top_col2, top_col3, top_col4 = st.columns([1.1, 1.2, 1.2, 0.9])
 
         with top_col1:
