@@ -3,7 +3,6 @@ import pandas as pd, math
 import os
 import warnings, re
 import gspread
-import unidecode
 
 warnings.filterwarnings("ignore")
 
