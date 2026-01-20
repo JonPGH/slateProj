@@ -3790,7 +3790,6 @@ if check_password():
         # =========================
         # ===== CONTROLS =====
         # =========================
-        st.write(oopsy_hitters[oopsy_hitters['Player']=='Aaron Judge'])
         top_col1, top_col2, top_col3, top_col4 = st.columns([1.1, 1.2, 1.2, 0.9])
 
         with top_col1:
