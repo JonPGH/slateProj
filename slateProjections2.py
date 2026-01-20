@@ -345,6 +345,8 @@ if check_password():
         steamerpit = pd.read_csv(f'{file_path}/steamerpitch.csv')
         bathit = pd.read_csv(f'{file_path}/thebat_h.csv')
         batpit = pd.read_csv(f'{file_path}/thebat_p.csv')
+        atchit = pd.read_csv(f'{file_path}/atc_h.csv')
+        atcpit = pd.read_csv(f'{file_path}/atc_p.csv')
         oopsyhit = pd.read_csv(f'{file_path}/oopsy_h.csv')
         oopsypitch = pd.read_csv(f'{file_path}/oopsy_p.csv')
         adp2026 = pd.read_csv(f'{file_path}/MasterADPTableau.csv')
@@ -353,7 +355,7 @@ if check_password():
 
         pitch_move_data = pd.read_csv(f'{file_path}/mlb_pitch_movement_clustering_data_2025.csv')
 
-        return pitch_move_data,timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,oopsyhit,oopsypitch,steamerhit,steamerpit,bathit,batpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
+        return pitch_move_data,timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,oopsyhit,oopsypitch,steamerhit,steamerpit,bathit,batpit,atchit,atcpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, propsdf, gameinfo,h_vs_sim, bpreport, rpstats, hitterproj2,ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata
 
     color1='#FFBABA'
     color2='#FFCC99'
@@ -1053,7 +1055,7 @@ if check_password():
         return [applyColor_Props(val, col) for val, col in zip(df_subset, df_subset.index)]
 
     # Load data
-    pitch_move_data,timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,oopsyhit,oopsypitch,steamerhit,steamerpit,bathit,batpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
+    pitch_move_data,timrank_hitters,timrank_pitchers,adp2026,ja_hit,ja_pitch,oopsyhit,oopsypitch,steamerhit,steamerpit,bathit,batpit,atchit,atcpit,fscores_mlb_hit,fscores_milb_hit,fscores_mlb_pitch,fscores_milb_pitch,hitterranks,pitcherranks,posdata,hprofiles24,hprofiles25,hprofiles2425,logo, hitterproj, pitcherproj, hitter_stats, lineup_stats, pitcher_stats, umpire_data, weather_data, h_vs_avg, p_vs_avg, props_df, gameinfo, h_vs_sim,bpreport, rpstats, hitterproj2, ownershipdf,allbets,alllines,hitdb,pitdb,bat_hitters,bat_pitchers,bet_tracker, base_sched, upcoming_proj, upcoming_p_scores, mlbplayerinfo, airpulldata, trend_p, trend_h, upcoming_start_grades, hotzonedata = load_data()
 
     hitdb = hitdb[(hitdb['level']=='MLB')&(hitdb['game_type']=='R')]
     pitdb = pitdb[(pitdb['level']=='MLB')&(pitdb['game_type']=='R')]
@@ -3077,8 +3079,7 @@ if check_password():
             """
             <h2 style='text-align:center;margin:.25rem 0 1rem;'>2026 Projections</h2>
             <p style='text-align:center;margin:0 0 1.25rem; font-size:0.85rem; color:#666;'>
-                Compare MLB DW vs Steamer vs THE BAT vs OOPSY projections and roto value (SRV).
-            </p>
+                Compare MLB DW, Steamer, ATC, THE BAT, and OOPSY projections.            </p>
             """,
             unsafe_allow_html=True,
         )
@@ -3089,6 +3090,7 @@ if check_password():
         ja_hit_local = ja_hit.copy()
         steamerhit_local = steamerhit.copy()
         bathit_local = bathit.copy()
+        atchit_local = atchit.copy()
         oopsyhit_local = oopsyhit.copy()
 
         # --- attach positions robustly to ja_hit_local ---
@@ -3156,6 +3158,29 @@ if check_password():
             ["Player", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%"]
         ].copy()
 
+        # --- ATC hitters (robust rename if needed) ---
+        if "Name" in atchit_local.columns and "Player" not in atchit_local.columns:
+            atchit_local = atchit_local.rename({"Name": "Player"}, axis=1)
+
+        atchit_local = atchit_local.merge(
+            pos_data[["Player", "Position(s)"]],
+            on="Player",
+            how="left",
+            suffixes=("", "_pos"),
+        )
+        atc_pos_cols = [c for c in atchit_local.columns if "Position(s)" in c]
+        if atc_pos_cols:
+            atchit_local["Pos"] = atchit_local[atc_pos_cols[-1]]
+        atchit_local = atchit_local.drop(columns=atc_pos_cols, errors="ignore")
+
+        for c in ["PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%", "Team", "Pos"]:
+            if c not in atchit_local.columns:
+                atchit_local[c] = np.nan
+
+        atc_hitters = atchit_local[
+            ["Player", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%"]
+        ].copy()
+
         # --- OOPSY hitters (robust rename if needed) ---
         if "Name" in oopsyhit_local.columns and "Player" not in oopsyhit_local.columns:
             oopsyhit_local = oopsyhit_local.rename({"Name": "Player"}, axis=1)
@@ -3182,7 +3207,7 @@ if check_password():
         ].copy()
 
         # Add AB if missing (needed in SRV)
-        for hdf in (ja_hitters, steamer_hitters, bat_hitters, oopsy_hitters):
+        for hdf in (ja_hitters, steamer_hitters, atc_hitters, bat_hitters, oopsy_hitters):
             if "AB" not in hdf.columns:
                 hdf["AB"] = (pd.to_numeric(hdf["PA"], errors="coerce").fillna(0) * 0.9).astype(int)
 
@@ -3208,6 +3233,16 @@ if check_password():
             ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
         ].copy()
 
+        atcpit_local = atcpit.copy()
+        if "Name" in atcpit_local.columns and "Player" not in atcpit_local.columns:
+            atcpit_local = atcpit_local.rename({"Name": "Player"}, axis=1)
+        if "SO" in atcpit_local.columns and "K" not in atcpit_local.columns:
+            atcpit_local = atcpit_local.rename({"SO": "K"}, axis=1)
+
+        atc_pitchers = atcpit_local[
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+        ].copy()
+
         oopsypit_local = oopsypitch.copy()
         if "Name" in oopsypit_local.columns and "Player" not in oopsypit_local.columns:
             oopsypit_local = oopsypit_local.rename({"Name": "Player"}, axis=1)
@@ -3225,7 +3260,7 @@ if check_password():
         ].copy()
 
         # ensure SRV-needed columns exist
-        for pdf in (ja_pitchers, steamer_pitchers, bat_pitchers, oopsy_pitchers):
+        for pdf in (ja_pitchers, steamer_pitchers,atc_pitchers, bat_pitchers, oopsy_pitchers):
             if "W" not in pdf.columns:
                 pdf["W"] = 0
             if "SV" not in pdf.columns:
@@ -3244,7 +3279,7 @@ if check_password():
             group = st.radio("Group", ["Hitters", "Pitchers"], horizontal=True)
 
         with top_col2:
-            source_choice = st.radio("Source", ["MLB DW", "Steamer", "THE BAT", "OOPSY", "All"], horizontal=True)
+            source_choice = st.radio("Source", ["MLB DW", "Steamer", "ATC",  "THE BAT", "OOPSY", "All"], horizontal=True)
 
         with top_col4:
             per600 = st.toggle("600 PA Projections", value=False, disabled=(group != "Hitters"))
@@ -3252,14 +3287,14 @@ if check_password():
         # team list
         if group == "Hitters":
             all_teams = (
-                pd.concat([ja_hitters["Team"], steamer_hitters["Team"], bat_hitters["Team"], oopsy_hitters["Team"]])
+                pd.concat([ja_hitters["Team"], steamer_hitters["Team"], atc_hitters["Team"],bat_hitters["Team"], oopsy_hitters["Team"]])
                 .dropna()
                 .unique()
                 .tolist()
             )
         else:
             all_teams = (
-                pd.concat([ja_pitchers["Team"], steamer_pitchers["Team"], bat_pitchers["Team"], oopsy_pitchers["Team"]])
+                pd.concat([ja_pitchers["Team"], steamer_pitchers["Team"], atc_pitchers["Team"], bat_pitchers["Team"], oopsy_pitchers["Team"]])
                 .dropna()
                 .unique()
                 .tolist()
@@ -3275,11 +3310,11 @@ if check_password():
         # Build a single player pool across all sources for the chosen group
         if group == "Hitters":
             player_pool = pd.concat(
-                [ja_hitters["Player"], steamer_hitters["Player"], bat_hitters["Player"], oopsy_hitters["Player"]]
+                [ja_hitters["Player"], steamer_hitters["Player"], atc_hitters["Player"],bat_hitters["Player"], oopsy_hitters["Player"]]
             ).dropna().unique()
         else:
             player_pool = pd.concat(
-                [ja_pitchers["Player"], steamer_pitchers["Player"], bat_pitchers["Player"], oopsy_pitchers["Player"]]
+                [ja_pitchers["Player"], steamer_pitchers["Player"], atc_pitchers["Player"],bat_pitchers["Player"], oopsy_pitchers["Player"]]
             ).dropna().unique()
         player_pool_sorted = sorted(player_pool)
 
@@ -3339,20 +3374,24 @@ if check_password():
         hitter_sources = {
             "MLB DW": ja_hitters,
             "Steamer": steamer_hitters,
+            "ATC": atc_hitters,
             "THE BAT": bat_hitters,
             "OOPSY": oopsy_hitters,
         }
         pitcher_sources = {
             "MLB DW": ja_pitchers,
             "Steamer": steamer_pitchers,
+            "ATC": atc_pitchers,
             "THE BAT": bat_pitchers,
             "OOPSY": oopsy_pitchers,
         }
 
+
         if group == "Hitters":
             hitters_view = {k: (to_per_600_pa(v) if per600 else v) for k, v in hitter_sources.items()}
+            #st.write(hitters_view['THE BAT'])
 
-            if source_choice in ["MLB DW", "Steamer", "THE BAT", "OOPSY"]:
+            if source_choice in ["MLB DW", "Steamer", "ATC", "THE BAT", "OOPSY"]:
                 full_pool = hitters_view[source_choice]
                 filtered = _filter_df(full_pool, is_hitter=True)
                 display_df = calculateSRV_Hitters(full_pool, merge_df=filtered)
@@ -3390,7 +3429,7 @@ if check_password():
                     st.markdown(f"<h3 style='margin:0 0 .5rem;'>{player_search[0]}</h3>", unsafe_allow_html=True)
 
         else:  # Pitchers
-            if source_choice in ["MLB DW", "Steamer", "THE BAT", "OOPSY"]:
+            if source_choice in ["MLB DW", "Steamer", "ATC","THE BAT", "OOPSY"]:
                 full_pool = pitcher_sources[source_choice]
                 filtered = _filter_df(full_pool, is_hitter=False)
                 display_df = calculateSRV_Pitchers(full_pool, merge_df=filtered)
