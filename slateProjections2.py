@@ -3924,7 +3924,7 @@ if check_password():
 
         steamerpit_local = steamerpit.rename({"Name": "Player", "SO": "K"}, axis=1)
         steamer_pitchers = steamerpit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV","QS"]
         ].copy()
 
         batpit_local = batpit.copy()
@@ -3934,7 +3934,7 @@ if check_password():
             batpit_local = batpit_local.rename({"SO": "K"}, axis=1)
 
         bat_pitchers = batpit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV","QS"]
         ].copy()
 
         atcpit_local = atcpit.copy()
@@ -3944,7 +3944,7 @@ if check_password():
             atcpit_local = atcpit_local.rename({"SO": "K"}, axis=1)
 
         atc_pitchers = atcpit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV","QS"]
         ].copy()
 
         oopsypit_local = oopsypitch.copy()
@@ -3954,7 +3954,7 @@ if check_password():
             oopsypit_local = oopsypit_local.rename({"SO": "K"}, axis=1)
 
         # ensure required pitcher columns exist (for consistent "All" view)
-        req_p = ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+        req_p = ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV","QS"]
         for c in req_p:
             if c not in oopsypit_local.columns:
                 oopsypit_local[c] = 0 if c in ["GS", "IP", "H", "ER", "K"] else np.nan
