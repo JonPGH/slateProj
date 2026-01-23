@@ -3590,6 +3590,781 @@ if check_password():
             return out
 
         # =========================
+        # ===== POINTS HELPERS =====
+        # =========================
+        UNDERDOG_H = {
+            "1B": 3.0,
+            "2B": 6.0,
+            "3B": 8.0,
+            "HR": 10.0,
+            "BB": 3.0,
+            "HBP": 3.0,
+            "RBI": 2.0,
+            "R": 2.0,
+            "SB": 4.0,
+        }
+        UNDERDOG_P = {
+            "W": 5.0,
+            "QS": 5.0,
+            "SO": 3.0,   # Strikeout
+            "IP": 3.0,
+            "ER": -3.0,
+        }
+
+        DRAFTKINGS_H = {
+            "1B": 3.0,
+            "2B": 5.0,
+            "3B": 8.0,
+            "HR": 10.0,
+            "RBI": 2.0,
+            "R": 2.0,
+            "BB": 2.0,
+            "HBP": 2.0,
+            "SB": 5.0,
+        }
+        DRAFTKINGS_P = {
+            "IP": 2.25,
+            "SO": 2.0,
+            "W": 4.0,
+            "ER": -2.0,
+            "H": -0.6,      # Hit Against
+            "BB": -0.6,     # Base on Balls Against
+            "HBP": -0.6,    # Hits Batsman
+            "CG": 2.5,
+            "CGSO": 2.5,
+            "NH": 5.0,      # No Hitter
+        }
+
+        def _num(s):
+            return pd.to_numeric(s, errors="coerce").fillna(0.0)
+
+        def _ensure_event_cols_hitters(df: pd.DataFrame) -> pd.DataFrame:
+            """
+            Make a best effort to create: 1B, 2B, 3B, HR, BB, HBP, R, RBI, SB
+            using whatever exists in the projection source.
+            """
+            out = df.copy()
+
+            # Normalize common column names
+            rename_map = {
+                "1B": "1B",
+                "2B": "2B",
+                "3B": "3B",
+                "HR": "HR",
+                "BB": "BB",
+                "HBP": "HBP",
+                "R": "R",
+                "RBI": "RBI",
+                "SB": "SB",
+                "H": "H",
+                "AB": "AB",
+                "PA": "PA",
+                "BB%": "BB%",
+                "AVG": "AVG",
+            }
+            # (no-op, but keeps intent clear)
+            out = out.rename(columns={k: v for k, v in rename_map.items() if k in out.columns})
+
+            # BB from BB% * PA if BB missing
+            if "BB" not in out.columns:
+                if "BB%" in out.columns and "PA" in out.columns:
+                    out["BB"] = _num(out["BB%"]) * _num(out["PA"])
+                else:
+                    out["BB"] = 0.0
+
+            # HBP if missing
+            if "HBP" not in out.columns:
+                out["HBP"] = 0.0
+
+            # If we have H/2B/3B/HR, derive 1B
+            if "1B" not in out.columns:
+                if all(c in out.columns for c in ["H", "2B", "3B", "HR"]):
+                    out["1B"] = _num(out["H"]) - _num(out["2B"]) - _num(out["3B"]) - _num(out["HR"])
+                # Else, if we have AVG and AB, approximate H = AVG*AB, but still no 2B/3B -> can't split -> leave 1B at 0
+                else:
+                    out["1B"] = 0.0
+
+            # Ensure 2B/3B exist
+            for c in ["2B", "3B", "HR", "R", "RBI", "SB"]:
+                if c not in out.columns:
+                    out[c] = 0.0
+
+            # Clean negatives from derived 1B (can happen with mismatched inputs)
+            out["1B"] = np.maximum(_num(out["1B"]), 0.0)
+
+            return out
+
+        def _ensure_event_cols_pitchers(df: pd.DataFrame) -> pd.DataFrame:
+            """
+            Make a best effort to create: IP, SO, W, ER, H, BB, HBP, QS, CG, CGSO, NH
+            using whatever exists in the projection source.
+            """
+            out = df.copy()
+
+            # SO normalization
+            if "SO" not in out.columns:
+                if "K" in out.columns:
+                    out["SO"] = _num(out["K"])
+                else:
+                    out["SO"] = 0.0
+
+            # Basic counting stats
+            for c in ["IP", "W", "ER", "H"]:
+                if c not in out.columns:
+                    out[c] = 0.0
+
+            # Walks against: sometimes "BB" exists, sometimes only "BB/9" (can't infer without BF), so default 0
+            if "BB" not in out.columns:
+                out["BB"] = 0.0
+
+            # HBP against
+            if "HBP" not in out.columns:
+                out["HBP"] = 0.0
+
+            # Bonuses / QS
+            for c in ["QS", "CG", "CGSO", "NH"]:
+                if c not in out.columns:
+                    out[c] = 0.0
+
+            return out
+
+        def calc_points(df: pd.DataFrame, group: str, system: str) -> pd.Series:
+            """
+            Returns a float Series of fantasy points for each row in df.
+            """
+            if group == "Hitters":
+                d = _ensure_event_cols_hitters(df)
+                scoring = UNDERDOG_H if system == "Underdog" else DRAFTKINGS_H
+                pts = (
+                    _num(d["1B"]) * scoring["1B"]
+                    + _num(d["2B"]) * scoring["2B"]
+                    + _num(d["3B"]) * scoring["3B"]
+                    + _num(d["HR"]) * scoring["HR"]
+                    + _num(d["BB"]) * scoring["BB"]
+                    + _num(d["HBP"]) * scoring["HBP"]
+                    + _num(d["RBI"]) * scoring["RBI"]
+                    + _num(d["R"]) * scoring["R"]
+                    + _num(d["SB"]) * scoring["SB"]
+                )
+                return pts
+
+            # Pitchers
+            d = _ensure_event_cols_pitchers(df)
+            scoring = UNDERDOG_P if system == "Underdog" else DRAFTKINGS_P
+
+            pts = (
+                _num(d["IP"]) * scoring["IP"]
+                + _num(d["SO"]) * scoring["SO"]
+                + _num(d["W"]) * scoring["W"]
+                + _num(d["ER"]) * scoring["ER"]
+            )
+
+            # Underdog QS
+            if system == "Underdog":
+                pts = pts + _num(d["QS"]) * scoring["QS"]
+
+            # DraftKings penalties/bonuses
+            if system == "DraftKings":
+                pts = (
+                    pts
+                    + _num(d["H"]) * scoring["H"]
+                    + _num(d["BB"]) * scoring["BB"]
+                    + _num(d["HBP"]) * scoring["HBP"]
+                    + _num(d["CG"]) * scoring["CG"]
+                    + _num(d["CGSO"]) * scoring["CGSO"]
+                    + _num(d["NH"]) * scoring["NH"]
+                )
+
+            return pts
+
+        # =========================
+        # ===== TITLE =====
+        # =========================
+        st.markdown(
+            """
+            <h2 style='text-align:center;margin:.25rem 0 1rem;'>2026 Projections</h2>
+            <p style='text-align:center;margin:0 0 1.25rem; font-size:0.85rem; color:#666;'>
+                Compare MLB DW, Steamer, ATC, THE BAT, and OOPSY projections.            </p>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        # =========================
+        # ===== RAW DATA PREP =====
+        # =========================
+        ja_hit_local = ja_hit.copy()
+        steamerhit_local = steamerhit.copy()
+        bathit_local = bathit.copy()
+        atchit_local = atchit.copy()
+        oopsyhit_local = oopsyhit.copy()
+
+        # --- attach positions robustly to ja_hit_local ---
+        ja_hit_local = ja_hit_local.merge(
+            pos_data[["Player", "Position(s)"]],
+            on="Player",
+            how="left",
+            suffixes=("", "_pos"),
+        )
+        ja_pos_cols = [c for c in ja_hit_local.columns if "Position(s)" in c]
+        if ja_pos_cols:
+            ja_hit_local["Pos"] = ja_hit_local[ja_pos_cols[-1]]
+        ja_hit_local = ja_hit_local.drop(columns=ja_pos_cols, errors="ignore")
+
+        # ensure required hitter columns exist
+        for c in ["PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%", "Team", "Pos"]:
+            if c not in ja_hit_local.columns:
+                ja_hit_local[c] = np.nan
+
+        ja_hitters = ja_hit_local[
+            ["Player", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%"]
+        ].copy()
+
+        # --- Steamer hitters ---
+        steamerhit_local = steamerhit_local.rename({"Name": "Player"}, axis=1)
+        steamerhit_local = steamerhit_local.merge(
+            pos_data[["Player", "Position(s)"]],
+            on="Player",
+            how="left",
+            suffixes=("", "_pos"),
+        )
+        steamer_pos_cols = [c for c in steamerhit_local.columns if "Position(s)" in c]
+        if steamer_pos_cols:
+            steamerhit_local["Pos"] = steamerhit_local[steamer_pos_cols[-1]]
+        steamerhit_local = steamerhit_local.drop(columns=steamer_pos_cols, errors="ignore")
+
+        for c in ["PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%", "Team", "Pos"]:
+            if c not in steamerhit_local.columns:
+                steamerhit_local[c] = np.nan
+
+        steamer_hitters = steamerhit_local[
+            ["Player", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%"]
+        ].copy()
+
+        # --- THE BAT hitters (robust rename if needed) ---
+        if "Name" in bathit_local.columns and "Player" not in bathit_local.columns:
+            bathit_local = bathit_local.rename({"Name": "Player"}, axis=1)
+
+        bathit_local = bathit_local.merge(
+            pos_data[["Player", "Position(s)"]],
+            on="Player",
+            how="left",
+            suffixes=("", "_pos"),
+        )
+        bat_pos_cols = [c for c in bathit_local.columns if "Position(s)" in c]
+        if bat_pos_cols:
+            bathit_local["Pos"] = bathit_local[bat_pos_cols[-1]]
+        bathit_local = bathit_local.drop(columns=bat_pos_cols, errors="ignore")
+
+        for c in ["PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%", "Team", "Pos"]:
+            if c not in bathit_local.columns:
+                bathit_local[c] = np.nan
+
+        bat_hitters = bathit_local[
+            ["Player", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%"]
+        ].copy()
+
+        # --- ATC hitters (robust rename if needed) ---
+        if "Name" in atchit_local.columns and "Player" not in atchit_local.columns:
+            atchit_local = atchit_local.rename({"Name": "Player"}, axis=1)
+
+        atchit_local = atchit_local.merge(
+            pos_data[["Player", "Position(s)"]],
+            on="Player",
+            how="left",
+            suffixes=("", "_pos"),
+        )
+        atc_pos_cols = [c for c in atchit_local.columns if "Position(s)" in c]
+        if atc_pos_cols:
+            atchit_local["Pos"] = atchit_local[atc_pos_cols[-1]]
+        atchit_local = atchit_local.drop(columns=atc_pos_cols, errors="ignore")
+
+        for c in ["PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%", "Team", "Pos"]:
+            if c not in atchit_local.columns:
+                atchit_local[c] = np.nan
+
+        atc_hitters = atchit_local[
+            ["Player", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%"]
+        ].copy()
+
+        # --- OOPSY hitters (robust rename if needed) ---
+        if "Name" in oopsyhit_local.columns and "Player" not in oopsyhit_local.columns:
+            oopsyhit_local = oopsyhit_local.rename({"Name": "Player"}, axis=1)
+
+        oopsyhit_local = oopsyhit_local.merge(
+            pos_data[["Player", "Position(s)"]],
+            on="Player",
+            how="left",
+            suffixes=("", "_pos"),
+        )
+        oopsy_pos_cols = [c for c in oopsyhit_local.columns if "Position(s)" in c]
+        if oopsy_pos_cols:
+            oopsyhit_local["Pos"] = oopsyhit_local[oopsyhit_local.columns[oopsyhit_local.columns.str.contains("Position\\(s\\)")] ].iloc[:, -1]
+            # safer: overwrite with last pos col if multiple merges happened
+            oopsyhit_local["Pos"] = oopsyhit_local[oopsy_pos_cols[-1]]
+        oopsyhit_local = oopsyhit_local.drop(columns=oopsy_pos_cols, errors="ignore")
+
+        for c in ["PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%", "Team", "Pos"]:
+            if c not in oopsyhit_local.columns:
+                oopsyhit_local[c] = np.nan
+
+        oopsy_hitters = oopsyhit_local[
+            ["Player", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "K%", "BB%"]
+        ].copy()
+
+        # Add AB if missing (needed in SRV)
+        for hdf in (ja_hitters, steamer_hitters, atc_hitters, bat_hitters, oopsy_hitters):
+            if "AB" not in hdf.columns:
+                hdf["AB"] = (pd.to_numeric(hdf["PA"], errors="coerce").fillna(0) * 0.9).astype(int)
+
+        # --- Pitchers ---
+        ja_pitchers = ja_pitch[
+            ["Pitcher", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+        ].copy()
+        ja_pitchers = ja_pitchers.rename({"Pitcher": "Player"}, axis=1)
+
+        steamerpit_local = steamerpit.rename({"Name": "Player", "SO": "K"}, axis=1)
+        steamer_pitchers = steamerpit_local[
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+        ].copy()
+
+        batpit_local = batpit.copy()
+        if "Name" in batpit_local.columns and "Player" not in batpit_local.columns:
+            batpit_local = batpit_local.rename({"Name": "Player"}, axis=1)
+        if "SO" in batpit_local.columns and "K" not in batpit_local.columns:
+            batpit_local = batpit_local.rename({"SO": "K"}, axis=1)
+
+        bat_pitchers = batpit_local[
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+        ].copy()
+
+        atcpit_local = atcpit.copy()
+        if "Name" in atcpit_local.columns and "Player" not in atcpit_local.columns:
+            atcpit_local = atcpit_local.rename({"Name": "Player"}, axis=1)
+        if "SO" in atcpit_local.columns and "K" not in atcpit_local.columns:
+            atcpit_local = atcpit_local.rename({"SO": "K"}, axis=1)
+
+        atc_pitchers = atcpit_local[
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+        ].copy()
+
+        oopsypit_local = oopsypitch.copy()
+        if "Name" in oopsypit_local.columns and "Player" not in oopsypit_local.columns:
+            oopsypit_local = oopsypit_local.rename({"Name": "Player"}, axis=1)
+        if "SO" in oopsypit_local.columns and "K" not in oopsypit_local.columns:
+            oopsypit_local = oopsypit_local.rename({"SO": "K"}, axis=1)
+
+        # ensure required pitcher columns exist (for consistent "All" view)
+        req_p = ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+        for c in req_p:
+            if c not in oopsypit_local.columns:
+                oopsypit_local[c] = 0 if c in ["GS", "IP", "H", "ER", "K"] else np.nan
+
+        oopsy_pitchers = oopsypit_local[
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%","W","SV"]
+        ].copy()
+
+        # ensure SRV-needed columns exist
+        for pdf in (ja_pitchers, steamer_pitchers,atc_pitchers, bat_pitchers, oopsy_pitchers):
+            if "W" not in pdf.columns:
+                pdf["W"] = 0
+            if "SV" not in pdf.columns:
+                pdf["SV"] = 0
+            if "SO" not in pdf.columns:
+                pdf["SO"] = pdf["K"] if "K" in pdf.columns else 0
+            if "IP" not in pdf.columns:
+                pdf["IP"] = 0
+
+        # =========================
+        # ===== CONTROLS =====
+        # =========================
+        top_col1, top_col2, top_col3, top_col4 = st.columns([1.1, 1.2, 1.2, 0.9])
+
+        with top_col1:
+            group = st.radio("Group", ["Hitters", "Pitchers"], horizontal=True)
+
+        with top_col2:
+            source_choice = st.radio("Source", ["MLB DW", "Steamer", "ATC",  "THE BAT", "OOPSY", "All"], horizontal=True)
+
+        with top_col4:
+            per600 = st.toggle("600 PA Projections", value=False, disabled=(group != "Hitters"))
+            show_points = st.checkbox("Show Points", value=False)
+            if show_points:
+                scoring_system = st.selectbox("Scoring", ["DraftKings", "Underdog"], index=0)
+            else:
+                scoring_system = None
+
+        # team list
+        if group == "Hitters":
+            all_teams = (
+                pd.concat([ja_hitters["Team"], steamer_hitters["Team"], atc_hitters["Team"],bat_hitters["Team"], oopsy_hitters["Team"]])
+                .dropna()
+                .unique()
+                .tolist()
+            )
+        else:
+            all_teams = (
+                pd.concat([ja_pitchers["Team"], steamer_pitchers["Team"], atc_pitchers["Team"], bat_pitchers["Team"], oopsy_pitchers["Team"]])
+                .dropna()
+                .unique()
+                .tolist()
+            )
+        all_teams = sorted(list(set(all_teams)))
+        teams_opts = ["All Teams"] + all_teams
+
+        with top_col3:
+            team_filter = st.selectbox("Team", teams_opts, index=0)
+
+        search_x_col1, search_x_col2 = st.columns([1, 1])
+
+        # Build a single player pool across all sources for the chosen group
+        if group == "Hitters":
+            player_pool = pd.concat(
+                [ja_hitters["Player"], steamer_hitters["Player"], atc_hitters["Player"],bat_hitters["Player"], oopsy_hitters["Player"]]
+            ).dropna().unique()
+        else:
+            player_pool = pd.concat(
+                [ja_pitchers["Player"], steamer_pitchers["Player"], atc_pitchers["Player"],bat_pitchers["Player"], oopsy_pitchers["Player"]]
+            ).dropna().unique()
+        player_pool_sorted = sorted(player_pool)
+
+        # If All, do single-player select; otherwise keep multiselect
+        with search_x_col1:
+            if source_choice == "All":
+                selected_player = st.selectbox(
+                    "Select a player (All systems)",
+                    options=player_pool_sorted,
+                    index=0 if len(player_pool_sorted) else None,
+                )
+                player_search = [selected_player] if selected_player else []
+            else:
+                player_search = st.multiselect(
+                    "Player search",
+                    options=player_pool_sorted,
+                    placeholder="Start typing player names...",
+                )
+
+        with search_x_col2:
+            if group == "Hitters" and source_choice != "All":
+                pos_search = st.text_input(
+                    "Position search",
+                    "",
+                    placeholder='Type a position like "2B", "SS", "OF"...',
+                )
+            else:
+                pos_search = ""
+
+        st.markdown("<hr style='margin:0.75rem 0 1rem;'/>", unsafe_allow_html=True)
+
+        # =========================
+        # ===== FILTER HELPER =====
+        # =========================
+        def _filter_df(df: pd.DataFrame, is_hitter: bool = False) -> pd.DataFrame:
+            out = df.copy()
+
+            if team_filter != "All Teams":
+                out = out[out["Team"] == team_filter]
+
+            if player_search:
+                out = out[out["Player"].isin(player_search)]
+
+            if is_hitter and pos_search:
+                if "Pos" in out.columns:
+                    pos_series = out["Pos"].astype(str).fillna("")
+                    token = pos_search.strip().upper()
+                    out = out[pos_series.str.contains(token, case=False, na=False)]
+
+            return out
+
+        # =========================
+        # ===== BUILD DISPLAY =====
+        # =========================
+        display_df = pd.DataFrame()
+
+        hitter_sources = {
+            "MLB DW": ja_hitters,
+            "Steamer": steamer_hitters,
+            "ATC": atc_hitters,
+            "THE BAT": bat_hitters,
+            "OOPSY": oopsy_hitters,
+        }
+        pitcher_sources = {
+            "MLB DW": ja_pitchers,
+            "Steamer": steamer_pitchers,
+            "ATC": atc_pitchers,
+            "THE BAT": bat_pitchers,
+            "OOPSY": oopsy_pitchers,
+        }
+
+        if group == "Hitters":
+            hitters_view = {k: (to_per_600_pa(v) if per600 else v) for k, v in hitter_sources.items()}
+            # st.write(hitters_view['THE BAT'])
+
+            if source_choice in ["MLB DW", "Steamer", "ATC", "THE BAT", "OOPSY"]:
+                full_pool = hitters_view[source_choice]
+                filtered = _filter_df(full_pool, is_hitter=True)
+                display_df = calculateSRV_Hitters(full_pool, merge_df=filtered)
+
+                if show_points and scoring_system:
+                    display_df["Points"] = calc_points(display_df, "Hitters", scoring_system).round(1)
+
+                cols_order = [
+                    "Player", "Team", "Pos", "SRV",
+                    "Points" if show_points and scoring_system else None,
+                    "PA", "R", "HR", "RBI", "SB",
+                    "AVG", "OBP", "SLG", "OPS", "K%", "BB%",
+                ]
+                cols_order = [c for c in cols_order if c is not None]
+                display_df = display_df.reindex(columns=cols_order)
+
+            else:  # All (single player, stacked rows)
+                rows = []
+                for src_name, pool in hitters_view.items():
+                    filtered = _filter_df(pool, is_hitter=True)
+                    with_srv = calculateSRV_Hitters(pool, merge_df=filtered)
+
+                    if len(with_srv):
+                        tmp = with_srv.copy()
+                        tmp.insert(0, "Source", src_name)
+
+                        if show_points and scoring_system:
+                            tmp["Points"] = calc_points(tmp, "Hitters", scoring_system).round(1)
+
+                        rows.append(tmp)
+
+                cols_order = [
+                    "Player", "Team", "Pos", "Source", "SRV",
+                    "Points" if show_points and scoring_system else None,
+                    "PA", "R", "HR", "RBI", "SB",
+                    "AVG", "OBP", "SLG", "OPS", "K%", "BB%",
+                ]
+                cols_order = [c for c in cols_order if c is not None]
+
+                if rows:
+                    display_df = pd.concat(rows, ignore_index=True).reindex(columns=cols_order)
+                else:
+                    display_df = pd.DataFrame(columns=cols_order)
+
+                if player_search:
+                    st.markdown(f"<h3 style='margin:0 0 .5rem;'>{player_search[0]}</h3>", unsafe_allow_html=True)
+
+        else:  # Pitchers
+            if source_choice in ["MLB DW", "Steamer", "ATC","THE BAT", "OOPSY"]:
+                full_pool = pitcher_sources[source_choice]
+                filtered = _filter_df(full_pool, is_hitter=False)
+                display_df = calculateSRV_Pitchers(full_pool, merge_df=filtered)
+
+                if show_points and scoring_system:
+                    display_df["Points"] = calc_points(display_df, "Pitchers", scoring_system).round(1)
+
+                cols_order = ["Player", "Team", "SRV"]
+                if show_points and scoring_system:
+                    cols_order += ["Points"]
+                cols_order += ["GS","IP","ERA","WHIP","K%","BB%","W","SV"]
+
+                display_df = display_df.reindex(columns=cols_order)
+
+            else:  # All (single player, stacked rows) — fixed to always show all columns
+                rows = []
+                for src_name, pool in pitcher_sources.items():
+                    filtered = _filter_df(pool, is_hitter=False)
+                    with_srv = calculateSRV_Pitchers(pool, merge_df=filtered)
+
+                    if len(with_srv):
+                        tmp = with_srv.copy()
+                        tmp.insert(0, "Source", src_name)
+
+                        if show_points and scoring_system:
+                            tmp["Points"] = calc_points(tmp, "Pitchers", scoring_system).round(1)
+
+                        rows.append(tmp)
+
+                cols_order = ["Player","Team","Source","SRV"]
+                if show_points and scoring_system:
+                    cols_order += ["Points"]
+                cols_order += ["GS","IP","ERA","WHIP","K%","BB%","W","SV","SO","K/9","BB/9"]
+
+                if rows:
+                    display_df = pd.concat(rows, ignore_index=True).reindex(columns=cols_order)
+                else:
+                    display_df = pd.DataFrame(columns=cols_order)
+
+                if player_search:
+                    st.markdown(f"<h3 style='margin:0 0 .5rem;'>{player_search[0]}</h3>", unsafe_allow_html=True)
+
+        # =========================
+        # ===== STYLING =====
+        # =========================
+        def style_table(df: pd.DataFrame):
+            fmt = {}
+            for col in df.columns:
+                if col in ["PA", "R", "HR", "RBI", "SB", "SO", "W", "SV", "GS", "H", "ER"]:
+                    fmt[col] = "{:.0f}"
+                elif col == "Points":
+                    fmt[col] = "{:.1f}"
+                elif any(stat in col for stat in ["AVG", "OBP", "SLG", "OPS"]):
+                    fmt[col] = "{:.3f}"
+                elif "ERA" in col or "WHIP" in col:
+                    fmt[col] = "{:.2f}"
+                elif col == "IP" or col.endswith("IP"):
+                    fmt[col] = "{:.1f}"
+                elif "SRV" in col:
+                    fmt[col] = "{:.2f}"
+                elif col.endswith("%"):
+                    fmt[col] = "{:.1%}"
+                elif "/9" in col:
+                    fmt[col] = "{:.1f}"
+
+            numeric_cols = df.select_dtypes(include=["float", "int"]).columns.tolist()
+            sty = df.style.format(fmt)
+
+            if numeric_cols:
+                sty = sty.background_gradient(axis=0, cmap="Blues", subset=numeric_cols)
+
+            if hasattr(sty, "hide_index"):
+                sty = sty.hide_index()
+
+            sty = sty.set_properties(**{"text-align": "left", "font-size": "0.8rem"})
+            return sty
+
+        height = 250 if len(display_df) < 5 else 650
+        st.dataframe(
+            style_table(display_df),
+            use_container_width=True,
+            hide_index=True,
+            height=height,
+        )
+
+        st.markdown(
+            "<center><hr><font face=Oswald><b>The MLB DW system gives every hitter on the 40-man roster a baseline 100 PA so we can use the 600 PA adjustment to see what they <i>would</i> project like in the case they get unexpected playing time</b></font><hr>",
+            unsafe_allow_html=True,
+        )
+
+        # =========================
+        # ===== DOWNLOAD =====
+        # =========================
+        csv = display_df.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            "Download current view as CSV",
+            csv,
+            "2026_projections.csv",
+            "text/csv",
+        )
+
+
+    if tab == "2026 Projections _ Back":
+        # =========================
+        # ===== DEBUG (optional) ===
+        # =========================
+        # st.write(oopsyhit)
+        # st.write(oopsypitch)
+
+        # === POSITION DATA ===
+        pos_data = adp2026[["Player", "Player ID", "Position(s)"]].drop_duplicates()
+
+        # =========================
+        # ===== SRV FUNCTIONS =====
+        # =========================
+        def calculateSRV_Hitters(hitdf: pd.DataFrame, merge_df: pd.DataFrame | None = None):
+            df = hitdf.copy()
+
+            count_cats = ["R", "HR", "RBI", "SB"]
+            for cat in count_cats:
+                std = df[cat].std(ddof=0)
+                df[f"{cat}_z"] = (df[cat] - df[cat].mean()) / (std if std != 0 else 1.0)
+
+            total_ab = df["AB"].sum()
+            lg_avg = np.divide((df["AVG"] * df["AB"]).sum(), total_ab) if total_ab else df["AVG"].mean()
+
+            df["AVG_contrib"] = (df["AVG"] - lg_avg) * df["AB"]
+            std = df["AVG_contrib"].std(ddof=0)
+            df["AVG_z"] = (df["AVG_contrib"] - df["AVG_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            z_cols = [f"{c}_z" for c in count_cats] + ["AVG_z"]
+            df["SRV"] = df[z_cols].sum(axis=1)
+
+            base_cols = ["Player", "Team", "SRV"] + z_cols
+            if "player_id" in df.columns:
+                base_cols.insert(1, "player_id")
+
+            df_sorted = df[base_cols].sort_values("SRV", ascending=False).reset_index(drop=True)
+
+            if merge_df is not None:
+                out = merge_df.merge(
+                    df_sorted[[c for c in ["Player", "Team", "SRV", "player_id"] if c in df_sorted.columns]],
+                    on=[c for c in ["Player", "Team"] if c in merge_df.columns],
+                    how="left",
+                )
+                out["SRV"] = out["SRV"].round(2)
+                return out.sort_values("SRV", ascending=False)
+
+            return df_sorted
+
+        def calculateSRV_Pitchers(pitchdf: pd.DataFrame, merge_df: pd.DataFrame | None = None):
+            df = pitchdf.copy()
+
+            count_cats = ["W", "SV", "SO"]
+            for cat in count_cats:
+                std = df[cat].std(ddof=0)
+                df[f"{cat}_z"] = (df[cat] - df[cat].mean()) / (std if std != 0 else 1.0)
+
+            lg_era = np.divide((df["ERA"] * df["IP"]).sum(), df["IP"].sum()) if df["IP"].sum() else df["ERA"].mean()
+            df["ERA_contrib"] = (lg_era - df["ERA"]) * df["IP"]
+            std = df["ERA_contrib"].std(ddof=0)
+            df["ERA_z"] = (df["ERA_contrib"] - df["ERA_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            lg_whip = np.divide((df["WHIP"] * df["IP"]).sum(), df["IP"].sum()) if df["IP"].sum() else df["WHIP"].mean()
+            df["WHIP_contrib"] = (lg_whip - df["WHIP"]) * df["IP"]
+            std = df["WHIP_contrib"].std(ddof=0)
+            df["WHIP_z"] = (df["WHIP_contrib"] - df["WHIP_contrib"].mean()) / (std if std != 0 else 1.0)
+
+            z_cols = [f"{c}_z" for c in count_cats] + ["ERA_z", "WHIP_z"]
+            df["SRV"] = df[z_cols].sum(axis=1)
+
+            base_cols = ["Player", "Team", "SRV"] + z_cols
+            if "player_id" in df.columns:
+                base_cols.insert(1, "player_id")
+
+            df_sorted = df[base_cols].sort_values("SRV", ascending=False).reset_index(drop=True)
+
+            if merge_df is not None:
+                out = merge_df.merge(
+                    df_sorted[[c for c in ["Player", "Team", "SRV", "player_id"] if c in df_sorted.columns]],
+                    on=[c for c in ["Player", "Team"] if c in merge_df.columns],
+                    how="left",
+                )
+                out["SRV"] = out["SRV"].round(2)
+                return out.sort_values("SRV", ascending=False)
+
+            return df_sorted
+
+        # =========================
+        # ===== PER-600 HELPER =====
+        # =========================
+        def to_per_600_pa(df: pd.DataFrame) -> pd.DataFrame:
+            """
+            Scales hitter counting stats to a 600 PA basis, preserving rate.
+            Only touches: PA, R, HR, RBI, SB (and AB if present).
+            AVG/OBP/SLG/OPS/K%/BB% remain unchanged (rates).
+            """
+            out = df.copy()
+
+            if "PA" not in out.columns:
+                return out
+
+            pa = pd.to_numeric(out["PA"], errors="coerce").fillna(0.0)
+            scale = np.where(pa > 0, 600.0 / pa, 0.0)
+
+            for c in ["R", "HR", "RBI", "SB"]:
+                if c in out.columns:
+                    out[c] = pd.to_numeric(out[c], errors="coerce").fillna(0.0) * scale
+
+            if "AB" in out.columns:
+                out["AB"] = pd.to_numeric(out["AB"], errors="coerce").fillna(0.0) * scale
+
+            out["PA"] = 600.0
+            return out
+
+        # =========================
         # ===== TITLE =====
         # =========================
         st.markdown(
