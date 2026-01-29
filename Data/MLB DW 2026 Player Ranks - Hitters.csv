@@ -10,7 +10,7 @@
 8,9,Julio Rodriguez,SEA,OF,OF,5,$11.60,"Plate discipline stuff isn't great, so he's docked for OBP leagues, but he's a 30-30 guy with .280 batting average upside",https://www.mlbdatawarehouse.com/i/182986222/julio-rodriguez
 9,10,Kyle Tucker,LAD,OF,OF,6,$11.52,"Does not have the same upside as these guys around him, but so safe and huge RBI potential in LA",
 10,11,Vladimir Guerrero Jr.,TOR,1B,1B,1,$10.75,"Not the highest ceiling in the world, but so safe, still so young, and the team context is strong",
-11,12,Fernando Tatis Jr.,SD,OF,OF,7,$11.38,"Feels like there's so much more upside than what he's been giving us, and the floor has been pretty nice",
+11,12,Fernando Tatis Jr.,SD,OF,OF,7,$11.38,"Feels like there's so much more upside than what he's been giving us, and the floor has been pretty nice",https://www.mlbdatawarehouse.com/i/183953978/fernando-tatis-jr
 12,13,Gunnar Henderson,BAL,SS,SS,3,$10.82,"Shook off a slow start nicely. Positive regression coming in LA stuff. Great skills, high floor and high ceiling, and we get a little discount on him after a poor 17-homer season.",https://www.mlbdatawarehouse.com/i/178612600/gunnar-henderson
 13,14,Jazz Chisholm,NYY,2B/3B,2B,1,$10.07,"30-30 potential, but a .250 AVG tops? But it's a contract year, baby! I don't think you can go too wrong with Jazz, just build in some extra BA around him",
 14,15,Junior Caminero,TB,3B,3B,2,$11.30,"50-homers, .300 batting average upside. Will need to slightly improve in hit tool to get there, and the park shift sucks for him, but it seems like a 35-homer, 100-RBI, .260 batting average floor on top of one of the highest ceilings in the game. ",https://www.mlbdatawarehouse.com/i/180243530/junior-caminero
@@ -25,7 +25,7 @@
 23,24,Yordan Alvarez,HOU,OF,OF,12,$9.08,"It's all about the health, but he probably has a better chance of 120+ games than most people think",https://www.mlbdatawarehouse.com/i/182515558/yordan-alvarez
 24,25,Zach Neto,LAA,SS,SS,6,$10.54,"He's played at a 25-25 pace in his three years. Good hitter. But limited ceiling due to team context, raw talent, and the strikeout rate. ",https://www.mlbdatawarehouse.com/i/178121572/zach-neto
 25,26,Cal Raleigh,SEA,C,C,1,$11.26,"You're buying massively high by investing in Raleigh this year, but he's clearly the tier one catcher all by himself. Be careful in batting average leagues, though!",https://www.mlbdatawarehouse.com/i/182986222/cal-raleigh
-26,27,Manny Machado,SD,3B,3B,3,$9.35,"Steady production at 3B. Not the most ceiling I guess, but he's one of the top four 3Bs before a pretty big cliff",
+26,27,Manny Machado,SD,3B,3B,3,$9.35,"Steady production at 3B. Not the most ceiling I guess, but he's one of the top four 3Bs before a pretty big cliff",https://www.mlbdatawarehouse.com/i/183953978/manny-machado
 27,28,Pete Alonso,BAL,1B,1B,3,$10.27,"Not the best fit in Camden, but it would have been perfectly fine last year. Don't think he ages the best, but he's still in the prime years and in a decent lineup",https://www.mlbdatawarehouse.com/i/178612600/pete-alonso
 28,29,Bryce Harper,PHI,1B,1B,4,$9.40,,
 29,30,Austin Riley,ATL,3B,3B,4,$8.48,"Just needs a healthy season to get back to his 35-homer, 90+ RBI ways.",https://www.mlbdatawarehouse.com/i/179720085/austin-riley
@@ -36,7 +36,7 @@
 34,35,Matt Olson,ATL,1B,1B,5,$9.21,"Routine 30-homer guy with a .240 batting average floor and plenty of RBI. 162 game machine, consistent production.",https://www.mlbdatawarehouse.com/i/179720085/matt-olson
 35,36,Rafael Devers,SF,1B,1B,6,$8.26,"Tough park for homers, his K% came up. Lower batting average, no steals. He'll probably be over-drafted.",https://www.mlbdatawarehouse.com/i/181786401/rafael-devers
 36,37,Maikel Garcia,KC,3B,3B,5,$9.50,"Some questions about him repeating 15+ homers, but the batting average, steals, and playing time on top of the lineup make him valuable even if he goes back to 8-10 homers.",https://www.mlbdatawarehouse.com/i/181825834/maikel-garcia
-37,38,Jackson Merrill,SD,OF,OF,15,$10.05,"Floor seems very nice, and plenty of age-driven upside. I think it's a nice bounce-back, and my projections love him",
+37,38,Jackson Merrill,SD,OF,OF,15,$10.05,"Floor seems very nice, and plenty of age-driven upside. I think it's a nice bounce-back, and my projections love him",https://www.mlbdatawarehouse.com/i/183953978/jackson-merill
 38,39,Freddie Freeman,LAD,1B,1B,7,$8.55,"He's definitely lost a step, but he remained a very good hitter last year with another near .300 AVG plus 20+ bombs. Ceiling is capped, but the floor remains very high",
 39,40,Cody Bellinger,NYY,OF,OF,16,$9.33,"20+ homers should be safe with returning to NYY. Probably tops out at 12 SB and a .270 AVG, but he's very safe",
 40,41,Brent Rooker,ATH,OF,OF,17,$10.86,"Consistent 30-homer guy at this point, but he's 31 now and the batting average is probably .260-.270. Somewhat replaceable, but good to have OF eligibility. He's fine.",https://www.mlbdatawarehouse.com/i/179273161/brent-rooker
@@ -95,7 +95,7 @@
 93,94,Andy Pages,LAD,OF,OF,39,$7.95,"Defense should keep him in the lineup, and he's been an above average hitter, but the ceiling is pretty low and he's probably the 9-hole guy",
 94,95,Jonathan Aranda,TB,1B,1B,14,$5.86,"Higher K% and Cont% than you're comfortable with, and huge BABIP regression is due. Also he's likely in a partial platoon. But he's a good bet for batting average and some RBI with 20+ HR potential.",https://www.mlbdatawarehouse.com/i/180243530/jonathan-aranda
 95,96,Jacob Wilson,ATH,SS,SS,16,$4.98,"Single digit risk in HR and SB, but a shoe in to hit .280+ and he'll play a bunch. ",https://www.mlbdatawarehouse.com/i/179273161/jacob-wilson
-96,97,Xander Bogaerts,SD,SS,SS,17,$6.61,"Not much ceiling anymore, and health issues the last two years. But a 15-homer, 20-steal, .265 hitter with job security",
+96,97,Xander Bogaerts,SD,SS,SS,17,$6.61,"Not much ceiling anymore, and health issues the last two years. But a 15-homer, 20-steal, .265 hitter with job security",https://www.mlbdatawarehouse.com/i/183953978/xander-bogaerts
 97,98,Ozzie Albies,ATL,2B,2B,9,$6.48,I don't see much more upside than a 15-15-.250 season. But that works at the 2B position. And there's some counting stat upside if the Braves have another big year. ,https://www.mlbdatawarehouse.com/i/179720085/ozzie-albies
 98,99,Chandler Simpson,TB,OF,OF,40,$6.74,"Can steal 70 bags and hit .280. But zero homers and questions about the playing time because of the shaky defense. Tough call to make, but he fits a certain draft strategy.",https://www.mlbdatawarehouse.com/i/180243530/chandler-simpson
 99,100,Jurickson Profar,ATL,OF,OF,41,$7.73,"Should play a bunch near the top of the ATL lineup. Has some power and some speed, gets on a base at a good clip. He's fine, but unexciting. ",https://www.mlbdatawarehouse.com/i/179720085/jurickson-profar
@@ -110,7 +110,7 @@
 108,109,Otto Lopez,MIA,SS/2B,SS,19,$5.72,Solid 15-15 guy with a .250 batting average. More of a floor player than a ceiling one. ,https://www.mlbdatawarehouse.com/i/180831407/otto-lopez
 109,110,Jakob Marsee,MIA,OF,OF,47,$10.08,"I believe in the OBP and steals, the power and batting average are much more questionable. I'm into him, but I don't want to go overboard, because he could hit .240 with 12 or so homers if things go wrong. ",https://www.mlbdatawarehouse.com/i/180831407/jakob-marsee
 110,111,Isaac Paredes,HOU,3B,3B,11,$4.34,"Basically a one-category roto player (HRs). No steals, probably low AVG, but he can certainly hit 30 bombs if he stays healthy",https://www.mlbdatawarehouse.com/i/182515558/isaac-paredes
-111,112,Ramon Laureano,SD,OF,OF,48,$7.04,Can he keep up the newfound production against righties? Will he play daily? It feels pretty risky to buy in on the 30-year-old breakout season,
+111,112,Ramon Laureano,SD,OF,OF,48,$7.04,Can he keep up the newfound production against righties? Will he play daily? It feels pretty risky to buy in on the 30-year-old breakout season,https://www.mlbdatawarehouse.com/i/183953978/ramon-laureano
 112,113,Luis Garcia Jr.,WSH,2B,2B,10,$6.34,"Nearly went 20-20 back in 2024. Elite K% gives him batting average upside, but has never put it all together and will sit a bunch against lefties. Better 5x5 guy than OBP/points.",https://www.mlbdatawarehouse.com/i/176667994/luis-garcia-jr
 113,114,Jac Caglianone,KC,OF,OF,49,$6.34,"Bad results in 2025, but good indicators. Kept the K% down, high Z-Cont%, and smoked the ball",https://www.mlbdatawarehouse.com/i/181825834/jac-caglianone
 114,115,Colton Cowser,BAL,OF,OF,50,$6.43,"Big power, decent speed, but lots of strikeouts, some injuries, problems with lefties. Should hang in the lineup with his ability to play CF, but he's a highly volatile player",https://www.mlbdatawarehouse.com/i/178612600/colton-cowser
@@ -170,7 +170,7 @@
 168,169,Andres Gimenez,TOR,2B,2B,18,$6.38,"He will boune back in steals assuming he stays healthy, and he's probably their every day SS. But very limited power upside and the OBP has been BAD.",
 169,170,Lenyn Sosa,CWS,2B/1B,2B,19,$3.21,"Power surge in late 2025, but didn't show that prior. Solid hit tool, can be a batting average guy. But if the power regresses back (likely), he's not worth much in a fantasy league.",https://www.mlbdatawarehouse.com/i/176288033/lenyn-sosa
 170,171,Josh Bell,MIN,1B,1B,25,$5.49,"Probably finds himself a starting spot in MIN, does have some pop, but no steals and low AVG",
-171,172,Gavin Sheets,SD,OF,OF,68,$5.60,"Better power hitter than he's given credit for, but probably a 25 homer ceiling. Not an every day player, lower AVG, no steals",
+171,172,Gavin Sheets,SD,OF,OF,68,$5.60,"Better power hitter than he's given credit for, but probably a 25 homer ceiling. Not an every day player, lower AVG, no steals",https://www.mlbdatawarehouse.com/i/183953978/gavin-sheets
 172,173,Nolan Schanuel,LAA,1B,1B,26,$6.22,"Reliable playing time and OBP. Hits high in the order. But outside of points leagues, he's not a positive fantasy player. ",https://www.mlbdatawarehouse.com/i/178121572/nolan-schanuel
 173,174,Jeff McNeil,ATH,2B/OF,2B,20,$4.96,"He can still hit and post around league average OPS marks, but he's a bench guy in all likelihood",https://www.mlbdatawarehouse.com/i/182025983/jeff-mcneil
 174,175,Sal Frelick,MIL,OF,OF,69,$5.47,"I don't see a repeat of the 12 homers, and there's no guarantee for high SB or AVG. He's a potential dud for fantasy leagues",
@@ -211,7 +211,7 @@
 209,210,Nick Castellanos,PHI,OF,OF,83,$2.20,,
 210,211,Jorge Soler,LAA,OF,OF,84,$5.36,It looks like it's over for Soler. High K% and the raw power is drying up. ,https://www.mlbdatawarehouse.com/i/178121572/jorge-soler
 211,212,Kody Clemens,MIN,1B/2B,1B,28,$1.00,"Part time player, questionable production, but he does have raw power",
-212,213,Jake Cronenworth,SD,2B,2B,25,$4.91,"I suppose he'll play, and that gets him to 15 homers, but everything is pretty bad with his hitting",
+212,213,Jake Cronenworth,SD,2B,2B,25,$4.91,"I suppose he'll play, and that gets him to 15 homers, but everything is pretty bad with his hitting",https://www.mlbdatawarehouse.com/i/183953978/jake-cronenworth
 213,214,Carson Williams,TB,SS,SS,32,$3.40,"20-20 every year in the minors, but a massive K% issue. Will certainly hit for a very bad AVG, but his defense should keep him in the lineup enough to get 15-15 done in the Majors once he arrives for good.",https://www.mlbdatawarehouse.com/i/180243530/carson-williams
 214,215,Chase DeLauter,CLE,OF,OF,85,$4.57,"He breaks a bone every other week, but he's a very skilled hitter. Real AVG + HR upside.",https://www.mlbdatawarehouse.com/i/182987445/chase-delauter
 215,216,Jake Mangum,PIT,OF,OF,86,$3.34,Part time player with no power... but AVG + SB ability,
