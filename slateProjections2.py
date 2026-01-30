@@ -33,8 +33,8 @@ if "auth_key" not in st.session_state:
 # (use env vars / st.secrets in production; see note below)
 # ----------------------------
 PASSWORDS = {
-    "jack":   {"access_level": "full", "auth_key": "FULL"},
-    "1":      {"access_level": "full", "auth_key": "FULL"},
+    "giles":   {"access_level": "full", "auth_key": "FULL"},
+    "12":      {"access_level": "full", "auth_key": "FULL"},
     "kanak": {"access_level": "full",  "auth_key": "FULL"},
 }
 
@@ -57,7 +57,7 @@ def check_password():
 
     if not st.session_state.authenticated:
         st.text_input(
-            "Enter Password (new password in resource glossary 12/20/2025)",
+            "Enter Password (new password in resource glossary 1/30/2026)",
             type="password",
             key="password",
             on_change=password_entered,
