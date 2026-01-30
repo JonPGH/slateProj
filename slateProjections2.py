@@ -4575,7 +4575,7 @@ if check_password():
 
         teams_completed = hitters_raw['Team'].unique()
 
-        st.markdown(f'<h5 style="text-align:center;margin:.25rem 0 1rem;">work in progress...</h5><center>Teams Completed: {teams_completed}</center>', unsafe_allow_html=True)
+        #st.markdown(f'<h5 style="text-align:center;margin:.25rem 0 1rem;">work in progress...</h5><center>Teams Completed: {teams_completed}</center>', unsafe_allow_html=True)
 
 
         # Build link dicts from the Link column
