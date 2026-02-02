@@ -290,7 +290,7 @@ if check_password():
         }
         </style>
     """, unsafe_allow_html=True)
-    #@st.cache_data
+    @st.cache_data(ttl=60*60)  # 5 minutes
     def load_data():
         base_dir = os.path.dirname(__file__)
         file_path = os.path.join(base_dir, 'Data')
