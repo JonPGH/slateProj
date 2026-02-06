@@ -2543,6 +2543,21 @@ if check_password():
         oopsy_h_raw = oopsyhit.copy()
         oopsy_p_raw = oopsypitch.copy()
 
+        atc_holds = atc_p_raw[['MLBAMID','HLD']]
+        atc_holds_dict = dict(zip(atc_holds.MLBAMID,atc_holds.HLD))
+
+        atc_saves = atc_p_raw[['MLBAMID','SV']]
+        atc_saves_dict = dict(zip(atc_saves.MLBAMID,atc_saves.SV))
+
+        ja_p_raw['HLD'] = ja_p_raw['SAVID'].map(atc_holds_dict)
+        ja_p_raw['SV'] = ja_p_raw['SAVID'].map(atc_saves_dict)
+
+        ja_p_raw['SV+HLD'] = ja_p_raw['SV'] + ja_p_raw['HLD']
+        steamer_p_raw['SV+HLD'] = steamer_p_raw['SV'] + steamer_p_raw['HLD']
+        bat_p_raw['SV+HLD'] = bat_p_raw['SV'] + bat_p_raw['HLD']
+        atc_p_raw['SV+HLD'] = atc_p_raw['SV'] + atc_p_raw['HLD']
+        oopsy_p_raw['SV+HLD'] = oopsy_p_raw['SV'] + oopsy_p_raw['HLD']
+
         pos_dict = dict(zip(posdata.ID,posdata.Pos))
         steamer_h_raw['Pos'] = steamer_h_raw['MLBAMID'].map(pos_dict)
         bat_h_raw['Pos'] = bat_h_raw['MLBAMID'].map(pos_dict)
@@ -2939,7 +2954,7 @@ if check_password():
             pit_default = ["W", "SV", "ERA", "WHIP", "SO"]  # common 5x5 pitchers
 
             hit_all = ["R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "PA"]
-            pit_all = ["W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9", "IP", "GS"]
+            pit_all = ["W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9", "IP", "GS", "HLD","SV+HLD","QS"]
 
             hit_cats = st.multiselect("Hitting categories", hit_all, default=hit_default)
             pit_cats = st.multiselect("Pitching categories", pit_all, default=pit_default)
@@ -2948,7 +2963,7 @@ if check_password():
             show_side = st.radio("Show", ["Hitters", "Pitchers"], index=0, horizontal=True)
 
             show_hit_cols = ["Name", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS"]
-            show_pit_cols = ["Name", "Team", "Pos", "GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9"]
+            show_pit_cols = ["Name", "Team", "Pos", "GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9","HLD","SV+HLD","QS"]
 
             if show_side == "Hitters":
                 cols = [c for c in show_hit_cols if c in hitters.columns]
@@ -3001,7 +3016,7 @@ if check_password():
 
                 # Combine + display
                 hit_out_cols = ["Name", "Team", "Pos", "$"] + [c for c in ["PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS"] if c in hit_vals.columns]
-                pit_out_cols = ["Name", "Team", "Pos", "$"] + [c for c in ["GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9"] if c in pit_vals.columns]
+                pit_out_cols = ["Name", "Team", "Pos", "$"] + [c for c in ["GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9","HLD","SV+HLD","QS"] if c in pit_vals.columns]
 
                 st.markdown("### Top Auction Values — Hitters")
                 st.dataframe(hit_vals[hit_out_cols].sort_values("$", ascending=False).reset_index(drop=True), use_container_width=True, height=420)
