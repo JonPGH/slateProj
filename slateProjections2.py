@@ -13,8 +13,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import altair as alt
 from google.oauth2.service_account import Credentials
-from datetime import datetime, timezone
-
+from datetime import datetime, timezone, timedelta
 
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
@@ -1125,11 +1124,10 @@ if check_password():
     #tab = st.sidebar.radio("Select View", ["2026 Ranks","Matchups", "Game Previews","Hitter Projections","Pitcher Projections","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
     
     if st.session_state.access_level == "full":
-        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP","Prospect Ranks","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Pitch Movement Comps"], help="Choose a view to analyze games or player projections.")
+        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP","Prospect Ranks","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Pitch Movement Comps","Transactions Tracker"], help="Choose a view to analyze games or player projections.")
     else:
-        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Player Rater","Pitch Movement Comps"], help="Choose a view to analyze games or player projections.")
+        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Player Rater","Pitch Movement Comps","Transactions Tracker"], help="Choose a view to analyze games or player projections.")
 
-    
     if "reload" not in st.session_state:
         st.session_state.reload = False
 
@@ -8922,5 +8920,323 @@ if check_password():
             plt.colorbar(sm, ax=ax, label='xwOBA')
 
 
+    if tab == "Transactions Tracker":
+        st.subheader("MLB Transactions Tracker")
 
+        # =========================
+        # Load data
+        # =========================
+        @st.cache_data(ttl=3600, show_spinner=False)
+        def load_transactions():
+            base_dir = os.path.dirname(__file__)
+            data_dir = os.path.join(base_dir, "Data")
+            path = os.path.join(data_dir, "mlb_transactions.parquet")
+            df = pd.read_parquet(path)
 
+            # Standardize
+            if "date" in df.columns:
+                df["date"] = pd.to_datetime(df["date"], errors="coerce")
+                df["date_only"] = df["date"].dt.date
+            else:
+                df["date"] = pd.NaT
+                df["date_only"] = pd.NaT
+
+            if "effectiveDate" in df.columns:
+                df["effectiveDate"] = pd.to_datetime(df["effectiveDate"], errors="coerce")
+
+            # Safe description
+            if "description" not in df.columns:
+                df["description"] = ""
+            df["description"] = df["description"].astype(str)
+
+            # Common friendly columns if not already present
+            if "player_name" not in df.columns and "person.fullName" in df.columns:
+                df["player_name"] = df["person.fullName"]
+            if "player_id" not in df.columns and "person.id" in df.columns:
+                df["player_id"] = df["person.id"]
+
+            if "to_team" not in df.columns and "toTeam.name" in df.columns:
+                df["to_team"] = df["toTeam.name"]
+            if "from_team" not in df.columns and "fromTeam.name" in df.columns:
+                df["from_team"] = df["fromTeam.name"]
+
+            if "typeDesc" not in df.columns:
+                df["typeDesc"] = df.get("type", "")
+
+            # IL flag (ensure exists)
+            if "is_il" not in df.columns:
+                df["is_il"] = df["description"].str.contains(r"\binjured list\b", case=False, na=False)
+
+            return df
+
+        transactions_df = load_transactions()
+
+        # =========================
+        # Compute date bounds
+        # =========================
+        if transactions_df["date"].notna().any():
+            min_date = transactions_df["date"].min().date()
+            max_date = transactions_df["date"].max().date()
+        else:
+            min_date = datetime(2025, 1, 1).date()
+            max_date = datetime.today().date()
+
+        default_start = max(min_date, max_date - timedelta(days=14))
+
+        # =========================
+        # TOP CONTROLS (on main page)
+        # =========================
+        # Row 1: search + quick range + IL only + max rows
+        c1, c2, c3, c4 = st.columns([3, 1.4, 1, 1.2])
+        with c1:
+            q = st.text_input(
+                "Search (player, team, transaction text)",
+                value="",
+                placeholder="Castellanos, DFA, 60-day, hamstring, Yankees..."
+            )
+        with c2:
+            preset = st.selectbox(
+                "Quick range",
+                ["Last 14 days", "Today", "Last 3 days", "Last 7 days", "Last 30 days", "Season-to-date", "Custom"],
+                index=0
+            )
+        with c3:
+            il_only = st.toggle("IL only", value=False) if "is_il" in transactions_df.columns else False
+        with c4:
+            max_rows = st.number_input("Max rows", min_value=100, max_value=20000, value=1500, step=100)
+
+        # Row 2: date range + sorting
+        c5, c6 = st.columns([2.2, 1])
+        with c5:
+            # Apply preset → default date range
+            if preset == "Today":
+                date_range_default = (max_date, max_date)
+            elif preset == "Last 3 days":
+                date_range_default = (max(min_date, max_date - timedelta(days=2)), max_date)
+            elif preset == "Last 7 days":
+                date_range_default = (max(min_date, max_date - timedelta(days=6)), max_date)
+            elif preset == "Last 30 days":
+                date_range_default = (max(min_date, max_date - timedelta(days=29)), max_date)
+            elif preset == "Season-to-date":
+                date_range_default = (min_date, max_date)
+            elif preset == "Custom":
+                date_range_default = (default_start, max_date)
+            else:  # Last 14 days
+                date_range_default = (default_start, max_date)
+
+            date_range = st.date_input(
+                "Date range",
+                value=date_range_default,
+                min_value=min_date,
+                max_value=max_date
+            )
+            if isinstance(date_range, tuple) and len(date_range) == 2:
+                start_d, end_d = date_range
+            else:
+                start_d, end_d = date_range_default
+
+        with c6:
+            sort_choice = st.selectbox(
+                "Sort",
+                ["Newest first", "Oldest first", "Player A→Z", "Team A→Z"],
+                index=0
+            )
+
+        # Row 3: Team / Type / Player filters
+        c7, c8, c9, c10 = st.columns([1.2, 2.2, 2.2, 2.4])
+
+        # Team options
+        team_opts = sorted(pd.unique(
+            pd.concat([
+                transactions_df.get("to_team", pd.Series(dtype=str)).dropna().astype(str),
+                transactions_df.get("from_team", pd.Series(dtype=str)).dropna().astype(str),
+            ], ignore_index=True)
+        ).tolist())
+
+        with c7:
+            team_mode = st.radio("Team match", ["Any", "To", "From"], horizontal=True)
+
+        with c8:
+            selected_teams = st.multiselect("Team(s)", options=team_opts, default=[])
+
+        # Type options (top N)
+        type_opts = []
+        if "typeDesc" in transactions_df.columns:
+            type_opts = (
+                transactions_df["typeDesc"]
+                .fillna("")
+                .astype(str)
+                .value_counts()
+                .head(40)
+                .index
+                .tolist()
+            )
+
+        with c9:
+            selected_types = st.multiselect("Type(s)", options=type_opts, default=[])
+
+        # Player options (top 1000 for speed)
+        player_opts = (
+            transactions_df.get("player_name", pd.Series(dtype=str))
+            .dropna()
+            .astype(str)
+            .value_counts()
+            .head(1000)
+            .index
+            .tolist()
+        )
+
+        with c10:
+            selected_players = st.multiselect("Player(s) (top 1000)", options=player_opts, default=[])
+
+        # Row 4: Column chooser + reset
+        c11, c12 = st.columns([3.2, 1])
+
+        available_cols = [c for c in [
+            "date", "effectiveDate", "player_name", "to_team", "from_team", "typeDesc",
+            "is_il", "il_days", "retroactive", "injury_detail", "body_part", "injury_type",
+            "description"
+        ] if c in transactions_df.columns]
+
+        default_cols = [c for c in ["date", "player_name", "to_team", "typeDesc", "description"] if c in available_cols]
+
+        with c11:
+            show_cols = st.multiselect(
+                "Columns",
+                options=available_cols,
+                default=default_cols
+            )
+
+        with c12:
+            st.write("")  # spacer
+            st.write("")
+            if st.button("Reset filters", use_container_width=True):
+                st.rerun()
+
+        st.divider()
+
+        # =========================
+        # Apply filters (safe)
+        # =========================
+        df = transactions_df.copy()
+
+        # Date filter
+        if "date_only" in df.columns:
+            df = df[(df["date_only"] >= start_d) & (df["date_only"] <= end_d)]
+
+        # IL only
+        if il_only and "is_il" in df.columns:
+            df = df[df["is_il"] == True]
+
+        # Type filter
+        if selected_types and "typeDesc" in df.columns:
+            df = df[df["typeDesc"].astype(str).isin(selected_types)]
+
+        # Team filter
+        if selected_teams:
+            if team_mode == "To" and "to_team" in df.columns:
+                df = df[df["to_team"].astype(str).isin(selected_teams)]
+            elif team_mode == "From" and "from_team" in df.columns:
+                df = df[df["from_team"].astype(str).isin(selected_teams)]
+            else:
+                to_match = df["to_team"].astype(str).isin(selected_teams) if "to_team" in df.columns else False
+                from_match = df["from_team"].astype(str).isin(selected_teams) if "from_team" in df.columns else False
+                df = df[to_match | from_match]
+
+        # Player filter
+        if selected_players and "player_name" in df.columns:
+            df = df[df["player_name"].astype(str).isin(selected_players)]
+
+        # Global search
+        if q.strip():
+            needle = q.strip()
+            search_cols = [c for c in ["player_name", "to_team", "from_team", "typeDesc", "description"] if c in df.columns]
+            if search_cols:
+                mask = False
+                for c in search_cols:
+                    mask = mask | df[c].astype(str).str.contains(needle, case=False, na=False)
+                df = df[mask]
+
+        # Sort
+        if sort_choice == "Newest first" and "date" in df.columns:
+            df = df.sort_values("date", ascending=False)
+        elif sort_choice == "Oldest first" and "date" in df.columns:
+            df = df.sort_values("date", ascending=True)
+        elif sort_choice == "Player A→Z" and "player_name" in df.columns:
+            df = df.sort_values("player_name", ascending=True)
+        elif sort_choice == "Team A→Z" and "to_team" in df.columns:
+            df = df.sort_values("to_team", ascending=True)
+
+        # =========================
+        # Metrics + quick insights
+        # =========================
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("Rows (filtered)", f"{len(df):,}")
+        m2.metric("Date range", f"{start_d} → {end_d}")
+        m3.metric("IL moves", f"{int(df['is_il'].sum()):,}" if "is_il" in df.columns else "—")
+        m4.metric("Showing", f"{min(len(df), int(max_rows)):,} / {len(df):,}")
+
+        with st.expander("🔎 Quick summary (auto)", expanded=True):
+            if "typeDesc" in df.columns:
+                top_types = df["typeDesc"].fillna("").astype(str).value_counts().head(10)
+                if len(top_types):
+                    st.write("**Top transaction types:** " + ", ".join([f"{k} ({v})" for k, v in top_types.items() if k]))
+            if "is_il" in df.columns and df["is_il"].any() and "injury_detail" in df.columns:
+                il_snips = (
+                    df[df["is_il"] == True]["injury_detail"]
+                    .dropna()
+                    .astype(str)
+                    .value_counts()
+                    .head(10)
+                )
+                if len(il_snips):
+                    st.write("**Most common injury details (when provided):** " + ", ".join([f"{k} ({v})" for k, v in il_snips.items()]))
+
+        st.divider()
+
+        # =========================
+        # Display
+        # =========================
+        if not show_cols:
+            st.warning("Select at least one column to display.")
+        else:
+            df_view = df.head(int(max_rows)).copy()
+            display_df = df_view[show_cols].copy()
+
+            # Nice date formatting
+            for dcol in ["date", "effectiveDate", "il_start_date"]:
+                if dcol in display_df.columns:
+                    display_df[dcol] = pd.to_datetime(display_df[dcol], errors="coerce")
+
+            st.dataframe(display_df, use_container_width=True, hide_index=True)
+
+        # =========================
+        # Downloads
+        # =========================
+        d1, d2, d3 = st.columns([1.2, 1.2, 2.6])
+
+        with d1:
+            st.download_button(
+                "⬇️ Download filtered CSV",
+                data=df[show_cols].to_csv(index=False).encode("utf-8") if show_cols else df.to_csv(index=False).encode("utf-8"),
+                file_name=f"mlb_transactions_filtered_{start_d}_to_{end_d}.csv",
+                mime="text/csv",
+                use_container_width=True
+            )
+
+        with d2:
+            if "is_il" in df.columns:
+                il_only_df = df[df["is_il"] == True]
+                st.download_button(
+                    "🏥 Download IL-only CSV",
+                    data=il_only_df[show_cols].to_csv(index=False).encode("utf-8") if show_cols else il_only_df.to_csv(index=False).encode("utf-8"),
+                    file_name=f"mlb_transactions_IL_{start_d}_to_{end_d}.csv",
+                    mime="text/csv",
+                    use_container_width=True
+                )
+
+        with d3:
+            st.caption(
+                "Tips: search `DFA`, `optioned`, `selected`, `activated`, `60-day`, `retroactive`, `hamstring`, etc. "
+                "All text matching uses `na=False` so null descriptions won't crash filters."
+            )
