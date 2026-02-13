@@ -8967,6 +8967,7 @@ if check_password():
             if "is_il" not in df.columns:
                 df["is_il"] = df["description"].str.contains(r"\binjured list\b", case=False, na=False)
 
+            df = df[df['typeDesc']!='Number Change']
             return df
 
         transactions_df = load_transactions()
