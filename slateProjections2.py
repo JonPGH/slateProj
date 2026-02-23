@@ -35,6 +35,7 @@ PASSWORDS = {
     "giles":   {"access_level": "full", "auth_key": "FULL"},
     "12":      {"access_level": "full", "auth_key": "FULL"},
     "kanak": {"access_level": "full",  "auth_key": "FULL"},
+    "draftguide": {"access_level": "draftguide",  "auth_key": "FULL"},
 }
 
 def check_password():
@@ -1117,7 +1118,6 @@ if check_password():
 
     # Sidebar navigation
     st.sidebar.image(logo, width=250)  # Added logo to sidebar
-    st.sidebar.title("MLB Projections")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews", "Pitcher Projections", "Hitter Projections","Hitter Profiles","Hitter Comps", "Player Projection Details","Player Rater", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["Game Previews", "Pitcher Projections", "Hitter Projections", "Matchups", "Player Trends","Air Pull Matchups", "Weather & Umps", "Streamers","Tableau", "DFS Optimizer","Prop Bets", "SP Planner", "Zone Matchups"], help="Choose a view to analyze games or player projections.")
     #tab = st.sidebar.radio("Select View", ["2026 Ranks", "Game Previews","Hitter Profiles","Hitter Comps", "Player Rater","Tableau"], help="Choose a view to analyze games or player projections.")
@@ -1125,6 +1125,8 @@ if check_password():
     
     if st.session_state.access_level == "full":
         tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Lineup Tracker", "Prospect Ranks","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Pitch Movement Comps","Transactions Tracker"], help="Choose a view to analyze games or player projections.")
+    elif st.session_state.access_level == "draftguide":
+        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections"])
     else:
         tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Lineup Tracker", "Player Rater","Pitch Movement Comps","Transactions Tracker"], help="Choose a view to analyze games or player projections.")
 
