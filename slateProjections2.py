@@ -102,6 +102,71 @@ if check_password():
             sub = "Play ball."
         else:
             days = total_seconds // 86400
+            headline = f"{days} Days Until Opening Day!"
+            sub = f"{days} days"
+
+        html = f"""
+        <div style="
+            width:100%;
+            padding:16px 20px;
+            margin-bottom:10px;
+            border-radius:14px;
+            background:#0f172a;
+            color:#ffffff;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 8px 20px rgba(0,0,0,0.18);
+        ">
+            <div style="font-size:22px;font-weight:800;">
+                {headline}
+            </div>
+        </div>
+
+        <div style="
+            width:100%;
+            padding:14px 20px;
+            margin-bottom:18px;
+            border-radius:14px;
+            background:#2563eb;
+            color:#ffffff;
+            text-align:center;
+            font-size:16px;
+            font-weight:700;
+            box-shadow:0 8px 20px rgba(0,0,0,0.18);
+        ">
+            JOIN MLB DW PRO TO UNLOCK THIS FULL APP.
+            <a href="https://www.mlbdatawarehouse.com/p/re-introducing-mlb-dw-pro"
+            target="_blank"
+            style="
+                color:#ffffff;
+                text-decoration:underline;
+                font-weight:900;
+                margin-left:6px;
+            ">
+                CLICK HERE
+            </a>
+            FOR INFORMATION AND TO SIGN UP!
+        </div>
+        """
+
+        st.markdown(html, unsafe_allow_html=True)
+
+
+    def render_opening_day_banner_old():
+        from datetime import datetime
+        import streamlit as st
+
+        target = datetime(2026, 3, 26)
+        now = datetime.now()
+        delta = target - now
+        total_seconds = int(delta.total_seconds())
+
+        if total_seconds <= 0:
+            headline = "⚾ MLB Opening Day is HERE"
+            sub = "Play ball."
+        else:
+            days = total_seconds // 86400
             hours = (total_seconds % 86400) // 3600
             minutes = (total_seconds % 3600) // 60
             headline = f"{days} Days Until Opening Day!"
