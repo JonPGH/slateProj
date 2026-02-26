@@ -4123,7 +4123,7 @@ if check_password():
                         st.session_state["custom_scoring_pitchers"] = {k: 0.0 for k in PITCHER_CUSTOM_CATS}
 
                     with st.expander("Custom scoring settings", expanded=True):
-                        st.caption("Enter point value for each event (negatives allowed for penalties).")
+                        st.caption("Enter point value for each event (negatives allowed for penalties). DO NOT USE MLB DW Projections for this!")
 
                         if group == "Hitters":
                             cols = st.columns(2)
