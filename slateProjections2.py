@@ -3504,7 +3504,7 @@ if check_password():
             pit_default = ["W", "SV", "ERA", "WHIP", "SO"]  # common 5x5 pitchers
 
             hit_all = ["R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS", "PA"]
-            pit_all = ["W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9", "IP", "GS", "HLD","SV+HLD","QS"]
+            pit_all = ["W","L", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9", "IP", "GS", "HLD","SV+HLD","QS"]
 
             hit_cats = st.multiselect("Hitting categories", hit_all, default=hit_default)
             pit_cats = st.multiselect("Pitching categories", pit_all, default=pit_default)
@@ -3513,7 +3513,7 @@ if check_password():
             show_side = st.radio("Show", ["Hitters", "Pitchers"], index=0, horizontal=True)
 
             show_hit_cols = ["Name", "Team", "Pos", "PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS"]
-            show_pit_cols = ["Name", "Team", "Pos", "GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9","HLD","SV+HLD","QS"]
+            show_pit_cols = ["Name", "Team", "Pos", "GS", "IP", "W","L", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9","HLD","SV+HLD","QS"]
 
             if show_side == "Hitters":
                 cols = [c for c in show_hit_cols if c in hitters.columns]
@@ -3566,7 +3566,7 @@ if check_password():
 
                 # Combine + display
                 hit_out_cols = ["Name", "Team", "Pos", "$"] + [c for c in ["PA", "R", "HR", "RBI", "SB", "AVG", "OBP", "SLG", "OPS"] if c in hit_vals.columns]
-                pit_out_cols = ["Name", "Team", "Pos", "$"] + [c for c in ["GS", "IP", "W", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9","HLD","SV+HLD","QS"] if c in pit_vals.columns]
+                pit_out_cols = ["Name", "Team", "Pos", "$"] + [c for c in ["GS", "IP", "W","L", "SV", "ERA", "WHIP", "SO", "K/9", "BB/9","HLD","SV+HLD","QS"] if c in pit_vals.columns]
 
                 st.markdown("### Top Auction Values — Hitters")
                 st.dataframe(hit_vals[hit_out_cols].sort_values("$", ascending=False).reset_index(drop=True), use_container_width=True, height=420)
@@ -3738,7 +3738,7 @@ if check_password():
         }
         UNDERDOG_P = {
             "IP": 3.0, "SO": 3.0,
-            "BB": 0.0, "HBP": 0.0, "HR": 0.0,
+            "BB": 0.0, "HBP": 0.0, "HR": 0.0, "L":0,
             "W": 5.0, "SV": 0.0, "QS": 5.0, "HLD": 0.0,
             "ER": -3.0,
         }
@@ -3753,13 +3753,13 @@ if check_password():
             "IP": 2.25, "SO": 2.0,
             "BB": -0.6, "HBP": -0.6, "HR": 0.0,
             "W": 4.0, "SV": 0.0, "QS": 0.0, "HLD": 0.0,
-            "ER": -2.0,
+            "ER": -2.0, "L":0,
             # DK extras (only apply if present)
             "H": -0.6, "CG": 2.5, "CGSO": 2.5, "NH": 5.0,
         }
 
         HITTER_CUSTOM_CATS = ["1B", "2B", "3B", "HR", "SB", "CS", "BB", "HBP", "SO", "R", "RBI"]
-        PITCHER_CUSTOM_CATS = ["IP", "SO", "BB", "HBP", "HR", "W", "SV", "QS", "HLD", "ER"]
+        PITCHER_CUSTOM_CATS = ["IP", "SO", "BB", "HBP", "HR", "W","L", "SV", "QS", "HLD", "ER"]
 
         def _num(s):
             return pd.to_numeric(s, errors="coerce").fillna(0.0)
@@ -3821,7 +3821,7 @@ if check_password():
                 else:
                     out["SO"] = 0.0
 
-            for c in ["IP", "BB", "HBP", "HR", "W", "SV", "QS", "HLD", "ER"]:
+            for c in ["IP", "BB", "HBP", "HR", "W","L", "SV", "QS", "HLD", "ER"]:
                 if c not in out.columns:
                     out[c] = 0.0
 
@@ -3870,6 +3870,7 @@ if check_password():
                 + _num(d["HBP"]) * scoring.get("HBP", 0.0)
                 + _num(d["HR"]) * scoring.get("HR", 0.0)
                 + _num(d["W"]) * scoring.get("W", 0.0)
+                + _num(d["L"]) * scoring.get("L", 0.0)
                 + _num(d["SV"]) * scoring.get("SV", 0.0)
                 + _num(d["QS"]) * scoring.get("QS", 0.0)
                 + _num(d["HLD"]) * scoring.get("HLD", 0.0)
@@ -4047,7 +4048,7 @@ if check_password():
 
         steamerpit_local = steamerpit.rename({"Name": "Player", "SO": "K"}, axis=1)
         steamer_pitchers = steamerpit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W", "SV", "QS","HLD"]
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS","HLD"]
         ].copy()
 
         batpit_local = batpit.copy()
@@ -4057,7 +4058,7 @@ if check_password():
             batpit_local = batpit_local.rename({"SO": "K"}, axis=1)
 
         bat_pitchers = batpit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W", "SV", "QS","HLD"]
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS","HLD"]
         ].copy()
 
         atcpit_local = atcpit.copy()
@@ -4067,7 +4068,7 @@ if check_password():
             atcpit_local = atcpit_local.rename({"SO": "K"}, axis=1)
 
         atc_pitchers = atcpit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W", "SV", "QS","HLD"]
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS","HLD"]
         ].copy()
 
         oopsypit_local = oopsypitch.copy()
@@ -4076,13 +4077,13 @@ if check_password():
         if "SO" in oopsypit_local.columns and "K" not in oopsypit_local.columns:
             oopsypit_local = oopsypit_local.rename({"SO": "K"}, axis=1)
 
-        req_p = ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W", "SV", "QS"]
+        req_p = ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS"]
         for c in req_p:
             if c not in oopsypit_local.columns:
                 oopsypit_local[c] = 0 if c in ["GS", "IP", "H", "ER", "K", "W", "SV", "QS"] else np.nan
 
         oopsy_pitchers = oopsypit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W", "SV","HLD"]
+            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV","HLD"]
         ].copy()
 
         # ensure SRV-needed columns exist
