@@ -1191,7 +1191,7 @@ if check_password():
     if st.session_state.access_level == "full":
         tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Lineup Tracker", "Prospect Ranks","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Pitch Movement Comps","Transactions Tracker"], help="Choose a view to analyze games or player projections.")
     elif st.session_state.access_level == "draftguide":
-        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections"])
+        tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","Auction Value Calculator"])
     else:
         tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Lineup Tracker", "Player Rater","Pitch Movement Comps","Transactions Tracker"], help="Choose a view to analyze games or player projections.")
 
