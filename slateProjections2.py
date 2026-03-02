@@ -36,6 +36,7 @@ PASSWORDS = {
     "12":      {"access_level": "full", "auth_key": "FULL"},
     "kanak": {"access_level": "full",  "auth_key": "FULL"},
     "draftguide": {"access_level": "draftguide",  "auth_key": "FULL"},
+    "pro": {"access_level": "pro",  "auth_key": "PRO"},
 }
 
 def check_password():
@@ -1127,8 +1128,10 @@ if check_password():
     if len(weather_data)<1:
         weather_data = pd.DataFrame()
 
-    confirmed_lus = list(hitterproj2[hitterproj2['Confirmed LU']=='Y']['Team'].unique())
-
+    try:
+        confirmed_lus = list(hitterproj2[hitterproj2['Confirmed LU']=='Y']['Team'].unique())
+    except:
+        confirmed_lus = []
     last_update = pitcherproj['LastUpdate'].iloc[0]
     gameinfo['RoadTeam'] = np.where(gameinfo['team'] == gameinfo['Park'], gameinfo['opponent'], gameinfo['team'])
     gameinfo['GameString'] = gameinfo['RoadTeam']+'@'+gameinfo['Park']
@@ -1192,6 +1195,9 @@ if check_password():
         tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Lineup Tracker", "Prospect Ranks","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Pitch Movement Comps","Transactions Tracker"], help="Choose a view to analyze games or player projections.")
     elif st.session_state.access_level == "draftguide":
         tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections","Auction Value Calculator"])
+    #elif st.session_state.access_level == "pro":
+    #    tab = st.sidebar.radio("Select View", ["DFS Optimizer","2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Lineup Tracker", "Prospect Ranks","Hitter Profiles","Hitter Comps","Prospect Comps", "Player Rater","Pitch Movement Comps","Transactions Tracker"], help="Choose a view to analyze games or player projections.")
+    
     else:
         tab = st.sidebar.radio("Select View", ["2026 Ranks","2026 Projections", "Auction Value Calculator","2026 ADP", "Lineup Tracker", "Player Rater","Pitch Movement Comps","Transactions Tracker"], help="Choose a view to analyze games or player projections.")
 
@@ -3759,7 +3765,8 @@ if check_password():
         }
 
         HITTER_CUSTOM_CATS = ["1B", "2B", "3B", "HR", "SB", "CS", "BB", "HBP", "SO", "R", "RBI"]
-        PITCHER_CUSTOM_CATS = ["IP", "SO", "BB", "HBP", "HR", "W","L", "SV", "QS", "HLD", "ER"]
+        #PITCHER_CUSTOM_CATS = ["IP", "SO", "BB", "HBP", "HR", "W","L", "SV", "QS", "HLD", "ER"]
+        PITCHER_CUSTOM_CATS = ["IP", "SO", "H", "BB", "HBP", "HR", "W", "L", "SV", "QS", "HLD", "ER"]
 
         def _num(s):
             return pd.to_numeric(s, errors="coerce").fillna(0.0)
@@ -3810,22 +3817,75 @@ if check_password():
         def _ensure_event_cols_pitchers(df: pd.DataFrame) -> pd.DataFrame:
             """
             Best-effort create:
-            IP,SO,BB,HBP,HR,W,SV,QS,HLD,ER
-            (plus DK extras if present)
+            IP, SO, H, BB, HBP, HR, W, L, SV, QS, HLD, ER
+            from either direct count columns OR common rate columns.
             """
             out = df.copy()
 
+            # ---- Normalize a few common alt column names ----
+            rename_map = {}
+            if "SO" in out.columns and "K" not in out.columns:
+                rename_map["SO"] = "K"
+            if "HD" in out.columns and "HLD" not in out.columns:
+                rename_map["HD"] = "HLD"
+            if "Holds" in out.columns and "HLD" not in out.columns:
+                rename_map["Holds"] = "HLD"
+            if rename_map:
+                out = out.rename(columns=rename_map)
+
+            # ---- Ensure IP exists early (needed for /9 derivations) ----
+            if "IP" not in out.columns:
+                out["IP"] = 0.0
+            ip = _num(out["IP"])
+
+            # ---- Strikeouts -> SO ----
             if "SO" not in out.columns:
                 if "K" in out.columns:
                     out["SO"] = _num(out["K"])
                 else:
                     out["SO"] = 0.0
 
-            for c in ["IP", "BB", "HBP", "HR", "W","L", "SV", "QS", "HLD", "ER"]:
+            # ---- Hits allowed ----
+            if "H" not in out.columns:
+                out["H"] = 0.0
+
+            # ---- Walks ----
+            if "BB" not in out.columns:
+                if "BB/9" in out.columns:
+                    out["BB"] = _num(out["BB/9"]) * ip / 9.0
+                else:
+                    out["BB"] = 0.0
+
+            # ---- HBP ----
+            if "HBP" not in out.columns:
+                # some sources use HB
+                if "HB" in out.columns:
+                    out["HBP"] = _num(out["HB"])
+                else:
+                    # try rate variants
+                    rate_col = None
+                    for cand in ["HBP/9", "HBP9", "HB/9", "HB9"]:
+                        if cand in out.columns:
+                            rate_col = cand
+                            break
+                    out["HBP"] = (_num(out[rate_col]) * ip / 9.0) if rate_col else 0.0
+
+            # ---- HR allowed ----
+            if "HR" not in out.columns:
+                rate_col = None
+                for cand in ["HR/9", "HR9"]:
+                    if cand in out.columns:
+                        rate_col = cand
+                        break
+                out["HR"] = (_num(out[rate_col]) * ip / 9.0) if rate_col else 0.0
+
+            # ---- Basic counting stats ----
+            for c in ["W", "L", "SV", "QS", "HLD", "ER"]:
                 if c not in out.columns:
                     out[c] = 0.0
 
-            for c in ["H", "CG", "CGSO", "NH"]:
+            # DK extras (optional)
+            for c in ["CG", "CGSO", "NH"]:
                 if c not in out.columns:
                     out[c] = 0.0
 
@@ -3866,6 +3926,7 @@ if check_password():
             pts = (
                 _num(d["IP"]) * scoring.get("IP", 0.0)
                 + _num(d["SO"]) * scoring.get("SO", 0.0)
+                + _num(d["H"]) * scoring.get("H", 0.0)
                 + _num(d["BB"]) * scoring.get("BB", 0.0)
                 + _num(d["HBP"]) * scoring.get("HBP", 0.0)
                 + _num(d["HR"]) * scoring.get("HR", 0.0)
@@ -3881,7 +3942,6 @@ if check_password():
             if system == "DraftKings":
                 pts = (
                     pts
-                    + _num(d["H"]) * DRAFTKINGS_P.get("H", 0.0)
                     + _num(d["CG"]) * DRAFTKINGS_P.get("CG", 0.0)
                     + _num(d["CGSO"]) * DRAFTKINGS_P.get("CGSO", 0.0)
                     + _num(d["NH"]) * DRAFTKINGS_P.get("NH", 0.0)
@@ -4047,9 +4107,13 @@ if check_password():
         ].copy().rename({"Pitcher": "Player"}, axis=1)
 
         steamerpit_local = steamerpit.rename({"Name": "Player", "SO": "K"}, axis=1)
-        steamer_pitchers = steamerpit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS","HLD"]
-        ].copy()
+        #steamer_pitchers = steamerpit_local[
+        #    ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS","HLD"]
+        #].copy()
+
+        base_cols = ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W", "L", "SV", "QS", "HLD"]
+        opt_cols  = [c for c in ["HR", "HBP", "HB", "HR/9", "HR9", "HBP/9", "HBP9", "HB/9", "HB9"] if c in steamerpit_local.columns]
+        steamer_pitchers = steamerpit_local[base_cols + opt_cols].copy()
 
         batpit_local = batpit.copy()
         if "Name" in batpit_local.columns and "Player" not in batpit_local.columns:
@@ -4057,9 +4121,12 @@ if check_password():
         if "SO" in batpit_local.columns and "K" not in batpit_local.columns:
             batpit_local = batpit_local.rename({"SO": "K"}, axis=1)
 
-        bat_pitchers = batpit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS","HLD"]
-        ].copy()
+        #bat_pitchers = batpit_local[
+        #    ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS","HLD"]
+        #].copy()
+        base_cols = ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W", "L", "SV", "QS", "HLD"]
+        opt_cols  = [c for c in ["HR", "HBP", "HB", "HR/9", "HR9", "HBP/9", "HBP9", "HB/9", "HB9"] if c in batpit_local.columns]
+        bat_pitchers = batpit_local[base_cols + opt_cols].copy()
 
         atcpit_local = atcpit.copy()
         if "Name" in atcpit_local.columns and "Player" not in atcpit_local.columns:
@@ -4067,9 +4134,12 @@ if check_password():
         if "SO" in atcpit_local.columns and "K" not in atcpit_local.columns:
             atcpit_local = atcpit_local.rename({"SO": "K"}, axis=1)
 
-        atc_pitchers = atcpit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS","HLD"]
-        ].copy()
+        #atc_pitchers = atcpit_local[
+        #    ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV", "QS","HLD"]
+        #].copy()
+        base_cols = ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W", "L", "SV", "QS", "HLD"]
+        opt_cols  = [c for c in ["HR", "HBP", "HB", "HR/9", "HR9", "HBP/9", "HBP9", "HB/9", "HB9"] if c in atcpit_local.columns]
+        atc_pitchers = atcpit_local[base_cols + opt_cols].copy()
 
         oopsypit_local = oopsypitch.copy()
         if "Name" in oopsypit_local.columns and "Player" not in oopsypit_local.columns:
@@ -4082,9 +4152,15 @@ if check_password():
             if c not in oopsypit_local.columns:
                 oopsypit_local[c] = 0 if c in ["GS", "IP", "H", "ER", "K", "W", "SV", "QS"] else np.nan
 
-        oopsy_pitchers = oopsypit_local[
-            ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV","HLD"]
-        ].copy()
+        #oopsy_pitchers = oopsypit_local[
+        #    ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W","L", "SV","HLD"]
+        #].copy()
+
+        base_cols = ["Player", "Team", "GS", "IP", "H", "ER", "K", "ERA", "WHIP", "K/9", "BB/9", "K%", "BB%", "W", "L", "SV", "QS", "HLD"]
+        opt_cols  = [c for c in ["HR", "HBP", "HB", "HR/9", "HR9", "HBP/9", "HBP9", "HB/9", "HB9"] if c in oopsypit_local.columns]
+        cols_keep = [c for c in (base_cols + opt_cols) if c in oopsypit_local.columns]
+        oopsy_pitchers = oopsypit_local[cols_keep].copy()
+
 
         # ensure SRV-needed columns exist
         for pdf in (ja_pitchers, steamer_pitchers, atc_pitchers, bat_pitchers, oopsy_pitchers):
@@ -7320,227 +7396,7 @@ if check_password():
             """ 
             components.html(tableau_code_pitchers, height=750, scrolling=True)
 
-    if tab == "DFS Optimizer":
-
-        import pulp
-        import warnings
-        warnings.filterwarnings("ignore")
-
-        # Streamlit app
-        st.title("DraftKings MLB DFS Optimizer")
-        st.markdown("""
-                    There is nothing special about this optimizer, and it doesn't
-                    let you export the lineups so they can be used, but it will at 
-                    least give you a feel for what kind of lineup the model likes.<hr>
-                    """, unsafe_allow_html=True)
-
-        # Read data
-        try:
-            hitters = hitterproj.copy()
-            pitchers = pitcherproj.copy()
-        except FileNotFoundError:
-            st.error("CSV files not found. Please ensure 'Tableau_DailyHitterProj.csv' and 'Tableau_DailyPitcherProj.csv' are in the same directory as the script.")
-            st.stop()
-
-        # main slate filter
-        hitters = hitters[hitters['MainSlate']=='Main']
-        pitchers = pitchers[pitchers['MainSlate']=='Main']
-        
-        # Handle multi-position eligibility for hitters
-        hitters['Pos'] = hitters['Pos'].str.split('/')
-        hitters = hitters.explode('Pos')
-
-        # Combine hitters and pitchers
-        hitters['Type'] = 'Hitter'
-        pitchers['Type'] = 'Pitcher'
-
-        # Rename columns for consistency
-        hitters = hitters.rename(columns={'Hitter': 'Name', 'Sal': 'Salary', 'DKPts': 'Points', 'Team': 'Team'})
-        pitchers = pitchers.rename(columns={'Pitcher': 'Name', 'Sal': 'Salary', 'DKPts': 'Points', 'Team': 'Team'})
-
-        # Select relevant columns
-        hitters = hitters[['Name', 'Pos', 'Team', 'Salary', 'Points', 'Type']]
-        pitchers = pitchers[['Name', 'Team', 'Salary', 'Points', 'Type']]
-
-        # Assign pitcher position
-        pitchers['Pos'] = 'P'
-
-        # Combine data
-        players = pd.concat([hitters, pitchers], ignore_index=True)
-
-        # Clean data
-        players = players.dropna(subset=['Name', 'Pos', 'Team', 'Salary', 'Points'])
-        players['Salary'] = players['Salary'].astype(float)
-        players['Points'] = players['Points'].astype(float)
-
-        # DraftKings MLB DFS rules
-        SALARY_CAP = 50000
-        ROSTER_SIZE = 10
-        POSITIONS = {
-            'P': 2,
-            'C': 1,
-            '1B': 1,
-            '2B': 1,
-            '3B': 1,
-            'SS': 1,
-            'OF': 3
-        }
-
-        # Define display order for positions
-        POSITION_ORDER = ['P', 'P', 'C', '1B', '2B', 'SS', '3B', 'OF', 'OF', 'OF']
-        POSITION_INDEX = {pos: i for i, pos in enumerate(['P', 'C', '1B', '2B', 'SS', '3B', 'OF'])}
-
-        # Streamlit inputs
-        col1,col2,col3 = st.columns([1,1,1])
-        with col1:
-            projection_variance = st.slider("Projection Variance (%)", min_value=0, max_value=50, value=10, step=5) / 100
-        with col2:
-            num_lineups = st.number_input("Number of Lineups to Generate", min_value=1, max_value=20, value=5, step=1)
-        with col3:
-            max_exposure = st.slider("Maximum Player Exposure (%)", min_value=10, max_value=100, value=50, step=10) / 100
-
-        # Optimizer function
-        def optimize_lineup(players, player_usage, max_usage, used_lineups, name_to_indices):
-            import pulp
-
-            # Initialize PuLP problem
-            prob = pulp.LpProblem("DFS_Optimizer", pulp.LpMaximize)
-
-            # Decision variables: 1 if roster spot (row) is used
-            player_vars = pulp.LpVariable.dicts("Player", players.index, cat="Binary")
-
-            # Objective: maximize projected points
-            prob += pulp.lpSum(players.loc[i, "Points"] * player_vars[i] for i in players.index)
-
-            # 1) Salary cap
-            prob += pulp.lpSum(players.loc[i, "Salary"] * player_vars[i] for i in players.index) <= SALARY_CAP
-
-            # 2) Roster size
-            prob += pulp.lpSum(player_vars[i] for i in players.index) == ROSTER_SIZE
-
-            # 3) Positional constraints
-            for pos, count in POSITIONS.items():
-                prob += pulp.lpSum(player_vars[i] for i in players.index if players.loc[i, "Pos"] == pos) == count
-
-            # 3b) Single player per lineup (prevent same Name twice across positions)
-            for name, idxs in name_to_indices.items():
-                prob += pulp.lpSum(player_vars[i] for i in idxs) <= 1
-
-            # 4) Max exposure constraint (lock out players already at/over cap)
-            for i in players.index:
-                pname = players.loc[i, "Name"]
-                if pname in player_usage and player_usage[pname] >= max_usage:
-                    prob += player_vars[i] == 0
-
-            # 5) Exclude previously used exact lineups (no identical set)
-            for lineup_indices in used_lineups:
-                prob += pulp.lpSum(player_vars[i] for i in lineup_indices) <= ROSTER_SIZE - 1
-
-            # Solve
-            prob.solve()
-
-            # Extract results
-            if pulp.LpStatus[prob.status] != "Optimal":
-                return None, 0, 0, []
-
-            selected_indices = [i for i in players.index if player_vars[i].varValue == 1]
-            lineup_df = pd.DataFrame([players.loc[i] for i in selected_indices])
-            total_points = float(sum(players.loc[i, "Points"] for i in selected_indices))
-            total_salary = float(sum(players.loc[i, "Salary"] for i in selected_indices))
-            return lineup_df, total_points, total_salary, selected_indices
-
-
-        # Function to sort lineup by position order
-        def sort_lineup(lineup_df):
-            # Create a sorting key based on POSITION_ORDER
-            def get_sort_key(row):
-                pos = row['Pos']
-                if pos == 'P':
-                    # Assign first or second P based on order
-                    p_count = sum(1 for r in lineup_df['Pos'][:row.name] if r == 'P')
-                    return POSITION_ORDER.index('P') + p_count / 10
-                elif pos == 'OF':
-                    # Assign OF positions based on order
-                    of_count = sum(1 for r in lineup_df['Pos'][:row.name] if r == 'OF')
-                    return POSITION_ORDER.index('OF') + of_count / 10
-                else:
-                    return POSITION_ORDER.index(pos)
-            
-            lineup_df = lineup_df.copy()
-            lineup_df['SortKey'] = lineup_df.apply(get_sort_key, axis=1)
-            sorted_lineup = lineup_df.sort_values('SortKey').drop(columns=['SortKey'])
-            return sorted_lineup
-
-        # Generate multiple lineups
-        if st.button("Generate Lineups"):
-            all_lineups = []
-            player_usage = {}  # Track how many times each player has been used
-            used_lineups = []  # Track indices of players in each lineup
-            max_usage = max_exposure * num_lineups  # Convert percentage to number of lineups
-
-            for lineup_num in range(int(num_lineups)):
-                # Apply random variance to projections
-                players['Points'] = players['Points'] * np.random.uniform(1 - projection_variance, 1 + projection_variance, size=len(players))
-
-                # Optimize lineup with max exposure and unique lineup constraints
-                # Build once after you finish constructing/cleaning `players` (right after astype(float))
-                name_to_indices = players.groupby('Name').apply(lambda s: list(s.index)).to_dict()
-
-                #lineup_df, total_points, total_salary, selected_indices = optimize_lineup(players, player_usage, max_usage, used_lineups)
-                lineup_df, total_points, total_salary, selected_indices = optimize_lineup(players, player_usage, max_usage, used_lineups, name_to_indices)
-
-                if lineup_df is not None:
-                    # Sort lineup by position order
-                    lineup_df = sort_lineup(lineup_df)
-                    all_lineups.append({
-                        'Lineup Number': lineup_num + 1,
-                        'Lineup': lineup_df[['Name', 'Pos', 'Team', 'Salary', 'Points']],
-                        'Total Points': total_points,
-                        'Total Salary': total_salary,
-                        'Teams': lineup_df['Team'].nunique()
-                    })
-                    # Update player usage and used lineups
-                    for idx in selected_indices:
-                        player_name = players.loc[idx, 'Name']
-                        player_usage[player_name] = player_usage.get(player_name, 0) + 1
-                    used_lineups.append(selected_indices)
-                else:
-                    st.warning(f"Could not generate lineup {lineup_num + 1}. Check constraints or data.")
-                    break
-
-            # Display lineups side-by-side
-            if all_lineups:
-                st.subheader("Generated Lineups")
-                # Create columns for lineups (up to num_lineups)
-                cols = st.columns(len(all_lineups))
-                for idx, lineup_info in enumerate(all_lineups):
-                    with cols[idx]:
-                        st.write(f"**Lineup {lineup_info['Lineup Number']}**")
-                        st.dataframe(lineup_info['Lineup'], hide_index=True)
-                        st.write(f"**Total Projected Points**: {lineup_info['Total Points']:.2f}")
-                        st.write(f"**Total Salary**: ${lineup_info['Total Salary']:,.2f}")
-                        st.write(f"**Teams Represented**: {lineup_info['Teams']}")
-
-                # Player ownership report
-                st.subheader("Player Ownership Report")
-                ownership_data = []
-                for player_name, count in player_usage.items():
-                    ownership_pct = (count / len(all_lineups)) * 100
-                    player_info = players[players['Name'] == player_name].iloc[0]
-                    ownership_data.append({
-                        'Name': player_name,
-                        'Position': player_info['Pos'],
-                        'Team': player_info['Team'],
-                        'Ownership (%)': ownership_pct
-                    })
-                ownership_df = pd.DataFrame(ownership_data).sort_values(by='Ownership (%)', ascending=False)
-                st.dataframe(ownership_df, hide_index=True)
-
-        # Display raw data (optional)
-        if st.checkbox("Show Raw Player Data"):
-            st.subheader("Player Projections")
-            st.dataframe(players, hide_index=True)
-
+   
     ## move this later
     def create_speed_gauge(value, min_value=0.05, max_value=0.30):
         fig, ax = plt.subplots(figsize=(6, 3), subplot_kw={'projection': 'polar'})
